@@ -12,12 +12,14 @@ use App\Filament\Resources\Media\Schemas\MediaInfolist;
 use App\Filament\Resources\Media\Tables\MediaTable;
 use App\Models\MediaItem;
 use BackedEnum;
+use Filament\Facades\Filament;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Gate;
 use Override;
 
 class MediaResource extends Resource
@@ -36,6 +38,24 @@ class MediaResource extends Resource
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?int $navigationSort = 2;
+
+    /**
+     * Verifica se o usuário pode acessar o recurso de mídia.
+     * Configura o contexto do tenant antes de verificar a Policy,
+     * garantindo que as permissões sejam verificadas no contexto correto.
+     * Se o tenant não estiver configurado ainda (durante construção da navegação),
+     * verifica se o usuário tem acesso a pelo menos um tenant com permissões de mídia.
+     */
+    public static function canAccess(): bool
+    {
+        $user = Filament::auth()->user();
+
+        if (! $user) {
+            return false;
+        }
+
+        return Gate::forUser($user)->allows('viewAny', MediaItem::class);
+    }
 
     #[Override]
     public static function getModelLabel(): string

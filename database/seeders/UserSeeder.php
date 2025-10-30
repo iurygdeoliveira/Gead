@@ -20,6 +20,20 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $guard = config('auth.defaults.guard', 'web');
+
+        $this->createPermissions($guard);
+        $admin = $this->createAdminUser($guard);
+
+        $tenant = $this->createTenant('CAMPUS ARAGUAINA');
+
+        $this->setupTenant($tenant, $admin, $guard);
+
+        // Limpa o cache de permissões para garantir que as alterações sejam aplicadas
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+    }
+
+    private function createPermissions(string $guard): void
+    {
         $resources = ['media', 'users'];
 
         foreach ($resources as $resource) {
@@ -30,7 +44,10 @@ class UserSeeder extends Seeder
                 ]);
             }
         }
+    }
 
+    private function createAdminUser(string $guard): User
+    {
         RoleType::ensureGlobalRoles($guard);
 
         $admin = User::query()->firstOrCreate(
@@ -43,6 +60,7 @@ class UserSeeder extends Seeder
                 'approved_by' => null, // Admin se auto-aprova
             ],
         );
+
         // Global (sem tenant): fixar team_id = 0 para atribuições globais
         $globalResolver = app(SpatieTeamResolver::class);
         $globalResolver->setPermissionsTeamId(0);
@@ -53,14 +71,55 @@ class UserSeeder extends Seeder
         // Garante que a role Admin possua todas as permissões
         $adminRole = Role::where('name', RoleType::ADMIN->value)->where('guard_name', $guard)->first();
         if ($adminRole) {
-            // Garante que a role Admin possua todas as permissões
             $adminRole->syncPermissions(PermissionModel::all());
         }
 
-        $sicrano = User::query()->firstOrCreate(
-            ['email' => 'sicrano@labsis.dev.br'],
+        return $admin;
+    }
+
+    private function createTenant(string $name): Tenant
+    {
+        return Tenant::firstOrCreate(
+            ['name' => $name],
             [
-                'name' => 'Sicrano',
+                'uuid' => (string) Str::uuid(),
+                'is_active' => true,
+            ],
+        );
+    }
+
+    private function setupTenant(Tenant $tenant, User $admin, string $guard): void
+    {
+        // Cria usuários para cada role no tenant
+        $users = $this->createTenantUsers($admin);
+
+        // Vincula os usuários ao tenant
+        foreach ($users as $user) {
+            $user->tenants()->sync([$tenant->id]);
+        }
+
+        // Garante que as roles existam para o tenant
+        $roleManager = RoleType::ensureManagerRoleForTeam($tenant->id, $guard);
+        $roleTeacher = RoleType::ensureTeacherRoleForTeam($tenant->id, $guard);
+        $roleStudent = RoleType::ensureStudentRoleForTeam($tenant->id, $guard);
+        $roleEmployee = RoleType::ensureEmployeeRoleForTeam($tenant->id, $guard);
+
+        // Atribui permissões para a role de Manager
+        $this->assignPermissionsToManagerRole($roleManager, $tenant->id, $guard);
+
+        // Atribui as roles aos usuários dentro do tenant
+        $users['manager']->assignRoleInTenant($roleManager, $tenant);
+        $users['teacher']->assignRoleInTenant($roleTeacher, $tenant);
+        $users['student']->assignRoleInTenant($roleStudent, $tenant);
+        $users['employee']->assignRoleInTenant($roleEmployee, $tenant);
+    }
+
+    private function createTenantUsers(User $admin): array
+    {
+        $manager = User::query()->firstOrCreate(
+            ['email' => 'gerente.araguaina@labsis.dev.br'],
+            [
+                'name' => 'Carlos Silva',
                 'email_verified_at' => now(),
                 'password' => Hash::make('mudar123'),
                 'is_approved' => true,
@@ -68,77 +127,46 @@ class UserSeeder extends Seeder
             ],
         );
 
-        $beltrano = User::query()->firstOrCreate(
-            ['email' => 'beltrano@labsis.dev.br'],
+        $teacher = User::query()->firstOrCreate(
+            ['email' => 'professor.araguaina@labsis.dev.br'],
             [
-                'name' => 'Beltrano',
+                'name' => 'Mariana Costa',
                 'email_verified_at' => now(),
                 'password' => Hash::make('mudar123'),
                 'is_approved' => true,
                 'approved_by' => $admin->id,
             ],
         );
-        // Não atribui roles no escopo global. Roles de usuário serão atribuídas por tenant abaixo.
 
-        // Tenants para demonstração
-        $tenantA = Tenant::firstOrCreate(
-            ['name' => 'Tenant A'],
+        $student = User::query()->firstOrCreate(
+            ['email' => 'aluno.araguaina@labsis.dev.br'],
             [
-                'uuid' => (string) Str::uuid(),
-                'is_active' => true,
+                'name' => 'João Pereira',
+                'email_verified_at' => now(),
+                'password' => Hash::make('mudar123'),
+                'is_approved' => true,
+                'approved_by' => $admin->id,
             ],
         );
 
-        $tenantB = Tenant::firstOrCreate(
-            ['name' => 'Tenant B'],
+        $employee = User::query()->firstOrCreate(
+            ['email' => 'funcionario.araguaina@labsis.dev.br'],
             [
-                'uuid' => (string) Str::uuid(),
-                'is_active' => true,
+                'name' => 'Ana Souza',
+                'email_verified_at' => now(),
+                'password' => Hash::make('mudar123'),
+                'is_approved' => true,
+                'approved_by' => $admin->id,
             ],
         );
 
-        // Vincula os usuários aos tenants
-        $sicrano->tenants()->syncWithoutDetaching([
-            $tenantA->id,
-            $tenantB->id,
-        ]);
-
-        $beltrano->tenants()->syncWithoutDetaching([
-            $tenantA->id,
-            $tenantB->id,
-        ]);
-
-        // Define roles por tenant
-        // Garantir existência das roles por tenant
-        $roleOwnerA = RoleType::ensureOwnerRoleForTeam($tenantA->id, $guard);
-        $roleUserA = RoleType::ensureUserRoleForTeam($tenantA->id, $guard);
-        $roleOwnerB = RoleType::ensureOwnerRoleForTeam($tenantB->id, $guard);
-        $roleUserB = RoleType::ensureUserRoleForTeam($tenantB->id, $guard);
-
-        // Limpar cache antes de atribuir permissões
-        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
-
-        // Atribuir permissões às roles por tenant
-        $this->assignPermissionsToRolesByTenant($roleOwnerA, $roleUserA, $tenantA->id, $guard);
-        $this->assignPermissionsToRolesByTenant($roleOwnerB, $roleUserB, $tenantB->id, $guard);
-
-        // Atribuições explícitas com team_id na tabela model_has_roles
-        // Tenant A
-        $sicrano->assignRoleInTenant($roleOwnerA, $tenantA);
-        $beltrano->assignRoleInTenant($roleUserA, $tenantA);
-
-        // Tenant B
-        $beltrano->assignRoleInTenant($roleOwnerB, $tenantB);
-        $sicrano->assignRoleInTenant($roleUserB, $tenantB);
-
-        // Limpa o cache de permissões para garantir que as alterações sejam aplicadas
-        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+        return compact('manager', 'teacher', 'student', 'employee');
     }
 
     /**
-     * Atribui permissões às roles Owner e User para um tenant específico
+     * Atribui permissões à role Manager para um tenant específico
      */
-    private function assignPermissionsToRolesByTenant(Role $ownerRole, Role $userRole, int $tenantId, string $guard): void
+    private function assignPermissionsToManagerRole(Role $managerRole, int $tenantId, string $guard): void
     {
         $resources = ['media', 'users'];
 
@@ -146,17 +174,17 @@ class UserSeeder extends Seeder
         $teamResolver = app(SpatieTeamResolver::class);
         $teamResolver->setPermissionsTeamId($tenantId);
 
-        // Owner recebe todas as permissões
+        // Manager recebe todas as permissões
         foreach ($resources as $resource) {
             foreach (PermissionEnum::cases() as $permission) {
                 $permissionName = $permission->for($resource);
-                $permissionModel = PermissionModel::firstOrCreate([
+                PermissionModel::firstOrCreate([
                     'name' => $permissionName,
                     'guard_name' => $guard,
                 ]);
 
-                if (! $ownerRole->hasPermissionTo($permissionName, $guard)) {
-                    $ownerRole->givePermissionTo($permissionName);
+                if (! $managerRole->hasPermissionTo($permissionName, $guard)) {
+                    $managerRole->givePermissionTo($permissionName);
                 }
             }
         }

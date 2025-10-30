@@ -29,14 +29,14 @@ class ViewTenant extends ViewRecord
         }
 
         $users = $record->users;
-        $ownerCount = $users->filter(function ($user) use ($record) {
-            return $user->isOwnerOfTenant($record);
+        $managerCount = $users->filter(function ($user) use ($record) {
+            return $user->isManagerOfTenant($record);
         })->count();
 
         return [
             'user_count' => $users->count(),
-            'owner_count' => $ownerCount,
-            'regular_user_count' => $users->count() - $ownerCount,
+            'owner_count' => $managerCount,
+            'regular_user_count' => $users->count() - $managerCount,
             'is_active' => $record->is_active,
             'can_delete' => $users->count() === 0,
         ];

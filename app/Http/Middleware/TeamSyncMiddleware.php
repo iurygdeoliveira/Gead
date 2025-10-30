@@ -10,6 +10,7 @@ use App\Tenancy\SpatieTeamResolver;
 use Closure;
 use Filament\Facades\Filament;
 use Illuminate\Http\Request;
+use Spatie\Permission\PermissionRegistrar;
 use Symfony\Component\HttpFoundation\Response;
 
 class TeamSyncMiddleware
@@ -29,6 +30,8 @@ class TeamSyncMiddleware
                     if ($routeTenant instanceof Tenant && $user->canAccessTenant($routeTenant)) {
                         $resolver = app(SpatieTeamResolver::class);
                         $resolver->setPermissionsTeamId($routeTenant->getKey());
+                        $registrar = app(PermissionRegistrar::class);
+                        $registrar->setPermissionsTeamId($routeTenant->getKey());
 
                         return $next($request);
                     }
@@ -44,6 +47,8 @@ class TeamSyncMiddleware
                     if ($tenant instanceof Tenant) {
                         $resolver = app(SpatieTeamResolver::class);
                         $resolver->setPermissionsTeamId($tenant->getKey());
+                        $registrar = app(PermissionRegistrar::class);
+                        $registrar->setPermissionsTeamId($tenant->getKey());
 
                         return $next($request);
                     }
@@ -53,9 +58,13 @@ class TeamSyncMiddleware
                 if ($currentTenant instanceof Tenant) {
                     $resolver = app(SpatieTeamResolver::class);
                     $resolver->setPermissionsTeamId($currentTenant->getKey());
+                    $registrar = app(PermissionRegistrar::class);
+                    $registrar->setPermissionsTeamId($currentTenant->getKey());
                 } else {
                     $resolver = app(SpatieTeamResolver::class);
                     $resolver->setPermissionsTeamId(0);
+                    $registrar = app(PermissionRegistrar::class);
+                    $registrar->setPermissionsTeamId(0);
                 }
             }
         }

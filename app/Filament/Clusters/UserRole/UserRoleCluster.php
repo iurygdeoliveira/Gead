@@ -37,7 +37,7 @@ class UserRoleCluster extends Cluster
         }
 
         $currentTenant = Filament::getTenant();
-        if ($currentTenant instanceof Tenant && $user->isOwnerOfTenant($currentTenant)) {
+        if ($currentTenant instanceof Tenant && $user->isManagerOfTenant($currentTenant)) {
             return true;
         }
 

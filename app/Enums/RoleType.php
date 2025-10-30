@@ -10,15 +10,19 @@ use Filament\Support\Contracts\HasLabel;
 enum RoleType: string implements HasLabel
 {
     case ADMIN = 'Admin';
-    case OWNER = 'Owner';
-    case USER = 'User';
+    case MANAGER = 'Manager';
+    case TEACHER = 'Teacher';
+    case STUDENT = 'Student';
+    case EMPLOYEE = 'Employee';
 
     public function getLabel(): string
     {
         return match ($this) {
             self::ADMIN => 'Administrador',
-            self::OWNER => 'Proprietário',
-            self::USER => 'Usuário Comum',
+            self::MANAGER => 'Gerente',
+            self::TEACHER => 'Professor',
+            self::STUDENT => 'Aluno',
+            self::EMPLOYEE => 'Funcionário',
         };
     }
 
@@ -31,20 +35,38 @@ enum RoleType: string implements HasLabel
         ]);
     }
 
-    public static function ensureOwnerRoleForTeam(int $teamId, string $guard): Role
+    public static function ensureManagerRoleForTeam(int $teamId, string $guard): Role
     {
         return Role::firstOrCreate([
             'team_id' => $teamId,
-            'name' => self::OWNER->value,
+            'name' => self::MANAGER->value,
             'guard_name' => $guard,
         ]);
     }
 
-    public static function ensureUserRoleForTeam(int $teamId, string $guard): Role
+    public static function ensureTeacherRoleForTeam(int $teamId, string $guard): Role
     {
         return Role::firstOrCreate([
             'team_id' => $teamId,
-            'name' => self::USER->value,
+            'name' => self::TEACHER->value,
+            'guard_name' => $guard,
+        ]);
+    }
+
+    public static function ensureStudentRoleForTeam(int $teamId, string $guard): Role
+    {
+        return Role::firstOrCreate([
+            'team_id' => $teamId,
+            'name' => self::STUDENT->value,
+            'guard_name' => $guard,
+        ]);
+    }
+
+    public static function ensureEmployeeRoleForTeam(int $teamId, string $guard): Role
+    {
+        return Role::firstOrCreate([
+            'team_id' => $teamId,
+            'name' => self::EMPLOYEE->value,
             'guard_name' => $guard,
         ]);
     }

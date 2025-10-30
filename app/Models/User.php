@@ -173,15 +173,7 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
         }
 
         if ($panel->getId() === 'user') {
-            if ($this->hasRole(RoleType::USER->value)) {
-                return true;
-            }
-
-            if ($this->hasOwnerRoleInAnyTenant()) {
-                return true;
-            }
-
-            return $this->tenants()->exists();
+            return $this->tenants()->where('is_active', true)->exists();
         }
 
         return false;
@@ -231,19 +223,13 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
         return $this->tenants()->whereKey($tenant->getKey())->exists();
     }
 
-    public function isOwnerOfTenant(Tenant $tenant): bool
+    public function isManagerOfTenant(Tenant $tenant): bool
     {
         return $this->getRoleQueryBuilder($tenant)
-            ->where('roles.name', RoleType::OWNER->value)
+            ->where('roles.name', RoleType::MANAGER->value)
             ->exists();
     }
 
-    public function isUserOfTenant(Tenant $tenant): bool
-    {
-        return $this->getRoleQueryBuilder($tenant)
-            ->where('roles.name', RoleType::USER->value)
-            ->exists();
-    }
 
     public function getRolesForTenant(Tenant $tenant): Collection
     {
@@ -257,10 +243,10 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
         return $this->getRoleQueryBuilder($tenant)->exists();
     }
 
-    public function hasOwnerRoleInAnyTenant(): bool
+    public function hasManagerRoleInAnyTenant(): bool
     {
         return $this->rolesWithTeams()
-            ->where('roles.name', RoleType::OWNER->value)
+            ->where('roles.name', RoleType::MANAGER->value)
             ->exists();
     }
 
@@ -276,7 +262,7 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
     public function scopeWithRolesForTenant($query, Tenant $tenant): void
     {
         $query->with([
-            'rolesWithTeams' => fn ($q) => $q->where('team_id', $tenant->id),
+            'rolesWithTeams' => fn ($q) => $q->where('model_has_roles.team_id', $tenant->id),
         ]);
     }
 
@@ -303,26 +289,11 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
             ->detach($role->getKey());
     }
 
-    public function removeAllUserRolesFromTenant(Tenant $tenant): void
+
+    public function removeAllManagerRolesFromTenant(Tenant $tenant): void
     {
         $roleIds = Role::query()
-            ->where('name', RoleType::USER->value)
-            ->where('team_id', $tenant->id)
-            ->pluck('id');
-
-        if ($roleIds->isEmpty()) {
-            return;
-        }
-
-        $this->rolesWithTeams()
-            ->wherePivot('team_id', $tenant->id)
-            ->detach($roleIds->toArray());
-    }
-
-    public function removeAllOwnerRolesFromTenant(Tenant $tenant): void
-    {
-        $roleIds = Role::query()
-            ->where('name', RoleType::OWNER->value)
+            ->where('name', RoleType::MANAGER->value)
             ->where('team_id', $tenant->id)
             ->pluck('id');
 

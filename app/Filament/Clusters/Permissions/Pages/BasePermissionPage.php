@@ -46,8 +46,8 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
     public function mount(): void
     {
         $this->guard = config('auth.defaults.guard', 'web');
-        // Apenas "Usuário Comum" no select.
-        $this->selectedRole = RoleType::USER->value;
+        // Default to "Professor"
+        $this->selectedRole = RoleType::TEACHER->value;
     }
 
     public function form(Schema $schema): Schema
@@ -63,7 +63,9 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
             Select::make('selectedRole')
                 ->label('Tipo de usuário')
                 ->options([
-                    RoleType::USER->value => RoleType::USER->getLabel(),
+                    RoleType::TEACHER->value => RoleType::TEACHER->getLabel(),
+                    RoleType::STUDENT->value => RoleType::STUDENT->getLabel(),
+                    RoleType::EMPLOYEE->value => RoleType::EMPLOYEE->getLabel(),
                 ])
                 ->native(false)
                 ->required()
@@ -148,7 +150,7 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
                 ->getStateUsing(
                     fn (Tenant $record): bool => $this->hasPermission($record->id, $slug, PermissionEnum::VIEW)
                 )
-                ->afterStateUpdated(
+                ->updateStateUsing(
                     fn (Tenant $record, bool $state) => $this->setPermission($record->id, $slug, PermissionEnum::VIEW, $state)
                 ),
 
@@ -161,7 +163,7 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
                 ->getStateUsing(
                     fn (Tenant $record): bool => $this->hasPermission($record->id, $slug, PermissionEnum::CREATE)
                 )
-                ->afterStateUpdated(
+                ->updateStateUsing(
                     fn (Tenant $record, bool $state) => $this->setPermission($record->id, $slug, PermissionEnum::CREATE, $state)
                 ),
 
@@ -174,7 +176,7 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
                 ->getStateUsing(
                     fn (Tenant $record): bool => $this->hasPermission($record->id, $slug, PermissionEnum::UPDATE)
                 )
-                ->afterStateUpdated(
+                ->updateStateUsing(
                     fn (Tenant $record, bool $state) => $this->setPermission($record->id, $slug, PermissionEnum::UPDATE, $state)
                 ),
 
@@ -187,7 +189,7 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
                 ->getStateUsing(
                     fn (Tenant $record): bool => $this->hasPermission($record->id, $slug, PermissionEnum::DELETE)
                 )
-                ->afterStateUpdated(
+                ->updateStateUsing(
                     fn (Tenant $record, bool $state) => $this->setPermission($record->id, $slug, PermissionEnum::DELETE, $state)
                 ),
         ]);
@@ -217,7 +219,8 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
             return;
         }
 
-        app(PermissionRegistrar::class)->setPermissionsTeamId($tenantId);
+        $registrar = app(PermissionRegistrar::class);
+        $registrar->setPermissionsTeamId($tenantId);
 
         $role = $this->resolveRole($tenantId);
         $permissionName = "{$resourceSlug}.{$action->value}";
@@ -228,13 +231,13 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
             if (! $role->hasPermissionTo($permissionName, $this->guard)) {
                 $role->givePermissionTo($permissionName);
             }
-
-            return;
+        } else {
+            if ($role->hasPermissionTo($permissionName, $this->guard)) {
+                $role->revokePermissionTo($permissionName);
+            }
         }
 
-        if ($role->hasPermissionTo($permissionName, $this->guard)) {
-            $role->revokePermissionTo($permissionName);
-        }
+        $registrar->forgetCachedPermissions();
     }
 
     protected function toggleAll(bool $state): void
@@ -277,7 +280,11 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
 
     protected function resolveRole(int $tenantId): Role
     {
-        // Nesta tela só aparece USER, então garantir a role de USER no team
-        return RoleType::ensureUserRoleForTeam($tenantId, $this->guard);
+        return match ($this->selectedRole) {
+            RoleType::TEACHER->value => RoleType::ensureTeacherRoleForTeam($tenantId, $this->guard),
+            RoleType::STUDENT->value => RoleType::ensureStudentRoleForTeam($tenantId, $this->guard),
+            RoleType::EMPLOYEE->value => RoleType::ensureEmployeeRoleForTeam($tenantId, $this->guard),
+            default => throw new \Exception('Invalid role selected'),
+        };
     }
 }
