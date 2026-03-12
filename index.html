@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeAD | Gestão Avaliativa Discente</title>
+    
+    <!-- Fonts: Outfit for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="logo-container">
+                <img src="LOGO.jpeg" alt="Logo GeAD" class="brand-logo">
+                <span class="brand-name">GeAD</span>
+            </div>
+            <div class="nav-links">
+                <a href="#solucao" class="nav-link">A Solução</a>
+                <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
+                <a href="#acesso" class="btn btn-outline">Acesso Restrito</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container grid-2-col">
+                <div class="hero-content reveal">
+                    <div class="badge">Gestão Institucional de Ensino</div>
+                    <h1 class="hero-title">A avaliação discente <span>elevada ao padrão atual.</span></h1>
+                    <p class="hero-subtitle">
+                        Segurança. Automação. Zero planilhas manuais. A solução definitiva que cruza dados institucionais nativos do SUAP para o corpo docente.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#funcionalidades" class="btn btn-primary">Conhecer a Solução</a>
+                        <a href="#dores" class="btn btn-secondary">Entender o problema</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual reveal stagger">
+                    <div class="mockup-window">
+                        <div class="mockup-header">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="skeleton-line full"></div>
+                            <div class="skeleton-line medium"></div>
+                            
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="stat-val">100%</div>
+                                    <div class="stat-label">Alunos Validados</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="stat-val">0h</div>
+                                    <div class="stat-label">Gasto em Planilhas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain Section (The Problem) -->
+        <section class="pain-section" id="dores">
+            <div class="container reveal">
+                <div class="section-header text-center max-w-lg mx-auto">
+                    <span class="warning-badge">O Processo Defasado</span>
+                    <h2 class="section-title">O custo escondido da consolidação manual</h2>
+                    <p class="section-desc">Procedimentos baseados e planilhas exigem exaustão humana ao mesmo tempo que produzem vulnerabilidade estratégica.</p>
+                </div>
+
+                <div class="pain-grid">
+                    <div class="pain-card reveal stagger">
+                        <div class="pain-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                        <h3>Retrabalho Exaustivo</h3>
+                        <p>O esforço de mapear cada avaliação docênte em planilhas dispersas paralisa a gerência todo fim de semestre.</p>
+                    </div>
+                    
+                    <div class="pain-card reveal stagger" style="transition-delay: 100ms;">
+                        <div class="pain-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                        </div>
+                        <h3>Vulnerabilidade de Dados</h3>
+                        <p>Falta de mecanismo antifraude institucional. Alunos evadidos conseguem forjar avaliações distorcendo o panorama docente real.</p>
+                    </div>
+
+                    <div class="pain-card reveal stagger" style="transition-delay: 200ms;">
+                        <div class="pain-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </div>
+                        <h3>Distribuição Manual</h3>
+                        <p>Tempo desperdiçado ao construir artesanalmente e remeter os feedbacks impressos (ou isolados) a cada educador.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Transition -->
+        <section class="solution-intro relative" id="solucao">
+            <div class="container text-center reveal">
+                <h2 class="section-title">Centralizado. Limpo. Profissional.</h2>
+                <p class="section-desc max-w-lg mx-auto">O GeAD resolve essa dissonância técnica abstraindo o trabalho pesado para o back-end e devolvendo foco ao docente.</p>
+            </div>
+        </section>
+
+        <!-- Features Bento Grid -->
+        <section class="features-section" id="funcionalidades">
+            <div class="container">
+                <div class="bento-grid">
+                    
+                    <!-- Feature 1: SUAP -->
+                    <div class="bento-item bento-large reveal">
+                        <div class="bento-content">
+                            <div class="feature-icon highlight">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                                </svg>
+                            </div>
+                            <h3>Integração SUAP Direta</h3>
+                            <p>Autenticação via matrícula que cruza imediatamente situação de discentes matriculados vs evadidos antes do voto ser computado.</p>
+                        </div>
+                        <div class="bento-visual overflow-hidden">
+                            <div class="mock-table">
+                                <div class="mock-row header"><span>Matrícula</span><span>Status</span></div>
+                                <div class="mock-row"><span>2024101A...</span><span class="status-badge green">Ativo</span></div>
+                                <div class="mock-row"><span>2023201R...</span><span class="status-badge red">Evasão</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: PDF automação -->
+                    <div class="bento-item reveal" style="transition-delay: 100ms;">
+                        <div class="bento-content">
+                            <div class="feature-icon highlight">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                </svg>
+                            </div>
+                            <h3>Relatórios Consolidados</h3>
+                            <p>Distribuição autônoma de PDFs para a caixa de e-mail de cada educador avaliado ao fim da janela institucional.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: GOV.BR -->
+                    <div class="bento-item reveal" style="transition-delay: 200ms;">
+                        <div class="bento-content">
+                            <div class="feature-icon highlight">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
+                            </div>
+                            <h3>Certificação GOV.BR</h3>
+                            <p>Garantimos um workflow sem contestação e completamente auditável graças à assinatura oficial eletrônica no fim do processo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Formulários -->
+                    <div class="bento-item bento-wide reveal">
+                        <div class="bento-content horizontal">
+                            <div class="bento-info">
+                                <div class="feature-icon highlight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
+                                </div>
+                                <h3>Dashboard Gerencial Restrito</h3>
+                                <p>Gerência enxerga o painel ampliado e controle de semestres; docente vê seus resultados sem distração; discente submete o questionário blindado contra repetência indesejada. Separação de prioridades levada a sério.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section relative" id="contato">
+            <div class="container text-center reveal">
+                <h2>O fim do improviso em planilhas</h2>
+                <p>Estruture a evolução do ensino adotando modernidade instantânea e ganho técnico administrativo.</p>
+                <div class="cta-buttons" style="margin-top: 2rem;">
+                    <button class="btn btn-primary btn-large">Acessar GeAD</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="LOGO.jpeg" alt="GeAD Logo" class="footer-logo">
+                <span class="brand-name-footer">Gestão Avaliativa Discente</span>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2026 GeAD. Todos os direitos reservados.</p>
+                <div class="links">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Suporte Institucional</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Intersection Observer Script for Reveal Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Previne re-animar
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(el => revealOnScroll.observe(el));
+        });
+    </script>
+</body>
+</html>
