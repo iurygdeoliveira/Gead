@@ -1,0 +1,37 @@
+---
+/**
+ * GeAD — Landing Page Principal
+ * Gestão Avaliativa Discente
+ * Composição de todos os componentes
+ */
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import PainPoints from '../components/PainPoints.astro';
+import Solution from '../components/Solution.astro';
+import Features from '../components/Features.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="GeAD | Gestão Avaliativa Discente"
+  description="Sistema automatizado de avaliação docente com integração SUAP, relatórios consolidados e certificação GOV.BR. Segurança, eficiência e modernidade para a gestão de ensino."
+>
+  <Navbar />
+
+  <main>
+    <Hero />
+    <PainPoints />
+    <Solution />
+    <Features />
+    <CTA />
+  </main>
+
+  <Footer />
+
+  <!-- Animations Script -->
+  <script>
+    import '../scripts/animations.ts';
+  </script>
+</Layout>

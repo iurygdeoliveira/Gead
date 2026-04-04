@@ -1,0 +1,389 @@
+---
+/**
+ * Hero Section — Focada em conversão
+ * Hierarquia visual clara, headline impactante, CTAs proeminentes
+ * Mockup visual da aplicação em glass card
+ */
+---
+
+<section class="hero" id="inicio">
+  <!-- Orbes decorativas de glow -->
+  <div class="glow-orb glow-orb--primary hero__glow-1" aria-hidden="true"></div>
+  <div class="glow-orb glow-orb--accent hero__glow-2" aria-hidden="true"></div>
+
+  <div class="hero__container">
+    <div class="hero__content reveal">
+      <div class="hero__badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+        </svg>
+        <span>Gestão Institucional de Ensino</span>
+      </div>
+
+      <h1 class="hero__title">
+        A avaliação discente
+        <span class="hero__title-accent">elevada ao padrão atual.</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        Segurança. Automação. Zero planilhas manuais. A solução definitiva que cruza dados institucionais nativos do SUAP para o corpo docente.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#funcionalidades" class="btn btn-primary btn-large" id="cta-hero-primary">
+          Conhecer a Solução
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="#dores" class="btn btn-secondary" id="cta-hero-secondary">
+          Entender o Problema
+        </a>
+      </div>
+
+      <!-- Social proof sutil -->
+      <div class="hero__proof">
+        <div class="hero__proof-dot" aria-hidden="true"></div>
+        <span>Desenvolvido para o IFPA</span>
+      </div>
+    </div>
+
+    <div class="hero__visual reveal" style="transition-delay: 150ms;">
+      <div class="hero__mockup glass-elevated">
+        <div class="mockup__header">
+          <span class="mockup__dot" aria-hidden="true"></span>
+          <span class="mockup__dot" aria-hidden="true"></span>
+          <span class="mockup__dot" aria-hidden="true"></span>
+          <span class="mockup__url">gead.ifpa.edu.br</span>
+        </div>
+        <div class="mockup__body">
+          <div class="mockup__skeleton-line mockup__skeleton--full" aria-hidden="true"></div>
+          <div class="mockup__skeleton-line mockup__skeleton--medium" aria-hidden="true"></div>
+
+          <div class="mockup__stats">
+            <div class="mockup__stat-card glass">
+              <div class="mockup__stat-icon mockup__stat-icon--green" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="mockup__stat-value">100%</div>
+              <div class="mockup__stat-label">Alunos Validados</div>
+            </div>
+            <div class="mockup__stat-card glass">
+              <div class="mockup__stat-icon mockup__stat-icon--blue" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div class="mockup__stat-value">0h</div>
+              <div class="mockup__stat-label">Gasto em Planilhas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badge -->
+      <div class="hero__floating-badge glass reveal-scale" style="transition-delay: 400ms;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Assinatura GOV.BR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-top: calc(5rem + 6rem);
+    padding-bottom: 6rem;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__glow-1 {
+    width: 500px;
+    height: 500px;
+    top: -10%;
+    right: -5%;
+  }
+
+  .hero__glow-2 {
+    width: 400px;
+    height: 400px;
+    bottom: 10%;
+    left: -10%;
+  }
+
+  .hero__container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* === Badge === */
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(10, 166, 49, 0.1);
+    border: 1px solid rgba(10, 166, 49, 0.2);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-highlight);
+    margin-bottom: 2rem;
+    letter-spacing: 0.3px;
+  }
+
+  /* === Title === */
+  .hero__title {
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
+    line-height: 1.08;
+  }
+
+  .hero__title-accent {
+    background: linear-gradient(135deg, var(--color-highlight) 0%, #4ade80 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* === Subtitle === */
+  .hero__subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    max-width: 90%;
+  }
+
+  /* === Actions === */
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* === Social proof === */
+  .hero__proof {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .hero__proof-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-highlight);
+    box-shadow: 0 0 8px var(--color-highlight);
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* === Visual / Mockup === */
+  .hero__visual {
+    position: relative;
+  }
+
+  .hero__mockup {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .mockup__header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--color-border-glass);
+  }
+
+  .mockup__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .mockup__dot:first-child { background: rgba(191, 4, 4, 0.6); }
+  .mockup__dot:nth-child(2) { background: rgba(255, 193, 7, 0.5); }
+  .mockup__dot:nth-child(3) { background: rgba(10, 166, 49, 0.5); }
+
+  .mockup__url {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+  }
+
+  .mockup__body {
+    padding: 2rem;
+  }
+
+  .mockup__skeleton-line {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+  }
+
+  .mockup__skeleton--full { width: 100%; }
+  .mockup__skeleton--medium { width: 55%; margin-bottom: 2rem; }
+
+  .mockup__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .mockup__stat-card {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .mockup__stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+  }
+
+  .mockup__stat-icon--green {
+    background: rgba(10, 166, 49, 0.15);
+    color: var(--color-highlight);
+  }
+
+  .mockup__stat-icon--blue {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+  }
+
+  .mockup__stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .mockup__stat-label {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  /* === Floating badge === */
+  .hero__floating-badge {
+    position: absolute;
+    bottom: -1rem;
+    left: -1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-highlight);
+    background: rgba(10, 166, 49, 0.1);
+    border: 1px solid rgba(10, 166, 49, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* === Responsivo === */
+  @media (max-width: 1024px) {
+    .hero__container {
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: calc(5rem + 3rem);
+      padding-bottom: 3rem;
+      min-height: auto;
+    }
+
+    .hero__container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero__subtitle {
+      max-width: 100%;
+    }
+
+    .hero__actions {
+      justify-content: center;
+    }
+
+    .hero__proof {
+      justify-content: center;
+    }
+
+    .hero__floating-badge {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      margin-top: 1.5rem;
+      justify-content: center;
+    }
+
+    .hero__glow-1 {
+      width: 300px;
+      height: 300px;
+      top: -5%;
+      right: -15%;
+    }
+
+    .hero__glow-2 {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .hero__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hero__actions .btn {
+      width: 100%;
+    }
+  }
+</style>

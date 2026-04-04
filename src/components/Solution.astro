@@ -1,0 +1,84 @@
+---
+/**
+ * Solution — Transição visual entre problema e solução
+ */
+---
+
+<section class="solution" id="solucao">
+  <div class="solution__container reveal">
+    <!-- Linha decorativa -->
+    <div class="solution__divider" aria-hidden="true">
+      <div class="solution__divider-line"></div>
+      <div class="solution__divider-dot"></div>
+      <div class="solution__divider-line"></div>
+    </div>
+
+    <h2 class="solution__title">
+      Centralizado. Limpo.
+      <span class="solution__title-accent">Profissional.</span>
+    </h2>
+    <p class="solution__description">
+      O GeAD resolve essa dissonância técnica abstraindo o trabalho pesado para o back-end e devolvendo foco ao docente. Uma plataforma integrada ao SUAP que automatiza todo o ciclo avaliativo.
+    </p>
+  </div>
+</section>
+
+<style>
+  .solution {
+    position: relative;
+    padding: 5rem 0 3rem;
+  }
+
+  .solution__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .solution__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .solution__divider-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-highlight), transparent);
+  }
+
+  .solution__divider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-highlight);
+    box-shadow: 0 0 12px var(--color-highlight);
+  }
+
+  .solution__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+  }
+
+  .solution__title-accent {
+    color: var(--color-highlight);
+  }
+
+  .solution__description {
+    color: var(--color-text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.75;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .solution {
+      padding: 3rem 0 2rem;
+    }
+  }
+</style>
