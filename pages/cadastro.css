@@ -83,8 +83,7 @@ body {
 
 /* ---------- Page Layout ---------- */
 .register-page {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  display: flex;
   min-height: 100vh;
   position: relative;
   z-index: 1;
@@ -97,7 +96,11 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 46%;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -206,7 +209,9 @@ body {
   justify-content: center;
   padding: 3rem 2.5rem;
   position: relative;
-  overflow-y: auto;
+  margin-left: 46%;
+  flex: 1;
+  min-height: 100vh;
 }
 
 .register-form-wrapper {
@@ -669,16 +674,16 @@ body {
     font-size: 2.2rem;
   }
 
-  .register-page {
-    grid-template-columns: 0.9fr 1.1fr;
+  .register-brand {
+    width: 42%;
+  }
+
+  .register-form-panel {
+    margin-left: 42%;
   }
 }
 
 @media (max-width: 768px) {
-  .register-page {
-    grid-template-columns: 1fr;
-  }
-
   .register-brand {
     display: none;
   }
@@ -688,6 +693,7 @@ body {
   }
 
   .register-form-panel {
+    margin-left: 0;
     padding: 2rem 1.5rem;
     align-items: flex-start;
   }
