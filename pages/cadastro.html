@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - GeAD</title>
+    <meta name="description" content="Crie sua conta no sistema GeAD - Gestão Avaliativa Discente. Cadastre-se para acessar a plataforma.">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="icon" type="image/jpeg" href="../LOGO.jpeg">
+</head>
+<body>
+
+    <!-- Background floating green dots -->
+    <div class="bg-dots" aria-hidden="true">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <main class="register-page">
+        <!-- Left panel — branding -->
+        <div class="register-brand" aria-hidden="true">
+            <div class="register-brand-content">
+                <a href="landing_page.html" class="register-brand-logo">
+                    <img src="../LOGO.jpeg" alt="GeAD Logo" width="52" height="52">
+                    <span>GeAD</span>
+                </a>
+                <h2>Crie sua<br><span>Conta</span></h2>
+                <p>Junte-se à plataforma institucional de avaliação docente do campus Araguaína. Configure seu perfil e comece a utilizar o sistema.</p>
+
+                <div class="register-brand-features">
+                    <div class="register-brand-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                        <span>Perfil personalizado</span>
+                    </div>
+                    <div class="register-brand-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        <span>Dados protegidos</span>
+                    </div>
+                    <div class="register-brand-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                        <span>Cadastro rápido e simples</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right panel — register form -->
+        <div class="register-form-panel">
+            <div class="register-form-wrapper">
+                <!-- Mobile logo (hidden on desktop) -->
+                <a href="landing_page.html" class="register-mobile-logo">
+                    <img src="../LOGO.jpeg" alt="GeAD Logo" width="44" height="44">
+                    <span>GeAD</span>
+                </a>
+
+                <div class="register-form-header">
+                    <h1>Criar sua conta</h1>
+                    <p>Preencha os dados abaixo para se cadastrar no sistema.</p>
+                </div>
+
+                <!-- Social buttons (visual only) -->
+                <div class="social-buttons">
+                    <button type="button" class="btn-social" id="btn-google" aria-label="Cadastrar com Google">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.77.42 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="btn-social" id="btn-linkedin" aria-label="Cadastrar com LinkedIn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <span>LinkedIn</span>
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>ou cadastre com e-mail</span>
+                </div>
+
+                <form id="register-form" novalidate>
+                    <!-- Section 1: Identification -->
+                    <fieldset class="form-section">
+                        <legend class="form-section-title">Dados de Identificação</legend>
+
+                        <div class="form-group">
+                            <label for="fullname">Nome Completo <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                                <input type="text" id="fullname" name="fullname" placeholder="Seu nome completo" autocomplete="name" required aria-describedby="fullname-error">
+                            </div>
+                            <span class="field-error" id="fullname-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                                <input type="email" id="email" name="email" placeholder="seu.nome@ifto.edu.br" autocomplete="email" required aria-describedby="email-error">
+                            </div>
+                            <span class="field-error" id="email-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Senha <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                                <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required aria-describedby="password-error password-strength-label">
+                                <button type="button" class="toggle-password" id="toggle-password" aria-label="Mostrar senha">
+                                    <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    <svg class="eye-closed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="password-strength" aria-hidden="true">
+                                <div class="strength-bars">
+                                    <div class="strength-bar" id="bar-1"></div>
+                                    <div class="strength-bar" id="bar-2"></div>
+                                    <div class="strength-bar" id="bar-3"></div>
+                                    <div class="strength-bar" id="bar-4"></div>
+                                </div>
+                                <span class="strength-label" id="password-strength-label"></span>
+                            </div>
+                            <span class="field-error" id="password-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmação de Senha <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                                <input type="password" id="confirm-password" name="confirm-password" placeholder="Repita a senha" autocomplete="new-password" required aria-describedby="confirm-password-error">
+                            </div>
+                            <span class="field-error" id="confirm-password-error" role="alert" aria-live="polite"></span>
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 2: Profile -->
+                    <fieldset class="form-section">
+                        <legend class="form-section-title">Dados de Perfil</legend>
+
+                        <div class="form-group">
+                            <label for="username">Nome de Usuário <span class="optional">(Opcional)</span></label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                <input type="text" id="username" name="username" placeholder="@como_devemos_te_chamar" autocomplete="username">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefone / WhatsApp</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+                                <input type="tel" id="phone" name="phone" placeholder="(63) 99999-9999" autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="role">Cargo ou Vínculo</label>
+                            <div class="select-wrapper">
+                                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"/></svg>
+                                <select id="role" name="role">
+                                    <option value="" disabled selected>Selecione seu vínculo</option>
+                                    <option value="estudante">Estudante</option>
+                                    <option value="tecnico">Técnico Administrativo</option>
+                                    <option value="gestor">Gestor</option>
+                                    <option value="docente">Docente</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                                <svg class="select-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-register" id="btn-register">
+                        <span class="btn-register-text">Criar Conta</span>
+                        <svg class="btn-register-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                        <div class="btn-spinner" aria-hidden="true">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+
+                    <div class="form-error-global" id="form-error-global" role="alert" aria-live="polite"></div>
+                </form>
+
+                <div class="register-login-link">
+                    <p>Já possui uma conta? <a href="login.html">Faça Login</a></p>
+                </div>
+
+                <div class="register-footer">
+                    <p>Voltar para a <a href="landing_page.html">página inicial</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Toggle password visibility
+        const toggleBtn = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('password');
+        const eyeOpen = toggleBtn.querySelector('.eye-open');
+        const eyeClosed = toggleBtn.querySelector('.eye-closed');
+
+        toggleBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeOpen.style.display = isPassword ? 'none' : 'block';
+            eyeClosed.style.display = isPassword ? 'block' : 'none';
+            toggleBtn.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+        });
+
+        // Password strength meter
+        const strengthBars = [
+            document.getElementById('bar-1'),
+            document.getElementById('bar-2'),
+            document.getElementById('bar-3'),
+            document.getElementById('bar-4')
+        ];
+        const strengthLabel = document.getElementById('password-strength-label');
+        const strengthContainer = document.getElementById('password-strength');
+
+        function evaluateStrength(password) {
+            let score = 0;
+            if (password.length >= 8) score++;
+            if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
+            if (/\d/.test(password)) score++;
+            if (/[^a-zA-Z0-9]/.test(password)) score++;
+            return score;
+        }
+
+        const strengthConfig = {
+            0: { label: '', color: '' },
+            1: { label: 'Fraca', color: '#BF0404' },
+            2: { label: 'Média', color: '#e6a817' },
+            3: { label: 'Forte', color: '#0B8C2B' },
+            4: { label: 'Muito forte', color: '#035921' }
+        };
+
+        passwordInput.addEventListener('input', () => {
+            const val = passwordInput.value;
+            if (!val) {
+                strengthContainer.classList.remove('visible');
+                strengthBars.forEach(b => { b.style.background = ''; b.classList.remove('active'); });
+                strengthLabel.textContent = '';
+                return;
+            }
+            strengthContainer.classList.add('visible');
+            const score = evaluateStrength(val);
+            const cfg = strengthConfig[score];
+
+            strengthBars.forEach((b, i) => {
+                if (i < score) {
+                    b.style.background = cfg.color;
+                    b.classList.add('active');
+                } else {
+                    b.style.background = '';
+                    b.classList.remove('active');
+                }
+            });
+            strengthLabel.textContent = cfg.label;
+            strengthLabel.style.color = cfg.color;
+        });
+
+        // Form elements
+        const form = document.getElementById('register-form');
+        const fullnameInput = document.getElementById('fullname');
+        const emailInput = document.getElementById('email');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const btnRegister = document.getElementById('btn-register');
+        const globalError = document.getElementById('form-error-global');
+
+        const errorMap = {
+            fullname: document.getElementById('fullname-error'),
+            email: document.getElementById('email-error'),
+            password: document.getElementById('password-error'),
+            confirmPassword: document.getElementById('confirm-password-error')
+        };
+
+        // Clear errors on input
+        [fullnameInput, emailInput, passwordInput, confirmPasswordInput].forEach(input => {
+            input.addEventListener('input', () => {
+                const key = input === confirmPasswordInput ? 'confirmPassword' : input.name;
+                if (errorMap[key]) {
+                    errorMap[key].textContent = '';
+                    input.parentElement.classList.remove('error');
+                }
+            });
+        });
+
+        // Phone mask
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+            if (v.length > 6) {
+                v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+            } else if (v.length > 2) {
+                v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+            } else if (v.length > 0) {
+                v = `(${v}`;
+            }
+            e.target.value = v;
+        });
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Reset
+            Object.values(errorMap).forEach(el => el.textContent = '');
+            globalError.textContent = '';
+            document.querySelectorAll('.input-wrapper.error').forEach(w => w.classList.remove('error'));
+
+            let hasError = false;
+
+            // Validate fullname
+            if (!fullnameInput.value.trim()) {
+                errorMap.fullname.textContent = 'O nome completo é obrigatório.';
+                fullnameInput.parentElement.classList.add('error');
+                hasError = true;
+            }
+
+            // Validate email
+            const emailVal = emailInput.value.trim();
+            if (!emailVal) {
+                errorMap.email.textContent = 'O e-mail é obrigatório.';
+                emailInput.parentElement.classList.add('error');
+                hasError = true;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+                errorMap.email.textContent = 'Informe um e-mail válido.';
+                emailInput.parentElement.classList.add('error');
+                hasError = true;
+            }
+
+            // Validate password
+            const passVal = passwordInput.value;
+            if (!passVal) {
+                errorMap.password.textContent = 'A senha é obrigatória.';
+                passwordInput.parentElement.classList.add('error');
+                hasError = true;
+            } else if (passVal.length < 8) {
+                errorMap.password.textContent = 'A senha deve ter pelo menos 8 caracteres.';
+                passwordInput.parentElement.classList.add('error');
+                hasError = true;
+            }
+
+            // Validate confirm password
+            const confirmVal = confirmPasswordInput.value;
+            if (!confirmVal) {
+                errorMap.confirmPassword.textContent = 'Confirme sua senha.';
+                confirmPasswordInput.parentElement.classList.add('error');
+                hasError = true;
+            } else if (confirmVal !== passVal) {
+                errorMap.confirmPassword.textContent = 'As senhas não coincidem.';
+                confirmPasswordInput.parentElement.classList.add('error');
+                hasError = true;
+            }
+
+            if (hasError) return;
+
+            // Loading state
+            btnRegister.classList.add('loading');
+            btnRegister.disabled = true;
+
+            // Simulate registration
+            setTimeout(() => {
+                window.location.href = 'acesso_ok.html';
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>
