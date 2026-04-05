@@ -1130,6 +1130,7 @@ section {
   gap: var(--space-sm);
 }
 
+.footer-links li,
 .footer-links a {
   color: var(--neutral-400);
   text-decoration: none;
