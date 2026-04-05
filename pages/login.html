@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GeAD</title>
+    <meta name="description" content="Acesse o sistema GeAD - Gestão Avaliativa Discente. Faça login com suas credenciais institucionais.">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/jpeg" href="../LOGO.jpeg">
+</head>
+<body>
+
+    <!-- Background floating green dots -->
+    <div class="bg-dots" aria-hidden="true">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <main class="login-page">
+        <!-- Left panel — branding -->
+        <div class="login-brand" aria-hidden="true">
+            <div class="login-brand-content">
+                <a href="landing_page.html" class="login-brand-logo">
+                    <img src="../LOGO.jpeg" alt="GeAD Logo" width="52" height="52">
+                    <span>GeAD</span>
+                </a>
+                <h2>Gestão Avaliativa<br><span>Discente</span></h2>
+                <p>Plataforma institucional de avaliação docente do campus Araguaína. Segurança, eficiência e integridade em cada etapa.</p>
+
+                <div class="login-brand-features">
+                    <div class="login-brand-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        <span>Acesso seguro e autenticado</span>
+                    </div>
+                    <div class="login-brand-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
+                        <span>Painel centralizado</span>
+                    </div>
+                    <div class="login-brand-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                        <span>Relatórios automatizados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right panel — login form -->
+        <div class="login-form-panel">
+            <div class="login-form-wrapper">
+                <!-- Mobile logo (hidden on desktop) -->
+                <a href="landing_page.html" class="login-mobile-logo">
+                    <img src="../LOGO.jpeg" alt="GeAD Logo" width="44" height="44">
+                    <span>GeAD</span>
+                </a>
+
+                <div class="login-form-header">
+                    <h1>Bem-vindo de volta</h1>
+                    <p>Informe suas credenciais para acessar o sistema.</p>
+                </div>
+
+                <form id="login-form" novalidate>
+                    <div class="form-group">
+                        <label for="email">E-mail institucional</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="seu.nome@ifto.edu.br"
+                                autocomplete="email"
+                                required
+                                aria-describedby="email-error"
+                            >
+                        </div>
+                        <span class="field-error" id="email-error" role="alert" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="••••••••"
+                                autocomplete="current-password"
+                                required
+                                aria-describedby="password-error"
+                            >
+                            <button type="button" class="toggle-password" id="toggle-password" aria-label="Mostrar senha">
+                                <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                <svg class="eye-closed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg>
+                            </button>
+                        </div>
+                        <span class="field-error" id="password-error" role="alert" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label" for="remember">
+                            <input type="checkbox" id="remember" name="remember">
+                            <span class="checkbox-custom"></span>
+                            Lembrar-me
+                        </label>
+                        <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login" id="btn-login">
+                        <span class="btn-login-text">Entrar no Sistema</span>
+                        <svg class="btn-login-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                        <div class="btn-spinner" aria-hidden="true">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+
+                    <div class="form-error-global" id="form-error-global" role="alert" aria-live="polite"></div>
+                </form>
+
+                <div class="login-footer">
+                    <p>Voltar para a <a href="landing_page.html">página inicial</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Toggle password visibility
+        const toggleBtn = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('password');
+        const eyeOpen = toggleBtn.querySelector('.eye-open');
+        const eyeClosed = toggleBtn.querySelector('.eye-closed');
+
+        toggleBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeOpen.style.display = isPassword ? 'none' : 'block';
+            eyeClosed.style.display = isPassword ? 'block' : 'none';
+            toggleBtn.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+        });
+
+        // Form validation & submission
+        const form = document.getElementById('login-form');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+        const globalError = document.getElementById('form-error-global');
+        const btnLogin = document.getElementById('btn-login');
+
+        // Clear field errors on input
+        emailInput.addEventListener('input', () => {
+            emailError.textContent = '';
+            emailInput.parentElement.classList.remove('error');
+        });
+        passwordInput.addEventListener('input', () => {
+            passwordError.textContent = '';
+            passwordInput.parentElement.classList.remove('error');
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Reset errors
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            globalError.textContent = '';
+            emailInput.parentElement.classList.remove('error');
+            passwordInput.parentElement.classList.remove('error');
+
+            let hasError = false;
+
+            // Validate email
+            const emailValue = emailInput.value.trim();
+            if (!emailValue) {
+                emailError.textContent = 'O e-mail é obrigatório.';
+                emailInput.parentElement.classList.add('error');
+                hasError = true;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+                emailError.textContent = 'Informe um e-mail válido.';
+                emailInput.parentElement.classList.add('error');
+                hasError = true;
+            }
+
+            // Validate password
+            const passwordValue = passwordInput.value;
+            if (!passwordValue) {
+                passwordError.textContent = 'A senha é obrigatória.';
+                passwordInput.parentElement.classList.add('error');
+                hasError = true;
+            } else if (passwordValue.length < 6) {
+                passwordError.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+                passwordInput.parentElement.classList.add('error');
+                hasError = true;
+            }
+
+            if (hasError) return;
+
+            // Show loading state
+            btnLogin.classList.add('loading');
+            btnLogin.disabled = true;
+
+            // Simulate login request
+            setTimeout(() => {
+                window.location.href = 'acesso_ok.html';
+            }, 1800);
+        });
+    </script>
+
+</body>
+</html>
