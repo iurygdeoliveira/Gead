@@ -1,0 +1,1452 @@
+1
+00:00:00,000 --> 00:00:03,120
+que começa a perguntar, Isaac.
+
+2
+00:00:03,120 --> 00:00:06,400
+Deixa eu começar, gente.
+
+3
+00:00:06,400 --> 00:00:12,400
+Então, o propósito aqui dessa gravação é a gente obter os requisites aqui.
+
+4
+00:00:12,400 --> 00:00:15,300
+Destrabalho que a gente vai falar de um túnel de um jongameu,
+
+5
+00:00:15,300 --> 00:00:17,400
+Isaac e o gerente de ensino.
+
+6
+00:00:17,400 --> 00:00:24,000
+Então, a propósito do software aqui, que o nome ainda está em uma escola,
+
+7
+00:00:24,000 --> 00:00:27,800
+mas tem um nome inicial aqui que é o Jet, né?
+
+8
+00:00:27,800 --> 00:00:30,800
+Gestão de desempenho de centes.
+
+9
+00:00:30,800 --> 00:00:37,800
+Então, na verdade, a avaliação, o propósito do software vai ser o que?
+
+10
+00:00:37,800 --> 00:00:43,100
+A gerência utilizar ele para a gerência, a avaliação dos alongos,
+
+11
+00:00:43,100 --> 00:00:45,500
+para se eles vão fazer dois professores.
+
+12
+00:00:45,500 --> 00:00:47,000
+Certo, o nome?
+
+13
+00:00:47,000 --> 00:00:49,000
+Isso, isso mesmo.
+
+14
+00:00:49,000 --> 00:00:50,000
+Beleza.
+
+15
+00:00:50,000 --> 00:00:55,000
+Então, o volume, você vai explonar aí,
+
+16
+00:00:55,500 --> 00:01:00,000
+vai só as principais dures que você tem esse processo, entendeu?
+
+17
+00:01:00,000 --> 00:01:07,000
+E o que você precisa que esse software resolva?
+
+18
+00:01:17,000 --> 00:01:19,000
+Estou a ver o nome?
+
+19
+00:01:19,000 --> 00:01:22,000
+De novo, aí, de novo, aí, que cortou de...
+
+20
+00:01:23,000 --> 00:01:27,000
+Então, eu quero que você faça uma exploração, né?
+
+21
+00:01:27,000 --> 00:01:29,000
+Deslendo.
+
+22
+00:01:29,000 --> 00:01:38,000
+Quais são as principais dures que você tem nesse processo de fazer essa avaliação
+
+23
+00:01:38,000 --> 00:01:41,000
+dos professores junto aos dissens?
+
+24
+00:01:41,000 --> 00:01:45,000
+Quais são as principais dures que você tem?
+
+25
+00:01:45,000 --> 00:01:51,000
+E o que você precisa que esse software ofereça, né, de funcionar da idade?
+
+26
+00:01:53,000 --> 00:01:55,000
+Não, beleza.
+
+27
+00:01:55,000 --> 00:02:04,000
+A avaliação nossa não é do tempo dos meninos aí, quando não era o swap,
+
+28
+00:02:04,000 --> 00:02:13,000
+quando era o siga, a avaliação era assim, acredito que você e dois já avaliaram os professores de vocês.
+
+29
+00:02:13,000 --> 00:02:14,000
+Não já?
+
+30
+00:02:14,000 --> 00:02:15,000
+Sim, sim.
+
+31
+00:02:15,000 --> 00:02:19,000
+Naquele site do Google que eu disponível isso vocês?
+
+32
+00:02:19,000 --> 00:02:21,000
+Sim.
+
+33
+00:02:21,000 --> 00:02:22,000
+Então, beleza.
+
+34
+00:02:22,000 --> 00:02:24,000
+Como é que era antes?
+
+35
+00:02:24,000 --> 00:02:26,000
+Era no próprio siga.
+
+36
+00:02:26,000 --> 00:02:29,000
+O siga é o suap de hoje, entendeu?
+
+37
+00:02:29,000 --> 00:02:35,000
+Então, assim, você entraria no sistema aqui no caso era o siga,
+
+38
+00:02:35,000 --> 00:02:41,000
+que hoje hoje seria o suap e lá você faria a avaliação.
+
+39
+00:02:41,000 --> 00:02:46,000
+Como a gente vai naquele site lá, certo?
+
+40
+00:02:47,000 --> 00:02:56,000
+Após isso, quando encerrava o período de avaliação,
+
+41
+00:02:56,000 --> 00:03:05,000
+o professor ele já ia no suap dele e já estava com a avaliação lá dele pronta, certo?
+
+42
+00:03:05,000 --> 00:03:08,000
+Como que é hoje naquele site?
+
+43
+00:03:08,000 --> 00:03:10,000
+Vocês viram que é um Google Forms?
+
+44
+00:03:10,000 --> 00:03:15,000
+Pra cada professor eu tenho que criar um Google Forms, entendeu?
+
+45
+00:03:16,000 --> 00:03:21,000
+E aí, depois que os alunos eles fazem a avaliação, o que que eu tenho que fazer?
+
+46
+00:03:21,000 --> 00:03:29,000
+Eu tenho que pegar a resposta de cada um dos professores,
+
+47
+00:03:29,000 --> 00:03:39,000
+gerar um aplenilha noitesil, aí eu faço a somatória pra gerar a nota do professor,
+
+48
+00:03:40,000 --> 00:03:46,000
+beleza? Eu pego esse documento, eu gero um PDF,
+
+49
+00:03:46,000 --> 00:03:51,000
+aí eu tenho que assinar um, um de cada vez,
+
+50
+00:03:51,000 --> 00:03:55,000
+eu asso no Google, não sou o Google, depois do PDF,
+
+51
+00:03:55,000 --> 00:04:01,000
+assinar eu em caminho pra cada professor, ver, um, de cada vez.
+
+52
+00:04:01,000 --> 00:04:08,000
+Então, o trabalho é o pré-adventivo,
+
+53
+00:04:08,000 --> 00:04:14,000
+eu pré-adventivo, eu preavaliação, que eu tenho que reformular o site
+
+54
+00:04:14,000 --> 00:04:17,000
+todo com todas as matérias igual,
+
+55
+00:04:17,000 --> 00:04:25,000
+eu tenho que pegar o site do semestre passado e adequar pra esse semestre.
+
+56
+00:04:25,000 --> 00:04:31,000
+Porque igual, a matéria que o IU está dando agora não é a que ele dava no outro semestre.
+
+57
+00:04:31,000 --> 00:04:36,000
+Então, eu tenho que ir por turma, por turma, professor, professor,
+
+58
+00:04:36,000 --> 00:04:45,000
+atualizar o site, atualizar todos os Google Formes de cada professor com aquelas perguntas,
+
+59
+00:04:45,000 --> 00:04:48,000
+aí eu solto pro pro aluno fazer.
+
+60
+00:04:48,000 --> 00:04:53,000
+Depois que o aluno faz, eu pego cada um dos professores,
+
+61
+00:04:53,000 --> 00:04:59,000
+eu gero um aplenilha de Excel, faço a somatória da nota de cada um,
+
+62
+00:04:59,000 --> 00:05:01,000
+aí eu já...
+
+63
+00:05:00,000 --> 00:05:06,060
+era um PDF, assino no sol voo, um por cada um, depois o humano no e-mede, cada um.
+
+64
+00:05:06,060 --> 00:05:14,140
+Então, trabalho tremendo, é um trabalho assim que tanto é que no sério,
+
+65
+00:05:14,140 --> 00:05:18,140
+é mais passada, eu não tive tempo de fazer. Não fizia uma avaliação, não
+
+66
+00:05:18,140 --> 00:05:23,180
+ser mais passada, vamos fazer agora. Eu comecei a mexer no site 1, tem? Aí,
+
+67
+00:05:23,180 --> 00:05:26,120
+quando eu dei um tempo em que eu vou lá, e vou lá mexer, aí quando descer,
+
+68
+00:05:26,120 --> 00:05:33,060
+eu faço. Antigamente, quando tinha no sistema, o aluno entrava lá, porque,
+
+69
+00:05:33,060 --> 00:05:42,500
+no sistema, já tem os diários de todos os profes, entendeu? Então, o aluno já entra,
+
+70
+00:05:42,500 --> 00:05:48,300
+ele já entra, já já está lá, e o desenvolvimento ébe, já está lá, no outro semestre,
+
+71
+00:05:48,300 --> 00:05:54,640
+quando quando o pessoal da caia, do atendimento integrado, eles geram os diários,
+
+72
+00:05:54,640 --> 00:06:00,880
+a avaliação já fica pronta para a ser feita, tudo tá entendendo? Hoje,
+
+73
+00:06:00,880 --> 00:06:03,360
+eu tenho que fazer isso tudo na mão.
+
+74
+00:06:03,360 --> 00:06:12,400
+Os valmen, os suapos, tem a imprevisão de fazer essa automatização dentro dele,
+
+75
+00:06:12,400 --> 00:06:21,000
+tá em pauta já, tá? Há numa sequência, eu coloquei em um ano passado, eu reivindiquei isso,
+
+76
+00:06:21,000 --> 00:06:27,560
+só que aí eles tinham uma lista de demandas para colocar no suápido, entendeu?
+
+77
+00:06:27,560 --> 00:06:36,240
+Uma hora vai, eles vão fazer, mas tem outras que o ensino entende, que é prioridade,
+
+78
+00:06:36,240 --> 00:06:45,040
+igual o pítimo, nós vai ser no suápido, não sei quando, o modo no conselho de classe,
+
+79
+00:06:45,040 --> 00:06:52,120
+nós colocaram, azudes, a partir do serem, sem mais que bem, vai ser no suápido também,
+
+80
+00:06:52,120 --> 00:06:55,440
+então é assim, eles estão fazendo de acordo com a prioridade.
+
+81
+00:06:55,440 --> 00:07:02,280
+Eu sei, nós temos uma lá fora, muito boa de trabalho aqui, nós temos uma oportunidade muito boa,
+
+82
+00:07:02,280 --> 00:07:09,120
+de colocar as nossas vôndos para fazer um projeto real, que entendeu que vai atender a necessidade real,
+
+83
+00:07:09,120 --> 00:07:13,120
+e a gente corre a consequência simular a diversidade como nós todos nos fazemos aqui,
+
+84
+00:07:13,120 --> 00:07:19,240
+isolamento e um software para resolver o problema real, e tudo que você falou ele vai vir,
+
+85
+00:07:19,240 --> 00:07:26,200
+é o seguinte, algumas automatizações aí, a gente consegue implementar o seu teste,
+
+86
+00:07:26,200 --> 00:07:32,080
+inclusive a parte de, por exemplo, enviar o email para todos os professores,
+
+87
+00:07:32,080 --> 00:07:36,440
+para o sistema ele, e você só aperta um botão lá e ele envia o resultado,
+
+88
+00:07:36,440 --> 00:07:41,080
+com um botão praticamente com todos os professores, você assina tudo de um vez só,
+
+89
+00:07:41,080 --> 00:07:46,760
+entendeu? Só se avançar na lá todas as portas aí clico, igual quando você não sei,
+
+90
+00:07:46,760 --> 00:07:51,440
+quando você assim não bloque, entendeu? É isso ele digita sem uma vez, ele assina tudo de
+
+91
+00:07:51,440 --> 00:07:59,240
+isso, a questão da assinatura é porque o seguinte, tem ser uma assinatura que é válida,
+
+92
+00:08:00,040 --> 00:08:08,880
+então a gente pode ir fazer uma assinatura barga digital, a gente pode ir para a pesquisar
+
+93
+00:08:08,880 --> 00:08:15,880
+se o seu gore disponibiliz uma API para a gente fazer a comunicação desse sistema com a API do seu gore,
+
+94
+00:08:15,880 --> 00:08:23,480
+eu acho que o seu app tem isso aí, né? Ou pra dizer, a gente tem que descobrir qual seria a maneira,
+
+95
+00:08:23,480 --> 00:08:29,640
+existem serviços pagos, entendeu? Que você consegue fazer a assinatura disso,
+
+96
+00:08:29,640 --> 00:08:34,720
+a autentique, por exemplo, é um autentique, por exemplo, você coloca os documentos no
+
+97
+00:08:34,720 --> 00:08:42,280
+app, é de fascinar a tonta, a assinatura é válida, só que ela cobra, né? Ela vai cobrar pelo uso do serviço dela,
+
+98
+00:08:42,280 --> 00:08:47,080
+que ela é um preço privado, mas ela tem um API ropub, foi?
+
+99
+00:08:47,080 --> 00:08:54,880
+Hoje, hoje o urion, eu assino no sol hóve, por quê? Porque eu estou usando uma plataforma,
+
+100
+00:08:54,880 --> 00:09:03,480
+que eu Google Drive, que assim, documento que eu mando para ti, ele tem que ter uma validade institucional,
+
+101
+00:09:03,480 --> 00:09:13,320
+quando era no siga, a gerenza disse nela, nem vi isso, tudo tá entendendo? A gerenza disse,
+
+102
+00:09:13,320 --> 00:09:22,840
+ela só deflagrava a avaliação, e o resto era lá, era uma luna valiando no final do semestre,
+
+103
+00:09:22,840 --> 00:09:28,280
+quando o professor quiser se olhar, ele acessava lá no siga, relatórios, e tava lá,
+
+104
+00:09:28,280 --> 00:09:34,200
+tava lá, tava lá com conta de educação do sistema, né? Autenticar o total total tá aí pronto.
+
+105
+00:09:34,200 --> 00:09:40,280
+É, não vai dar a pé aparecer lá, documento pode ser verificado, não tem nada de verificação lá,
+
+106
+00:09:40,280 --> 00:09:46,600
+não tinha a linha de assinatura, mas ela ficar vem branco, mas como é que você verificava
+
+107
+00:09:46,600 --> 00:09:51,720
+tudo ao comentar ao entro pelo código de verificação? Que apareceu no roda pé da paga.
+
+108
+00:09:51,720 --> 00:09:58,200
+Aquela linha era quando o professor queria uma assinatura, ele imprimia e vinha aqui no gerenze,
+
+109
+00:09:58,200 --> 00:09:59,880
+ó, por favor, acima para mim.
+
+110
+00:10:00,000 --> 00:10:01,000
+Sim, bem, é uma coisa.
+
+111
+00:10:01,000 --> 00:10:02,000
+É a assina, entendeu?
+
+112
+00:10:02,000 --> 00:10:10,280
+Agora, como eu estou fazendo um sistema, correto aí, num dry, aí foi, não, eu gosto dessa
+
+113
+00:10:10,280 --> 00:10:15,240
+pola que o seu logo para ter uma validade, entendeu?
+
+114
+00:10:15,240 --> 00:10:17,240
+Ficou gravado, viu?
+
+115
+00:10:17,240 --> 00:10:20,480
+O problema, os milhão me conhece aí.
+
+116
+00:10:20,480 --> 00:10:24,480
+Exacto aí, aí, dizer uma coisa?
+
+117
+00:10:25,480 --> 00:10:30,720
+É, eu preciso dizer que, aparentemente, sim, um API do GoV, para assina, a sua mão
+
+118
+00:10:30,720 --> 00:10:33,360
+saiu muito bem como é que é tecnicamente, mas...
+
+119
+00:10:33,360 --> 00:10:37,120
+Ah, isso aí é, isso aí a gente vai resolver lá na frente, entendeu?
+
+120
+00:10:37,120 --> 00:10:43,200
+A gente vai usar porque a API do governo é assim, ela é um incógnia, entendeu?
+
+121
+00:10:43,200 --> 00:10:44,200
+Ninguém?
+
+122
+00:10:44,200 --> 00:10:46,400
+Por exemplo, a API do SAP.
+
+123
+00:10:46,400 --> 00:10:50,880
+Quando a gente desenvolve um sistema em preciso de pegar o SAP, entendeu?
+
+124
+00:10:50,920 --> 00:10:59,280
+Tem umas três serviços que tem o API do correiro, mas eu vejo o cara se fazer.
+
+125
+00:10:59,280 --> 00:11:05,680
+Uma coisa que pesquisa, três APIs diferentes, porque esse API do correiro é o Fagalho,
+
+126
+00:11:05,680 --> 00:11:09,120
+tem mais outras duas APIs, você tem a melhor wipe pesquisado, entendeu?
+
+127
+00:11:09,120 --> 00:11:15,120
+Então, a API do seu GoV, aí a gente vai testar, vai ver se funciona, mas se não funcionar,
+
+128
+00:11:15,120 --> 00:11:16,960
+a gente pesca um outro estratégia.
+
+129
+00:11:16,960 --> 00:11:18,960
+A gente pode até, por exemplo.
+
+130
+00:11:18,960 --> 00:11:26,520
+A gente pode pensar num jeito, entendeu?
+
+131
+00:11:26,520 --> 00:11:29,080
+De colocar essas natura-valhas, entendeu?
+
+132
+00:11:29,080 --> 00:11:32,880
+Se a gente conseguir pegar lá do SAP também, sei.
+
+133
+00:11:32,880 --> 00:11:33,880
+Tá bom.
+
+134
+00:11:33,880 --> 00:11:37,920
+Aí a questão do envio doze e-meiros também, não é?
+
+135
+00:11:37,920 --> 00:11:40,600
+A gente pode ir no serviço pago, né?
+
+136
+00:11:40,600 --> 00:11:43,600
+Tem serviço pago, que é super baratíssimo.
+
+137
+00:11:44,040 --> 00:11:49,280
+Tem alguns serviços que ele oferece uma quantidade de grátis muito alto,
+
+138
+00:11:49,280 --> 00:11:53,840
+que a Peña demanda aqui, por exemplo, vai ter que mandar um e-meio para cada professor, né?
+
+139
+00:11:56,160 --> 00:11:59,520
+Então, tem um que eu me sessenta professor, não canvos?
+
+140
+00:11:59,520 --> 00:12:00,760
+Por aí.
+
+141
+00:12:00,760 --> 00:12:03,320
+A página é uma de pessoas de índice hoje, não é?
+
+142
+00:12:03,320 --> 00:12:06,560
+Ao começo, o 20, desses outros 40, eu nunca vi aí.
+
+143
+00:12:06,560 --> 00:12:10,000
+Hoje nós estamos com 54, né?
+
+144
+00:12:10,160 --> 00:12:14,800
+A meu salvei de uns 25, os outros, os outros, os outros, eles são também.
+
+145
+00:12:14,800 --> 00:12:18,920
+Um emquadramento nosso é 70, mas não é?
+
+146
+00:12:18,920 --> 00:12:20,920
+Então 54, afintivamente, fala.
+
+147
+00:12:22,520 --> 00:12:23,320
+Pois é.
+
+148
+00:12:23,320 --> 00:12:31,800
+Então, por exemplo, a API do meu trape lá dá mais de 200 e-meiros por dia.
+
+149
+00:12:33,160 --> 00:12:34,160
+Entendeu?
+
+150
+00:12:34,160 --> 00:12:38,600
+Então o envio de e-meiros vai ser problema, não vai ser pago.
+
+151
+00:12:38,600 --> 00:12:41,840
+Ainda que a gente usa um serviço de pago com isso, a gente tem uma cor.
+
+152
+00:12:41,840 --> 00:12:43,800
+Isso é o que você só faz, vamos ver isso por ano.
+
+153
+00:12:45,480 --> 00:12:46,280
+Entendeu?
+
+154
+00:12:46,280 --> 00:12:47,480
+Não é. Não é.
+
+155
+00:12:48,480 --> 00:12:50,040
+Não é vezes se mexe, não é?
+
+156
+00:12:50,040 --> 00:12:51,040
+Isso.
+
+157
+00:12:52,040 --> 00:12:53,800
+Exa, então, atende.
+
+158
+00:12:54,640 --> 00:12:56,480
+Então, a gente consegue, não entendeu?
+
+159
+00:12:57,280 --> 00:12:58,840
+Atender essa demanda.
+
+160
+00:13:01,840 --> 00:13:06,240
+Por tudo que você falou, a gente vai precisar disponibilizar os formulários,
+
+161
+00:13:06,240 --> 00:13:09,400
+para os alunos poder se cadastrar.
+
+162
+00:13:10,280 --> 00:13:12,960
+É assim, porque o seguinte, o dissente,
+
+163
+00:13:14,480 --> 00:13:19,640
+ele, o dissente, ele vai ter que...
+
+164
+00:13:20,680 --> 00:13:25,200
+A gente vai ter que colocar um cadastro do dissente, porque a gente pode deixar aberto o mundo.
+
+165
+00:13:27,040 --> 00:13:27,880
+Entendeu?
+
+166
+00:13:27,880 --> 00:13:28,880
+É.
+
+167
+00:13:28,880 --> 00:13:31,520
+Porque quem tem que avaliar, o dissente?
+
+168
+00:13:31,520 --> 00:13:34,120
+O dissente, a avaliação não dissente.
+
+169
+00:13:34,400 --> 00:13:36,120
+E do dissente, por exemplo.
+
+170
+00:13:37,120 --> 00:13:38,800
+Aí, a gente vai ter que...
+
+171
+00:13:38,800 --> 00:13:43,240
+A primeira vez, ela vai ter um pouquinho de trabalho manual, porque, por exemplo,
+
+172
+00:13:43,240 --> 00:13:45,800
+vai ter que cadastrar as disciplinas, né?
+
+173
+00:13:46,560 --> 00:13:49,880
+Só que as as disciplinas, só vai cadastrar ela um ano vezes.
+
+174
+00:13:50,880 --> 00:13:54,120
+O que talvez, você vai ter que cadastrar, talvez, todo o semestre,
+
+175
+00:13:54,120 --> 00:13:58,280
+seria asudeis que podem mudar todo o semestre, entendeu?
+
+176
+00:13:58,680 --> 00:14:02,480
+Mas todo o semestre vai ter o português, vai ter a marca mágica, cadastro,
+
+177
+00:14:02,480 --> 00:14:04,000
+um anvelho, precisa ficar da estrada de novo.
+
+178
+00:14:04,000 --> 00:14:07,680
+E basicamente, o que eu faço com o software do horário, né?
+
+179
+00:14:07,680 --> 00:14:08,680
+É.
+
+180
+00:14:08,680 --> 00:14:09,680
+Horário é...
+
+181
+00:14:09,680 --> 00:14:11,680
+O time is time.
+
+182
+00:14:11,680 --> 00:14:15,680
+Aí, o cadastro dos professores também vai ser só um anvelho.
+
+183
+00:14:15,680 --> 00:14:20,480
+Aí, só vai precisar atualizar, quando tiver esse malteração, entendeu?
+
+184
+00:14:20,480 --> 00:14:22,480
+O professor de céu, um atuno foi pra um...
+
+185
+00:14:22,480 --> 00:14:24,080
+É, foi pra outra...
+
+186
+00:14:24,080 --> 00:14:29,080
+Essa vinculação professor human, aí, aí, tu vai ter que fazer, não é?
+
+187
+00:14:29,080 --> 00:14:33,280
+Porque só se a gente conseguir conversar com o suave.
+
+188
+00:14:33,280 --> 00:14:34,280
+Entendeu?
+
+189
+00:14:34,280 --> 00:14:36,280
+Eu acho que eu não vou disponibilizar isso pra gente.
+
+190
+00:14:36,280 --> 00:14:37,280
+Mas...
+
+191
+00:14:37,280 --> 00:14:38,280
+O exército...
+
+192
+00:14:38,280 --> 00:14:42,480
+E se puxar, se puxar do suave logo, logo no cometo semestre,
+
+193
+00:14:42,480 --> 00:14:48,280
+já que o suave, os diários, as curmas do dia, aí, não precisava fazer esse trabalho num al, né?
+
+194
+00:14:48,280 --> 00:14:49,280
+É.
+
+195
+00:14:49,280 --> 00:14:50,280
+Entendeu?
+
+196
+00:14:50,280 --> 00:14:53,280
+Mas assim, o vínculo, né, professor...
+
+197
+00:14:53,280 --> 00:14:58,280
+Eu acho que talvez o trabalho mais operacional que vai ser aí...
+
+198
+00:14:58,280 --> 00:15:00,280
+Vai ser...
+
+199
+00:15:00,000 --> 00:15:02,000
+e o que é isso?
+
+200
+00:15:02,000 --> 00:15:04,000
+Sim, colar professor de área.
+
+201
+00:15:04,000 --> 00:15:06,000
+Prof. Sim, entendeu?
+
+202
+00:15:06,000 --> 00:15:08,000
+Só que isso é que...
+
+203
+00:15:08,000 --> 00:15:10,000
+A água em uma tela vai de par.
+
+204
+00:15:10,000 --> 00:15:12,000
+A gente pode fazer um maneira bem simples.
+
+205
+00:15:12,000 --> 00:15:14,000
+A água em uma tela onde vai estar todos os professors,
+
+206
+00:15:14,000 --> 00:15:16,000
+todos os centros e tudo.
+
+207
+00:15:16,000 --> 00:15:18,000
+Para a língula, a língua, a ver e salva lá.
+
+208
+00:15:18,000 --> 00:15:20,000
+Entendendo?
+
+209
+00:15:20,000 --> 00:15:21,000
+Pronto.
+
+210
+00:15:21,000 --> 00:15:24,000
+Aí o resto vocês têm uma facelos.
+
+211
+00:15:24,000 --> 00:15:28,000
+Esses formulários que usam alguns precisam responder.
+
+212
+00:15:28,000 --> 00:15:30,000
+Eles são estáticos, não é?
+
+213
+00:15:30,000 --> 00:15:32,000
+Toque se mexe ao mesmo formulário.
+
+214
+00:15:32,000 --> 00:15:34,000
+Eles não se perguntam.
+
+215
+00:15:34,000 --> 00:15:36,000
+O muda são aquelas seis e elas não mudam.
+
+216
+00:15:36,000 --> 00:15:38,000
+Então, claro.
+
+217
+00:15:38,000 --> 00:15:40,000
+Esse trabalho é uma inserção, olha.
+
+218
+00:15:40,000 --> 00:15:42,000
+Inclusive, eu pode até fazer isso formulário estático,
+
+219
+00:15:42,000 --> 00:15:44,000
+já deles esténpico.
+
+220
+00:15:44,000 --> 00:15:46,000
+Isso é...
+
+221
+00:15:46,000 --> 00:15:48,000
+Aí eu acho que a gente precisa
+
+222
+00:15:48,000 --> 00:15:50,000
+só de uma cópia desse formulário.
+
+223
+00:15:50,000 --> 00:15:52,000
+Entendeu?
+
+224
+00:15:52,000 --> 00:15:54,000
+Para a gente replicar ele dentro do sistema.
+
+225
+00:15:54,000 --> 00:15:56,000
+Aí, essa questão de criar
+
+226
+00:15:56,000 --> 00:15:58,000
+o cadastro de ciprínios é com a gente,
+
+227
+00:15:58,000 --> 00:16:00,000
+criar o cadastro professor,
+
+228
+00:16:00,000 --> 00:16:02,000
+vai com a gente,
+
+229
+00:16:02,000 --> 00:16:04,000
+criar o cadastro dos alunos,
+
+230
+00:16:04,000 --> 00:16:06,000
+é com a gente também.
+
+231
+00:16:06,000 --> 00:16:08,000
+E aí,
+
+232
+00:16:08,000 --> 00:16:10,000
+um outro coisa.
+
+233
+00:16:10,000 --> 00:16:12,000
+Essas informações que vão estar lá
+
+234
+00:16:12,000 --> 00:16:14,000
+dentro do banco.
+
+235
+00:16:14,000 --> 00:16:18,000
+A gente que vai ser o duro aqui,
+
+236
+00:16:18,000 --> 00:16:22,000
+por um momento, a gente consegue ver,
+
+237
+00:16:22,000 --> 00:16:24,000
+qual é a resultado da avaliação
+
+238
+00:16:24,000 --> 00:16:26,000
+no professor X.
+
+239
+00:16:28,000 --> 00:16:30,000
+Fendeu?
+
+240
+00:16:30,000 --> 00:16:32,000
+A gente não vai ter que criar o campo,
+
+241
+00:16:32,000 --> 00:16:34,000
+vai fazer o teste, tudo e tal.
+
+242
+00:16:34,000 --> 00:16:36,000
+Aí, beleza.
+
+243
+00:16:36,000 --> 00:16:38,000
+Mas a gente já pode fazer de um jeito
+
+244
+00:16:38,000 --> 00:16:40,000
+em que essa informação fica
+
+245
+00:16:40,000 --> 00:16:42,000
+entripidada até para a gente,
+
+246
+00:16:42,000 --> 00:16:44,000
+a gente não consegue saber.
+
+247
+00:16:44,000 --> 00:16:46,000
+Entendeu?
+
+248
+00:16:46,000 --> 00:16:48,000
+É igual,
+
+249
+00:16:48,000 --> 00:16:50,000
+100% de aqui igual,
+
+250
+00:16:50,000 --> 00:16:52,000
+em quem tem acesso ao drive da gerência aqui.
+
+251
+00:16:54,000 --> 00:16:56,000
+Suos e eu.
+
+252
+00:16:56,000 --> 00:16:58,000
+E as duas meninas que está atratadas do trabalho aqui.
+
+253
+00:16:58,000 --> 00:17:00,000
+Então, elas têm acesso.
+
+254
+00:17:00,000 --> 00:17:02,000
+Então, tem né?
+
+255
+00:17:02,000 --> 00:17:04,000
+Só que como parte que eu faço,
+
+256
+00:17:04,000 --> 00:17:06,000
+eu me envio,
+
+257
+00:17:06,000 --> 00:17:08,000
+para.
+
+258
+00:17:08,000 --> 00:17:10,000
+Uns que não é uma informação
+
+259
+00:17:10,000 --> 00:17:12,000
+se vivou-se, por exemplo.
+
+260
+00:17:12,000 --> 00:17:14,000
+Eu posso saber o resultado da avaliação
+
+261
+00:17:14,000 --> 00:17:16,000
+no professor X.
+
+262
+00:17:16,000 --> 00:17:19,000
+Você não é senso,
+
+263
+00:17:19,000 --> 00:17:25,000
+é isso que eu preciso saber, porque se ela...
+
+264
+00:17:25,000 --> 00:17:28,000
+tu quer que ela seja civilosa,
+
+265
+00:17:28,000 --> 00:17:32,000
+que eu digo assim,
+
+266
+00:17:32,000 --> 00:17:36,000
+nem eu e nem que vai desenvolver vai saber,
+
+267
+00:17:36,000 --> 00:17:40,000
+porque o caso, por exemplo,
+
+268
+00:17:40,000 --> 00:17:44,000
+o caso, por exemplo, não vai saber qual é a minha nota, entendeu?
+
+269
+00:17:44,000 --> 00:17:47,000
+Mas eu na função de desenvolverou,
+
+270
+00:17:47,000 --> 00:17:51,000
+eu vou conseguir saber, entendeu? A nota é de todo o que eu te digo.
+
+271
+00:17:51,000 --> 00:17:53,000
+Eu posso ver essa...
+
+272
+00:17:53,000 --> 00:17:56,000
+Eu acho que não tem esse...
+
+273
+00:17:56,000 --> 00:17:59,000
+Eu também vou sair divulgando pra ninguém,
+
+274
+00:17:59,000 --> 00:18:01,000
+eu também vou fazer uma nova besteira.
+
+275
+00:18:01,000 --> 00:18:02,000
+Com isso, entendeu.
+
+276
+00:18:02,000 --> 00:18:06,000
+A gerencia de ensina, ela tem acesso a todas as avaliações,
+
+277
+00:18:06,000 --> 00:18:08,000
+medo que o lugar não siga,
+
+278
+00:18:08,000 --> 00:18:11,000
+não era aquela coisa, só de ter professorial aluno não.
+
+279
+00:18:11,000 --> 00:18:13,000
+Eu não sei.
+
+280
+00:18:13,000 --> 00:18:15,000
+Não se estenham.
+
+281
+00:18:15,000 --> 00:18:18,000
+Não se estenham, a gente vai fazer painéis, entendeu?
+
+282
+00:18:18,000 --> 00:18:21,000
+Cada painel, ele tem níveis de acesso diferenciados,
+
+283
+00:18:21,000 --> 00:18:24,000
+então vai ter um nível de acesso gerenci.
+
+284
+00:18:24,000 --> 00:18:26,000
+A gente vai lá,
+
+285
+00:18:26,000 --> 00:18:28,000
+não painel da gerencia, vai aparecer.
+
+286
+00:18:28,000 --> 00:18:30,000
+Tudo, entendeu?
+
+287
+00:18:30,000 --> 00:18:33,000
+Inclusive, se você quiser que esse documento seja armazenado
+
+288
+00:18:33,000 --> 00:18:35,000
+no Drive da gerencia, tem confado.
+
+289
+00:18:35,000 --> 00:18:38,000
+Se você tem medo de criar uma baixinha
+
+290
+00:18:38,000 --> 00:18:40,000
+e botos para ele, é tudo o aledo.
+
+291
+00:18:40,000 --> 00:18:42,000
+Não se quiser, entendeu?
+
+292
+00:18:42,000 --> 00:18:43,000
+Você é.
+
+293
+00:18:43,000 --> 00:18:46,000
+Estava fazendo isso, entendeu?
+
+294
+00:18:49,000 --> 00:18:52,000
+Então, tá, a gente...
+
+295
+00:18:52,000 --> 00:18:55,000
+A gente não vai colocar essa camada de incripitação
+
+296
+00:18:55,000 --> 00:18:57,000
+lá nessas dados, não.
+
+297
+00:18:57,000 --> 00:18:59,000
+Não tem essa.
+
+298
+00:18:59,000 --> 00:19:02,000
+Por que quem teria acesso a isso, a venda gerencia?
+
+299
+00:19:02,000 --> 00:19:04,000
+João Isac, eu.
+
+300
+00:19:04,000 --> 00:19:08,000
+Mas assim, eu sou verdade, inclusive, é lorna, né?
+
+301
+00:19:09,000 --> 00:19:12,000
+Federal, por exemplo, que eu não posso fazer alguma coisa errado
+
+302
+00:19:12,000 --> 00:19:17,000
+com uma informação que eu recebi em detrimento do meucado,
+
+303
+00:19:17,000 --> 00:19:20,000
+porque isso gera pain de dar a televisão.
+
+304
+00:19:20,000 --> 00:19:22,000
+Então, por exemplo,
+
+305
+00:19:22,000 --> 00:19:25,000
+pega uma informação dessa e sai de julgante, entendeu?
+
+306
+00:19:25,000 --> 00:19:27,000
+Então, aí...
+
+307
+00:19:29,000 --> 00:19:31,000
+Eu já estou verdade legalmente para lá.
+
+308
+00:19:31,000 --> 00:19:34,000
+Agora, os meninos que não têm interesse em fazer nada disso,
+
+309
+00:19:34,000 --> 00:19:36,000
+então,
+
+310
+00:19:36,000 --> 00:19:39,000
+eu acho que nós vamos ter esse problema.
+
+311
+00:19:40,000 --> 00:19:43,000
+Eu, porque também não é uma informação seja losa.
+
+312
+00:19:45,000 --> 00:19:49,000
+Eu acho que val-me, assim, dar minha parte, por exemplo,
+
+313
+00:19:49,000 --> 00:19:53,000
+quanto libera o formulário para os sentos preencheram, né?
+
+314
+00:19:53,000 --> 00:19:58,000
+Como é que a identificação deles é feita através do inimigo institucional, certo?
+
+315
+00:19:58,000 --> 00:20:00,000
+No Google Forms?
+
+316
+00:20:00,000 --> 00:20:05,140
+Sim, ele só consegue a sessão formular, porque as duas emêgmas institucional são.
+
+317
+00:20:05,140 --> 00:20:12,400
+O aluno ele só consegue fazer a avaliação se ele entrar com o mês do sinal.
+
+318
+00:20:12,400 --> 00:20:14,240
+Tem.
+
+319
+00:20:14,240 --> 00:20:18,800
+E é uma vez só, porque é igual, eu evito de aluno de fora entrar,
+
+320
+00:20:18,800 --> 00:20:26,280
+ou é mesmo com uma conta, é uma vez só e pronto, ele só entrou, ele preenche, ele viu, acabou.
+
+321
+00:20:26,600 --> 00:20:34,280
+E é um aluno, por exemplo, que terminou o curso, mas tem um inicio de lá, ele consegue fazer essa avaliação.
+
+322
+00:20:34,280 --> 00:20:36,280
+Vió que consegue.
+
+323
+00:20:38,080 --> 00:20:46,080
+Porque como o Google Formos não tem vinculação nenhuma com a população,
+
+324
+00:20:46,080 --> 00:20:50,760
+em termo de dado para ver se o seu aluno tem matriculativa ou não,
+
+325
+00:20:50,760 --> 00:20:54,280
+aí se ele tiver acesso a sessão ele faz.
+
+326
+00:20:55,080 --> 00:21:01,280
+Então, eu acho que eu posso começar a perceber essa.
+
+327
+00:21:01,280 --> 00:21:05,280
+A gente quer demunhar um máximo trabalho para a sinal.
+
+328
+00:21:05,280 --> 00:21:13,680
+Se eu pedir para encerre os diários dentro do sistema, ele vai conseguir processar tudo,
+
+329
+00:21:13,680 --> 00:21:19,080
+mas eu criei o trabalho de fazer o download todos os diários.
+
+330
+00:21:19,480 --> 00:21:24,880
+Com o PDF, a gente consegue ver o Monto Professo, o Monto de Javonte,
+
+331
+00:21:24,880 --> 00:21:31,080
+mas só que os diários não vai estar escrito lá, o e-mail do cara, entendeu?
+
+332
+00:21:32,080 --> 00:21:35,080
+Está no suá, pelas informações.
+
+333
+00:21:35,080 --> 00:21:37,080
+Está no suá.
+
+334
+00:21:37,080 --> 00:21:42,080
+Se eu conseguir extrair os suápios desses dados, de vez.
+
+335
+00:21:42,080 --> 00:21:44,080
+Sim, não.
+
+336
+00:21:44,080 --> 00:21:48,080
+A gente vai ter que o cadastro dos licentes,
+
+337
+00:21:48,080 --> 00:21:52,080
+e ele vai ter que passar por uma validação da gerença.
+
+338
+00:21:54,080 --> 00:21:57,080
+Porque essa é a retransmão.
+
+339
+00:21:57,080 --> 00:22:01,080
+É, porque vocês teriam que olhar o diário, ver, não, esse aluno é.
+
+340
+00:22:01,080 --> 00:22:03,080
+Ok, esse aluno é.
+
+341
+00:22:03,080 --> 00:22:04,080
+Passou.
+
+342
+00:22:04,080 --> 00:22:05,080
+Passou, entendeu?
+
+343
+00:22:05,080 --> 00:22:07,080
+30 validações.
+
+344
+00:22:07,080 --> 00:22:10,080
+Então, é muitas validações, porque são muitos alunos,
+
+345
+00:22:10,080 --> 00:22:13,080
+é 300 e todos são alunos, não se não pegue.
+
+346
+00:22:13,080 --> 00:22:16,080
+É muito clique, entendeu?
+
+347
+00:22:16,080 --> 00:22:19,080
+A validação da galera é toda a dinha.
+
+348
+00:22:19,080 --> 00:22:22,080
+É um problema, mas o corpo vai resolver.
+
+349
+00:22:22,080 --> 00:22:24,080
+É isso.
+
+350
+00:22:24,080 --> 00:22:26,080
+Mas eu entendi.
+
+351
+00:22:26,080 --> 00:22:28,080
+Eu acho que eu entendi tudo que precisam,
+
+352
+00:22:28,080 --> 00:22:32,080
+mas se os meninos tiver mais alguma coisa para perguntar.
+
+353
+00:22:34,080 --> 00:22:36,080
+Não, não, não.
+
+354
+00:22:36,080 --> 00:22:38,080
+Eu acho que estou bem tranquilo.
+
+355
+00:22:38,080 --> 00:22:41,080
+A gente está fazendo as notações também.
+
+356
+00:22:41,080 --> 00:22:44,080
+Pois em que não fechou.
+
+357
+00:22:44,080 --> 00:22:45,080
+Pois não.
+
+358
+00:22:45,080 --> 00:22:47,080
+Valeu, vai ser shown in body.
+
+359
+00:22:47,080 --> 00:22:50,080
+Valeu, você vai ter que ver esse vídeo.
+
+360
+00:22:50,080 --> 00:22:52,080
+Valeu ficar poderoso.
+
+361
+00:22:52,080 --> 00:22:53,080
+Valeu, deixa eu te dar.
+
+362
+00:22:53,080 --> 00:22:56,080
+Alo, deixa eu te dar.
+
+363
+00:22:59,080 --> 00:23:01,080
+Parar que agora.
+
