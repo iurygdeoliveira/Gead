@@ -1,7 +1,7 @@
 # 2. Infraestrutura Laravel Cloud + PostgreSQL Gerenciado
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 
@@ -17,7 +17,7 @@ O time é acadêmico e precisa de infra gerenciada que minimize ops. O Laravel o
 ## Decision
 
 1. **Deploy:** Usar **Laravel Cloud** como plataforma de hospedagem.
-2. **Banco de dados:** **PostgreSQL gerenciado** (via serviço integrado ao Laravel Cloud ou provedor externo como Neon/Supabase).
+2. **Banco de dados:** **PostgreSQL gerenciado** (via serviço integrado ao Laravel Cloud).
 3. **Fila:** Driver `database` do Laravel Queue (reutiliza o PostgreSQL — ver ADR-007).
 
 ## Consequences

@@ -1,7 +1,7 @@
 # 5. Importação Exclusiva via CSV (Sem API SUAP)
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 

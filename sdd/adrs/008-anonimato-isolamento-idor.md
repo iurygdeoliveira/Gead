@@ -1,7 +1,7 @@
 # 8. Anonimato na Exibição ao Docente e Isolamento IDOR
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 

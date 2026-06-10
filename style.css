@@ -1,0 +1,713 @@
+/* ===================================================================
+   GeAD Landing Page — Redesigned
+   Dark committed-green theme, Manrope, split-screen portal
+   =================================================================== */
+
+/* ── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  /* Brand palette — OKLCH, derived from logo greens + red accent */
+  --green-900: oklch(0.32 0.08 145);
+  --green-700: oklch(0.42 0.12 145);
+  --green-600: oklch(0.50 0.14 145);
+  --green-500: oklch(0.58 0.16 148);
+  --green-400: oklch(0.65 0.15 148);
+  --green-300: oklch(0.75 0.12 148);
+  --green-200: oklch(0.85 0.08 148);
+  --green-100: oklch(0.92 0.04 148);
+
+  --red-600: oklch(0.52 0.20 25);
+  --red-500: oklch(0.56 0.19 25);
+
+  /* Ink / Neutral — tinted toward green hue (148) */
+  --ink-950: oklch(0.15 0.01 148);
+  --ink-900: oklch(0.18 0.01 148);
+  --ink-800: oklch(0.22 0.01 148);
+  --ink-700: oklch(0.28 0.008 148);
+  --ink-600: oklch(0.35 0.006 148);
+  --ink-500: oklch(0.45 0.005 148);
+  --ink-400: oklch(0.55 0.005 148);
+  --ink-300: oklch(0.68 0.005 148);
+  --ink-200: oklch(0.80 0.005 148);
+  --ink-100: oklch(0.90 0.005 148);
+
+  --white: #ffffff;
+
+  /* Semantic roles */
+  --color-bg: var(--ink-950);
+  --color-surface: var(--ink-900);
+  --color-surface-raised: var(--ink-800);
+  --color-primary: var(--green-500);
+  --color-primary-hover: var(--green-400);
+  --color-accent: var(--red-600);
+  --color-text: oklch(0.93 0.005 148);
+  --color-text-secondary: oklch(0.80 0.01 148);
+  --color-text-muted: oklch(0.68 0.01 148);
+  --color-border: oklch(0.25 0.01 148);
+  --color-border-subtle: oklch(0.20 0.008 148);
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-xs: 0.875rem; /* 14px */
+  --font-size-sm: 0.9375rem; /* 15px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+  --font-size-display: clamp(1.75rem, 1.3rem + 1.5vw, 2.5rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 500ms;
+
+  /* Shadows — dark theme needs subtle upward glow */
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.3);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.4);
+  --shadow-cta: 0 4px 20px oklch(0.50 0.14 145 / 0.35);
+  --shadow-cta-hover: 0 6px 28px oklch(0.50 0.14 145 / 0.5);
+
+  /* Z-index scale */
+  --z-bg: 0;
+  --z-content: 1;
+  --z-sticky: 10;
+  --z-modal-backdrop: 20;
+  --z-modal: 30;
+  --z-toast: 40;
+  --z-tooltip: 50;
+}
+
+/* ── Base Reset ────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Ambient Background ────────────────────────────────────────────── */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-bg);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  will-change: transform;
+}
+
+.orb--1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--green-700), transparent 70%);
+  top: -15%;
+  left: -10%;
+  opacity: 0.10;
+  animation: orb-drift-1 25s ease-in-out infinite;
+}
+
+.orb--2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--green-600), transparent 70%);
+  bottom: -20%;
+  right: -8%;
+  opacity: 0.07;
+  animation: orb-drift-2 30s ease-in-out infinite;
+}
+
+.orb--3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--red-600), transparent 70%);
+  top: 50%;
+  right: 35%;
+  opacity: 0.04;
+  animation: orb-drift-3 20s ease-in-out infinite;
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(40px, 30px); }
+  66% { transform: translate(-20px, 50px); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-35px, -25px); }
+  66% { transform: translate(25px, -40px); }
+}
+
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-30px, 20px); }
+}
+
+/* ── Split Layout ──────────────────────────────────────────────────── */
+.split {
+  position: relative;
+  z-index: var(--z-content);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* Left: Brand panel — deep green committed surface */
+.split__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-10);
+  background: linear-gradient(
+    165deg,
+    oklch(0.22 0.04 145) 0%,
+    oklch(0.17 0.03 148) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle texture on the brand panel */
+.split__brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, oklch(0.50 0.14 145 / 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, oklch(0.52 0.20 25 / 0.03) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Right: Access panel — near-black with CTA */
+.split__access {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-10);
+  position: relative;
+}
+
+/* ── Brand Side (Left) ─────────────────────────────────────────────── */
+.brand-content {
+  max-width: 440px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-16); /* Increased margin to space out the logo from the text */
+  width: 100%;
+  position: relative;
+}
+
+.brand-logo {
+  width: 140px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  filter: 
+    drop-shadow(0 0 12px oklch(1 0 0 / 0.95))  /* Whiter, intense center contour */
+    drop-shadow(0 0 32px oklch(1 0 0 / 0.75))  /* Mid-range bright highlight */
+    drop-shadow(0 0 60px oklch(1 0 0 / 0.35))  /* Softer, controlled outer glow */
+    drop-shadow(0 4px 16px oklch(0 0 0 / 0.65));
+}
+
+.brand-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  line-height: 1.75;
+  max-width: 38ch;
+  text-wrap: pretty;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand-description strong {
+  color: var(--green-400);
+  font-weight: 600;
+}
+
+/* Feature highlights — not cards, just a lean list */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+  background: oklch(0.20 0.02 145 / 0.4);
+  border: 1px solid oklch(0.28 0.03 145 / 0.25);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.05), var(--shadow-sm);
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.feature-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--green-400);
+  margin-top: 3px;
+}
+
+.feature-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feature-item strong {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+}
+
+.feature-item span {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ── Access Side (Right) ───────────────────────────────────────────── */
+.access-section {
+  max-width: 400px;
+  width: 100%;
+}
+
+.access-title {
+  font-size: var(--font-size-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-text);
+  text-wrap: balance;
+  margin-bottom: var(--space-3);
+  text-align: center;
+}
+
+.access-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+  max-width: 34ch;
+  text-wrap: pretty;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Anonymity Seal ────────────────────────────────────────────────── */
+.seal {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  background: oklch(0.50 0.14 145 / 0.08);
+  border: 1px solid oklch(0.50 0.14 145 / 0.15);
+  margin-bottom: var(--space-8);
+}
+
+.seal__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--green-400);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.seal__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.seal__text strong {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--green-300);
+}
+
+.seal__text span {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* ── CTA Button ────────────────────────────────────────────────────── */
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 52px;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--green-600);
+  color: var(--white);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--duration-normal) var(--ease-out-expo),
+    box-shadow var(--duration-normal) var(--ease-out-expo),
+    transform var(--duration-fast) var(--ease-out-expo);
+  box-shadow: var(--shadow-cta);
+}
+
+.cta-button:hover {
+  background: var(--color-primary-hover);
+  box-shadow: var(--shadow-cta-hover);
+  transform: translateY(-1px);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-cta);
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--green-300);
+  outline-offset: 3px;
+}
+
+.cta-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Subtle shine sweep */
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    oklch(1 0 0 / 0.12) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  animation: cta-shine 5s var(--ease-out-quart) 2s infinite;
+}
+
+@keyframes cta-shine {
+  0% { transform: translateX(-100%); }
+  15%, 100% { transform: translateX(100%); }
+}
+
+/* ── CTA Hint ──────────────────────────────────────────────────────── */
+.cta-hint {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-3);
+}
+
+/* ── LabSIS Attribution ────────────────────────────────────────────── */
+.brand-labsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: oklch(0.20 0.02 145 / 0.4);
+  border: 1px solid oklch(0.28 0.03 145 / 0.25);
+  width: 100%;
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.05), var(--shadow-sm);
+  transition: background var(--duration-normal) var(--ease-out-expo);
+}
+
+.brand-labsis:hover {
+  background: oklch(0.24 0.03 145 / 0.5);
+}
+
+.brand-labsis__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.brand-labsis__link {
+  display: flex;
+  align-items: center;
+}
+
+.brand-labsis__logo {
+  height: 22px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity var(--duration-normal) var(--ease-out-expo);
+}
+
+.brand-labsis:hover .brand-labsis__logo {
+  opacity: 1;
+}
+
+/* ── Footer ────────────────────────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: var(--z-content);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ── Entrance Animations ───────────────────────────────────────────── */
+.brand-content {
+  animation: enter-left 0.8s var(--ease-out-expo) both;
+}
+
+.access-section {
+  animation: enter-right 0.8s var(--ease-out-expo) 0.15s both;
+}
+
+@keyframes enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Feature items stagger — only on desktop (already visible) */
+.feature-item {
+  opacity: 0;
+  animation: fade-in 0.5s var(--ease-out-expo) both;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.3s; }
+.feature-item:nth-child(2) { animation-delay: 0.4s; }
+.feature-item:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none !important; }
+
+  .brand-content,
+  .access-section,
+  .feature-item {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .cta-button {
+    transition: none;
+  }
+
+  .cta-button::after {
+    animation: none !important;
+  }
+
+  .cta-button:hover {
+    transform: none;
+  }
+}
+
+/* ── Responsive: Tablet (≤ 1024px) ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .split__brand {
+    padding: var(--space-10) var(--space-8) var(--space-8);
+  }
+
+  .split__access {
+    padding: var(--space-8) var(--space-8) var(--space-10);
+  }
+
+  .brand-content {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    animation-name: fade-in;
+  }
+
+  .access-section {
+    animation-name: fade-in;
+  }
+
+  .logo-wrapper::before {
+    width: 170px;
+    height: 170px;
+  }
+
+  .access-section {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .access-subtitle {
+    max-width: 100%;
+  }
+
+  .brand-labsis {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ── Responsive: Mobile (≤ 640px) ──────────────────────────────────── */
+@media (max-width: 640px) {
+  .split__brand {
+    padding: var(--space-8) var(--space-6) var(--space-6);
+  }
+
+  .split__access {
+    padding: var(--space-6) var(--space-6) var(--space-8);
+  }
+
+  .brand-logo {
+    width: 110px;
+    height: auto;
+  }
+
+  .access-title {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  }
+
+  .seal {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .orb--1 { width: 350px; height: 350px; }
+  .orb--2 { width: 280px; height: 280px; }
+  .orb--3 { width: 130px; height: 130px; }
+}
+
+/* ── Responsive: Small Mobile (≤ 375px) ────────────────────────────── */
+@media (max-width: 375px) {
+  .seal {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta-button {
+    font-size: var(--font-size-sm);
+    min-height: 48px;
+  }
+}

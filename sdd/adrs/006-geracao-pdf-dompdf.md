@@ -1,7 +1,7 @@
 # 6. Geração de PDF Server-Side via DomPDF
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 

@@ -1,7 +1,7 @@
 # 9. Modelo de Permissões Gerente × TAE (Spatie Permission + Panels Separados)
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 

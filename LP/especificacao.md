@@ -1,10 +1,10 @@
 # Especificação da Landing Page - Jet (Gestão de Desempenho de Docentes)
 
 ## 1. Visão Geral do Projeto
-O Jet é um sistema voltado para a automação e facilitação do processo de avaliação de docentes pelos discentes. Ele visa substituir o processo manual atual (que utiliza múltiplos Google Forms, planilhas Excel e envio manual de PDFs) por uma plataforma centralizada e automatizada.
+O GeAD é um sistema voltado para a automação e facilitação do processo de avaliação de docentes pelos discentes. Ele visa substituir o processo manual atual (que utiliza múltiplos Google Forms, planilhas Excel e envio manual de PDFs) por uma plataforma centralizada e automatizada.
 
 ## 2. Objetivo da Landing Page
-A Landing Page servirá como a porta de entrada para o sistema Jet, com o propósito de:
+A Landing Page servirá como a porta de entrada para o sistema GeAD, com o propósito de:
 - Apresentar o sistema e seu propósito para a comunidade acadêmica.
 - Fornecer acesso (Login) para os três perfis de usuários: Discentes, Docentes e Gerência de Ensino.
 - Transmitir confiabilidade, segurança e modernidade.

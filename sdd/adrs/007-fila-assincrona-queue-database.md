@@ -1,7 +1,7 @@
 # 7. Fila Assíncrona via Laravel Queue (Driver Database)
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 

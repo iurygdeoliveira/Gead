@@ -1,7 +1,7 @@
 # 4. Assinatura Digital em Lote via Gov.br com Fallback Local
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 

@@ -1,7 +1,7 @@
 # 10. Ciclo de Vida da Conta e Bloqueio/Liberação para Avaliar
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 

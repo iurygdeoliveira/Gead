@@ -1,7 +1,7 @@
 # 3. Autenticação por Link Mágico (Sem Senha no MVP)
 
 Date: 2026-06-09
-Status: proposed
+Status: accepted
 
 ## Context
 
