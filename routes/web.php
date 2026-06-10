@@ -9,3 +9,7 @@ Route::middleware(['static'])->get('/', WebsiteLandingController::class)->name('
 
 // Rota de compatibilidade para middlewares que usam route('login')
 Route::get('/__compat-login', fn () => redirect()->to('/login'))->name('login');
+
+Route::get('/auth/magic-login/{token}', [\App\Http\Controllers\Auth\MagicLinkController::class, 'callback'])
+    ->middleware('web')
+    ->name('magic.callback');

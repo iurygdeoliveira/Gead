@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#0D0D0D" name="theme-color"/>
+<title>GeAD — Design System</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="assets/css2_0c6ec1a12c79.css" rel="stylesheet"/>
+<!-- Favicon -->
+<link href="assets/logo_712880b1cf29.png" rel="icon" type="image/png"/>
+<!-- Styles -->
+<link href="assets/style_52de95cda5af.css" rel="stylesheet"/>
+<style>
+  /* --- Design System Layout --- */
+  .ds-nav {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: oklch(0.15 0.01 148 / 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    font-family: var(--font-family);
+  }
+  .ds-nav a {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    transition: background var(--duration-fast) var(--ease-out-expo), color var(--duration-fast) var(--ease-out-expo);
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .ds-nav a:hover {
+    background: var(--color-surface);
+    color: var(--white);
+  }
+  .ds-container {
+    background: var(--color-bg);
+    position: relative;
+    z-index: var(--z-content);
+  }
+  .ds-section {
+    padding: var(--space-16) var(--space-10);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .ds-section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+  /* Typography Section */
+  .ds-typo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-border-subtle);
+    gap: var(--space-6);
+  }
+  .ds-typo-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    min-width: 120px;
+    font-weight: 600;
+  }
+  .ds-typo-preview {
+    flex: 1;
+  }
+  .ds-typo-meta {
+    font-size: var(--font-size-xs);
+    color: var(--green-300);
+    font-family: monospace;
+    text-align: right;
+    min-width: 150px;
+  }
+  /* Colors Section */
+  .ds-colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-6);
+  }
+  .ds-color-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .ds-color-swatch {
+    height: 120px;
+    width: 100%;
+  }
+  .ds-color-info {
+    padding: var(--space-4);
+  }
+  .ds-color-name {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+  .ds-color-var {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-family: monospace;
+  }
+  /* Surfaces */
+  .ds-surface-card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  /* UI Components */
+  .ds-component-group {
+    margin-bottom: var(--space-12);
+  }
+  .ds-component-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+  .ds-states-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+  .ds-state-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+  }
+  .ds-state-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-6);
+    display: block;
+    font-weight: 600;
+  }
+  /* Layout Section */
+  .ds-layout-preview {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: var(--space-6);
+  }
+  .ds-layout-preview .split {
+    min-height: 100%;
+  }
+  /* Motion & Icons */
+  .ds-icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+  }
+  .ds-icon-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    min-width: 120px;
+  }
+  .ds-icon-card svg {
+    width: 32px;
+    height: 32px;
+    color: var(--green-400);
+  }
+  .ds-icon-name {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+
+<!-- Ambient orbs (reused from original) -->
+<div aria-hidden="true" class="bg-orbs">
+  <div class="orb orb--1"></div>
+  <div class="orb orb--2"></div>
+  <div class="orb orb--3"></div>
+</div>
+
+<!-- 0) HERO (Exact Clone) -->
+<main class="split" id="hero">
+  <!-- LEFT: Branding + Features -->
+  <section aria-label="Sobre o GeAD" class="split__brand">
+    <div class="brand-content">
+      <div class="logo-wrapper">
+        <img alt="Logo GeAD — capelo acadêmico verde com lupa vermelha" class="brand-logo" fetchpriority="high" height="170" src="assets/logo_712880b1cf29.png" width="140"/>
+      </div>
+      <p class="brand-description">
+        Documentação viva e biblioteca de padrões do <strong>Design System</strong>.
+      </p>
+      <!-- Lean feature list — 3 items only, no cards -->
+      <ul class="features" role="list">
+        <li class="feature-item">
+          <svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <div>
+            <strong>Estilos globais</strong>
+            <span>Cores, tipografia e espaçamentos base</span>
+          </div>
+        </li>
+        <li class="feature-item">
+          <svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <div>
+            <strong>Componentes UI</strong>
+            <span>Botões, cards e elementos interativos</span>
+          </div>
+        </li>
+        <li class="feature-item">
+          <svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+            <line x1="18" x2="18" y1="20" y2="10"></line>
+            <line x1="12" x2="12" y1="20" y2="4"></line>
+            <line x1="6" x2="6" y1="20" y2="14"></line>
+          </svg>
+          <div>
+            <strong>Layout & Motion</strong>
+            <span>Grids, animações e micro-interações</span>
+          </div>
+        </li>
+      </ul>
+      <!-- LabSIS attribution -->
+      <div class="brand-labsis">
+        <span class="brand-labsis__text">Um projeto</span>
+        <a aria-label="Laboratório de Sistemas Inovadores (LabSIS)" class="brand-labsis__link" href="https://labsis.dev.br/" rel="noopener noreferrer" target="_blank">
+          <img alt="LabSIS" class="brand-labsis__logo" height="30" loading="lazy" src="assets/labsis_logo_cd92eeb263ef.png" width="109"/>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- RIGHT: Access / CTA -->
+  <section aria-label="Acesso ao sistema" class="split__access">
+    <div class="access-section">
+      <h1 class="access-title">Design System</h1>
+      <p class="access-subtitle">
+        Padrões visuais do GeAD.
+      </p>
+      <!-- Anonymity seal — prominent per spec -->
+      <div class="seal" role="status">
+        <svg aria-hidden="true" class="seal__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="M9 12l2 2 4-4"></path>
+        </svg>
+        <div class="seal__text">
+          <strong>Fidelidade visual</strong>
+          <span>Todos os componentes devem herdar rigorosamente as definições de tipografia, cores e espaçamentos do sistema.</span>
+        </div>
+      </div>
+      <a class="cta-button" href="#typography" role="button">
+        <svg aria-hidden="true" class="cta-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" x2="3" y1="12" y2="12"></line>
+        </svg>
+        Explorar Padrões
+      </a>
+      <p class="cta-hint">
+        Navegue pelas especificações abaixo.
+      </p>
+    </div>
+  </section>
+</main>
+
+<nav class="ds-nav">
+  <a href="#hero">Hero</a>
+  <a href="#typography">Typography</a>
+  <a href="#colors">Colors & Surfaces</a>
+  <a href="#components">UI Components</a>
+  <a href="#layout">Layout & Spacing</a>
+  <a href="#motion">Motion & Interaction</a>
+  <a href="#icons">Icons</a>
+</nav>
+
+<div class="ds-container">
+  
+  <!-- 1) Typography -->
+  <section id="typography" class="ds-section">
+    <h2 class="ds-section-title">1. Typography</h2>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Display Title</div>
+      <div class="ds-typo-preview">
+        <h1 class="access-title" style="margin:0; animation:none; text-align:left;">Acessar o GeAD</h1>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-display) / 1.15<br/>700 / Inter</div>
+    </div>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Subtitle</div>
+      <div class="ds-typo-preview">
+        <p class="access-subtitle" style="margin:0; text-align:left; max-width:none;">Discentes, docentes e gestores.</p>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-base) / 1.6<br/>400 / Inter</div>
+    </div>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Brand Description</div>
+      <div class="ds-typo-preview">
+        <p class="brand-description" style="margin:0; text-align:left; max-width:none;">Plataforma institucional de avaliação de desempenho docente do <strong>Campus Araguaína</strong>.</p>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-base) / 1.75<br/>500 / Inter</div>
+    </div>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Bold SM (Seal Title)</div>
+      <div class="ds-typo-preview">
+        <div class="seal__text"><strong style="font-size:var(--font-size-sm); color:var(--green-300);">Garantia de anonimato</strong></div>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-sm) / 1.5<br/>700 / Inter</div>
+    </div>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Regular XS (Seal Text)</div>
+      <div class="ds-typo-preview">
+        <div class="seal__text"><span style="text-align:left;">Sua autenticação valida a matrícula. As respostas são totalmente sigilosas.</span></div>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-xs) / 1.5<br/>500 / Inter</div>
+    </div>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Bold SM (Feature)</div>
+      <div class="ds-typo-preview">
+        <div class="feature-item"><div><strong>Sigilo total</strong></div></div>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-sm) / 1.5<br/>600 / Inter</div>
+    </div>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Regular XS (Feature)</div>
+      <div class="ds-typo-preview">
+        <div class="feature-item"><div><span>Respostas anônimas, identidade protegida</span></div></div>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-xs) / 1.5<br/>500 / Inter</div>
+    </div>
+    
+    <div class="ds-typo-row">
+      <div class="ds-typo-label">Button Text</div>
+      <div class="ds-typo-preview">
+        <span style="font-size: var(--font-size-base); font-weight: 600; letter-spacing: 0.01em; color: var(--green-400);">Entrar com E-mail Institucional</span>
+      </div>
+      <div class="ds-typo-meta">var(--font-size-base) / 1.0<br/>600 / Inter</div>
+    </div>
+  </section>
+
+  <!-- 2) Colors & Surfaces -->
+  <section id="colors" class="ds-section">
+    <h2 class="ds-section-title">2. Colors & Surfaces</h2>
+    
+    <h3 class="ds-component-title">Brand & Accents</h3>
+    <div class="ds-colors-grid" style="margin-bottom: var(--space-8);">
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--green-900);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Green 900</div>
+          <div class="ds-color-var">--green-900</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--green-700);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Green 700</div>
+          <div class="ds-color-var">--green-700</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--green-600);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Green 600</div>
+          <div class="ds-color-var">--green-600</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--green-500);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Green 500</div>
+          <div class="ds-color-var">--green-500<br/>--color-primary</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--green-400);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Green 400</div>
+          <div class="ds-color-var">--green-400<br/>--color-primary-hover</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--green-300);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Green 300</div>
+          <div class="ds-color-var">--green-300</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--red-600);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Red 600</div>
+          <div class="ds-color-var">--red-600<br/>--color-accent</div>
+        </div>
+      </div>
+    </div>
+    
+    <h3 class="ds-component-title">Neutrals (Ink / Text)</h3>
+    <div class="ds-colors-grid" style="margin-bottom: var(--space-8);">
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--ink-950);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Ink 950</div>
+          <div class="ds-color-var">--ink-950<br/>--color-bg</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--ink-900);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Ink 900</div>
+          <div class="ds-color-var">--ink-900<br/>--color-surface</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--ink-800);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Ink 800</div>
+          <div class="ds-color-var">--ink-800<br/>--color-surface-raised</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--color-text);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name" style="color:var(--color-bg)">Text Default</div>
+          <div class="ds-color-var" style="color:var(--color-bg)">--color-text</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--color-text-secondary);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name" style="color:var(--color-bg)">Text Secondary</div>
+          <div class="ds-color-var" style="color:var(--color-bg)">--color-text-secondary</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--color-text-muted);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name" style="color:var(--color-bg)">Text Muted</div>
+          <div class="ds-color-var" style="color:var(--color-bg)">--color-text-muted</div>
+        </div>
+      </div>
+      <div class="ds-color-card">
+        <div class="ds-color-swatch" style="background: var(--color-border);"></div>
+        <div class="ds-color-info">
+          <div class="ds-color-name">Border</div>
+          <div class="ds-color-var">--color-border</div>
+        </div>
+      </div>
+    </div>
+    
+    <h3 class="ds-component-title">Surfaces & Gradients</h3>
+    <div class="ds-surface-card" style="background: linear-gradient(165deg, oklch(0.22 0.04 145) 0%, oklch(0.17 0.03 148) 100%); position:relative; overflow:hidden;">
+      <div style="position: absolute; inset: 0; background: radial-gradient(circle at 20% 80%, oklch(0.50 0.14 145 / 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, oklch(0.52 0.20 25 / 0.03) 0%, transparent 40%); pointer-events: none;"></div>
+      <div style="position:relative; z-index:1;">
+        <h4 style="color:var(--white);">Brand Panel Background (Left side)</h4>
+        <code style="color:var(--green-300);">.split__brand</code>
+      </div>
+    </div>
+    
+    <div class="ds-surface-card" style="background: var(--color-bg);">
+      <h4 style="color:var(--white);">Access Panel Background (Right side)</h4>
+      <code style="color:var(--green-300);">.split__access</code>
+    </div>
+    
+  </section>
+
+  <!-- 3) UI Components -->
+  <section id="components" class="ds-section">
+    <h2 class="ds-section-title">3. UI Components</h2>
+    
+    <div class="ds-component-group">
+      <h3 class="ds-component-title">CTA Button</h3>
+      <div class="ds-states-grid">
+        <div class="ds-state-card">
+          <span class="ds-state-label">Default</span>
+          <button class="cta-button" style="animation:none;">
+            <svg aria-hidden="true" class="cta-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" x2="3" y1="12" y2="12"></line>
+            </svg>
+            Entrar com E-mail Institucional
+          </button>
+        </div>
+        <div class="ds-state-card">
+          <span class="ds-state-label">Hover (Simulated)</span>
+          <button class="cta-button" style="background: var(--color-primary-hover); box-shadow: var(--shadow-cta-hover); transform: translateY(-1px); animation:none;">
+            <svg aria-hidden="true" class="cta-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" x2="3" y1="12" y2="12"></line>
+            </svg>
+            Entrar com E-mail Institucional
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ds-component-group">
+      <h3 class="ds-component-title">Feature List (Cards equivalent)</h3>
+      <div class="ds-states-grid">
+        <div class="ds-state-card" style="background: transparent; border:none; padding:0;">
+          <ul class="features" role="list">
+            <li class="feature-item" style="animation:none; opacity:1; transform:none;">
+              <svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <div>
+                <strong>Sigilo total</strong>
+                <span>Respostas anônimas, identidade protegida</span>
+              </div>
+            </li>
+            <li class="feature-item" style="animation:none; opacity:1; transform:none;">
+              <svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <div>
+                <strong>Rápido e prático</strong>
+                <span>Avaliação em poucos minutos</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-component-group">
+      <h3 class="ds-component-title">Seal / Alert Banner</h3>
+      <div class="ds-states-grid">
+        <div class="ds-state-card" style="background: transparent; border:none; padding:0;">
+          <div class="seal" role="status">
+            <svg aria-hidden="true" class="seal__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+            <div class="seal__text">
+              <strong>Garantia de anonimato</strong>
+              <span>Sua autenticação valida a matrícula. As respostas são totalmente sigilosas — nenhum docente tem acesso à identidade dos avaliadores.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ds-component-group">
+      <h3 class="ds-component-title">Attribution Link</h3>
+      <div class="ds-states-grid">
+        <div class="ds-state-card" style="display:flex; justify-content:center;">
+          <div class="brand-labsis">
+            <span class="brand-labsis__text">Um projeto</span>
+            <a aria-label="Laboratório de Sistemas Inovadores (LabSIS)" class="brand-labsis__link" href="#" style="pointer-events:none;">
+              <img alt="LabSIS" class="brand-labsis__logo" height="30" loading="lazy" src="assets/labsis_logo_cd92eeb263ef.png" width="109"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 4) Layout & Spacing -->
+  <section id="layout" class="ds-section">
+    <h2 class="ds-section-title">4. Layout & Spacing</h2>
+    <p style="margin-bottom:var(--space-6); color:var(--color-text-secondary);">
+      The primary layout uses a <code>.split</code> class which splits the viewport into <code>.split__brand</code> (left) and <code>.split__access</code> (right).
+    </p>
+    <div class="ds-layout-preview">
+      <main class="split" style="min-height: 100%; position:relative;">
+        <section class="split__brand" style="padding:var(--space-8); display:flex; align-items:center; justify-content:center; text-align:center;">
+          <div><strong style="color:var(--white);">.split__brand</strong><br/><span style="font-size:var(--font-size-xs); color:var(--color-text-muted);">max-width: 440px inner container</span></div>
+        </section>
+        <section class="split__access" style="padding:var(--space-8); display:flex; align-items:center; justify-content:center; text-align:center;">
+          <div><strong style="color:var(--white);">.split__access</strong><br/><span style="font-size:var(--font-size-xs); color:var(--color-text-muted);">max-width: 400px inner container</span></div>
+        </section>
+      </main>
+    </div>
+  </section>
+
+  <!-- 5) Motion & Interaction -->
+  <section id="motion" class="ds-section">
+    <h2 class="ds-section-title">5. Motion & Interaction</h2>
+    <div class="ds-states-grid">
+      <div class="ds-state-card">
+        <span class="ds-state-label">Entrance: Left (.enter-left)</span>
+        <div style="padding:var(--space-4); border:1px dashed var(--color-border); text-align:center; animation: enter-left 2s infinite alternate var(--ease-out-expo);">
+          Animates Brand Content
+        </div>
+      </div>
+      <div class="ds-state-card">
+        <span class="ds-state-label">Entrance: Right (.enter-right)</span>
+        <div style="padding:var(--space-4); border:1px dashed var(--color-border); text-align:center; animation: enter-right 2s infinite alternate var(--ease-out-expo);">
+          Animates Access Form
+        </div>
+      </div>
+      <div class="ds-state-card">
+        <span class="ds-state-label">Staggered Fade (.fade-in)</span>
+        <div style="padding:var(--space-4); border:1px dashed var(--color-border); text-align:center; animation: fade-in 2s infinite alternate var(--ease-out-expo);">
+          Animates Features
+        </div>
+      </div>
+      <div class="ds-state-card">
+        <span class="ds-state-label">CTA Shine (.cta-shine)</span>
+        <button class="cta-button">
+          Shine Effect
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) Icons -->
+  <section id="icons" class="ds-section">
+    <h2 class="ds-section-title">6. Icons</h2>
+    <div class="ds-icon-grid">
+      <div class="ds-icon-card">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span class="ds-icon-name">Shield</span>
+      </div>
+      <div class="ds-icon-card">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span class="ds-icon-name">Clock</span>
+      </div>
+      <div class="ds-icon-card">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+          <line x1="18" x2="18" y1="20" y2="10"></line>
+          <line x1="12" x2="12" y1="20" y2="4"></line>
+          <line x1="6" x2="6" y1="20" y2="14"></line>
+        </svg>
+        <span class="ds-icon-name">Chart</span>
+      </div>
+      <div class="ds-icon-card">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="M9 12l2 2 4-4"></path>
+        </svg>
+        <span class="ds-icon-name">Seal Check</span>
+      </div>
+      <div class="ds-icon-card">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" x2="3" y1="12" y2="12"></line>
+        </svg>
+        <span class="ds-icon-name">Login</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo" style="background: var(--color-bg);">
+  <div class="footer__content">
+    <p class="footer__text">
+      © 2026 GeAD — Campus Araguaína · Design System
+    </p>
+  </div>
+</footer>
+
+<script defer="" src="assets/script_5f23412d90bd.js"></script>
+</body>
+</html>

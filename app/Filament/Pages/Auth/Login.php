@@ -1,60 +1,109 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Filament\Pages\Auth;
 
-use App\Models\User;
-use App\Traits\Filament\NotificationsTrait;
-use Filament\Auth\Http\Responses\Contracts\LoginResponse;
-use Filament\Auth\Pages\Login as AuthLogin;
-use Filament\Facades\Filament;
-use Illuminate\Auth\SessionGuard;
+use Filament\Auth\Pages\Login as BaseAuthLogin;
+use Filament\Schemas\Schema;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Actions;
+use Filament\Actions\Action;
+use Illuminate\Support\HtmlString;
+use App\Actions\Auth\SendMagicLinkAction;
+use Illuminate\Validation\ValidationException;
 
-class Login extends AuthLogin
+class Login extends BaseAuthLogin
 {
-    use NotificationsTrait;
-
-    #[\Override]
-    public function authenticate(): ?LoginResponse
+    public bool $magicLinkSent = false;
+    
+    public function getHeading(): string|\Illuminate\Contracts\Support\Htmlable
     {
-        $data = $this->form->getState();
-
-        /** @var SessionGuard $authGuard */
-        $authGuard = Filament::auth();
-
-        $credentials = $this->getCredentialsFromFormData($data);
-
-        // Verifica se o usuário existe antes de tentar autenticar
-        $user = $authGuard->getProvider()->retrieveByCredentials($credentials);
-
-        if (! $user) {
-            $this->throwFailureValidationException();
+        return '';
+    }
+    
+    public function sendMagicLink(): void
+    {
+        $email = $this->data['magic_link_email'] ?? null;
+        
+        if (!$email) {
+            $this->addError('data.magic_link_email', 'O e-mail institucional é obrigatório.');
+            return;
         }
-
-        // Bloqueia login de usuários suspensos
-        if ($user instanceof User && $user->isSuspended()) {
-            // Fazer login do usuário para que o middleware possa redirecionar
-            $authGuard->login($user);
-
-            // Redirecionar para página de conta suspensa
-            $this->redirect(route('filament.auth.account-suspended'));
-
+        
+        try {
+            (new SendMagicLinkAction())->execute($email);
+            
+            $this->magicLinkSent = true;
+            $this->data['magic_link_email'] = null; // Limpa o campo
+        } catch (ValidationException $e) {
+            $this->addError('data.magic_link_email', $e->getMessage());
+        } catch (\Exception $e) {
+            $this->addError('data.magic_link_email', 'Falha ao enviar e-mail. Verifique o servidor SMTP ou Resend: ' . $e->getMessage());
+        }
+    }
+    
+    public function authenticate(): ?\Filament\Auth\Http\Responses\Contracts\LoginResponse
+    {
+        $magicEmail = $this->data['magic_link_email'] ?? null;
+        $password = $this->data['password'] ?? null;
+        
+        if (!empty($magicEmail) && empty($password)) {
+            $this->sendMagicLink();
             return null;
         }
-
-        // Verifica se o usuário foi aprovado pelo admin
-        if ($user instanceof User && ! $user->isApproved()) {
-            // Fazer login do usuário para que o middleware possa redirecionar
-            $authGuard->login($user);
-
-            // Redirecionar para página de verificação pendente
-            $this->redirect(route('filament.auth.verification-pending'));
-
-            return null;
-        }
-
-        // Continua com a autenticação padrão do Filament
+        
         return parent::authenticate();
+    }
+    
+    protected function getFormActions(): array
+    {
+        return [];
+    }
+    
+    public function form(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextEntry::make('gerencia_badge')
+                    ->hiddenLabel()
+                    ->state(new HtmlString('<div class="flex items-center justify-center mt-6"><span class="inline-flex items-center rounded-md bg-green-500 px-3 text-sm font-semibold text-white shadow-sm dark:bg-green-400 dark:text-white">🔒 Apenas para a Gerência de Ensino</span></div>')),
+                    
+                $this->getEmailFormComponent(),
+                $this->getPasswordFormComponent(),
+                $this->getRememberFormComponent(),
+                
+                Actions::make([
+                    Action::make('authenticate')
+                        ->label(__('filament-panels::auth/pages/login.form.actions.authenticate.label'))
+                        ->submit('authenticate')
+                        ->extraAttributes(['class' => 'w-full']),
+                ])->fullWidth(),
+                
+                TextEntry::make('divider')
+                    ->hiddenLabel()
+                    ->state(new HtmlString('<div class="relative flex items-center"><div class="flex-grow border-t border-gray-300 dark:border-gray-700"></div><span class="flex-shrink-0 mx-4 text-gray-400 text-sm font-medium">OU</span><div class="flex-grow border-t border-gray-300 dark:border-gray-700"></div></div>')),
+                    
+                TextEntry::make('alunos_badge')
+                    ->hiddenLabel()
+                    ->state(new HtmlString('<div class="flex items-center justify-center"><span class="inline-flex items-center rounded-md bg-green-500 px-3 text-sm font-semibold text-white shadow-sm dark:bg-green-400 dark:text-white">🎓 Para alunos e professores</span></div>')),
+                    
+                TextInput::make('magic_link_email')
+                    ->label('E-mail Institucional')
+                    ->email()
+                    ->placeholder('digitar o email aqui'),
+                    
+                Actions::make([
+                    Action::make('sendMagicLink')
+                        ->label('Enviar link de acesso ao e-mail')
+                        ->action('sendMagicLink')
+                        ->extraAttributes(['class' => 'w-full']),
+                ])->fullWidth(),
+                
+                TextEntry::make('magic_link_sent')
+                    ->hiddenLabel()
+                    ->state(new HtmlString('<div class="text-success-600 dark:text-success-400 font-medium text-center bg-success-50 dark:bg-success-900/20 p-3 rounded-lg border border-success-200 dark:border-success-800">Link mágico enviado com sucesso! Verifique seu e-mail.</div>'))
+                    ->visible(fn () => $this->magicLinkSent),
+            ])
+            ->statePath('data');
     }
 }

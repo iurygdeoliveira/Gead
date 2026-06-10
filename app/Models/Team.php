@@ -15,6 +15,7 @@ use LaravelDaily\FilaTeams\Models\Team as BaseTeam;
  * @property int $id
  * @property string $name
  * @property string $slug
+ * @property string|null $cnpj
  * @property bool $is_personal
  * @property bool $is_active
  * @property CarbonImmutable|null $deleted_at
@@ -29,6 +30,7 @@ use LaravelDaily\FilaTeams\Models\Team as BaseTeam;
 #[Fillable([
     'name',
     'slug',
+    'cnpj',
     'is_personal',
     'is_active',
 ])]

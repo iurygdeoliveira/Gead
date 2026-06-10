@@ -56,6 +56,37 @@ class UserSeeder extends Seeder
             $adminRole->syncPermissions(PermissionModel::all());
         }
 
+        $staffMembers = [
+            [
+                'name' => 'Walmir Jacinto de Sousa',
+                'email' => 'walmir.sousa@ifto.edu.br',
+            ],
+            [
+                'name' => 'Cassilda Alves dos Santos',
+                'email' => 'cassilda.santos@ifto.edu.br',
+            ],
+            [
+                'name' => 'Erica Feitosa Oliveira',
+                'email' => 'erica.oliveira@ifto.edu.br',
+            ],
+        ];
+
+        $globalResolver->setPermissionsTeamId(0);
+        foreach ($staffMembers as $staffData) {
+            $staff = User::query()->firstOrCreate(
+                ['email' => $staffData['email']],
+                [
+                    'name' => $staffData['name'],
+                    'email_verified_at' => now(),
+                    'password' => Hash::make('mudar123'), // Senha padrão para primeiro acesso
+                    'is_approved' => true,
+                    'approved_by' => $admin->id,
+                ]
+            );
+            $staff->syncRoles([RoleType::ADMIN->value]);
+        }
+        $globalResolver->setPermissionsTeamId(null);
+
         $sicrano = User::query()->firstOrCreate(
             ['email' => 'sicrano@labsis.dev.br'],
             [

@@ -45,7 +45,6 @@ class AuthPanelProvider extends PanelProvider
                 AccountSuspended::class,
             ])
             ->login(Login::class)
-            ->registration(Register::class)
             ->passwordReset(RequestPasswordReset::class, ResetPassword::class)
             ->multiFactorAuthentication(
                 AppAuthentication::make()

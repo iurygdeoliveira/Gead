@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: auto;"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="GeAD — Sistema de Gestão de Avaliação Docente do Campus Araguaína. Avaliação segura, anônima e automatizada." name="description"/>
+<meta content="#0D0D0D" name="theme-color"/>
+<title>GeAD — Gestão de Avaliação Docente</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="assets/css2_0c6ec1a12c79.css" rel="stylesheet"/>
+<!-- Favicon -->
+<link href="assets/logo_712880b1cf29.png" rel="icon" type="image/png"/>
+<!-- Styles -->
+<link href="assets/style_52de95cda5af.css" rel="stylesheet"/>
+<script id="browser-logger-active">
+(function() {
+    const ENDPOINT = 'http://localhost/_boost/browser-logs';
+    const logQueue = [];
+    let flushTimeout = null;
+
+    console.log('🔍 Browser logger active (MCP server detected). Posting to: ' + ENDPOINT);
+
+    // Store original console methods
+    const originalConsole = {
+        log: console.log,
+        info: console.info,
+        error: console.error,
+        warn: console.warn,
+        table: console.table
+    };
+
+    // Helper to safely stringify values
+    function safeStringify(obj) {
+        const seen = new WeakSet();
+        return JSON.stringify(obj, (key, value) => {
+            if (typeof value === 'object' && value !== null) {
+                if (seen.has(value)) return '[Circular]';
+                seen.add(value);
+            }
+            if (value instanceof Error) {
+                return {
+                    name: value.name,
+                    message: value.message,
+                    stack: value.stack
+                };
+            }
+            return value;
+        });
+    }
+
+    // Batch and send logs
+    function flushLogs() {
+        if (logQueue.length === 0) return;
+
+        const batch = logQueue.splice(0, logQueue.length);
+
+        fetch(ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ logs: batch })
+        }).catch(err => {
+            // Silently fail to avoid infinite loops
+            originalConsole.error('Failed to send logs:', err);
+        });
+    }
+
+    // Debounced flush (100ms)
+    function scheduleFlush() {
+        if (flushTimeout) clearTimeout(flushTimeout);
+        flushTimeout = setTimeout(flushLogs, 100);
+    }
+
+    // Intercept console methods
+    ['log', 'info', 'error', 'warn', 'table'].forEach(method => {
+        console[method] = function(...args) {
+            // Call original method
+            originalConsole[method].apply(console, args);
+
+            // Capture log data
+            try {
+                logQueue.push({
+                    type: method,
+                    timestamp: new Date().toISOString(),
+                    data: args.map(arg => {
+                        try {
+                            return typeof arg === 'object' ? JSON.parse(safeStringify(arg)) : arg;
+                        } catch (e) {
+                            return String(arg);
+                        }
+                    }),
+                    url: window.location.href,
+                    userAgent: navigator.userAgent
+                });
+
+                scheduleFlush();
+            } catch (e) {
+                // Fail silently
+            }
+        };
+    });
+
+    // Global error handlers for uncaught errors
+    const originalOnError = window.onerror;
+    window.onerror = function boostErrorHandler(errorMsg, url, lineNumber, colNumber, error) {
+        try {
+            logQueue.push({
+                type: 'uncaught_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: errorMsg,
+                    filename: url,
+                    lineno: lineNumber,
+                    colno: colNumber,
+                    error: error ? {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Call original handler if it exists
+        if (originalOnError && typeof originalOnError === 'function') {
+            return originalOnError(errorMsg, url, lineNumber, colNumber, error);
+        }
+
+        // Let the error continue to propagate
+        return false;
+    }
+    window.addEventListener('error', (event) => {
+        try {
+            logQueue.push({
+                type: 'window_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: event.message,
+                    filename: event.filename,
+                    lineno: event.lineno,
+                    colno: event.colno,
+                    error: event.error ? {
+                        name: event.error.name,
+                        message: event.error.message,
+                        stack: event.error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the error continue to propagate
+        return false;
+    });
+    window.addEventListener('unhandledrejection', (event) => {
+        try {
+            logQueue.push({
+                type: 'error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: 'Unhandled Promise Rejection',
+                    reason: event.reason instanceof Error ? {
+                        name: event.reason.name,
+                        message: event.reason.message,
+                        stack: event.reason.stack
+                    } : event.reason
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the rejection continue to propagate
+        return false;
+    });
+
+    // Flush on page unload
+    window.addEventListener('beforeunload', () => {
+        if (logQueue.length > 0) {
+            navigator.sendBeacon(ENDPOINT, JSON.stringify({ logs: logQueue }));
+        }
+    });
+})();
+</script>
+<style>
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(0);
+      animation: ripple-effect 0.5s ease-out forwards;
+      pointer-events: none;
+    }
+    @keyframes ripple-effect {
+      to {
+        transform: scale(2.5);
+        opacity: 0;
+      }
+    }
+  </style><style data-scroll-fix="true">
+        /* Scroll fixes for offline viewing */
+        html, body {
+            overflow: auto !important;
+            overflow-x: hidden !important;
+            height: auto !important;
+            min-height: 100% !important;
+            scroll-behavior: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Force visibility - many sites use JS animations for initial display */
+        body, .wrapper, main, #__next, #app, .page, .content {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
+        
+        /* Disable loader/preloader overlays */
+        .loader, .preloader, .loading, [class*="loader"], [class*="preloader"] {
+            display: none !important;
+            opacity: 0 !important;
+        }
+        
+        /* Show elements that might be hidden for animation */
+        .word-inner, .char, .line, [data-aos], [data-scroll],
+        .hero-text span, .hero-fade, [class*="hero"] span {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+        
+        /* Reset Tailwind animation utility classes */
+        .translate-y-full, .translate-x-full, .-translate-y-full, .-translate-x-full,
+        .translate-y-1\/2, .-translate-y-1\/2, .translate-y-\[100\%\], .translate-y-\[110\%\] {
+            transform: none !important;
+        }
+        
+        /* Force visibility on common hidden-for-animation patterns */
+        .opacity-0, [class*="opacity-0"] {
+            opacity: 1 !important;
+        }
+        
+        /* Reset scale transforms used for animations */
+        .scale-0, .scale-50, .scale-75 {
+            transform: none !important;
+        }
+        
+        html.lenis, html.lenis-smooth, 
+        body.lenis, body.lenis-smooth,
+        .lenis-wrapper, .lenis-content,
+        [data-lenis-prevent], [data-scroll-container] {
+            overflow: visible !important;
+            height: auto !important;
+        }
+        
+        /* Fix flex containers that might cut off content */
+        body.flex.items-center,
+        body.flex.justify-center {
+            align-items: flex-start !important;
+            min-height: 100vh;
+            height: auto !important;
+        }
+        
+        /* Ensure main content scrolls */
+        main, #__next, #__nuxt, #app, .main-content {
+            overflow: visible !important;
+            height: auto !important;
+        }
+        </style></head>
+<body style="padding-bottom: 33px; scroll-behavior: auto;">
+<!-- Ambient orbs -->
+<div aria-hidden="true" class="bg-orbs">
+<div class="orb orb--1"></div>
+<div class="orb orb--2"></div>
+<div class="orb orb--3"></div>
+</div>
+<!-- Main split layout -->
+<main class="split" id="main-content">
+<!-- LEFT: Branding + Features -->
+<section aria-label="Sobre o GeAD" class="split__brand">
+<div class="brand-content">
+<div class="logo-wrapper">
+<img alt="Logo GeAD — capelo acadêmico verde com lupa vermelha" class="brand-logo" fetchpriority="high" height="170" src="assets/logo_712880b1cf29.png" width="140"/>
+</div>
+<p class="brand-description">
+          Plataforma institucional de avaliação de desempenho docente do
+          <strong>Campus Araguaína</strong>.
+        </p>
+<!-- Lean feature list — 3 items only, no cards -->
+<ul class="features" role="list">
+<li class="feature-item">
+<svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<div>
+<strong>Sigilo total</strong>
+<span>Respostas anônimas, identidade protegida</span>
+</div>
+</li>
+<li class="feature-item">
+<svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<div>
+<strong>Rápido e prático</strong>
+<span>Avaliação em poucos minutos</span>
+</div>
+</li>
+<li class="feature-item">
+<svg aria-hidden="true" class="feature-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="18" x2="18" y1="20" y2="10"></line>
+<line x1="12" x2="12" y1="20" y2="4"></line>
+<line x1="6" x2="6" y1="20" y2="14"></line>
+</svg>
+<div>
+<strong>Análise inteligente</strong>
+<span>Painéis e dashboards em tempo real</span>
+</div>
+</li>
+</ul>
+<!-- LabSIS attribution -->
+<div class="brand-labsis">
+<span class="brand-labsis__text">Um projeto</span>
+<a aria-label="Laboratório de Sistemas Inovadores (LabSIS)" class="brand-labsis__link" href="https://labsis.dev.br/" rel="noopener noreferrer" target="_blank">
+<img alt="LabSIS" class="brand-labsis__logo" height="30" loading="lazy" src="assets/labsis_logo_cd92eeb263ef.png" width="109"/>
+</a>
+</div>
+</div>
+</section>
+<!-- RIGHT: Access / CTA -->
+<section aria-label="Acesso ao sistema" class="split__access">
+<div class="access-section">
+<h1 class="access-title">Acessar o GeAD</h1>
+<p class="access-subtitle">
+          Discentes, docentes e gestores.
+        </p>
+<!-- Anonymity seal — prominent per spec -->
+<div class="seal" role="status">
+<svg aria-hidden="true" class="seal__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+<div class="seal__text">
+<strong>Garantia de anonimato</strong>
+<span>Sua autenticação valida a matrícula. As respostas são totalmente sigilosas — nenhum docente tem acesso
+              à identidade dos avaliadores.</span>
+</div>
+</div>
+<a class="cta-button" href="http://localhost/login" id="cta-login" role="button">
+<svg aria-hidden="true" class="cta-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+<polyline points="10 17 15 12 10 7"></polyline>
+<line x1="15" x2="3" y1="12" y2="12"></line>
+</svg>
+          Entrar com E-mail Institucional
+        </a>
+<p class="cta-hint">
+          Acesso via link mágico — sem necessidade de senha.
+        </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+<div class="footer__content">
+<p class="footer__text">
+        © 2026 GeAD — Campus Araguaína · Gerência de Ensino
+      </p>
+</div>
+</footer>
+<script defer="" src="assets/script_5f23412d90bd.js"></script>
+<!-- Laravel Debugbar Widget -->
+<link href="assets/assets_7debab4e5cdf.css" rel="stylesheet" type="text/css"/>
+<script src="assets/assets_0538131fc67c.js" type="text/javascript"></script>
+<script type="text/javascript">
+(function () {
+    const renderDebugbar = function () {
+const phpdebugbar = new PhpDebugBar.DebugBar({"theme":"auto","hideEmptyTabs":true,"spaNavigationEvents":["livewire:navigated","turbo:load","htmx:afterSettle"]});
+phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({"icon":"arrows-left-right","title":"Request", "widget": new PhpDebugBar.Widgets.JsonVariableListWidget()}));
+phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({"icon":"bug","title":"Exceptions", "widget": new PhpDebugBar.Widgets.ExceptionsWidget()}));
+phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({"icon":"logs","title":"Messages", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({"icon":"clock","tooltip":"Request Duration","link":"timeline"}), "right");
+phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({"icon":"chart-infographic","title":"Timeline", "widget": new PhpDebugBar.Widgets.TimelineWidget()}));
+phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({"icon":"server-cog","tooltip":"Memory Usage"}), "right");
+phpdebugbar.addIndicator("version", new PhpDebugBar.DebugBar.Indicator({"icon":"brand-laravel"}), "right");
+phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({"icon":"file-code","title":"Views", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
+phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({"icon":"database","title":"Queries", "widget": new PhpDebugBar.Widgets.LaravelQueriesWidget()}));
+phpdebugbar.addTab("models", new PhpDebugBar.DebugBar.Tab({"icon":"box","title":"Models", "widget": new PhpDebugBar.Widgets.TableVariableListWidget()}));
+phpdebugbar.addTab("livewire", new PhpDebugBar.DebugBar.Tab({"icon":"brand-livewire","title":"Livewire", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
+phpdebugbar.addTab("emails", new PhpDebugBar.DebugBar.Tab({"icon":"inbox","title":"Mails", "widget": new PhpDebugBar.Widgets.MailsWidget()}));
+phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({"icon":"logs","title":"Gate", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addTab("http_client", new PhpDebugBar.DebugBar.Tab({"icon":"mobiledata","title":"Http client", "widget": new PhpDebugBar.Widgets.HttpWidget()}));
+phpdebugbar.addTab("N+1 Queries", new PhpDebugBar.DebugBar.Tab({"icon":"logs","title":"N+1 Queries", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.setDataMap({
+"request": ["request.data", {}],
+"request:badge": ["request.badge", null],
+"exceptions": ["exceptions.exceptions", []],
+"exceptions:badge": ["exceptions.count", null],
+"messages": ["messages.messages", []],
+"messages:badge": ["messages.count", null],
+"time": ["time.duration_str", '0ms'],
+"timeline": ["time", {}],
+"memory": ["memory.peak_usage_str", '0B'],
+"version": ["laravel.version", ],
+"version:tooltip": ["laravel.tooltip", {}],
+"views": ["views", []],
+"views:badge": ["views.nb_templates", 0],
+"queries": ["queries", []],
+"queries:badge": ["queries.nb_statements", 0],
+"models": ["models", {}],
+"models:badge": ["models.count", 0],
+"livewire": ["livewire", []],
+"livewire:badge": ["livewire.nb_templates", 0],
+"emails": ["symfonymailer_mails.mails", []],
+"emails:badge": ["symfonymailer_mails.count", null],
+"gate": ["gate.messages", []],
+"gate:badge": ["gate.count", null],
+"http_client": ["http_client.requests", []],
+"http_client:badge": ["http_client.nb_requests", 0],
+"N+1 Queries": ["N+1 Queries.messages", []],
+"N+1 Queries:badge": ["N+1 Queries.count", null]
+});
+phpdebugbar.restoreState();
+phpdebugbar.enableAjaxHandlerTab();
+phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
+phpdebugbar.ajaxHandler.bindToFetch();
+phpdebugbar.ajaxHandler.bindToXHR();
+phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"http:\/\/localhost\/_debugbar\/open"}));
+phpdebugbar.addDataSet({"__meta":{"id":"01KTSQPPC59HCHHX4KH07PK9EJ","datetime":"2026-06-10 21:41:06","utime":1781127666.053295,"method":"GET","uri":"\/","ip":"172.23.0.1"},"request":{"data":{"uri":"GET \/","middleware":["web","static","Laravel\\Nightwatch\\Hooks\\RouteMiddleware"],"controller":"App\\Http\\Controllers\\WebsiteLandingController","method":"GET","format":"html","content_type":"text\/html; charset=utf-8","status_text":"OK","status_code":200,"request_query":[],"request_request":[],"request_files":[],"request_headers":{"host":["localhost"],"connection":["keep-alive"],"sec-ch-ua":["\u0022HeadlessChrome\u0022;v=\u0022143\u0022, \u0022Chromium\u0022;v=\u0022143\u0022, \u0022Not A(Brand\u0022;v=\u002224\u0022"],"sec-ch-ua-mobile":["?0"],"sec-ch-ua-platform":["\u0022macOS\u0022"],"upgrade-insecure-requests":["1"],"user-agent":["Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/120.0.0.0 Safari\/537.36"],"accept":["text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7"],"sec-fetch-site":["none"],"sec-fetch-mode":["navigate"],"sec-fetch-user":["?1"],"sec-fetch-dest":["document"],"accept-encoding":["gzip, deflate, br, zstd"]},"request_server":{"DOCUMENT_ROOT":"\/var\/www\/html\/public","REMOTE_ADDR":"172.23.0.1","REMOTE_PORT":"37414","SERVER_SOFTWARE":"PHP\/8.5.6 (Development Server)","SERVER_PROTOCOL":"HTTP\/1.1","SERVER_NAME":"0.0.0.0","SERVER_PORT":"80","REQUEST_URI":"\/","REQUEST_METHOD":"GET","SCRIPT_NAME":"\/index.php","SCRIPT_FILENAME":"\/var\/www\/html\/public\/index.php","PHP_SELF":"\/index.php","HTTP_HOST":"localhost","HTTP_CONNECTION":"keep-alive","HTTP_SEC_CH_UA":"\u0022HeadlessChrome\u0022;v=\u0022143\u0022, \u0022Chromium\u0022;v=\u0022143\u0022, \u0022Not A(Brand\u0022;v=\u002224\u0022","HTTP_SEC_CH_UA_MOBILE":"?0","HTTP_SEC_CH_UA_PLATFORM":"\u0022macOS\u0022","HTTP_UPGRADE_INSECURE_REQUESTS":"1","HTTP_USER_AGENT":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/120.0.0.0 Safari\/537.36","HTTP_ACCEPT":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.7","HTTP_SEC_FETCH_SITE":"none","HTTP_SEC_FETCH_MODE":"navigate","HTTP_SEC_FETCH_USER":"?1","HTTP_SEC_FETCH_DEST":"document","HTTP_ACCEPT_ENCODING":"gzip, deflate, br, zstd","REQUEST_TIME_FLOAT":1781127665.95432,"REQUEST_TIME":1781127665},"request_cookies":[],"request_attributes":[],"route":"","response_headers":{"content-type":["text\/html; charset=utf-8"],"cache-control":["max-age=3600, public, s-maxage=86400"],"date":["Wed, 10 Jun 2026 21:41:06 GMT"],"set-cookie":["XSRF-TOKEN=eyJpdiI6InhKRFphRmw1K1lsanZGQnVNaDRHNmc9PSIsInZhbHVlIjoiNk1oZVA5OHFVZnAxdjg5d1lHN1Bxb2o3YnNodisyOFF5QXJCd0k3N2xaWXFkcnoxNVc0RTk1OHBsRmVidFJqb3VXMnlPN1FrOE9LSCtQL21MRDFwd3A2aGhZQkF5SlhLTzh6RHFOb2QveVE0VlY4TUJjbUZneWh2ampnUXd5WUQiLCJtYWMiOiIyMmUyMjMzNzM0NTk2MTE5ODI4YTg4MzIwYjZmMjM4NWE5NDY0NDFhZTUzNWY0MDkwN2Y1M2NjZWYxOTM2NjkxIiwidGFnIjoiIn0%3D; expires=Wed, 10 Jun 2026 23:41:06 GMT; Max-Age=7200; path=\/; samesite=lax","labsis-kit-session=eyJpdiI6ImcwRnZMTUUzQ2xMK3hlOE5pb2h5clE9PSIsInZhbHVlIjoiM3R6b25hU1l5RnF0dU5Ub29rWjdUOGJpWVpnbjc2Ly9BWkpPa1hhWk1BNUlvcm5HbTRjZm82MjcxM25XOTZqdTBGY2N1dkdFLzZMSXdhSUMwSEdCcHQ4OFlMc3R3QkhuaWZGVndFZytzQWQvWXB6M0pNWE45d21VZW9QY3pqNlIiLCJtYWMiOiJhNGNkZmVmZTgxN2U2NTZiMWUxNjM1OWYwMDZmYTc2OTk3NjY3OGNhODkwMTc5MzdlYWQzMzE2ZTQ2NjJkYWNiIiwidGFnIjoiIn0%3D; expires=Wed, 10 Jun 2026 23:41:06 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"]},"response_cookies":["XSRF-TOKEN=eyJpdiI6InhKRFphRmw1K1lsanZGQnVNaDRHNmc9PSIsInZhbHVlIjoiNk1oZVA5OHFVZnAxdjg5d1lHN1Bxb2o3YnNodisyOFF5QXJCd0k3N2xaWXFkcnoxNVc0RTk1OHBsRmVidFJqb3VXMnlPN1FrOE9LSCtQL21MRDFwd3A2aGhZQkF5SlhLTzh6RHFOb2QveVE0VlY4TUJjbUZneWh2ampnUXd5WUQiLCJtYWMiOiIyMmUyMjMzNzM0NTk2MTE5ODI4YTg4MzIwYjZmMjM4NWE5NDY0NDFhZTUzNWY0MDkwN2Y1M2NjZWYxOTM2NjkxIiwidGFnIjoiIn0%3D; expires=Wed, 10-Jun-2026 23:41:06 GMT; path=\/","labsis-kit-session=eyJpdiI6ImcwRnZMTUUzQ2xMK3hlOE5pb2h5clE9PSIsInZhbHVlIjoiM3R6b25hU1l5RnF0dU5Ub29rWjdUOGJpWVpnbjc2Ly9BWkpPa1hhWk1BNUlvcm5HbTRjZm82MjcxM25XOTZqdTBGY2N1dkdFLzZMSXdhSUMwSEdCcHQ4OFlMc3R3QkhuaWZGVndFZytzQWQvWXB6M0pNWE45d21VZW9QY3pqNlIiLCJtYWMiOiJhNGNkZmVmZTgxN2U2NTZiMWUxNjM1OWYwMDZmYTc2OTk3NjY3OGNhODkwMTc5MzdlYWQzMzE2ZTQ2NjJkYWNiIiwidGFnIjoiIn0%3D; expires=Wed, 10-Jun-2026 23:41:06 GMT; path=\/; httponly"],"session_metadata":[],"session_attributes":{"_token":"uq***cY","_previous":{"url":"http:\/\/localhost","route":"home"},"_flash":{"old":[],"new":[]}},"flashes":[],"path_info":"\/","locale":"en"},"tooltip":{"status":"200 OK","full_url":"http:\/\/localhost","action_name":"home","controller_action":"App\\Http\\Controllers\\WebsiteLandingController"},"badge":null},"exceptions":{"count":0,"exceptions":[]},"messages":{"count":0,"messages":[]},"memory":{"peak_usage":2707576,"peak_usage_str":"3MB"},"laravel":{"version":"13.x","tooltip":{"Laravel Version":"13.15.0","PHP Version":"8.5.6","Environment":"local","Debug Mode":"Enabled","URL":"localhost","Timezone":"UTC","Locale":"pt_BR"}},"views":{"count":2,"nb_templates":2,"templates":[{"name":"website.pages.home","param_count":null,"params":[],"start":1781127666.051279,"type":"blade","hash":"blade\/var\/www\/html\/resources\/views\/website\/pages\/home.blade.phpwebsite.pages.home","xdebug_link":{"url":"phpstorm:\/\/open?file=%2Fhome%2Fiury%2FProjetos%2FGeaD%2Fresources%2Fviews%2Fwebsite%2Fpages%2Fhome.blade.php\u0026line=1","ajax":false,"filename":"home.blade.php","line":"?","path":"\/resources\/views\/website\/pages\/home.blade.php"}},{"name":"website.layouts.landing","param_count":null,"params":[],"start":1781127666.051716,"type":"blade","hash":"blade\/var\/www\/html\/resources\/views\/website\/layouts\/landing.blade.phpwebsite.layouts.landing","xdebug_link":{"url":"phpstorm:\/\/open?file=%2Fhome%2Fiury%2FProjetos%2FGeaD%2Fresources%2Fviews%2Fwebsite%2Flayouts%2Flanding.blade.php\u0026line=1","ajax":false,"filename":"landing.blade.php","line":"?","path":"\/resources\/views\/website\/layouts\/landing.blade.php"}}]},"queries":{"count":1,"nb_statements":0,"nb_visible_statements":1,"nb_excluded_statements":0,"nb_failed_statements":0,"accumulated_duration":0,"accumulated_duration_str":"0\u03bcs","memory_usage":0,"memory_usage_str":null,"statements":[{"sql":"Connection Established","type":"transaction","params":[],"backtrace":[{"index":9,"namespace":null,"name":"vendor\/beyondcode\/laravel-query-detector\/src\/QueryDetector.php","file":"\/var\/www\/html\/vendor\/beyondcode\/laravel-query-detector\/src\/QueryDetector.php","line":39},{"index":10,"namespace":null,"name":"vendor\/beyondcode\/laravel-query-detector\/src\/QueryDetectorMiddleware.php","file":"\/var\/www\/html\/vendor\/beyondcode\/laravel-query-detector\/src\/QueryDetectorMiddleware.php","line":30},{"index":11,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","file":"\/var\/www\/html\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php","line":219},{"index":12,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php","file":"\/var\/www\/html\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php","line":21},{"index":13,"namespace":null,"name":"vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php","file":"\/var\/www\/html\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php","line":31}],"start":1781127666.048351,"slow":false,"filename":"QueryDetector.php:39","source":{"index":9,"namespace":null,"name":"vendor\/beyondcode\/laravel-query-detector\/src\/QueryDetector.php","file":"\/var\/www\/html\/vendor\/beyondcode\/laravel-query-detector\/src\/QueryDetector.php","line":39},"xdebug_link":{"url":"phpstorm:\/\/open?file=%2Fhome%2Fiury%2FProjetos%2FGeaD%2Fvendor%2Fbeyondcode%2Flaravel-query-detector%2Fsrc%2FQueryDetector.php\u0026line=39","ajax":false,"filename":"QueryDetector.php","line":"39","path":"\/vendor\/beyondcode\/laravel-query-detector\/src\/QueryDetector.php"},"connection":"labsis"}]},"models":{"data":[],"count":0,"key_map":{"retrieved":"Retrieved","created":"Created","updated":"Updated","deleted":"Deleted"},"is_counter":true,"badges":[]},"livewire":{"count":0,"nb_templates":0,"templates":[],"sentence":"Livewire components"},"symfonymailer_mails":{"count":0,"mails":[]},"gate":{"count":0,"messages":[]},"http_client":{"nb_requests":0,"requests":[]},"N+1 Queries":{"count":0,"messages":[]},"time":{"count":7,"start":1781127665.954685,"end":1781127666.054027,"duration":0.09934210777282715,"duration_str":"99.34ms","measures":[{"label":"Booting","start":1781127665.954685,"relative_start":0,"end":1781127666.028465,"relative_end":1781127666.028465,"duration":0.07378005981445312,"duration_str":"73.78ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Application","start":1781127666.02849,"relative_start":0.07380509376525879,"end":1781127666.054028,"relative_end":9.5367431640625e-7,"duration":0.025537967681884766,"duration_str":"25.54ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Routing","start":1781127666.048941,"relative_start":0.09425592422485352,"end":1781127666.049432,"relative_end":1781127666.049432,"duration":0.0004911422729492188,"duration_str":"491\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":null,"group":null},{"label":"Preparing Response","start":1781127666.051016,"relative_start":0.09633111953735352,"end":1781127666.052036,"relative_end":1781127666.052036,"duration":0.0010199546813964844,"duration_str":"1.02ms","memory":0,"memory_str":"0B","params":[],"collector":null,"group":null},{"label":"website.pages.home","start":1781127666.051279,"relative_start":0.09659409523010254,"end":1781127666.051279,"relative_end":1781127666.051279,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"Views"},{"label":"website.layouts.landing","start":1781127666.051716,"relative_start":0.0970311164855957,"end":1781127666.051716,"relative_end":1781127666.051716,"duration":0,"duration_str":"0\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":"views","group":"Views"},{"label":"Preparing Response","start":1781127666.052945,"relative_start":0.09825992584228516,"end":1781127666.053016,"relative_end":1781127666.053016,"duration":7.104873657226562e-5,"duration_str":"71\u03bcs","memory":0,"memory_str":"0B","params":[],"collector":null,"group":null}]}}, "01KTSQPPC59HCHHX4KH07PK9EJ", "", true);
+
+    window.PhpDebugBar.instance = phpdebugbar;
+    window.phpdebugbar = phpdebugbar;
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderDebugbar, { once: true });
+    } else {
+        renderDebugbar();
+    }
+})();
+</script>
+<div class="phpdebugbar phpdebugbar-minimized" data-bodybottominset="true" data-hideemptytabs="true" data-openbtnposition="bottomLeft" data-showfullscreenbtn="false" data-spanavigationevents="livewire:navigated,turbo:load,htmx:afterSettle" data-theme="light" data-toolbarposition="bottom"><div class="phpdebugbar-drag-capture"></div><div class="phpdebugbar-resize-handle phpdebugbar-resize-handle-top"></div><div class="phpdebugbar-header"><a class="phpdebugbar-restore-btn"></a><div class="phpdebugbar-header-left"><a class="phpdebugbar-tab" data-collector="request" data-empty="false"><i class="phpdebugbar-icon phpdebugbar-icon-arrows-left-right"></i><span class="phpdebugbar-text">Request</span><span class="phpdebugbar-badge"></span></a><a class="phpdebugbar-tab" data-collector="exceptions" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-bug"></i><span class="phpdebugbar-text">Exceptions</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="messages" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-logs"></i><span class="phpdebugbar-text">Messages</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="timeline" data-empty="false"><i class="phpdebugbar-icon phpdebugbar-icon-chart-infographic"></i><span class="phpdebugbar-text">Timeline</span><span class="phpdebugbar-badge"></span></a><a class="phpdebugbar-tab" data-collector="views" data-empty="false"><i class="phpdebugbar-icon phpdebugbar-icon-file-code"></i><span class="phpdebugbar-text">Views</span><span class="phpdebugbar-badge phpdebugbar-visible">2</span></a><a class="phpdebugbar-tab" data-collector="queries" data-empty="false"><i class="phpdebugbar-icon phpdebugbar-icon-database"></i><span class="phpdebugbar-text">Queries</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="models" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-box"></i><span class="phpdebugbar-text">Models</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="livewire" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-brand-livewire"></i><span class="phpdebugbar-text">Livewire</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="emails" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-inbox"></i><span class="phpdebugbar-text">Mails</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="gate" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-logs"></i><span class="phpdebugbar-text">Gate</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="http_client" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-mobiledata"></i><span class="phpdebugbar-text">Http client</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a><a class="phpdebugbar-tab" data-collector="N+1 Queries" data-empty="true"><i class="phpdebugbar-icon phpdebugbar-icon-logs"></i><span class="phpdebugbar-text">N+1 Queries</span><span class="phpdebugbar-badge phpdebugbar-visible">0</span></a></div><div class="phpdebugbar-header-right"><a class="phpdebugbar-close-btn"></a><a class="phpdebugbar-fullscreen-btn" hidden=""></a><a class="phpdebugbar-minimize-btn" hidden=""></a><a class="phpdebugbar-maximize-btn"></a><a class="phpdebugbar-tab phpdebugbar-tab-settings" data-collector="__settings"><i class="phpdebugbar-icon phpdebugbar-icon-adjustments-horizontal"></i><span class="phpdebugbar-text">Settings</span><span class="phpdebugbar-badge"></span></a><a class="phpdebugbar-open-btn"></a><div class="phpdebugbar-widgets-datasets-switcher-widget"><div class="phpdebugbar-widgets-datasets-badge"><span class="phpdebugbar-widgets-datasets-badge-count" hidden=""></span><span class="phpdebugbar-widgets-datasets-badge-url">GET /</span></div></div><span class="phpdebugbar-datasets-switcher" hidden="" name="datasets-switcher"><select hidden=""></select></span><span class="phpdebugbar-indicator" style="cursor: pointer;"><i class="phpdebugbar-icon phpdebugbar-icon-clock"></i><span class="phpdebugbar-text">99.34ms</span><span class="phpdebugbar-tooltip">Request Duration</span></span><span class="phpdebugbar-indicator"><i class="phpdebugbar-icon phpdebugbar-icon-server-cog"></i><span class="phpdebugbar-text">3MB</span><span class="phpdebugbar-tooltip">Memory Usage</span></span><span class="phpdebugbar-indicator"><i class="phpdebugbar-icon phpdebugbar-icon-brand-laravel"></i><span class="phpdebugbar-text">13.x</span><span class="phpdebugbar-tooltip"><dl><dt>Laravel Version</dt><dd>13.15.0</dd><dt>PHP Version</dt><dd>8.5.6</dd><dt>Environment</dt><dd>local</dd><dt>Debug Mode</dt><dd>Enabled</dd><dt>URL</dt><dd>localhost</dd><dt>Timezone</dt><dd>UTC</dd><dt>Locale</dt><dd>pt_BR</dd></dl></span></span></div></div><div class="phpdebugbar-body" hidden="" style="height: 301px;"><div class="phpdebugbar-panel" data-collector="__settings" hidden=""><form class="phpdebugbar-settings"><div class="phpdebugbar-form-row"><div class="phpdebugbar-form-label">Theme</div><div class="phpdebugbar-form-input"><select><option value="auto">Auto (System preference)</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div><div class="phpdebugbar-form-row"><div class="phpdebugbar-form-label">Toolbar Position</div><div class="phpdebugbar-form-input"><select><option value="bottomLeft">Bottom Left</option><option value="bottomRight">Bottom Right</option><option value="topLeft">Top Left</option><option value="topRight">Top Right</option></select></div></div><div class="phpdebugbar-form-row"><div class="phpdebugbar-form-label">Hide Empty Tabs</div><div class="phpdebugbar-form-input"><label><input type="checkbox"/>Hide empty tabs until they have data</label></div></div><div class="phpdebugbar-form-row"><div class="phpdebugbar-form-label">Fullscreen</div><div class="phpdebugbar-form-input"><label><input type="checkbox"/>Show fullscreen button in toolbar</label></div></div><div class="phpdebugbar-form-row" style=""><div class="phpdebugbar-form-label">Autoshow</div><div class="phpdebugbar-form-input"><label><input type="checkbox"/>Automatically show new incoming Ajax requests</label></div></div><div class="phpdebugbar-form-row"><div class="phpdebugbar-form-label">Reset to defaults</div><div class="phpdebugbar-form-input"><button>Reset settings</button></div></div></form></div><div class="phpdebugbar-panel" data-collector="request"><dl class="phpdebugbar-widgets-kvlist phpdebugbar-widgets-jsonvarlist"></dl></div><div class="phpdebugbar-panel" data-collector="exceptions"><div class="phpdebugbar-widgets-exceptions"><ul class="phpdebugbar-widgets-list"></ul></div></div><div class="phpdebugbar-panel" data-collector="messages"><div class="phpdebugbar-widgets-messages"><ul class="phpdebugbar-widgets-list"></ul><div class="phpdebugbar-widgets-toolbar"><i class="phpdebugbar-icon phpdebugbar-icon-search"></i><input aria-label="Search" name="search" placeholder="Search" type="text"/></div></div></div><div class="phpdebugbar-panel" data-collector="timeline"><ul class="phpdebugbar-widgets-timeline"></ul></div><div class="phpdebugbar-panel" data-collector="views"><div class="phpdebugbar-widgets-templates"><div class="phpdebugbar-widgets-status"></div><ul class="phpdebugbar-widgets-list"></ul><div class="phpdebugbar-widgets-callgraph"></div></div></div><div class="phpdebugbar-panel" data-collector="queries"><div class="phpdebugbar-widgets-sqlqueries"><div class="phpdebugbar-widgets-status"></div><div class="phpdebugbar-widgets-toolbar"></div><ul class="phpdebugbar-widgets-list"></ul></div></div><div class="phpdebugbar-panel" data-collector="models"><div class="phpdebugbar-widgets-tablevarlist"></div></div><div class="phpdebugbar-panel" data-collector="livewire"><div class="phpdebugbar-widgets-templates"><div class="phpdebugbar-widgets-status"></div><ul class="phpdebugbar-widgets-list"></ul><div class="phpdebugbar-widgets-callgraph"></div></div></div><div class="phpdebugbar-panel" data-collector="emails"><div class="phpdebugbar-widgets-mails"><ul class="phpdebugbar-widgets-list"></ul></div></div><div class="phpdebugbar-panel" data-collector="gate"><div class="phpdebugbar-widgets-messages"><ul class="phpdebugbar-widgets-list"></ul><div class="phpdebugbar-widgets-toolbar"><i class="phpdebugbar-icon phpdebugbar-icon-search"></i><input aria-label="Search" name="search" placeholder="Search" type="text"/></div></div></div><div class="phpdebugbar-panel" data-collector="http_client"><div class="phpdebugbar-widgets-httpclient"><ul class="phpdebugbar-widgets-list"></ul></div></div><div class="phpdebugbar-panel" data-collector="N+1 Queries"><div class="phpdebugbar-widgets-messages"><ul class="phpdebugbar-widgets-list"></ul><div class="phpdebugbar-widgets-toolbar"><i class="phpdebugbar-icon phpdebugbar-icon-search"></i><input aria-label="Search" name="search" placeholder="Search" type="text"/></div></div></div></div><div class="phpdebugbar-resize-handle phpdebugbar-resize-handle-bottom"></div><a class="phpdebugbar-restore-btn" hidden=""></a></div><div class="phpdebugbar-widgets-datasets-panel" data-theme="light" hidden=""><div class="phpdebugbar-widgets-datasets-panel-toolbar"><label class="phpdebugbar-widgets-datasets-autoshow"><input type="checkbox"/> Autoshow</label><a class="phpdebugbar-widgets-datasets-refresh-btn" tabindex="0" title="Auto-scan for new datasets"><i class="phpdebugbar-icon phpdebugbar-icon-refresh"></i></a><a class="phpdebugbar-widgets-datasets-clear-btn" tabindex="0">Clear</a><input class="phpdebugbar-widgets-datasets-search" placeholder="Search" type="search"/></div><div class="phpdebugbar-widgets-datasets-list"><div class="phpdebugbar-widgets-datasets-list-item phpdebugbar-widgets-active" data-method="GET" data-url="/"><span class="phpdebugbar-widgets-datasets-item-nb">#1</span><span class="phpdebugbar-widgets-datasets-item-time">21:41:06</span><div class="phpdebugbar-widgets-datasets-item-request"><span class="phpdebugbar-widgets-datasets-item-method">GET</span><span class="phpdebugbar-widgets-datasets-item-url">/</span></div><div class="phpdebugbar-widgets-datasets-item-badges"><span class="phpdebugbar-widgets-datasets-item-badge" data-tab="views" title="Views"><i class="phpdebugbar-icon phpdebugbar-icon-file-code" style="width: 12px; height: 12px;"></i><span>2</span></span></div><a class="phpdebugbar-widgets-datasets-item-copy-id" title="Copy Request ID: 01KTSQPPC59HCHHX4KH07PK9EJ"><i class="phpdebugbar-icon phpdebugbar-icon-copy"></i></a></div></div></div><div class="phpdebugbar-openhandler" data-theme="light" style="display: none;"><div class="phpdebugbar-openhandler-header"><span class="phpdebugbar-openhandler-brand"><i class="phpdebugbar-icon phpdebugbar-icon-brand"></i></span>PHP DebugBar | Open<a class="phpdebugbar-openhandler-closebtn"><i class="phpdebugbar-icon phpdebugbar-icon-x"></i></a></div><table><thead><tr><th width="80">ID</th><th width="155">Date</th><th width="75">Method</th><th>URL</th><th width="125">IP</th><th width="100">Filter data</th></tr></thead><tbody></tbody></table><div class="phpdebugbar-openhandler-actions"><a>Load more</a><a>Show only current URL</a><a>Refresh</a><a>Clear storage</a><form><br/><b>Filter results</b><br/><select name="method"><option selected="" value="">(Method)</option><option>GET</option><option>POST</option><option>PUT</option><option>DELETE</option></select><input name="uri" placeholder="URI, eg '/user/*'" type="text"/><input name="ip" placeholder="IP" type="text"/><button type="submit">Search</button><button type="button">Reset</button></form></div></div><div class="phpdebugbar-openhandler-overlay" style="display: none;"></div></body></html>

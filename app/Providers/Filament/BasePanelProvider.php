@@ -32,6 +32,7 @@ abstract class BasePanelProvider extends PanelProvider
             $panel
                 ->id($this->getPanelId())
                 ->path($this->getPanelPath())
+                ->login(\App\Filament\Pages\Auth\Login::class)
                 ->spa()
                 ->globalSearch(false)
                 ->databaseTransactions()
