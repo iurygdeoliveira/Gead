@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "../../../../vendor/filament/filament/resources/css/theme.css";
+
+/* Definições de cores base */
+@import "./components/colors.css";
+
+/* Componentes - PRIMARY (Verde Floresta) */
+@import "./components/primary/buttons.css";
+@import "./components/primary/links.css";
+@import "./components/primary/toggles.css";
+@import "./components/primary/checkboxes.css";
+@import "./components/primary/inputs.css";
+@import "./components/primary/icons.css";
+@import "./components/primary/tabs.css";
+@import "./components/primary/badges.css";
+@import "./components/primary/stats.css";
+
+/* Componentes - DANGER (Vermelho) */
+@import "./components/danger/buttons.css";
+@import "./components/danger/links.css";
+@import "./components/danger/toggles.css";
+@import "./components/danger/checkboxes.css";
+@import "./components/danger/inputs.css";
+@import "./components/danger/icons.css";
+@import "./components/danger/tabs.css";
+@import "./components/danger/badges.css";
+@import "./components/danger/stats.css";
+
+/* Componentes - WARNING (Laranja) */
+@import "./components/warning/buttons.css";
+@import "./components/warning/links.css";
+@import "./components/warning/toggles.css";
+@import "./components/warning/checkboxes.css";
+@import "./components/warning/inputs.css";
+@import "./components/warning/icons.css";
+@import "./components/warning/tabs.css";
+@import "./components/warning/badges.css";
+@import "./components/warning/stats.css";
+
+/* Componentes - INFO (Azul) */
+@import "./components/info/buttons.css";
+@import "./components/info/links.css";
+@import "./components/info/toggles.css";
+@import "./components/info/checkboxes.css";
+@import "./components/info/inputs.css";
+@import "./components/info/icons.css";
+@import "./components/info/tabs.css";
+@import "./components/info/badges.css";
+@import "./components/info/stats.css";
+
+/* Componentes - SECONDARY (Cinza) */
+@import "./components/secondary/buttons.css";
+@import "./components/secondary/links.css";
+@import "./components/secondary/toggles.css";
+@import "./components/secondary/checkboxes.css";
+@import "./components/secondary/inputs.css";
+@import "./components/secondary/icons.css";
+@import "./components/secondary/tabs.css";
+@import "./components/secondary/badges.css";
+@import "./components/secondary/stats.css";
+
+/* Componentes específicos */
+@import "./components/sidebar.css";
+@import "./components/tenant-menu.css";
+@import "./components/tables.css";
+@import "./components/login.css";
+
+/* Notificações customizadas para modo dark */
+@import "./components/notifications/primary.css";
+@import "./components/notifications/danger.css";
+@import "./components/notifications/warning.css";
+
+@source '../../../../app/Filament/';
+@source '../../../../resources/views/';
+
+@source '../../../../vendor/devonab/filament-easy-footer/resources/views/**/*';
+@source '../../../../vendor/wallacemartinss/filament-security/resources/views/**/*';
+@source '../../../../vendor/wallacemartinss/filament-security/src/**/*';

@@ -1,0 +1,14 @@
+/*
+ * Colors
+ * Ponto de entrada para a definição de cores.
+ * Importa os arquivos separados por responsabilidade.
+ */
+
+/* 1. Definições do Tema Claro (:root) */
+@import "./colors/light.css";
+
+/* 2. Definições do Tema Escuro (.dark) */
+@import "./colors/dark.css";
+
+/* 3. Mapeamento para o Tailwind (@theme) */
+@import "./colors/mapping.css";
