@@ -510,7 +510,7 @@ img {
 }
 
 .brand-labsis__text {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   font-weight: 500;
 }
@@ -521,7 +521,7 @@ img {
 }
 
 .brand-labsis__logo {
-  height: 18px;
+  height: 30px;
   width: auto;
   opacity: 0.85;
   transition: opacity var(--duration-normal) var(--ease-out-expo);
