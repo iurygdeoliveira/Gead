@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\TeacherResource\Pages;
+namespace App\Filament\Resources\Teachers\Pages;
 
-use App\Filament\Resources\TeacherResource;
+use App\Filament\Resources\Teachers\TeacherResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateTeacher extends CreateRecord

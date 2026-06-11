@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\TeacherResource\Tables;
+namespace App\Filament\Resources\Teachers\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -24,7 +24,9 @@ class TeachersTable
                 //
             ])
             ->recordActions([
+                \Filament\Actions\ViewAction::make(),
                 EditAction::make(),
+                \App\Filament\Resources\Teachers\Actions\DeleteTeacherAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

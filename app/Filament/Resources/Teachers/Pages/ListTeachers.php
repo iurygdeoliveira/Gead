@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\TeacherResource\Pages;
+namespace App\Filament\Resources\Teachers\Pages;
 
-use App\Filament\Resources\TeacherResource;
+use App\Filament\Resources\Teachers\TeacherResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
@@ -10,10 +10,19 @@ class ListTeachers extends ListRecords
 {
     protected static string $resource = TeacherResource::class;
 
+    #[\Override]
     protected function getHeaderActions(): array
     {
         return [
             CreateAction::make(),
+        ];
+    }
+
+    #[\Override]
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            \App\Filament\Resources\Teachers\Widgets\TeachersStats::class,
         ];
     }
 }

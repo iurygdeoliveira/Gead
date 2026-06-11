@@ -71,7 +71,8 @@ class UserSeeder extends Seeder
             ],
         ];
 
-        $globalResolver->setPermissionsTeamId(0);
+        $campus = Team::where('cnpj', '03.131.702/0001-33')->first() ?? Team::first();
+
         foreach ($staffMembers as $staffData) {
             $staff = User::query()->firstOrCreate(
                 ['email' => $staffData['email']],
@@ -83,58 +84,15 @@ class UserSeeder extends Seeder
                     'approved_by' => $admin->id,
                 ]
             );
-            $staff->syncRoles([RoleType::ADMIN->value]);
+
+            if ($staff->email === 'walmir.sousa@ifto.edu.br') {
+                $this->ensureMembership($staff->id, $campus->id, AppTeamRole::MANAGER);
+            } else {
+                $this->ensureMembership($staff->id, $campus->id, AppTeamRole::TAE);
+            }
         }
-        $globalResolver->setPermissionsTeamId(null);
 
-        $sicrano = User::query()->firstOrCreate(
-            ['email' => 'sicrano@labsis.dev.br'],
-            [
-                'name' => 'Sicrano',
-                'email_verified_at' => now(),
-                'password' => Hash::make('mudar123'),
-                'is_approved' => true,
-                'approved_by' => $admin->id,
-            ],
-        );
-
-        $beltrano = User::query()->firstOrCreate(
-            ['email' => 'beltrano@labsis.dev.br'],
-            [
-                'name' => 'Beltrano',
-                'email_verified_at' => now(),
-                'password' => Hash::make('mudar123'),
-                'is_approved' => true,
-                'approved_by' => $admin->id,
-            ],
-        );
-
-        $teamA = Team::firstOrCreate(
-            ['name' => 'Team A'],
-            [
-                'slug' => Str::slug('Team A-'.Str::random(4)),
-                'is_personal' => false,
-                'is_active' => true,
-            ],
-        );
-
-        $teamB = Team::firstOrCreate(
-            ['name' => 'Team B'],
-            [
-                'slug' => Str::slug('Team B-'.Str::random(4)),
-                'is_personal' => false,
-                'is_active' => true,
-            ],
-        );
-
-        $this->ensurePermissionsForTeam($teamA->id, $guard);
-        $this->ensurePermissionsForTeam($teamB->id, $guard);
-
-        $this->ensureMembership($sicrano->id, $teamA->id, AppTeamRole::OWNER);
-        $this->ensureMembership($beltrano->id, $teamA->id, AppTeamRole::MEMBER);
-
-        $this->ensureMembership($beltrano->id, $teamB->id, AppTeamRole::OWNER);
-        $this->ensureMembership($sicrano->id, $teamB->id, AppTeamRole::MEMBER);
+        $this->ensurePermissionsForTeam($campus->id, $guard);
 
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
     }
@@ -157,8 +115,7 @@ class UserSeeder extends Seeder
         $teamResolver = resolve(SpatieTeamResolver::class);
         $teamResolver->setPermissionsTeamId($teamId);
 
-        $ownerRole = RoleType::ensureOwnerRoleForTeam($teamId, $guard);
-        RoleType::ensureUserRoleForTeam($teamId, $guard);
+        $managerRole = RoleType::ensureRoleForTeam(RoleType::MANAGER, $teamId, $guard);
 
         foreach ($resources as $resource) {
             foreach (PermissionEnum::cases() as $permission) {
@@ -168,8 +125,8 @@ class UserSeeder extends Seeder
                     'guard_name' => $guard,
                 ]);
 
-                if (! $ownerRole->hasPermissionTo($permissionName, $guard)) {
-                    $ownerRole->givePermissionTo($permissionName);
+                if (! $managerRole->hasPermissionTo($permissionName, $guard)) {
+                    $managerRole->givePermissionTo($permissionName);
                 }
             }
         }
