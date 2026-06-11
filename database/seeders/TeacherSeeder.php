@@ -41,11 +41,26 @@ class TeacherSeeder extends Seeder
                 continue;
             }
 
+            if (trim($email) === 'walmir.sousa@ifto.edu.br') {
+                continue;
+            }
+
+            $user = \App\Models\User::firstOrCreate(
+                ['email' => trim($email)],
+                [
+                    'name' => trim($name),
+                    'email_verified_at' => now(),
+                    'password' => \Illuminate\Support\Facades\Hash::make('mudar123'),
+                    'is_approved' => true,
+                ]
+            );
+
             \App\Models\Teacher::updateOrCreate(
                 ['email' => trim($email)],
                 [
                     'name' => trim($name),
                     'team_id' => $team->id,
+                    'user_id' => $user->id,
                 ]
             );
         }

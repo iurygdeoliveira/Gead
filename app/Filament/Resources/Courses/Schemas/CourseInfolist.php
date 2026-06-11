@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Filament\Resources\Teachers\Schemas;
+namespace App\Filament\Resources\Courses\Schemas;
 
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 
-class TeacherInfolist
+class CourseInfolist
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
-                Section::make('Detalhes do Professor')
+                Section::make('Detalhes do Curso')
                     ->components([
                         TextEntry::make('name')
-                            ->label('Nome Completo'),
-                        TextEntry::make('email')
-                            ->label('E-mail'),
+                            ->label('Nome'),
+                        TextEntry::make('code')
+                            ->label('Código'),
                         TextEntry::make('team.name')
                             ->label('Campus Vinculado'),
                     ]),

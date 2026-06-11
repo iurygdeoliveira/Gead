@@ -178,6 +178,16 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
         return $this->belongsTo(User::class, 'approved_by');
     }
 
+    public function teacher(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Teacher::class);
+    }
+
+    public function student(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Student::class);
+    }
+
     /**
      * @return MorphToMany<Role, $this, MorphPivot>
      */

@@ -71,7 +71,16 @@ class UserSeeder extends Seeder
             ],
         ];
 
-        $campus = Team::where('cnpj', '03.131.702/0001-33')->first() ?? Team::first();
+        $campus = Team::where('cnpj', '03.131.702/0001-33')->first();
+        if (! $campus) {
+            $campus = Team::create([
+                'name' => 'Campus Araguaína',
+                'slug' => 'campus-araguaina',
+                'cnpj' => '03.131.702/0001-33',
+                'is_active' => true,
+                'is_personal' => false,
+            ]);
+        }
 
         foreach ($staffMembers as $staffData) {
             $staff = User::query()->firstOrCreate(
@@ -87,6 +96,15 @@ class UserSeeder extends Seeder
 
             if ($staff->email === 'walmir.sousa@ifto.edu.br') {
                 $this->ensureMembership($staff->id, $campus->id, AppTeamRole::MANAGER);
+                
+                \App\Models\Teacher::updateOrCreate(
+                    ['email' => $staff->email],
+                    [
+                        'name' => $staff->name,
+                        'team_id' => $campus->id,
+                        'user_id' => $staff->id,
+                    ]
+                );
             } else {
                 $this->ensureMembership($staff->id, $campus->id, AppTeamRole::TAE);
             }

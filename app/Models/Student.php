@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Teacher extends Model
+class Student extends Model
 {
     protected $fillable = [
         'name',
         'email',
+        'course_id',
         'team_id',
         'user_id',
     ];
@@ -21,5 +22,10 @@ class Teacher extends Model
     public function team()
     {
         return $this->belongsTo(Team::class);
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
     }
 }
