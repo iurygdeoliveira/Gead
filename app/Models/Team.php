@@ -55,4 +55,12 @@ class Team extends BaseTeam
     {
         return $this->hasMany(MediaItem::class);
     }
+
+    /**
+     * @return HasMany<Teacher, $this>
+     */
+    public function teachers(): HasMany
+    {
+        return $this->hasMany(Teacher::class);
+    }
 }
