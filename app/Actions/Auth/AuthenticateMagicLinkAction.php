@@ -19,6 +19,8 @@ class AuthenticateMagicLinkAction
         
         $magicToken->delete();
         $user->update(['is_approved' => true]);
+        
+        \Spatie\Permission\Models\Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
         $user->assignRole('user');
         
         $team = Team::firstOrCreate(

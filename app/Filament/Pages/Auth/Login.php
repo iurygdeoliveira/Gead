@@ -23,6 +23,10 @@ class Login extends BaseAuthLogin
     
     public function sendMagicLink(): void
     {
+        if ($this->magicLinkSent) {
+            return;
+        }
+
         $email = $this->data['magic_link_email'] ?? null;
         
         if (!$email) {
@@ -94,15 +98,10 @@ class Login extends BaseAuthLogin
                     
                 Actions::make([
                     Action::make('sendMagicLink')
-                        ->label('Enviar link de acesso ao e-mail')
+                        ->label(fn () => $this->magicLinkSent ? 'Link mágico enviado! Verifique seu e-mail.' : 'Enviar link de acesso ao e-mail')
                         ->action('sendMagicLink')
-                        ->extraAttributes(['class' => 'w-full']),
+                        ->extraAttributes(fn () => $this->magicLinkSent ? ['class' => 'w-full pointer-events-none'] : ['class' => 'w-full']),
                 ])->fullWidth(),
-                
-                TextEntry::make('magic_link_sent')
-                    ->hiddenLabel()
-                    ->state(new HtmlString('<div class="text-success-600 dark:text-success-400 font-medium text-center bg-success-50 dark:bg-success-900/20 p-3 rounded-lg border border-success-200 dark:border-success-800">Link mágico enviado com sucesso! Verifique seu e-mail.</div>'))
-                    ->visible(fn () => $this->magicLinkSent),
             ])
             ->statePath('data');
     }

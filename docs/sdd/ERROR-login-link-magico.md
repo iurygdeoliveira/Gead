@@ -22,3 +22,15 @@ Este documento tem como objetivo registrar os bugs e ajustes identificados duran
 - **Solução (Código):** A instância do `app(SendMagicLinkAction::class)` foi alterada para instanciação direta `(new SendMagicLinkAction())->execute($email)` para resolver o falso-positivo do método. 
 - **Solução (IDE):** Como a classe `MagicLinkNotification` está perfeitamente implementada, esse aviso nela é puramente um "glitch" da IDE. Para corrigir definitivamente no seu VS Code, deve-se pressionar `Ctrl + Shift + P` e executar o comando **`Intelephense: Index Workspace`** (ou reiniciar a janela do VS Code).
 - **Status:** Resolvido ✅
+
+### 4. Class "App\Http\Controllers\Controller" not found
+- **Sintoma:** Ocorreu "Internal Server Error" ao acessar o callback do Magic Link (`GET /auth/magic-login/{token}`) no controlador `MagicLinkController`. O erro indica que a classe base `Controller` não foi encontrada.
+- **Causa:** A partir do Laravel 11, o framework adotou uma estrutura mais enxuta e removeu o arquivo base `App\Http\Controllers\Controller` que costumava vir como padrão nas instalações de versões anteriores. O arquivo `MagicLinkController` tentou estender essa classe inexistente e importou o seu namespace.
+- **Solução:** O namespace `use App\Http\Controllers\Controller;` e a instrução `extends Controller` foram removidos de `App\Http\Controllers\Auth\MagicLinkController`, transformando-a em uma classe PHP simples (Padrão atual do Laravel 11+ para controladores que não usam traits específicas).
+- **Status:** Resolvido ✅
+
+### 5. Spatie\Permission\Exceptions\RoleDoesNotExist
+- **Sintoma:** Ocorreu a exceção "There is no role named `user` for guard `web`" durante a validação do token e autenticação, no método `execute` da classe `AuthenticateMagicLinkAction`.
+- **Causa:** Ao acessar um link mágico válido pela primeira vez, a lógica tentou atribuir a role `user` ao estudante utilizando o pacote Spatie (`$user->assignRole('user')`), porém, esta role ainda não havia sido semeada (seeded) no banco de dados da aplicação local.
+- **Solução:** Adicionado a verificação/criação da role instantes antes da atribuição em `app/Actions/Auth/AuthenticateMagicLinkAction.php` utilizando `Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);`. Isso garante que a permissão exista silenciosamente antes de ser vinculada, evitando exceções no fluxo de primeiro login.
+- **Status:** Resolvido ✅

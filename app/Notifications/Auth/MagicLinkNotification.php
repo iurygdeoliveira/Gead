@@ -25,9 +25,7 @@ class MagicLinkNotification extends Notification
         $url = route('magic.callback', ['token' => $this->token]);
         
         return (new MailMessage)
-            ->subject('Acesso ao GeaD')
-            ->line('Clique no botão abaixo para entrar de forma segura.')
-            ->action('Entrar no Sistema', $url)
-            ->line('Este link é válido por 15 minutos.');
+            ->subject('Acesso Seguro — GeAD')
+            ->view('emails.auth.magic-link', ['url' => $url]);
     }
 }
