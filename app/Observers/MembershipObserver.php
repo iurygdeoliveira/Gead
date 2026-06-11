@@ -45,8 +45,7 @@ class MembershipObserver
             return;
         }
 
-        $user->removeAllOwnerRolesFromTeam($team);
-        $user->removeAllUserRolesFromTeam($team);
+        $user->removeAllRolesFromTeam($team);
 
         resolve(PermissionRegistrar::class)->forgetCachedPermissions();
         $this->forgetStatsCaches();
@@ -68,13 +67,13 @@ class MembershipObserver
 
         $pivotRole = $membership->role;
 
-        $user->removeAllOwnerRolesFromTeam($team);
-        $user->removeAllUserRolesFromTeam($team);
+        $user->removeAllRolesFromTeam($team);
 
-        $spatieRole = match ($pivotRole) {
-            AppTeamRole::OWNER => RoleType::ensureOwnerRoleForTeam($team->id, $this->guard()),
-            AppTeamRole::MEMBER => RoleType::ensureUserRoleForTeam($team->id, $this->guard()),
-        };
+        $spatieRole = RoleType::ensureRoleForTeam(
+            RoleType::from($pivotRole->toSpatieRoleName()),
+            $team->id,
+            $this->guard()
+        );
 
         $user->assignRoleInTeam($spatieRole, $team);
 

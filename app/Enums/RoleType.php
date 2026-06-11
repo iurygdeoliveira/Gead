@@ -10,15 +10,19 @@ use Filament\Support\Contracts\HasLabel;
 enum RoleType: string implements HasLabel
 {
     case ADMIN = 'Admin';
-    case OWNER = 'Owner';
-    case USER = 'User';
+    case MANAGER = 'Manager';
+    case TAE = 'Tae';
+    case TEACHER = 'Teacher';
+    case STUDENT = 'Student';
 
     public function getLabel(): string
     {
         return match ($this) {
-            self::ADMIN => 'Administrador',
-            self::OWNER => 'Proprietário',
-            self::USER => 'Usuário Comum',
+            self::ADMIN => 'Super Administrador',
+            self::MANAGER => 'Gerente de Ensino',
+            self::TAE => 'TAE',
+            self::TEACHER => 'Docente',
+            self::STUDENT => 'Discente',
         };
     }
 
@@ -31,20 +35,11 @@ enum RoleType: string implements HasLabel
         ]);
     }
 
-    public static function ensureOwnerRoleForTeam(int $teamId, string $guard): Role
+    public static function ensureRoleForTeam(self $role, int $teamId, string $guard): Role
     {
         return Role::firstOrCreate([
             'team_id' => $teamId,
-            'name' => self::OWNER->value,
-            'guard_name' => $guard,
-        ]);
-    }
-
-    public static function ensureUserRoleForTeam(int $teamId, string $guard): Role
-    {
-        return Role::firstOrCreate([
-            'team_id' => $teamId,
-            'name' => self::USER->value,
+            'name' => $role->value,
             'guard_name' => $guard,
         ]);
     }

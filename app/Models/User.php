@@ -92,15 +92,14 @@ use Spatie\Permission\Traits\HasRoles;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUuid($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutPermission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutRole($roles, $guard = null)
- * @method bool isOwnerOfTeam(Team $team)
- * @method bool isUserOfTeam(Team $team)
+ * @method bool isManagerOfTeam(Team $team)
+ * @method bool isStudentOfTeam(Team $team)
  * @method \Illuminate\Support\Collection getRolesForTeam(Team $team)
  * @method bool hasAnyRoleInTeam(Team $team)
- * @method bool hasOwnerRoleInAnyTeam()
+ * @method bool hasManagerRoleInAnyTeam()
  * @method void assignRoleInTeam(Role $role, Team $team)
  * @method void removeRoleFromTeam(string $roleName, Team $team)
- * @method void removeAllUserRolesFromTeam(Team $team)
- * @method void removeAllOwnerRolesFromTeam(Team $team)
+ * @method void removeAllRolesFromTeam(Team $team)
  * @method \Illuminate\Database\Eloquent\Relations\MorphToMany<\Spatie\Permission\Models\Role, \App\Models\User> rolesWithTeams()
  *
  * @mixin \Eloquent
@@ -237,16 +236,16 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
             return $this->hasRole(RoleType::ADMIN->value);
         }
 
-        if ($panel->getId() === 'user') {
-            if ($this->hasRole(RoleType::USER->value)) {
-                return true;
-            }
+        $roleRequired = match ($panel->getId()) {
+            'manager' => RoleType::MANAGER->value,
+            'tae' => RoleType::TAE->value,
+            'teacher' => RoleType::TEACHER->value,
+            'student' => RoleType::STUDENT->value,
+            default => null,
+        };
 
-            if ($this->hasOwnerRoleInAnyTeam()) {
-                return true;
-            }
-
-            return $this->teams()->exists();
+        if ($roleRequired) {
+            return $this->rolesWithTeams()->where('roles.name', $roleRequired)->exists();
         }
 
         return false;
@@ -313,17 +312,17 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
     // Team & Role Logic (Business Logic)
     // ==========================================
 
-    public function isOwnerOfTeam(Team $team): bool
+    public function isManagerOfTeam(Team $team): bool
     {
         return $this->getRoleQueryBuilder($team)
-            ->where('roles.name', RoleType::OWNER->value)
+            ->where('roles.name', RoleType::MANAGER->value)
             ->exists();
     }
 
-    public function isUserOfTeam(Team $team): bool
+    public function isStudentOfTeam(Team $team): bool
     {
         return $this->getRoleQueryBuilder($team)
-            ->where('roles.name', RoleType::USER->value)
+            ->where('roles.name', RoleType::STUDENT->value)
             ->exists();
     }
 
@@ -332,10 +331,10 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
         return $this->getRoleQueryBuilder($team)->exists();
     }
 
-    public function hasOwnerRoleInAnyTeam(): bool
+    public function hasManagerRoleInAnyTeam(): bool
     {
         return $this->rolesWithTeams()
-            ->where('roles.name', RoleType::OWNER->value)
+            ->where('roles.name', RoleType::MANAGER->value)
             ->exists();
     }
 
@@ -369,36 +368,11 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
             ->detach($role->getKey());
     }
 
-    public function removeAllUserRolesFromTeam(Team $team): void
+    public function removeAllRolesFromTeam(Team $team): void
     {
-        $roleIds = Role::query()
-            ->where('name', RoleType::USER->value)
-            ->where('team_id', $team->id)
-            ->pluck('id');
-
-        if ($roleIds->isEmpty()) {
-            return;
-        }
-
         $this->rolesWithTeams()
             ->wherePivot('team_id', $team->id)
-            ->detach($roleIds->toArray());
-    }
-
-    public function removeAllOwnerRolesFromTeam(Team $team): void
-    {
-        $roleIds = Role::query()
-            ->where('name', RoleType::OWNER->value)
-            ->where('team_id', $team->id)
-            ->pluck('id');
-
-        if ($roleIds->isEmpty()) {
-            return;
-        }
-
-        $this->rolesWithTeams()
-            ->wherePivot('team_id', $team->id)
-            ->detach($roleIds->toArray());
+            ->detach();
     }
 
     private function getRoleQueryBuilder(Team $team): Builder

@@ -11,25 +11,29 @@ use LaravelDaily\FilaTeams\Contracts\TeamRoleContract;
  * Papel do usuário dentro de um Team (espelho de UI).
  *
  * Mapeamento para Spatie {@see RoleType}:
- *   - OWNER  ↔ RoleType::OWNER ('Owner')
- *   - MEMBER ↔ RoleType::USER ('User')
+ *   - MANAGER ↔ RoleType::MANAGER
+ *   - TAE     ↔ RoleType::TAE
+ *   - TEACHER ↔ RoleType::TEACHER
+ *   - STUDENT ↔ RoleType::STUDENT
  *
  * A autorização real continua via Spatie. Este enum só alimenta o pivot
  * `team_members.role` e a UI do FilaTeams (badges, dropdowns, convites).
  */
 enum AppTeamRole: string implements TeamRoleContract
 {
-    case OWNER = 'owner';
-    case MEMBER = 'member';
+    case MANAGER = 'manager';
+    case TAE = 'tae';
+    case TEACHER = 'teacher';
+    case STUDENT = 'student';
 
     public static function owner(): static
     {
-        return self::OWNER;
+        return self::MANAGER;
     }
 
     public static function default(): static
     {
-        return self::MEMBER;
+        return self::STUDENT;
     }
 
     /**
@@ -40,7 +44,7 @@ enum AppTeamRole: string implements TeamRoleContract
         $assignable = [];
 
         foreach (self::cases() as $role) {
-            if ($role === self::OWNER) {
+            if ($role === self::MANAGER) {
                 continue;
             }
 
@@ -56,16 +60,20 @@ enum AppTeamRole: string implements TeamRoleContract
     public function getLabel(): string
     {
         return match ($this) {
-            self::OWNER => RoleType::OWNER->getLabel(),
-            self::MEMBER => RoleType::USER->getLabel(),
+            self::MANAGER => RoleType::MANAGER->getLabel(),
+            self::TAE => RoleType::TAE->getLabel(),
+            self::TEACHER => RoleType::TEACHER->getLabel(),
+            self::STUDENT => RoleType::STUDENT->getLabel(),
         };
     }
 
     public function getColor(): string
     {
         return match ($this) {
-            self::OWNER => 'danger',
-            self::MEMBER => 'info',
+            self::MANAGER => 'danger',
+            self::TAE => 'warning',
+            self::TEACHER => 'success',
+            self::STUDENT => 'info',
         };
     }
 
@@ -75,8 +83,10 @@ enum AppTeamRole: string implements TeamRoleContract
     public function permissions(): array
     {
         return match ($this) {
-            self::OWNER => AppTeamPermission::cases(),
-            self::MEMBER => [],
+            self::MANAGER => AppTeamPermission::cases(),
+            self::TAE => [],
+            self::TEACHER => [],
+            self::STUDENT => [],
         };
     }
 
@@ -91,8 +101,10 @@ enum AppTeamRole: string implements TeamRoleContract
     public function level(): int
     {
         return match ($this) {
-            self::OWNER => 3,
-            self::MEMBER => 1,
+            self::MANAGER => 4,
+            self::TAE => 3,
+            self::TEACHER => 2,
+            self::STUDENT => 1,
         };
     }
 
@@ -107,8 +119,10 @@ enum AppTeamRole: string implements TeamRoleContract
     public function toSpatieRoleName(): string
     {
         return match ($this) {
-            self::OWNER => RoleType::OWNER->value,
-            self::MEMBER => RoleType::USER->value,
+            self::MANAGER => RoleType::MANAGER->value,
+            self::TAE => RoleType::TAE->value,
+            self::TEACHER => RoleType::TEACHER->value,
+            self::STUDENT => RoleType::STUDENT->value,
         };
     }
 }

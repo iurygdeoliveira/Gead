@@ -45,8 +45,8 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
     public function mount(): void
     {
         $this->guard = config('auth.defaults.guard', 'web');
-        // Apenas "Usuário Comum" no select.
-        $this->selectedRole = RoleType::USER->value;
+        // Apenas "Discente" no select inicialmente.
+        $this->selectedRole = RoleType::STUDENT->value;
     }
 
     public function form(Schema $schema): Schema
@@ -62,8 +62,10 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
             Select::make('selectedRole')
                 ->label('Tipo de usuário')
                 ->options([
-                    RoleType::USER->value => RoleType::USER->getLabel(),
-                    RoleType::OWNER->value => RoleType::OWNER->getLabel(),
+                    RoleType::STUDENT->value => RoleType::STUDENT->getLabel(),
+                    RoleType::TEACHER->value => RoleType::TEACHER->getLabel(),
+                    RoleType::TAE->value => RoleType::TAE->getLabel(),
+                    RoleType::MANAGER->value => RoleType::MANAGER->getLabel(),
                 ])
                 ->native(false)
                 ->required()
@@ -217,7 +219,7 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
 
         $team = Team::find($teamId);
 
-        return $team instanceof Team && $user->isOwnerOfTeam($team);
+        return $team instanceof Team && $user->isManagerOfTeam($team);
     }
 
     protected function toggleAll(bool $state): void
@@ -254,10 +256,7 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
 
     protected function resolveRole(int $teamId): Role
     {
-        if ($this->selectedRole === RoleType::OWNER->value) {
-            return RoleType::ensureOwnerRoleForTeam($teamId, $this->guard);
-        }
-
-        return RoleType::ensureUserRoleForTeam($teamId, $this->guard);
+        $roleType = RoleType::tryFrom((string) $this->selectedRole) ?? RoleType::STUDENT;
+        return RoleType::ensureRoleForTeam($roleType, $teamId, $this->guard);
     }
 }
