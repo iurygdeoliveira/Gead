@@ -35,6 +35,7 @@ abstract class BasePanelProvider extends PanelProvider
                 ->id($this->getPanelId())
                 ->path($this->getPanelPath())
                 ->spa()
+                ->darkMode(true, true)
                 ->globalSearch(false)
                 ->databaseTransactions()
                 ->profile()
@@ -43,7 +44,7 @@ abstract class BasePanelProvider extends PanelProvider
                     FilamentComponentsConfigurator::configure();
                 })
                ->brandLogo(fn () => view('filament.logo'))
-               ->brandLogoHeight('10rem')
+               ->brandLogoHeight('8.5rem')
                ->renderHook(
                    PanelsRenderHook::STYLES_AFTER,
                    fn (): HtmlString => new HtmlString('

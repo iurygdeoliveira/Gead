@@ -43,6 +43,7 @@ class CourseSeeder extends Seeder
             $parts = explode(' - ', $cursoStr, 2);
             $code = trim($parts[0]);
             $name = isset($parts[1]) ? trim($parts[1]) : $code;
+            $name = trim(str_replace('(Campus Araguaína)', '', $name));
 
             \App\Models\Course::updateOrCreate(
                 ['code' => $code, 'team_id' => $team->id],

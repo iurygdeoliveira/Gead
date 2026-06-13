@@ -26,6 +26,10 @@ class MagicLinkNotification extends Notification
         
         return (new MailMessage)
             ->subject('Acesso Seguro — GeAD')
-            ->view('emails.auth.magic-link', ['url' => $url]);
+            ->greeting('Acesso Seguro')
+            ->line('Você solicitou acesso ao sistema GeAD via link mágico.')
+            ->line('Clique no botão abaixo para entrar sem necessidade de senha.')
+            ->action('Entrar com E-mail Institucional', $url)
+            ->line('Este link é válido por 15 minutos. Se você não solicitou este acesso, pode ignorar este e-mail.');
     }
 }

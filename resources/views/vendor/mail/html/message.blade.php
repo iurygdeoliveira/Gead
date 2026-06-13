@@ -1,8 +1,8 @@
 <x-mail::layout>
 {{-- Header --}}
 <x-slot:header>
-<x-mail::header :url="config('app.url')">
-{{ config('app.name') }}
+<x-mail::header :url="$brandUrl ?? config('app.url')" :logo="$logo ?? null" :logo-dark="$logoDark ?? null" :brand="$brand ?? null">
+{{ $brand ?? config('app.name') }}
 </x-mail::header>
 </x-slot:header>
 
@@ -21,7 +21,7 @@
 {{-- Footer --}}
 <x-slot:footer>
 <x-mail::footer>
-© {{ date('Y') }} {{ config('app.name') }}. {{ __('All rights reserved.') }}
+© {{ date('Y') }} {{ $brand ?? config('app.name') }}. {{ __('All rights reserved.') }}
 </x-mail::footer>
 </x-slot:footer>
 </x-mail::layout>
