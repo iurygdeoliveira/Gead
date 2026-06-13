@@ -34,6 +34,7 @@ class StudentSeeder extends Seeder
                 continue;
             }
 
+            $registrationNumber = $row[2] ?? null;
             $name = $row[1] ?? null;
             $email = $row[7] ?? null;
 
@@ -46,10 +47,14 @@ class StudentSeeder extends Seeder
             if (!empty($cursoStr) && $cursoStr !== '-') {
                 $parts = explode(' - ', $cursoStr, 2);
                 $code = trim($parts[0]);
-                $course = \App\Models\Course::where('code', $code)->where('team_id', $team->id)->first();
-                if ($course) {
-                    $courseId = $course->id;
-                }
+                
+                // Cursos do SUAP às vezes podem não estar ainda no banco de dados
+                // Se precisarmos criá-lo automaticamente, seria aqui. Por ora, vamos buscar.
+                $course = \App\Models\Course::firstOrCreate(
+                    ['code' => $code, 'team_id' => $team->id],
+                    ['name' => isset($parts[1]) ? trim($parts[1]) : 'Curso Desconhecido']
+                );
+                $courseId = $course->id;
             }
 
             if (empty($name)) {
@@ -69,12 +74,13 @@ class StudentSeeder extends Seeder
                 );
             }
 
-            \App\Models\Student::firstOrCreate(
+            \App\Models\Student::updateOrCreate(
+                [
+                    'registration_number' => trim($registrationNumber),
+                ],
                 [
                     'name' => trim($name),
                     'team_id' => $team->id,
-                ],
-                [
                     'email' => $email ? trim($email) : null,
                     'course_id' => $courseId,
                     'user_id' => $user ? $user->id : null,

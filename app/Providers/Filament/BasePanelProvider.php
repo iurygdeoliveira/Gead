@@ -61,6 +61,11 @@ abstract class BasePanelProvider extends PanelProvider
                        </style>
                    ')
                )
+               ->renderHook(
+                   \Filament\View\PanelsRenderHook::CONTENT_START,
+                   fn (): \Illuminate\Contracts\View\View => view('filament.partner-info')
+               )
+               ->sidebarCollapsibleOnDesktop()
                 ->multiFactorAuthentication(
                     AppAuthentication::make()
                         ->recoverable()

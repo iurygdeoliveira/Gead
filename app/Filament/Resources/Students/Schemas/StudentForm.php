@@ -14,12 +14,16 @@ class StudentForm
                     ->description('Informações básicas do aluno.')
                     ->columns(2)
                     ->components([
+                        \Filament\Forms\Components\TextInput::make('registration_number')
+                            ->label('Matrícula (SUAP)')
+                            ->maxLength(255)
+                            ->unique(ignoreRecord: true),
                         \Filament\Forms\Components\TextInput::make('name')
                             ->label('Nome Completo')
                             ->required()
                             ->maxLength(255),
                         \Filament\Forms\Components\TextInput::make('email')
-                            ->label('E-mail')
+                            ->label('E-mail Institucional')
                             ->email()
                             ->maxLength(255)
                             ->unique(ignoreRecord: true),
