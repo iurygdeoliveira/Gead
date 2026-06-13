@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\Courses\CourseResource;
+use App\Filament\Resources\Students\StudentResource;
+use App\Filament\Resources\Teachers\TeacherResource;
 use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
 use Filament\Pages\Dashboard;
@@ -20,10 +23,11 @@ class ManagerPanelProvider extends BasePanelProvider
             ->tenant(Team::class, slugAttribute: 'slug', ownershipRelationship: 'teams')
             ->tenantMenu(false)
             ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
-            ->resources([\App\Filament\Resources\Teachers\TeacherResource::class,
+            ->resources([
+                TeacherResource::class,
+                StudentResource::class,
+                CourseResource::class,
             ])
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->pages([
                 Dashboard::class,
             ])

@@ -42,7 +42,7 @@ final class FilamentStatsCache
             $approvedTeams = Team::query()
                 ->whereHas('members', function (Builder $query): void {
                     $query->whereHas('roles', function (Builder $roleQuery): void {
-                        $roleQuery->where('name', RoleType::OWNER->value);
+                        $roleQuery->where('name', RoleType::MANAGER->value);
                     })
                         ->where('is_approved', true);
                 })
@@ -52,7 +52,7 @@ final class FilamentStatsCache
                 ->where('is_active', true)
                 ->whereHas('members', function (Builder $query): void {
                     $query->whereHas('roles', function (Builder $roleQuery): void {
-                        $roleQuery->where('name', RoleType::OWNER->value);
+                        $roleQuery->where('name', RoleType::MANAGER->value);
                     })
                         ->where('is_approved', true);
                 })
@@ -62,7 +62,7 @@ final class FilamentStatsCache
                 ->where('is_active', false)
                 ->whereHas('members', function (Builder $query): void {
                     $query->whereHas('roles', function (Builder $roleQuery): void {
-                        $roleQuery->where('name', RoleType::OWNER->value);
+                        $roleQuery->where('name', RoleType::MANAGER->value);
                     })
                         ->where('is_approved', true);
                 })
@@ -71,7 +71,7 @@ final class FilamentStatsCache
             $unapprovedTeams = Team::query()
                 ->whereDoesntHave('members', function (Builder $query): void {
                     $query->whereHas('roles', function (Builder $roleQuery): void {
-                        $roleQuery->where('name', RoleType::OWNER->value);
+                        $roleQuery->where('name', RoleType::MANAGER->value);
                     })
                         ->where('is_approved', true);
                 })

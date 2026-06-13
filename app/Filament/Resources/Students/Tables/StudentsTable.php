@@ -2,41 +2,56 @@
 
 namespace App\Filament\Resources\Students\Tables;
 
+use App\Filament\Resources\Students\Actions\DeleteStudentAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\ViewAction;
+use Filament\Support\Icons\Heroicon;
 
 class StudentsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(fn (\Illuminate\Database\Eloquent\Builder $query) => $query->with('user'))
+            ->defaultSort('name')
             ->columns([
-                \Filament\Tables\Columns\TextColumn::make('name')
+                TextColumn::make('name')
                     ->label('Nome')
-                    ->searchable()
+                    ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
-                \Filament\Tables\Columns\TextColumn::make('email')
+                TextColumn::make('email')
                     ->label('E-mail')
-                    ->searchable()
                     ->sortable(),
-                \Filament\Tables\Columns\TextColumn::make('course.name')
+                TextColumn::make('course.name')
                     ->label('Curso')
-                    ->searchable()
-                    ->sortable(),
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->sortable()
+                    ->wrap(),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                \Filament\Actions\ViewAction::make(),
-                EditAction::make(),
-                \App\Filament\Resources\Students\Actions\DeleteStudentAction::make(),
+                ActionGroup::make([
+                    ViewAction::make()
+                        ->icon(Heroicon::Eye)
+                        ->color('secondary'),
+                    EditAction::make()
+                        ->icon(Heroicon::Pencil),
+                    DeleteStudentAction::make()
+                        ->icon(Heroicon::Trash),
+                    \App\Filament\Resources\Students\Actions\ToggleStudentSuspensionAction::make(),
+                ])
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    \App\Filament\Resources\Students\Actions\ChangeStudentAccessStatusBulkAction::make(),
                 ]),
             ]);
     }

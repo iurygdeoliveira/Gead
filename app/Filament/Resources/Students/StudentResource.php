@@ -18,13 +18,12 @@ class StudentResource extends Resource
 {
     protected static ?string $model = Student::class;
 
-    protected static ?string $tenantOwnershipRelationship = 'team';
+    protected static ?string $tenantOwnershipRelationshipName = 'team';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'icon-student';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Administração';
 
     protected static ?string $navigationLabel = 'Alunos';
 

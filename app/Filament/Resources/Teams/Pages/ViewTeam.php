@@ -38,7 +38,7 @@ class ViewTeam extends ViewRecord
         }
 
         $users = $record->members;
-        $ownerCount = $users->filter(fn (User $user): bool => $user->isOwnerOfTeam($record))->count();
+        $ownerCount = $users->filter(fn (User $user): bool => $user->isManagerOfTeam($record))->count();
 
         return [
             'user_count' => $users->count(),

@@ -9,7 +9,7 @@
       <div class="brand-content">
         <div class="logo-wrapper">
           <img src="{{ asset('images/logo.png') }}" alt="Logo GeAD — capelo acadêmico verde com lupa vermelha" class="brand-logo" width="140"
-            height="170" fetchpriority="high">
+            height="170" fetchpriority="high" style="filter: drop-shadow(0 0 12px rgba(250, 255, 229, 0.95)) drop-shadow(0 0 32px rgba(244, 255, 199, 0.75)) drop-shadow(0 0 60px rgba(229, 255, 138, 0.35)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.65));">
         </div>
 
         <p class="brand-description">

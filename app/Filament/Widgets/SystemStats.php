@@ -21,6 +21,11 @@ class SystemStats extends BaseWidget
 {
     protected ?string $pollingInterval = null;
 
+    public static function canView(): bool
+    {
+        return filament()->getCurrentPanel()?->getId() === 'admin';
+    }
+
     #[Computed]
     protected function teamsData(): array
     {

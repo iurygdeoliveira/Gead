@@ -18,18 +18,24 @@ class LoginResponse implements FilamentLoginResponse
         /** @var User $user */
         $user = Filament::auth()->user();
 
-        if ($user->canAccessPanel(Filament::getPanel('admin'))) {
+        $adminPanel = Filament::getPanel('admin');
+        if ($adminPanel && $user->canAccessPanel($adminPanel)) {
             return redirect()->to('/admin');
         }
 
-        if ($user->canAccessPanel(Filament::getPanel('user'))) {
-            /** @var Team|null $firstTeam */
-            $firstTeam = $user->teams()->first();
-            if ($firstTeam) {
-                return redirect()->to('/user/'.$firstTeam->slug);
-            }
+        $panels = ['manager', 'teacher', 'tae', 'student'];
 
-            return redirect()->to('/user');
+        foreach ($panels as $panelName) {
+            $panel = Filament::getPanel($panelName);
+            if ($panel && $user->canAccessPanel($panel)) {
+                /** @var Team|null $firstTeam */
+                $firstTeam = $user->teams()->first();
+                if ($firstTeam) {
+                    return redirect()->to('/' . $panelName . '/' . $firstTeam->slug);
+                }
+
+                return redirect()->to('/' . $panelName);
+            }
         }
 
         // Fallback para a rota home se nenhum role for encontrado

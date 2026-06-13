@@ -27,7 +27,7 @@ class TeamSyncMiddleware
     {
         $panel = Filament::getCurrentPanel();
 
-        if (! $panel || $panel->getId() !== 'user') {
+        if (! $panel || ! $panel->hasTenancy()) {
             return $next($request);
         }
 

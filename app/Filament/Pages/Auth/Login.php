@@ -6,6 +6,8 @@ use Filament\Auth\Pages\Login as BaseAuthLogin;
 use Filament\Schemas\Schema;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Placeholder;
+use Filament\Schemas\Components\View;
 use Filament\Schemas\Components\Actions;
 use Filament\Actions\Action;
 use Illuminate\Support\HtmlString;
@@ -68,9 +70,9 @@ class Login extends BaseAuthLogin
     {
         return $schema
             ->components([
-                TextEntry::make('gerencia_badge')
-                    ->hiddenLabel()
-                    ->state(new HtmlString('<div class="flex items-center justify-center mt-6"><span class="inline-flex items-center rounded-md bg-green-500 px-3 text-sm font-semibold text-white shadow-sm dark:bg-green-400 dark:text-white">🔒 Apenas para a Gerência de Ensino</span></div>')),
+                View::make('filament.auth.gerencia-badge')
+                    ->columnSpanFull()
+                    ->extraAttributes(['class' => 'flex w-full justify-center items-center']),
                     
                 $this->getEmailFormComponent(),
                 $this->getPasswordFormComponent(),
@@ -83,13 +85,13 @@ class Login extends BaseAuthLogin
                         ->extraAttributes(['class' => 'w-full']),
                 ])->fullWidth(),
                 
-                TextEntry::make('divider')
-                    ->hiddenLabel()
-                    ->state(new HtmlString('<div class="relative flex items-center"><div class="flex-grow border-t border-gray-300 dark:border-gray-700"></div><span class="flex-shrink-0 mx-4 text-gray-400 text-sm font-medium">OU</span><div class="flex-grow border-t border-gray-300 dark:border-gray-700"></div></div>')),
+                View::make('filament.auth.divider')
+                    ->columnSpanFull()
+                    ->extraAttributes(['class' => 'flex w-full justify-center items-center']),
                     
-                TextEntry::make('alunos_badge')
-                    ->hiddenLabel()
-                    ->state(new HtmlString('<div class="flex items-center justify-center"><span class="inline-flex items-center rounded-md bg-green-500 px-3 text-sm font-semibold text-white shadow-sm dark:bg-green-400 dark:text-white">🎓 Para alunos e professores</span></div>')),
+                View::make('filament.auth.alunos-badge')
+                    ->columnSpanFull()
+                    ->extraAttributes(['class' => 'flex w-full justify-center items-center']),
                     
                 TextInput::make('magic_link_email')
                     ->label('E-mail Institucional')

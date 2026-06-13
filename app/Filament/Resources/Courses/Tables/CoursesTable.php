@@ -2,33 +2,42 @@
 
 namespace App\Filament\Resources\Courses\Tables;
 
+use App\Filament\Resources\Courses\Actions\DeleteCourseAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\ViewAction;
+use Filament\Support\Icons\Heroicon;
 
 class CoursesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('name')
             ->columns([
-                \Filament\Tables\Columns\TextColumn::make('name')
-                    ->searchable()
+                TextColumn::make('name')
+                    ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable()
-                    ->label('Nome'),
-                \Filament\Tables\Columns\TextColumn::make('code')
-                    ->searchable()
-                    ->sortable()
-                    ->label('Código'),
+                    ->label('Nome')
+                    ->wrap(),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                \Filament\Actions\ViewAction::make(),
-                EditAction::make(),
-                \App\Filament\Resources\Courses\Actions\DeleteCourseAction::make(),
+                ActionGroup::make([
+                    ViewAction::make()
+                        ->icon(Heroicon::Eye)
+                        ->color('secondary'),
+                    EditAction::make()
+                        ->icon(Heroicon::Pencil),
+                    DeleteCourseAction::make()
+                        ->icon(Heroicon::Trash),
+                ])
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

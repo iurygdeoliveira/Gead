@@ -12,6 +12,7 @@ use App\Filament\Pages\Auth\ResetPassword;
 use App\Filament\Pages\Auth\VerificationPending;
 use App\Http\Middleware\EnsureSecurityHeaders;
 use App\Http\Middleware\RedirectToProperPanelMiddleware;
+use Devletes\FilamentOrbitTheme\OrbitThemePlugin;
 use Filament\Auth\MultiFactor\App\AppAuthentication;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -34,11 +35,26 @@ class AuthPanelProvider extends PanelProvider
             ->id('auth')
             ->path('')
             ->default()
-            ->darkMode(true, true)
+            //->darkMode(true, true)
             ->brandLogo(fn (): Factory|\Illuminate\Contracts\View\View => view('filament.auth.logo_auth'))
             ->brandLogoHeight('8rem')
-            ->viteTheme('resources/css/filament/admin/theme.css')
+            // ->viteTheme('resources/css/filament/admin/theme.css')
             ->authGuard('web')
+            ->colors([
+                'danger' => [
+                    50 => '#fef2f2',
+                    100 => '#fee2e2',
+                    200 => '#fecaca',
+                    300 => '#fca5a5',
+                    400 => '#f87171',
+                    500 => '#e7010a',
+                    600 => '#e7010a',
+                    700 => '#b91c1c',
+                    800 => '#991b1b',
+                    900 => '#7f1d1d',
+                    950 => '#450a0a',
+                ],
+            ])
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 VerificationPending::class,
@@ -62,7 +78,22 @@ class AuthPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
                 RedirectToProperPanelMiddleware::class,
                 EnsureSecurityHeaders::class,
-            ]);
+            ])
+            ->plugin(OrbitThemePlugin::make()
+                ->primaryColor([
+                    50 => '#faffe5',
+                    100 => '#f4ffc7',
+                    200 => '#e5ff8a',
+                    300 => '#d3ff42',
+                    400 => '#d6ff33',
+                    500 => '#ccff03',
+                    600 => '#ccff03',
+                    700 => '#b3e600',
+                    800 => '#748c00',
+                    900 => '#475900',
+                    950 => '#2b3600',
+                ])
+            );
 
     }
 }

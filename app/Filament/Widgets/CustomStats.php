@@ -13,6 +13,11 @@ class CustomStats extends BaseWidget
 {
     protected ?string $pollingInterval = null;
 
+    public static function canView(): bool
+    {
+        return filament()->getCurrentPanel()?->getId() === 'admin';
+    }
+
     #[\Override]
     protected function getStats(): array
     {

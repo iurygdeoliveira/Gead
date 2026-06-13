@@ -34,9 +34,9 @@ class TeamsTable
                 //
             ])
             ->recordActions([
-                ViewAction::make()->iconButton()->icon(Heroicon::Eye)->tooltip('Visualizar'),
-                EditAction::make()->iconButton()->icon(Heroicon::Pencil)->tooltip('Editar'),
-                DeleteTeamAction::make()->iconButton()->icon(Heroicon::Trash)->tooltip('Excluir'),
+                ViewAction::make()->icon(Heroicon::Eye),
+                EditAction::make()->icon(Heroicon::Pencil),
+                DeleteTeamAction::make()->icon(Heroicon::Trash),
             ])
             ->headerActions([
 

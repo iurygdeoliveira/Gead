@@ -29794,33 +29794,26 @@ namespace App\Filament\Pages\Mail {
             }
     }
 
-namespace App\Filament\Resources\Media\Pages {
+namespace App\Filament\Resources\Courses\Pages {
     /**
-     * @property \App\Models\MediaItem $record
      */
-    class CreateMedia extends \Filament\Resources\Pages\CreateRecord {
-            }
-    /**
-     * @property MediaItem $record
-     */
-    class DeleteMedia extends \Filament\Resources\Pages\ViewRecord {
-            }
-    /**
-     * @property-read MediaItem|null $record
-     * @property-read bool $canDelete
-     * @property-read string $fileSizeHuman
-     * @property-read array $mediaInfo
-     */
-    class EditMedia extends \Filament\Resources\Pages\EditRecord {
+    class CreateCourse extends \Filament\Resources\Pages\CreateRecord {
             }
     /**
      */
-    class ListMedia extends \Filament\Resources\Pages\ListRecords {
+    class DeleteCourse extends \Filament\Resources\Pages\ViewRecord {
             }
     /**
-     * @property MediaItem $record
      */
-    class ViewMedia extends \Filament\Resources\Pages\ViewRecord {
+    class EditCourse extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListCourses extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewCourse extends \Filament\Resources\Pages\ViewRecord {
             }
     }
 
@@ -29853,12 +29846,10 @@ namespace Filament\Resources\Pages {
             }
     }
 
-namespace App\Filament\Resources\Media\Widgets {
+namespace App\Filament\Resources\Courses\Widgets {
     /**
-     * @property-read array $summary
-     * @property-read array $percentages
      */
-    class MediaStats extends \Filament\Widgets\StatsOverviewWidget {
+    class CoursesStats extends \Filament\Widgets\StatsOverviewWidget {
             }
     }
 
@@ -29873,6 +29864,45 @@ namespace Filament\Widgets {
             }
     }
 
+namespace App\Filament\Resources\Media\Pages {
+    /**
+     * @property \App\Models\MediaItem $record
+     */
+    class CreateMedia extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     * @property MediaItem $record
+     */
+    class DeleteMedia extends \Filament\Resources\Pages\ViewRecord {
+            }
+    /**
+     * @property-read MediaItem|null $record
+     * @property-read bool $canDelete
+     * @property-read string $fileSizeHuman
+     * @property-read array $mediaInfo
+     */
+    class EditMedia extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListMedia extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     * @property MediaItem $record
+     */
+    class ViewMedia extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace App\Filament\Resources\Media\Widgets {
+    /**
+     * @property-read array $summary
+     * @property-read array $percentages
+     */
+    class MediaStats extends \Filament\Widgets\StatsOverviewWidget {
+            }
+    }
+
 namespace App\Filament\Resources\Security\Pages {
     /**
      */
@@ -29884,6 +29914,66 @@ namespace WallaceMartinss\FilamentSecurity\Filament\Resources\SecurityEventResou
     /**
      */
     class ListSecurityEvents extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace App\Filament\Resources\Students\Pages {
+    /**
+     */
+    class CreateStudent extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class DeleteStudent extends \Filament\Resources\Pages\ViewRecord {
+            }
+    /**
+     */
+    class EditStudent extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListStudents extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewStudent extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace App\Filament\Resources\Students\Widgets {
+    /**
+     */
+    class StudentsStats extends \Filament\Widgets\StatsOverviewWidget {
+            }
+    }
+
+namespace App\Filament\Resources\Teachers\Pages {
+    /**
+     */
+    class CreateTeacher extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class DeleteTeacher extends \Filament\Resources\Pages\ViewRecord {
+            }
+    /**
+     */
+    class EditTeacher extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListTeachers extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewTeacher extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace App\Filament\Resources\Teachers\Widgets {
+    /**
+     */
+    class TeachersStats extends \Filament\Widgets\StatsOverviewWidget {
             }
     }
 
@@ -30012,30 +30102,6 @@ namespace App\Filament\Widgets {
      * @property-read array $summary
      */
     class SystemStats extends \Filament\Widgets\StatsOverviewWidget {
-            }
-    }
-
-namespace LaravelDaily\FilaTeams\Pages {
-    /**
-     */
-    class CreateTeamPage extends \Filament\Pages\Tenancy\RegisterTenant {
-            }
-    /**
-     */
-    class EditTeam extends \Filament\Pages\Tenancy\EditTenantProfile {
-            }
-    }
-
-namespace Filament\Pages\Tenancy {
-    /**
-     * @property-read Schema $form
-     */
-    class RegisterTenant extends \Filament\Pages\SimplePage {
-            }
-    /**
-     * @property-read Schema $form
-     */
-    class EditTenantProfile extends \Filament\Pages\Page {
             }
     }
 

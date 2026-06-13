@@ -27,7 +27,7 @@ class MediaItemPolicy
         }
 
         $currentTeam = Filament::getTenant();
-        if ($currentTeam instanceof Team && $user->isOwnerOfTeam($currentTeam)) {
+        if ($currentTeam instanceof Team && $user->isManagerOfTeam($currentTeam)) {
             return true;
         }
 

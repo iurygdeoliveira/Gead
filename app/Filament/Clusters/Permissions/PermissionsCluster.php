@@ -38,6 +38,6 @@ class PermissionsCluster extends Cluster
 
         $currentTeam = Filament::getTenant();
 
-        return $currentTeam instanceof Team && $user->isOwnerOfTeam($currentTeam);
+        return $currentTeam instanceof Team && $user->isManagerOfTeam($currentTeam);
     }
 }

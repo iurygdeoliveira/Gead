@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
-use App\Filament\Configurators\FilamentComponentsConfigurator;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use WallaceMartinss\FilamentSecurity\FilamentSecurityPlugin;
@@ -19,9 +18,6 @@ class AdminPanelProvider extends BasePanelProvider
 
         // Particularidades do painel admin
         $panel = $panel
-            ->bootUsing(function (): void {
-                FilamentComponentsConfigurator::configure();
-            })
             ->plugin(
                 FilamentSecurityPlugin::make()
                     ->disposableEmailProtection()
