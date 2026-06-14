@@ -66,6 +66,7 @@ class DisciplineSeeder extends Seeder
 
                 $parts = explode(' - ', $component, 2);
                 $name = isset($parts[1]) ? trim($parts[1]) : trim($component);
+                $name = preg_replace('/^Att\d+\s*-\s*/i', '', $name);
 
                 foreach ($courses as $course) {
                     Discipline::updateOrCreate(
@@ -82,7 +83,5 @@ class DisciplineSeeder extends Seeder
             }
             fclose($file);
         }
-
-        $this->command->info('Disciplinas semeadas com sucesso!');
     }
 }

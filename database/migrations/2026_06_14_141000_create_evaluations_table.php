@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('class_enrollment_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('course_class_discipline_id')->constrained('course_class_disciplines')->cascadeOnDelete();
             $table->foreignId('team_id')->constrained()->cascadeOnDelete();
             $table->decimal('planning_score', 4, 2)->nullable();
             $table->decimal('posture_score', 4, 2)->nullable();

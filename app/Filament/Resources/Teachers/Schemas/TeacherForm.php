@@ -2,6 +2,14 @@
 
 namespace App\Filament\Resources\Teachers\Schemas;
 
+use App\Models\Course;
+use App\Models\CourseClass;
+use App\Models\Discipline;
+use Filament\Facades\Filament;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class TeacherForm
@@ -10,73 +18,95 @@ class TeacherForm
     {
         return $schema
             ->components([
-                \Filament\Schemas\Components\Section::make('Dados do Professor')
+                Section::make('Dados do Professor')
                     ->description('Informações básicas do professor.')
+                    ->columnSpanFull()
                     ->columns(2)
-                    ->components([
-                        \Filament\Forms\Components\TextInput::make('name')
-                            ->label('Nome Completo')
-                            ->required()
-                            ->maxLength(255),
-                        \Filament\Forms\Components\TextInput::make('email')
-                            ->label('E-mail')
-                            ->email()
-                            ->required()
-                            ->maxLength(255)
-                            ->unique(ignoreRecord: true),
-                        \Filament\Forms\Components\TextInput::make('registration_number')
-                            ->label('Matrícula')
-                            ->maxLength(255),
-                    ]),
+                    ->components(self::getPersonalDataFields()),
 
-                \Filament\Schemas\Components\Section::make('Atribuição de Disciplinas Ministradas')
+                Section::make('Atribuição de Disciplinas Ministradas')
                     ->description('Vincule as disciplinas de cursos e períodos que este professor ministrou.')
+                    ->columnSpanFull()
                     ->visible(fn (string $operation): bool => $operation === 'edit' && (
-                        auth()->user()?->hasRole(\App\Enums\RoleType::MANAGER->value) ||
-                        auth()->user()?->hasRole(\App\Enums\RoleType::TAE->value)
+                        Filament::auth()->user()?->hasRole(\App\Enums\RoleType::MANAGER->value) ||
+                        Filament::auth()->user()?->hasRole(\App\Enums\RoleType::TAE->value)
                     ))
                     ->components([
-                        \Filament\Forms\Components\Repeater::make('taughtDisciplines')
+                        Repeater::make('taughtDisciplines')
                             ->relationship('taughtDisciplines')
                             ->label('Disciplinas Ministradas')
                             ->schema([
-                                \Filament\Forms\Components\Select::make('course_id')
-                                    ->label('Curso')
-                                    ->options(\App\Models\Course::pluck('name', 'id'))
-                                    ->live()
-                                    ->dehydrated(false)
-                                    ->afterStateHydrated(function ($state, $set, $record) {
-                                        if ($record && $record->courseClass) {
-                                            $set('course_id', $record->courseClass->course_id);
-                                        }
-                                    }),
-                                \Filament\Forms\Components\Select::make('course_class_id')
-                                    ->label('Turma (Período)')
-                                    ->options(function (callable $get) {
-                                        $courseId = $get('course_id');
-                                        if (!$courseId) {
-                                            return \App\Models\CourseClass::all()->mapWithKeys(fn ($cc) => [$cc->id => "{$cc->code} ({$cc->entry_period})"]);
-                                        }
-                                        return \App\Models\CourseClass::where('course_id', $courseId)
-                                            ->get()
-                                            ->mapWithKeys(fn ($cc) => [$cc->id => "{$cc->code} ({$cc->entry_period})"]);
-                                    })
-                                    ->required()
-                                    ->live(),
-                                \Filament\Forms\Components\Select::make('discipline_id')
-                                    ->label('Disciplina')
-                                    ->options(function (callable $get) {
-                                        $courseId = $get('course_id');
-                                        if (!$courseId) {
-                                            return \App\Models\Discipline::pluck('name', 'id');
-                                        }
-                                        return \App\Models\Discipline::where('course_id', $courseId)->pluck('name', 'id');
-                                    })
-                                    ->required(),
+                                self::getCourseField(),
+                                self::getCourseClassField(),
+                                self::getDisciplineField(),
                             ])
                             ->columns(3)
                             ->columnSpanFull(),
                     ]),
             ]);
+    }
+
+    public static function getPersonalDataFields(): array
+    {
+        return [
+            TextInput::make('name')
+                ->label('Nome Completo')
+                ->required()
+                ->maxLength(255),
+            TextInput::make('email')
+                ->label('E-mail')
+                ->email()
+                ->required()
+                ->maxLength(255)
+                ->unique(ignoreRecord: true),
+            TextInput::make('registration_number')
+                ->label('Matrícula')
+                ->maxLength(255),
+        ];
+    }
+
+    public static function getCourseField(): Select
+    {
+        return Select::make('course_id')
+            ->label('Curso')
+            ->options(Course::pluck('name', 'id'))
+            ->live()
+            ->dehydrated(false)
+            ->afterStateHydrated(function ($state, $set, $record) {
+                if ($record && $record->courseClass) {
+                    $set('course_id', $record->courseClass->course_id);
+                }
+            });
+    }
+
+    public static function getCourseClassField(): Select
+    {
+        return Select::make('course_class_id')
+            ->label('Período')
+            ->options(function (callable $get) {
+                $courseId = $get('course_id');
+                if (!$courseId) {
+                    return CourseClass::all()->mapWithKeys(fn ($cc) => [$cc->id => $cc->entry_period]);
+                }
+                return CourseClass::where('course_id', $courseId)
+                    ->get()
+                    ->mapWithKeys(fn ($cc) => [$cc->id => $cc->entry_period]);
+            })
+            ->required()
+            ->live();
+    }
+
+    public static function getDisciplineField(): Select
+    {
+        return Select::make('discipline_id')
+            ->label('Disciplina')
+            ->options(function (callable $get) {
+                $courseId = $get('course_id');
+                if (!$courseId) {
+                    return Discipline::pluck('name', 'id');
+                }
+                return Discipline::where('course_id', $courseId)->pluck('name', 'id');
+            })
+            ->required();
     }
 }
