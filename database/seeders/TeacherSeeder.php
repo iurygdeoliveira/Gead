@@ -51,33 +51,54 @@ class TeacherSeeder extends Seeder
                 $registrationNumber = $row[2] ?? null;
                 $email = $row[4] ?? null;
 
-                if (empty($name) || empty($email) || $email === '-') {
+                if (empty($name)) {
                     continue;
                 }
 
-                if (trim($email) === 'walmir.sousa@ifto.edu.br') {
+                if (empty($email) || $email === 'None' || trim($email) === '-') {
+                    $email = null;
+                }
+
+                if ($email && trim($email) === 'walmir.sousa@ifto.edu.br') {
                     continue;
                 }
 
-                $user = User::firstOrCreate(
-                    ['email' => trim($email)],
-                    [
-                        'name' => trim($name),
-                        'email_verified_at' => $now,
-                        'password' => $passwordHash,
-                        'is_approved' => true,
-                    ]
-                );
+                $user = null;
+                if ($email) {
+                    $user = User::firstOrCreate(
+                        ['email' => trim($email)],
+                        [
+                            'name' => trim($name),
+                            'email_verified_at' => $now,
+                            'password' => $passwordHash,
+                            'is_approved' => true,
+                        ]
+                    );
+                }
 
-                Teacher::updateOrCreate(
-                    ['email' => trim($email)],
-                    [
-                        'name' => trim($name),
-                        'registration_number' => $registrationNumber ? trim($registrationNumber) : null,
-                        'team_id' => $team->id,
-                        'user_id' => $user->id,
-                    ]
-                );
+                if ($email) {
+                    Teacher::updateOrCreate(
+                        ['email' => trim($email)],
+                        [
+                            'name' => trim($name),
+                            'registration_number' => $registrationNumber ? trim($registrationNumber) : null,
+                            'team_id' => $team->id,
+                            'user_id' => $user ? $user->id : null,
+                        ]
+                    );
+                } else {
+                    Teacher::updateOrCreate(
+                        [
+                            'name' => trim($name),
+                            'team_id' => $team->id,
+                        ],
+                        [
+                            'email' => null,
+                            'registration_number' => $registrationNumber ? trim($registrationNumber) : null,
+                            'user_id' => null,
+                        ]
+                    );
+                }
             }
 
             fclose($file);

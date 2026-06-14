@@ -1,107 +1,65 @@
-#,Nome,Matrícula,Setor,E-mail,Telefone
-1,Adriane de Andrade,3013042,ARN-CTAC,-,-
-2,Alessandro Lemos de Oliveira,2124002,CA-ARN,alessandro.oliveira@ifto.edu.br,-
-3,Alessandro Trevisan Monteiro,1743506,ARN-CCTSE,alessandro_atm@ifto.edu.br,-
-4,Alexandre Cotrim Vilas Boas,1616745,ARN-CCSADS,alexandre.vilasboas@ifto.edu.br,-
-5,Ana Carolina Resende Maia,2274299,ARN-CTAC,ana.maia@ifto.edu.br,-
-6,Ana Carolina Resende Maia,1274299,ARN-CTAC,ana.maia@ifto.edu.br,-
-7,Ana Flavia de Morais Oliveira,1755992,ARN-CCTSE,anaflaviamo@ifto.edu.br,-
-8,Ana Paula Alves de Lima,2113235,ARN-GE,-,-
-9,Angelo Cassio Bezerra Nascimento,1743484,ARN-CCTSE,kassioangelo@ifto.edu.br,-
-10,Anivaldo Pereira Duarte Junior,3521514,ARN-CBF,anivaldo.junior@ifto.edu.br,-
-11,Ayla Maria de Abreu Alves,2178518,ARN-CURBIO,ayla.alves@ifto.edu.br,-
-12,Barbara Marques Bianchini Condessa,1328799,ARN-CURBIO,barbara.bianchini@ifto.edu.br,-
-13,Bruno Anderson Girao de Sousa,3503964,ARN-CCTIEM,bruno.sousa@ifto.edu.br,-
-14,Carla Cristina da Silva,2384420,ARN-CCTIEM,cristina.silva@ifto.edu.br,-
-15,Cassiana Barros da Silva,3012783,ARN-CURBIO,-,-
-16,Catharina do Couto Caetano Costa,3338238,ARG-CCTGI,catharina.costa@ifto.edu.br,-
-17,Charles Jefferson Rodrigues Alves,1981305,ARN-CCSADS,charles.alves@ifto.edu.br,-
-18,Cristina Sousa da Silva,2671944,ARN-CCTIEM,cristiangeoifto@ifto.edu.br,-
-19,Dacio Alves Pereira de Oliveira,1043559,ARN-CCTIEM,dacio.oliveira@ifto.edu.br,-
-20,Daiane Aparecida Tonaco,1870212,ARN-CCTIEM,daiane.tonaco@ifto.edu.br,-
-21,David Samuel Silva Rosa,3521719,ARN-CURBIO,david.rosa@ifto.edu.br,-
-22,Davi Pereira Gomes,3391511,ARN-CCTIEM,davi.gomes@ifto.edu.br,-
-23,Dayanna Dias Parente,3249257,ARN-CURBIO,dayanna.parente@ifto.edu.br,-
-24,Deusine Cristianne Borges Aguiar Mendes,1786039,ARG-CCTGI,deusine.mendes@ifto.edu.br,-
-25,Diego Alves de Medeiros,3520978,ARN-CCTSE,diego.medeiros@ifto.edu.br,-
-26,Eduardo Lima Santos,2059373,ARN-SEL,eduardo.santos@ifto.edu.br,-
-27,Eliakim da Silva Pinto,2160642,CA-ARN,eliakim.pinto@ifto.edu.br,-
-28,Erika de Paula Ferreira,1981296,ARN-CCTSE,erika.ferreira@ifto.edu.br,-
-29,Evaldo da Silva Andrade,1120772,ARN-CCSADS,evaldo.andrade@ifto.edu.br,-
-30,Eva Pereira da Costa,2644073,ARN-PROEJA,evinhacosta@ifto.edu.br,-
-31,Felipe Goncalves Carneiro,2243876,ARN-CCTIEM,felipe.carneiro@ifto.edu.br,-
-32,Filipe Gouveia Cavalcante,3506848,ARN-CURBIO,-,-
-33,Francisco Leonardo da Costa Lima,3333926,ARN-CURBIO,francisco.lima@ifto.edu.br,-
-34,Frank Myron Torres Amorim,2690847,ARN-CURBIO,frank.amorim@ifto.edu.br,-
-35,Gabriel Almeida da Silva,3532566,ARN-CCSADS,-,-
-36,Gelson Andre Schneider,2169953,ARN-CCSADS,gelson.schneider@ifto.edu.br,-
-37,Genivon Pereira Barbosa,3409184,ARN-CCTIEM,genivon.barbosa@ifto.edu.br,-
-38,Gerson Alves de Oliveira,1821887,ARN-CURBIO,gerson.oliveira@ifto.edu.br,-
-39,Gesiane da Costa Brito,3249304,ARG-CCTGI,gesiane.brito@ifto.edu.br,-
-40,Gildemberg da Cunha Silva,2056583,ARN-CURBIO,gildemberg.silva@ifto.edu.br,-
-41,Gilson Tavares de Lima,1952520,ARN-CTAC,gilsontavares@ifto.edu.br,-
-42,Gilvan Vieira Moura,2159760,CA-ARN,gilvan.moura@ifto.edu.br,-
-43,Gislane Goncalves Silva,2187146,ARN-CCTIEM,gislane.silva@ifto.edu.br,-
-44,Glaucielle Celestina de Sa,1845825,ARN-CCTIEM,-,-
-45,Halisson Alves de Lima,2267410,ARN-CCTIEM,halisson.lima@ifto.edu.br,-
-46,Hebert Lima Batista,1883979,ARN-CPIE,batistahebert@ifto.edu.br,-
-47,Heidi Luz Bonifacio,1943441,ARN-CURBIO,heidi.bonifacio@ifto.edu.br,-
-48,Helio Marcio Nunes Lacerda,2125802,ARN-CCTIEM,helio.lacerda@ifto.edu.br,-
-49,Iara Luzia Ferreira Soares,3426642,ARN-CURBIO,iara.soares@ifto.edu.br,-
-50,Iury Gomes de Oliveira,1123216,ARN-CCSADS,iury.oliveira@ifto.edu.br,-
-51,Jade Diane Fernandes Targino Filgueira,3000270,ARG-CCTGI,jade.targino@ifto.edu.br,-
-52,Joana D Arc Dias Cunha,3528840,ARN-CCTIEM,joana.cunha@ifto.edu.br,-
-53,Joan Alessandro Barros Silva,2390008,ARN-CCTSE,joan.silva@ifto.edu.br,-
-54,Joao Batista Silva de Souza,3531431,ARN-CTAC,-,-
-55,Joao Carlos Santiago Nery,1367252,ARN-CCTSE,joao.nery@ifto.edu.br,-
-56,Jonathon Viana Silva,2158087,ARN-PROEJA,jonathon.silva@ifto.edu.br,-
-57,Jonierson de Araujo da Cruz,1618409,ARN-CPG,joniersonac@ifto.edu.br,-
-58,Jose Ribamar Santos Moraes Filho,1358554,ARG-CCTGI,joseribamar.filho@ifto.edu.br,-
-59,Jose Roberto Cruz e Silva,1812545,ARN-CCSADS,joseroberto@ifto.edu.br,-
-60,Julio Aires Azevedo Leite,3673010,ARN-CCSADS,julioaires@ifto.edu.br,-
-61,Katiane Pereira Braga,1785361,ARN-CCTSE,katianepb@ifto.edu.br,-
-62,Katiane Ribeiro Lopes,1234809,ARN-CCSADS,katiane.lopes@ifto.edu.br,-
-63,Kerlly Karine Pereira Herenio Amaral,2034811,CA-ARN,kerlly.herenio@ifto.edu.br,-
-64,Lana Maisy Alves Silva,3399243,ARN-CCTIEM,lana.silva@ifto.edu.br,-
-65,Leonardo de Sousa Silva,2260152,CA-ARN,leonardo.silva@ifto.edu.br,-
-66,Leonardo dos Santos Maria,1121645,ARG-CCTGI,leonardo.maria@ifto.edu.br,-
-67,Luana Priscilla Rodrigues Macedo,1267164,ARN-CCTIEM,luana.macedo@ifto.edu.br,-
-68,Lucas Alves de Andrade,3364831,ARN-CURBIO,lucas.andrade@ifto.edu.br,-
-69,Luciania dos Santos Cardoso Sousa,1426443,ARN-CCTIEM,luciania.sousa@ifto.edu.br,-
-70,Luis Rodomilson Pedrosa da Silva,2260978,CA-ARN,luis.silva@ifto.edu.br,-
-71,Luiz Augusto Goncalves Bezerra,1143694,ARN-CCTIEM,luiz.bezerra@ifto.edu.br,-
-72,Macilene Maria Monteiro Maia,1251027,ARG-CCTGI,macilene.maia@ifto.edu.br,-
-73,Maicon Junio Oliveira Rocha,2383500,ARN-CCTIEM,maicon.rocha@ifto.edu.br,-
-74,Make Bruno Silva Benigno,2277335,ARN-CURBIO,make.benigno@ifto.edu.br,-
-75,Manuella Costa Souza,3281457,ARN-CURBIO,manuella.souza@ifto.edu.br,-
-76,Marcia Rogeria Pereira Leite Silva,1783409,ARN-CCTSE,marciaro@ifto.edu.br,-
-77,Marily Lima da Conceicao,1226470,ARN-CCSADS,marily.conceicao@ifto.edu.br,-
-78,Marinalva Dias de Lima Ferreira,2187528,ARN-CURBIO,marinalva.lima@ifto.edu.br,-
-79,Mario de Souza Lima e Silva,1525518,ARN-CTAC,marioifto@ifto.edu.br,-
-80,Martha Melo Carvalho,1080569,ARN-CURBIO,martha.carvalho@ifto.edu.br,-
-81,Mateus Dall Agnol,1984751,ARG-CCTGI,mateus.agnol@ifto.edu.br,-
-82,Mayra Pereira Santos,2377010,ARN-CCTIEM,mayra.santos@ifto.edu.br,-
-83,Myllenna Rodrigues de Abreu,3469852,ARG-CCTGI,myllenna.abreu@ifto.edu.br,-
-84,Orlando Dias Carneiro,48243,CA-ARN,odiascarneiro@ifto.edu.br,-
-85,Patricia Rodrigues de Oliveira Lima,3001376,ARN-CCTSE,patricia.lima@ifto.edu.br,-
-86,Paulo Ricardo da Silva Pontes,1158242,ARN-CCSADS,paulo.pontes@ifto.edu.br,-
-87,Rejane Xavier Lima Costa,1783379,ARN-CCTSE,rejane.lima@ifto.edu.br,-
-88,Ricardo Barbosa de Sousa,1860703,ARN-CPG,ricardo.sousa@ifto.edu.br,-
-89,Romualdo Fonseca dos Santos,3334837,ARG-CCTGI,romualdo.santos@ifto.edu.br,-
-90,Rosa Maria Machado de Sena,1192998,ARN-CTAC,rosa.sena@ifto.edu.br,-
-91,Sabrina Guimaraes Paiva,1883058,ARN-CBF,sabrinapaiva@ifto.edu.br,-
-92,Samuel Nepomuceno Ferreira,2261071,ARN-CCTIEM,samuel.ferreira@ifto.edu.br,-
-93,Sebastiana Thaylla Fernanda Rosa Rodrigues,3001289,ARN-CCTSE,-,-
-94,Sebastiao Silveira Nunes Junior,3246308,ARN-CCTSE,sebastiao.junior@ifto.edu.br,-
-95,Shisley da Silva Valadao,3246887,ARN-CCTIEM,shisley.valadao@ifto.edu.br,-
-96,Silvia Fernandes Nunes Ramalho,2385200,ARN-CURBIO,silvia.ramalho@ifto.edu.br,-
-97,Suellen Nobrega de Andrade Pinho,1981304,ARN-CCTSE,suellen.andrade@ifto.edu.br,-
-98,Suzana Fernandes Santos Silva,3334041,ARN-CCTIEM,suzana.silva@ifto.edu.br,-
-99,Suzanne Mychelly Rosa Silva Magalhaes,1981301,ARN-CCTSE,suzanne.magalhaes@ifto.edu.br,-
-100,Tassio Romulo Silva Araujo Luz,1356384,ARN-CPG,tassio.luz@ifto.edu.br,-
-101,Thais Araujo Louzada,2127846,ARN-CURBIO,thais.louzada@ifto.edu.br,-
-102,Vagner Alves dos Santos,1740260,ARN-CURBIO,vagner.santos@ifto.edu.br,-
-103,Walisson Pereira de Sousa,2200593,ARN-CCTIEM,walisson.sousa@ifto.edu.br,-
-104,Walmir Jacinto de Sousa,2261068,ARN-GE,walmir.sousa@ifto.edu.br,-
-105,Wellington Sampaio da Silva,1629076,ARN-CURBIO,sampaio@ifto.edu.br,-
-106,Yara Domingos de Morais,3374918,ARN-CCTIEM,yara.morais@ifto.edu.br,-
+#,Nome,Matrícula,Setor,E-mail,Telefone,AVALIAÇÃO
+1,,,,,,
+2,Alessandro Trevisan Monteiro,1743506,ARN-CCTSE,alessandro_atm@ifto.edu.br,-,
+3,Alexandre Cotrim Vilas Boas,1616745,ARN-CCSADS,alexandre.vilasboas@ifto.edu.br,-,
+4,Ana Flavia de Morais Oliveira,1755992,ARN-CCTSE,anaflaviamo@ifto.edu.br,-,
+5,Angelo Cassio Bezerra Nascimento,1743484,ARN-CCTSE,kassioangelo@ifto.edu.br,-,
+6,Anivaldo Pereira Duarte Junior,3521514,ARN-CBF,anivaldo.junior@ifto.edu.br,-,
+8,Bruno Anderson Girao de Sousa,3503964,ARN-CCTIEM,bruno.sousa@ifto.edu.br,-,
+9,Carla Cristina da Silva,2384420,ARN-CCTIEM,cristina.silva@ifto.edu.br,-,
+10,Charles Jefferson Rodrigues Alves,1981305,ARN-CCSADS,charles.alves@ifto.edu.br,-,
+11,Cristina Sousa da Silva,2671944,ARN-CCTIEM,cristiangeoifto@ifto.edu.br,-,
+12,Dacio Alves Pereira de Oliveira,1043559,ARN-CCTIEM,dacio.oliveira@ifto.edu.br,-,
+13,David Samuel Silva Rosa,3521719,ARN-CURBIO,david.rosa@ifto.edu.br,-,
+14,Deusine Cristianne Borges Aguiar Mendes,1786039,ARG-CCTGI,deusine.mendes@ifto.edu.br,-,
+15,Diego Alves de Medeiros,3520978,ARN-CCTSE,diego.medeiros@ifto.edu.br,-,
+17,Erika de Paula Ferreira,1981296,ARN-CCTSE,erika.ferreira@ifto.edu.br,-,
+18,Evaldo da Silva Andrade,1120772,ARN-CCSADS,evaldo.andrade@ifto.edu.br,-,
+19,Eva Pereira da Costa,2644073,ARN-PROEJA,evinhacosta@ifto.edu.br,-,
+20,Felipe Goncalves Carneiro,2243876,ARN-CCTIEM,felipe.carneiro@ifto.edu.br,-,
+21,Filipe Gouveia Cavalcante,3506848,ARN-CURBIO,-,-,
+22,Gabriel Almeida da Silva,3532566,ARN-CCSADS,-,-,
+23,Gelson Andre Schneider,2169953,ARN-CCSADS,gelson.schneider@ifto.edu.br,-,
+24,Gerson Alves de Oliveira,1821887,ARN-CURBIO,gerson.oliveira@ifto.edu.br,-,
+25,Gildemberg da Cunha Silva,2056583,ARN-CURBIO,gildemberg.silva@ifto.edu.br,-,
+26,Gilson Tavares de Lima,1952520,ARN-CTAC,gilsontavares@ifto.edu.br,-,
+27,Gilvan Vieira Moura,2159760,CA-ARN,gilvan.moura@ifto.edu.br,-,
+28,Gislane Goncalves Silva,2187146,ARN-CCTIEM,gislane.silva@ifto.edu.br,-,
+29,Halisson Alves de Lima,2267410,ARN-CCTIEM,halisson.lima@ifto.edu.br,-,
+30,Hebert Lima Batista,1883979,ARN-CPIE,batistahebert@ifto.edu.br,-,
+31,Heidi Luz Bonifacio,1943441,ARN-CURBIO,heidi.bonifacio@ifto.edu.br,-,
+32,Helio Marcio Nunes Lacerda,2125802,ARN-CCTIEM,helio.lacerda@ifto.edu.br,-,
+33,Iara Luzia Ferreira Soares,3426642,ARN-CURBIO,iara.soares@ifto.edu.br,-,
+34,Iury Gomes de Oliveira,1123216,ARN-CCSADS,iury.oliveira@ifto.edu.br,-,
+37,Joana D Arc Dias Cunha,3528840,ARN-CCTIEM,joana.cunha@ifto.edu.br,-,
+38,Joao Batista Silva de Souza,3531431,ARN-CTAC,-,-,
+39,Jonathon Viana Silva,2158087,ARN-PROEJA,jonathon.silva@ifto.edu.br,-,
+40,Jonierson de Araujo da Cruz,1618409,ARN-CPG,joniersonac@ifto.edu.br,-,
+41,Jose Ribamar Santos Moraes Filho,1358554,ARG-CCTGI,joseribamar.filho@ifto.edu.br,-,
+43,Julio Aires Azevedo Leite,3673010,ARN-CCSADS,julioaires@ifto.edu.br,-,
+44,Katiane Pereira Braga,1785361,ARN-CCTSE,katianepb@ifto.edu.br,-,
+45,Katiane Ribeiro Lopes,1234809,ARN-CCSADS,katiane.lopes@ifto.edu.br,-,
+46,Leonardo de Sousa Silva,2260152,ARN-CURBIO,leonardo.silva@ifto.edu.br,-,
+47,Luana Priscilla Rodrigues Macedo,1267164,ARN-CCTIEM,luana.macedo@ifto.edu.br,-,
+48,Luciania dos Santos Cardoso Sousa,1426443,ARN-CCTIEM,luciania.sousa@ifto.edu.br,-,
+49,Luis Rodomilson Pedrosa da Silva,2260978,CA-ARN,luis.silva@ifto.edu.br,-,
+50,Macilene Maria Monteiro Maia,1251027,ARG-CCTGI,macilene.maia@ifto.edu.br,-,
+52,Make Bruno Silva Benigno,2277335,ARN-CURBIO,make.benigno@ifto.edu.br,-,
+53,Marcia Rogeria Pereira Leite Silva,1783409,ARN-CCTSE,marciaro@ifto.edu.br,-,
+54,Marinalva Dias de Lima Ferreira,2187528,ARN-CURBIO,marinalva.lima@ifto.edu.br,-,
+55,Mario de Souza Lima e Silva,1525518,ARN-CTAC,marioifto@ifto.edu.br,-,
+56,Mateus Dall Agnol,1984751,ARG-CCTGI,mateus.agnol@ifto.edu.br,-,
+57,Myllenna Rodrigues de Abreu,3469852,ARG-CCTGI,myllenna.abreu@ifto.edu.br,-,
+59,Paulo Ricardo da Silva Pontes,1158242,ARN-CCSADS,paulo.pontes@ifto.edu.br,-,
+60,Rejane Xavier Lima Costa,1783379,ARN-CCTSE,rejane.lima@ifto.edu.br,-,
+61,Ricardo Barbosa de Sousa,1860703,ARN-CPG,ricardo.sousa@ifto.edu.br,-,
+62,Rosa Maria Machado de Sena,1192998,ARN-CTAC,rosa.sena@ifto.edu.br,-,
+63,Sabrina Guimaraes Paiva,1883058,ARN-CBF,sabrinapaiva@ifto.edu.br,-,
+64,Silvia Fernandes Nunes Ramalho,2385200,ARN-CURBIO,silvia.ramalho@ifto.edu.br,-,
+65,Suellen Nobrega de Andrade Pinho,1981304,ARN-CCTSE,suellen.andrade@ifto.edu.br,-,
+66,Suzanne Mychelly Rosa Silva Magalhaes,1981301,ARN-CCTSE,suzanne.magalhaes@ifto.edu.br,-,
+67,Tassio Romulo Silva Araujo Luz,1356384,ARN-CPG,tassio.luz@ifto.edu.br,-,
+68,Vagner Alves dos Santos,1740260,ARN-CURBIO,vagner.santos@ifto.edu.br,-,
+69,Walisson Pereira de Sousa,2200593,ARN-CCTIEM,walisson.sousa@ifto.edu.br,-,
+70,Walmir Jacinto de Sousa,2261068,ARN-GE,walmir.sousa@ifto.edu.br,-,
+71,Wellington Sampaio da Silva,1629076,ARN-CURBIO,sampaio@ifto.edu.br,-,
