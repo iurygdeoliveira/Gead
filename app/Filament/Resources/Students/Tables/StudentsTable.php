@@ -23,10 +23,20 @@ class StudentsTable
                 TextColumn::make('name')
                     ->label('Nome')
                     ->searchable(isIndividual: true, isGlobal: false)
-                    ->sortable(),
+                    ->sortable()
+                    ->wrap(),
                 TextColumn::make('email')
                     ->label('E-mail')
-                    ->sortable(),
+                    ->sortable()
+                    ->wrap(),
+                TextColumn::make('enrollments.registration_number')
+                    ->label('Matrícula(s)')
+                    ->listWithLineBreaks()
+                    ->wrap(),
+                TextColumn::make('enrollments.course.name')
+                    ->label('Curso(s)')
+                    ->listWithLineBreaks()
+                    ->wrap(),
             ])
             ->filters([
                 //

@@ -18,6 +18,8 @@ class TeacherInfolist
                             ->label('Nome Completo'),
                         TextEntry::make('email')
                             ->label('E-mail'),
+                        TextEntry::make('registration_number')
+                            ->label('Matrícula'),
                         TextEntry::make('team.name')
                             ->label('Campus Vinculado'),
                     ]),

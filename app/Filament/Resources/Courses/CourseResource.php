@@ -14,9 +14,17 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
+use Illuminate\Database\Eloquent\Builder;
+
 class CourseResource extends Resource
 {
     protected static ?string $model = Course::class;
+
+    #[\Override]
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->with(['enrollments.student']);
+    }
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';
 

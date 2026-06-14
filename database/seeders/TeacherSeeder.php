@@ -35,6 +35,7 @@ class TeacherSeeder extends Seeder
             }
 
             $name = $row[1] ?? null;
+            $registrationNumber = $row[2] ?? null;
             $email = $row[4] ?? null;
 
             if (empty($name) || empty($email) || $email === '-') {
@@ -59,6 +60,7 @@ class TeacherSeeder extends Seeder
                 ['email' => trim($email)],
                 [
                     'name' => trim($name),
+                    'registration_number' => $registrationNumber ? trim($registrationNumber) : null,
                     'team_id' => $team->id,
                     'user_id' => $user->id,
                 ]

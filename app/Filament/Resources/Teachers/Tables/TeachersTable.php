@@ -29,6 +29,10 @@ class TeachersTable
                 TextColumn::make('email')
                     ->label('E-mail')
                     ->sortable(),
+                TextColumn::make('registration_number')
+                    ->label('Matrícula')
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //

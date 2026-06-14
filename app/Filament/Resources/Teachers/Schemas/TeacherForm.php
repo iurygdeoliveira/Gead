@@ -24,6 +24,9 @@ class TeacherForm
                             ->required()
                             ->maxLength(255)
                             ->unique(ignoreRecord: true),
+                        \Filament\Forms\Components\TextInput::make('registration_number')
+                            ->label('Matrícula')
+                            ->maxLength(255),
                     ]),
             ]);
     }

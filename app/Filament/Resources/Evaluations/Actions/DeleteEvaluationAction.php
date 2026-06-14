@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Evaluations\Actions;
 
-use Filament\Tables\Actions\Action;
+use Filament\Actions\Action;
 use Filament\Support\Icons\Heroicon;
 
 class DeleteEvaluationAction
