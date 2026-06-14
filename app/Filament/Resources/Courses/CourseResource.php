@@ -6,6 +6,7 @@ use App\Filament\Resources\Courses\Pages\CreateCourse;
 use App\Filament\Resources\Courses\Pages\EditCourse;
 use App\Filament\Resources\Courses\Pages\ListCourses;
 use App\Filament\Resources\Courses\Schemas\CourseForm;
+use App\Filament\Resources\Courses\Schemas\CourseInfolist;
 use App\Filament\Resources\Courses\Tables\CoursesTable;
 use App\Models\Course;
 use BackedEnum;
@@ -53,7 +54,7 @@ class CourseResource extends Resource
     #[\Override]
     public static function infolist(Schema $schema): Schema
     {
-        return \App\Filament\Resources\Courses\Schemas\CourseInfolist::configure($schema);
+        return CourseInfolist::configure($schema);
     }
 
     #[\Override]
@@ -66,7 +67,7 @@ class CourseResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\DisciplinesRelationManager::class,
+            //
         ];
     }
 

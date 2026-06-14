@@ -13,31 +13,30 @@ class CourseClassForm
                 \Filament\Schemas\Components\Section::make('Dados da Turma')
                     ->columns(2)
                     ->components([
+                        \Filament\Forms\Components\Select::make('course_id')
+                            ->label('Curso')
+                            ->relationship('course', 'name')
+                            ->searchable()
+                            ->required()
+                            ->preload(),
+                        \Filament\Forms\Components\TextInput::make('entry_period')
+                            ->label('Período de Ingresso')
+                            ->placeholder('Ex: 2026.1')
+                            ->required()
+                            ->maxLength(255),
                         \Filament\Forms\Components\TextInput::make('name')
                             ->label('Nome da Turma')
-                            ->placeholder('Ex: Turma A')
+                            ->placeholder('Ex: Técnico em Biotecnologia - 2026.1')
                             ->required()
                             ->maxLength(255),
                         \Filament\Forms\Components\TextInput::make('code')
                             ->label('Código')
+                            ->placeholder('Ex: 211-2026.1')
                             ->maxLength(255),
-                        \Filament\Forms\Components\Select::make('discipline_id')
-                            ->label('Disciplina')
-                            ->relationship('discipline', 'name')
-                            ->searchable()
-                            ->required()
-                            ->preload(),
-                        \Filament\Forms\Components\Select::make('teacher_id')
-                            ->label('Docente')
-                            ->relationship('teacher', 'name')
-                            ->searchable()
-                            ->required()
-                            ->preload(),
                         \Filament\Forms\Components\Select::make('academic_term_id')
                             ->label('Período Letivo')
                             ->relationship('academicTerm', 'name')
                             ->searchable()
-                            ->required()
                             ->preload(),
                     ]),
             ]);

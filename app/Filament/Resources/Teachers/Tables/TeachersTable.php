@@ -30,8 +30,8 @@ class TeachersTable
                     ->label('E-mail')
                     ->sortable(),
                 TextColumn::make('registration_number')
-                    ->label('Matrícula')
-                    ->searchable()
+                    ->label('SIAPE')
+                ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
             ])
             ->filters([

@@ -2,7 +2,9 @@
 
 namespace App\Filament\Resources\Students\Tables;
 
+use App\Filament\Resources\Students\Actions\ChangeStudentAccessStatusBulkAction;
 use App\Filament\Resources\Students\Actions\DeleteStudentAction;
+use App\Filament\Resources\Students\Actions\ToggleStudentSuspensionAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -25,16 +27,12 @@ class StudentsTable
                     ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable()
                     ->wrap(),
-                TextColumn::make('email')
-                    ->label('E-mail')
-                    ->sortable()
-                    ->wrap(),
                 TextColumn::make('enrollments.registration_number')
                     ->label('Matrícula(s)')
                     ->listWithLineBreaks()
                     ->wrap(),
                 TextColumn::make('enrollments.course.name')
-                    ->label('Curso(s)')
+                    ->label('Curso')
                     ->listWithLineBreaks()
                     ->wrap(),
             ])
@@ -50,13 +48,13 @@ class StudentsTable
                         ->icon(Heroicon::Pencil),
                     DeleteStudentAction::make()
                         ->icon(Heroicon::Trash),
-                    \App\Filament\Resources\Students\Actions\ToggleStudentSuspensionAction::make(),
+                    ToggleStudentSuspensionAction::make(),
                 ])
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
-                    \App\Filament\Resources\Students\Actions\ChangeStudentAccessStatusBulkAction::make(),
+                    ChangeStudentAccessStatusBulkAction::make(),
                 ]),
             ]);
     }

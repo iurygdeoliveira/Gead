@@ -18,38 +18,31 @@ class CourseClassesTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->label('Nome')
-                    ->searchable()
+                TextColumn::make('course.name')
+                    ->label('Curso')
+                    ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
-                TextColumn::make('code')
-                    ->label('Código')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('discipline.name')
-                    ->label('Disciplina')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('teacher.name')
-                    ->label('Docente')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('academicTerm.name')
-                    ->label('Período Letivo')
-                    ->sortable(),
+                TextColumn::make('entry_period')
+                    ->label('Período de Ingresso')
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->sortable()
+                    ->alignCenter(),
             ])
             ->filters([
                 //
             ])
-            ->actions([
+            ->recordActions([
                 ActionGroup::make([
                     ViewAction::make()
+                        ->icon(Heroicon::Eye)
                         ->color('secondary'),
-                    EditAction::make(),
-                    DeleteCourseClassAction::make(),
+                    EditAction::make()
+                        ->icon(Heroicon::Pencil),
+                    DeleteCourseClassAction::make()
+                        ->icon(Heroicon::Trash),
                 ])
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
