@@ -12,7 +12,7 @@ class CourseSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvPath = base_path('docs/dados de seed/alunos.csv');
+        $csvPath = database_path('seeders/dados de seed/alunos.csv');
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");

@@ -14,14 +14,10 @@ class StudentInfolist
             ->components([
                 Section::make('Detalhes do Aluno')
                     ->components([
-                        TextEntry::make('registration_number')
-                            ->label('Matrícula'),
                         TextEntry::make('name')
                             ->label('Nome Completo'),
                         TextEntry::make('email')
                             ->label('E-mail Institucional'),
-                        TextEntry::make('course.name')
-                            ->label('Curso'),
                         TextEntry::make('team.name')
                             ->label('Campus Vinculado'),
                     ]),

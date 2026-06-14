@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->string('cnpj')->nullable()->after('slug');
+        Schema::create('academic_terms', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->dropColumn('cnpj');
-        });
+        Schema::dropIfExists('academic_terms');
     }
 };

@@ -20,10 +20,6 @@ class StudentsTable
             ->modifyQueryUsing(fn (\Illuminate\Database\Eloquent\Builder $query) => $query->with('user'))
             ->defaultSort('name')
             ->columns([
-                TextColumn::make('registration_number')
-                    ->label('Matrícula')
-                    ->searchable()
-                    ->sortable(),
                 TextColumn::make('name')
                     ->label('Nome')
                     ->searchable(isIndividual: true, isGlobal: false)
@@ -31,11 +27,6 @@ class StudentsTable
                 TextColumn::make('email')
                     ->label('E-mail')
                     ->sortable(),
-                TextColumn::make('course.name')
-                    ->label('Curso')
-                    ->searchable(isIndividual: true, isGlobal: false)
-                    ->sortable()
-                    ->wrap(),
             ])
             ->filters([
                 //

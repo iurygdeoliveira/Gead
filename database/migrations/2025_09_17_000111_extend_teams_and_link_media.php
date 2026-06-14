@@ -14,6 +14,7 @@ return new class extends Migration
         // com `is_active` (controle administrativo do labSIS-KIT).
         Schema::table('teams', function (Blueprint $table): void {
             $table->boolean('is_active')->default(true)->after('is_personal');
+            $table->string('cnpj')->nullable()->after('slug');
         });
 
         // Relação de domínio: media_items pertence a um team
@@ -33,7 +34,7 @@ return new class extends Migration
         });
 
         Schema::table('teams', function (Blueprint $table): void {
-            $table->dropColumn('is_active');
+            $table->dropColumn(['is_active', 'cnpj']);
         });
     }
 };

@@ -12,7 +12,7 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvPath = base_path('docs/dados de seed/alunos.csv');
+        $csvPath = database_path('seeders/dados de seed/alunos.csv');
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");
@@ -37,6 +37,7 @@ class StudentSeeder extends Seeder
             $registrationNumber = $row[2] ?? null;
             $name = $row[1] ?? null;
             $email = $row[7] ?? null;
+            $entryPeriod = $row[9] ?? null;
 
             if (empty($email) || $email === 'None' || $email === '-') {
                 $email = null;
@@ -48,8 +49,6 @@ class StudentSeeder extends Seeder
                 $parts = explode(' - ', $cursoStr, 2);
                 $code = trim($parts[0]);
                 
-                // Cursos do SUAP às vezes podem não estar ainda no banco de dados
-                // Se precisarmos criá-lo automaticamente, seria aqui. Por ora, vamos buscar.
                 $course = \App\Models\Course::firstOrCreate(
                     ['code' => $code, 'team_id' => $team->id],
                     ['name' => isset($parts[1]) ? trim($parts[1]) : 'Curso Desconhecido']
@@ -74,18 +73,32 @@ class StudentSeeder extends Seeder
                 );
             }
 
-            \App\Models\Student::updateOrCreate(
+            // Create or update Student (Pessoa)
+            $student = \App\Models\Student::updateOrCreate(
                 [
-                    'registration_number' => trim($registrationNumber),
-                ],
-                [
+                    // Se tiver email, usamos email. Senão, usamos nome + team.
                     'name' => trim($name),
                     'team_id' => $team->id,
+                ],
+                [
                     'email' => $email ? trim($email) : null,
-                    'course_id' => $courseId,
                     'user_id' => $user ? $user->id : null,
                 ]
             );
+
+            // Create or update Enrollment (Vínculo do Aluno no Curso)
+            if ($registrationNumber && $courseId) {
+                \App\Models\Enrollment::updateOrCreate(
+                    [
+                        'registration_number' => trim($registrationNumber),
+                    ],
+                    [
+                        'student_id' => $student->id,
+                        'course_id' => $courseId,
+                        'entry_period' => trim($entryPeriod),
+                    ]
+                );
+            }
         }
 
         fclose($file);

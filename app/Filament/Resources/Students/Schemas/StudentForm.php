@@ -14,10 +14,6 @@ class StudentForm
                     ->description('Informações básicas do aluno.')
                     ->columns(2)
                     ->components([
-                        \Filament\Forms\Components\TextInput::make('registration_number')
-                            ->label('Matrícula (SUAP)')
-                            ->maxLength(255)
-                            ->unique(ignoreRecord: true),
                         \Filament\Forms\Components\TextInput::make('name')
                             ->label('Nome Completo')
                             ->required()
@@ -27,11 +23,6 @@ class StudentForm
                             ->email()
                             ->maxLength(255)
                             ->unique(ignoreRecord: true),
-                        \Filament\Forms\Components\Select::make('course_id')
-                            ->label('Curso')
-                            ->relationship('course', 'name')
-                            ->searchable()
-                            ->preload(),
                     ]),
             ]);
     }

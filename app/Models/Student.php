@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $fillable = [
-        'registration_number',
         'name',
         'email',
-        'course_id',
         'team_id',
         'user_id',
     ];
@@ -25,8 +23,8 @@ class Student extends Model
         return $this->belongsTo(Team::class);
     }
 
-    public function course()
+    public function enrollments()
     {
-        return $this->belongsTo(Course::class);
+        return $this->hasMany(Enrollment::class);
     }
 }
