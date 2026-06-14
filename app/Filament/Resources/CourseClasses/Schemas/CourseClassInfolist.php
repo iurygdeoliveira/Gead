@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CourseClasses\Schemas;
 
+use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Section;
 use Filament\Infolists\Components\TextEntry;
@@ -44,10 +45,10 @@ class CourseClassInfolist
                                             ->sortBy('student.name', SORT_NATURAL | SORT_FLAG_CASE);
                                     })
                                     ->table([
-                                        \Filament\Infolists\Components\RepeatableEntry\TableColumn::make('Nome do Aluno'),
-                                        \Filament\Infolists\Components\RepeatableEntry\TableColumn::make('E-mail'),
-                                        \Filament\Infolists\Components\RepeatableEntry\TableColumn::make('Matrícula'),
-                                        \Filament\Infolists\Components\RepeatableEntry\TableColumn::make('Período de Ingresso'),
+                                        TableColumn::make('Nome do Aluno'),
+                                        TableColumn::make('E-mail'),
+                                        TableColumn::make('Matrícula'),
+                                        TableColumn::make('Período de Ingresso'),
                                     ])
                                     ->schema([
                                         TextEntry::make('student.name')
