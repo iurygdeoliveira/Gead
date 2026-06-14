@@ -37,17 +37,14 @@ class TeacherInfolist
                                 RepeatableEntry::make('taught_disciplines')
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
-                                        return \DB::table('course_class_disciplines')
-                                            ->where('teacher_id', $record->id)
+                                        return $record->taughtDisciplines()
+                                            ->with(['courseClass.course', 'discipline'])
                                             ->get()
-                                            ->map(function ($row) {
-                                                $courseClass = \App\Models\CourseClass::with('course')->find($row->course_class_id);
-                                                $discipline = \App\Models\Discipline::find($row->discipline_id);
-                                                
+                                            ->map(function ($pivot) {
                                                 return [
-                                                    'course_name' => $courseClass?->course?->name ?? '-',
-                                                    'entry_period' => $courseClass?->entry_period ?? '-',
-                                                    'discipline_name' => $discipline?->name ?? '-',
+                                                    'course_name' => $pivot->courseClass?->course?->name ?? '-',
+                                                    'entry_period' => $pivot->courseClass?->entry_period ?? '-',
+                                                    'discipline_name' => $pivot->discipline?->name ?? '-',
                                                 ];
                                             });
                                     })

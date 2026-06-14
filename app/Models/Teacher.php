@@ -23,4 +23,9 @@ class Teacher extends Model
     {
         return $this->belongsTo(Team::class);
     }
+
+    public function taughtDisciplines()
+    {
+        return $this->hasMany(CourseClassDiscipline::class);
+    }
 }
