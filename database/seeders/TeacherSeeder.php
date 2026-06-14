@@ -21,8 +21,13 @@ class TeacherSeeder extends Seeder
 
         $team = \App\Models\Team::where('cnpj', '03.131.702/0001-33')->first();
         if (! $team) {
-            $this->command->error("Campus Araguaína não encontrado (CNPJ: 03.131.702/0001-33)");
-            return;
+            $team = \App\Models\Team::create([
+                'name' => 'Campus Araguaína',
+                'slug' => 'campus-araguaina',
+                'cnpj' => '03.131.702/0001-33',
+                'is_active' => true,
+                'is_personal' => false,
+            ]);
         }
 
         $file = fopen($csvPath, 'r');

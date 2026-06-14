@@ -1,0 +1,137 @@
+#,Período,Sigla,Componente,Tipo,Optativo,Qtd. Avaliações,Núcleo,CH Componente,CH Teórica,CH Prática,Pré-Requisitos,Co-Requisitos,Classificação Complementar
+1,1,INT.0587,9931 - Arte I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+2,1,INT.0312,9656 - Arte II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+3,1,INT.0989,10333 - Biologia Celular,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+4,1,INT.0093,9437 - Biologia I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+5,1,INT.1037,10381 - Biologia Molecular,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+6,1,INT.0076,9420 - Educação Física I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+7,1,INT.0236,9580 - Estatística Aplicada À Biotecnologia,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+8,1,INT.0048,9392 - Física I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+9,1,INT.0106,9450 - Geografia I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+10,1,INT.0268,9612 - História I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+11,1,INT.0479,9823 - Introdução À Biotecnologia e Fundamentos de Laboratórios,Regular,Não,2,Comum,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+12,1,INT.0255,9599 - Língua Portuguesa I,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+13,1,INT.0349,9693 - Matemática I,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+14,1,INT.0239,9583 - Projeto Integrador 1,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+15,1,INT.0088,9432 - Projeto Integrador 2,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+16,1,INT.0346,9690 - Química I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+17,1,INT.0150,9494 - Sociologia I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+18,1,INT.0124,9468 - Sociologia II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+19,2,INT.0592,9936 - Análise Físico-Química,Regular,Não,2,Comum,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+20,2,INT.0472,9816 - Arte III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+21,2,INT.0248,9592 - Biologia II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+22,2,INT.1127,10471 - Bioquímica,Regular,Não,2,Comum,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+23,2,INT.0862,10206 - Cultivo de Célula Vegetal e Animal,Regular,Não,2,Comum,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+24,2,INT.0225,9569 - Educação Física II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+25,2,INT.0300,9644 - Filosofia I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+26,2,INT.0269,9613 - Física II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+27,2,INT.0261,9605 - Geografia II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+28,2,INT.0341,9685 - História II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+29,2,INT.0219,9563 - Língua Estrangeira - Inglês I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+30,2,INT.0267,9611 - Língua Portuguesa II,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+31,2,INT.0019,9363 - Matemática II,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+32,2,INT.0494,9838 - Projeto Integrador 3,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+33,2,INT.0044,9388 - Projeto Integrador 4,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+34,2,INT.0245,9589 - Química II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+35,2,INT.0250,9594 - Sociologia III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+36,2,INT.1005,10349 - Tecnologia de Tratamento de Efluente e Meio Ambiente,Regular,Não,2,Comum,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+37,3,INT.0005,9349 - Biologia III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+38,3,INT.0339,9683 - Educação Física III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+39,3,INT.0023,9367 - Filosofia II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+40,3,INT.0218,9562 - Filosofia III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+41,3,INT.0246,9590 - Física III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+42,3,INT.0691,10035 - Genética,Regular,Não,2,Comum,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+43,3,INT.0113,9457 - Geografia III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+44,3,INT.0394,9738 - História III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+45,3,INT.0356,9700 - Língua Estrangeira - Inglês II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+46,3,INT.0027,9371 - Língua Estrangeira - Inglês III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+47,3,INT.0040,9384 - Língua Portuguesa III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+48,3,INT.0275,9619 - Matemática III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+49,3,INT.0978,10322 - Microbiologia Aplicada À Biotecnologia,Regular,Não,2,Comum,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+50,3,INT.0089,9433 - Projeto Integrador 5,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+51,3,INT.0734,10078 - Projeto Integrador 6,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+52,3,INT.0414,9758 - Purificação de Bioprodutos,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+53,3,INT.0224,9568 - Química III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+54,3,INT.0970,10314 - Tecnologia das Fermentações,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+55,-,INT.0337,9681 - À Matemática Básica Aplicada na Física Experimental,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+56,-,INT.1570,14623 - Apididática 1 - Voos ilimitados,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+57,-,INT.1610,14788 - Apididática 2 - Voos ilimitados,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+58,-,INT.1609,"14787 - Aulas práticas de vários cursos da graduação, auxiliando na escolha da sua profissão",Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+59,-,INT.1671,15200 - Cidadania e suas práticas: Iniciação à vida adulta,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+60,-,INT.1606,14784 - Cine Literatura - Estudo de Obras da Língua Inglesa através de Adaptações Cinematográficas,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+61,-,INT.1599,14777 - Construindo mais Saberes: Pensamento Crítico na Oralidade e Escrita,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+62,-,INT.1257,13645 - Criando um site para minha disciplina favorita,Regular,Sim,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+63,-,INT.1280,14046 - Desenvolvendo um produto comercial,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+64,-,INT.1611,14789 - Desvendando a divisão celular,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+65,-,INT.1087,10431 - Educação Profissional,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+66,-,INT.1281,14047 - ENEM e vestibulares: Redação.,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+67,-,INT.1584,14686 - ENEM: Oficina de Redação,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+68,-,INT.1053,"10397 - Ensino Médio Para Que --- Informação, Conhecimento e Sabedoria",Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+69,-,INT.1562,14537 - Espanhol Básico,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+70,-,INT.1190,10534 - Espanhol I,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+71,-,INT.1276,14042 - Fundamentos do Atletismo,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+72,-,INT.1672,15201 - Fundamentos do Tênis de Mesa,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+73,-,INT.1567,14620 - Introdução a Ciência dos Materiais,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+74,-,INT.1171,10515 - Introdução À Nanotecnologia,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+75,-,INT.1564,14617 - Introdução à Robótica,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+76,-,INT.0964,10308 - Jogos Didáticos de Biologia - Metodologia Alternativa de Ensino,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+77,-,INT.0574,9918 - Leitura Discursiva de Textos Não Verbais,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+78,-,INT.0866,10210 - Libras I - Introdução e Gramática da Libras,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+79,-,INT.0380,9724 - Liderança e Desenvolvimento de Equipes,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+80,-,INT.1255,13640 - Língua Portuguesa: ENEM e vestibulares,Regular,Sim,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+81,-,INT.1069,10413 - Literatura da Diáspora Negra,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+82,-,INT.1607,14785 - Literatura para o vestibular: interseccionalidades e saberes,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+83,-,INT.1566,14619 - Matemática Básica,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+84,-,INT.1256,13643 - Matemática: das operações básicas aos números reais,Regular,Sim,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+85,-,INT.1608,14786 - Matemática para o ENEM e Olimpiadas,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+86,-,INT.1277,14043 - Meio Ambiente e Sustentabilidade,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+87,-,INT.0621,9965 - Modelagem e Impressão 3D,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+88,-,INT.1054,10398 - Música I - Percepção e Teoria Musical,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+89,-,INT.1569,14622 - Oficina de Redação,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+90,-,INT.1679,15237 - O que eu vou ser? Conhecendo as profissões,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+91,-,INT.1568,14621 - Práticas de Anatomia e Fisiologia Humana,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+92,-,INT.1673,"15202 - Práticas de leitura, interpretação e produção textual por meio de gêneros textuais",Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+93,-,INT.0855,10199 - Primeiros Socorros,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+94,-,INT.1674,"15203 - Produção de textos de divulgação científica, experimentações e jogos no ensino de ciências",Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+95,-,INT.1565,14618 - Programação para Biotecnologia,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+96,-,INT.1274,13896 - Projeto conhecendo o corpo I - Anatomia prática e fisiologia,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+97,-,INT.1067,10411 - Propriedade Intelectual,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+98,-,INT.0180,9524 - Redação Nota Mil,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+99,-,INT.0794,10138 - Roda de Leitura,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+100,-,INT.1275,14041 - RPG e o cosmo criativo,Regular,Sim,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+101,-,INT.1675,15204 - Sintaxe para produção textual: uma perspectiva funcionalista,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+102,-,INT.1254,"13626 - Solta o som DJ: rock, MPB e hip hop e a musica como protesto político",Regular,Sim,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+103,-,INT.0015,9359 - Sustentabilidade e Meio Ambiente,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+104,-,INT.1617,14815 - Tópicos Especiais em Biotecnologia Diagnóstica,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+105,-,INT.0941,10285 - Treinamento Esportivo - Atletismo,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+106,-,INT.1838,15574 - UD: Ajudando a escolher sua profissão,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+107,-,INT.1279,14045 - UD: Alquimia dos Alimentos,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+108,-,INT.0020,9364 - UD: À República dos Golpes: Estratégias e Táticas das Elites Para Se Consolidarem no Poder,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+109,-,INT.1022,10366 - UD: Automação Com Arduino,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+110,-,INT.1781,"15512 - UD: CineMente: Filmes, Poder e Sociedade",Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+111,-,INT.1253,13623 - UD: Conhecendo as partes das plantas,Regular,Sim,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+112,-,INT.1874,15766 - UD: Educação para as Questões Socioambientais,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+113,-,INT.1869,15761 - UD: Ensino do Atletismo,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+114,-,INT.1882,15791 - UD: Futsal JIFTO,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+115,-,INT.1836,15572 - UD: GESTÃO DE PROJETOS,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+116,-,INT.1832,15568 - UD: Laboratório de Inovação em Software,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+117,-,INT.1872,15764 - UD: Matemática para o ENEM e EXATO,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+118,-,INT.1833,15569 - UD: Matemática para o ENEM e Olimpíadas,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+119,-,INT.1871,15763 - UD:  Prática de Leitura e Produção Textual para o Enem e Vestibulares,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+120,-,INT.1831,15567 - UD: Práticas de Leitura e Produção Textual,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+121,-,INT.1278,14044 - UD: Práticas no atendimento a Saúde,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+122,-,INT.1873,15765 - UD: Preparatório para Olimpíada Brasileira de Informática,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+123,-,INT.1883,15792 - UD: Tênis de Mesa JIFTO,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+124,-,INT.1870,15762 - UD: Voleibol JIFTO,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+125,-,INT.1837,15573 - UD: Xadrez para Iniciantes,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+126,-,INT.0026,9370 - Unidade Diversificada 1,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+127,-,INT.0370,9714 - Unidade Diversificada 2,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+128,-,INT.0362,9706 - Unidade Diversificada 3,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+129,-,INT.0305,9649 - Unidade Diversificada 4,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+130,-,INT.0299,9643 - Unidade Diversificada 5,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+131,-,INT.0188,9532 - Unidade Diversificada 6,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+132,-,INT.1680,15242 - Voleibol Intermediário,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+133,-,INT.1282,14048 - Voleibol para iniciantes,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+134,-,INT.1170,10514 - Vôlei de Praia,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+135,-,INT.1676,15205 - Xadrez: Estratégia para o JIFTO e para a Vida,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+136,-,INT.1583,14685 - Xadrez: Treinando para o jogo da vida,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-

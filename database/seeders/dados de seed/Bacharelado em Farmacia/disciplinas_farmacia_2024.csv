@@ -1,0 +1,62 @@
+#,Período,Sigla,Componente,Tipo,Optativo,Qtd. Avaliações,Núcleo,CH Componente,CH Teórica,CH Prática,Pré-Requisitos,Co-Requisitos,Classificação Complementar
+1,1,BAC.1434,15021 - Anatomia Humana,Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+2,1,BAC.1427,15014 - Bases do Saber Científico,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+3,1,BAC.1433,15020 - Biologia Celular e Molecular,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+4,1,BAC.1431,15018 - Física Aplicada,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+5,1,BAC.1426,15013 - Informática Básica,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+6,1,BAC.1429,15016 - Introdução às Ciências Farmacêuticas,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+7,1,BAC.1430,15017 - Matemática Aplicada,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+8,1,BAC.1428,15015 - Primeiros Socorros e Biossegurança,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+9,1,BAC.1432,15019 - Química Geral e Inorgânica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+10,2,LIC.1695,14833 - Atividades de Extensão I,Atividade de Extensão,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",0,0,-,-,-
+11,2,BAC.1034,9312 - Bioquímica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+12,2,BAC.1437,15024 - Físico-química,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+13,2,LIC.1697,14929 - Fisiologia Humana,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+14,2,BAC.1435,15022 - Fundamentos de Estatística,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+15,2,BAC.1439,15026 - Histologia e Embriologia,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+16,2,BAC.1436,"15023 - Legislação, Ética e Deontologia Farmacêutica",Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+17,2,BAC.1438,15025 - Química Orgânica I,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+18,2,BAC.1440,"15027 - Saúde, Ambiente e Sociedade",Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+19,3,LIC.1730,14962 - Atividades de Extensão II,Atividade de Extensão,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",0,0,-,-,-
+20,3,BAC.1441,15028 - Farmacologia I,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+21,3,BAC.1444,15031 - Genética Humana,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+22,3,LIC.1083,12586 - Microbiologia,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+23,3,BAC.1445,15032 - Patologia Geral,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+24,3,BAC.1443,15030 - Química Analítica I,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+25,3,BAC.1442,15029 - Química Orgânica II,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,Química Orgânica I,-,-
+26,4,BAC.1446,15033 - Assistência Farmacêutica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+27,4,LIC.1733,14965 - Atividades de Extensão III,Atividade de Extensão,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",0,0,-,-,-
+28,4,BAC.1449,15036 - Farmacobotânica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+29,4,BAC.1448,15035 - Farmacologia II,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,Farmacologia I,-,-
+30,4,LIC.0712,12215 - Imunologia,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+31,4,BAC.1370,14856 - Parasitologia,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+32,4,BAC.1450,15037 - Química Analítica II,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,Química Analítica I,-,-
+33,4,BAC.1447,15034 - Sistemas e Políticas de Saúde,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+34,5,LIC.1736,14968 - Atividades de Extensão IV,Atividade de Extensão,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",0,0,-,-,-
+35,5,BAC.1451,15038 - Epidemiologia,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+36,5,BAC.1453,15040 - Farmacognosia I,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+37,5,BAC.1452,15039 - Farmacologia III,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,Farmacologia II,-,-
+38,5,BAC.1454,15041 - Farmacotécnica I,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+39,5,BAC.1455,15042 - Química Farmacêutica e Medicinal,Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,Química Orgânica II,-,-
+40,6,BAC.1459,15046 - Análises Toxicológicas,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+41,6,LIC.1740,14972 - Atividades de Extensão V,Atividade de Extensão,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",0,0,-,-,-
+42,6,BAC.1460,15047 - Bromatologia e Análise de Alimentos,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+43,6,BAC.1456,15043 - Farmacoepidemiologia e Farmacovigilância,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+44,6,BAC.1458,15045 - Farmacognosia II,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,Farmacognosia I,-,-
+45,6,BAC.1457,15044 - Farmacotécnica II,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,Farmacotécnica I,-,-
+46,7,LIC.1744,14976 - Atividades de Extensão VI,Atividade de Extensão,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",0,0,-,-,-
+47,7,BAC.1464,15051 - Controle de Qualidade,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+48,7,BAC.1461,15048 - Farmácia Hospitalar,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+49,7,BAC.1463,15050 - Semiologia Farmacêutica,Regular,Não,2,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+50,7,BAC.1462,15049 - Tecnologias e Processos Industriais,Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+51,8,BAC.1471,15058 - Atividades de Extensão VII,Atividade de Extensão,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",0,0,-,-,-
+52,8,BAC.1468,15055 - Bioquímica Clínica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+53,8,BAC.1470,15057 - Biotecnologia Aplicada à Farmácia,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+54,8,BAC.1465,15052 - Hematologia Clínica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+55,8,BAC.1466,15053 - Imunologia Clínica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+56,8,BAC.1469,15056 - Microbiologia Clínica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+57,8,BAC.1467,15054 - Parasitologia Clínica,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+58,9,BAC.1472,15059 - Gestão e Inovação,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+59,9,BAC.1101,13438 - Projeto de Trabalho de Conclusão de Curso,Trabalho de Conclusão de Curso,Não,1,Específico,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+60,10,BAC.1102,13439 - Trabalho de Conclusão de Curso,Trabalho de Conclusão de Curso,Não,1,Específico,"CH Relógio: 30, CH Aula: 40",0,30,Projeto de Trabalho de Conclusão de Curso,-,-
+61,-,BAC.1129,13482 - Fundamentos de Libras,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-

@@ -1,0 +1,42 @@
+#,Período,Sigla,Componente,Tipo,Optativo,Qtd. Avaliações,Núcleo,CH Componente,CH Teórica,CH Prática,Pré-Requisitos,Co-Requisitos,Classificação Complementar
+1,1,TCN.0208,10772 - Algoritmos e Laboratório de Programação,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+2,1,TCN.0413,10977 - Fundamentos de Informática,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+3,1,TCN.0231,10795 - Informática e Sociedade,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+4,1,TCN.0162,10726 - Inglês Instrumental,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+5,1,TCN.0269,10833 - Lógica Matemática,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+6,1,TCN.0432,10996 - Matemática Aplicada,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+7,1,TCN.0309,10873 - Português Instrumental,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+8,2,TCN.0545,11109 - Arquitetura de Computadores,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+9,2,TCN.0007,10571 - Arquitetura de Software,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+10,2,TCN.0429,10993 - Banco de Dados I,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+11,2,TCN.0344,10908 - Estrutura de Dados I,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+12,2,TCN.0348,10912 - Fundamentos de Estatística,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+13,2,TCN.0448,11012 - Fundamentos de Sistemas de Informação,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+14,2,TCN.0139,10703 - Programação Orientada À Objetos,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+15,3,TCN.0075,10639 - Banco de Dados II,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+16,3,TCN.0678,11242 - Desenvolvimento Web,Regular,Não,2,Comum,"CH Relógio: 100, CH Aula: 120",100,0,-,-,-
+17,3,TCN.0084,10648 - Educação Inclusiva,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+18,3,TCN.0671,11235 - Engenharia de Software I,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+19,3,TCN.0214,10778 - Estrutura de Dados II,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+20,3,TCN.0587,11151 - Redes de Telecomunicações I,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+21,4,TCN.0565,11129 - Atividades de Extensão I,Atividade de Extensão,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",0,0,-,-,-
+22,4,TCN.0334,10898 - Desenvolvimento Mobile,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+23,4,TCN.0507,11071 - Engenharia de Software II,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+24,4,TCN.0373,10937 - Interação Humano-Computador,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+25,4,TCN.0288,10852 - Introdução À Administração,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+26,4,TCN.0246,10810 - Redes de Telecomunicações II,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+27,5,TCN.0547,11111 - Atividades de Extensão II,Atividade de Extensão,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",0,0,Atividades de Extensão I,-,-
+28,5,TCN.0359,10923 - Desenvolvimento Orientado a Serviços,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+29,5,TCN.0195,10759 - Gestão de Processos e Serviços,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+30,5,TCN.0043,10607 - Gestão do Conhecimento,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+31,5,TCN.0066,10630 - Metodologia Científica,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+32,5,TCN.0312,10876 - Sistemas Distribuídos,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+33,5,TCN.0186,10750 - Sistemas Operacionais,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+34,6,TCN.0517,11081 - Atividade de Extensão III,Atividade de Extensão,Não,2,Comum,"CH Relógio: 100, CH Aula: 120",0,0,Atividades de Extensão II,-,-
+35,6,TCN.0277,10841 - Empreendedorismo e Inovação,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+36,6,TCN.0089,10653 - Gestão de Projetos,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+37,6,TCN.0430,10994 - Qualidade de Software,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+38,6,TCN.0313,10877 - Segurança da Informação,Regular,Não,2,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+39,6,TCN.0072,10636 - Sistemas Inteligentes de Apoio À Decisão,Regular,Não,2,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+40,6,TCN.0632,11196 - Trabalho de Conclusão de Curso,Trabalho de Conclusão de Curso,Não,1,Específico,"CH Relógio: 67, CH Aula: 80",0,67,"Algoritmos e Laboratório de Programação, Fundamentos de Informática, Informática e Sociedade, Inglês Instrumental, Lógica Matemática, Matemática Aplicada, Português Instrumental, Arquitetura de Computadores, Arquitetura de Software, Banco de Dados I, Estrutura de Dados I, Fundamentos de Estatística, Fundamentos de Sistemas de Informação, Programação Orientada À Objetos, Banco de Dados II, Desenvolvimento Web, Educação Inclusiva, Engenharia de Software I, Estrutura de Dados II, Redes de Telecomunicações I, Metodologia Científica",-,-
+41,-,LIC.0803,12306 - Fundamentos de Libras,Regular,Sim,2,Específico,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-

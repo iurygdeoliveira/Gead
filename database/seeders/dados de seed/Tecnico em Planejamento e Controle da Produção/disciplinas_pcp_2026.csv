@@ -1,0 +1,62 @@
+#,Período,Sigla,Componente,Tipo,Optativo,Qtd. Avaliações,Núcleo,CH Componente,CH Teórica,CH Prática,Pré-Requisitos,Co-Requisitos,Classificação Complementar
+1,1,INT.1455,14374 - Arte I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+2,1,INT.1456,14375 - Arte II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+3,1,INT.1320,14172 - Biologia I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+4,1,INT.1321,14173 - Educação Física I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+5,1,INT.1322,14174 - Física I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+6,1,INT.1877,15786 - Fundamentos da Administração,Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+7,1,INT.1323,14175 - Geografia I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+8,1,INT.1491,14410 - Gestão da Qualidade,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+9,1,INT.1324,14176 - História I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+10,1,INT.1876,15785 - Informática Industrial,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+11,1,INT.1302,14154 - Língua Portuguesa I,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+12,1,INT.1878,15787 - Logística e Gestão da Cadeia de Suprimentos,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+13,1,INT.1325,14177 - Matemática I,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+14,1,INT.0416,9760 - Projeto Integrador I,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+15,1,INT.1326,14178 - Química I,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+16,1,INT.1327,14179 - Sociologia I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+17,1,INT.1328,14180 - Sociologia II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+18,2,INT.0472,9816 - Arte III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+19,2,INT.0248,9592 - Biologia II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+20,2,INT.0225,9569 - Educação Física II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+21,2,INT.1934,15909 - Engenharia de Métodos e Processos,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+22,2,INT.1333,14185 - Filosofia I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+23,2,INT.0269,9613 - Física II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+24,2,INT.0261,9605 - Geografia II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+25,2,INT.1936,15911 - Gestão da Manutenção,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+26,2,INT.0341,9685 - História II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+27,2,INT.0219,9563 - Língua Estrangeira - Inglês I,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+28,2,INT.0267,9611 - Língua Portuguesa II,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+29,2,INT.0019,9363 - Matemática II,Regular,Não,4,Comum,"CH Relógio: 120, CH Aula: 160",120,0,-,-,-
+30,2,INT.1933,"15908 - Planejamento, Programação e Controle da Produção I",Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+31,2,INT.1935,"15910 - Planejamento, Programação e Controle da Produção II",Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+32,2,INT.0868,10212 - Projeto Integrador II,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+33,2,INT.0245,9589 - Química II,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+34,2,INT.1339,14191 - Sociologia III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+35,3,INT.0005,9349 - Biologia III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+36,3,INT.1938,15913 - Controle Estatístico da Qualidade e Processo,Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+37,3,INT.1937,15912 - Custos Industriais,Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+38,3,INT.0339,9683 - Educação Física III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+39,3,INT.1344,14196 - Filosofia II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+40,3,INT.1345,14197 - Filosofia III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+41,3,INT.1346,14198 - Física III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+42,3,INT.1347,14199 - Geografia III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+43,3,INT.1348,14200 - História III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+44,3,INT.0356,9700 - Língua Estrangeira - Inglês II,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+45,3,INT.0027,9371 - Língua Estrangeira - Inglês III,Regular,Não,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+46,3,INT.0040,9384 - Língua Portuguesa III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+47,3,INT.0275,9619 - Matemática III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+48,3,INT.1940,15915 - Projeto de Fábrica e Layout,Regular,Não,2,Específico,"CH Relógio: 90, CH Aula: 120",90,0,-,-,-
+49,3,INT.0751,10095 - Projeto Integrador III,Regular,Não,2,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+50,3,INT.0224,9568 - Química III,Regular,Não,4,Comum,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+51,3,INT.1939,"15914 - Saúde, Segurança do Trabalho e Meio Ambiente",Regular,Não,2,Específico,"CH Relógio: 60, CH Aula: 80",60,0,-,-,-
+52,-,INT.1609,"14787 - Aulas práticas de vários cursos da graduação, auxiliando na escolha da sua profissão",Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+53,-,INT.1022,10366 - UD: Automação Com Arduino,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+54,-,INT.1882,15791 - UD: Futsal JIFTO,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+55,-,INT.1883,15792 - UD: Tênis de Mesa JIFTO,Regular,Sim,2,Comum,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+56,-,INT.0442,9786 - Unidade Diversificada I,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+57,-,INT.0087,9431 - Unidade Diversificada II,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+58,-,INT.0100,9444 - Unidade Diversificada III,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+59,-,INT.0735,10079 - Unidade Diversificada IV,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+60,-,INT.0148,9492 - Unidade Diversificada V,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
+61,-,INT.0425,9769 - Unidade Diversificada VI,Regular,Sim,2,Diversificado,"CH Relógio: 30, CH Aula: 40",30,0,-,-,-
