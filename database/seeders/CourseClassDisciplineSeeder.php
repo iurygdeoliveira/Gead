@@ -30,8 +30,11 @@ class CourseClassDisciplineSeeder extends Seeder
             return;
         }
 
+        $failures = [];
+
         foreach ($csvFiles as $csvPath) {
-            $this->command->info("Processando arquivo: " . basename($csvPath));
+            $fileBasename = basename($csvPath);
+            $this->command->info("Processando arquivo: " . $fileBasename);
             $file = fopen($csvPath, 'r');
             $isHeader = true;
 
@@ -49,11 +52,16 @@ class CourseClassDisciplineSeeder extends Seeder
                 $disciplineName = trim($row[4] ?? '');
                 $teachingPeriod = trim($row[5] ?? '');
 
-                if (empty($registrationNumber) && empty($professorName)) {
+                if (empty($disciplineName) || empty($teachingPeriod)) {
                     continue;
                 }
 
-                if (empty($disciplineName) || empty($teachingPeriod)) {
+                // Filtrar apenas disciplinas ministradas em 2025/2 e 2026/1
+                if ($teachingPeriod !== '2025/2' && $teachingPeriod !== '2026/1') {
+                    continue;
+                }
+
+                if (empty($registrationNumber) && empty($professorName)) {
                     continue;
                 }
 
@@ -67,27 +75,43 @@ class CourseClassDisciplineSeeder extends Seeder
                 }
 
                 if (!$teacher) {
-                    $this->command->warn("Professor não encontrado: {$professorName} (Matrícula: {$registrationNumber})");
+                    $failures[] = [
+                        'file' => $fileBasename,
+                        'reason' => "Professor não encontrado: '{$professorName}' (Matrícula: {$registrationNumber})"
+                    ];
                     continue;
                 }
 
-                // 2. Find Course if course name is provided in CSV
+                // 2. Find Course using normalized name comparison
                 $course = null;
                 if (!empty($courseRawName)) {
                     $cleanCourseName = trim(explode('(', $courseRawName)[0]);
-                    $course = Course::where('name', 'ilike', $cleanCourseName)->first();
+                    $normalizedCleanCourseName = $this->normalizeString($cleanCourseName);
+                    
+                    $course = Course::all()->first(function ($c) use ($normalizedCleanCourseName) {
+                        return $this->normalizeString($c->name) === $normalizedCleanCourseName;
+                    });
                 }
 
-                // 3. Find the Discipline(s) matching the name (and course if available)
+                // 3. Find the Discipline(s) matching the normalized name (and course if available)
                 $cleanDisciplineName = preg_replace('/^Att\d+\s*-\s*/i', '', $disciplineName);
-                $query = Discipline::where('name', 'ilike', $cleanDisciplineName);
+                $normalizedCleanDisciplineName = $this->normalizeString($cleanDisciplineName);
+
+                $query = Discipline::query();
                 if ($course) {
                     $query->where('course_id', $course->id);
                 }
-                $disciplines = $query->get();
+                $allDisciplines = $query->get();
+
+                $disciplines = $allDisciplines->filter(function ($d) use ($normalizedCleanDisciplineName) {
+                    return $this->normalizeString($d->name) === $normalizedCleanDisciplineName;
+                });
 
                 if ($disciplines->isEmpty()) {
-                    $this->command->warn("Disciplina não encontrada no banco: '{$disciplineName}'" . ($course ? " para o curso '{$course->name}'" : ''));
+                    $failures[] = [
+                        'file' => $fileBasename,
+                        'reason' => "Disciplina não encontrada no banco: '{$disciplineName}'" . ($course ? " para o curso '{$course->name}'" : '')
+                    ];
                     continue;
                 }
 
@@ -95,55 +119,112 @@ class CourseClassDisciplineSeeder extends Seeder
                 foreach ($disciplines as $discipline) {
                     $disciplinePeriod = $discipline->period;
                     
-                    if (empty($disciplinePeriod) || $disciplinePeriod === '-') {
-                        $this->command->warn("Disciplina '{$disciplineName}' não possui um período curricular válido definido.");
+                    $isAnnual = $course ? str_contains(mb_strtolower($course->name, 'UTF-8'), 'integrado') : false;
+
+                    // Se não tiver período numérico, trata como Unidade Diversificada / Eletiva
+                    if (empty($disciplinePeriod) || $disciplinePeriod === '-' || !is_numeric($disciplinePeriod)) {
+                        $activeEntryPeriods = $this->getActiveEntryPeriods($teachingPeriod, $isAnnual);
+                        $courseClasses = CourseClass::where('course_id', $discipline->course_id)
+                            ->whereIn('entry_period', $activeEntryPeriods)
+                            ->get();
+
+                        if ($courseClasses->isNotEmpty()) {
+                            foreach ($courseClasses as $courseClass) {
+                                DB::table('course_class_disciplines')->updateOrInsert(
+                                    [
+                                        'course_class_id' => $courseClass->id,
+                                        'discipline_id' => $discipline->id,
+                                    ],
+                                    [
+                                        'teacher_id' => $teacher->id,
+                                        'updated_at' => now(),
+                                        'created_at' => now(),
+                                    ]
+                                );
+                                $this->command->info("Vinculado (UD/Eletiva): {$teacher->name} -> {$discipline->name} na turma {$courseClass->name}");
+                            }
+                        } else {
+                            $failures[] = [
+                                'file' => $fileBasename,
+                                'reason' => "Nenhuma turma ativa encontrada para a disciplina especial '{$disciplineName}' no curso ID {$discipline->course_id}"
+                            ];
+                        }
                         continue;
                     }
 
-                    // Only handle numeric discipline periods for calculating cohort entry_period
-                    if (is_numeric($disciplinePeriod)) {
-                        $calculatedEntryPeriod = $this->calculateEntryPeriod($teachingPeriod, (int)$disciplinePeriod);
+                    // Se for numérico, calcula o semestre específico de ingresso
+                    $calculatedEntryPeriod = $this->calculateEntryPeriod($teachingPeriod, (int)$disciplinePeriod, $isAnnual);
 
-                        // Find the CourseClass for this course and calculated entry period
-                        $courseClass = CourseClass::where('course_id', $discipline->course_id)
-                            ->where('entry_period', $calculatedEntryPeriod)
-                            ->first();
+                    // Find the CourseClass for this course and calculated entry period
+                    $courseClass = CourseClass::where('course_id', $discipline->course_id)
+                        ->where('entry_period', $calculatedEntryPeriod)
+                        ->first();
 
-                        if ($courseClass) {
-                            // Link/Update the teacher relationship in pivot table
-                            DB::table('course_class_disciplines')->updateOrInsert(
-                                [
-                                    'course_class_id' => $courseClass->id,
-                                    'discipline_id' => $discipline->id,
-                                ],
-                                [
-                                    'teacher_id' => $teacher->id,
-                                    'updated_at' => now(),
-                                    'created_at' => now(), // only used if inserting
-                                ]
-                            );
-                            $this->command->info("Vinculado: {$teacher->name} -> {$discipline->name} na turma {$courseClass->name}");
-                        } else {
-                            $this->command->warn("Turma não encontrada para o curso ID {$discipline->course_id} e período de entrada {$calculatedEntryPeriod}");
-                        }
+                    if ($courseClass) {
+                        // Link/Update the teacher relationship in pivot table
+                        DB::table('course_class_disciplines')->updateOrInsert(
+                            [
+                                'course_class_id' => $courseClass->id,
+                                'discipline_id' => $discipline->id,
+                            ],
+                            [
+                                'teacher_id' => $teacher->id,
+                                'updated_at' => now(),
+                                'created_at' => now(),
+                            ]
+                        );
+                        $this->command->info("Vinculado: {$teacher->name} -> {$discipline->name} na turma {$courseClass->name}");
                     } else {
-                        $this->command->warn("Período curricular '{$disciplinePeriod}' da disciplina '{$disciplineName}' não é numérico.");
+                        $failures[] = [
+                            'file' => $fileBasename,
+                            'reason' => "Turma não encontrada para o curso ID {$discipline->course_id} e período de entrada {$calculatedEntryPeriod} (Disciplina: {$disciplineName})"
+                        ];
                     }
                 }
             }
             fclose($file);
         }
+
+        if (!empty($failures)) {
+            $this->command->error("\n--- RELATÓRIO DE DISCIPLINAS NÃO VINCULADAS ---");
+            foreach ($failures as $fail) {
+                $this->command->warn("- [{$fail['file']}] {$fail['reason']}");
+            }
+        }
+    }
+
+    /**
+     * Normalize string for comparison by removing accents, spaces, and punctuation.
+     */
+    private function normalizeString(string $str): string
+    {
+        $str = mb_strtolower($str, 'UTF-8');
+        $str = preg_replace('/^att\d+\s*-\s*/i', '', $str);
+        
+        $str = str_replace(
+            ['á', 'à', 'â', 'ã', 'ä', 'é', 'è', 'ê', 'ë', 'í', 'ì', 'î', 'ï', 'ó', 'ò', 'ô', 'õ', 'ö', 'ú', 'ù', 'û', 'ü', 'ç', 'ñ'],
+            ['a', 'a', 'a', 'a', 'a', 'e', 'e', 'e', 'e', 'i', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u', 'c', 'n'],
+            $str
+        );
+        
+        return preg_replace('/[^a-z0-9]/', '', $str);
     }
 
     /**
      * Calculate entry period based on teaching period and curricular period.
      */
-    private function calculateEntryPeriod(string $teachingPeriod, int $disciplinePeriod): string
+    private function calculateEntryPeriod(string $teachingPeriod, int $disciplinePeriod, bool $isAnnual): string
     {
         $normalized = str_replace('/', '.', $teachingPeriod);
         $parts = explode('.', $normalized);
         $year = (int)$parts[0];
         $sem = (int)($parts[1] ?? 1);
+
+        if ($isAnnual) {
+            // For annual courses, entry is always in the 1st semester of the entry year
+            $entryYear = $year - $disciplinePeriod + 1;
+            return "{$entryYear}.1";
+        }
 
         $semestersToSubtract = $disciplinePeriod - 1;
         for ($i = 0; $i < $semestersToSubtract; $i++) {
@@ -156,5 +237,42 @@ class CourseClassDisciplineSeeder extends Seeder
         }
 
         return "{$year}.{$sem}";
+    }
+
+    /**
+     * Helper to get active entry periods for variable/optional disciplines.
+     */
+    private function getActiveEntryPeriods(string $teachingPeriod, bool $isAnnual): array
+    {
+        $normalized = str_replace('/', '.', $teachingPeriod);
+        $parts = explode('.', $normalized);
+        $year = (int)$parts[0];
+        $sem = (int)($parts[1] ?? 1);
+
+        $active = [];
+
+        if ($isAnnual) {
+            for ($grade = 1; $grade <= 4; $grade++) {
+                $entryYear = $year - $grade + 1;
+                $active[] = "{$entryYear}.1";
+            }
+        } else {
+            for ($grade = 1; $grade <= 10; $grade++) {
+                $y = $year;
+                $s = $sem;
+                $semestersToSubtract = $grade - 1;
+                for ($i = 0; $i < $semestersToSubtract; $i++) {
+                    if ($s === 1) {
+                        $y--;
+                        $s = 2;
+                    } else {
+                        $s = 1;
+                    }
+                }
+                $active[] = "{$y}.{$s}";
+            }
+        }
+
+        return $active;
     }
 }

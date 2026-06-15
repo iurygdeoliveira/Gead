@@ -33,6 +33,7 @@ class DisciplineSeeder extends Seeder
             'Tecnico em Informatica/disciplinas_info_2021.csv' => ['213'],
             'Tecnico em Planejamento e Controle da Produção/disciplinas_pcp_2026.csv' => ['349'],
             'Tecnologo em Analise e Desenvolvimento de Sistemas/disciplinas_tads_2022.csv' => ['216'],
+            'Operador de Compudaor/Disciplinas_PROEJA.csv' => ['215'],
         ];
 
         foreach ($filesToCoursesMap as $filename => $courseCodes) {
