@@ -17,7 +17,7 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvPath = database_path('seeders/dados de seed/professores.csv');
+        $csvPath = database_path('seeders/dados de seed/professores/professores.csv');
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");
