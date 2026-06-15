@@ -1,0 +1,24 @@
+#,Período,Sigla,Componente,Tipo,Optativo,Qtd. Avaliações,Núcleo,CH Componente,CH Teórica,CH Prática,Pré-Requisitos,Co-Requisitos,Classificação Complementar
+1,1,INT.0235,9579 - Artes,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+2,1,INT.0233,9577 - Biologia I,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+3,1,INT.0063,9407 - Filosofia I,Regular,Não,4,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+4,1,INT.0660,10004 - Geografia I,Regular,Não,4,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+5,1,INT.0049,9393 - História I,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+6,1,INT.0363,9707 - Informática Básica,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+7,1,INT.0953,10297 - Língua Estrangeira - Inglês,Regular,Não,4,Comum,"CH Relógio: 66, CH Aula: 80",66,0,-,-,-
+8,1,INT.0566,9910 - Língua Portuguesa,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+9,1,INT.0849,10193 - Matemática,Regular,Não,4,Comum,"CH Relógio: 100, CH Aula: 120",100,0,-,-,-
+10,1,INT.1081,10425 - Química,Regular,Não,4,Comum,"CH Relógio: 66, CH Aula: 80",66,0,-,-,-
+11,1,INT.1117,10461 - Sociologia,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+12,2,INT.0135,9479 - Biologia II,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+13,2,INT.0634,9978 - Educação Física,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+14,2,INT.0243,9587 - Filosofia II,Regular,Não,4,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+15,2,INT.0709,10053 - Física,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+16,2,INT.0317,9661 - Geografia II,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+17,2,INT.0294,9638 - História II,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+18,2,INT.0196,9540 - Internet - Conceitos e Práticas,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+19,2,INT.0036,9380 - Língua Portuguesa,Regular,Não,4,Comum,"CH Relógio: 100, CH Aula: 120",100,0,-,-,-
+20,2,INT.0994,10338 - Matemática,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+21,2,INT.1092,10436 - Sociologia,Regular,Não,4,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
+22,2,INT.0635,9979 - Suporte e Manutenção de Computadores,Regular,Não,4,Comum,"CH Relógio: 67, CH Aula: 80",67,0,-,-,-
+23,-,INT.0557,9901 - Língua Estrangeira - Espanhol,Regular,Sim,4,Comum,"CH Relógio: 33, CH Aula: 40",33,0,-,-,-
