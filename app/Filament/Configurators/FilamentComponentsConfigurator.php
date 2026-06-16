@@ -78,14 +78,16 @@ class FilamentComponentsConfigurator
             PanelsRenderHook::STYLES_AFTER,
             fn (): HtmlString => new HtmlString('
                 <style>
-                    .fi-sidebar-nav {
-                        overflow-y: visible !important;
-                        height: auto !important;
-                    }
-                    .fi-sidebar {
-                        height: auto !important;
-                        min-height: 100vh !important;
-                        position: relative !important;
+                    @media (min-width: 601px) {
+                        .fi-sidebar-nav {
+                            overflow-y: visible !important;
+                            height: auto !important;
+                        }
+                        .fi-sidebar {
+                            height: auto !important;
+                            min-height: 100vh !important;
+                            position: relative !important;
+                        }
                     }
                     .fi-sidebar-open-collapse-sidebar-btn,
                     .fi-sidebar-close-collapse-sidebar-btn,
@@ -95,6 +97,23 @@ class FilamentComponentsConfigurator
                     @media (max-width: 600px) {
                         .fi-main-ctn-sidebar-open {
                             display: none !important;
+                        }
+                        .fi-sidebar {
+                            overflow: hidden !important;
+                            display: flex !important;
+                            flex-direction: column !important;
+                        }
+                        .fi-sidebar-nav {
+                            flex-grow: 1 !important;
+                            overflow-y: auto !important;
+                            height: 0 !important;
+                        }
+                        .fi-sidebar-header-logo-ctn div {
+                            padding-top: 0.5rem !important;
+                        }
+                        .fi-sidebar-header img {
+                            max-height: 50px !important;
+                            max-width: 90px !important;
                         }
                     }
                 </style>
