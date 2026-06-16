@@ -7,13 +7,17 @@ namespace App\Filament\Configurators;
 use Filament\Forms\Components\Field;
 use Filament\Support\Enums\Alignment;
 use Filament\Support\Enums\VerticalAlignment;
+use Filament\Support\Facades\FilamentColor;
+use Filament\Support\Facades\FilamentView;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\CheckboxColumn;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Support\Facades\FilamentColor;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\HtmlString;
 
 class FilamentComponentsConfigurator
 {
@@ -69,5 +73,27 @@ class FilamentComponentsConfigurator
                 ->paginated([20, 40, 60, 80, 'all'])
                 ->emptyStateIcon(Heroicon::ExclamationTriangle);
         });
+
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::STYLES_AFTER,
+            fn (): HtmlString => new HtmlString('
+                <style>
+                    .fi-sidebar-nav {
+                        overflow-y: visible !important;
+                        height: auto !important;
+                    }
+                    .fi-sidebar {
+                        height: auto !important;
+                        min-height: 100vh !important;
+                        position: relative !important;
+                    }
+                </style>
+            ')
+        );
+
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::CONTENT_START,
+            fn (): View => view('filament.partner-info')
+        );
     }
 }

@@ -15,6 +15,7 @@
         "devonab/filament-easy-footer": "^2.0",
         "filament/filament": "^5.0",
         "filament/spatie-laravel-media-library-plugin": "^5.0",
+        "hammadzafar05/mobile-bottom-nav": "^1.2",
         "hugomyb/filament-media-action": "^5.0",
         "laravel/framework": "^13.0",
         "laravel/nightwatch": "^1.7",
