@@ -86,9 +86,9 @@ class AppServiceProvider extends ServiceProvider
 
     private function configCommands(): void
     {
-        DB::prohibitDestructiveCommands(
-            app()->isProduction()
-        );
+        // DB::prohibitDestructiveCommands(
+        //     app()->isProduction()
+        // );
     }
 
     private function configUrls(): void
