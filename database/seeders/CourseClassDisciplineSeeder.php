@@ -30,6 +30,9 @@ class CourseClassDisciplineSeeder extends Seeder
             return;
         }
 
+        $allCourses = Course::all();
+        $allSystemDisciplines = Discipline::all();
+
         $failures = [];
 
         foreach ($csvFiles as $csvPath) {
@@ -71,7 +74,7 @@ class CourseClassDisciplineSeeder extends Seeder
                     $teacher = Teacher::where('registration_number', $registrationNumber)->first();
                 }
                 if (!$teacher && !empty($professorName)) {
-                    $teacher = Teacher::where('name', 'ilike', $professorName)->first();
+                    $teacher = Teacher::where('name', 'like', $professorName)->first();
                 }
 
                 if (!$teacher) {
@@ -88,7 +91,7 @@ class CourseClassDisciplineSeeder extends Seeder
                     $cleanCourseName = trim(explode('(', $courseRawName)[0]);
                     $normalizedCleanCourseName = $this->normalizeString($cleanCourseName);
                     
-                    $course = Course::all()->first(function ($c) use ($normalizedCleanCourseName) {
+                    $course = $allCourses->first(function ($c) use ($normalizedCleanCourseName) {
                         $dbNormalized = $this->normalizeString($c->name);
                         return $dbNormalized === $normalizedCleanCourseName || 
                                str_contains($dbNormalized, $normalizedCleanCourseName) || 
@@ -108,11 +111,8 @@ class CourseClassDisciplineSeeder extends Seeder
                 $cleanDisciplineName = preg_replace('/^Att\d+\s*-\s*/i', '', $disciplineName);
                 $normalizedCleanDisciplineName = $this->normalizeString($cleanDisciplineName);
 
-                $query = Discipline::query()->where('course_id', $course->id);
-                $allDisciplines = $query->get();
-
-                $disciplines = $allDisciplines->filter(function ($d) use ($normalizedCleanDisciplineName) {
-                    return $this->normalizeString($d->name) === $normalizedCleanDisciplineName;
+                $disciplines = $allSystemDisciplines->filter(function ($d) use ($course, $normalizedCleanDisciplineName) {
+                    return $d->course_id === $course->id && $this->normalizeString($d->name) === $normalizedCleanDisciplineName;
                 });
 
                 if ($disciplines->isEmpty()) {

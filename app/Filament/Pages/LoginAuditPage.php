@@ -94,8 +94,8 @@ class LoginAuditPage extends Page implements HasTable
             ->whereHas('audits', fn ($query) => $query->whereIn('event', ['login', 'logout', 'failed_login']))
             ->when($this->search, function ($query) {
                 $query->where(function ($q) {
-                    $q->where('name', 'ilike', "%{$this->search}%")
-                        ->orWhere('email', 'ilike', "%{$this->search}%");
+                    $q->where('name', 'like', "%{$this->search}%")
+                        ->orWhere('email', 'like', "%{$this->search}%");
                 });
             })
             ->orderBy('name')
