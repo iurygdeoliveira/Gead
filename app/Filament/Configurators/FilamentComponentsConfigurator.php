@@ -92,6 +92,11 @@ class FilamentComponentsConfigurator
                     .fi-layout-sidebar-toggle-btn {
                         display: none !important;
                     }
+                    @media (max-width: 600px) {
+                        .fi-main-ctn-sidebar-open {
+                            display: none !important;
+                        }
+                    }
                 </style>
             ')
         );
