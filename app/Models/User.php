@@ -415,4 +415,14 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
             'created_at' => now(),
         ]);
     }
+
+    public function getOrbitLocation(): ?array
+    {
+        return [
+            'latitude' => -7.1903,
+            'longitude' => -48.2078,
+            'timezone' => 'America/Araguaina',
+            'country_code' => 'BR',
+        ];
+    }
 }

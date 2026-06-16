@@ -87,6 +87,7 @@ abstract class BasePanelProvider extends PanelProvider
                         900 => '#475900',
                         950 => '#2b3600',
                     ])
+                    ->dateWeatherWidget()
             )
             ->plugin(MobileBottomNav::make()
                 ->fromNavigation(4));

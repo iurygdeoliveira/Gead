@@ -87,6 +87,11 @@ class FilamentComponentsConfigurator
                         min-height: 100vh !important;
                         position: relative !important;
                     }
+                    .fi-sidebar-open-collapse-sidebar-btn,
+                    .fi-sidebar-close-collapse-sidebar-btn,
+                    .fi-layout-sidebar-toggle-btn {
+                        display: none !important;
+                    }
                 </style>
             ')
         );
