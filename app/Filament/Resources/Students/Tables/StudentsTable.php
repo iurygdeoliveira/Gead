@@ -10,6 +10,8 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use App\Models\CourseClassDiscipline;
+use App\Models\Evaluation;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -20,7 +22,23 @@ class StudentsTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn (Builder $query) => $query->with('user'))
+            ->modifyQueryUsing(function (Builder $query) {
+                $query->with('user')
+                    ->select('students.*')
+                    ->addSelect([
+                        'evaluations_done' => Evaluation::selectRaw('count(*)')
+                            ->join('class_enrollments', 'evaluations.class_enrollment_id', '=', 'class_enrollments.id')
+                            ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
+                            ->whereColumn('enrollments.student_id', 'students.id')
+                            ->whereNotNull('evaluations.planning_score'),
+                        
+                        'evaluations_total' => CourseClassDiscipline::selectRaw('count(*)')
+                            ->join('class_enrollments', 'course_class_disciplines.course_class_id', '=', 'class_enrollments.course_class_id')
+                            ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
+                            ->whereColumn('enrollments.student_id', 'students.id'),
+                    ]);
+            })
+            ->recordUrl(fn (\App\Models\Student $record): string => \App\Filament\Resources\Students\StudentResource::getUrl('view', ['record' => $record]))
             ->defaultSort('name')
             ->columns([
                 TextColumn::make('name')
@@ -36,6 +54,10 @@ class StudentsTable
                     ->label('Curso')
                     ->listWithLineBreaks()
                     ->wrap(),
+                TextColumn::make('evaluations_status')
+                    ->label('Avaliações')
+                    ->getStateUsing(fn ($record) => ($record->evaluations_done ?? 0) . ' / ' . ($record->evaluations_total ?? 0))
+                    ->alignCenter(),
             ])
             ->filters([
                 //

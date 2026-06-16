@@ -41,6 +41,11 @@ class TeacherResource extends Resource
         return __('Professor');
     }
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('Professores');
+    }
+
     #[\Override]
     public static function form(Schema $schema): Schema
     {

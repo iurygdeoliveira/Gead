@@ -49,8 +49,8 @@ class ListEvaluations extends ListRecords
                 ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%'))))
                 ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%')))->count()),
             'pcp' => Tab::make('PCP')
-                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%'))))
-                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')))->count()),
+                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')->orWhere('name', 'like', '%Planejamento e Controle da Produção%'))))
+                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')->orWhere('name', 'like', '%Planejamento e Controle da Produção%')))->count()),
             'eja' => Tab::make('EJA')
                 ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where('name', 'like', '%Operador de Computador%')))
                 ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where('name', 'like', '%Operador de Computador%'))->count()),

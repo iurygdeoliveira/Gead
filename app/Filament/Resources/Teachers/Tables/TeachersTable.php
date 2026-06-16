@@ -33,7 +33,8 @@ class TeachersTable
                 TextColumn::make('registration_number')
                     ->label('SIAPE')
                     ->searchable(isIndividual: true, isGlobal: false)
-                    ->sortable(),
+                    ->sortable()
+                    ->alignCenter(),
             ])
             ->filters([
                 //
