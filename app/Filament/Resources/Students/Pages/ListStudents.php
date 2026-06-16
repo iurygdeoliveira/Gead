@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Students\Pages;
 
 use App\Filament\Resources\Students\StudentResource;
+use App\Filament\Resources\Students\Widgets\StudentsStats;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
@@ -22,7 +23,7 @@ class ListStudents extends ListRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            \App\Filament\Resources\Students\Widgets\StudentsStats::class,
+            StudentsStats::class,
         ];
     }
 }

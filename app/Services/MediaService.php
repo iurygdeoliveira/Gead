@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Models\MediaItem;
 use Illuminate\Http\UploadedFile;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class MediaService
 {
@@ -34,7 +35,7 @@ class MediaService
     public function updateMedia(MediaItem $mediaItem, array $data): MediaItem
     {
         if (isset($data['video']) && ! empty($data['video'])) {
-            if ($mediaItem->getFirstMedia() instanceof \Spatie\MediaLibrary\MediaCollections\Models\Media) {
+            if ($mediaItem->getFirstMedia() instanceof Media) {
                 $mediaItem->clearMediaCollection();
             }
 
@@ -76,7 +77,7 @@ class MediaService
 
         $spatieMedia = $media->getFirstMedia();
 
-        return $spatieMedia instanceof \Spatie\MediaLibrary\MediaCollections\Models\Media ? $spatieMedia->getUrl() : null;
+        return $spatieMedia instanceof Media ? $spatieMedia->getUrl() : null;
     }
 
     public function getMediaPath(MediaItem $media): ?string
@@ -89,7 +90,7 @@ class MediaService
 
         $spatieMedia = $media->getFirstMedia();
 
-        return $spatieMedia instanceof \Spatie\MediaLibrary\MediaCollections\Models\Media ? $spatieMedia->getPath() : null;
+        return $spatieMedia instanceof Media ? $spatieMedia->getPath() : null;
     }
 
     public function getMediaType(MediaItem $media): string
@@ -101,7 +102,7 @@ class MediaService
         }
 
         $spatieMedia = $media->getFirstMedia();
-        if (! $spatieMedia instanceof \Spatie\MediaLibrary\MediaCollections\Models\Media) {
+        if (! $spatieMedia instanceof Media) {
             return 'unknown';
         }
 

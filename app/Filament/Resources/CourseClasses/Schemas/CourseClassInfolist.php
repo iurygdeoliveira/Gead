@@ -2,14 +2,14 @@
 
 namespace App\Filament\Resources\CourseClasses\Schemas;
 
+use App\Models\Enrollment;
+use App\Models\Teacher;
 use Filament\Forms\Components\Repeater\TableColumn;
-use Filament\Schemas\Schema;
-use Filament\Schemas\Components\Section;
+use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
-
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Filament\Infolists\Components\RepeatableEntry;
+use Filament\Schemas\Schema;
 
 class CourseClassInfolist
 {
@@ -37,7 +37,7 @@ class CourseClassInfolist
                                 RepeatableEntry::make('enrolled_students')
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
-                                        return \App\Models\Enrollment::query()
+                                        return Enrollment::query()
                                             ->where('course_id', $record->course_id)
                                             ->where('entry_period', $record->entry_period)
                                             ->with('student')
@@ -69,24 +69,25 @@ class CourseClassInfolist
                                     ->getStateUsing(function ($record) {
                                         // Load relations to avoid lazy-loading exceptions
                                         $record->loadMissing(['course.disciplines', 'disciplines']);
-                                        
+
                                         // Load disciplines of the course linked to this cohort
                                         $course = $record->course;
-                                        if (!$course) {
+                                        if (! $course) {
                                             return collect();
                                         }
-                                        
+
                                         // We fetch all disciplines of the course, and associate the pivot/teacher info if it exists
                                         return $course->disciplines->map(function ($discipline) use ($record) {
                                             $cohortDiscipline = $record->disciplines()->where('discipline_id', $discipline->id)->first();
                                             $discipline->pivot = $cohortDiscipline ? $cohortDiscipline->pivot : null;
+
                                             return $discipline;
                                         })->sortBy('period', SORT_NATURAL | SORT_FLAG_CASE);
                                     })
                                     ->table([
-                                        \Filament\Infolists\Components\RepeatableEntry\TableColumn::make('Código'),
-                                        \Filament\Infolists\Components\RepeatableEntry\TableColumn::make('Nome'),
-                                        \Filament\Infolists\Components\RepeatableEntry\TableColumn::make('Docente'),
+                                        RepeatableEntry\TableColumn::make('Código'),
+                                        RepeatableEntry\TableColumn::make('Nome'),
+                                        RepeatableEntry\TableColumn::make('Docente'),
                                     ])
                                     ->schema([
                                         TextEntry::make('code')
@@ -98,9 +99,11 @@ class CourseClassInfolist
                                             ->state(function ($record) {
                                                 $teacherId = $record->pivot?->teacher_id;
                                                 if ($teacherId) {
-                                                    $teacher = \App\Models\Teacher::find($teacherId);
+                                                    $teacher = Teacher::find($teacherId);
+
                                                     return $teacher ? $teacher->name : '-';
                                                 }
+
                                                 return '-';
                                             }),
                                     ]),

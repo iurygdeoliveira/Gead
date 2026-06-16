@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use App\Models\Teacher;
-use App\Models\Discipline;
-use App\Models\CourseClass;
 use App\Models\Course;
+use App\Models\CourseClass;
+use App\Models\Discipline;
+use App\Models\Teacher;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class CourseClassDisciplineSeeder extends Seeder
@@ -18,15 +18,17 @@ class CourseClassDisciplineSeeder extends Seeder
     {
         $directory = database_path('seeders/dados de seed/disciplinas dos professores');
 
-        if (!is_dir($directory)) {
+        if (! is_dir($directory)) {
             $this->command->error("Diretório não encontrado: {$directory}");
+
             return;
         }
 
-        $csvFiles = glob($directory . '/*.csv');
+        $csvFiles = glob($directory.'/*.csv');
 
         if (empty($csvFiles)) {
             $this->command->warn("Nenhum arquivo CSV encontrado em: {$directory}");
+
             return;
         }
 
@@ -37,13 +39,14 @@ class CourseClassDisciplineSeeder extends Seeder
 
         foreach ($csvFiles as $csvPath) {
             $fileBasename = basename($csvPath);
-            $this->command->info("Processando arquivo: " . $fileBasename);
+            $this->command->info('Processando arquivo: '.$fileBasename);
             $file = fopen($csvPath, 'r');
             $isHeader = true;
 
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 
@@ -70,40 +73,43 @@ class CourseClassDisciplineSeeder extends Seeder
 
                 // 1. Find the Teacher
                 $teacher = null;
-                if (!empty($registrationNumber)) {
+                if (! empty($registrationNumber)) {
                     $teacher = Teacher::where('registration_number', $registrationNumber)->first();
                 }
-                if (!$teacher && !empty($professorName)) {
-                    $teacher = Teacher::where('name', 'like', $professorName)->first();
+                if (! $teacher && ! empty($professorName)) {
+                    $teacher = Teacher::whereRaw('LOWER(name) = ?', [strtolower($professorName)])->first();
                 }
 
-                if (!$teacher) {
+                if (! $teacher) {
                     $failures[] = [
                         'file' => $fileBasename,
-                        'reason' => "Professor não encontrado: '{$professorName}' (Matrícula: {$registrationNumber})"
+                        'reason' => "Professor não encontrado: '{$professorName}' (Matrícula: {$registrationNumber})",
                     ];
+
                     continue;
                 }
 
                 // 2. Find Course using normalized name comparison
                 $course = null;
-                if (!empty($courseRawName)) {
+                if (! empty($courseRawName)) {
                     $cleanCourseName = trim(explode('(', $courseRawName)[0]);
                     $normalizedCleanCourseName = $this->normalizeString($cleanCourseName);
-                    
+
                     $course = $allCourses->first(function ($c) use ($normalizedCleanCourseName) {
                         $dbNormalized = $this->normalizeString($c->name);
-                        return $dbNormalized === $normalizedCleanCourseName || 
-                               str_contains($dbNormalized, $normalizedCleanCourseName) || 
+
+                        return $dbNormalized === $normalizedCleanCourseName ||
+                               str_contains($dbNormalized, $normalizedCleanCourseName) ||
                                str_contains($normalizedCleanCourseName, $dbNormalized);
                     });
                 }
 
-                if (!$course) {
+                if (! $course) {
                     $failures[] = [
                         'file' => $fileBasename,
-                        'reason' => "Curso não encontrado no banco: '{$courseRawName}'"
+                        'reason' => "Curso não encontrado no banco: '{$courseRawName}'",
                     ];
+
                     continue;
                 }
 
@@ -118,25 +124,26 @@ class CourseClassDisciplineSeeder extends Seeder
                 if ($disciplines->isEmpty()) {
                     $failures[] = [
                         'file' => $fileBasename,
-                        'reason' => "Disciplina não encontrada no banco: '{$disciplineName}'" . ($course ? " para o curso '{$course->name}'" : '')
+                        'reason' => "Disciplina não encontrada no banco: '{$disciplineName}'".($course ? " para o curso '{$course->name}'" : ''),
                     ];
+
                     continue;
                 }
 
                 // 4. Match each discipline with the corresponding CourseClass cohort
                 foreach ($disciplines as $discipline) {
                     $disciplinePeriod = $discipline->period;
-                    
+
                     $isAnnual = $course ? str_contains(mb_strtolower($course->name, 'UTF-8'), 'integrado') : false;
 
                     // Excluir Unidades Diversificadas / Disciplinas com período não numérico ou que começam com "UD:"
-                    if (empty($disciplinePeriod) || $disciplinePeriod === '-' || !is_numeric($disciplinePeriod) || str_starts_with(strtolower(trim($discipline->name)), 'ud:')) {
+                    if (empty($disciplinePeriod) || $disciplinePeriod === '-' || ! is_numeric($disciplinePeriod) || str_starts_with(strtolower(trim($discipline->name)), 'ud:')) {
                         // Unidades Diversificadas serão ignoradas do seed conforme solicitado
                         continue;
                     }
 
                     // Se for numérico, calcula o semestre específico de ingresso
-                    $calculatedEntryPeriod = $this->calculateEntryPeriod($teachingPeriod, (int)$disciplinePeriod, $isAnnual);
+                    $calculatedEntryPeriod = $this->calculateEntryPeriod($teachingPeriod, (int) $disciplinePeriod, $isAnnual);
 
                     // Find the CourseClass for this course and calculated entry period
                     $courseClass = CourseClass::where('course_id', $discipline->course_id)
@@ -160,7 +167,7 @@ class CourseClassDisciplineSeeder extends Seeder
                     } else {
                         $failures[] = [
                             'file' => $fileBasename,
-                            'reason' => "Turma não encontrada para o curso ID {$discipline->course_id} e período de entrada {$calculatedEntryPeriod} (Disciplina: {$disciplineName})"
+                            'reason' => "Turma não encontrada para o curso ID {$discipline->course_id} e período de entrada {$calculatedEntryPeriod} (Disciplina: {$disciplineName})",
                         ];
                     }
                 }
@@ -168,7 +175,7 @@ class CourseClassDisciplineSeeder extends Seeder
             fclose($file);
         }
 
-        if (!empty($failures)) {
+        if (! empty($failures)) {
             $this->command->error("\n--- RELATÓRIO DE DISCIPLINAS NÃO VINCULADAS ---");
             foreach ($failures as $fail) {
                 $this->command->warn("- [{$fail['file']}] {$fail['reason']}");
@@ -183,13 +190,13 @@ class CourseClassDisciplineSeeder extends Seeder
     {
         $str = mb_strtolower($str, 'UTF-8');
         $str = preg_replace('/^att\d+\s*-\s*/i', '', $str);
-        
+
         $str = str_replace(
             ['á', 'à', 'â', 'ã', 'ä', 'é', 'è', 'ê', 'ë', 'í', 'ì', 'î', 'ï', 'ó', 'ò', 'ô', 'õ', 'ö', 'ú', 'ù', 'û', 'ü', 'ç', 'ñ'],
             ['a', 'a', 'a', 'a', 'a', 'e', 'e', 'e', 'e', 'i', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u', 'c', 'n'],
             $str
         );
-        
+
         return preg_replace('/[^a-z0-9]/', '', $str);
     }
 
@@ -200,12 +207,13 @@ class CourseClassDisciplineSeeder extends Seeder
     {
         $normalized = str_replace('/', '.', $teachingPeriod);
         $parts = explode('.', $normalized);
-        $year = (int)$parts[0];
-        $sem = (int)($parts[1] ?? 1);
+        $year = (int) $parts[0];
+        $sem = (int) ($parts[1] ?? 1);
 
         if ($isAnnual) {
             // For annual courses, entry is always in the 1st semester of the entry year
             $entryYear = $year - $disciplinePeriod + 1;
+
             return "{$entryYear}.1";
         }
 
@@ -229,8 +237,8 @@ class CourseClassDisciplineSeeder extends Seeder
     {
         $normalized = str_replace('/', '.', $teachingPeriod);
         $parts = explode('.', $normalized);
-        $year = (int)$parts[0];
-        $sem = (int)($parts[1] ?? 1);
+        $year = (int) $parts[0];
+        $sem = (int) ($parts[1] ?? 1);
 
         $active = [];
 

@@ -3,14 +3,14 @@
 namespace App\Filament\Resources\CourseClasses\Tables;
 
 use App\Filament\Resources\CourseClasses\Actions\DeleteCourseClassAction;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-use Filament\Actions\ActionGroup;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 
 class CourseClassesTable
 {
@@ -40,7 +40,7 @@ class CourseClassesTable
                         ->icon(Heroicon::Pencil),
                     DeleteCourseClassAction::make()
                         ->icon(Heroicon::Trash),
-                ])
+                ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

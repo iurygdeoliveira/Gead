@@ -4,13 +4,10 @@ namespace App\Filament\Resources\Courses\Schemas;
 
 use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Infolists\Components\RepeatableEntry;
-use Filament\Schemas\Schema;
-use Filament\Schemas\Components\Section;
 use Filament\Infolists\Components\TextEntry;
-
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Filament\Infolists\Components\ViewEntry;
+use Filament\Schemas\Schema;
 
 class CourseInfolist
 {

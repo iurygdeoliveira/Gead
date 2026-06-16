@@ -10,6 +10,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 
 class MediaForm
 {
@@ -102,7 +103,7 @@ class MediaForm
                 $nameWithoutExtension = pathinfo((string) $fileName, PATHINFO_FILENAME);
 
                 // Converte para slug
-                $slug = \Illuminate\Support\Str::slug($nameWithoutExtension);
+                $slug = Str::slug($nameWithoutExtension);
                 $set('name', $slug);
 
                 // metadados serão lidos do anexo do Spatie no servidor

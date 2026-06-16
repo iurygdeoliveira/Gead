@@ -11,8 +11,6 @@ use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
-use LaravelDaily\FilaTeams\Pages\CreateTeamPage;
-use LaravelDaily\FilaTeams\Pages\EditTeam;
 
 class StudentPanelProvider extends BasePanelProvider
 {

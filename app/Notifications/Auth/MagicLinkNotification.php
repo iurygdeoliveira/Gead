@@ -23,7 +23,7 @@ class MagicLinkNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         $url = route('magic.callback', ['token' => $this->token]);
-        
+
         return (new MailMessage)
             ->subject('Acesso Seguro — GeAD')
             ->greeting('Acesso Seguro')

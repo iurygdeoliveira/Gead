@@ -123,7 +123,7 @@ class RedirectToProperPanelMiddleware
             if ($panel && $user->canAccessPanel($panel)) {
                 $firstTeam = $user->getTenants($panel)->first();
                 if ($firstTeam) {
-                    return "/{$panelId}/" . $firstTeam->slug;
+                    return "/{$panelId}/".$firstTeam->slug;
                 }
 
                 return "/{$panelId}";

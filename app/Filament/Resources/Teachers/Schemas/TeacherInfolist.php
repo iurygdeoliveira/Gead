@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\Teachers\Schemas;
 
-use Filament\Schemas\Schema;
+use Filament\Forms\Components\Repeater\TableColumn;
+use Filament\Infolists\Components\RepeatableEntry;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Infolists\Components\RepeatableEntry;
-use Filament\Forms\Components\Repeater\TableColumn;
+use Filament\Schemas\Schema;
 
 class TeacherInfolist
 {

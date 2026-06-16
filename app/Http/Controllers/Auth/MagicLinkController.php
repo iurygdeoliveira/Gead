@@ -12,7 +12,7 @@ class MagicLinkController
     {
         try {
             $action->execute($token);
-            
+
             return redirect()->route('filament.admin.pages.dashboard');
         } catch (ModelNotFoundException $e) {
             return redirect()->route('filament.admin.auth.login')

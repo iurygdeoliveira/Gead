@@ -4,9 +4,9 @@ namespace App\Filament\Resources\Students\Actions;
 
 use App\Enums\RoleType;
 use App\Models\User;
+use Filament\Actions\Action;
 use Filament\Facades\Filament;
 use Filament\Support\Icons\Heroicon;
-use Filament\Actions\Action;
 
 class ToggleStudentSuspensionAction
 {
@@ -19,7 +19,7 @@ class ToggleStudentSuspensionAction
             ->requiresConfirmation()
             ->action(function ($record) {
                 if ($record->user) {
-                    $record->user->update(['is_suspended' => !$record->user->is_suspended]);
+                    $record->user->update(['is_suspended' => ! $record->user->is_suspended]);
                 }
             })
             ->visible(fn () => self::canManageAccess());
@@ -28,21 +28,21 @@ class ToggleStudentSuspensionAction
     private static function canManageAccess(): bool
     {
         $user = Filament::auth()->user();
-        
+
         if (! $user instanceof User) {
             return false;
         }
-        
+
         if ($user->hasRole(RoleType::ADMIN->value)) {
             return true;
         }
-        
+
         $team = Filament::getTenant();
-        
+
         if (! $team) {
             return false;
         }
-        
+
         return $user->getRolesForTeam($team)
             ->whereIn('name', [RoleType::MANAGER->value, RoleType::TAE->value])
             ->isNotEmpty();

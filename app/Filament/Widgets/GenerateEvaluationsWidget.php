@@ -16,7 +16,6 @@ use Livewire\Attributes\On;
 
 class GenerateEvaluationsWidget extends Widget
 {
-
     protected string $view = 'filament.widgets.generate-evaluations-widget';
 
     public ?string $period = null;
@@ -40,23 +39,25 @@ class GenerateEvaluationsWidget extends Widget
                 ->body('Selecione um período letivo para gerar as avaliações.')
                 ->warning()
                 ->send();
+
             return;
         }
 
         $tenant = filament()->getTenant();
         $teamId = $tenant ? $tenant->id : null;
 
-        if (!$teamId) {
+        if (! $teamId) {
             $team = Team::first();
             $teamId = $team ? $team->id : null;
         }
 
-        if (!$teamId) {
+        if (! $teamId) {
             Notification::make()
                 ->title('Erro')
                 ->body('Nenhum campus (team) ativo encontrado.')
                 ->danger()
                 ->send();
+
             return;
         }
 
@@ -80,7 +81,7 @@ class GenerateEvaluationsWidget extends Widget
             $classId = $classesGrouped[$enrollment->course_id][$enrollment->entry_period] ?? null;
             if ($classId) {
                 $key = "{$enrollment->id}-{$classId}";
-                if (!isset($existingClassEnrollments[$key])) {
+                if (! isset($existingClassEnrollments[$key])) {
                     $classEnrollmentsToInsert[] = [
                         'enrollment_id' => $enrollment->id,
                         'course_class_id' => $classId,
@@ -92,7 +93,7 @@ class GenerateEvaluationsWidget extends Widget
             }
         }
 
-        if (!empty($classEnrollmentsToInsert)) {
+        if (! empty($classEnrollmentsToInsert)) {
             ClassEnrollment::insertOrIgnore($classEnrollmentsToInsert);
         }
 
@@ -118,18 +119,18 @@ class GenerateEvaluationsWidget extends Widget
             $ccds = $courseClassDisciplines[$classEnrollment->course_class_id] ?? collect();
             foreach ($ccds as $ccd) {
                 $discipline = $ccd->discipline;
-                if (!$discipline || empty($discipline->period) || !is_numeric($discipline->period)) {
+                if (! $discipline || empty($discipline->period) || ! is_numeric($discipline->period)) {
                     continue;
                 }
 
-                $teachingPeriod = $this->calculateTeachingPeriod($entryPeriod, (int)$discipline->period, $isAnnual);
+                $teachingPeriod = $this->calculateTeachingPeriod($entryPeriod, (int) $discipline->period, $isAnnual);
 
                 if ($teachingPeriod !== $this->period) {
                     continue;
                 }
 
                 $key = "{$classEnrollment->id}-{$ccd->id}";
-                if (!isset($existingEvaluations[$key])) {
+                if (! isset($existingEvaluations[$key])) {
                     $evaluationsToInsert[] = [
                         'class_enrollment_id' => $classEnrollment->id,
                         'course_class_discipline_id' => $ccd->id,
@@ -143,7 +144,7 @@ class GenerateEvaluationsWidget extends Widget
             }
         }
 
-        if (!empty($evaluationsToInsert)) {
+        if (! empty($evaluationsToInsert)) {
             foreach (array_chunk($evaluationsToInsert, 500) as $chunk) {
                 Evaluation::insertOrIgnore($chunk);
             }
@@ -160,11 +161,12 @@ class GenerateEvaluationsWidget extends Widget
     {
         $normalized = str_replace('/', '.', $entryPeriod);
         $parts = explode('.', $normalized);
-        $year = (int)$parts[0];
-        $sem = (int)($parts[1] ?? 1);
+        $year = (int) $parts[0];
+        $sem = (int) ($parts[1] ?? 1);
 
         if ($isAnnual) {
             $teachingYear = $year + $disciplinePeriod - 1;
+
             return "{$teachingYear}.1";
         }
 

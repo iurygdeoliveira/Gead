@@ -2,12 +2,13 @@
 
 namespace App\Filament\Resources\Evaluations\Schemas;
 
-use Filament\Infolists\Components\RepeatableEntry;
+use App\Models\Evaluation;
 use Filament\Forms\Components\Repeater\TableColumn;
-use Filament\Schemas\Schema;
+use Filament\Infolists\Components\RepeatableEntry;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Schema;
 
 class EvaluationInfolist
 {
@@ -37,7 +38,7 @@ class EvaluationInfolist
                                 RepeatableEntry::make('evaluation_dimensions')
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
-                                        $averages = \App\Models\Evaluation::where('course_class_discipline_id', $record->course_class_discipline_id)
+                                        $averages = Evaluation::where('course_class_discipline_id', $record->course_class_discipline_id)
                                             ->selectRaw('AVG(planning_score) as planning_score, AVG(posture_score) as posture_score, AVG(attendance_score) as attendance_score, AVG(punctuality_score) as punctuality_score, AVG(execution_score) as execution_score, AVG(assessment_score) as assessment_score')
                                             ->first();
 

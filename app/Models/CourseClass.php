@@ -39,5 +39,4 @@ class CourseClass extends Model
     {
         return $this->hasMany(Enrollment::class, 'course_id', 'course_id');
     }
-
 }

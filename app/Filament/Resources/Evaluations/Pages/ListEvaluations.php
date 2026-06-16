@@ -3,10 +3,10 @@
 namespace App\Filament\Resources\Evaluations\Pages;
 
 use App\Filament\Resources\Evaluations\EvaluationResource;
-use Filament\Actions\CreateAction;
-use Filament\Resources\Pages\ListRecords;
 use App\Models\Evaluation;
+use Filament\Actions\CreateAction;
 use Filament\Facades\Filament;
+use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;
 
 class ListEvaluations extends ListRecords
@@ -23,13 +23,13 @@ class ListEvaluations extends ListRecords
     public function getTabs(): array
     {
         $teamId = Filament::getTenant()?->id;
-        
+
         $baseQuery = Evaluation::query()
             ->where('team_id', $teamId)
             ->whereIn('id', function ($q) {
                 $q->selectRaw('MAX(id)')
-                  ->from('evaluations')
-                  ->groupBy('course_class_discipline_id');
+                    ->from('evaluations')
+                    ->groupBy('course_class_discipline_id');
             });
 
         return [
@@ -40,23 +40,23 @@ class ListEvaluations extends ListRecords
                 ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where('name', 'like', '%Enfermagem%')))
                 ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where('name', 'like', '%Enfermagem%'))->count()),
             'informatica' => Tab::make('Infor.')
-                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%'))))
-                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%')))->count()),
+                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%'))))
+                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%')))->count()),
             'gpi' => Tab::make('GPI')
-                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%'))))
-                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%')))->count()),
+                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%'))))
+                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%')))->count()),
             'tads' => Tab::make('TADS')
-                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%'))))
-                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%')))->count()),
+                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%'))))
+                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%')))->count()),
             'pcp' => Tab::make('PCP')
-                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%'))))
-                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')))->count()),
+                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%'))))
+                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')))->count()),
             'eja' => Tab::make('EJA')
                 ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where('name', 'like', '%Operador de Computador%')))
                 ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where('name', 'like', '%Operador de Computador%'))->count()),
             'analises_clinicas' => Tab::make('Análises')
-                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%'))))
-                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn($sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%')))->count()),
+                ->query(fn ($query) => $query->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%'))))
+                ->badge((clone $baseQuery)->whereHas('courseClassDiscipline.courseClass.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%')))->count()),
         ];
     }
 }

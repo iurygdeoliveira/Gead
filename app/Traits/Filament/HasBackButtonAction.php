@@ -3,6 +3,7 @@
 namespace App\Traits\Filament;
 
 use Filament\Actions\Action;
+use Filament\Resources\Resource;
 
 trait HasBackButtonAction
 {

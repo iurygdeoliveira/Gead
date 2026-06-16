@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Auth\MagicLinkController;
 use App\Http\Controllers\WebsiteLandingController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +11,6 @@ Route::middleware(['static'])->get('/', WebsiteLandingController::class)->name('
 // Rota de compatibilidade para middlewares que usam route('login')
 Route::get('/__compat-login', fn () => redirect()->to('/login'))->name('login');
 
-Route::get('/auth/magic-login/{token}', [\App\Http\Controllers\Auth\MagicLinkController::class, 'callback'])
+Route::get('/auth/magic-login/{token}', [MagicLinkController::class, 'callback'])
     ->middleware('web')
     ->name('magic.callback');

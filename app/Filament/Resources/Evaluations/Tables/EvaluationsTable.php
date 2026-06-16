@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\Evaluations\Tables;
 
 use Filament\Actions\ViewAction;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Support\Enums\FontWeight;
 
 class EvaluationsTable
 {
@@ -15,8 +15,8 @@ class EvaluationsTable
             ->modifyQueryUsing(fn ($query) => $query
                 ->whereIn('id', function ($q) {
                     $q->selectRaw('MAX(id)')
-                      ->from('evaluations')
-                      ->groupBy('course_class_discipline_id');
+                        ->from('evaluations')
+                        ->groupBy('course_class_discipline_id');
                 })
                 ->with([
                     'courseClassDiscipline.courseClass.course',
@@ -26,36 +26,35 @@ class EvaluationsTable
             )
             ->defaultSort('course_class_discipline_id')
             ->columns([
-               
-                        TextColumn::make('courseClassDiscipline.teacher.name')
-                            ->label('Professor')
-                            ->searchable(isIndividual: true, isGlobal: false)
-                            ->weight(FontWeight::Medium)
-                            ->alignLeft(),
-                        
-                        TextColumn::make('courseClassDiscipline.discipline.name')
-                            ->label('Disciplina')
-                            ->searchable(isIndividual: true, isGlobal: false)
-                            ->color('gray')
-                            ->alignLeft(),
-                
-                            
-                        TextColumn::make('teaching_period')
-                            ->label('Período Letivo')
-                            ->getStateUsing(fn ($record) => self::calculateTeachingPeriod($record))
-                            ->color('gray')
-                            ->alignLeft(),
-                
+
+                TextColumn::make('courseClassDiscipline.teacher.name')
+                    ->label('Professor')
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->weight(FontWeight::Medium)
+                    ->alignLeft(),
+
+                TextColumn::make('courseClassDiscipline.discipline.name')
+                    ->label('Disciplina')
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->color('gray')
+                    ->alignLeft(),
+
+                TextColumn::make('teaching_period')
+                    ->label('Período Letivo')
+                    ->getStateUsing(fn ($record) => self::calculateTeachingPeriod($record))
+                    ->color('gray')
+                    ->alignLeft(),
+
             ])
             ->filters([
-                
+
             ])
-            
+
             ->recordActions([
-               
-                    ViewAction::make()
-                        ->color('secondary'),
-                   
+
+                ViewAction::make()
+                    ->color('secondary'),
+
             ])
             ->toolbarActions([
                 // BulkActionGroup::make([
@@ -67,26 +66,29 @@ class EvaluationsTable
     public static function calculateTeachingPeriod($record): string
     {
         $ccd = $record->courseClassDiscipline;
-        if (!$ccd) return '-';
-        
+        if (! $ccd) {
+            return '-';
+        }
+
         $courseClass = $ccd->courseClass;
         $discipline = $ccd->discipline;
-        
-        if (!$courseClass || !$discipline || empty($discipline->period) || !is_numeric($discipline->period)) {
+
+        if (! $courseClass || ! $discipline || empty($discipline->period) || ! is_numeric($discipline->period)) {
             return $courseClass ? $courseClass->entry_period : '-';
         }
-        
+
         $entryPeriod = $courseClass->entry_period;
         $isAnnual = $courseClass->course ? str_contains(mb_strtolower($courseClass->course->name, 'UTF-8'), 'integrado') : false;
-        $disciplinePeriod = (int)$discipline->period;
-        
+        $disciplinePeriod = (int) $discipline->period;
+
         $normalized = str_replace('/', '.', $entryPeriod);
         $parts = explode('.', $normalized);
-        $year = (int)$parts[0];
-        $sem = (int)($parts[1] ?? 1);
+        $year = (int) $parts[0];
+        $sem = (int) ($parts[1] ?? 1);
 
         if ($isAnnual) {
             $teachingYear = $year + $disciplinePeriod - 1;
+
             return "{$teachingYear}.1";
         }
 

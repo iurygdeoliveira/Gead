@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Course;
 use App\Models\Discipline;
+use App\Models\Team;
+use Illuminate\Database\Seeder;
 
 class DisciplineSeeder extends Seeder
 {
@@ -13,9 +14,9 @@ class DisciplineSeeder extends Seeder
      */
     public function run(): void
     {
-        $team = \App\Models\Team::where('cnpj', '03.131.702/0001-33')->first();
+        $team = Team::where('cnpj', '03.131.702/0001-33')->first();
         if (! $team) {
-            $team = \App\Models\Team::create([
+            $team = Team::create([
                 'name' => 'Campus Araguaína',
                 'slug' => 'campus-araguaina',
                 'cnpj' => '03.131.702/0001-33',
@@ -38,14 +39,16 @@ class DisciplineSeeder extends Seeder
 
         foreach ($filesToCoursesMap as $filename => $courseCodes) {
             $csvPath = database_path("seeders/dados de seed/{$filename}");
-            if (!file_exists($csvPath)) {
+            if (! file_exists($csvPath)) {
                 $this->command->error("Arquivo não encontrado: {$csvPath}");
+
                 continue;
             }
 
             $courses = Course::whereIn('code', $courseCodes)->where('team_id', $team->id)->get();
             if ($courses->isEmpty()) {
-                $this->command->warn("Nenhum curso encontrado com os códigos: " . implode(', ', $courseCodes) . " para o arquivo {$filename}");
+                $this->command->warn('Nenhum curso encontrado com os códigos: '.implode(', ', $courseCodes)." para o arquivo {$filename}");
+
                 continue;
             }
 
@@ -54,6 +57,7 @@ class DisciplineSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 

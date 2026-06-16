@@ -2,17 +2,17 @@
 
 namespace App\Policies;
 
+use App\Enums\RoleType;
 use App\Models\Teacher;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class TeacherPolicy
 {
     private function checkAccess(User $user): bool
     {
-        return $user->hasRole(\App\Enums\RoleType::ADMIN->value) ||
-               $user->hasRole(\App\Enums\RoleType::MANAGER->value) ||
-               $user->hasRole(\App\Enums\RoleType::TAE->value);
+        return $user->hasRole(RoleType::ADMIN->value) ||
+               $user->hasRole(RoleType::MANAGER->value) ||
+               $user->hasRole(RoleType::TAE->value);
     }
 
     public function viewAny(User $user): bool

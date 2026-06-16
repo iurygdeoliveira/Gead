@@ -257,6 +257,7 @@ abstract class BasePermissionPage extends Page implements Tables\Contracts\HasTa
     protected function resolveRole(int $teamId): Role
     {
         $roleType = RoleType::tryFrom((string) $this->selectedRole) ?? RoleType::STUDENT;
+
         return RoleType::ensureRoleForTeam($roleType, $teamId, $this->guard);
     }
 }

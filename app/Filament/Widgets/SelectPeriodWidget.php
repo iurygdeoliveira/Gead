@@ -4,18 +4,19 @@ declare(strict_types=1);
 
 namespace App\Filament\Widgets;
 
-use Filament\Widgets\Widget;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Schemas\Schema;
-use Filament\Forms\Components\Select;
+use Filament\Widgets\Widget;
 
 class SelectPeriodWidget extends Widget implements HasForms
 {
     use InteractsWithForms;
 
     protected string $view = 'filament.widgets.select-period-widget';
-    protected int | string | array $columnSpan = 1;
+
+    protected int|string|array $columnSpan = 1;
 
     public ?string $period = null;
 

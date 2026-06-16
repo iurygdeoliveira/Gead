@@ -4,10 +4,18 @@ declare(strict_types=1);
 
 namespace App\Filament\Pages\Auth;
 
+use App\Models\User;
+use App\Notifications\Auth\ResetPasswordNotification;
 use App\Traits\Filament\NotificationsTrait;
+use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use Filament\Auth\Pages\PasswordReset\RequestPasswordReset as BaseRequestPasswordReset;
+use Filament\Facades\Filament;
+use Filament\Models\Contracts\FilamentUser;
 use Filament\Notifications\Notification;
+use Illuminate\Auth\Events\PasswordResetLinkSent;
+use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Facades\Password;
 
 class RequestPasswordReset extends BaseRequestPasswordReset
 {
@@ -41,7 +49,7 @@ class RequestPasswordReset extends BaseRequestPasswordReset
     {
         try {
             $this->rateLimit(2);
-        } catch (\DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException $exception) {
+        } catch (TooManyRequestsException $exception) {
             $this->getRateLimitedNotification($exception)?->send();
 
             return;
@@ -49,33 +57,33 @@ class RequestPasswordReset extends BaseRequestPasswordReset
 
         $data = $this->form->getState();
 
-        $status = \Illuminate\Support\Facades\Password::broker(\Filament\Facades\Filament::getAuthPasswordBroker())->sendResetLink(
+        $status = Password::broker(Filament::getAuthPasswordBroker())->sendResetLink(
             $this->getCredentialsFromFormData($data),
-            function (\Illuminate\Contracts\Auth\CanResetPassword $user, string $token): void {
+            function (CanResetPassword $user, string $token): void {
                 if (
-                    ($user instanceof \Filament\Models\Contracts\FilamentUser) &&
-                    (! $user->canAccessPanel(\Filament\Facades\Filament::getCurrentOrDefaultPanel()))
+                    ($user instanceof FilamentUser) &&
+                    (! $user->canAccessPanel(Filament::getCurrentOrDefaultPanel()))
                 ) {
                     return;
                 }
 
-                if (! $user instanceof \App\Models\User) {
+                if (! $user instanceof User) {
                     $userClass = $user::class;
                     throw new \LogicException("User [{$userClass}] is not an instance of App\Models\User.");
                 }
 
-                $notification = new \App\Notifications\Auth\ResetPasswordNotification($token);
-                $notification->url = \Filament\Facades\Filament::getResetPasswordUrl($token, $user);
+                $notification = new ResetPasswordNotification($token);
+                $notification->url = Filament::getResetPasswordUrl($token, $user);
 
                 $user->notify($notification);
 
-                if (class_exists(\Illuminate\Auth\Events\PasswordResetLinkSent::class)) {
-                    event(new \Illuminate\Auth\Events\PasswordResetLinkSent($user));
+                if (class_exists(PasswordResetLinkSent::class)) {
+                    event(new PasswordResetLinkSent($user));
                 }
             },
         );
 
-        if ($status !== \Illuminate\Support\Facades\Password::RESET_LINK_SENT) {
+        if ($status !== Password::RESET_LINK_SENT) {
             $this->getFailureNotification($status)?->send();
 
             return;

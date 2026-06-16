@@ -11,12 +11,12 @@ it('filters expired tokens using scopeValid', function () {
         'token' => 'abc',
         'expires_at' => now()->subMinute(),
     ]);
-    
+
     MagicLoginToken::create([
         'email' => 'test2@ifto.edu.br',
         'token' => 'def',
         'expires_at' => now()->addMinute(),
     ]);
-    
+
     expect(MagicLoginToken::valid()->count())->toBe(1);
 });

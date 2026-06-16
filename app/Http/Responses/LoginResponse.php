@@ -31,10 +31,10 @@ class LoginResponse implements FilamentLoginResponse
                 /** @var Team|null $firstTeam */
                 $firstTeam = $user->teams()->first();
                 if ($firstTeam) {
-                    return redirect()->to('/' . $panelName . '/' . $firstTeam->slug);
+                    return redirect()->to('/'.$panelName.'/'.$firstTeam->slug);
                 }
 
-                return redirect()->to('/' . $panelName);
+                return redirect()->to('/'.$panelName);
             }
         }
 

@@ -2,13 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Teacher;
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Team;
-use App\Models\User;
-use App\Models\Teacher;
 
 class TeacherSeeder extends Seeder
 {
@@ -21,6 +20,7 @@ class TeacherSeeder extends Seeder
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");
+
             return;
         }
 
@@ -44,6 +44,7 @@ class TeacherSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 

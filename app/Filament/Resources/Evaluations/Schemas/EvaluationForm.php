@@ -2,6 +2,12 @@
 
 namespace App\Filament\Resources\Evaluations\Schemas;
 
+use App\Models\ClassEnrollment;
+use App\Models\CourseClassDiscipline;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
@@ -11,69 +17,71 @@ class EvaluationForm
     {
         return $schema
             ->components([
-                \Filament\Schemas\Components\Section::make('Avaliação Docente')
+                Section::make('Avaliação Docente')
                     ->description('Dimensões baseadas no Relatório de Avaliação Discente.')
                     ->columns(2)
                     ->components([
-                        \Filament\Forms\Components\Select::make('class_enrollment_id')
+                        Select::make('class_enrollment_id')
                             ->label('Aluno / Turma')
                             ->relationship(
                                 name: 'classEnrollment',
                                 titleAttribute: 'id',
                                 modifyQueryUsing: fn ($query) => $query->with(['enrollment.student', 'courseClass'])
                             )
-                            ->getOptionLabelFromRecordUsing(fn ($record) => ($record->enrollment && $record->enrollment->student ? $record->enrollment->student->name : 'Matrícula #' . $record->id) . ' - ' . ($record->courseClass ? $record->courseClass->name : ''))
+                            ->getOptionLabelFromRecordUsing(fn ($record) => ($record->enrollment && $record->enrollment->student ? $record->enrollment->student->name : 'Matrícula #'.$record->id).' - '.($record->courseClass ? $record->courseClass->name : ''))
                             ->searchable()
                             ->preload()
                             ->live()
                             ->required(),
-                        \Filament\Forms\Components\Select::make('course_class_discipline_id')
+                        Select::make('course_class_discipline_id')
                             ->label('Professor / Disciplina')
                             ->options(function (Get $get) {
                                 $classEnrollmentId = $get('class_enrollment_id');
-                                if (!$classEnrollmentId) {
+                                if (! $classEnrollmentId) {
                                     return [];
                                 }
-                                $classEnrollment = \App\Models\ClassEnrollment::find($classEnrollmentId);
-                                if (!$classEnrollment) {
+                                $classEnrollment = ClassEnrollment::find($classEnrollmentId);
+                                if (! $classEnrollment) {
                                     return [];
                                 }
-                                return \App\Models\CourseClassDiscipline::where('course_class_id', $classEnrollment->course_class_id)
+
+                                return CourseClassDiscipline::where('course_class_id', $classEnrollment->course_class_id)
                                     ->with(['teacher', 'discipline'])
                                     ->get()
                                     ->mapWithKeys(function ($ccd) {
                                         $teacherName = $ccd->teacher ? $ccd->teacher->name : 'Sem Professor';
+
                                         return [$ccd->id => "{$ccd->discipline->name} (Prof. {$teacherName})"];
                                     });
                             })
                             ->searchable()
                             ->preload()
                             ->required(),
-                        \Filament\Forms\Components\TextInput::make('planning_score')
+                        TextInput::make('planning_score')
                             ->label('1. Planejamento (0 a 10)')
                             ->numeric()
                             ->maxValue(10),
-                        \Filament\Forms\Components\TextInput::make('posture_score')
+                        TextInput::make('posture_score')
                             ->label('2. Postura (0 a 10)')
                             ->numeric()
                             ->maxValue(10),
-                        \Filament\Forms\Components\TextInput::make('attendance_score')
+                        TextInput::make('attendance_score')
                             ->label('3. Assiduidade (0 a 10)')
                             ->numeric()
                             ->maxValue(10),
-                        \Filament\Forms\Components\TextInput::make('punctuality_score')
+                        TextInput::make('punctuality_score')
                             ->label('4. Pontualidade (0 a 10)')
                             ->numeric()
                             ->maxValue(10),
-                        \Filament\Forms\Components\TextInput::make('execution_score')
+                        TextInput::make('execution_score')
                             ->label('5. Realização das Aulas (0 a 10)')
                             ->numeric()
                             ->maxValue(10),
-                        \Filament\Forms\Components\TextInput::make('assessment_score')
+                        TextInput::make('assessment_score')
                             ->label('6. Avaliações (0 a 10)')
                             ->numeric()
                             ->maxValue(10),
-                        \Filament\Forms\Components\Textarea::make('comments')
+                        Textarea::make('comments')
                             ->label('Comentários')
                             ->columnSpanFull(),
                     ]),

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Policies;
 
 use App\Enums\RoleType;
-use App\Models\User;
 use App\Models\Evaluation;
+use App\Models\User;
 
 class EvaluationPolicy
 {

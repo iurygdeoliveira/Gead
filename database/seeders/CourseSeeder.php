@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Course;
+use App\Models\Team;
 use Illuminate\Database\Seeder;
 
 class CourseSeeder extends Seeder
@@ -12,9 +13,9 @@ class CourseSeeder extends Seeder
      */
     public function run(): void
     {
-        $team = \App\Models\Team::where('cnpj', '03.131.702/0001-33')->first();
+        $team = Team::where('cnpj', '03.131.702/0001-33')->first();
         if (! $team) {
-            $team = \App\Models\Team::create([
+            $team = Team::create([
                 'name' => 'Campus Araguaína',
                 'slug' => 'campus-araguaina',
                 'cnpj' => '03.131.702/0001-33',
@@ -26,7 +27,8 @@ class CourseSeeder extends Seeder
         $csvFiles = glob(database_path('seeders/dados de seed/*/Alunos*.csv'));
 
         if (empty($csvFiles)) {
-            $this->command->error("Nenhum arquivo de alunos encontrado nos subdiretórios de seeders/dados de seed");
+            $this->command->error('Nenhum arquivo de alunos encontrado nos subdiretórios de seeders/dados de seed');
+
             return;
         }
 
@@ -37,6 +39,7 @@ class CourseSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 
@@ -56,7 +59,7 @@ class CourseSeeder extends Seeder
                     $code = '195';
                 }
 
-                \App\Models\Course::updateOrCreate(
+                Course::updateOrCreate(
                     ['code' => $code, 'team_id' => $team->id],
                     ['name' => $name]
                 );

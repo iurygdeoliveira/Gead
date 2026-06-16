@@ -57,14 +57,14 @@ class UsersTable
             ])
             ->recordActions([
                 ActionGroup::make([
-                ViewAction::make()
-                    ->icon(Heroicon::Eye)
-                    ->color('secondary'),
-                EditAction::make()
-                    ->icon(Heroicon::Pencil)
-                    ->visible(fn (User $record): bool => Filament::auth()->user()->can('update', $record) && $record->isApproved()),
-                DeleteUserAction::make()->icon(Heroicon::Trash),
-                ])
+                    ViewAction::make()
+                        ->icon(Heroicon::Eye)
+                        ->color('secondary'),
+                    EditAction::make()
+                        ->icon(Heroicon::Pencil)
+                        ->visible(fn (User $record): bool => Filament::auth()->user()->can('update', $record) && $record->isApproved()),
+                    DeleteUserAction::make()->icon(Heroicon::Trash),
+                ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

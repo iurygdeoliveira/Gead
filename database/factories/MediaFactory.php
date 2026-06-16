@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
+use App\Models\Media;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Media>
+ * @extends Factory<Media>
  */
 class MediaFactory extends Factory
 {
@@ -82,7 +84,7 @@ class MediaFactory extends Factory
                 'large' => true,
             ] : [],
             'order_column' => $this->faker->numberBetween(1, 100),
-            'model_type' => $this->faker->randomElement([\App\Models\User::class, 'App\Models\Post', 'App\Models\Product']),
+            'model_type' => $this->faker->randomElement([User::class, 'App\Models\Post', 'App\Models\Product']),
             'model_id' => $this->faker->numberBetween(1, 100),
         ];
     }

@@ -9,12 +9,12 @@ use App\Enums\Permission as PermissionEnum;
 use App\Enums\RoleType;
 use App\Models\Membership;
 use App\Models\Role;
+use App\Models\Teacher;
 use App\Models\Team;
 use App\Models\User;
 use App\Tenancy\SpatieTeamResolver;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission as PermissionModel;
 use Spatie\Permission\PermissionRegistrar;
 
@@ -96,11 +96,12 @@ class UserSeeder extends Seeder
 
             if ($staff->email === 'walmir.sousa@ifto.edu.br') {
                 $this->ensureMembership($staff->id, $campus->id, AppTeamRole::MANAGER);
-                
-                \App\Models\Teacher::updateOrCreate(
+
+                Teacher::updateOrCreate(
                     ['email' => $staff->email],
                     [
                         'name' => $staff->name,
+                        'registration_number' => '2261068',
                         'team_id' => $campus->id,
                         'user_id' => $staff->id,
                     ]

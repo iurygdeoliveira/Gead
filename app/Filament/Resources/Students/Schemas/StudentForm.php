@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Students\Schemas;
 
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class StudentForm
@@ -10,15 +12,15 @@ class StudentForm
     {
         return $schema
             ->components([
-                \Filament\Schemas\Components\Section::make('Dados do Aluno')
+                Section::make('Dados do Aluno')
                     ->description('Informações básicas do aluno.')
                     ->columns(2)
                     ->components([
-                        \Filament\Forms\Components\TextInput::make('name')
+                        TextInput::make('name')
                             ->label('Nome Completo')
                             ->required()
                             ->maxLength(255),
-                        \Filament\Forms\Components\TextInput::make('email')
+                        TextInput::make('email')
                             ->label('E-mail Institucional')
                             ->email()
                             ->maxLength(255)

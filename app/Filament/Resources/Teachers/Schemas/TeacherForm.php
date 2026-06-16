@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Teachers\Schemas;
 
+use App\Enums\RoleType;
 use App\Models\Course;
 use App\Models\CourseClass;
 use App\Models\Discipline;
@@ -28,8 +29,8 @@ class TeacherForm
                     ->description('Vincule as disciplinas de cursos e períodos que este professor ministrou.')
                     ->columnSpanFull()
                     ->visible(fn (string $operation): bool => $operation === 'edit' && (
-                        Filament::auth()->user()?->hasRole(\App\Enums\RoleType::MANAGER->value) ||
-                        Filament::auth()->user()?->hasRole(\App\Enums\RoleType::TAE->value)
+                        Filament::auth()->user()?->hasRole(RoleType::MANAGER->value) ||
+                        Filament::auth()->user()?->hasRole(RoleType::TAE->value)
                     ))
                     ->components([
                         Repeater::make('taughtDisciplines')
@@ -85,9 +86,10 @@ class TeacherForm
             ->label('Período')
             ->options(function (callable $get) {
                 $courseId = $get('course_id');
-                if (!$courseId) {
+                if (! $courseId) {
                     return CourseClass::all()->mapWithKeys(fn ($cc) => [$cc->id => $cc->entry_period]);
                 }
+
                 return CourseClass::where('course_id', $courseId)
                     ->get()
                     ->mapWithKeys(fn ($cc) => [$cc->id => $cc->entry_period]);
@@ -102,9 +104,10 @@ class TeacherForm
             ->label('Disciplina')
             ->options(function (callable $get) {
                 $courseId = $get('course_id');
-                if (!$courseId) {
+                if (! $courseId) {
                     return Discipline::pluck('name', 'id');
                 }
+
                 return Discipline::where('course_id', $courseId)->pluck('name', 'id');
             })
             ->required();

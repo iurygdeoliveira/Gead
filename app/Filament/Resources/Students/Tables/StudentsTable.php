@@ -5,21 +5,22 @@ namespace App\Filament\Resources\Students\Tables;
 use App\Filament\Resources\Students\Actions\ChangeStudentAccessStatusBulkAction;
 use App\Filament\Resources\Students\Actions\DeleteStudentAction;
 use App\Filament\Resources\Students\Actions\ToggleStudentSuspensionAction;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-use Filament\Actions\ActionGroup;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class StudentsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn (\Illuminate\Database\Eloquent\Builder $query) => $query->with('user'))
+            ->modifyQueryUsing(fn (Builder $query) => $query->with('user'))
             ->defaultSort('name')
             ->columns([
                 TextColumn::make('name')
@@ -49,7 +50,7 @@ class StudentsTable
                     DeleteStudentAction::make()
                         ->icon(Heroicon::Trash),
                     ToggleStudentSuspensionAction::make(),
-                ])
+                ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

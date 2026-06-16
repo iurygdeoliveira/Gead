@@ -2,13 +2,12 @@
 
 namespace App\Filament\Resources\Courses\Tables;
 
-
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 
 class CoursesTable
 {
@@ -33,7 +32,7 @@ class CoursesTable
                         ->color('secondary'),
                     EditAction::make()
                         ->icon(Heroicon::Pencil),
-                ])
+                ]),
             ])
             ->toolbarActions([
                 // BulkActionGroup::make([

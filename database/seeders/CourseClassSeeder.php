@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
+use App\Models\CourseClass;
+use App\Models\Enrollment;
+use App\Models\Team;
 use Illuminate\Database\Seeder;
 
 class CourseClassSeeder extends Seeder
@@ -11,9 +15,9 @@ class CourseClassSeeder extends Seeder
      */
     public function run(): void
     {
-        $team = \App\Models\Team::where('cnpj', '03.131.702/0001-33')->first();
+        $team = Team::where('cnpj', '03.131.702/0001-33')->first();
         if (! $team) {
-            $team = \App\Models\Team::create([
+            $team = Team::create([
                 'name' => 'Campus Araguaína',
                 'slug' => 'campus-araguaina',
                 'cnpj' => '03.131.702/0001-33',
@@ -23,18 +27,18 @@ class CourseClassSeeder extends Seeder
         }
 
         // Create CourseClasses (Turmas) based on unique combinations of course and entry period in enrollments
-        $combinations = \App\Models\Enrollment::select('course_id', 'entry_period')
+        $combinations = Enrollment::select('course_id', 'entry_period')
             ->whereNotNull('entry_period')
             ->distinct()
             ->get();
 
         foreach ($combinations as $combo) {
-            $course = \App\Models\Course::find($combo->course_id);
+            $course = Course::find($combo->course_id);
             if ($course) {
                 $code = "{$course->code}-{$combo->entry_period}";
                 $name = "{$course->name} - {$combo->entry_period}";
 
-                \App\Models\CourseClass::updateOrCreate(
+                CourseClass::updateOrCreate(
                     [
                         'course_id' => $combo->course_id,
                         'entry_period' => $combo->entry_period,

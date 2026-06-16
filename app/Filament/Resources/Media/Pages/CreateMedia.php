@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Media\Pages;
 
 use App\Filament\Resources\Media\MediaResource;
+use App\Models\MediaItem;
 use App\Services\VideoMetadataService;
 use App\Traits\Filament\HasStandardCreateFooterActions;
 use App\Traits\Filament\HasStandardCreateHeaderActions;
@@ -13,7 +14,7 @@ use Illuminate\Support\Str;
 use Override;
 
 /**
- * @property \App\Models\MediaItem $record
+ * @property MediaItem $record
  */
 class CreateMedia extends CreateRecord
 {
@@ -53,7 +54,7 @@ class CreateMedia extends CreateRecord
         return $data;
     }
 
-    #[\Override]
+    #[Override]
     protected function getCreatedNotification(): ?Notification
     {
         return null;
@@ -63,7 +64,7 @@ class CreateMedia extends CreateRecord
     {
         $record = $this->getRecord();
 
-        if (! $record instanceof \App\Models\MediaItem) {
+        if (! $record instanceof MediaItem) {
             return;
         }
         // Garante que relações e anexos salvos estejam disponíveis
@@ -119,7 +120,7 @@ class CreateMedia extends CreateRecord
         $this->notifySuccess('Mídia criada com sucesso.');
     }
 
-    private function afterSaveRenameAttachment(\App\Models\MediaItem $record): void
+    private function afterSaveRenameAttachment(MediaItem $record): void
     {
         $videoUrl = data_get($this->data, 'video.url');
 

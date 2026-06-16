@@ -1,9 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Listeners;
 
+use App\Enums\RoleType;
 use Illuminate\Auth\Events\Failed;
 
 class LogFailedLogin
@@ -15,7 +16,7 @@ class LogFailedLogin
     {
         // Only log if the user exists (invalid credentials)
         // If user is null, it means the email doesn't exist
-        if ($event->user && ! $event->user->hasRole(\App\Enums\RoleType::ADMIN->value)) {
+        if ($event->user && ! $event->user->hasRole(RoleType::ADMIN->value)) {
             $event->user->auditEvent('failed_login');
         }
     }

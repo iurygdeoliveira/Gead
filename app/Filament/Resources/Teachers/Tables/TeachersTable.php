@@ -5,21 +5,22 @@ namespace App\Filament\Resources\Teachers\Tables;
 use App\Filament\Resources\Teachers\Actions\ChangeTeacherAccessStatusBulkAction;
 use App\Filament\Resources\Teachers\Actions\DeleteTeacherAction;
 use App\Filament\Resources\Teachers\Actions\ToggleTeacherSuspensionAction;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-use Filament\Actions\ActionGroup;
 use Filament\Actions\ViewAction;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class TeachersTable
 {
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn (\Illuminate\Database\Eloquent\Builder $query) => $query->with('user'))
+            ->modifyQueryUsing(fn (Builder $query) => $query->with('user'))
             ->defaultSort('name')
             ->columns([
                 TextColumn::make('name')
@@ -31,7 +32,7 @@ class TeachersTable
                     ->sortable(),
                 TextColumn::make('registration_number')
                     ->label('SIAPE')
-                ->searchable(isIndividual: true, isGlobal: false)
+                    ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
             ])
             ->filters([
@@ -47,8 +48,8 @@ class TeachersTable
                     DeleteTeacherAction::make()
                         ->icon(Heroicon::Trash),
                     ToggleTeacherSuspensionAction::make()
-                    ->color('warning'),
-                ])
+                        ->color('warning'),
+                ]),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

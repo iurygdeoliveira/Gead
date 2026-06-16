@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Observers;
 
-use App\Enums\AppTeamRole;
 use App\Enums\RoleType;
 use App\Models\Membership;
 use App\Models\Team;

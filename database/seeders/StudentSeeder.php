@@ -2,15 +2,14 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Course;
+use App\Models\Enrollment;
+use App\Models\Student;
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Team;
-use App\Models\Course;
-use App\Models\User;
-use App\Models\Student;
-use App\Models\Enrollment;
 
 class StudentSeeder extends Seeder
 {
@@ -33,7 +32,8 @@ class StudentSeeder extends Seeder
         $csvFiles = glob(database_path('seeders/dados de seed/*/Alunos*.csv'));
 
         if (empty($csvFiles)) {
-            $this->command->error("Nenhum arquivo de alunos encontrado nos subdiretórios de seeders/dados de seed");
+            $this->command->error('Nenhum arquivo de alunos encontrado nos subdiretórios de seeders/dados de seed');
+
             return;
         }
 
@@ -52,6 +52,7 @@ class StudentSeeder extends Seeder
                 while (($row = fgetcsv($file, 1000, ',')) !== false) {
                     if ($isHeader) {
                         $isHeader = false;
+
                         continue;
                     }
 
@@ -66,7 +67,7 @@ class StudentSeeder extends Seeder
 
                     $cursoStr = $row[3] ?? null;
                     $courseId = null;
-                    if (!empty($cursoStr) && $cursoStr !== '-') {
+                    if (! empty($cursoStr) && $cursoStr !== '-') {
                         $parts = explode(' - ', $cursoStr, 2);
                         $code = trim($parts[0]);
 
@@ -75,7 +76,7 @@ class StudentSeeder extends Seeder
                             $code = '195';
                         }
 
-                        if (!$coursesCache->has($code)) {
+                        if (! $coursesCache->has($code)) {
                             $courseName = isset($parts[1]) ? trim(str_replace('(Campus Araguaína)', '', $parts[1])) : 'Curso Desconhecido';
                             $course = Course::create([
                                 'code' => $code,
