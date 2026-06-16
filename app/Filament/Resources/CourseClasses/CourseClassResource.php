@@ -2,18 +2,19 @@
 
 namespace App\Filament\Resources\CourseClasses;
 
-use App\Filament\Resources\CourseClasses\Pages;
 use App\Filament\Resources\CourseClasses\Schemas\CourseClassForm;
 use App\Filament\Resources\CourseClasses\Schemas\CourseClassInfolist;
 use App\Filament\Resources\CourseClasses\Tables\CourseClassesTable;
 use App\Models\CourseClass;
-use Filament\Forms\Form;
+use App\Traits\Filament\HasConfigurableNavigationSort;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
 
 class CourseClassResource extends Resource
 {
+    use HasConfigurableNavigationSort;
+
     protected static ?string $model = CourseClass::class;
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';

@@ -11,6 +11,7 @@ use App\Filament\Resources\Users\Schemas\UserForm;
 use App\Filament\Resources\Users\Schemas\UserInfolist;
 use App\Filament\Resources\Users\Tables\UsersTable;
 use App\Models\User;
+use App\Traits\Filament\HasConfigurableNavigationSort;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -22,6 +23,8 @@ use Override;
 
 class UserResource extends Resource
 {
+    use HasConfigurableNavigationSort;
+
     protected static ?string $model = User::class;
 
     /** @see HasTeams::teams() */

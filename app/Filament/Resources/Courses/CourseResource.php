@@ -3,22 +3,25 @@
 namespace App\Filament\Resources\Courses;
 
 use App\Filament\Resources\Courses\Pages\CreateCourse;
+use App\Filament\Resources\Courses\Pages\DeleteCourse;
 use App\Filament\Resources\Courses\Pages\EditCourse;
 use App\Filament\Resources\Courses\Pages\ListCourses;
+use App\Filament\Resources\Courses\Pages\ViewCourse;
 use App\Filament\Resources\Courses\Schemas\CourseForm;
 use App\Filament\Resources\Courses\Schemas\CourseInfolist;
 use App\Filament\Resources\Courses\Tables\CoursesTable;
 use App\Models\Course;
+use App\Traits\Filament\HasConfigurableNavigationSort;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-
 use Illuminate\Database\Eloquent\Builder;
 
 class CourseResource extends Resource
 {
+    use HasConfigurableNavigationSort;
+
     protected static ?string $model = Course::class;
 
     #[\Override]
@@ -77,9 +80,9 @@ class CourseResource extends Resource
         return [
             'index' => ListCourses::route('/'),
             'create' => CreateCourse::route('/create'),
-            'view' => \App\Filament\Resources\Courses\Pages\ViewCourse::route('/{record}'),
+            'view' => ViewCourse::route('/{record}'),
             'edit' => EditCourse::route('/{record}/edit'),
-            'delete' => \App\Filament\Resources\Courses\Pages\DeleteCourse::route('/{record}/delete'),
+            'delete' => DeleteCourse::route('/{record}/delete'),
         ];
     }
 }

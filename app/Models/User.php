@@ -13,6 +13,7 @@ use Carbon\CarbonImmutable;
 use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthentication;
 use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthenticationRecovery;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
@@ -22,6 +23,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -31,7 +33,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
 use LaravelDaily\FilaTeams\Concerns\HasTeams;
 use LaravelDaily\FilaTeams\Contracts\HasTeamMembership;
+use OwenIt\Auditing\Auditable;
 use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
+use OwenIt\Auditing\Models\Audit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -123,17 +127,17 @@ use Spatie\Permission\Traits\HasRoles;
     'app_authentication_recovery_codes',
     'remember_token',
 ])]
-class User extends Authenticatable implements AuditableContract, FilamentUser, HasAppAuthentication, HasAppAuthenticationRecovery, HasMedia, HasTeamMembership, MustVerifyEmail
+class User extends Authenticatable implements AuditableContract, FilamentUser, HasAppAuthentication, HasAppAuthenticationRecovery, HasAvatar, HasMedia, HasTeamMembership, MustVerifyEmail
 {
     use AppAuthenticationRecoveryCodes;
     use AppAuthenticationSecret;
+    use Auditable;
     use HasFactory;
     use HasRoles;
     use HasTeams;
     use InteractsWithMedia;
     use Notifiable;
     use UuidTrait;
-    use \OwenIt\Auditing\Auditable;
 
     private ?Collection $cachedTenants = null;
 
@@ -178,12 +182,12 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
         return $this->belongsTo(User::class, 'approved_by');
     }
 
-    public function teacher(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function teacher(): HasOne
     {
         return $this->hasOne(Teacher::class);
     }
 
-    public function student(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function student(): HasOne
     {
         return $this->hasOne(Student::class);
     }
@@ -396,19 +400,19 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
 
     public function auditEvent(string $event): void
     {
-        \OwenIt\Auditing\Models\Audit::create([
-            'user_type'      => self::class,
-            'user_id'        => $this->id,
+        Audit::create([
+            'user_type' => self::class,
+            'user_id' => $this->id,
             'auditable_type' => self::class,
-            'auditable_id'   => $this->id,
-            'event'          => $event,
-            'url'            => request()->fullUrl(),
-            'ip_address'     => request()->ip(),
-            'user_agent'     => request()->userAgent(),
-            'tags'           => null,
-            'old_values'     => null,
-            'new_values'     => null,
-            'created_at'     => now(),
+            'auditable_id' => $this->id,
+            'event' => $event,
+            'url' => request()->fullUrl(),
+            'ip_address' => request()->ip(),
+            'user_agent' => request()->userAgent(),
+            'tags' => null,
+            'old_values' => null,
+            'new_values' => null,
+            'created_at' => now(),
         ]);
     }
 }

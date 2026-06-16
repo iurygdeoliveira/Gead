@@ -3,19 +3,24 @@
 namespace App\Filament\Resources\Teachers;
 
 use App\Filament\Resources\Teachers\Pages\CreateTeacher;
+use App\Filament\Resources\Teachers\Pages\DeleteTeacher;
 use App\Filament\Resources\Teachers\Pages\EditTeacher;
 use App\Filament\Resources\Teachers\Pages\ListTeachers;
+use App\Filament\Resources\Teachers\Pages\ViewTeacher;
 use App\Filament\Resources\Teachers\Schemas\TeacherForm;
+use App\Filament\Resources\Teachers\Schemas\TeacherInfolist;
 use App\Filament\Resources\Teachers\Tables\TeachersTable;
 use App\Models\Teacher;
+use App\Traits\Filament\HasConfigurableNavigationSort;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class TeacherResource extends Resource
 {
+    use HasConfigurableNavigationSort;
+
     protected static ?string $model = Teacher::class;
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';
@@ -23,7 +28,6 @@ class TeacherResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = 'icon-teacher';
 
     protected static ?string $recordTitleAttribute = 'name';
-
 
     protected static ?string $navigationLabel = 'Professores';
 
@@ -46,7 +50,7 @@ class TeacherResource extends Resource
     #[\Override]
     public static function infolist(Schema $schema): Schema
     {
-        return \App\Filament\Resources\Teachers\Schemas\TeacherInfolist::configure($schema);
+        return TeacherInfolist::configure($schema);
     }
 
     #[\Override]
@@ -69,9 +73,9 @@ class TeacherResource extends Resource
         return [
             'index' => ListTeachers::route('/'),
             'create' => CreateTeacher::route('/create'),
-            'view' => \App\Filament\Resources\Teachers\Pages\ViewTeacher::route('/{record}'),
+            'view' => ViewTeacher::route('/{record}'),
             'edit' => EditTeacher::route('/{record}/edit'),
-            'delete' => \App\Filament\Resources\Teachers\Pages\DeleteTeacher::route('/{record}/delete'),
+            'delete' => DeleteTeacher::route('/{record}/delete'),
         ];
     }
 }

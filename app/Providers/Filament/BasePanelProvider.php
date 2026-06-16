@@ -48,6 +48,7 @@ abstract class BasePanelProvider extends PanelProvider
                         ->recoverable()
                 )
                 ->sidebarWidth('15rem')
+                ->sidebarFullyCollapsibleOnDesktop()
                 ->maxContentWidth(Width::Full)
                 ->middleware([
                     EncryptCookies::class,
@@ -87,7 +88,8 @@ abstract class BasePanelProvider extends PanelProvider
                         950 => '#2b3600',
                     ])
             )
-            ->plugin(MobileBottomNav::make());
+            ->plugin(MobileBottomNav::make()
+                ->fromNavigation(4));
     }
 
     abstract protected function getPanelId(): string;

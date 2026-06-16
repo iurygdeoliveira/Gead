@@ -1,27 +1,31 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Filament\Pages;
 
 use App\Enums\RoleType;
+use App\Models\User;
+use App\Traits\Filament\HasConfigurableNavigationSort;
 use Filament\Facades\Filament;
 use Filament\Pages\Page;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
+use Illuminate\Support\Collection;
 use OwenIt\Auditing\Models\Audit;
 
 class LoginAuditPage extends Page implements HasTable
 {
+    use HasConfigurableNavigationSort;
     use InteractsWithTable;
 
     public ?int $selectedUserId = null;
 
     public ?string $search = '';
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-shield-check';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-shield-check';
 
     protected static ?string $slug = 'logins';
 
@@ -31,7 +35,7 @@ class LoginAuditPage extends Page implements HasTable
 
     protected static ?string $title = 'Auditoria de Logins';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Auditoria';
+    protected static string|\UnitEnum|null $navigationGroup = 'Auditoria';
 
     protected static ?int $navigationSort = 10;
 
@@ -58,16 +62,16 @@ class LoginAuditPage extends Page implements HasTable
                     ->label('Evento')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
-                        'login'        => 'success',
-                        'logout'       => 'info',
+                        'login' => 'success',
+                        'logout' => 'info',
                         'failed_login' => 'danger',
-                        default        => 'gray',
+                        default => 'gray',
                     })
                     ->formatStateUsing(fn (string $state): string => match ($state) {
-                        'login'        => 'Login',
-                        'logout'       => 'Logout',
+                        'login' => 'Login',
+                        'logout' => 'Logout',
                         'failed_login' => 'Falha no Login',
-                        default        => $state,
+                        default => $state,
                     }),
 
                 TextColumn::make('created_at')
@@ -86,11 +90,11 @@ class LoginAuditPage extends Page implements HasTable
     }
 
     /**
-     * @return \Illuminate\Support\Collection<int, \App\Models\User>
+     * @return Collection<int, User>
      */
-    public function getUsersWithAudits(): \Illuminate\Support\Collection
+    public function getUsersWithAudits(): Collection
     {
-        return \App\Models\User::query()
+        return User::query()
             ->whereHas('audits', fn ($query) => $query->whereIn('event', ['login', 'logout', 'failed_login']))
             ->when($this->search, function ($query) {
                 $query->where(function ($q) {
@@ -104,7 +108,7 @@ class LoginAuditPage extends Page implements HasTable
 
     public static function canAccess(): bool
     {
-        /** @var \App\Models\User|null $user */
+        /** @var User|null $user */
         $user = Filament::auth()->user();
 
         return $user?->hasRole(RoleType::ADMIN->value) ?? false;

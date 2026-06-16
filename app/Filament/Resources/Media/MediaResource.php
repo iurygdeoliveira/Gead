@@ -11,6 +11,7 @@ use App\Filament\Resources\Media\Schemas\MediaForm;
 use App\Filament\Resources\Media\Schemas\MediaInfolist;
 use App\Filament\Resources\Media\Tables\MediaTable;
 use App\Models\MediaItem;
+use App\Traits\Filament\HasConfigurableNavigationSort;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -24,6 +25,8 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class MediaResource extends Resource
 {
+    use HasConfigurableNavigationSort;
+
     protected static ?string $model = MediaItem::class;
 
     /** @see MediaItem::team() */

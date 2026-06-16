@@ -2,18 +2,19 @@
 
 namespace App\Filament\Resources\Evaluations;
 
-use App\Filament\Resources\Evaluations\Pages;
 use App\Filament\Resources\Evaluations\Schemas\EvaluationForm;
 use App\Filament\Resources\Evaluations\Schemas\EvaluationInfolist;
 use App\Filament\Resources\Evaluations\Tables\EvaluationsTable;
 use App\Models\Evaluation;
-use Filament\Forms\Form;
+use App\Traits\Filament\HasConfigurableNavigationSort;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
 
 class EvaluationResource extends Resource
 {
+    use HasConfigurableNavigationSort;
+
     protected static ?string $model = Evaluation::class;
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';
