@@ -52,40 +52,10 @@ class Student extends Model
             $courseClass = $ccd->courseClass;
             $discipline = $ccd->discipline;
             
-            $teachingPeriod = '-';
-            if ($courseClass && $discipline && !empty($discipline->period) && is_numeric($discipline->period)) {
-                $entryPeriod = $courseClass->entry_period;
-                $isAnnual = $courseClass->course ? str_contains(mb_strtolower($courseClass->course->name, 'UTF-8'), 'integrado') : false;
-                $disciplinePeriod = (int) $discipline->period;
-
-                $normalized = str_replace('/', '.', $entryPeriod);
-                $parts = explode('.', $normalized);
-                $year = (int) $parts[0];
-                $sem = (int) ($parts[1] ?? 1);
-
-                if ($isAnnual) {
-                    $teachingYear = $year + $disciplinePeriod - 1;
-                    $teachingPeriod = "{$teachingYear}.1";
-                } else {
-                    $semestersToAdd = $disciplinePeriod - 1;
-                    for ($i = 0; $i < $semestersToAdd; $i++) {
-                        if ($sem === 2) {
-                            $year++;
-                            $sem = 1;
-                        } else {
-                            $sem = 2;
-                        }
-                    }
-                    $teachingPeriod = "{$year}.{$sem}";
-                }
-            } else {
-                $teachingPeriod = $courseClass ? $courseClass->entry_period : '-';
-            }
-
             $data[] = [
                 'discipline_name' => $discipline ? $discipline->name : '-',
                 'teacher_name' => $ccd->teacher ? $ccd->teacher->name : 'Sem Professor',
-                'teaching_period' => $teachingPeriod,
+                'teaching_period' => '2026.1', // Simplificado
                 'status' => $evaluation ? 'Realizada' : 'Pendente',
             ];
         }

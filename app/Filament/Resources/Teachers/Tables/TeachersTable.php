@@ -27,9 +27,6 @@ class TeachersTable
                     ->label('Nome')
                     ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
-                TextColumn::make('email')
-                    ->label('E-mail')
-                    ->sortable(),
                 TextColumn::make('registration_number')
                     ->label('SIAPE')
                     ->searchable(isIndividual: true, isGlobal: false)

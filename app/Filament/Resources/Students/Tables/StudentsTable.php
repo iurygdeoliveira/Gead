@@ -15,6 +15,7 @@ use App\Models\Evaluation;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 
 class StudentsTable
@@ -23,7 +24,7 @@ class StudentsTable
     {
         return $table
             ->modifyQueryUsing(function (Builder $query) {
-                $query->with('user')
+                $query->with(['user', 'enrollments.classEnrollments.courseClass'])
                     ->select('students.*')
                     ->addSelect([
                         'evaluations_done' => Evaluation::selectRaw('count(*)')
@@ -54,13 +55,25 @@ class StudentsTable
                     ->label('Curso')
                     ->listWithLineBreaks()
                     ->wrap(),
+                TextColumn::make('enrollments.classEnrollments.courseClass.code')
+                    ->label('Turma')
+                    ->listWithLineBreaks()
+                    ->wrap(),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
                     ->getStateUsing(fn ($record) => ($record->evaluations_done ?? 0) . ' / ' . ($record->evaluations_total ?? 0))
                     ->alignCenter(),
             ])
             ->filters([
-                //
+                TernaryFilter::make('without_class')
+                    ->label('Vínculo com turma')
+                    ->placeholder('Todos os alunos')
+                    ->trueLabel('Sem turma vinculada')
+                    ->falseLabel('Com turma vinculada')
+                    ->queries(
+                        true: fn (Builder $query) => $query->whereDoesntHave('enrollments.classEnrollments'),
+                        false: fn (Builder $query) => $query->whereHas('enrollments.classEnrollments'),
+                    ),
             ])
             ->recordActions([
                 ActionGroup::make([

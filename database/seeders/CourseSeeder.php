@@ -24,44 +24,55 @@ class CourseSeeder extends Seeder
             ]);
         }
 
-        $csvFiles = glob(database_path('seeders/dados de seed/*/Alunos*.csv'));
+        $files = [
+            [
+                'path' => database_path('seeders/dados de seed/base de alunos.csv'),
+                'code_idx' => 4,
+                'name_idx' => 5,
+            ],
+            [
+                'path' => database_path('seeders/dados de seed/diarios.csv'),
+                'code_idx' => 6,
+                'name_idx' => 7,
+            ],
+        ];
 
-        if (empty($csvFiles)) {
-            $this->command->error('Nenhum arquivo de alunos encontrado nos subdiretórios de seeders/dados de seed');
+        foreach ($files as $fileConfig) {
+            if (!file_exists($fileConfig['path'])) {
+                $this->command->error("Arquivo não encontrado: {$fileConfig['path']}");
+                continue;
+            }
 
-            return;
-        }
-
-        foreach ($csvFiles as $csvPath) {
-            $file = fopen($csvPath, 'r');
+            $file = fopen($fileConfig['path'], 'r');
             $isHeader = true;
 
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
-
                     continue;
                 }
 
-                $cursoStr = $row[3] ?? null;
+                $code = trim($row[$fileConfig['code_idx']] ?? '');
+                $name = trim($row[$fileConfig['name_idx']] ?? '');
 
-                if (empty($cursoStr) || $cursoStr === '-') {
+                if (empty($code) || $code === '-') {
                     continue;
                 }
 
-                $parts = explode(' - ', $cursoStr, 2);
-                $code = trim($parts[0]);
-                $name = isset($parts[1]) ? trim($parts[1]) : $code;
-                $name = trim(str_replace('(Campus Araguaína)', '', $name));
+                if (empty($name)) {
+                    $name = "Curso $code";
+                }
 
-                // Force Analises Clinicas code to be 195 as commented by the user
-                if ($code === '210') {
-                    $code = '195';
+                if (
+                    str_contains($name, 'Qualificação Profissional') || 
+                    str_contains($name, 'Assistente de Contabilidade')
+                ) {
+                    continue;
                 }
 
                 Course::updateOrCreate(
-                    ['code' => $code, 'team_id' => $team->id],
-                    ['name' => $name]
+                    ['name' => $name, 'team_id' => $team->id],
+                    ['code' => $code]
                 );
             }
 

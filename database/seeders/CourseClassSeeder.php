@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Course;
 use App\Models\CourseClass;
-use App\Models\Enrollment;
 use App\Models\Team;
 use Illuminate\Database\Seeder;
 
@@ -26,30 +25,68 @@ class CourseClassSeeder extends Seeder
             ]);
         }
 
-        // Create CourseClasses (Turmas) based on unique combinations of course and entry period in enrollments
-        $combinations = Enrollment::select('course_id', 'entry_period')
-            ->whereNotNull('entry_period')
-            ->distinct()
-            ->get();
+        $files = [
+            [
+                'path' => database_path('seeders/dados de seed/base de alunos.csv'),
+                'course_name_idx' => 5,
+                'class_code_idx' => 6,
+            ],
+            [
+                'path' => database_path('seeders/dados de seed/diarios.csv'),
+                'course_name_idx' => 7,
+                'class_code_idx' => 5,
+            ],
+        ];
 
-        foreach ($combinations as $combo) {
-            $course = Course::find($combo->course_id);
-            if ($course) {
-                $code = "{$course->code}-{$combo->entry_period}";
-                $name = "{$course->name} - {$combo->entry_period}";
+        // Cache courses to avoid many queries
+        $courses = Course::where('team_id', $team->id)->get()->keyBy('name');
+
+        foreach ($files as $fileConfig) {
+            if (!file_exists($fileConfig['path'])) {
+                continue;
+            }
+
+            $file = fopen($fileConfig['path'], 'r');
+            $isHeader = true;
+
+            while (($row = fgetcsv($file, 1000, ',')) !== false) {
+                if ($isHeader) {
+                    $isHeader = false;
+                    continue;
+                }
+
+                $courseName = trim($row[$fileConfig['course_name_idx']] ?? '');
+                $classCode = trim($row[$fileConfig['class_code_idx']] ?? '');
+
+                if (empty($courseName) || $courseName === '-' || empty($classCode) || $classCode === '-') {
+                    continue;
+                }
+
+                $course = $courses->get($courseName);
+                if (!$course) {
+                    continue;
+                }
+
+                // Extrair período de ingresso do código da turma se possível. Ex: 20261... -> 2026.1
+                $entryPeriod = null;
+                if (preg_match('/^(\d{4})(\d)/', $classCode, $matches)) {
+                    $entryPeriod = $matches[1] . '.' . $matches[2];
+                }
 
                 CourseClass::updateOrCreate(
                     [
-                        'course_id' => $combo->course_id,
-                        'entry_period' => $combo->entry_period,
+                        'course_id' => $course->id,
+                        'code' => $classCode,
                         'team_id' => $team->id,
                     ],
                     [
-                        'code' => $code,
-                        'name' => $name,
+                        'name' => $classCode,
+                        'entry_period' => $entryPeriod ?? 'Desconhecido',
                     ]
                 );
             }
+
+            fclose($file);
         }
     }
 }

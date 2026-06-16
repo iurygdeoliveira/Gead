@@ -25,68 +25,49 @@ class DisciplineSeeder extends Seeder
             ]);
         }
 
-        $filesToCoursesMap = [
-            'Tecnico subsequente em Analises Clinicas/disciplinas_analises_clinicas_2021.csv' => ['195'],
-            'Tecnico em Biotecnologia/disciplinas_biotecnologia_2021.csv' => ['211'],
-            'Tecnico subsequente em Enfermagem/disciplinas_enfermagem_2023.csv' => ['194'],
-            'Bacharelado em Farmacia/disciplinas_farmacia_2024.csv' => ['280'],
-            'Tecnologo em Gestao da Produção Industrial/disciplinas_gpi_2023.csv' => ['097', '97'],
-            'Tecnico em Informatica/disciplinas_info_2021.csv' => ['213'],
-            'Tecnico em Planejamento e Controle da Produção/disciplinas_pcp_2026.csv' => ['349'],
-            'Tecnologo em Analise e Desenvolvimento de Sistemas/disciplinas_tads_2022.csv' => ['216'],
-            'Operador de Compudaor/Disciplinas_PROEJA.csv' => ['215'],
-        ];
+        $csvPath = database_path('seeders/dados de seed/diarios.csv');
 
-        foreach ($filesToCoursesMap as $filename => $courseCodes) {
-            $csvPath = database_path("seeders/dados de seed/{$filename}");
-            if (! file_exists($csvPath)) {
-                $this->command->error("Arquivo não encontrado: {$csvPath}");
-
-                continue;
-            }
-
-            $courses = Course::whereIn('code', $courseCodes)->where('team_id', $team->id)->get();
-            if ($courses->isEmpty()) {
-                $this->command->warn('Nenhum curso encontrado com os códigos: '.implode(', ', $courseCodes)." para o arquivo {$filename}");
-
-                continue;
-            }
-
-            $file = fopen($csvPath, 'r');
-            $isHeader = true;
-            while (($row = fgetcsv($file, 1000, ',')) !== false) {
-                if ($isHeader) {
-                    $isHeader = false;
-
-                    continue;
-                }
-
-                $period = empty($row[1]) ? null : trim($row[1]);
-                $code = empty($row[2]) ? null : trim($row[2]);
-                $component = $row[3] ?? '';
-
-                if (empty($component) || trim($component) === '-') {
-                    continue;
-                }
-
-                $parts = explode(' - ', $component, 2);
-                $name = isset($parts[1]) ? trim($parts[1]) : trim($component);
-                $name = preg_replace('/^Att\d+\s*-\s*/i', '', $name);
-
-                foreach ($courses as $course) {
-                    Discipline::updateOrCreate(
-                        [
-                            'course_id' => $course->id,
-                            'code' => $code,
-                        ],
-                        [
-                            'name' => $name,
-                            'period' => $period,
-                        ]
-                    );
-                }
-            }
-            fclose($file);
+        if (! file_exists($csvPath)) {
+            $this->command->error("Arquivo não encontrado: {$csvPath}");
+            return;
         }
+
+        $courses = Course::where('team_id', $team->id)->get()->keyBy('code');
+
+        $file = fopen($csvPath, 'r');
+        $isHeader = true;
+
+        while (($row = fgetcsv($file, 1000, ',')) !== false) {
+            if ($isHeader) {
+                $isHeader = false;
+                continue;
+            }
+
+            $sigla = trim($row[2] ?? '');
+            $descricao = trim($row[3] ?? '');
+            $courseCode = trim($row[6] ?? '');
+
+            if (empty($sigla) || empty($descricao) || empty($courseCode)) {
+                continue;
+            }
+
+            $course = $courses->get($courseCode);
+            if (!$course) {
+                continue;
+            }
+
+            Discipline::updateOrCreate(
+                [
+                    'course_id' => $course->id,
+                    'code' => $sigla,
+                ],
+                [
+                    'name' => $descricao,
+                    'period' => null, // O período não é mais estritamente necessário para o seed
+                ]
+            );
+        }
+
+        fclose($file);
     }
 }

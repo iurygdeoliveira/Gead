@@ -1,0 +1,258 @@
+#,Diário, Sigla do Componente,Descrição do Componente,Professores,Turma,Código do Curso,Descrição do Curso
+1,25049,INT.0829,Fundamentos Básicos e Aplicados À Informática,Gilvan Vieira Moura (2159760),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+2,25050,INT.1144,Arquitetura e Montagem de Computadores,Julio Aires Azevedo Leite (3673010),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+3,25051,INT.0106,Geografia I,Cristina Sousa da Silva (2671944),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+4,25052,INT.0268,História I,"Luis Rodomilson Pedrosa da Silva (2260978), Wellington Sampaio da Silva (1629076)",20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+5,25053,INT.0587,Arte I,Felipe Goncalves Carneiro (2243876),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+9,25057,INT.0093,Biologia I,Mario de Souza Lima e Silva (1525518),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+10,25058,INT.0076,Educação Física I,Bruno Anderson Girao de Sousa (3503964),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+11,25059,INT.0048,Física I,"Leonardo de Sousa Silva (2260152), Walmir Jacinto de Sousa (2261068)",20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+12,25060,INT.0255,Língua Portuguesa I,Marinalva Dias de Lima Ferreira (2187528),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+13,25061,INT.0349,Matemática I,Make Bruno Silva Benigno (2277335),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+14,25062,INT.0239,Projeto Integrador 1,Julio Aires Azevedo Leite (3673010),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+16,25064,INT.0346,Química I,David Samuel Silva Rosa (3521719),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+17,25065,INT.0150,Sociologia I,Iara Luzia Ferreira Soares (3426642),20261.1.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+19,25067,INT.0829,Fundamentos Básicos e Aplicados À Informática,Gilvan Vieira Moura (2159760),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+20,25068,INT.1144,Arquitetura e Montagem de Computadores,Julio Aires Azevedo Leite (3673010),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+21,25069,INT.0106,Geografia I,Cristina Sousa da Silva (2671944),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+22,25070,INT.0268,História I,"Luis Rodomilson Pedrosa da Silva (2260978), Wellington Sampaio da Silva (1629076)",20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+23,25071,INT.0587,Arte I,Felipe Goncalves Carneiro (2243876),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+27,25075,INT.0093,Biologia I,Mario de Souza Lima e Silva (1525518),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+28,25076,INT.0076,Educação Física I,Bruno Anderson Girao de Sousa (3503964),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+29,25077,INT.0048,Física I,"Leonardo de Sousa Silva (2260152), Walmir Jacinto de Sousa (2261068)",20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+30,25078,INT.0255,Língua Portuguesa I,Marinalva Dias de Lima Ferreira (2187528),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+31,25079,INT.0349,Matemática I,Halisson Alves de Lima (2267410),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+32,25080,INT.0239,Projeto Integrador 1,Evaldo da Silva Andrade (1120772),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+34,25082,INT.0346,Química I,David Samuel Silva Rosa (3521719),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+35,25083,INT.0150,Sociologia I,Iara Luzia Ferreira Soares (3426642),20261.1.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+37,25085,INT.0248,Biologia II,Vagner Alves dos Santos (1740260),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+38,25086,INT.0225,Educação Física II,Bruno Anderson Girao de Sousa (3503964),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+39,25087,INT.0261,Geografia II,"Dacio Alves Pereira de Oliveira (1043559), Joana D Arc Dias Cunha (3528840)",20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+40,25088,INT.0472,Arte III,Silvia Fernandes Nunes Ramalho (2385200),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+41,25089,INT.1114,Programação Orientada À Objetos,Paulo Ricardo da Silva Pontes (1158242),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+42,25090,INT.0631,Configuração de Redes e Servidores,Jonathon Viana Silva (2158087),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+46,25094,INT.0269,Física II,Walmir Jacinto de Sousa (2261068),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+47,25095,INT.0341,História II,Wellington Sampaio da Silva (1629076),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+49,25097,INT.0267,Língua Portuguesa II,Silvia Fernandes Nunes Ramalho (2385200),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+50,25098,INT.0019,Matemática II,Make Bruno Silva Benigno (2277335),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+51,25099,INT.0494,Projeto Integrador 3,Luciania dos Santos Cardoso Sousa (1426443),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+53,25101,INT.0245,Química II,David Samuel Silva Rosa (3521719),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+54,25102,INT.0250,Sociologia III,Gerson Alves de Oliveira (1821887),20261.2.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+55,25103,INT.0248,Biologia II,Vagner Alves dos Santos (1740260),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+56,25104,INT.0225,Educação Física II,Bruno Anderson Girao de Sousa (3503964),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+57,25105,INT.0261,Geografia II,"Dacio Alves Pereira de Oliveira (1043559), Joana D Arc Dias Cunha (3528840)",20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+58,25106,INT.0472,Arte III,Helio Marcio Nunes Lacerda (2125802),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+59,25107,INT.1114,Programação Orientada À Objetos,Paulo Ricardo da Silva Pontes (1158242),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+60,25108,INT.0631,Configuração de Redes e Servidores,Charles Jefferson Rodrigues Alves (1981305),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+64,25112,INT.0269,Física II,Walmir Jacinto de Sousa (2261068),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+65,25113,INT.0341,História II,Wellington Sampaio da Silva (1629076),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+67,25115,INT.0267,Língua Portuguesa II,Silvia Fernandes Nunes Ramalho (2385200),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+68,25116,INT.0019,Matemática II,Halisson Alves de Lima (2267410),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+69,25117,INT.0494,Projeto Integrador 3,Walmir Jacinto de Sousa (2261068),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+71,25119,INT.0245,Química II,David Samuel Silva Rosa (3521719),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+72,25120,INT.0250,Sociologia III,Gerson Alves de Oliveira (1821887),20261.2.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+73,25121,INT.0005,Biologia III,Vagner Alves dos Santos (1740260),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+74,25122,INT.0394,História III,Wellington Sampaio da Silva (1629076),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+75,25123,INT.0439,Banco de Dados,Walisson Pereira de Sousa (2200593),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+78,25126,INT.0308,Desenvolvimento Web,Iury Gomes de Oliveira (1123216),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+79,25127,INT.0339,Educação Física III,David Anderson Fernandes de Aguiar (1177804),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+80,25128,INT.0023,Filosofia II,Iara Luzia Ferreira Soares (3426642),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+82,25130,INT.0246,Física III,Jonierson de Araujo da Cruz (1618409),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+83,25131,INT.0113,Geografia III,"Dacio Alves Pereira de Oliveira (1043559), Joana D Arc Dias Cunha (3528840)",20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+84,25132,INT.0356,Língua Estrangeira - Inglês II,Marinalva Dias de Lima Ferreira (2187528),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+86,25134,INT.0040,Língua Portuguesa III,Gislane Goncalves Silva (2187146),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+87,25135,INT.0275,Matemática III,Luciania dos Santos Cardoso Sousa (1426443),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+88,25136,INT.0089,Projeto Integrador 5,Iury Gomes de Oliveira (1123216),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+90,25138,INT.0224,Química III,David Samuel Silva Rosa (3521719),20261.3.213.291.1I,213,Técnico em Informática Integrado ao Ensino Médio
+91,25139,INT.0005,Biologia III,Heidi Luz Bonifacio (1943441),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+92,25140,INT.0394,História III,Wellington Sampaio da Silva (1629076),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+93,25141,INT.0439,Banco de Dados,Walisson Pereira de Sousa (2200593),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+96,25144,INT.0308,Desenvolvimento Web,Iury Gomes de Oliveira (1123216),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+97,25145,INT.0339,Educação Física III,David Anderson Fernandes de Aguiar (1177804),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+98,25146,INT.0023,Filosofia II,Iara Luzia Ferreira Soares (3426642),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+100,25148,INT.0246,Física III,Jonierson de Araujo da Cruz (1618409),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+101,25149,INT.0113,Geografia III,"Dacio Alves Pereira de Oliveira (1043559), Joana D Arc Dias Cunha (3528840)",20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+102,25150,INT.0356,Língua Estrangeira - Inglês II,Helio Marcio Nunes Lacerda (2125802),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+104,25152,INT.0040,Língua Portuguesa III,Gislane Goncalves Silva (2187146),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+105,25153,INT.0275,Matemática III,Make Bruno Silva Benigno (2277335),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+106,25154,INT.0089,Projeto Integrador 5,Iury Gomes de Oliveira (1123216),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+108,25156,INT.0224,Química III,David Samuel Silva Rosa (3521719),20261.3.213.291.2I,213,Técnico em Informática Integrado ao Ensino Médio
+109,25665,INT.0093,Biologia I,Heidi Luz Bonifacio (1943441),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+110,25666,INT.0106,Geografia I,Cristina Sousa da Silva (2671944),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+111,25667,INT.0587,Arte I,Felipe Goncalves Carneiro (2243876),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+112,25668,INT.0239,Projeto Integrador 1,Filipe Gouveia Cavalcante (3506848),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+114,25670,INT.0989,Biologia Celular,Heidi Luz Bonifacio (1943441),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+116,25672,INT.0076,Educação Física I,Bruno Anderson Girao de Sousa (3503964),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+118,25674,INT.0048,Física I,"Leonardo de Sousa Silva (2260152), Walmir Jacinto de Sousa (2261068)",20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+119,25675,INT.0268,História I,"Luis Rodomilson Pedrosa da Silva (2260978), Wellington Sampaio da Silva (1629076)",20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+120,25676,INT.0479,Introdução À Biotecnologia e Fundamentos de Laboratórios,Filipe Gouveia Cavalcante (3506848),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+121,25677,INT.0255,Língua Portuguesa I,Gislane Goncalves Silva (2187146),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+122,25678,INT.0349,Matemática I,Gildemberg da Cunha Silva (2056583),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+124,25680,INT.0346,Química I,David Samuel Silva Rosa (3521719),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+125,25681,INT.0150,Sociologia I,Gerson Alves de Oliveira (1821887),20261.1.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+127,25683,INT.0248,Biologia II,Vagner Alves dos Santos (1740260),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+128,25684,INT.0225,Educação Física II,Bruno Anderson Girao de Sousa (3503964),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+129,25685,INT.0269,Física II,Jonierson de Araujo da Cruz (1618409),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+130,25686,INT.0261,Geografia II,"Dacio Alves Pereira de Oliveira (1043559), Joana D Arc Dias Cunha (3528840)",20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+132,25688,INT.0472,Arte III,Helio Marcio Nunes Lacerda (2125802),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+134,25690,INT.0862,Cultivo de Célula Vegetal e Animal,"Filipe Gouveia Cavalcante (3506848), Vagner Alves dos Santos (1740260)",20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+136,25692,INT.0341,História II,"Luis Rodomilson Pedrosa da Silva (2260978), Wellington Sampaio da Silva (1629076)",20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+138,25694,INT.0267,Língua Portuguesa II,Silvia Fernandes Nunes Ramalho (2385200),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+139,25695,INT.0019,Matemática II,Gildemberg da Cunha Silva (2056583),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+140,25696,INT.0494,Projeto Integrador 3,David Anderson Fernandes de Aguiar (1177804),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+142,25698,INT.0245,Química II,David Samuel Silva Rosa (3521719),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+143,25699,INT.0250,Sociologia III,Gerson Alves de Oliveira (1821887),20261.2.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+145,25701,INT.0005,Biologia III,Heidi Luz Bonifacio (1943441),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+146,25702,INT.0394,História III,Wellington Sampaio da Silva (1629076),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+147,25703,INT.0275,Matemática III,Luciania dos Santos Cardoso Sousa (1426443),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+148,25704,INT.0339,Educação Física III,David Anderson Fernandes de Aguiar (1177804),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+149,25705,INT.0023,Filosofia II,Iara Luzia Ferreira Soares (3426642),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+151,25707,INT.0246,Física III,Jonierson de Araujo da Cruz (1618409),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+152,25708,INT.0691,Genética,Heidi Luz Bonifacio (1943441),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+153,25709,INT.0113,Geografia III,"Dacio Alves Pereira de Oliveira (1043559), Joana D Arc Dias Cunha (3528840)",20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+154,25710,INT.0356,Língua Estrangeira - Inglês II,Helio Marcio Nunes Lacerda (2125802),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+156,25712,INT.0040,Língua Portuguesa III,Gislane Goncalves Silva (2187146),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+157,25713,INT.0978,Microbiologia Aplicada À Biotecnologia,Filipe Gouveia Cavalcante (3506848),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+158,25714,INT.0089,Projeto Integrador 5,Luciania dos Santos Cardoso Sousa (1426443),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+161,25717,INT.0224,Química III,David Samuel Silva Rosa (3521719),20261.3.211.290.1I,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+163,25797,SUB.0843,Comunicação,Eva Pereira da Costa (2644073),20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+164,25798,SUB.0227,Biologia Celular e Molecular Básica,Anivaldo Pereira Duarte Junior (3521514),20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+165,25799,SUB.0181,Conduta Profissional e Biossegurança,Joao Batista Silva de Souza (3531431),20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+166,25800,SUB.0152,Informática Básica,Katiane Ribeiro Lopes (1234809),20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+167,25801,SUB.0836,Matemática Aplicada,Luciania dos Santos Cardoso Sousa (1426443),20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+168,25802,SUB.1050,Morfofisiologia Humana,Anivaldo Pereira Duarte Junior (3521514),20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+169,25803,SUB.0764,Projeto Integrador 1,Joao Batista Silva de Souza (3531431),20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+170,25804,SUB.1114,Soluções Químicas,"Carla Cristina da Silva (2384420), Jacqueline Soares Carvalho Correia (3538858)",20261.1.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+171,25805,SUB.0660,Biologia Celular e Molecular Avançada,Anivaldo Pereira Duarte Junior (3521514),20261.3.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+172,25806,SUB.0391,Hematologia Clínica,Joao Batista Silva de Souza (3531431),20261.3.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+173,25807,SUB.0343,Imunologia Clínica,Gilson Tavares de Lima (1952520),20261.3.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+174,25808,SUB.0929,Líquidos Corporais e Urinálise,Hebert Lima Batista (1883979),20261.3.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+175,25809,SUB.0127,Parasitologia Clínica,Joao Batista Silva de Souza (3531431),20261.3.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+176,25810,SUB.0405,Projeto Integrador 3,Sabrina Guimaraes Paiva (1883058),20261.3.195.300.1N,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio
+177,25823,SUB.0702,Biossegurança e Segurança no Trabalho de Enfermagem,"Angelo Cassio Bezerra Nascimento (1743484), Diego Alves de Medeiros (3520978)",20261.1.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+178,25824,SUB.0747,Anatomia e Fisiologia Humana,Katiane Pereira Braga (1785361),20261.1.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+179,25825,SUB.0694,Comunicação e Expressão em Língua Portuguesa,Felipe Goncalves Carneiro (2243876),20261.1.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+180,25826,SUB.0993,Fundamentos de Enfermagem,Marcia Rogeria Pereira Leite Silva (1783409),20261.1.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+181,25827,SUB.1033,Legislação e Ética em Enfermagem,Ana Flavia de Morais Oliveira (1755992),20261.1.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+182,25828,SUB.0049,Projeto Integrador 1,Ana Flavia de Morais Oliveira (1755992),20261.1.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+183,25829,SUB.1158,Saúde Pública,"Diego Alves de Medeiros (3520978), Joao Carlos Santiago Nery (1367252)",20261.1.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+184,25830,SUB.0756,Apoio Ao Diagnóstico e Organização dos Serviços de Saúde,Ana Flavia de Morais Oliveira (1755992),20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+185,25831,SUB.1160,Doenças Infectocontagiosas,Angelo Cassio Bezerra Nascimento (1743484),20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+186,25832,SUB.0449,Farmacologia,Katiane Pereira Braga (1785361),20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+187,25833,SUB.0666,Informática Básica e Ensino Ead,Gilvan Vieira Moura (2159760),20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+188,25834,SUB.0822,Microbiologia e Parasitologia,Katiane Pereira Braga (1785361),20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+189,25835,SUB.0298,Projeto Integrador 2,Marcia Rogeria Pereira Leite Silva (1783409),20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+190,25836,SUB.0170,Saúde do Adulto e do Idoso,"Diego Alves de Medeiros (3520978), Joao Carlos Santiago Nery (1367252)",20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+191,25837,SUB.1159,Terapia nutricional na enfermagem,Angelo Cassio Bezerra Nascimento (1743484),20261.2.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+192,25838,SUB.0867,Atenção Ao Paciente Crítico,"Diego Alves de Medeiros (3520978), Katiane Pereira Braga (1785361)",20261.3.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+193,25839,SUB.0382,Enfermagem Materno Infantil,Marcia Rogeria Pereira Leite Silva (1783409),20261.3.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+194,25840,SUB.1086,Enfermagem em Clínica Cirúrgica e Centro Cirúrgico,"Diego Alves de Medeiros (3520978), Joao Carlos Santiago Nery (1367252)",20261.3.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+195,25841,SUB.0875,Enfermagem em Urgência e Emergência,"Diego Alves de Medeiros (3520978), Joao Carlos Santiago Nery (1367252)",20261.3.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+196,25842,SUB.0213,Projeto Integrador 3,Angelo Cassio Bezerra Nascimento (1743484),20261.3.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+197,25843,SUB.1161,Saúde Mental e Psicologia no Atendimento em Saúde,Angelo Cassio Bezerra Nascimento (1743484),20261.3.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+198,25844,SUB.0566,Vigilância em Saúde,Ana Flavia de Morais Oliveira (1755992),20261.3.194.405.1M,194,Técnico em Enfermagem Subsequente ao Ensino Médio
+199,25845,TCN.0750,Atividades de Extensão I,Macilene Maria Monteiro Maia (1251027),20261.1.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+200,25846,TCN.0070,Desenho Auxiliado Por Computador,"Gabriel Almeida da Silva (3532566), Genivon Pereira Barbosa (3409184)",20261.1.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+201,25847,TCN.0569,Introdução À Produção Industrial,Jose Ribamar Santos Moraes Filho (1358554),20261.1.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+202,25848,TCN.0209,Matemática Básica,Luciania dos Santos Cardoso Sousa (1426443),20261.1.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+203,25849,TCN.0110,Metodologia Científica,Deusine Cristianne Borges Aguiar Mendes (1786039),20261.1.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+204,25850,TCN.0353,Teoria Geral da Administração,Deusine Cristianne Borges Aguiar Mendes (1786039),20261.1.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+205,25851,TCN.0812,Atividades de Extensão III,Myllenna Rodrigues de Abreu (3469852),20261.3.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+206,25852,TCN.0516,"Ergonomia, Saúde e Segurança Ocupacional",Marcia Rogeria Pereira Leite Silva (1783409),20261.3.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+207,25853,TCN.0284,Estatística Aplicada,Halisson Alves de Lima (2267410),20261.3.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+208,25854,TCN.0533,Gestão da Cadeia de Suprimento,Myllenna Rodrigues de Abreu (3469852),20261.3.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+209,25855,TCN.0111,Gestão da Produção II,Macilene Maria Monteiro Maia (1251027),20261.3.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+210,25856,TCN.0331,Gestão da Qualidade,Jose Ribamar Santos Moraes Filho (1358554),20261.3.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+211,25869,TCN.0816,Administração Estratégica,Myllenna Rodrigues de Abreu (3469852),20261.5.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+212,25870,TCN.0818,Atividades de Extensão V,Macilene Maria Monteiro Maia (1251027),20261.5.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+213,25871,TCN.0817,Fabricação Digital,Myllenna Rodrigues de Abreu (3469852),20261.5.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+214,25872,TCN.0333,Lógica de Programação,"Gabriel Almeida da Silva (3532566), Katiane Ribeiro Lopes (1234809)",20261.5.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+215,25873,TCN.0585,Metodologia da Pesquisa TCC,Macilene Maria Monteiro Maia (1251027),20261.5.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+216,25874,TCN.0283,Pesquisa Operacional,Jose Ribamar Santos Moraes Filho (1358554),20261.5.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+217,25875,TCN.0208,Algoritmos e Laboratório de Programação,Katiane Ribeiro Lopes (1234809),20261.1.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+218,25876,TCN.0413,Fundamentos de Informática,Evaldo da Silva Andrade (1120772),20261.1.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+219,25877,TCN.0231,Informática e Sociedade,Katiane Ribeiro Lopes (1234809),20261.1.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+220,25878,TCN.0162,Inglês Instrumental,Helio Marcio Nunes Lacerda (2125802),20261.1.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+221,25879,TCN.0269,Lógica Matemática,Make Bruno Silva Benigno (2277335),20261.1.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+222,25880,TCN.0432,Matemática Aplicada,Make Bruno Silva Benigno (2277335),20261.1.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+223,25881,TCN.0309,Português Instrumental,Felipe Goncalves Carneiro (2243876),20261.1.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+224,25882,TCN.0075,Banco de Dados II,Gilvan Vieira Moura (2159760),20261.3.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+225,25883,TCN.0678,Desenvolvimento Web,Genivon Pereira Barbosa (3409184),20261.3.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+226,25884,TCN.0084,Educação Inclusiva,Katiane Ribeiro Lopes (1234809),20261.3.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+227,25885,TCN.0671,Engenharia de Software I,Charles Jefferson Rodrigues Alves (1981305),20261.3.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+228,25886,TCN.0214,Estrutura de Dados II,Walisson Pereira de Sousa (2200593),20261.3.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+229,25887,TCN.0587,Redes de Telecomunicações I,Alexandre Cotrim Vilas Boas (1616745),20261.3.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+230,25888,TCN.0547,Atividades de Extensão II,Evaldo da Silva Andrade (1120772),20261.5.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+231,25889,TCN.0359,Desenvolvimento Orientado a Serviços,Paulo Ricardo da Silva Pontes (1158242),20261.5.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+232,25890,TCN.0195,Gestão de Processos e Serviços,Katiane Ribeiro Lopes (1234809),20261.5.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+233,25891,TCN.0043,Gestão do Conhecimento,Myllenna Rodrigues de Abreu (3469852),20261.5.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+234,25892,TCN.0066,Metodologia Científica,Alexandre Cotrim Vilas Boas (1616745),20261.5.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+235,25893,TCN.0312,Sistemas Distribuídos,Charles Jefferson Rodrigues Alves (1981305),20261.5.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+236,25894,TCN.0186,Sistemas Operacionais,Alexandre Cotrim Vilas Boas (1616745),20261.5.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+237,25904,BAC.1442,Química Orgânica II,Carla Cristina da Silva (2384420),20261.3.280.554.1M,280,Bacharelado em Farmácia
+238,25905,LIC.1730,Atividades de Extensão II,"Ricardo Barbosa de Sousa (1860703), Sabrina Guimaraes Paiva (1883058), Tassio Romulo Silva Araujo Luz (1356384)",20261.3.280.554.1M,280,Bacharelado em Farmácia
+239,25906,BAC.1441,Farmacologia I,Tassio Romulo Silva Araujo Luz (1356384),20261.3.280.554.1M,280,Bacharelado em Farmácia
+240,25907,BAC.1444,Genética Humana,Sabrina Guimaraes Paiva (1883058),20261.3.280.554.1M,280,Bacharelado em Farmácia
+241,25908,LIC.1083,Microbiologia,Tassio Romulo Silva Araujo Luz (1356384),20261.3.280.554.1M,280,Bacharelado em Farmácia
+242,25909,BAC.1445,Patologia Geral,Gilson Tavares de Lima (1952520),20261.3.280.554.1M,280,Bacharelado em Farmácia
+243,25910,BAC.1443,Química Analítica I,Ricardo Barbosa de Sousa (1860703),20261.3.280.554.1M,280,Bacharelado em Farmácia
+244,26271,INT.0233,Biologia I,Mario de Souza Lima e Silva (1525518),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+245,26272,INT.0063,Filosofia I,Gerson Alves de Oliveira (1821887),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+246,26273,INT.0235,Artes,Eva Pereira da Costa (2644073),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+247,26274,INT.0660,Geografia I,Cristina Sousa da Silva (2671944),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+248,26275,INT.0049,História I,Iara Luzia Ferreira Soares (3426642),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+249,26276,INT.0363,Informática Básica,Jonathon Viana Silva (2158087),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+250,26277,INT.0953,Língua Estrangeira - Inglês,Helio Marcio Nunes Lacerda (2125802),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+251,26278,INT.0566,Língua Portuguesa,Eva Pereira da Costa (2644073),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+252,26279,INT.0849,Matemática,Gildemberg da Cunha Silva (2056583),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+253,26280,INT.1081,Química,"Carla Cristina da Silva (2384420), Jacqueline Soares Carvalho Correia (3538858)",20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+254,26281,INT.1117,Sociologia,Gerson Alves de Oliveira (1821887),20261.1.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+255,26282,INT.0135,Biologia II,Mario de Souza Lima e Silva (1525518),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+256,26283,INT.0634,Educação Física,Bruno Anderson Girao de Sousa (3503964),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+257,26284,INT.0243,Filosofia II,Gerson Alves de Oliveira (1821887),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+258,26285,INT.0709,Física,"Jonierson de Araujo da Cruz (1618409), Leonardo de Sousa Silva (2260152)",20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+259,26286,INT.0317,Geografia II,Cristina Sousa da Silva (2671944),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+260,26287,INT.0294,História II,Iara Luzia Ferreira Soares (3426642),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+261,26288,INT.0196,Internet - Conceitos e Práticas,Jonathon Viana Silva (2158087),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+262,26289,INT.0036,Língua Portuguesa,Eva Pereira da Costa (2644073),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+263,26290,INT.0994,Matemática,Gildemberg da Cunha Silva (2056583),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+264,26291,INT.1092,Sociologia,Gerson Alves de Oliveira (1821887),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+265,26292,INT.0635,Suporte e Manutenção de Computadores,Jonathon Viana Silva (2158087),20261.2.215.183.1N,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio
+266,26418,INT.1562,Espanhol Básico,Felipe Goncalves Carneiro (2243876),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+267,26419,INT.1836,UD: GESTÃO DE PROJETOS,Macilene Maria Monteiro Maia (1251027),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+268,26420,INT.1870,UD: Voleibol JIFTO,David Anderson Fernandes de Aguiar (1177804),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+269,26421,INT.1871,UD:  Prática de Leitura e Produção Textual para o Enem e Vestibulares,Eva Pereira da Costa (2644073),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+270,26422,INT.1872,UD: Matemática para o ENEM e EXATO,Luciania dos Santos Cardoso Sousa (1426443),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+271,26423,INT.1873,UD: Preparatório para Olimpíada Brasileira de Informática,Alexandre Cotrim Vilas Boas (1616745),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+272,26424,INT.1874,UD: Educação para as Questões Socioambientais,Cristina Sousa da Silva (2671944),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+273,26425,INT.1869,UD: Ensino do Atletismo,David Anderson Fernandes de Aguiar (1177804),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+274,26426,INT.1610,Apididática 2 - Voos ilimitados,Hebert Lima Batista (1883979),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+275,26427,INT.1171,Introdução À Nanotecnologia,Ricardo Barbosa de Sousa (1860703),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+276,26428,INT.1022,UD: Automação Com Arduino,Jonierson de Araujo da Cruz (1618409),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+277,26738,TCN.0500,Trabalho de Conclusão de Curso,Deusine Cristianne Borges Aguiar Mendes (1786039),20261.6.097.223.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+278,26739,BAC.1434,Anatomia Humana,Mario de Souza Lima e Silva (1525518),20261.1.280.554.1I,280,Bacharelado em Farmácia
+279,26740,BAC.1427,Bases do Saber Científico,"Sabrina Guimaraes Paiva (1883058), Tassio Romulo Silva Araujo Luz (1356384)",20261.1.280.554.1I,280,Bacharelado em Farmácia
+280,26741,BAC.1433,Biologia Celular e Molecular,Anivaldo Pereira Duarte Junior (3521514),20261.1.280.554.1I,280,Bacharelado em Farmácia
+281,26742,BAC.1431,Física Aplicada,"Jonierson de Araujo da Cruz (1618409), Leonardo de Sousa Silva (2260152), Walmir Jacinto de Sousa (2261068)",20261.1.280.554.1I,280,Bacharelado em Farmácia
+282,26743,BAC.1426,Informática Básica,Katiane Ribeiro Lopes (1234809),20261.1.280.554.1I,280,Bacharelado em Farmácia
+283,26744,BAC.1429,Introdução às Ciências Farmacêuticas,Hebert Lima Batista (1883979),20261.1.280.554.1I,280,Bacharelado em Farmácia
+284,26745,BAC.1430,Matemática Aplicada,Gildemberg da Cunha Silva (2056583),20261.1.280.554.1I,280,Bacharelado em Farmácia
+285,26746,BAC.1428,Primeiros Socorros e Biossegurança,"Alessandro Trevisan Monteiro (1743506), Katiane Pereira Braga (1785361)",20261.1.280.554.1I,280,Bacharelado em Farmácia
+286,26747,BAC.1432,Química Geral e Inorgânica,"Carla Cristina da Silva (2384420), Ricardo Barbosa de Sousa (1860703)",20261.1.280.554.1I,280,Bacharelado em Farmácia
+287,26916,INT.1876,Informática Industrial,"Gabriel Almeida da Silva (3532566), Genivon Pereira Barbosa (3409184)",20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+290,26919,INT.1877,Fundamentos da Administração,Deusine Cristianne Borges Aguiar Mendes (1786039),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+292,26921,INT.1455,Arte I,Marinalva Dias de Lima Ferreira (2187528),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+294,26923,INT.1320,Biologia I,Mario de Souza Lima e Silva (1525518),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+295,26924,INT.1321,Educação Física I,Bruno Anderson Girao de Sousa (3503964),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+296,26925,INT.1322,Física I,Walmir Jacinto de Sousa (2261068),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+297,26926,INT.1323,Geografia I,Cristina Sousa da Silva (2671944),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+298,26927,INT.1324,História I,"Luis Rodomilson Pedrosa da Silva (2260978), Wellington Sampaio da Silva (1629076)",20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+299,26928,INT.1302,Língua Portuguesa I,Gislane Goncalves Silva (2187146),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+300,26929,INT.1325,Matemática I,Halisson Alves de Lima (2267410),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+301,26930,INT.1326,Química I,David Samuel Silva Rosa (3521719),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+302,26931,INT.1327,Sociologia I,Iara Luzia Ferreira Soares (3426642),20261.1.349.653.1I,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio
+304,27359,INT.1609,"Aulas práticas de vários cursos da graduação, auxiliando na escolha da sua profissão",Mario de Souza Lima e Silva (1525518),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+305,27635,INT.1882,UD: Futsal JIFTO,Bruno Anderson Girao de Sousa (3503964),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+306,27636,INT.1883,UD: Tênis de Mesa JIFTO,Bruno Anderson Girao de Sousa (3503964),20261.1.211.290.1D,211,Técnico em Biotecnologia Integrado ao Ensino Médio
+314,27965,TCN.0500,Trabalho de Conclusão de Curso,Deusine Cristianne Borges Aguiar Mendes (1786039),20261.6.097.395.1N,097,Curso Superior de Tecnologia em Gestão da Produção Industrial
+325,28277,TCN.0632,Trabalho de Conclusão de Curso,Evaldo da Silva Andrade (1120772),20261.6.216.319.1N,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
