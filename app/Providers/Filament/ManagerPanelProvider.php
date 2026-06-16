@@ -9,11 +9,14 @@ use App\Filament\Resources\Courses\CourseResource;
 use App\Filament\Resources\Evaluations\EvaluationResource;
 use App\Filament\Resources\Students\StudentResource;
 use App\Filament\Resources\Teachers\TeacherResource;
+use App\Filament\Widgets\GenerateEvaluationsWidget;
+use App\Filament\Widgets\SelectPeriodWidget;
 use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\Widgets;
+use Filament\Widgets\AccountWidget;
 
 class ManagerPanelProvider extends BasePanelProvider
 {
@@ -25,7 +28,7 @@ class ManagerPanelProvider extends BasePanelProvider
         $panel = $panel
             ->tenant(Team::class, slugAttribute: 'slug', ownershipRelationship: 'teams')
             ->tenantMenu(false)
-            ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
+            //->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
             ->resources([
                 TeacherResource::class,
                 StudentResource::class,
@@ -37,10 +40,9 @@ class ManagerPanelProvider extends BasePanelProvider
                 Dashboard::class,
             ])
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
-                \App\Filament\Widgets\SelectPeriodWidget::class,
-                \App\Filament\Widgets\GenerateEvaluationsWidget::class,
+                AccountWidget::class,
+                SelectPeriodWidget::class,
+                GenerateEvaluationsWidget::class,
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,

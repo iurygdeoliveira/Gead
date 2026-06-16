@@ -31,6 +31,11 @@ class EvaluationResource extends Resource
         return __('Avaliação');
     }
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('Avaliações');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return EvaluationForm::configure($schema);
