@@ -29794,6 +29794,54 @@ namespace App\Filament\Pages\Mail {
             }
     }
 
+namespace App\Filament\Resources\CourseClasses\Pages {
+    /**
+     */
+    class CreateCourseClass extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditCourseClass extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListCourseClasses extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewCourseClass extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Filament\Resources\Pages {
+    /**
+     * @template TModel of Model = Model
+     * @property-read Schema $form
+     */
+    class CreateRecord extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     */
+    class Page extends \Filament\Pages\Page {
+            }
+    /**
+     * @template TModel of Model = Model
+     * @property-read Schema $form
+     */
+    class EditRecord extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     */
+    class ListRecords extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     * @template TModel of Model = Model
+     * @property-read Schema $form
+     */
+    class ViewRecord extends \Filament\Resources\Pages\Page {
+            }
+    }
+
 namespace App\Filament\Resources\Courses\Pages {
     /**
      */
@@ -29817,32 +29865,17 @@ namespace App\Filament\Resources\Courses\Pages {
             }
     }
 
-namespace Filament\Resources\Pages {
+namespace App\Filament\Resources\Courses\RelationManagers {
     /**
-     * @template TModel of Model = Model
-     * @property-read Schema $form
      */
-    class CreateRecord extends \Filament\Resources\Pages\Page {
+    class DisciplinesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
             }
+    }
+
+namespace Filament\Resources\RelationManagers {
     /**
      */
-    class Page extends \Filament\Pages\Page {
-            }
-    /**
-     * @template TModel of Model = Model
-     * @property-read Schema $form
-     */
-    class ViewRecord extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     * @template TModel of Model = Model
-     * @property-read Schema $form
-     */
-    class EditRecord extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     */
-    class ListRecords extends \Filament\Resources\Pages\Page {
+    class RelationManager extends \Livewire\Component {
             }
     }
 
@@ -29861,6 +29894,21 @@ namespace Filament\Widgets {
     /**
      */
     class Widget extends \Livewire\Component {
+            }
+    }
+
+namespace App\Filament\Resources\Evaluations\Pages {
+    /**
+     */
+    class CreateEvaluation extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditEvaluation extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListEvaluations extends \Filament\Resources\Pages\ListRecords {
             }
     }
 

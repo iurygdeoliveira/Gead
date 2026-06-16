@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('teacher_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
 
-            // Unique combination of course_class and discipline
-            $table->unique(['course_class_id', 'discipline_id']);
+            // Unique combination of course_class, discipline, and teacher
+            $table->unique(['course_class_id', 'discipline_id', 'teacher_id']);
         });
     }
 

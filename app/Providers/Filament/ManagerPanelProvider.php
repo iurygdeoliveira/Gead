@@ -13,6 +13,7 @@ use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
+use Filament\Widgets;
 
 class ManagerPanelProvider extends BasePanelProvider
 {
@@ -34,6 +35,12 @@ class ManagerPanelProvider extends BasePanelProvider
             ])
             ->pages([
                 Dashboard::class,
+            ])
+            ->widgets([
+                Widgets\AccountWidget::class,
+                Widgets\FilamentInfoWidget::class,
+                \App\Filament\Widgets\SelectPeriodWidget::class,
+                \App\Filament\Widgets\GenerateEvaluationsWidget::class,
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,

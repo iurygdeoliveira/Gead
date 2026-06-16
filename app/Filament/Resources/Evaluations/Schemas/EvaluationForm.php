@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Evaluations\Schemas;
 
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
 class EvaluationForm
@@ -15,9 +16,38 @@ class EvaluationForm
                     ->columns(2)
                     ->components([
                         \Filament\Forms\Components\Select::make('class_enrollment_id')
-                            ->label('Matrícula na Turma')
-                            ->relationship('classEnrollment', 'id')
+                            ->label('Aluno / Turma')
+                            ->relationship(
+                                name: 'classEnrollment',
+                                titleAttribute: 'id',
+                                modifyQueryUsing: fn ($query) => $query->with(['enrollment.student', 'courseClass'])
+                            )
+                            ->getOptionLabelFromRecordUsing(fn ($record) => ($record->enrollment && $record->enrollment->student ? $record->enrollment->student->name : 'Matrícula #' . $record->id) . ' - ' . ($record->courseClass ? $record->courseClass->name : ''))
                             ->searchable()
+                            ->preload()
+                            ->live()
+                            ->required(),
+                        \Filament\Forms\Components\Select::make('course_class_discipline_id')
+                            ->label('Professor / Disciplina')
+                            ->options(function (Get $get) {
+                                $classEnrollmentId = $get('class_enrollment_id');
+                                if (!$classEnrollmentId) {
+                                    return [];
+                                }
+                                $classEnrollment = \App\Models\ClassEnrollment::find($classEnrollmentId);
+                                if (!$classEnrollment) {
+                                    return [];
+                                }
+                                return \App\Models\CourseClassDiscipline::where('course_class_id', $classEnrollment->course_class_id)
+                                    ->with(['teacher', 'discipline'])
+                                    ->get()
+                                    ->mapWithKeys(function ($ccd) {
+                                        $teacherName = $ccd->teacher ? $ccd->teacher->name : 'Sem Professor';
+                                        return [$ccd->id => "{$ccd->discipline->name} (Prof. {$teacherName})"];
+                                    });
+                            })
+                            ->searchable()
+                            ->preload()
                             ->required(),
                         \Filament\Forms\Components\TextInput::make('planning_score')
                             ->label('1. Planejamento (0 a 10)')

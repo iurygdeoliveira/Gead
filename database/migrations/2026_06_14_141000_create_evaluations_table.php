@@ -24,6 +24,8 @@ return new class extends Migration
             $table->decimal('assessment_score', 4, 2)->nullable();
             $table->text('comments')->nullable();
             $table->timestamps();
+
+            $table->unique(['class_enrollment_id', 'course_class_discipline_id'], 'eval_class_enroll_course_class_disc_unique');
         });
     }
 

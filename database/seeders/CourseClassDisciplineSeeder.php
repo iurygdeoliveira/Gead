@@ -52,7 +52,7 @@ class CourseClassDisciplineSeeder extends Seeder
                 $disciplineName = trim($row[4] ?? '');
                 $teachingPeriod = trim($row[5] ?? '');
 
-                if (empty($disciplineName) || empty($teachingPeriod)) {
+                if (empty($disciplineName) || empty($teachingPeriod) || str_starts_with(strtolower(trim($disciplineName)), 'ud:')) {
                     continue;
                 }
 
@@ -89,18 +89,26 @@ class CourseClassDisciplineSeeder extends Seeder
                     $normalizedCleanCourseName = $this->normalizeString($cleanCourseName);
                     
                     $course = Course::all()->first(function ($c) use ($normalizedCleanCourseName) {
-                        return $this->normalizeString($c->name) === $normalizedCleanCourseName;
+                        $dbNormalized = $this->normalizeString($c->name);
+                        return $dbNormalized === $normalizedCleanCourseName || 
+                               str_contains($dbNormalized, $normalizedCleanCourseName) || 
+                               str_contains($normalizedCleanCourseName, $dbNormalized);
                     });
                 }
 
-                // 3. Find the Discipline(s) matching the normalized name (and course if available)
+                if (!$course) {
+                    $failures[] = [
+                        'file' => $fileBasename,
+                        'reason' => "Curso não encontrado no banco: '{$courseRawName}'"
+                    ];
+                    continue;
+                }
+
+                // 3. Find the Discipline(s) matching the normalized name
                 $cleanDisciplineName = preg_replace('/^Att\d+\s*-\s*/i', '', $disciplineName);
                 $normalizedCleanDisciplineName = $this->normalizeString($cleanDisciplineName);
 
-                $query = Discipline::query();
-                if ($course) {
-                    $query->where('course_id', $course->id);
-                }
+                $query = Discipline::query()->where('course_id', $course->id);
                 $allDisciplines = $query->get();
 
                 $disciplines = $allDisciplines->filter(function ($d) use ($normalizedCleanDisciplineName) {
@@ -121,34 +129,9 @@ class CourseClassDisciplineSeeder extends Seeder
                     
                     $isAnnual = $course ? str_contains(mb_strtolower($course->name, 'UTF-8'), 'integrado') : false;
 
-                    // Se não tiver período numérico, trata como Unidade Diversificada / Eletiva
-                    if (empty($disciplinePeriod) || $disciplinePeriod === '-' || !is_numeric($disciplinePeriod)) {
-                        $activeEntryPeriods = $this->getActiveEntryPeriods($teachingPeriod, $isAnnual);
-                        $courseClasses = CourseClass::where('course_id', $discipline->course_id)
-                            ->whereIn('entry_period', $activeEntryPeriods)
-                            ->get();
-
-                        if ($courseClasses->isNotEmpty()) {
-                            foreach ($courseClasses as $courseClass) {
-                                DB::table('course_class_disciplines')->updateOrInsert(
-                                    [
-                                        'course_class_id' => $courseClass->id,
-                                        'discipline_id' => $discipline->id,
-                                    ],
-                                    [
-                                        'teacher_id' => $teacher->id,
-                                        'updated_at' => now(),
-                                        'created_at' => now(),
-                                    ]
-                                );
-                                $this->command->info("Vinculado (UD/Eletiva): {$teacher->name} -> {$discipline->name} na turma {$courseClass->name}");
-                            }
-                        } else {
-                            $failures[] = [
-                                'file' => $fileBasename,
-                                'reason' => "Nenhuma turma ativa encontrada para a disciplina especial '{$disciplineName}' no curso ID {$discipline->course_id}"
-                            ];
-                        }
+                    // Excluir Unidades Diversificadas / Disciplinas com período não numérico ou que começam com "UD:"
+                    if (empty($disciplinePeriod) || $disciplinePeriod === '-' || !is_numeric($disciplinePeriod) || str_starts_with(strtolower(trim($discipline->name)), 'ud:')) {
+                        // Unidades Diversificadas serão ignoradas do seed conforme solicitado
                         continue;
                     }
 
@@ -166,9 +149,9 @@ class CourseClassDisciplineSeeder extends Seeder
                             [
                                 'course_class_id' => $courseClass->id,
                                 'discipline_id' => $discipline->id,
+                                'teacher_id' => $teacher->id,
                             ],
                             [
-                                'teacher_id' => $teacher->id,
                                 'updated_at' => now(),
                                 'created_at' => now(),
                             ]

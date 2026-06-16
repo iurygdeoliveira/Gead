@@ -58,6 +58,7 @@ class EvaluationResource extends Resource
         return [
             'index' => Pages\ListEvaluations::route('/'),
             'create' => Pages\CreateEvaluation::route('/create'),
+            'view' => Pages\ViewEvaluation::route('/{record}'),
             'edit' => Pages\EditEvaluation::route('/{record}/edit'),
         ];
     }
