@@ -59,7 +59,7 @@ class TeacherForm
                 ->email()
                 ->required()
                 ->maxLength(255)
-                ->unique(ignoreRecord: true),
+                ->unique(),
             TextInput::make('registration_number')
                 ->label('Matrícula')
                 ->maxLength(255),

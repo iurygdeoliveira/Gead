@@ -150,7 +150,7 @@ class Register extends BaseRegister
         Membership::create([
             'team_id' => $team->id,
             'user_id' => $user->id,
-            'role' => AppTeamRole::OWNER->value,
+            'role' => AppTeamRole::owner()->value,
         ]);
 
         $user->forceFill(['current_team_id' => $team->id])->save();

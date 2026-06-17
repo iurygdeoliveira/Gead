@@ -40,6 +40,11 @@ class TeacherPolicy
         return $this->checkAccess($user);
     }
 
+    public function deleteAny(User $user): bool
+    {
+        return $this->checkAccess($user);
+    }
+
     public function restore(User $user, Teacher $teacher): bool
     {
         return $this->checkAccess($user);

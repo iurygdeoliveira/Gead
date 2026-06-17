@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Students\Schemas;
 
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -25,35 +27,35 @@ class StudentForm
                             ->label('E-mail Institucional')
                             ->email()
                             ->maxLength(255)
-                            ->unique(ignoreRecord: true),
+                            ->unique(),
                     ]),
                 Section::make('Matrículas no SUAP')
                     ->description('Vínculos do aluno com cursos e turmas.')
                     ->columnSpanFull()
                     ->components([
-                        \Filament\Forms\Components\Repeater::make('enrollments')
+                        Repeater::make('enrollments')
                             ->relationship()
                             ->label('Matrículas')
                             ->columns(3)
                             ->schema([
-                                \Filament\Forms\Components\Select::make('course_id')
+                                Select::make('course_id')
                                     ->relationship('course', 'name')
                                     ->label('Curso')
                                     ->required()
                                     ->searchable(),
-                                \Filament\Forms\Components\TextInput::make('registration_number')
+                                TextInput::make('registration_number')
                                     ->label('Número de Matrícula')
                                     ->required(),
-                                \Filament\Forms\Components\TextInput::make('entry_period')
+                                TextInput::make('entry_period')
                                     ->label('Período de Ingresso')
                                     ->placeholder('Ex: 2026.1')
                                     ->required(),
-                                \Filament\Forms\Components\Repeater::make('classEnrollments')
+                                Repeater::make('classEnrollments')
                                     ->relationship()
                                     ->label('Vínculo em Turma')
                                     ->columnSpanFull()
                                     ->schema([
-                                        \Filament\Forms\Components\Select::make('course_class_id')
+                                        Select::make('course_class_id')
                                             ->relationship('courseClass', 'name')
                                             ->label('Turma')
                                             ->required()

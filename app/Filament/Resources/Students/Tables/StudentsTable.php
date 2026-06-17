@@ -52,28 +52,22 @@ class StudentsTable
                     ->listWithLineBreaks()
                     ->wrap(),
                 TextColumn::make('enrollments.course.name')
+                ->searchable(isIndividual: true, isGlobal: false)
                     ->label('Curso')
                     ->listWithLineBreaks()
                     ->wrap(),
                 TextColumn::make('enrollments.classEnrollments.courseClass.code')
                     ->label('Turma')
                     ->listWithLineBreaks()
-                    ->wrap(),
+                    ->wrap()
+                    ->placeholder('?'),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
                     ->getStateUsing(fn ($record) => ($record->evaluations_done ?? 0) . ' / ' . ($record->evaluations_total ?? 0))
-                    ->alignCenter(),
+                    ->alignCenter()
+                    ->hidden(fn ($record) => $record !== null && $record->enrollments->flatMap->classEnrollments->isEmpty()),
             ])
             ->filters([
-                TernaryFilter::make('without_class')
-                    ->label('Vínculo com turma')
-                    ->placeholder('Todos os alunos')
-                    ->trueLabel('Sem turma vinculada')
-                    ->falseLabel('Com turma vinculada')
-                    ->queries(
-                        true: fn (Builder $query) => $query->whereDoesntHave('enrollments.classEnrollments'),
-                        false: fn (Builder $query) => $query->whereHas('enrollments.classEnrollments'),
-                    ),
             ])
             ->recordActions([
                 ActionGroup::make([

@@ -33,7 +33,7 @@ class AuthenticateMagicLinkAction
             Membership::create([
                 'team_id' => $team->id,
                 'user_id' => $user->id,
-                'role' => 'member',
+                'role' => \App\Enums\AppTeamRole::STUDENT->value,
             ]);
         }
 

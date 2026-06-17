@@ -24,7 +24,7 @@ class CourseForm
                             ->label('Código')
                             ->required()
                             ->maxLength(255)
-                            ->unique(ignoreRecord: true),
+                            ->unique(),
                     ]),
             ]);
     }

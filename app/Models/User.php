@@ -352,6 +352,11 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
             ->exists();
     }
 
+    public function hasOwnerRoleInAnyTeam(): bool
+    {
+        return $this->hasManagerRoleInAnyTeam();
+    }
+
     public function getRolesForTeam(Team $team): Collection
     {
         return $this->getRoleQueryBuilder($team)

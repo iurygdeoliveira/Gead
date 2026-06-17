@@ -60,7 +60,7 @@ class UserFactory extends Factory
     public function user(): static
     {
         return $this->afterCreating(function (User $user): void {
-            $user->assignRole(RoleType::USER->value);
+            $user->assignRole('user');
         });
     }
 }

@@ -72,7 +72,7 @@ class UserPolicy
         }
 
         // Impede que usuários comuns editem administradores (Admins) ou proprietários (Owners)
-        if ($user->hasRole(RoleType::USER->value) && ($record->hasRole(RoleType::ADMIN->value) || $record->hasRole(RoleType::OWNER->value))) {
+        if ($user->hasRole('user') && ($record->hasRole(RoleType::ADMIN->value) || $record->hasRole(RoleType::MANAGER->value))) {
             return false;
         }
 
@@ -90,8 +90,13 @@ class UserPolicy
             return false;
         }
 
+        // Impede autoexclusão direta
+        if ($user->getKey() === $record->getKey()) {
+            return false;
+        }
+
         // Impede que usuários comuns excluam donos (Owners)
-        if ($user->hasRole(RoleType::USER->value) && $record->hasRole(RoleType::OWNER->value)) {
+        if ($user->hasRole('user') && $record->hasRole(RoleType::MANAGER->value)) {
             return false;
         }
 
