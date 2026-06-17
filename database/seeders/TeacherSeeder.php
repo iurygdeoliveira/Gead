@@ -84,7 +84,7 @@ class TeacherSeeder extends Seeder
 
             fclose($file);
 
-            // Agora cadastra todos os professores únicos encontrados
+            // Agora cadastra todos os professores únicos encontrados no diários
             foreach ($teachersToInsert as $name => $registrationNumber) {
                 Teacher::updateOrCreate(
                     [
@@ -93,10 +93,54 @@ class TeacherSeeder extends Seeder
                     ],
                     [
                         'registration_number' => $registrationNumber,
-                        'email' => null,
                         'user_id' => null,
                     ]
                 );
+            }
+
+            // Agora processa o arquivo de e-mails para atualizar os e-mails e incluir docentes faltantes (como o gerente)
+            $emailsCsvPath = database_path('seeders/dados de seed/email dos professores.csv');
+            if (file_exists($emailsCsvPath)) {
+                $emailFile = fopen($emailsCsvPath, 'r');
+                $isEmailHeader = true;
+                
+                while (($row = fgetcsv($emailFile, 1000, ',')) !== false) {
+                    if ($isEmailHeader) {
+                        $isEmailHeader = false;
+                        continue;
+                    }
+
+                    $name = trim($row[1] ?? '');
+                    $registrationNumber = trim($row[2] ?? '');
+                    $emailRaw = trim($row[4] ?? '');
+                    
+                    $email = (!empty($emailRaw) && $emailRaw !== '-') ? $emailRaw : null;
+
+                    if (empty($name)) {
+                        continue;
+                    }
+
+                    // Se a matrícula não estiver vazia, pode ser útil tentar buscar por matrícula também, 
+                    // mas como a base estava criando por nome, mantemos a consistência
+                    $teacher = Teacher::where('name', $name)->where('team_id', $team->id)->first();
+                    
+                    if ($teacher) {
+                        $teacher->update([
+                            'email' => $email,
+                        ]);
+                    } else {
+                        // O professor (ou gerente) não estava no diarios.csv, vamos criá-lo
+                        Teacher::create([
+                            'name' => $name,
+                            'team_id' => $team->id,
+                            'registration_number' => $registrationNumber,
+                            'email' => $email,
+                            'user_id' => null,
+                        ]);
+                    }
+                }
+                
+                fclose($emailFile);
             }
         });
     }

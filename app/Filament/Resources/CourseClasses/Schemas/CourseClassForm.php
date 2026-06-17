@@ -15,6 +15,7 @@ class CourseClassForm
             ->components([
                 Section::make('Dados da Turma')
                     ->columns(2)
+                    ->columnSpanFull()
                     ->components([
                         Select::make('course_id')
                             ->label('Curso')

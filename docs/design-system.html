@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr" class="fi dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Design System — Orbit Theme (GeAD)</title>
+
+    <!-- ===== ORIGINAL CSS ASSETS ===== -->
+    <link href="http://localhost/css/devletes/filament-orbit-theme/orbit-theme.css?v=1.1.3.0" rel="stylesheet">
+    <link href="http://localhost/fonts/filament/filament/inter/index.css?v=5.6.7.0" rel="stylesheet">
+    <link href="http://localhost/css/filament/filament/app.css?v=5.6.7.0" rel="stylesheet">
+    <link rel="preload" href="http://localhost/fonts/filament/filament/inter/inter-latin-wght-normal-NRMW37G5.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- ===== ORIGINAL COLOR TOKENS (from Filament panel config) ===== -->
+    <style>
+        :root {
+            --danger-50:oklch(0.971 0.013 17.38);  --danger-100:oklch(0.936 0.031 17.717);  --danger-200:oklch(0.885 0.059 18.334);  --danger-300:oklch(0.808 0.103 19.571);  --danger-400:oklch(0.711 0.166 22.216);  --danger-500:oklch(0.583 0.239 28.584);  --danger-600:oklch(0.583 0.239 28.584);  --danger-700:oklch(0.505 0.19 27.518);  --danger-800:oklch(0.444 0.161 26.899);  --danger-900:oklch(0.396 0.133 25.723);  --danger-950:oklch(0.258 0.089 26.042);
+            --gray-50:oklch(0.988 0 89.876);  --gray-100:oklch(0.964 0 89.876);  --gray-200:oklch(0.937 0 89.876);  --gray-300:oklch(0.855 0.003 197.095);  --gray-400:oklch(0.719 0.004 174.436);  --gray-500:oklch(0.583 0.005 179.618);  --gray-600:oklch(0.53 0.006 196.971);  --gray-700:oklch(0.319 0.003 164.871);  --gray-800:oklch(0.275 0.003 196.987);  --gray-900:oklch(0.246 0.003 196.962);  --gray-950:oklch(0.154 0 89.876);
+            --info-50:oklch(0.97 0.014 254.604);  --info-100:oklch(0.932 0.032 255.585);  --info-200:oklch(0.882 0.059 254.128);  --info-300:oklch(0.809 0.105 251.813);  --info-400:oklch(0.707 0.165 254.624);  --info-500:oklch(0.623 0.214 259.815);  --info-600:oklch(0.546 0.245 262.881);  --info-700:oklch(0.488 0.243 264.376);  --info-800:oklch(0.424 0.199 265.638);  --info-900:oklch(0.379 0.146 265.522);  --info-950:oklch(0.282 0.091 267.935);
+            --primary-50:oklch(0.989 0.034 115.868);  --primary-100:oklch(0.978 0.073 116.796);  --primary-200:oklch(0.957 0.146 119.534);  --primary-300:oklch(0.937 0.208 122.229);  --primary-400:oklch(0.939 0.213 121.173);  --primary-500:oklch(0.931 0.228 123.104);  --primary-600:oklch(0.931 0.228 123.104);  --primary-700:oklch(0.858 0.214 124.245);  --primary-800:oklch(0.6 0.144 120.984);  --primary-900:oklch(0.433 0.105 122.178);  --primary-950:oklch(0.311 0.075 121.36);
+            --success-50:oklch(0.982 0.018 155.826);  --success-100:oklch(0.962 0.044 156.743);  --success-200:oklch(0.925 0.084 155.995);  --success-300:oklch(0.871 0.15 154.449);  --success-400:oklch(0.792 0.209 151.711);  --success-500:oklch(0.723 0.219 149.579);  --success-600:oklch(0.627 0.194 149.214);  --success-700:oklch(0.527 0.154 150.069);  --success-800:oklch(0.448 0.119 151.328);  --success-900:oklch(0.393 0.095 152.535);  --success-950:oklch(0.266 0.065 152.934);
+            --warning-50:oklch(0.987 0.022 95.277);  --warning-100:oklch(0.962 0.059 95.617);  --warning-200:oklch(0.924 0.12 95.746);  --warning-300:oklch(0.879 0.169 91.605);  --warning-400:oklch(0.828 0.189 84.429);  --warning-500:oklch(0.769 0.188 70.08);  --warning-600:oklch(0.666 0.179 58.318);  --warning-700:oklch(0.555 0.163 48.998);  --warning-800:oklch(0.473 0.137 46.201);  --warning-900:oklch(0.414 0.112 45.904);  --warning-950:oklch(0.279 0.077 45.635);
+        }
+        :root {
+            --font-family: 'Inter Variable';
+            --mono-font-family: 'ui-monospace';
+            --serif-font-family: 'ui-serif';
+            --sidebar-width: 20rem;
+            --collapsed-sidebar-width: 4.5rem;
+            --default-theme-mode: system;
+        }
+        html.fi {
+            --livewire-progress-bar-color: var(--primary-500);
+        }
+    </style>
+
+    <!-- ===== DESIGN SYSTEM SHOWCASE STYLES ===== -->
+    <style>
+        /* Force dark mode */
+        html { color-scheme: dark; }
+
+        /* ----- DS Navigation Bar ----- */
+        .ds-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--orbit-panel-bg);
+            border-bottom: 1px solid var(--orbit-border-color);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .ds-nav a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--orbit-radius-pill);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--orbit-text-muted);
+            text-decoration: none;
+            transition: background-color 0.14s, color 0.14s;
+        }
+        .ds-nav a:hover,
+        .ds-nav a:focus-visible {
+            background: var(--orbit-panel-soft-bg);
+            color: var(--orbit-text-color);
+        }
+        .ds-nav-brand {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--orbit-text-color) !important;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* ----- DS Section Wrapper ----- */
+        .ds-section {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .ds-section + .ds-section {
+            border-top: 1px solid var(--orbit-border-color);
+        }
+        .ds-section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--orbit-text-color);
+            margin-bottom: 0.5rem;
+        }
+        .ds-section-desc {
+            color: var(--orbit-text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 2rem;
+            max-width: 50rem;
+        }
+
+        /* ----- Typography Spec Table ----- */
+        .ds-typo-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .ds-typo-table tr {
+            border-bottom: 1px solid var(--orbit-border-color);
+        }
+        .ds-typo-table td {
+            padding: 1rem 0;
+            vertical-align: middle;
+        }
+        .ds-typo-name {
+            width: 10rem;
+            color: var(--orbit-text-muted);
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .ds-typo-preview {
+            color: var(--orbit-text-color);
+        }
+        .ds-typo-spec {
+            text-align: right;
+            color: var(--orbit-text-muted);
+            font-size: 0.78rem;
+            font-family: var(--mono-font-family);
+            white-space: nowrap;
+        }
+
+        /* ----- Color Swatches ----- */
+        .ds-color-group {
+            margin-bottom: 2.5rem;
+        }
+        .ds-color-group-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--orbit-text-color);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.75rem;
+        }
+        .ds-swatches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .ds-swatch {
+            width: 5.5rem;
+            text-align: center;
+        }
+        .ds-swatch-color {
+            width: 100%;
+            height: 3.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--orbit-border-color);
+            margin-bottom: 0.35rem;
+        }
+        .ds-swatch-label {
+            font-size: 0.68rem;
+            color: var(--orbit-text-muted);
+            font-family: var(--mono-font-family);
+        }
+
+        .ds-surface-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+            gap: 1.5rem;
+        }
+        .ds-surface-card {
+            height: 8rem;
+            border-radius: var(--orbit-radius-card);
+            border: 1px solid var(--orbit-border-color);
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .ds-surface-label {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--orbit-text-color);
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+        }
+
+        /* ----- Component Showcase ----- */
+        .ds-component-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .ds-component-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--orbit-text-color);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.75rem;
+        }
+        .ds-component-block {
+            margin-bottom: 2.5rem;
+        }
+
+        /* ----- Layout Demo ----- */
+        .ds-layout-demo {
+            border: 1px solid var(--orbit-border-color);
+            border-radius: var(--orbit-radius-card);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--orbit-card-bg);
+        }
+        .ds-layout-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--orbit-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+        }
+        .ds-spacing-box {
+            background: var(--orbit-panel-soft-bg);
+            border: 1px dashed var(--orbit-border-strong);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: var(--orbit-text-muted);
+            font-family: var(--mono-font-family);
+        }
+
+        /* ----- Motion Gallery ----- */
+        .ds-motion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+            gap: 1.5rem;
+        }
+        .ds-motion-card {
+            border: 1px solid var(--orbit-border-color);
+            border-radius: var(--orbit-radius-card);
+            background: var(--orbit-card-bg);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .ds-motion-label {
+            font-size: 0.78rem;
+            color: var(--orbit-text-muted);
+            margin-top: 1rem;
+            font-family: var(--mono-font-family);
+        }
+
+        /* ----- Icons Grid ----- */
+        .ds-icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+            gap: 1rem;
+        }
+        .ds-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            border-radius: var(--orbit-radius-card);
+            border: 1px solid var(--orbit-border-color);
+            background: var(--orbit-card-bg-solid);
+            transition: background-color 0.14s;
+        }
+        .ds-icon-item:hover {
+            background: var(--orbit-panel-soft-bg);
+        }
+        .ds-icon-item svg {
+            color: var(--orbit-text-color);
+        }
+        .ds-icon-label {
+            font-size: 0.68rem;
+            color: var(--orbit-text-muted);
+            text-align: center;
+        }
+
+        /* ----- Gradient Swatch ----- */
+        .ds-gradient-swatch {
+            height: 4rem;
+            border-radius: var(--orbit-radius-card);
+            border: 1px solid var(--orbit-border-color);
+            margin-bottom: 0.5rem;
+        }
+        .ds-gradient-label {
+            font-size: 0.72rem;
+            color: var(--orbit-text-muted);
+            font-family: var(--mono-font-family);
+        }
+        .ds-gradient-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Utilities for the showcase */
+        .ds-flex-col { display: flex; flex-direction: column; gap: 0.5rem; }
+        .ds-inline { display: inline-flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+        .ds-mb-2 { margin-bottom: 2rem; }
+    </style>
+
+    <script>
+        localStorage.setItem('theme', 'dark');
+    </script>
+</head>
+
+<body class="fi-body fi-panel-auth" style="">
+
+<!-- ========================================= -->
+<!-- TOP HORIZONTAL NAV                        -->
+<!-- ========================================= -->
+<nav class="ds-nav">
+    <a href="#hero" class="ds-nav-brand">🎨 Orbit DS</a>
+    <a href="#hero">Hero</a>
+    <a href="#typography">Typography</a>
+    <a href="#colors">Colors & Surfaces</a>
+    <a href="#components">UI Components</a>
+    <a href="#layout">Layout & Spacing</a>
+    <a href="#motion">Motion & Interaction</a>
+    <a href="#icons">Icons</a>
+</nav>
+
+<!-- ========================================= -->
+<!-- 0) HERO — EXACT CLONE, TEXT ADAPTED       -->
+<!-- ========================================= -->
+<section id="hero">
+    <div class="fi-simple-layout">
+        <div class="fi-simple-main-ctn">
+            <main class="fi-simple-main fi-width-lg">
+                <div class="fi-simple-page">
+                    <div class="fi-simple-page-content">
+                        <header class="fi-simple-header">
+                            <div style="height: 8rem;" class="fi-logo">
+                                <img src="http://localhost/images/logo.png" alt="GeAD" class="h-full w-auto object-contain" style="filter: drop-shadow(0 0 12px rgba(250, 255, 229, 0.95)) drop-shadow(0 0 32px rgba(244, 255, 199, 0.75)) drop-shadow(0 0 60px rgba(229, 255, 138, 0.35)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.65));">
+                            </div>
+                        </header>
+
+                        <div class="fi-sc fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));">
+                            <div class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                                <div class="fi-sc-component">
+                                    <form class="fi-sc-form" onsubmit="return false;">
+                                        <div class="fi-sc fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));">
+                                            <div class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                                                <div class="fi-sc-component">
+                                                    <div class="fi-sc fi-sc-has-gap fi-grid" style="--cols-default: repeat(1, minmax(0, 1fr));">
+
+                                                        <!-- Badge -->
+                                                        <div class="fi-grid-col" style="--col-span-default: 1 / -1;">
+                                                            <div class="fi-sc-component">
+                                                                <style>
+                                                                    .login-center-wrapper {
+                                                                        width: 100%;
+                                                                        display: flex;
+                                                                        justify-content: center;
+                                                                    }
+                                                                    .fi-sc-component:has(> .login-center-wrapper) {
+                                                                        width: 100%;
+                                                                    }
+                                                                </style>
+                                                                <div class="login-center-wrapper mt-2 mb-4">
+                                                                    <span class="inline-flex items-center rounded-md bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-300">🎨 Design System — Orbit Theme</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- E-mail field -->
+                                                        <div class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                                                            <div class="fi-sc-component">
+                                                                <div data-field-wrapper="" class="fi-fo-field">
+                                                                    <div class="fi-fo-field-label-col">
+                                                                        <div class="fi-fo-field-label-ctn ">
+                                                                            <label for="ds-email" class="fi-fo-field-label">
+                                                                                <span class="fi-fo-field-label-content">
+                                                                                    Campo de Texto<sup class="fi-fo-field-label-required-mark">*</sup>
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="fi-fo-field-content-col">
+                                                                        <div class="fi-input-wrp fi-fo-text-input">
+                                                                            <div class="fi-input-wrp-content-ctn">
+                                                                                <input class="fi-input" id="ds-email" type="email" placeholder="exemplo@dominio.com">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Password field -->
+                                                        <div class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                                                            <div class="fi-sc-component">
+                                                                <div data-field-wrapper="" class="fi-fo-field">
+                                                                    <div class="fi-fo-field-label-col">
+                                                                        <div class="fi-fo-field-label-ctn ">
+                                                                            <label for="ds-password" class="fi-fo-field-label">
+                                                                                <span class="fi-fo-field-label-content">
+                                                                                    Senha<sup class="fi-fo-field-label-required-mark">*</sup>
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="fi-sc fi-inline fi-align-end fi-sc-has-gap fi-sc-dense">
+                                                                            <div class="">
+                                                                                <div class="fi-sc-component">
+                                                                                    <span class="fi-sc-text">
+                                                                                        <a href="#" class="fi-color fi-color-primary fi-text-color-900 dark:fi-text-color-400 fi-link fi-size-md" tabindex="-1" onclick="return false;">
+                                                                                            Link de exemplo
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="fi-fo-field-content-col">
+                                                                        <div class="fi-input-wrp fi-fo-text-input" x-data="{ isPasswordRevealed: false }">
+                                                                            <div class="fi-input-wrp-content-ctn">
+                                                                                <input class="fi-input fi-revealable" id="ds-password" type="password" placeholder="********">
+                                                                            </div>
+                                                                            <div class="fi-input-wrp-suffix">
+                                                                                <div class="fi-input-wrp-actions">
+                                                                                    <button class="fi-icon-btn fi-size-sm fi-ac-icon-btn-action" title="Mostrar senha" aria-label="Mostrar senha" type="button">
+                                                                                        <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Checkbox -->
+                                                        <div class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                                                            <div class="fi-sc-component">
+                                                                <div data-field-wrapper="" class="fi-fo-field">
+                                                                    <div class="fi-fo-field-label-col">
+                                                                        <div class="fi-fo-field-label-ctn ">
+                                                                            <label for="ds-remember" class="fi-fo-field-label">
+                                                                                <input type="checkbox" class="fi-checkbox-input fi-valid" id="ds-remember">
+                                                                                <span class="fi-fo-field-label-content">
+                                                                                    Lembre de mim
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Button -->
+                                                        <div class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
+                                                            <div class="fi-sc-component">
+                                                                <div class="fi-sc-actions">
+                                                                    <div class="fi-ac fi-width-full">
+                                                                        <button class="fi-color fi-color-primary fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-900 hover:fi-text-color-900 dark:fi-text-color-900 dark:hover:fi-text-color-900 fi-btn fi-size-md fi-ac-btn-action w-full" type="button">
+                                                                            <span>Explorar Design System</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- 1) TYPOGRAPHY                             -->
+<!-- ========================================= -->
+<section id="typography" class="ds-section">
+    <h2 class="ds-section-title">Typography</h2>
+    <p class="ds-section-desc">
+        A tipografia do Orbit usa <strong>Poppins</strong> como font-family principal (via <code>--orbit-font-family</code>),
+        com fallback para <strong>Inter Variable</strong> do Filament. Os pesos disponíveis são 400 (normal), 500 (medium), 600 (semibold) e 700 (bold).
+    </p>
+
+    <table class="ds-typo-table">
+        <tbody>
+            <tr>
+                <td class="ds-typo-name">Heading 1</td>
+                <td class="ds-typo-preview"><span style="font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;">GeAD — Gestão de Avaliação Docente</span></td>
+                <td class="ds-typo-spec">32px / 38px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Heading 2</td>
+                <td class="ds-typo-preview"><span style="font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25;">Seção de Design System</span></td>
+                <td class="ds-typo-spec">28px / 35px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Heading 3</td>
+                <td class="ds-typo-preview"><span class="fi-section-header-heading" style="font-size: 1.25rem;">Título de Seção / Card</span></td>
+                <td class="ds-typo-spec">20px / 28px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Heading 4</td>
+                <td class="ds-typo-preview"><span style="font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em;">Subtítulo do Componente</span></td>
+                <td class="ds-typo-spec">17.6px / 24px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Bold M</td>
+                <td class="ds-typo-preview"><span style="font-size: 0.875rem; font-weight: 700;">Texto em negrito médio</span></td>
+                <td class="ds-typo-spec">14px / 20px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Bold S</td>
+                <td class="ds-typo-preview"><span style="font-size: 0.75rem; font-weight: 700;">Texto em negrito pequeno</span></td>
+                <td class="ds-typo-spec">12px / 16px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Regular M<br><small style="color:var(--orbit-text-muted);">(Body)</small></td>
+                <td class="ds-typo-preview"><span style="font-size: 0.875rem; font-weight: 400; color: var(--orbit-text-soft);">Texto padrão do corpo da aplicação — usado em campos, descrições e conteúdo geral.</span></td>
+                <td class="ds-typo-spec">14px / 20px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Regular S</td>
+                <td class="ds-typo-preview"><span style="font-size: 0.75rem; font-weight: 400; color: var(--orbit-text-muted);">Texto pequeno — badges, labels secundários e metadados.</span></td>
+                <td class="ds-typo-spec">12px / 16px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Label</td>
+                <td class="ds-typo-preview"><label class="fi-fo-field-label"><span class="fi-fo-field-label-content">Label de Formulário<sup class="fi-fo-field-label-required-mark">*</sup></span></label></td>
+                <td class="ds-typo-spec">14px / 20px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Link</td>
+                <td class="ds-typo-preview">
+                    <a href="#" class="fi-color fi-color-primary fi-text-color-900 dark:fi-text-color-400 fi-link fi-size-md" onclick="return false;">Link primário de exemplo</a>
+                </td>
+                <td class="ds-typo-spec">14px / 20px</td>
+            </tr>
+            <tr>
+                <td class="ds-typo-name">Monospace</td>
+                <td class="ds-typo-preview"><code style="font-family: var(--mono-font-family); font-size: 0.82rem; background: var(--orbit-panel-soft-bg); padding: 0.2rem 0.5rem; border-radius: 0.35rem;">--orbit-radius-card: 1rem</code></td>
+                <td class="ds-typo-spec">13px / 20px</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<!-- ========================================= -->
+<!-- 2) COLORS & SURFACES                      -->
+<!-- ========================================= -->
+<section id="colors" class="ds-section">
+    <h2 class="ds-section-title">Colors & Surfaces</h2>
+    <p class="ds-section-desc">
+        Paleta de cores do Orbit theme usando tokens OKLCH. Todas as cores são definidas via CSS custom properties
+        e suportam modo claro e escuro.
+    </p>
+
+    <!-- Primary -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Primary (Yellow-Green)</h3>
+        <div class="ds-swatches">
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-50);"></div><span class="ds-swatch-label">50</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-100);"></div><span class="ds-swatch-label">100</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-200);"></div><span class="ds-swatch-label">200</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-300);"></div><span class="ds-swatch-label">300</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-400);"></div><span class="ds-swatch-label">400</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-500);"></div><span class="ds-swatch-label">500</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-600);"></div><span class="ds-swatch-label">600</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-700);"></div><span class="ds-swatch-label">700</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-800);"></div><span class="ds-swatch-label">800</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-900);"></div><span class="ds-swatch-label">900</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--primary-950);"></div><span class="ds-swatch-label">950</span></div>
+        </div>
+    </div>
+
+    <!-- Gray -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Gray (Neutral)</h3>
+        <div class="ds-swatches">
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-50);"></div><span class="ds-swatch-label">50</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-100);"></div><span class="ds-swatch-label">100</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-200);"></div><span class="ds-swatch-label">200</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-300);"></div><span class="ds-swatch-label">300</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-400);"></div><span class="ds-swatch-label">400</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-500);"></div><span class="ds-swatch-label">500</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-600);"></div><span class="ds-swatch-label">600</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-700);"></div><span class="ds-swatch-label">700</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-800);"></div><span class="ds-swatch-label">800</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-900);"></div><span class="ds-swatch-label">900</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--gray-950);"></div><span class="ds-swatch-label">950</span></div>
+        </div>
+    </div>
+
+    <!-- Semantic Colors -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Semantic Colors</h3>
+        <div class="ds-swatches">
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-500);"></div><span class="ds-swatch-label">Danger</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-500);"></div><span class="ds-swatch-label">Success</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-500);"></div><span class="ds-swatch-label">Warning</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-500);"></div><span class="ds-swatch-label">Info</span></div>
+        </div>
+    </div>
+
+    <!-- Danger full scale -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Danger</h3>
+        <div class="ds-swatches">
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-50);"></div><span class="ds-swatch-label">50</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-100);"></div><span class="ds-swatch-label">100</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-200);"></div><span class="ds-swatch-label">200</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-300);"></div><span class="ds-swatch-label">300</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-400);"></div><span class="ds-swatch-label">400</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-500);"></div><span class="ds-swatch-label">500</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-700);"></div><span class="ds-swatch-label">700</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-900);"></div><span class="ds-swatch-label">900</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--danger-950);"></div><span class="ds-swatch-label">950</span></div>
+        </div>
+    </div>
+
+    <!-- Success full scale -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Success</h3>
+        <div class="ds-swatches">
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-50);"></div><span class="ds-swatch-label">50</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-100);"></div><span class="ds-swatch-label">100</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-200);"></div><span class="ds-swatch-label">200</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-300);"></div><span class="ds-swatch-label">300</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-400);"></div><span class="ds-swatch-label">400</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-500);"></div><span class="ds-swatch-label">500</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-700);"></div><span class="ds-swatch-label">700</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-900);"></div><span class="ds-swatch-label">900</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--success-950);"></div><span class="ds-swatch-label">950</span></div>
+        </div>
+    </div>
+
+    <!-- Warning full scale -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Warning</h3>
+        <div class="ds-swatches">
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-50);"></div><span class="ds-swatch-label">50</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-100);"></div><span class="ds-swatch-label">100</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-200);"></div><span class="ds-swatch-label">200</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-300);"></div><span class="ds-swatch-label">300</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-400);"></div><span class="ds-swatch-label">400</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-500);"></div><span class="ds-swatch-label">500</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-700);"></div><span class="ds-swatch-label">700</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-900);"></div><span class="ds-swatch-label">900</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--warning-950);"></div><span class="ds-swatch-label">950</span></div>
+        </div>
+    </div>
+
+    <!-- Info full scale -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Info</h3>
+        <div class="ds-swatches">
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-50);"></div><span class="ds-swatch-label">50</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-100);"></div><span class="ds-swatch-label">100</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-200);"></div><span class="ds-swatch-label">200</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-300);"></div><span class="ds-swatch-label">300</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-400);"></div><span class="ds-swatch-label">400</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-500);"></div><span class="ds-swatch-label">500</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-700);"></div><span class="ds-swatch-label">700</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-900);"></div><span class="ds-swatch-label">900</span></div>
+            <div class="ds-swatch"><div class="ds-swatch-color" style="background: var(--info-950);"></div><span class="ds-swatch-label">950</span></div>
+        </div>
+    </div>
+
+    <!-- Gradients -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Gradients</h3>
+        <div class="ds-gradient-row">
+            <div>
+                <div class="ds-gradient-swatch" style="background: var(--orbit-body-bg);"></div>
+                <span class="ds-gradient-label">Body BG — <code>--orbit-body-bg</code></span>
+            </div>
+            <div>
+                <div class="ds-gradient-swatch" style="background: var(--orbit-panel-bg);"></div>
+                <span class="ds-gradient-label">Panel BG — <code>--orbit-panel-bg</code></span>
+            </div>
+            <div>
+                <div class="ds-gradient-swatch" style="background: var(--orbit-card-bg);"></div>
+                <span class="ds-gradient-label">Card BG — <code>--orbit-card-bg</code></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Surfaces -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Surfaces</h3>
+        <div class="ds-surface-grid">
+            <div class="ds-surface-card" style="background: var(--orbit-body-bg);">
+                <span class="ds-surface-label">Body</span>
+            </div>
+            <div class="ds-surface-card" style="background: var(--orbit-panel-bg);">
+                <span class="ds-surface-label">Panel</span>
+            </div>
+            <div class="ds-surface-card" style="background: var(--orbit-card-bg);">
+                <span class="ds-surface-label">Card</span>
+            </div>
+            <div class="ds-surface-card" style="background: var(--orbit-card-bg-solid);">
+                <span class="ds-surface-label">Card Solid</span>
+            </div>
+            <div class="ds-surface-card" style="background: var(--orbit-card-muted-bg);">
+                <span class="ds-surface-label">Card Muted</span>
+            </div>
+            <div class="ds-surface-card" style="background: var(--orbit-panel-muted-bg);">
+                <span class="ds-surface-label">Panel Muted</span>
+            </div>
+            <div class="ds-surface-card" style="background: var(--orbit-panel-soft-bg);">
+                <span class="ds-surface-label">Panel Soft</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Borders -->
+    <div class="ds-color-group">
+        <h3 class="ds-color-group-title">Borders & Dividers</h3>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 32rem;">
+            <div>
+                <div style="height: 3rem; border: 1px solid var(--orbit-border-color); border-radius: var(--orbit-radius-card); display: flex; align-items: center; padding-left: 1rem;">
+                    <span class="ds-swatch-label">--orbit-border-color (#ffffff12)</span>
+                </div>
+            </div>
+            <div>
+                <div style="height: 3rem; border: 1px solid var(--orbit-border-light); border-radius: var(--orbit-radius-card); display: flex; align-items: center; padding-left: 1rem;">
+                    <span class="ds-swatch-label">--orbit-border-light (#ffffff05)</span>
+                </div>
+            </div>
+            <div>
+                <div style="height: 3rem; border: 1px solid var(--orbit-border-strong); border-radius: var(--orbit-radius-card); display: flex; align-items: center; padding-left: 1rem;">
+                    <span class="ds-swatch-label">--orbit-border-strong (#ffffff1f)</span>
+                </div>
+            </div>
+            <div>
+                <div style="border-top: 1px solid var(--orbit-border-color); padding-top: 0.75rem;">
+                    <span class="ds-swatch-label">Divider (border-top)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- 3) UI COMPONENTS                          -->
+<!-- ========================================= -->
+<section id="components" class="ds-section">
+    <h2 class="ds-section-title">UI Components</h2>
+    <p class="ds-section-desc">
+        Componentes reutilizáveis do Filament com o Orbit theme, usando as classes CSS originais.
+    </p>
+
+    <!-- Buttons -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Buttons</h3>
+        <div class="ds-component-row">
+            <!-- Primary Button - Default -->
+            <button class="fi-color fi-color-primary fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-900 hover:fi-text-color-900 dark:fi-text-color-900 dark:hover:fi-text-color-900 fi-btn fi-size-md fi-ac-btn-action" type="button">
+                <span>Primary Default</span>
+            </button>
+
+            <!-- Primary Button - Large -->
+            <button class="fi-color fi-color-primary fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-900 hover:fi-text-color-900 dark:fi-text-color-900 dark:hover:fi-text-color-900 fi-btn fi-size-lg fi-ac-btn-action" type="button">
+                <span>Primary Large</span>
+            </button>
+
+            <!-- Primary Button - Small -->
+            <button class="fi-color fi-color-primary fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-900 hover:fi-text-color-900 dark:fi-text-color-900 dark:hover:fi-text-color-900 fi-btn fi-size-sm fi-ac-btn-action" type="button">
+                <span>Primary Small</span>
+            </button>
+        </div>
+
+        <div class="ds-component-row">
+            <!-- Danger Button -->
+            <button class="fi-color fi-color-danger fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-50 hover:fi-text-color-50 dark:fi-text-color-50 dark:hover:fi-text-color-50 fi-btn fi-size-md fi-ac-btn-action" type="button">
+                <span>Danger</span>
+            </button>
+
+            <!-- Success Button -->
+            <button class="fi-color fi-color-success fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-50 hover:fi-text-color-50 dark:fi-text-color-50 dark:hover:fi-text-color-50 fi-btn fi-size-md fi-ac-btn-action" type="button">
+                <span>Success</span>
+            </button>
+
+            <!-- Warning Button -->
+            <button class="fi-color fi-color-warning fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-900 hover:fi-text-color-900 dark:fi-text-color-900 dark:hover:fi-text-color-900 fi-btn fi-size-md fi-ac-btn-action" type="button">
+                <span>Warning</span>
+            </button>
+
+            <!-- Info Button -->
+            <button class="fi-color fi-color-info fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-50 hover:fi-text-color-50 dark:fi-text-color-50 dark:hover:fi-text-color-50 fi-btn fi-size-md fi-ac-btn-action" type="button">
+                <span>Info</span>
+            </button>
+        </div>
+
+        <div class="ds-component-row">
+            <!-- Full Width Button -->
+            <div style="width: 24rem;">
+                <button class="fi-color fi-color-primary fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-900 hover:fi-text-color-900 dark:fi-text-color-900 dark:hover:fi-text-color-900 fi-btn fi-size-md fi-ac-btn-action w-full" type="button">
+                    <span>Botão Full Width</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="ds-component-row">
+            <!-- Icon Button -->
+            <button class="fi-icon-btn fi-size-sm fi-ac-icon-btn-action" title="Ação" aria-label="Ação" type="button">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+            </button>
+            <span style="color: var(--orbit-text-muted); font-size: 0.82rem;">← Icon Button (fi-icon-btn)</span>
+        </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Inputs</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 1.5rem;">
+
+            <!-- Default Input -->
+            <div data-field-wrapper="" class="fi-fo-field">
+                <div class="fi-fo-field-label-col">
+                    <div class="fi-fo-field-label-ctn">
+                        <label for="ds-input-default" class="fi-fo-field-label">
+                            <span class="fi-fo-field-label-content">Input Default</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="fi-fo-field-content-col">
+                    <div class="fi-input-wrp fi-fo-text-input">
+                        <div class="fi-input-wrp-content-ctn">
+                            <input class="fi-input" id="ds-input-default" type="text" placeholder="Placeholder text...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Focused Input (simulated with focus-within) -->
+            <div data-field-wrapper="" class="fi-fo-field">
+                <div class="fi-fo-field-label-col">
+                    <div class="fi-fo-field-label-ctn">
+                        <label for="ds-input-filled" class="fi-fo-field-label">
+                            <span class="fi-fo-field-label-content">Input com valor</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="fi-fo-field-content-col">
+                    <div class="fi-input-wrp fi-fo-text-input">
+                        <div class="fi-input-wrp-content-ctn">
+                            <input class="fi-input" id="ds-input-filled" type="text" value="iury@ifto.edu.br">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Input -->
+            <div data-field-wrapper="" class="fi-fo-field">
+                <div class="fi-fo-field-label-col">
+                    <div class="fi-fo-field-label-ctn">
+                        <label for="ds-input-error" class="fi-fo-field-label">
+                            <span class="fi-fo-field-label-content">Input com erro<sup class="fi-fo-field-label-required-mark">*</sup></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="fi-fo-field-content-col">
+                    <div class="fi-input-wrp fi-fo-text-input fi-invalid">
+                        <div class="fi-input-wrp-content-ctn">
+                            <input class="fi-input" id="ds-input-error" type="text" value="">
+                        </div>
+                    </div>
+                    <p style="color: var(--danger-500); font-size: 0.82rem; margin-top: 0.25rem;">O campo é obrigatório.</p>
+                </div>
+            </div>
+
+            <!-- Password Input with suffix icon -->
+            <div data-field-wrapper="" class="fi-fo-field">
+                <div class="fi-fo-field-label-col">
+                    <div class="fi-fo-field-label-ctn">
+                        <label for="ds-input-pass" class="fi-fo-field-label">
+                            <span class="fi-fo-field-label-content">Senha com ícone</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="fi-fo-field-content-col">
+                    <div class="fi-input-wrp fi-fo-text-input">
+                        <div class="fi-input-wrp-content-ctn">
+                            <input class="fi-input fi-revealable" id="ds-input-pass" type="password" value="password123">
+                        </div>
+                        <div class="fi-input-wrp-suffix">
+                            <div class="fi-input-wrp-actions">
+                                <button class="fi-icon-btn fi-size-sm fi-ac-icon-btn-action" title="Mostrar senha" aria-label="Mostrar senha" type="button">
+                                    <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Checkbox</h3>
+        <div class="ds-component-row">
+            <div data-field-wrapper="" class="fi-fo-field">
+                <div class="fi-fo-field-label-col">
+                    <div class="fi-fo-field-label-ctn ">
+                        <label for="ds-check-1" class="fi-fo-field-label">
+                            <input type="checkbox" class="fi-checkbox-input fi-valid" id="ds-check-1">
+                            <span class="fi-fo-field-label-content">Opção desmarcada</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div data-field-wrapper="" class="fi-fo-field">
+                <div class="fi-fo-field-label-col">
+                    <div class="fi-fo-field-label-ctn ">
+                        <label for="ds-check-2" class="fi-fo-field-label">
+                            <input type="checkbox" class="fi-checkbox-input fi-valid" id="ds-check-2" checked>
+                            <span class="fi-fo-field-label-content">Opção marcada</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Links</h3>
+        <div class="ds-component-row">
+            <a href="#" class="fi-color fi-color-primary fi-text-color-900 dark:fi-text-color-400 fi-link fi-size-md" onclick="return false;">Link Primary</a>
+            <a href="#" class="fi-color fi-color-danger fi-link fi-size-md" onclick="return false;">Link Danger</a>
+            <a href="#" class="fi-color fi-color-success fi-link fi-size-md" onclick="return false;">Link Success</a>
+            <a href="#" class="fi-color fi-color-warning fi-link fi-size-md" onclick="return false;">Link Warning</a>
+            <a href="#" class="fi-color fi-color-info fi-link fi-size-md" onclick="return false;">Link Info</a>
+            <a href="#" class="fi-color fi-color-gray fi-link fi-size-md" onclick="return false;">Link Gray</a>
+        </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Badges / Tags</h3>
+        <div class="ds-component-row">
+            <span class="inline-flex items-center rounded-md bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-300">🔒 Badge Dark</span>
+            <span class="inline-flex items-center rounded-md bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-300">🎓 Badge Ícone</span>
+            <span class="inline-flex items-center rounded-md bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-300">Tag Simples</span>
+        </div>
+    </div>
+
+    <!-- Card Panel -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Card / Panel (fi-simple-main)</h3>
+        <div style="max-width: 28rem;">
+            <div class="fi-simple-main" style="padding: 2rem;">
+                <p style="color: var(--orbit-text-soft); font-size: 0.875rem;">
+                    Este é um card <code>fi-simple-main</code> com o styling padrão do Orbit —
+                    borda arredondada (<code>1rem</code>), background gradient, shadow e backdrop-filter.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Component -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Section (fi-section)</h3>
+        <div style="max-width: 40rem;">
+            <section class="fi-section">
+                <header class="fi-section-header">
+                    <div class="fi-section-header-ctn">
+                        <div>
+                            <h3 class="fi-section-header-heading">Título da Seção</h3>
+                            <p class="fi-section-description">Descrição de exemplo para esta seção do layout.</p>
+                        </div>
+                    </div>
+                </header>
+                <div class="fi-section-content-ctn">
+                    <div class="fi-section-content">
+                        <p style="color: var(--orbit-text-soft); font-size: 0.875rem;">Conteúdo interno da seção. As seções usam <code>fi-section</code> com background gradient, border radius de 1rem, e box-shadow do Orbit.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Divider (OU)</h3>
+        <div style="max-width: 28rem;">
+            <div class="login-center-wrapper my-4 relative flex items-center" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                <div style="flex-grow: 1; border-top: 1px solid var(--orbit-border-color);"></div>
+                <span style="flex-shrink: 0; margin: 0 1rem; color: var(--orbit-text-muted); font-size: 0.875rem; font-weight: 500;">OU</span>
+                <div style="flex-grow: 1; border-top: 1px solid var(--orbit-border-color);"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- 4) LAYOUT & SPACING                       -->
+<!-- ========================================= -->
+<section id="layout" class="ds-section">
+    <h2 class="ds-section-title">Layout & Spacing</h2>
+    <p class="ds-section-desc">
+        O Orbit usa uma escala de spacing baseada em <code>0.25rem</code> (4px). Containeres, grids e seções
+        seguem os padrões de padding e gap do tema.
+    </p>
+
+    <!-- Radius Tokens -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Border Radius Tokens</h3>
+        <div class="ds-component-row">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <div style="width: 5rem; height: 5rem; background: var(--orbit-panel-soft-bg); border: 1px solid var(--orbit-border-color); border-radius: var(--orbit-radius-card);"></div>
+                <span class="ds-swatch-label">Card (1rem)</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <div style="width: 5rem; height: 5rem; background: var(--orbit-panel-soft-bg); border: 1px solid var(--orbit-border-color); border-radius: var(--orbit-radius-shell);"></div>
+                <span class="ds-swatch-label">Shell (1.2rem)</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <div style="width: 8rem; height: 3rem; background: var(--orbit-panel-soft-bg); border: 1px solid var(--orbit-border-color); border-radius: var(--orbit-radius-pill);"></div>
+                <span class="ds-swatch-label">Pill (2rem)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Layout Pattern -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Layout Pattern — Login (Centered Card)</h3>
+        <div class="ds-layout-demo" style="min-height: 18rem; display: flex; align-items: center; justify-content: center; background: var(--orbit-body-bg);">
+            <div style="width: 24rem; padding: 2rem; background: var(--orbit-card-bg); border-radius: var(--orbit-radius-card); box-shadow: var(--orbit-shadow-md); border: 1px solid var(--orbit-border-color);">
+                <div class="ds-layout-label">fi-simple-main fi-width-lg</div>
+                <div class="ds-spacing-box" style="height: 2rem; margin-bottom: 0.75rem;">Logo (8rem height)</div>
+                <div class="ds-spacing-box" style="height: 2rem; margin-bottom: 0.75rem;">Input field</div>
+                <div class="ds-spacing-box" style="height: 2rem; margin-bottom: 0.75rem;">Input field</div>
+                <div class="ds-spacing-box" style="height: 2rem;">Button (full-width)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid Pattern -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Layout Pattern — Grid (fi-grid)</h3>
+        <div class="ds-layout-demo">
+            <div class="ds-layout-label">fi-sc fi-sc-has-gap fi-grid — repeat(1, minmax(0, 1fr))</div>
+            <div style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1rem;">
+                <div class="ds-spacing-box" style="height: 3rem;">Grid Col — span 1/1</div>
+                <div class="ds-spacing-box" style="height: 3rem;">Grid Col — span 1/1</div>
+                <div class="ds-spacing-box" style="height: 3rem;">Grid Col — span 1/1</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacing Scale -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Spacing Scale (base: 0.25rem / 4px)</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; max-width: 40rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="ds-spacing-box" style="width: 1rem; height: 1.5rem;">4</div>
+                <span class="ds-swatch-label">1 unit = 0.25rem (4px)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="ds-spacing-box" style="width: 2rem; height: 1.5rem;">8</div>
+                <span class="ds-swatch-label">2 units = 0.5rem (8px)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="ds-spacing-box" style="width: 3rem; height: 1.5rem;">12</div>
+                <span class="ds-swatch-label">3 units = 0.75rem (12px)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="ds-spacing-box" style="width: 4rem; height: 1.5rem;">16</div>
+                <span class="ds-swatch-label">4 units = 1rem (16px)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="ds-spacing-box" style="width: 5rem; height: 1.5rem;">20</div>
+                <span class="ds-swatch-label">5 units = 1.25rem (20px) — fi-page gap</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="ds-spacing-box" style="width: 6rem; height: 1.5rem;">24</div>
+                <span class="ds-swatch-label">6 units = 1.5rem (24px) — fi-main padding</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shadow Tokens -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Shadows</h3>
+        <div class="ds-component-row">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <div style="width: 8rem; height: 5rem; background: var(--orbit-card-bg-solid); border-radius: var(--orbit-radius-card); box-shadow: var(--orbit-shadow-xs);"></div>
+                <span class="ds-swatch-label">XS</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <div style="width: 8rem; height: 5rem; background: var(--orbit-card-bg-solid); border-radius: var(--orbit-radius-card); box-shadow: var(--orbit-shadow-sm);"></div>
+                <span class="ds-swatch-label">SM</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <div style="width: 8rem; height: 5rem; background: var(--orbit-card-bg-solid); border-radius: var(--orbit-radius-card); box-shadow: var(--orbit-shadow-md);"></div>
+                <span class="ds-swatch-label">MD</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <div style="width: 8rem; height: 5rem; background: var(--orbit-card-bg-solid); border-radius: var(--orbit-radius-card); box-shadow: var(--orbit-shadow-lg);"></div>
+                <span class="ds-swatch-label">LG</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- 5) MOTION & INTERACTION                   -->
+<!-- ========================================= -->
+<section id="motion" class="ds-section">
+    <h2 class="ds-section-title">Motion & Interaction</h2>
+    <p class="ds-section-desc">
+        O Orbit theme utiliza transições suaves de 0.14s–0.18s com easing padrão do Tailwind.
+        Não há animações de entrada (scroll-reveal) na página de login — apenas transições de hover.
+    </p>
+
+    <div class="ds-motion-grid">
+        <!-- Button Hover -->
+        <div class="ds-motion-card">
+            <button class="fi-color fi-color-primary fi-bg-color-400 hover:fi-bg-color-300 dark:fi-bg-color-600 dark:hover:fi-bg-color-500 fi-text-color-900 hover:fi-text-color-900 dark:fi-text-color-900 dark:hover:fi-text-color-900 fi-btn fi-size-md fi-ac-btn-action" type="button">
+                <span>Hover me</span>
+            </button>
+            <p class="ds-motion-label">Button Hover<br>bg-color transition<br>0.14s ease</p>
+        </div>
+
+        <!-- Input Focus -->
+        <div class="ds-motion-card">
+            <div class="fi-input-wrp fi-fo-text-input" style="max-width: 16rem; margin: 0 auto;">
+                <div class="fi-input-wrp-content-ctn">
+                    <input class="fi-input" type="text" placeholder="Clique para focar...">
+                </div>
+            </div>
+            <p class="ds-motion-label">Input Focus<br>border-color + box-shadow<br>instant</p>
+        </div>
+
+        <!-- Icon Button Hover -->
+        <div class="ds-motion-card">
+            <button class="fi-icon-btn fi-size-sm fi-ac-icon-btn-action" title="Ação" type="button" style="margin: 0 auto;">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+            </button>
+            <p class="ds-motion-label">Icon Button<br>opacity + color<br>0.14s ease</p>
+        </div>
+
+        <!-- Link Hover -->
+        <div class="ds-motion-card">
+            <a href="#" class="fi-color fi-color-primary fi-text-color-900 dark:fi-text-color-400 fi-link fi-size-md" onclick="return false;">Hover neste link</a>
+            <p class="ds-motion-label">Link Hover<br>color transition<br>0.14s ease</p>
+        </div>
+
+        <!-- Checkbox Toggle -->
+        <div class="ds-motion-card">
+            <label class="fi-fo-field-label" style="cursor: pointer; justify-content: center;">
+                <input type="checkbox" class="fi-checkbox-input fi-valid">
+                <span class="fi-fo-field-label-content">Toggle me</span>
+            </label>
+            <p class="ds-motion-label">Checkbox<br>checked state<br>0.14s ease</p>
+        </div>
+
+        <!-- Logo Glow -->
+        <div class="ds-motion-card">
+            <div style="height: 4rem; display: flex; align-items: center; justify-content: center;">
+                <img src="http://localhost/images/logo.png" alt="GeAD" style="height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 0 12px rgba(250, 255, 229, 0.95)) drop-shadow(0 0 32px rgba(244, 255, 199, 0.75)) drop-shadow(0 0 60px rgba(229, 255, 138, 0.35)) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.65));">
+            </div>
+            <p class="ds-motion-label">Logo Glow<br>multi-layer drop-shadow<br>static effect</p>
+        </div>
+    </div>
+
+    <!-- Transition Tokens Table -->
+    <div style="margin-top: 2.5rem;">
+        <h3 class="ds-component-label">Transition Tokens</h3>
+        <table class="ds-typo-table" style="max-width: 40rem;">
+            <thead>
+                <tr style="border-bottom: 1px solid var(--orbit-border-strong);">
+                    <td class="ds-typo-name">Token</td>
+                    <td class="ds-typo-preview" style="font-size: 0.82rem; font-weight: 600;">Value</td>
+                    <td class="ds-typo-spec">Usage</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ds-typo-name">Duration</td>
+                    <td class="ds-typo-preview" style="font-size: 0.82rem;">0.14s – 0.18s</td>
+                    <td class="ds-typo-spec">Hover/focus</td>
+                </tr>
+                <tr>
+                    <td class="ds-typo-name">Easing</td>
+                    <td class="ds-typo-preview" style="font-size: 0.82rem;">cubic-bezier(0.4, 0, 0.2, 1)</td>
+                    <td class="ds-typo-spec">Default ease</td>
+                </tr>
+                <tr>
+                    <td class="ds-typo-name">Properties</td>
+                    <td class="ds-typo-preview" style="font-size: 0.82rem;">background-color, color, border-color, box-shadow, padding, width, opacity, transform</td>
+                    <td class="ds-typo-spec">Multi</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- ========================================= -->
+<!-- 6) ICONS                                  -->
+<!-- ========================================= -->
+<section id="icons" class="ds-section">
+    <h2 class="ds-section-title">Icons</h2>
+    <p class="ds-section-desc">
+        O Orbit usa ícones SVG inline do <strong>Phosphor Icons</strong> (formato 256×256, fill="currentColor").
+        Os tamanhos são controlados via classes <code>fi-icon fi-size-*</code>.
+    </p>
+
+    <!-- Size Variants -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Size Variants</h3>
+        <div class="ds-component-row" style="align-items: flex-end;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--orbit-text-color);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">fi-size-sm</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--orbit-text-color);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">fi-size-md</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--orbit-text-color);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">fi-size-lg</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Inheritance -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Color Inheritance</h3>
+        <div class="ds-component-row">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--orbit-text-color);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">Default</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--primary-500);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">Primary</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--danger-500);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">Danger</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--success-500);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">Success</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" style="color: var(--orbit-text-muted);"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-swatch-label">Muted</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icons from the page -->
+    <div class="ds-component-block">
+        <h3 class="ds-component-label">Icons Used in Login</h3>
+        <div class="ds-icons-grid">
+            <div class="ds-icon-item">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+                <span class="ds-icon-label">Eye (Show)</span>
+            </div>
+            <div class="ds-icon-item">
+                <svg class="fi-icon fi-size-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M53.92,34.62A8,8,0,1,0,42.08,45.38L61.32,66.55C25,88.84,9.38,123.2,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208a127.11,127.11,0,0,0,52.07-10.83l22,24.21a8,8,0,1,0,11.84-10.76Zm47.33,75.84,41.67,45.85a32,32,0,0,1-41.67-45.85ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.16,133.16,0,0,1,25,128c4.69-8.79,19.66-33.39,47.35-49.38l18,19.75a48,48,0,0,0,63.66,70l14.73,16.2A112,112,0,0,1,128,192Zm6-95.43a8,8,0,0,1,3-15.72,48.16,48.16,0,0,1,38.77,42.64,8,8,0,0,1-7.22,8.71,6.39,6.39,0,0,1-.75,0,8,8,0,0,1-8-7.26A32.09,32.09,0,0,0,134,96.57Zm113.28,34.69c-.42.94-10.55,23.37-33.36,43.8a8,8,0,1,1-10.67-11.92A132.77,132.77,0,0,0,231.05,128a133.15,133.15,0,0,0-23.12-30.77C185.67,75.19,158.78,64,128,64a118.37,118.37,0,0,0-19.36,1.57A8,8,0,1,1,106,49.79,134,134,0,0,1,128,48c34.88,0,66.57,13.26,91.66,38.35,18.83,18.83,27.3,37.62,27.65,38.41A8,8,0,0,1,247.31,131.26Z"></path></svg>
+                <span class="ds-icon-label">Eye Slash (Hide)</span>
+            </div>
+            <div class="ds-icon-item">
+                <svg class="fi-icon fi-size-md" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color: var(--orbit-text-color);"><path clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill-rule="evenodd" fill="currentColor" opacity="0.2"></path><path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path></svg>
+                <span class="ds-icon-label">Loading Spinner</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== Footer ===== -->
+<footer style="text-align: center; padding: 3rem 1rem 2rem; color: var(--orbit-text-muted); font-size: 0.78rem; border-top: 1px solid var(--orbit-border-color);">
+    Design System gerado automaticamente a partir do <strong>Orbit Theme</strong> do <strong>GeAD</strong>.<br>
+    Baseado em Filament v5 + Orbit Theme v1.1.3 • Poppins + Inter Variable • Dark Mode
+</footer>
+
+</body>
+</html>

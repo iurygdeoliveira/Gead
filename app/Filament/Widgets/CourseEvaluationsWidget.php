@@ -42,6 +42,11 @@ class CourseEvaluationsWidget extends Widget
 
         // Potential calculation based on class enrollments and course class disciplines
         $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
+            ->whereHas('enrollment.student', function ($query) {
+                $query->whereDoesntHave('enrollments', function ($q) {
+                    $q->whereDoesntHave('classEnrollments');
+                });
+            })
             ->selectRaw('course_class_id, count(*) as total')
             ->groupBy('course_class_id')
             ->pluck('total', 'course_class_id');
@@ -59,6 +64,11 @@ class CourseEvaluationsWidget extends Widget
         $evaluations = Evaluation::where('team_id', $teamId)
             ->whereHas('courseClassDiscipline.courseClass', function ($query) {
                 $query->where('course_id', $this->courseId);
+            })
+            ->whereHas('classEnrollment.enrollment.student', function ($query) {
+                $query->whereDoesntHave('enrollments', function ($q) {
+                    $q->whereDoesntHave('classEnrollments');
+                });
             })
             ->get();
 

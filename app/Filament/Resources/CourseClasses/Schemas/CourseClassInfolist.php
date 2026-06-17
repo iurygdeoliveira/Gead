@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CourseClasses\Schemas;
 
+use App\Models\ClassEnrollment;
 use App\Models\Enrollment;
 use App\Models\Teacher;
 use Filament\Forms\Components\Repeater\TableColumn;
@@ -37,27 +38,30 @@ class CourseClassInfolist
                                 RepeatableEntry::make('enrolled_students')
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
-                                        return Enrollment::query()
-                                            ->where('course_id', $record->course_id)
-                                            ->where('entry_period', $record->entry_period)
-                                            ->with('student')
+                                        return ClassEnrollment::query()
+                                            ->where('course_class_id', $record->id)
+                                            ->with(['enrollment.student'])
                                             ->get()
-                                            ->sortBy('student.name', SORT_NATURAL | SORT_FLAG_CASE);
+                                            ->map(function ($classEnrollment) {
+                                                return [
+                                                    'name' => $classEnrollment->enrollment?->student?->name ?? '-',
+                                                    'registration_number' => $classEnrollment->enrollment?->registration_number ?? '-',
+                                                    'email' => $classEnrollment->enrollment?->student?->email ?? '-',
+                                                ];
+                                            })
+                                            ->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE);
                                     })
                                     ->table([
                                         TableColumn::make('Nome do Aluno'),
-                                        TableColumn::make('E-mail'),
                                         TableColumn::make('Matrícula'),
-                                        TableColumn::make('Período de Ingresso'),
+                                        TableColumn::make('E-mail'),
                                     ])
                                     ->schema([
-                                        TextEntry::make('student.name')
-                                            ->hiddenLabel(),
-                                        TextEntry::make('student.email')
+                                        TextEntry::make('name')
                                             ->hiddenLabel(),
                                         TextEntry::make('registration_number')
                                             ->hiddenLabel(),
-                                        TextEntry::make('entry_period')
+                                        TextEntry::make('email')
                                             ->hiddenLabel(),
                                     ]),
                             ]),

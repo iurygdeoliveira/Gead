@@ -43,7 +43,13 @@ class GenerateEvaluationsWidget extends Widget
         // Fetch all class enrollments for the campus
         $classEnrollments = ClassEnrollment::whereHas('courseClass', function ($query) use ($teamId) {
             $query->where('team_id', $teamId);
-        })->get();
+        })
+        ->whereHas('enrollment.student', function ($query) {
+            $query->whereDoesntHave('enrollments', function ($q) {
+                $q->whereDoesntHave('classEnrollments');
+            });
+        })
+        ->get();
 
         // Fetch all course class disciplines
         $courseClassDisciplines = CourseClassDiscipline::all()->groupBy('course_class_id');

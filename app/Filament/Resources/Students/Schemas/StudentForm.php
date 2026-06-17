@@ -15,6 +15,7 @@ class StudentForm
                 Section::make('Dados do Aluno')
                     ->description('Informações básicas do aluno.')
                     ->columns(2)
+                    ->columnSpanFull()
                     ->components([
                         TextInput::make('name')
                             ->label('Nome Completo')
@@ -28,6 +29,7 @@ class StudentForm
                     ]),
                 Section::make('Matrículas no SUAP')
                     ->description('Vínculos do aluno com cursos e turmas.')
+                    ->columnSpanFull()
                     ->components([
                         \Filament\Forms\Components\Repeater::make('enrollments')
                             ->relationship()

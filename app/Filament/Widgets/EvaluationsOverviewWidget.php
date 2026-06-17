@@ -36,6 +36,11 @@ class EvaluationsOverviewWidget extends BaseWidget
         $classIds = $courseClasses->pluck('id')->toArray();
 
         $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
+            ->whereHas('enrollment.student', function ($query) {
+                $query->whereDoesntHave('enrollments', function ($q) {
+                    $q->whereDoesntHave('classEnrollments');
+                });
+            })
             ->selectRaw('course_class_id, count(*) as total')
             ->groupBy('course_class_id')
             ->pluck('total', 'course_class_id');
@@ -50,7 +55,13 @@ class EvaluationsOverviewWidget extends BaseWidget
             $totalPotential += ($enrollmentCountsByClass[$classId] ?? 0) * ($disciplineCountsByClass[$classId] ?? 0);
         }
 
-        $evaluations = Evaluation::where('team_id', $teamId)->get();
+        $evaluations = Evaluation::where('team_id', $teamId)
+            ->whereHas('classEnrollment.enrollment.student', function ($query) {
+                $query->whereDoesntHave('enrollments', function ($q) {
+                    $q->whereDoesntHave('classEnrollments');
+                });
+            })
+            ->get();
 
         $realizadas = $evaluations->whereNotNull('planning_score')->count();
 
