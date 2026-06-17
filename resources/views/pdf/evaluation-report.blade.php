@@ -54,6 +54,7 @@
 <body>
 
     <div class="header">
+        <img src="{{ $data['logo_src'] }}" style="height: 80px; display: block; margin: 0 auto 10px auto;">
         <h2>MINISTÉRIO DA EDUCAÇÃO</h2>
         <h2>SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA</h2>
         <h2>INSTITUTO FEDERAL DO TOCANTINS CAMPUS ARAGUAÍNA</h2>
@@ -63,16 +64,17 @@
 
     <div class="info-section">
         <p>Docente: {{ $data['teacher_name'] }}</p>
+        <p>SIAPE: {{ $data['teacher_siape'] }}</p>
         <p>AVALIAÇÃO DISCENTE {{ $data['period'] }}</p>
         <br>
-        <p>Avaliação:</p>
+        <p>Disciplinas:</p>
     </div>
 
     @foreach($data['disciplines'] as $discipline)
     <table class="evaluation-table">
         <thead>
             <tr>
-                <th>{{ $discipline['course_name'] }} - {{ $discipline['discipline_name'] }} (Avaliações: {{ $discipline['total_evaluations'] }})</th>
+                <th>{{ $discipline['course_name'] }} - {{ $discipline['discipline_name'] }}</th>
                 <th class="text-center" style="width: 80px;">Média</th>
             </tr>
         </thead>
@@ -101,16 +103,16 @@
                 <td>O docente nas AVALIAÇÕES mostra coerência entre o que foi ensinado e o que é exigido do estudante, entrega as avaliações e comenta os resultados, auxilia no processo de recuperação daqueles conteúdos não apreendidos?</td>
                 <td class="text-center">{{ number_format($discipline['assessment_avg'], 2, ',', '.') }}</td>
             </tr>
-            <tr>
-                <td class="font-bold text-center">PONTUAÇÃO DA TURMA (SOMATÓRIA DAS MÉDIAS DIVIDIDO POR DOIS)</td>
-                <td class="text-center font-bold">{{ number_format($discipline['class_score'], 2, ',', '.') }}</td>
-            </tr>
+
         </tbody>
     </table>
     @endforeach
 
     @if(count($data['disciplines']) > 0)
-    <div style="margin-top: 30px; border-top: 2px solid #000; padding-top: 10px;">
+    <div style="margin-top: 20px; border-top: 1px solid #000; padding-top: 10px;">
+        <h3 class="font-bold">PONTUAÇÃO DA TURMA (SOMATÓRIA DAS MÉDIAS DIVIDIDO POR DOIS) <span style="float: right;">{{ number_format($data['consolidated_score'], 2, ',', '.') }}</span></h3>
+    </div>
+    <div style="margin-top: 10px; border-top: 2px solid #000; padding-top: 10px;">
         <h3 class="font-bold">MÉDIA DA PONTUAÇÃO DAS TURMAS CONSOLIDADO- RESULTADO FINAL <span style="float: right;">{{ number_format($data['consolidated_score'], 2, ',', '.') }}</span></h3>
     </div>
     @else

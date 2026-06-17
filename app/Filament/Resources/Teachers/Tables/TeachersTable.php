@@ -121,11 +121,16 @@ class TeachersTable
         $managerName = $managerUser ? $managerUser->name : 'Walmir (Gerente)';
         $managerSiape = $managerTeacher ? $managerTeacher->registration_number : 'Não informado';
 
+        $logoPath = public_path('images/brasao.png');
+        $logoSrc = 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath));
+
         $data = [
             'teacher_name' => $teacherName,
+            'teacher_siape' => $record->registration_number ?? 'Não informado',
             'period' => '2026.1',
             'disciplines' => $disciplinesData,
             'consolidated_score' => $consolidatedScore,
+            'logo_src' => $logoSrc,
             'manager_name' => $managerName,
             'manager_siape' => $managerSiape,
         ];
