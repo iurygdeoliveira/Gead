@@ -19,6 +19,8 @@ class CourseEvaluationsWidget extends Widget
 
     public ?int $courseId = null;
 
+    public ?string $courseName = null;
+
     public static function canView(): bool
     {
         return filament()->getCurrentPanel()?->getId() === 'manager';
@@ -32,9 +34,13 @@ class CourseEvaluationsWidget extends Widget
             return [];
         }
 
-        $course = Course::where('id', $this->courseId)->where('team_id', $teamId)->first();
-        if (! $course) {
-            return [];
+        $courseName = $this->courseName;
+        if (! $courseName) {
+            $course = Course::where('id', $this->courseId)->where('team_id', $teamId)->first();
+            if (! $course) {
+                return [];
+            }
+            $courseName = $course->name;
         }
 
         $courseClasses = CourseClass::where('course_id', $this->courseId)->where('team_id', $teamId)->get();
@@ -43,6 +49,12 @@ class CourseEvaluationsWidget extends Widget
         // Potential calculation based on class enrollments and course class disciplines
         $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
             ->whereHas('enrollment.student', function ($query) {
+                $query->where(function ($subQuery) {
+                    $subQuery->whereNull('user_id')
+                        ->orWhereHas('user', function ($q) {
+                            $q->where('is_suspended', false);
+                        });
+                });
                 $query->whereDoesntHave('enrollments', function ($q) {
                     $q->whereDoesntHave('classEnrollments');
                 });
@@ -66,6 +78,12 @@ class CourseEvaluationsWidget extends Widget
                 $query->where('course_id', $this->courseId);
             })
             ->whereHas('classEnrollment.enrollment.student', function ($query) {
+                $query->where(function ($subQuery) {
+                    $subQuery->whereNull('user_id')
+                        ->orWhereHas('user', function ($q) {
+                            $q->where('is_suspended', false);
+                        });
+                });
                 $query->whereDoesntHave('enrollments', function ($q) {
                     $q->whereDoesntHave('classEnrollments');
                 });
@@ -81,7 +99,7 @@ class CourseEvaluationsWidget extends Widget
         $divider = $total > 0 ? $total : 1;
 
         return [
-            'name' => $course->name,
+            'name' => $courseName,
             'realizadas' => $realizadas,
             'realizadas_pct' => ($realizadas / $divider) * 100,
             'nao_realizadas' => $naoRealizadas,

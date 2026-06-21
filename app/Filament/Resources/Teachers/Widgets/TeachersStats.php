@@ -18,11 +18,38 @@ class TeachersStats extends BaseWidget
             $query->where('team_id', $currentTeam->getKey());
         }
 
+        $teachers = $query->with('taughtDisciplines')->get();
+        $totalTeachers = $teachers->count();
+
+        $completas = 0;
+        $incompletas = 0;
+
+        foreach ($teachers as $teacher) {
+            $status = $teacher->getEvaluationsCompletionStatus();
+            if ($status['expected'] > 0) {
+                if ($status['completed'] === $status['expected']) {
+                    $completas++;
+                } else {
+                    $incompletas++;
+                }
+            }
+        }
+
         return [
-            Stat::make('Total de Professores', $query->count())
+            Stat::make('Total de Professores', $totalTeachers)
                 ->description('Professores cadastrados neste campus')
                 ->descriptionIcon('heroicon-m-users')
                 ->color('primary'),
+
+            Stat::make('Professores com Avaliações Completas', $completas)
+                ->description('Todas as turmas responderam')
+                ->descriptionIcon('heroicon-m-check-circle')
+                ->color('success'),
+
+            Stat::make('Professores com Avaliações Incompletas', $incompletas)
+                ->description('Possuem turmas com avaliações pendentes')
+                ->descriptionIcon('heroicon-m-x-circle')
+                ->color('danger'),
         ];
     }
 }

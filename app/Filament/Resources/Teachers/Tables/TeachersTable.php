@@ -22,7 +22,7 @@ class TeachersTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn (Builder $query) => $query->with('user'))
+            ->modifyQueryUsing(fn (Builder $query) => $query->with(['user', 'taughtDisciplines']))
             ->defaultSort('name')
             ->columns([
                 TextColumn::make('name')
@@ -33,6 +33,13 @@ class TeachersTable
                     ->label('SIAPE')
                     ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable()
+                    ->alignCenter(),
+                TextColumn::make('evaluations_status')
+                    ->label('Avaliações')
+                    ->getStateUsing(function (\App\Models\Teacher $record) {
+                        $status = $record->getEvaluationsCompletionStatus();
+                        return "{$status['completed']} / {$status['expected']}";
+                    })
                     ->alignCenter(),
             ])
             ->filters([

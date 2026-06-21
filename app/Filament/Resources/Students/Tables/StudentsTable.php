@@ -83,7 +83,7 @@ class StudentsTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                   // DeleteBulkAction::make(),
                     ChangeStudentAccessStatusBulkAction::make(),
                 ]),
             ]);

@@ -18,11 +18,38 @@ class CoursesStats extends BaseWidget
             $query->where('team_id', $currentTeam->getKey());
         }
 
+        $courses = $query->get();
+        $totalCourses = $courses->count();
+
+        $completas = 0;
+        $incompletas = 0;
+
+        foreach ($courses as $course) {
+            $status = $course->getEvaluationsCompletionStatus();
+            if ($status['expected'] > 0) {
+                if ($status['completed'] === $status['expected']) {
+                    $completas++;
+                } else {
+                    $incompletas++;
+                }
+            }
+        }
+
         return [
-            Stat::make('Total de Cursos', $query->count())
+            Stat::make('Total de Cursos', $totalCourses)
                 ->description('Cursos cadastrados neste campus')
-                ->descriptionIcon('heroicon-m-users')
+                ->descriptionIcon('heroicon-m-academic-cap')
                 ->color('primary'),
+
+            Stat::make('Cursos com Avaliações Completas', $completas)
+                ->description('Avaliações Completas')
+                ->descriptionIcon('heroicon-m-check-circle')
+                ->color('success'),
+
+            Stat::make('Cursos com Avaliações Incompletas', $incompletas)
+                ->description('Avaliações Pendentes')
+                ->descriptionIcon('heroicon-m-x-circle')
+                ->color('danger'),
         ];
     }
 }

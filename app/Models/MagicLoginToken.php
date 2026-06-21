@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -7,8 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class MagicLoginToken extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'email',
+        'token',
+        'expires_at',
+    ];
 
+    /** @return array<string, string> */
     protected function casts(): array
     {
         return [

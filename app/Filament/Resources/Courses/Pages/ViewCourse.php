@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Courses\Pages;
 
 use App\Filament\Resources\Courses\CourseResource;
 use Filament\Actions\EditAction;
+use Filament\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewCourse extends ViewRecord
@@ -13,6 +14,11 @@ class ViewCourse extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
+            Action::make('back')
+                ->label('Voltar')
+                ->icon('heroicon-m-arrow-left')
+                ->color('gray')
+                ->url(fn () => static::getResource()::getUrl('index')),
             EditAction::make(),
         ];
     }

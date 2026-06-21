@@ -37,21 +37,21 @@ class TeamSyncMiddleware
             return $next($request);
         }
 
-        $routeTeamSlug = (string) ($request->route('tenant') ?? '');
-
-        if ($routeTeamSlug !== '') {
-            $routeTeam = Team::query()->where('slug', $routeTeamSlug)->first();
-
-            if ($routeTeam instanceof Team && $user->canAccessTenant($routeTeam)) {
-                $this->applyTeam($user, $routeTeam->getKey());
-
-                return $next($request);
-            }
-        }
-
         $currentTeam = Filament::getTenant();
 
         if ($currentTeam === null) {
+            $routeTeamSlug = (string) ($request->route('tenant') ?? '');
+
+            if ($routeTeamSlug !== '') {
+                $routeTeam = Team::query()->where('slug', $routeTeamSlug)->first();
+
+                if ($routeTeam instanceof Team && $user->canAccessTenant($routeTeam)) {
+                    $this->applyTeam($user, $routeTeam->getKey());
+
+                    return $next($request);
+                }
+            }
+
             /** @var Team|null $fallback */
             $fallback = $user->teams()
                 ->where('is_active', true)

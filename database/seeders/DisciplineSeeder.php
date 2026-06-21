@@ -25,7 +25,7 @@ class DisciplineSeeder extends Seeder
             ]);
         }
 
-        $csvPath = database_path('seeders/dados de seed/diarios.csv');
+        $csvPath = database_path('seeders/dados de seed/diarios_2026.1.csv');
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo não encontrado: {$csvPath}");

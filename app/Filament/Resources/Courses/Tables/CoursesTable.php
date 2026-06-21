@@ -21,6 +21,13 @@ class CoursesTable
                     ->sortable()
                     ->label('Nome')
                     ->wrap(),
+                TextColumn::make('evaluations_status')
+                    ->label('Avaliações')
+                    ->getStateUsing(function (\App\Models\Course $record) {
+                        $status = $record->getEvaluationsCompletionStatus();
+                        return "{$status['completed']} / {$status['expected']}";
+                    })
+                    ->alignCenter(),
             ])
             ->filters([
                 //

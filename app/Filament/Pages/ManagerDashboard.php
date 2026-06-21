@@ -34,6 +34,7 @@ class ManagerDashboard extends BaseDashboard
             foreach ($courses as $course) {
                 $widgets[] = CourseEvaluationsWidget::make([
                     'courseId' => $course->id,
+                    'courseName' => $course->name,
                 ]);
             }
         }

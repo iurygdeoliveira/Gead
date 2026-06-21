@@ -26,12 +26,12 @@ class CourseSeeder extends Seeder
 
         $files = [
             [
-                'path' => database_path('seeders/dados de seed/base de alunos.csv'),
+                'path' => database_path('seeders/dados de seed/Base_de_alunos_2026.1.csv'),
                 'code_idx' => 4,
                 'name_idx' => 5,
             ],
             [
-                'path' => database_path('seeders/dados de seed/diarios.csv'),
+                'path' => database_path('seeders/dados de seed/diarios_2026.1.csv'),
                 'code_idx' => 6,
                 'name_idx' => 7,
             ],

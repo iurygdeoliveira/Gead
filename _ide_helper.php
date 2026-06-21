@@ -26300,10 +26300,10 @@ namespace Flux {
         /**
          * @static
          */
-        public static function toast($text, $heading = null, $duration = 5000, $variant = null, $position = null)
+        public static function toast($text, $heading = null, $duration = 5000, $variant = null, $position = null, $link = null)
         {
             /** @var \Flux\FluxManager $instance */
-            return $instance->toast($text, $heading, $duration, $variant, $position);
+            return $instance->toast($text, $heading, $duration, $variant, $position, $link);
         }
 
             }

@@ -1,0 +1,890 @@
+#,Matrícula,Nome,Campus,Código Curso,Descrição do Curso,Situação no Curso,Situação no Período,Turma,email
+1,202612130030,Aira Pereira Sabóia,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,aira.saboia@estudante.ifto.edu.br
+2,202512130071,Alleck Moura Feitosa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,alleck.feitosa@estudante.ifto.edu.br
+3,202512130021,ALVARO BRANDAO OLIVEIRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,alvaro.oliveira2@estudante.ifto.edu.br
+4,202412130001,Alvaro Lucas Araujo Delmond,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,alvaro.delmond@estudante.ifto.edu.br
+5,202512130049,AMANDA CRISTYNA ALVES MOURÃO,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,amanda.mourao2@estudante.ifto.edu.br
+6,202512130033,AMANDA RIBEIRO ANDRADE,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,amanda.andrade2@estudante.ifto.edu.br
+7,202312130026,Ana Beatriz Nascimento Resplandes de Araújo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,ana.ara19@estudante.ifto.edu.br
+8,202412130066,ANA CLARA LEITE DA SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,ana.silva191@estudante.ifto.edu.br
+9,202512130031,ANA CRISTINA SOUSA PEREIRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,ana.pereira24@estudante.ifto.edu.br
+10,202412130034,Ana Káren Grangeiro Marques dos Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,ana.santos103@estudante.ifto.edu.br
+11,202612130034,Ana Laura Oliveira Alves,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,ana.alves22@estudante.ifto.edu.br
+12,202412130070,Ana Laura Sara Guedes de Carvalho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,ana.carvalho26@estudante.ifto.edu.br
+13,202512130011,Ana Luisa Rodrigues Miranda,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,ana.miranda5@estudante.ifto.edu.br
+14,202612130016,André Felipe Sales de Castro,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,andre.castro3@estudante.ifto.edu.br
+15,202612130066,Anna Clara Sousa Santana,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,anna.santana2@estudante.ifto.edu.br
+16,202512130054,Antonio Henrique Sousa Alves,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,antonio.alves@estudante.ifto.edu.br
+17,202312130001,ARTHUR CARREIRO DE AZEVEDO,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,arthur.azevedo@estudante.ifto.edu.br
+18,202512130035,Arthur Miranda Carvalho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,arthur.carvalho3@estudante.ifto.edu.br
+19,202512130062,Aurielly Carneiro Mendes,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,aurielly.mendes@estudante.ifto.edu.br
+20,202612130002,Bernardo Coelho Ribeiro,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,bernardo.ribeiro@estudante.ifto.edu.br
+21,202612130015,Bianca Maria Rodrigues Hashimoto,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,bianca.hashimoto@estudante.ifto.edu.br
+22,202612130042,CALEBE SANTANA CHAVES,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,calebe.chaves@estudante.ifto.edu.br
+23,202412130052,Carlos Eduardo Santos de Sousa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,carlos.sousa20@estudante.ifto.edu.br
+24,202412130044,Cecília Alcântara Mendes Lima de Araujo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,cecilia.araujo2@estudante.ifto.edu.br
+25,202512130070,Christian Rios Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,christian.santos3@estudante.ifto.edu.br
+26,202512130019,Danilo Gonçalves Araujo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,danilo.araujo3@estudante.ifto.edu.br
+27,202612130029,Davi Dias Marinho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,davi.marinho@estudante.ifto.edu.br
+28,202512130029,DAVI MONTEIRO DA SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,davi.silva19@estudante.ifto.edu.br
+29,202612130033,Davi Pinheiro Dantas,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,davi.dantas@estudante.ifto.edu.br
+30,202612130041,Davi Soares Andrade Couto,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,davi.couto@estudante.ifto.edu.br
+31,202412130005,DIOGO ARAUJO NUNES,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,diogo.nunes@estudante.ifto.edu.br
+32,202512130007,Edilana Silva Oliveira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,edilana.oliveira@estudante.ifto.edu.br
+33,202612130069,EDUARDA SOUSA RIBEIRO,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,eduarda.ribeiro3@estudante.ifto.edu.br
+34,202412130014,Emanuel Araújo Alves,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,emanuel.alves@estudante.ifto.edu.br
+35,202512130020,Emanuel Oliveira Mendes,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,emanuel.mendes@estudante.ifto.edu.br
+36,202612130057,EVELYN AIRES GONÇALVES MAFRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,evelyn.mafra@estudante.ifto.edu.br
+37,202612130073,FELLIPE GOMES DA SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,fellipe.silva@estudante.ifto.edu.br
+38,202512130074,Francisco Wemeson de Sá Oliveira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,francisco.oliveira8@estudante.ifto.edu.br
+39,202412130067,Franciwelley Gonçalves Alves,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,franciwelley.alves@estudante.ifto.edu.br
+40,202512130052,Gabriela Lima Teixeira da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,gabriela.silva23@estudante.ifto.edu.br
+41,202412130026,GABRIEL DA COSTA SOUSA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,gabriel.sousa19@estudante.ifto.edu.br
+42,202412130061,GABRIEL SAMPAIO DE SOUSA TEIXEIRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,gabriel.teixeira7@estudante.ifto.edu.br
+43,202512130069,Gabriel Santos Rocha,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,gabriel.rocha9@estudante.ifto.edu.br
+44,202512130018,GABRIEL SIMÕES FERREIRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,gabriel.ferreira10@estudante.ifto.edu.br
+45,202612130028,Gabriel Sousa da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,gabriel.silva69@estudante.ifto.edu.br
+46,202612130040,GABRIEL VITOR ANDRADE BITTENCOURT,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,gabriel.bittencourt@estudante.ifto.edu.br
+47,202512130036,Gabryella Araujo Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,gabryella.silva2@estudante.ifto.edu.br
+48,202412130018,GEOVANA ESTER CAMPOS QUEIROZ,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,geovana.queiroz@estudante.ifto.edu.br
+49,202412130030,Glória Lira de Oliveira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,gloria.oliveira@estudante.ifto.edu.br
+50,202512130051,Guilherme Honorato Resplandes,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,guilherme.resplandes@estudante.ifto.edu.br
+51,202612130026,Guilherme Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,guilherme.silva33@estudante.ifto.edu.br
+52,202512130026,Gustavo Ferreira Dias,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,gustavo.dias@estudante.ifto.edu.br
+53,202612130031,Gustavo Vinicius Oliveira Brandão,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,gustavo.brandao2@estudante.ifto.edu.br
+54,202412130046,HAILLA VITORIA SOARES CABRAL,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,hailla.cabral@estudante.ifto.edu.br
+55,202512130065,Heric José Silva Ornelas,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,heric.ornelas@estudante.ifto.edu.br
+56,202612130038,HUGO PEREIRA DA SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,hugo.silva16@estudante.ifto.edu.br
+57,202412130064,Ian Gutieres Tupinambá Ferreira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,ian.ferreira@estudante.ifto.edu.br
+58,202412130028,Ily Vitória da Luz Soares,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,ily.soares@estudante.ifto.edu.br
+59,202512130005,ISAAC FREITAS PAJEÚ,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,isaac.pajeu@estudante.ifto.edu.br
+60,202612130061,Isabela Cristine Silva da Costa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,isabela.costa2@estudante.ifto.edu.br
+61,202512130047,ISAC RIBEIRO DA SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,isac.silva3@estudante.ifto.edu.br
+62,202512130045,ISADORA RESPLANDES SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,isadora.silva8@estudante.ifto.edu.br
+63,202412130043,ISADORA RIBEIRO,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,isadora.ribeiro3@estudante.ifto.edu.br
+64,202612130004,Isaias Soares Costa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,isaias.costa@estudante.ifto.edu.br
+65,202612130055,Jheymes Luis Ferreira Brito,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,jheymes.brito@estudante.ifto.edu.br
+66,202412130012,João Antonio Costa Resende,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,joao.resende2@estudante.ifto.edu.br
+67,202512130015,João Antonio Cruz da Silva Resende,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,joao.resende4@estudante.ifto.edu.br
+68,202612130006,JOÃO ARTHUR LOPES PEDROSA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,joao.pedrosa@estudante.ifto.edu.br
+69,202612130014,João Gabriel Costa de Almeida,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,joao.almeida14@estudante.ifto.edu.br
+70,202612130071,João Gabriel Ferreira Castro,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,joao.castro11@estudante.ifto.edu.br
+71,202512130064,João Gabriel Nunes de Carvalho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,joao.carvalho22@estudante.ifto.edu.br
+72,202412130017,João Gabryel Dias Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,joao.santos53@estudante.ifto.edu.br
+73,202412130047,João Guilherme Ferraz de Sousa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,joao.sousa43@estudante.ifto.edu.br
+74,202612130043,João Guilherme Martins Cardoso,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,joao.cardoso5@estudante.ifto.edu.br
+75,202412130023,João Paulo Sousa Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,joao.silva109@estudante.ifto.edu.br
+76,202412130015,JOÃO PEDRO ALVES DE OLIVEIRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,joao.oliveira40@estudante.ifto.edu.br
+77,202612130058,João Pedro Costa Araújo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,joao.araujo28@estudante.ifto.edu.br
+78,202612130008,João Pedro Medeiros Leonez,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,joao.leonez@estudante.ifto.edu.br
+79,202612130035,Jônatas Rodrigues Zaniboni,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,jonatas.zaniboni@estudante.ifto.edu.br
+80,202412130062,Jorge Davi Guedes Cavalcante,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,jorge.cavalcante@estudante.ifto.edu.br
+81,202512130037,José Artur Sousa Gaspar,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,jose.gaspar2@estudante.ifto.edu.br
+82,202612130023,Júlia Martins Lima,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,julia.lima7@estudante.ifto.edu.br
+83,202612130036,Juliana Fernandes Lustosa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,juliana.lustosa@estudante.ifto.edu.br
+84,202412130022,Juliana Gonçalves Matos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,juliana.matos2@estudante.ifto.edu.br
+85,202412130039,Juliana Lima Rodrigues,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,juliana.rodrigues5@estudante.ifto.edu.br
+86,202512130006,Julia Oliveira Alencar,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,julia.alencar@estudante.ifto.edu.br
+87,202512130060,JULYANA LIMA DUARTE,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,julyana.duarte@estudante.ifto.edu.br
+88,202512130048,Kalebe Castro Torres,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,kalebe.torres@estudante.ifto.edu.br
+89,202612130007,Kamila Beatriz Aires do Amaral,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,kamila.amaral@estudante.ifto.edu.br
+90,202612130032,Kamily Rodrigues da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,kamily.silva@estudante.ifto.edu.br
+91,202512130055,Kauã Almeida Araújo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,kaua.araujo3@estudante.ifto.edu.br
+92,202612130045,Kauan Bruno da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,kauan.silva7@estudante.ifto.edu.br
+93,202412130059,KAUANNY VICTORIA LEONIDAS PORTILHA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,kauanny.portilha@estudante.ifto.edu.br
+94,202612130056,Kayky Nunes de Amorim,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,kayky.amorim@estudante.ifto.edu.br
+95,202412130002,KEYLLA HONORATO DIAS VIEIRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,keylla.vieira@estudante.ifto.edu.br
+96,202412130035,Kinberly Lopes dos Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,kinberly.santos@estudante.ifto.edu.br
+97,202512130061,Lara Isabely Padilha Machado,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,lara.machado@estudante.ifto.edu.br
+98,202512130039,Lara Sousa Matos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,lara.matos@estudante.ifto.edu.br
+99,202412130060,Lara Sthefany Coimbra Araujo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,lara.araujo@estudante.ifto.edu.br
+100,202412130027,Laura Stphanny Fernandes Melo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,laura.melo2@estudante.ifto.edu.br
+101,202412130055,Lavínia Fernandes Prata,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,lavinia.prata@estudante.ifto.edu.br
+102,202412130024,Leandro Gabriel de Souza Felipe,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,leandro.felipe@estudante.ifto.edu.br
+103,202412130013,LENYSON RODRIGUES DE OLIVEIRA MACÊDO,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,lenyson.macedo@estudante.ifto.edu.br
+104,202412130033,Letícia Graziele Oliveira Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,leticia.silva24@estudante.ifto.edu.br
+105,202612130005,Lorena Barros Moreira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,lorena.moreira@estudante.ifto.edu.br
+106,202512130044,Lourenço Lucas Frazão da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,-,lourenco.silva@estudante.ifto.edu.br
+107,202512130032,LUANA GOMES LIMA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,luana.lima4@estudante.ifto.edu.br
+108,202612130019,Lucas Cantuares Leite da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,lucas.silva85@estudante.ifto.edu.br
+109,202412130008,Lucas de Sousa Coelho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,lucas.coelho4@estudante.ifto.edu.br
+110,202612130065,Lucas Pinheiro de Souza Figueira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,lucas.figueira@estudante.ifto.edu.br
+111,202612130001,Ludmilla Melo Araujo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,ludmilla.araujo3@estudante.ifto.edu.br
+112,202412130056,Ludmilla Ribeiro de Vasconcelos Cunha,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,ludmilla.cunha@estudante.ifto.edu.br
+113,202612130054,Luiz Carlos Sousa Ribeiro,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,luiz.ribeiro3@estudante.ifto.edu.br
+114,202512130028,Luiz Felipe da Costa Castilho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,luiz.castilho@estudante.ifto.edu.br
+115,202312130065,Luiz Filipe Silva De Paula,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,luiz.paula@estudante.ifto.edu.br
+116,202412130069,Luiz Gustavo de Sousa Coelho Martins,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,luiz.martins3@estudante.ifto.edu.br
+117,202612130059,Marco Antônio Moreira Versiani,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,marco.versiani@estudante.ifto.edu.br
+118,202412130053,MARCOS OTAVIO AMORIM DA SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,marcos.silva81@estudante.ifto.edu.br
+119,202612130011,Marcos Welb Veloso de Andrade,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,marcos.andrade@estudante.ifto.edu.br
+120,202412130021,MARCUS RODRIGO GONÇALVES ALMEIDA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,marcus.almeida2@estudante.ifto.edu.br
+121,202612130017,Maria Cecilia de Vasconcelos Cunha Agostinho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,maria.agostinho@estudante.ifto.edu.br
+122,202512130038,Maria Clara Ribeiro Martins,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,maria.martins15@estudante.ifto.edu.br
+123,202512130012,MARIA EDUARDA ALVES DA SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,maria.silva321@estudante.ifto.edu.br
+124,202412130010,Maria Eduarda Monteiro da Silva Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,maria.santos128@estudante.ifto.edu.br
+125,202412130065,Maria Eduarda Silva dos Anjos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,maria.anjos@estudante.ifto.edu.br
+126,202612130046,Maria Eduarda Stelare Caitano,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,maria.caitano@estudante.ifto.edu.br
+127,202612130048,MARIAH EDUARDA RODRIGUES DOS SANTOS,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,mariah.santos@estudante.ifto.edu.br
+128,202512130040,Maria Isabela Aparecida Nunes Cunha,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,maria.cunha9@estudante.ifto.edu.br
+129,202512130030,MARIA VITTÓRIA MUNIZ SILVA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,maria.silva325@estudante.ifto.edu.br
+130,202512130025,MARINA BORGES RODRIGUES,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,marina.rodrigues4@estudante.ifto.edu.br
+131,202612130064,Maryana Rodrigues Leal,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,maryana.leal@estudante.ifto.edu.br
+132,202412130031,Mayla Eduarda de Araújo Vieira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,mayla.vieira@estudante.ifto.edu.br
+133,202512130009,Michelle Costa Morais,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,michelle.morais2@estudante.ifto.edu.br
+134,202512130014,Miguel Antônio Gonçalves,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,miguel.goncalves@estudante.ifto.edu.br
+135,202612130024,Miguel Arcanjo Alves de Sousa Martins,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,miguel.martins@estudante.ifto.edu.br
+136,202412130038,Miguel Costa Pereira Brito,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,miguel.brito@estudante.ifto.edu.br
+137,202612130068,Miguel Lima Miranda,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,miguel.miranda3@estudante.ifto.edu.br
+138,202612130013,Nathan Sousa Lima,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,nathan.lima@estudante.ifto.edu.br
+139,202612130025,Nicolas Américo dos Reis,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,nicolas.reis@estudante.ifto.edu.br
+140,202612130044,Nicolas do Nascimento Carvalho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,nicolas.carvalho@estudante.ifto.edu.br
+141,202512130066,Nicole Valentina da Silva Souza,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,nicole.souza2@estudante.ifto.edu.br
+142,202412130036,NICOLLY RIBEIRO SOUZA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,nicolly.souza@estudante.ifto.edu.br
+143,202612130053,Paulo Eduardo Biliu Ferraz,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,paulo.ferraz2@estudante.ifto.edu.br
+144,202412130011,Pedro Filho Cardoso de Sousa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,pedro.sousa20@estudante.ifto.edu.br
+145,202612130009,Rafaella Borges Simão Santana,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,rafaella.santana2@estudante.ifto.edu.br
+146,202412130004,Renan Pablo Lima Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,renan.silva8@estudante.ifto.edu.br
+147,202612130050,Renilson Soares dos Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,renilson.santos@estudante.ifto.edu.br
+148,202412130045,Rhuan Pablo Mendes de Sousa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,rhuan.sousa2@estudante.ifto.edu.br
+149,202412130051,Riquelmy Kauã costa Soares,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,riquelmy.soares@estudante.ifto.edu.br
+150,202612130018,Sabrina Oliveira Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,sabrina.silva11@estudante.ifto.edu.br
+151,202512130041,Saimon Paiva Alves,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,saimon.alves@estudante.ifto.edu.br
+152,202512130013,Salma Lima Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,salma.santos@estudante.ifto.edu.br
+153,202512130068,Samuel Darksom Amorim dos Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,samuel.santos13@estudante.ifto.edu.br
+154,202612130022,Samuel do Nascimento Gomes,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,samuel.gomes6@estudante.ifto.edu.br
+155,202612130070,Samuel Leal Mendes,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,samuel.mendes3@estudante.ifto.edu.br
+156,202612130020,Samuel Lopes Araújo,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,samuel.araujo10@estudante.ifto.edu.br
+157,202612130021,Samuel Magalhães Vasconcelos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,samuel.vasconcelos@estudante.ifto.edu.br
+158,202512130023,Samuel Orione Santos Lima,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,samuel.lima10@estudante.ifto.edu.br
+159,202412130050,Sarah Badaró Fonseca,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,sarah.fonseca2@estudante.ifto.edu.br
+160,202412130057,Sara Ribeiro Da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,sara.silva22@estudante.ifto.edu.br
+161,202612130003,Satori de Araújo Ogai,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,satori.ogai@estudante.ifto.edu.br
+162,202512130034,Sofia Alencar Sousa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,sofia.sousa4@estudante.ifto.edu.br
+163,202512130017,Sofia Catarina Rodrigues Ferreira,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,sofia.ferreira@estudante.ifto.edu.br
+164,202612130052,Sofia Neves Lucena Rocha,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,sofia.rocha2@estudante.ifto.edu.br
+165,202312130061,SOFIA OLIVEIRA LIMA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,sofia.lima2@estudante.ifto.edu.br
+166,202512130042,Sophia Emanuella Gama de Souza,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,sophia.souza@estudante.ifto.edu.br
+167,202612130039,Sophia Silva de Abreu,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,sophia.abreu@estudante.ifto.edu.br
+168,202412130071,SOPHYA VIDAL PEREIRA DOS SANTOS,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,sophya.santos2@estudante.ifto.edu.br
+169,202612130012,Talita Araujo de Carvalho,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,talita.carvalho2@estudante.ifto.edu.br
+170,202512130024,Thalisson Soares Barbosa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,thalisson.barbosa@estudante.ifto.edu.br
+171,202412130009,Thayla Gabriella da Costa Castelo Branco,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,thayla.branco@estudante.ifto.edu.br
+172,202512130004,Thayna Ibiapino Rodrigues,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,thayna.rodrigues@estudante.ifto.edu.br
+173,202412130006,Theo de Sousa Barros,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,theo.barros@estudante.ifto.edu.br
+174,202412130032,Thiago Bonfim Gama de Sena,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,thiago.sena2@estudante.ifto.edu.br
+175,202412130042,Thiago Kass Sousa,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,thiago.sousa14@estudante.ifto.edu.br
+176,202512130059,THOMAZ FIGUEIRA DA SILVA NETO,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,thomaz.neto@estudante.ifto.edu.br
+177,202412130003,Valentina Melo Paixão,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,valentina.paixao@estudante.ifto.edu.br
+178,202612130010,Valentina Vasconcelos Rosado,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,valentina.rosado@estudante.ifto.edu.br
+179,202512130063,Victor Alexandre Inacio da silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,victor.silva30@estudante.ifto.edu.br
+180,202612130060,Victor Gabriel Sousa Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,victor.silva31@estudante.ifto.edu.br
+181,202612130047,VICTOR SAMUEL DA SILVA MARQUES,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,victor.marques3@estudante.ifto.edu.br
+182,202612130063,Thayla Ayla Barbosa Pereira De Sousa (Victor Ycaro Barbosa Pereira de Sousa),ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,thayla.sousa2@estudante.ifto.edu.br
+183,202412130029,VINICIUS AZEVEDO DA SILVA BELEM,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.1I,vinicius.belem@estudante.ifto.edu.br
+184,202612130051,Vinícius Batista Magalhães,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,vinicius.magalhaes@estudante.ifto.edu.br
+185,202512130001,Vitória Santiago da Silva,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,vitoria.silva20@estudante.ifto.edu.br
+186,202512130010,Vitória Teles Pimentel,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,vitoria.pimentel2@estudante.ifto.edu.br
+187,202512130027,WEMERSON JÚNIOR COSTA MOREIRA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.1I,wemerson.moreira2@estudante.ifto.edu.br
+188,202412130040,Wemerson Rodrigues Santana,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.213.291.2I,wemerson.santana@estudante.ifto.edu.br
+189,202612130049,WICTOR ALEXANDRE CASTRO ALMEIDA,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.1I,wictor.almeida@estudante.ifto.edu.br
+190,202612130067,Yasmim Alves dos santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,yasmim.santos7@estudante.ifto.edu.br
+191,202512130067,Yasmin Morais Cardoso,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.213.291.2I,yasmin.cardoso@estudante.ifto.edu.br
+192,202612130037,Yzadora Soares Dos Santos,ARAGUAINA,213,Técnico em Informática Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.213.291.2I,yzadora.santos@estudante.ifto.edu.br
+193,202412160014,Abraim Araújo Coimbra,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,abraim.coimbra@estudante.ifto.edu.br
+194,202512160004,Adriel Sandes Américo,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,adriel.americo@estudante.ifto.edu.br
+195,202512160030,Albert Leite Resplandes,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,albert.resplandes@estudante.ifto.edu.br
+196,202212160008,Albert Soares Martins,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.6.216.319.1N,
+197,202512160043,ALEXANDRE WILLIAN OLIVEIRA SANTOS,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,alexandre.santos8@estudante.ifto.edu.br
+198,202312160017,Allan Batista do Nascimento,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,allan.nascimento2@estudante.ifto.edu.br
+199,202612160039,ALLAN PERICLES DA SILVA PADILHA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,allan.padilha@estudante.ifto.edu.br
+200,202512160014,ANA CAROLINE DA SILVA SOARES,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,ana.soares13@estudante.ifto.edu.br
+201,202512160021,Ana Claúdia Carvalho Sousa de Oliveira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,ana.sousa15@estudante.ifto.edu.br
+202,202412160015,André Couto Machado,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,andre.machado2@estudante.ifto.edu.br
+203,202212160039,Andre Victor Matos de Carvalho,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,
+204,202422160002,Anny Carolinny Lopes Nascimento,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,anny.nascimento@estudante.ifto.edu.br
+205,202612160021,Antônio Júnior Silva Barros,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,antonio.barros3@estudante.ifto.edu.br
+206,202412160021,Arthur Bernardo Silva de Cordova,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,arthur.cordova@estudante.ifto.edu.br
+207,202512160026,Arthur Borges Sousa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,arthur.sousa7@estudante.ifto.edu.br
+208,202512160034,Arthur Coelho Saraiva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,arthur.saraiva@estudante.ifto.edu.br
+209,202512160027,Arthur de Pinho Costa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,arthur.costa8@estudante.ifto.edu.br
+210,202612160036,Arthur Ribeiro Aguiar,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,arthur.aguiar3@estudante.ifto.edu.br
+211,202412160010,Asaffe de Souza Gonçalves,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,-,asaffe.goncalves@estudante.ifto.edu.br
+212,202412160042,Augusto Miguel da Silva Souza,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,augusto.souza@estudante.ifto.edu.br
+213,202212160044,Aurilene Soares,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,
+214,202312160003,BEATRIZ COELHO DOS SANTOS,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,-,beatriz.santos10@estudante.ifto.edu.br
+215,202212160018,Beatriz Costa Vidal,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,
+216,202512160022,Bruno di Luca da Silva Pereira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,bruno.pereira8@estudante.ifto.edu.br
+217,202612160041,Caio Almeida dos Santos,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,caio.santos4@estudante.ifto.edu.br
+218,202512160018,Carlos Henrique da Silva Sousa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,carlos.sousa22@estudante.ifto.edu.br
+219,202612160043,CARLOS ZÉTTI SILVA SOUSA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,carlos.sousa28@estudante.ifto.edu.br
+220,202612160012,Carolina Ferreira Teixeira de Araújo,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,carolina.araujo2@estudante.ifto.edu.br
+221,202312160028,Danilo Borges Leão,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.6.216.319.1N,danilo.leao2@estudante.ifto.edu.br
+222,202512160010,Davylla Lorrany Borges Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,davylla.silva@estudante.ifto.edu.br
+223,202612160029,Diego Jardim Mota,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,diego.mota@estudante.ifto.edu.br
+224,202412160037,DOUGLAS LUZ DE OLIVEIRA CARVALHO,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,douglas.carvalho2@estudante.ifto.edu.br
+225,202512160016,Edson Siqueira Silva Junior,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,edson.junior8@estudante.ifto.edu.br
+226,202612160022,Elias Victor Marques Lima,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,elias.lima@estudante.ifto.edu.br
+227,202312160038,ELLEN CRISTINY GOMES MACIEL,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,-,ellen.maciel2@estudante.ifto.edu.br
+228,202612160017,Enzo Iudy Pereira de Miranda,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,enzo.miranda@estudante.ifto.edu.br
+229,202412160047,Filipe Carvalho Correia,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,filipe.correia@estudante.ifto.edu.br
+230,202212160004,Flávio Manuel Sousa Barbosa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,
+231,202412160030,Francielen Pereira Alves,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,francielen.alves@estudante.ifto.edu.br
+232,202412160007,Gabriel Henry Souza Monteiro,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,gabriel.monteiro2@estudante.ifto.edu.br
+233,202412160016,Gabriel Jander Espindula Vasque,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,gabriel.vasque@estudante.ifto.edu.br
+234,202612160016,Gabriel Maia Sousa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,gabriel.sousa14@estudante.ifto.edu.br
+235,202512160020,GABRIEL OLIVEIRA VIDAL,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,gabriel.vidal@estudante.ifto.edu.br
+236,202512160012,GERSON PEREIRA CARNEIRO,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,gerson.carneiro2@estudante.ifto.edu.br
+237,202612160040,Gustavo Brunno Lucena e Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,gustavo.silva12@estudante.ifto.edu.br
+238,202412160008,GUSTAVO CORDEIRO DE SOUZA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,gustavo.souza10@estudante.ifto.edu.br
+239,202412160043,Gustavo Henrique Rodrigues Melo,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,gustavo.melo4@estudante.ifto.edu.br
+240,202512160039,Gustavo Huan Torres Morais,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,gustavo.morais2@estudante.ifto.edu.br
+241,202512160045,Hanry Sousa de Carvalho,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,hanry.carvalho@estudante.ifto.edu.br
+242,202612160006,Heitor de Sousa Rodrigues,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,heitor.rodrigues3@estudante.ifto.edu.br
+243,202612160001,Heitor Miranda Batista,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,heitor.batista@estudante.ifto.edu.br
+244,202412160024,Henrique Leandro Morais da Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,henrique.silva5@estudante.ifto.edu.br
+245,202612160045,HUGO PIMENTA CARVALHO,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,hugo.carvalho5@estudante.ifto.edu.br
+246,202412160013,Iago Moreira Gonçalves,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,iago.goncalves@estudante.ifto.edu.br
+247,202512160044,Ian Cesar Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,ian.silva2@estudante.ifto.edu.br
+248,202512160008,Ian Vitor do Vale Moreira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,ian.moreira@estudante.ifto.edu.br
+249,202412160019,Igor Amorim Martins,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,igor.martins@estudante.ifto.edu.br
+250,202512160011,Isaac Barbosa Dutra,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,isaac.dutra@estudante.ifto.edu.br
+251,202612160014,Isaak Padilha Machado,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,isaak.machado@estudante.ifto.edu.br
+252,202612160009,Isadora Aparecida Guedes Cavalcante,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,isadora.cavalcante@estudante.ifto.edu.br
+253,202412160032,Italo Sousa Nishikawa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,italo.nishikawa@estudante.ifto.edu.br
+254,202612160032,IZADORA GUEDES AMORIM MILHOMEM,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,izadora.milhomem@estudante.ifto.edu.br
+255,202512160028,Jackson Alves dos Santos,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,jackson.santos2@estudante.ifto.edu.br
+256,202412160049,JAINARA NUNES DA SILVA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,jainara.silva3@estudante.ifto.edu.br
+257,202222160004,Jefte Dodth Telles Monteiro,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,
+258,202412160026,João Antonio Borges de Souza,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,joao.souza35@estudante.ifto.edu.br
+259,202612160020,João Daniel do Nascimento Menezes Limeira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,joao.limeira3@estudante.ifto.edu.br
+260,202612160023,João Enrico Sousa Silva Aquino,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,joao.aquino2@estudante.ifto.edu.br
+261,202612160002,JOÃO GABRIEL ALVES MACEDO,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,joao.macedo6@estudante.ifto.edu.br
+262,202412160045,João Manoel Borges de Souza,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,joao.souza40@estudante.ifto.edu.br
+263,202412160036,João Marcos Lima de Oliveira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,joao.oliveira22@estudante.ifto.edu.br
+264,202512160032,Joao Marcos Silva de Lima,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,joao.lima29@estudante.ifto.edu.br
+265,202612160038,João Pedro Sabino Silveira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,joao.silveira3@estudante.ifto.edu.br
+266,202512160024,João Pedro Sanches Vieira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,joao.vieira3@estudante.ifto.edu.br
+267,202612160033,João Victor Vieira Castro,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,joao.castro8@estudante.ifto.edu.br
+268,202412160029,Jonas Saraiva dos Santos,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,jonas.santos10@estudante.ifto.edu.br
+269,202512160036,Jose Humberto Maciel Mesquita,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,jose.mesquita2@estudante.ifto.edu.br
+270,202512160037,José Rocha Souza Neto,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,jose.neto24@estudante.ifto.edu.br
+271,202512160017,Juan Douglas Pereira de Brito,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,juan.brito@estudante.ifto.edu.br
+272,202512160023,KAMILLY PEREIRA DA SILVA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,kamilly.silva2@estudante.ifto.edu.br
+273,202612160018,KAUAN GUILHERME ALVES LIMA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,kauan.lima@estudante.ifto.edu.br
+274,202612160005,KELSON ISAAC RIBEIRO MOURA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,kelson.moura@estudante.ifto.edu.br
+275,202512160009,KETELLY LHAIS LIMA ALVES,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,ketelly.alves@estudante.ifto.edu.br
+276,202312160039,Keyton Bessa de Oliveira Junior,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,keyton.oliveira2@estudante.ifto.edu.br
+277,202222160005,Kézio Pereira Barros,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,-,
+278,202312160041,LEANDRO RODRIGUES MILHOMEM,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,leandro.milhomem@estudante.ifto.edu.br
+279,202612160034,Leilâne Campos da Costa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,leilane.costa@estudante.ifto.edu.br
+280,202512160040,Leonardo Martins Moreira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,leonardo.moreira@estudante.ifto.edu.br
+281,202512160005,Leonilton Franco de Oliveira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,leonilton.oliveira@estudante.ifto.edu.br
+282,202522160002,Lidia Cruz de Araújo,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,lidia.araujo3@estudante.ifto.edu.br
+283,202612160024,Lídia Souza Vidal,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,lidia.vidal@estudante.ifto.edu.br
+284,202312160010,Luan da Silva Carvalho,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,luan.carvalho2@estudante.ifto.edu.br
+285,202412160004,Lucas Ferreira Santos,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,lucas.santos16@estudante.ifto.edu.br
+286,202612160047,LUIS FERNANDO DE HOLANDA BRITO,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,luis.brito3@estudante.ifto.edu.br
+287,202412160031,Luiz Alexandre de Medeiros Vieira Filho,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,luiz.filho4@estudante.ifto.edu.br
+288,202412160003,Luiz Henrique Amorim Santos,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,luiz.santos8@estudante.ifto.edu.br
+289,202312160036,Maikon Doglas Costa Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,maikon.silva3@estudante.ifto.edu.br
+290,202412160020,MARCELO AUGUSTO ALVES DOS SANTOS,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,marcelo.santos12@estudante.ifto.edu.br
+291,202412160035,Marcos Luiz Borges Galvão,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,marcos.galvao@estudante.ifto.edu.br
+292,202412160033,maria eduarda fernandes de sousa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,maria.sousa74@estudante.ifto.edu.br
+293,202512160002,Mariana Ferreira de Sousa Almeida,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,mariana.almeida3@estudante.ifto.edu.br
+294,202312160020,MáRIO RAFAEL COSTA FERREIRA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,mario.ferreira2@estudante.ifto.edu.br
+295,202612160019,MARKUS AQUILES SATURNINO ALVES,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,markus.alves@estudante.ifto.edu.br
+296,202612160037,Mateus Vinicius Francischini Cambiaghi,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,mateus.cambiaghi@estudante.ifto.edu.br
+297,202312160008,Matheus Moreira de Menezes,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,matheus.menezes3@estudante.ifto.edu.br
+298,202612160028,Matheus Teles Araujo,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,matheus.araujo7@estudante.ifto.edu.br
+299,202312160042,Milena Carvalho Sinesio,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.6.216.319.1N,milena.sinesio2@estudante.ifto.edu.br
+300,202212160010,Monalisa Cabral Gama Costa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.6.216.319.1N,
+301,202412160041,MURYLLO FERREIRA MILHOMENS,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,muryllo.milhomens@estudante.ifto.edu.br
+302,202612160010,Naely Carvalho Taveira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,naely.taveira@estudante.ifto.edu.br
+303,202612160027,Nathan Gabriel Mendes da Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,nathan.silva4@estudante.ifto.edu.br
+304,202612160030,Nycollas Oliveira Braga,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,nycollas.braga@estudante.ifto.edu.br
+305,202412160044,Patrick Alves da Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,patrick.silva4@estudante.ifto.edu.br
+306,202512160007,PAULO CESAR SANTOS SILVA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,paulo.silva67@estudante.ifto.edu.br
+307,202412160006,Paulo Enzo Assunção Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,paulo.silva52@estudante.ifto.edu.br
+308,202612160013,Paulo Henrique Pinheiro Barbosa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,paulo.barbosa@estudante.ifto.edu.br
+309,202512160001,Paulo Ricardo Rodrigues Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,paulo.silva56@estudante.ifto.edu.br
+310,202612160004,Pedro Henrique Batista Souza,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,pedro.souza5@estudante.ifto.edu.br
+311,202512160035,Rafael Cleson Souza de Oliveira,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,rafael.oliveira7@estudante.ifto.edu.br
+312,202412160048,RAFAEL LOPES DA SILVA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,rafael.silva36@estudante.ifto.edu.br
+313,202612160046,Rafael Nascimento Melo,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,rafael.melo@estudante.ifto.edu.br
+314,202512160019,Rafael Quirino da Silva,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,rafael.silva37@estudante.ifto.edu.br
+315,202612160025,Rafael Vinicius Ferreira Viana,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,rafael.viana3@estudante.ifto.edu.br
+316,202612160026,Ramon Bezerra Lima,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,ramon.lima4@estudante.ifto.edu.br
+317,202412160027,Raniel José de Souza,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,raniel.souza@estudante.ifto.edu.br
+318,202612160015,Rennzo Rodrigues Diedrichs,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,rennzo.diedrichs@estudante.ifto.edu.br
+319,202612160011,Ricardo Leite Bringel,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,ricardo.bringel@estudante.ifto.edu.br
+320,202612160035,RICARDO LOPES MENDES DA SILVA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,ricardo.silva19@estudante.ifto.edu.br
+321,202412160038,Ronan Almeida Lima,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,-,ronan.lima@estudante.ifto.edu.br
+322,202422160001,Samuel Mota Ribeiro Milani,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,samuel.milani@estudante.ifto.edu.br
+323,202312160030,SAMYLLA MARINHO DA SILVA AGUIAR,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,samylla.aguiar@estudante.ifto.edu.br
+324,202312160018,Savio Vitor Alves dos Santos,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,-,savio.santos4@estudante.ifto.edu.br
+325,202612160007,Sofia Moreira Fernandes,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,sofia.fernandes@estudante.ifto.edu.br
+326,202612160008,Thiago Berson de Sousa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,thiago.sousa9@estudante.ifto.edu.br
+327,202612160042,Victor Alexandre Soares Maranhão,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,victor.maranhao@estudante.ifto.edu.br
+328,202322160001,Victor Manoel de Sousa Ferraz,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,-,victor.ferraz@estudante.ifto.edu.br
+329,202612160044,VÍTOR EMANUEL SOUSA SILVA,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,vitor.silva26@estudante.ifto.edu.br
+330,202212160032,Wanderson Gomes de Sousa,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,
+331,202512160041,WELLYSON ARAUJO BARROS,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.3.216.319.1N,wellyson.barros@estudante.ifto.edu.br
+332,202612160003,Wesley Rodrigues de Almeida,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.1.216.319.1N,wesley.almeida@estudante.ifto.edu.br
+333,202412160001,Willyamar Alves Santos,ARAGUAINA,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,Matriculado,Matriculado,20261.5.216.319.1N,willyamar.santos@estudante.ifto.edu.br
+334,202612150007,ANA JULIA COSTA BRAGA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.215.183.1N,ana.braga2@estudante.ifto.edu.br
+335,202512150006,CÉLIANE MIRANDA SILVA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,celiane.silva3@estudante.ifto.edu.br
+336,202512150016,DANILO RODRIGUES FERREIRA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,danilo.ferreira@estudante.ifto.edu.br
+337,202512150018,Darlene Oliveira da Cruz,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,darlene.cruz@estudante.ifto.edu.br
+338,202512150012,EDSON RICARDO DE SOUSA SILVA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,edson.silva12@estudante.ifto.edu.br
+339,202612150006,Elcimar Sousa de Oliveira,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.215.183.1N,elcimar.oliveira@estudante.ifto.edu.br
+340,202612150002,FABIANE BARROS DE SOUSA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.215.183.1N,fabiane.sousa4@estudante.ifto.edu.br
+341,202512150019,GABRIELA DE OLIVEIRA SANTOS,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,gabriela.santos15@estudante.ifto.edu.br
+342,202612150004,Gustavo Feitosa de Sousa,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.215.183.1N,gustavo.sousa16@estudante.ifto.edu.br
+343,202512150015,IRENILDE DE SOUSA MILHOMES,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,irenilde.milhomes@estudante.ifto.edu.br
+344,202612150001,JANETE SEBASTIANA CASTRO,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.215.183.1N,janete.castro@estudante.ifto.edu.br
+345,202512150011,JULIA RODRIGUES DE SOUSA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,julia.sousa4@estudante.ifto.edu.br
+346,202512150007,LETICIA LIMA DE SOUSA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,leticia.sousa6@estudante.ifto.edu.br
+347,202512150005,Lucas Pereira Rodrigues de Sousa,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,lucas.sousa18@estudante.ifto.edu.br
+348,202512150008,LUCAS SILVA DE SOUZA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,lucas.souza22@estudante.ifto.edu.br
+349,202512150009,Natália Nunes Silva,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,natalia.silva17@estudante.ifto.edu.br
+350,202512150020,SANDRA ARAUJO DA SILVA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,sandra.silva7@estudante.ifto.edu.br
+351,202412150007,TEREZINHA ANDRADE DE ALMEIDA,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.215.183.1N,terezinha.almeida@estudante.ifto.edu.br
+352,202612150005,Thalia Araujo da Paixão,ARAGUAINA,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.215.183.1N,thalia.paixao@estudante.ifto.edu.br
+353,202512110014,Abda Gonçalves Fernandes,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,abda.fernandes@estudante.ifto.edu.br
+354,202412110015,Alex Halel Gonçalves,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,alex.goncalves@estudante.ifto.edu.br
+355,202612110028,Alice Arrais Resende,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,alice.resende@estudante.ifto.edu.br
+356,202612110035,Alvaro Magno Resende de Azevedo Apinagé,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,alvaro.apinage@estudante.ifto.edu.br
+357,202412110011,AMANDA KHIARA BORGES CARVALHO,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,amanda.carvalho8@estudante.ifto.edu.br
+358,202412110021,Amélie de Castro Figueiredo,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,amelie.figueiredo@estudante.ifto.edu.br
+359,202512110008,Ana Clara Alves Nascimento,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,ana.nascimento19@estudante.ifto.edu.br
+360,202612110014,Ana Clara Brito Santana,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,ana.santana10@estudante.ifto.edu.br
+361,202612110008,Ana Clara Santana Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,ana.silva230@estudante.ifto.edu.br
+362,202512110006,ANA LIVIA GUIMARÃES CUNHA,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,ana.cunha8@estudante.ifto.edu.br
+363,202412110018,Ana Luiza Gomes Milagre,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,ana.milagre@estudante.ifto.edu.br
+364,202512110012,Anna Cecília Ferreira Andrade,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,anna.andrade@estudante.ifto.edu.br
+365,202412110016,Aparecida Mariana Soares Nascimento,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,aparecida.nascimento@estudante.ifto.edu.br
+366,202412110019,Ariane Alves da Rocha,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,ariane.rocha@estudante.ifto.edu.br
+367,202512110024,Arthur Rocha Rodrigues de Melo,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,arthur.melo2@estudante.ifto.edu.br
+368,202612110016,Artur Lopes dos Santos,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,artur.santos5@estudante.ifto.edu.br
+369,202512110030,Aylla Alves de Moura,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,aylla.moura@estudante.ifto.edu.br
+370,202412110031,Aylla Vitória Vargas Moreira de Oliveira,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,aylla.oliveira@estudante.ifto.edu.br
+371,202512110033,Bennício Bernard Santana Macêdo,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,bennicio.macedo@estudante.ifto.edu.br
+372,202412110029,Catarine Diniz Melo,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,catarine.melo@estudante.ifto.edu.br
+373,202612110020,Damares Esther Amorim da Costa Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,damares.silva3@estudante.ifto.edu.br
+374,202512110004,Davi Soares Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,davi.silva18@estudante.ifto.edu.br
+375,202512110037,Dellane Rafaela Sousa Coelho,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,dellane.coelho@estudante.ifto.edu.br
+376,202612110013,Dharfly Rosado Soares,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,dharfly.soares@estudante.ifto.edu.br
+377,202412110005,Dheyzianny Caldas Wanderley,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,dheyzianny.wanderley@estudante.ifto.edu.br
+378,202612110024,Elisa Gabriella Neponuceno Correia,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,elisa.correia@estudante.ifto.edu.br
+379,202612110019,ELLOÁ VICTÓRIA SANTANA SANTOS,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,elloa.santos@estudante.ifto.edu.br
+380,202512110034,ELOÁ ROCHA MENDES,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,eloa.mendes@estudante.ifto.edu.br
+381,202612110023,EMANUELA MOREIRA DE SOUSA,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,emanuela.sousa@estudante.ifto.edu.br
+382,202412110032,Emanuel Hipolito Nogueira Simiema,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,emanuel.simiema@estudante.ifto.edu.br
+383,202612110012,Emilly Cirqueira Soares,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,emilly.soares@estudante.ifto.edu.br
+384,202612110007,EMILLY DE SOUZA NASCIMENTO,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,emilly.nascimento2@estudante.ifto.edu.br
+385,202412110013,EMILLY VITORIA NASCIMENTO DA SILVA,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,emilly.silva11@estudante.ifto.edu.br
+386,202512110017,Enzo Estevam Meneses Diniz,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,enzo.diniz@estudante.ifto.edu.br
+387,202612110027,Erika Silva Ferreira,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,erika.ferreira@estudante.ifto.edu.br
+388,202612110030,Ezequiel Andrade Gomes,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,ezequiel.gomes@estudante.ifto.edu.br
+389,202512110021,Gabriella Costa Sousa,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,gabriella.sousa4@estudante.ifto.edu.br
+390,202512110032,Gabrielly Lopes da Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,gabrielly.silva6@estudante.ifto.edu.br
+391,202512110023,GABRIEL MARQUES BRITO,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,gabriel.brito5@estudante.ifto.edu.br
+392,202612110018,Guilherme Almeida Lima,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,guilherme.lima10@estudante.ifto.edu.br
+393,202412110017,GUILHERME COELHO RODRIGUES,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,guilherme.rodrigues4@estudante.ifto.edu.br
+394,202412110012,GUILHERME ELMER MARLOW MULLER,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,guilherme.muller@estudante.ifto.edu.br
+395,202612110032,Guilherme Lopes de Castro,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,guilherme.castro2@estudante.ifto.edu.br
+396,202512110002,GUSTAVO CIRQUEIRA RODRIGUES,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,gustavo.rodrigues6@estudante.ifto.edu.br
+397,202612110015,Heitor Viana Dutra,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,heitor.dutra@estudante.ifto.edu.br
+398,202612110021,Helem lopes de almeida,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,helem.almeida@estudante.ifto.edu.br
+399,202612110033,Hellen Vitória Marinho Rocha De Sousa,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,hellen.sousa3@estudante.ifto.edu.br
+400,202512110007,Heloísa de Sousa Campos,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,heloisa.campos@estudante.ifto.edu.br
+401,202512110035,Heloíse Fernandes Marin Magalhães,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,heloise.magalhaes@estudante.ifto.edu.br
+402,202412110006,Henrique Sousa Medeiros,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,henrique.medeiros@estudante.ifto.edu.br
+403,202512110016,Ícaro Levi Silva Pereira,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,icaro.pereira2@estudante.ifto.edu.br
+404,202612110009,Ilana Oliveira Sousa,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,ilana.sousa2@estudante.ifto.edu.br
+405,202612110004,Isaac Barbosa Guimarães lima,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,isaac.lima2@estudante.ifto.edu.br
+406,202512110015,Isaac Sampaio de Sousa Teixeira,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,isaac.teixeira@estudante.ifto.edu.br
+407,202512110018,JACKELINE ALVES BRITO BISI,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,jackeline.bisi@estudante.ifto.edu.br
+408,202412110004,JAMILE LORRAYNA SILVA DE SOUZA,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,jamile.souza2@estudante.ifto.edu.br
+409,202612110029,Jamille De Oliveira Borges Rebouças,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,jamille.reboucas@estudante.ifto.edu.br
+410,202412110034,Janaína Lima Miranda,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,janaina.miranda@estudante.ifto.edu.br
+411,202512110036,Juliany Sousa Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,juliany.silva@estudante.ifto.edu.br
+412,202412110025,JULIA RODRIGUES LEAL,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,julia.leal@estudante.ifto.edu.br
+413,202612110034,Júlia Silva Barbosa,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,julia.barbosa2@estudante.ifto.edu.br
+414,202612110017,Kathleen Victória Batista Marques,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,kathleen.marques@estudante.ifto.edu.br
+415,202612110022,Kaylany Vilar dos Santos Castro,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,kaylany.castro@estudante.ifto.edu.br
+416,202412110007,Ketlyn Silva Alves Gama,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,ketlyn.gama@estudante.ifto.edu.br
+417,202412110022,LAURA BORGES AGUIAR LEAL,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,laura.leal@estudante.ifto.edu.br
+418,202512110019,Lhanna Victoria Oliveira Santana,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,lhanna.santana@estudante.ifto.edu.br
+419,202512110028,Luna Dias da Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,luna.silva@estudante.ifto.edu.br
+420,202612110010,Maria Clara Araujo Da Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,maria.silva346@estudante.ifto.edu.br
+421,202612110001,Maria Clara Pereira Da Conceição Portilho,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,maria.portilho@estudante.ifto.edu.br
+422,202412110020,MARIA EDUARDA ANDRADE DOS SANTOS,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,maria.santos129@estudante.ifto.edu.br
+423,202512110009,Maria Eduarda Nascimento Dias,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,maria.dias22@estudante.ifto.edu.br
+424,202612110011,MARIA EMANUELA VIANA SILVA,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,maria.silva363@estudante.ifto.edu.br
+425,202412110028,Maria Fernanda dos Santos Lima,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,maria.lima35@estudante.ifto.edu.br
+426,202512110005,MARIA JÚLIA GOMES GUIMARÃES,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,maria.guimaraes6@estudante.ifto.edu.br
+427,202412110001,MATHEUS BARROS DE SOUZA,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,matheus.souza10@estudante.ifto.edu.br
+428,202412110003,Matheus de Sousa Oliveira,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,matheus.oliveira20@estudante.ifto.edu.br
+429,202412110036,Milena Coelho Martins Braga,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,milena.braga@estudante.ifto.edu.br
+430,202512110013,Mírian Andrade Farias,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,mirian.farias@estudante.ifto.edu.br
+431,202412110033,Myrelly Câmara Da Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,myrelly.silva@estudante.ifto.edu.br
+432,202612110025,Nathielly Andrade Oliveira,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,nathielly.oliveira@estudante.ifto.edu.br
+433,202512110025,Pedro Gabriel Mendes Ricarto,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,pedro.ricarto@estudante.ifto.edu.br
+434,202412110026,Rafaela Oliveira Rocha,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,rafaela.rocha2@estudante.ifto.edu.br
+435,202512110010,Rodrigo Augusto de Oliveira Nunes,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,rodrigo.nunes3@estudante.ifto.edu.br
+436,202412110008,RODRIGO SILVA AYRES,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,rodrigo.ayres@estudante.ifto.edu.br
+437,202512110020,Romulo dos Santos Pereira,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,romulo.pereira@estudante.ifto.edu.br
+438,202612110003,RUHAN NEGREIROS BELFORT,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,ruhan.belfort@estudante.ifto.edu.br
+439,202512110003,Samuel Barros de Souza,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,samuel.souza6@estudante.ifto.edu.br
+440,202612110006,SAMUEL OLIVEIRA FRANCO,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,samuel.franco2@estudante.ifto.edu.br
+441,202412110009,Samylla Yasmyn Moreira de Sá,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,samylla.sa@estudante.ifto.edu.br
+442,202612110005,Sarah Sabiny Esteves de Lima,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,sarah.lima5@estudante.ifto.edu.br
+443,202412110035,Sofia  Guimarães Sousa,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,sofia.sousa2@estudante.ifto.edu.br
+444,202612110002,Stephane Dias Dos Santos,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,stephane.santos@estudante.ifto.edu.br
+445,202412110010,Thauanny de Sousa Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,thauanny.silva@estudante.ifto.edu.br
+446,202512110031,Thays Eulynna Ferreira Brandão,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,thays.brandao@estudante.ifto.edu.br
+447,202512110029,Thiago Andrade Souza,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,thiago.souza17@estudante.ifto.edu.br
+448,202412110014,Valéria Sousa Silva,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,valeria.silva12@estudante.ifto.edu.br
+449,202612110031,Vitória Duques De Sousa,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.211.290.1I,vitoria.sousa17@estudante.ifto.edu.br
+450,202412110027,Vitória Gabrielly Miranda Souza,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,vitoria.souza9@estudante.ifto.edu.br
+451,202412110030,Walter Arthur Rocha Lima,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.3.211.290.1I,walter.lima@estudante.ifto.edu.br
+452,202512110026,Yasmin Andrade dos Santos,ARAGUAINA,211,Técnico em Biotecnologia Integrado ao Ensino Médio,Matriculado,Matriculado,20261.2.211.290.1I,yasmin.santos4@estudante.ifto.edu.br
+453,202510970004,Adara Silva Santos,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,adara.santos@estudante.ifto.edu.br
+454,202610970019,AILTON PEREIRA DA SILVA MAGALHÃES,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,ailton.magalhaes@estudante.ifto.edu.br
+455,202610970003,Alanna Milhomem Pinto,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,alanna.pinto@estudante.ifto.edu.br
+456,202510970027,ALEX SANDRO MOURA VITORINO,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,alex.vitorino@estudante.ifto.edu.br
+457,202310970030,Allana Sousa Freitas,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,allana.freitas2@estudante.ifto.edu.br
+458,202410970012,ALMIR GABRIEL DE SOUSA CARDOSO,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,almir.cardoso@estudante.ifto.edu.br
+459,20221080970197,Alvino Sanches Nunes,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.6.097.223.1N,
+460,202610970002,Amária Campos de Sousa,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,amaria.sousa@estudante.ifto.edu.br
+461,202410970032,André Moreira Amario,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,andre.amario@estudante.ifto.edu.br
+462,202610970026,ANTONIO FERRO NETO,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,antonio.neto23@estudante.ifto.edu.br
+463,202510970017,Arthur Gonçalves Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,arthur.silva3@estudante.ifto.edu.br
+464,202310970027,Augusto Santos Araujo,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,augusto.araujo2@estudante.ifto.edu.br
+465,202610970004,BRUNA SENA VASCONCELOS,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,bruna.vasconcelos2@estudante.ifto.edu.br
+466,202510970041,CAMILA RODRIGUES DIAS,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,camila.dias2@estudante.ifto.edu.br
+467,202610970010,Chrisanitieimy da hora carvalho,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,chrisanitieimy.carvalho@estudante.ifto.edu.br
+468,202510970007,Daniel Rodrigues de Queiroz,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,daniel.queiroz2@estudante.ifto.edu.br
+469,202510970005,Douglas Barros de Carvalho,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,douglas.carvalho3@estudante.ifto.edu.br
+470,202510970021,EDINANDES RAMOS DE SOUZA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,edinandes.souza@estudante.ifto.edu.br
+471,202610970014,ELIANE ALVES LIMA COSTA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,eliane.costa4@estudante.ifto.edu.br
+472,202610970025,ELLEN CAROLINE HONORATO AMADO,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,ellen.amado@estudante.ifto.edu.br
+473,202510970028,Eloisa Carvalho Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,eloisa.silva2@estudante.ifto.edu.br
+474,202610970005,Ester da Silva Gomes,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,ester.gomes@estudante.ifto.edu.br
+475,202610970020,Fabiana Alves do Carmo Araujo,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,fabiana.araujo@estudante.ifto.edu.br
+476,202410970022,Felipe Ricardo Silva Rocha,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,felipe.rocha2@estudante.ifto.edu.br
+477,202510970039,Franklei Alves da Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,franklei.silva@estudante.ifto.edu.br
+478,202610970017,GABRIEL SOUSA SILVA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,gabriel.silva73@estudante.ifto.edu.br
+479,202610970031,GEOVANY PIRES DA CRUZ FILHO,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,geovany.cruz@estudante.ifto.edu.br
+480,20221080970308,Gúbio Luz Bonifácio,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,
+481,202610970012,GUSTAVO RODRIGUES GUIMARAES,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,gustavo.guimaraes2@estudante.ifto.edu.br
+482,202310970022,Gustavo Santana Moreira,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.6.097.395.1N,gustavo.moreira@estudante.ifto.edu.br
+483,202510970025,Gustavo Silva Rodrigues,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,gustavo.rodrigues2@estudante.ifto.edu.br
+484,202610970023,Hor de Oliveira Chagas,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,hor.chagas@estudante.ifto.edu.br
+485,202510970036,Iara Taine de Sousa Milhomes,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,iara.milhomes@estudante.ifto.edu.br
+486,202610970030,ISABELLA PEREIRA VASCONCELOS,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,isabella.vasconcelos@estudante.ifto.edu.br
+487,202410970009,ISABELLA SILVA TRINDADE,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,isabella.trindade@estudante.ifto.edu.br
+488,202410970038,IUDHY ALVES RODRIGUES,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,iudhy.rodrigues@estudante.ifto.edu.br
+489,202410970015,João Paulo Sousa Araújo,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,joao.araujo24@estudante.ifto.edu.br
+490,202610970024,João Pedro Alves Leite,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,joao.leite4@estudante.ifto.edu.br
+491,202610970027,JOÃO PEDRO CARVALHO CAVALCANTE,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,joao.cavalcante6@estudante.ifto.edu.br
+492,202610970008,JONATO PEDRO NONATO BARROS,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,jonato.barros@estudante.ifto.edu.br
+493,202610970018,JOSÉ HENRIQUE BENÍCIO DA CRUZ,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,jose.cruz6@estudante.ifto.edu.br
+494,202610970016,JOSÉ LAUDIMAR SOARES JUNIOR,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,jose.soares8@estudante.ifto.edu.br
+495,202510970002,JOSE VITORINO CARVALHO SILVA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,jose.silva96@estudante.ifto.edu.br
+496,202610970029,JOSUE OLIVEIRA DA COSTA JUNIOR,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,josue.costa@estudante.ifto.edu.br
+497,202510970037,JUAN VAN DORT SOARES BARBOSA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,juan.barbosa@estudante.ifto.edu.br
+498,202410970013,Jucielen Silva Bernardo,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,jucielen.bernardo@estudante.ifto.edu.br
+499,202610970021,JUNIEL SOUSA DO NASCIMENTO,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,juniel.nascimento@estudante.ifto.edu.br
+500,202510970011,Kauanny Maria Araujo Costa e Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,kauanny.silva2@estudante.ifto.edu.br
+501,202410970007,Leticia Nunes Ribeiro,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,leticia.ribeiro5@estudante.ifto.edu.br
+502,202410970014,Lucas Melo da Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,lucas.silva73@estudante.ifto.edu.br
+503,202510970022,LUCILENE PEREIRA DA COSTA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,lucilene.costa@estudante.ifto.edu.br
+504,202510970020,Luis Fernando Rodrigues Pereira,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,luis.pereira7@estudante.ifto.edu.br
+505,202510970018,Maísa Coelho Nascimento,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,-,maisa.nascimento2@estudante.ifto.edu.br
+506,202610970022,Marcelo Cardoso dos Santos,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,marcelo.santos14@estudante.ifto.edu.br
+507,202410970018,Marcos Pereira da Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,marcos.silva82@estudante.ifto.edu.br
+508,202410970001,Maria Eduarda Caetano da Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,maria.silva260@estudante.ifto.edu.br
+509,202410970041,Maria Eduarda Sousa Alencar,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,maria.alencar3@estudante.ifto.edu.br
+510,202410970040,Maria Geni Ferreira da Costa,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,maria.costa7@estudante.ifto.edu.br
+511,202410970016,Mariana dos Reis Pereira,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,mariana.pereira7@estudante.ifto.edu.br
+512,202610970015,MARLENE PINTO DE MOURA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,-,marlene.moura@estudante.ifto.edu.br
+513,202510970040,Matheus Carvalho Guimarães,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,matheus.guimaraes4@estudante.ifto.edu.br
+514,202410970037,GEOVANA DE BRITO MENEZES (Matheus de Brito Menezes),ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,geovana.menezes@estudante.ifto.edu.br
+515,202410970002,Mecilde Pereira Paz de Oliveira,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,mecilde.oliveira@estudante.ifto.edu.br
+516,202510970001,Moisés Morais da Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,moises.silva8@estudante.ifto.edu.br
+517,202610970028,NICOLI SOUSA LEITE,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,nicoli.leite@estudante.ifto.edu.br
+518,202410970010,Pâmela Vieira da Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,pamela.silva5@estudante.ifto.edu.br
+519,20221080970049,Paulo Ferreira da Costa,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.6.097.223.1N,
+520,202510970035,PEDRO AUGUSTO LIMA MENDES,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,pedro.mendes9@estudante.ifto.edu.br
+521,202510970015,RAFAEL OLIVEIRA DA SILVA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,rafael.silva39@estudante.ifto.edu.br
+522,20211080970076,Regivan Lopes da Silva,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,
+523,202510970042,RHENDLLYS RODRIGUES DA CONCEIÇÃO,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,rhendllys.conceicao@estudante.ifto.edu.br
+524,202310970036,Rikaely dos santos pereira,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,rikaely.pereira@estudante.ifto.edu.br
+525,202510970010,Samuel dos Reis Pereira,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,samuel.pereira3@estudante.ifto.edu.br
+526,202610970006,Silvio Said da Hora Costa,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.1.097.395.1N,silvio.costa@estudante.ifto.edu.br
+527,202410970004,Thais Muniz Almeida,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,thais.almeida5@estudante.ifto.edu.br
+528,202410970008,Thais Nunes da Costa,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,thais.costa3@estudante.ifto.edu.br
+529,202310970018,VICTOR GABRIEL AIRES DA SILVA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.3.097.395.1N,victor.silva21@estudante.ifto.edu.br
+530,202410970017,VICTÓRIA MATEUS DA SILVA,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,victoria.silva6@estudante.ifto.edu.br
+531,202320970002,Vitor Araujo Santos,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,-,vitor.santos4@estudante.ifto.edu.br
+532,202410970011,Vitoria nascimento gomes,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,vitoria.gomes3@estudante.ifto.edu.br
+533,202410970025,Yasmine Costa Alves,ARAGUAINA,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,Matriculado,Matriculado,20261.5.097.395.1N,yasmine.alves@estudante.ifto.edu.br
+534,202511940037,ADELI DOS REIS MACIEL,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,adeli.maciel@estudante.ifto.edu.br
+535,202611940022,Álefe de Aquino Gomes,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,alefe.gomes@estudante.ifto.edu.br
+536,202611940017,ALICE MORAIS CRUZ,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,alice.cruz2@estudante.ifto.edu.br
+537,202521940020,Amanda Ribeiro de Sousa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,amanda.sousa16@estudante.ifto.edu.br
+538,202511940038,Ana Clara de Oliveira Garcia,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,ana.garcia3@estudante.ifto.edu.br
+539,202511940022,Ana karollyne da Silva Amorim,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,ana.amorim6@estudante.ifto.edu.br
+540,202611940025,ANA LUIZA SILVA DE SOUSA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,ana.sousa62@estudante.ifto.edu.br
+541,202521940033,Bianca Vithoria Fernandes Beleza,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,bianca.beleza@estudante.ifto.edu.br
+542,202521940031,Cirlene de Sousa Ribeiro Camargo,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,cirlene.camargo@estudante.ifto.edu.br
+543,202511940031,Claucileia dias da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,claucileia.silva@estudante.ifto.edu.br
+544,202611940001,Daniela Rodrigues da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,daniela.silva23@estudante.ifto.edu.br
+545,202611940009,DANIELLY PEREIRA DA COSTA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,danielly.costa@estudante.ifto.edu.br
+546,202611940038,Deuzirene luz Valadares,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,deuzirene.valadares@estudante.ifto.edu.br
+547,202611940004,Deuzivania Lopes da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,deuzivania.silva@estudante.ifto.edu.br
+548,202411940009,Diana de Sousa de Oliveira de Sá,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,diana.sa4@estudante.ifto.edu.br
+549,202611940013,Dyna Maira Alves de Miranda,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,dyna.miranda@estudante.ifto.edu.br
+550,202611940008,EDILEIDE TEIXEIRA DOS SANTOS,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,edileide.santos@estudante.ifto.edu.br
+551,202421940004,Electra Branquinho Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,-,electra.silva@estudante.ifto.edu.br
+552,202511940009,Fernanda Sousa Mendes,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,fernanda.mendes2@estudante.ifto.edu.br
+553,202521940030,Gabryella Vieira Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,gabryella.silva3@estudante.ifto.edu.br
+554,202511940025,Gracione Silva e Sousa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,gracione.sousa@estudante.ifto.edu.br
+555,202611940028,Heder Jose da Silva Sousa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,heder.sousa@estudante.ifto.edu.br
+556,202611940030,Heldia Rocha da Paixão,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,heldia.paixao@estudante.ifto.edu.br
+557,202611940014,Helindaiane Rodrigues Moura,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,helindaiane.moura@estudante.ifto.edu.br
+558,202421940003,Ivanete de França Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,-,ivanete.silva3@estudante.ifto.edu.br
+559,202521940039,Ivania Ferreira dos Santos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,ivania.santos2@estudante.ifto.edu.br
+560,202611940021,IZIS SANTOS OLIVEIRA SILVA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,izis.silva@estudante.ifto.edu.br
+561,202611940032,Jaciara Muniz Nunes,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,jaciara.nunes@estudante.ifto.edu.br
+562,202521940034,JAQUELINE PEREIRA DE ANDRADE,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,jaqueline.andrade2@estudante.ifto.edu.br
+563,202521940025,JÉSSICA RIBEIRO DE SOUZA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,jessica.souza9@estudante.ifto.edu.br
+564,202421940010,Joanice Martins Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,joanice.silva@estudante.ifto.edu.br
+565,202611940037,Joicy Silva Leite,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,joicy.leite@estudante.ifto.edu.br
+566,202521940032,JOSÉ UILSON DE SOUSA COSTA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,jose.costa12@estudante.ifto.edu.br
+567,202611940023,Jozylayne da Silva lopes,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,jozylayne.lopes@estudante.ifto.edu.br
+568,202521940010,JULIANA MARTINS DA SILVA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,-,juliana.silva24@estudante.ifto.edu.br
+569,202611940040,Juliana Sousa Bezerra,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,juliana.bezerra@estudante.ifto.edu.br
+570,202521940003,KAILANE MELO RESENDE,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,kailane.resende@estudante.ifto.edu.br
+571,202611940033,KARINNA KALLITA DE OLIVEIRA ALENCAR,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,karinna.alencar@estudante.ifto.edu.br
+572,202511940023,KAROLLAINY MOREIRA FEITOSA COSTA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,karollainy.costa@estudante.ifto.edu.br
+573,202611940029,KATIA FERNANDES DE SOUSA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,katia.sousa5@estudante.ifto.edu.br
+574,202511940014,Larissa Fernandes Carvalho,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,larissa.carvalho3@estudante.ifto.edu.br
+575,202511940001,Laurisse de Sousa Santos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,laurisse.santos@estudante.ifto.edu.br
+576,202521940040,LEIDIANE ROCHA LIMA FEITOSA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,leidiane.feitosa@estudante.ifto.edu.br
+577,202521940026,Leidiane Rosa da Conceição Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,leidiane.silva5@estudante.ifto.edu.br
+578,202511940010,Leniaria Sousa Matos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,leniaria.matos@estudante.ifto.edu.br
+579,202521940029,Lídia Rios Carvalho,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,lidia.carvalho@estudante.ifto.edu.br
+580,202521940013,LILIANE SOUSA LUSTOSA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,liliane.lustosa@estudante.ifto.edu.br
+581,202511940011,Luan Lopes Conceição Lima,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,-,luan.lima4@estudante.ifto.edu.br
+582,202421940015,LUCAS PEREIRA BORGES,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,lucas.borges5@estudante.ifto.edu.br
+583,202511940032,Luzia Cristina De Sousa Santos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,luzia.santos5@estudante.ifto.edu.br
+584,202611940027,Maria Aglair Pinto de Oliveira Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,maria.silva362@estudante.ifto.edu.br
+585,202611940018,Maria da Conceição Sales Ribeiro,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,maria.ribeiro18@estudante.ifto.edu.br
+586,202611940012,MARIA DA CONCEICAO SOUSA DIAS,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,maria.dias26@estudante.ifto.edu.br
+587,202521940027,Maria de Jesus Alves Ferreira,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,maria.ferreira42@estudante.ifto.edu.br
+588,202511940015,Maria Luisa Conceição Ramos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,maria.ramos5@estudante.ifto.edu.br
+589,202521940009,MARIA LUIZA FERNANDES LIMA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,maria.lima45@estudante.ifto.edu.br
+590,202611940035,MARIA OZILENE ALVES DA SILVA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,maria.silva369@estudante.ifto.edu.br
+591,202611940026,Maria Vitória Duarte Nascimento Sousa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,maria.sousa105@estudante.ifto.edu.br
+592,202611940006,Marta Barbosa Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,marta.silva6@estudante.ifto.edu.br
+593,202521940008,MARTA DA COSTA SÁ,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,marta.sa2@estudante.ifto.edu.br
+594,202521940005,MAURIZA RODRIGUES DA SILVA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,mauriza.silva@estudante.ifto.edu.br
+595,202511940039,Maycon Douglas Ferreira da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,maycon.silva8@estudante.ifto.edu.br
+596,202521940041,MILCA DOS SANTOS SOUSA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,milca.sousa@estudante.ifto.edu.br
+597,202521940012,NATÁLIA MENDES GONÇALVES DO NASCIMENTO REZENDE,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,natalia.rezende@estudante.ifto.edu.br
+598,202511940035,Nayara Braga de Oliveira,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,nayara.oliveira5@estudante.ifto.edu.br
+599,202511940016,Nayara Caldas da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,nayara.silva9@estudante.ifto.edu.br
+600,202511940040,NEURIVAL DOS SANTOS MIRANDA,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,neurival.miranda@estudante.ifto.edu.br
+601,202611940041,NILCIVANE VILHENA BRUNO NUNES,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,nilcivane.nunes@estudante.ifto.edu.br
+602,202611940010,Patricia Ribeiro de Sousa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,patricia.sousa2@estudante.ifto.edu.br
+603,202421940031,Pedrina da Silva Gomes,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,-,pedrina.gomes@estudante.ifto.edu.br
+604,202511940036,PEDRO SOARES NUNES BENICIO,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,pedro.benicio@estudante.ifto.edu.br
+605,202511940006,Quezia Gonçalves da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,quezia.silva@estudante.ifto.edu.br
+606,202521940035,RAFAELA PEREIRA DOS SANTOS,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,rafaela.santos10@estudante.ifto.edu.br
+607,202421940026,Rafaella Fábia Alves,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,rafaella.alves@estudante.ifto.edu.br
+608,202611940039,Rana Priscila Gama Simiema,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,rana.simiema@estudante.ifto.edu.br
+609,202611940016,Raylany Macedo dos Santos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,raylany.santos@estudante.ifto.edu.br
+610,202611940007,ROBERTA RANGEL REZENDE,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,roberta.rezende@estudante.ifto.edu.br
+611,202611940011,Rosane da Paz Maranhão de Sousa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,rosane.sousa@estudante.ifto.edu.br
+612,202511940017,Rosania Maria Lima da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,rosania.silva2@estudante.ifto.edu.br
+613,202611940003,Rosimira da Conceição Santos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,rosimira.santps@estudante.ifto.edu.br
+614,202511940005,Rouveny de Sousa Barbosa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,rouveny.barbosa@estudante.ifto.edu.br
+615,202611940015,Rúbia Vitória De Sousa,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,rubia.sousa2@estudante.ifto.edu.br
+616,202611940024,Ruttyely da Silva Lopes,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,ruttyely.lopes@estudante.ifto.edu.br
+617,202611940020,Saiury Martins do Nascimento Ferreira,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,saiury.nascimento@estudante.ifto.edu.br
+618,202521940038,Serice Rocha Chaves,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,serice.chaves@estudante.ifto.edu.br
+619,202511940018,Solange da Silva Abreu,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,solange.abreu@estudante.ifto.edu.br
+620,202421940017,Talyta Ferreira de Souza,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,talyta.souza@estudante.ifto.edu.br
+621,202611940002,Tamires da Silva Ribeiro,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,tamires.ribeiro2@estudante.ifto.edu.br
+622,202611940036,Valdeane da Conceição Silva de Araújo,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,valdeane.silva@estudante.ifto.edu.br
+623,202511940029,Vania Pereira dos Santos,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.194.405.1M,vania.santos6@estudante.ifto.edu.br
+624,202611940031,Vitória Alcantara Costa Rodrigues,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,vitoria.rodrigues9@estudante.ifto.edu.br
+625,202521940011,Vitorya Jessyca Pereira da Silva,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,vitorya.silva@estudante.ifto.edu.br
+626,202611940005,Yana Aparecida Gomes Lima,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.194.405.1M,yana.lima@estudante.ifto.edu.br
+627,202521940018,Yasmim Nascimento Parlandim,ARAGUAINA,194,Técnico em Enfermagem Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.2.194.405.1M,yasmim.parlandim@estudante.ifto.edu.br
+628,202511950017,Ana Cleia Cirqueira Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,ana.silva215@estudante.ifto.edu.br
+629,202511950025,Ana Lívia Sousa Miranda,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,ana.miranda6@estudante.ifto.edu.br
+630,202611950033,BEATRYZ RIBEIRO DE SOUSA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,beatryz.sousa@estudante.ifto.edu.br
+631,202611950005,Bruna Pereira Batista,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,bruna.batista@estudante.ifto.edu.br
+632,202511950020,Camila Vitória Bezerra,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,camila.bezerra@estudante.ifto.edu.br
+633,202511950005,Cherlis Rodrigues da Silva Dias,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,cherlis.dias@estudante.ifto.edu.br
+634,202611950006,Cicera Marcileide Dias dos Santos,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,cicera.santos2@estudante.ifto.edu.br
+635,202511950012,Cláudio Santana Soares Filho,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,claudio.soares@estudante.ifto.edu.br
+636,202611950001,Cleomildes Rodrigues da Luz,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,cleomildes.luz@estudante.ifto.edu.br
+637,202511950001,CLEONICE DA ROCHA RIBEIRO,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,cleonice.ribeiro@estudante.ifto.edu.br
+638,202611950003,Cleonice Gomes Vieira Sobrinho,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,cleonice.sobrinho@estudante.ifto.edu.br
+639,202611950007,Daiane Alves dos Santos,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,daiane.santos6@estudante.ifto.edu.br
+640,202511950013,Edivânia da Silva Sousa,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,edivania.sousa@estudante.ifto.edu.br
+641,202611950017,Elainny dos Santos Cunha,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,elainny.cunha@estudante.ifto.edu.br
+642,202611950024,Elielson Correia da Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,elielson.silva3@estudante.ifto.edu.br
+643,202611950022,ERYKALLOWRRANY DOS SANTOS CELESTE,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,erykallowrrany.celeste@estudante.ifto.edu.br
+644,202611950032,Evando Vieira da Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,evando.silva@estudante.ifto.edu.br
+645,202511950003,Evellyn Cristine Chaves de Sousa,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,evellyn.sousa@estudante.ifto.edu.br
+646,202611950025,Fernanda Moura de Matos,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,fernanda.matos3@estudante.ifto.edu.br
+647,202611950021,FRANCISCA IVELTA DA SILVA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,francisca.silva28@estudante.ifto.edu.br
+648,202611950008,Huerlene Conceição da Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,huerlene.silva@estudante.ifto.edu.br
+649,202511950023,Iasmin Dias Rezende,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,iasmin.rezende@estudante.ifto.edu.br
+650,202611950016,Ideane Araújo Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,ideane.silva@estudante.ifto.edu.br
+651,202611950014,Isabela de Sá Costa Sousa,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,isabela.sousa2@estudante.ifto.edu.br
+652,202611950030,Izaias Araújo Barreiro,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,izaias.barreiro@estudante.ifto.edu.br
+653,202511950007,Joelma Alexandre de Melo,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,joelma.melo@estudante.ifto.edu.br
+654,202611950019,karoliny silva da costa,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,karoliny.costa@estudante.ifto.edu.br
+655,202511950018,Lays Silva Pereira,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,lays.pereira@estudante.ifto.edu.br
+656,202511950009,Leticia Lopes Tassi,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,leticia.tassi@estudante.ifto.edu.br
+657,202511950021,Lucas Correia de Sousa,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,lucas.sousa31@estudante.ifto.edu.br
+658,202511950029,Luciana Ferreira de Sousa,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,luciana.sousa8@estudante.ifto.edu.br
+659,202611950031,Luciane Moura Filho,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,luciane.filho@estudante.ifto.edu.br
+660,202611950011,Marcia Pereira Lima,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,marcia.lima4@estudante.ifto.edu.br
+661,202511950035,Marcileide Silva da Luz,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,marcileide.luz@estudante.ifto.edu.br
+662,202611950009,MARCOS ALMEIDA DE SOUSA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,marcos.sousa17@estudante.ifto.edu.br
+663,202611950029,Maria Adriele Rodrigues de Oliveira,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,maria.oliveira94@estudante.ifto.edu.br
+664,202511950016,Maria Clara de Oliveira Lima,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,maria.lima41@estudante.ifto.edu.br
+665,202511950024,Maria de Nazaré Pereira dos Reis,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,maria.reis11@estudante.ifto.edu.br
+666,202511950034,Maria Eduarda Soares da Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,maria.silva334@estudante.ifto.edu.br
+667,202511950031,Maria Ingrid de Sousa Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,maria.silva331@estudante.ifto.edu.br
+668,202511950015,Mayara Marques Severo,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,mayara.severo@estudante.ifto.edu.br
+669,202611950035,Mylla Mayelly Nepomuceno Machado,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,mylla.machado@estudante.ifto.edu.br
+670,202611950027,Nágila Maciel da Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,nagila.silva3@estudante.ifto.edu.br
+671,202611950028,NAIRA ALVES DA SILVA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,naira.silva4@estudante.ifto.edu.br
+672,202611950034,Natiely nogueira Sinha da silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,natiely.silva2@estudante.ifto.edu.br
+673,202511950032,RAIANI SANTOS SILVA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,raiani.silva@estudante.ifto.edu.br
+674,202611950015,ROZIANE ALVES DA ROCHA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,roziane.rocha@estudante.ifto.edu.br
+675,202511950004,Sarah Paes Valadares Magalhães,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,sarah.magalhaes@estudante.ifto.edu.br
+676,202611950012,SERGIO OTAVIO SOUSA SILVA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,sergio.silva6@estudante.ifto.edu.br
+677,202611950002,Tatiana do Nascimento Xavier,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,tatiana.xavier@estudante.ifto.edu.br
+678,202611950020,TAYLANE DA SILVA BASTOS,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,taylane.bastos@estudante.ifto.edu.br
+679,202511950008,Valcilha Oliveira dos Santos Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,valcilha.silva@estudante.ifto.edu.br
+680,202611950013,Valdilene Pinto da Silva,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,valdilene.silva@estudante.ifto.edu.br
+681,202611950026,VALDINEIRE PEREIRA BATISTA,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,valdineire.batista@estudante.ifto.edu.br
+682,202611950010,Venilson Soares dos Santos,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,venilson.santos@estudante.ifto.edu.br
+683,202611950004,VICTOR MARCIANO GONÇALVES SILVA DOS SANTOS,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,victor.santos17@estudante.ifto.edu.br
+684,202611950018,Wanessa Alves Moreira,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.1.195.300.1N,wanessa.moreira@estudante.ifto.edu.br
+685,202511950010,Weryke Jones da Silva Dantas,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,weryke.dantas@estudante.ifto.edu.br
+686,202511950006,Ytauana Silva Chagas,ARAGUAINA,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,Matriculado,Matriculado,20261.3.195.300.1N,ytauana.chagas@estudante.ifto.edu.br
+687,202612800019,AMANDA BEATRIZ AGUIAR GOMES DA SILVA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,amanda.silva39@estudante.ifto.edu.br
+688,202612800011,ANA CLARA FERNANDES MELO,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,ana.melo10@estudante.ifto.edu.br
+689,202512800025,Ana Livia Monteiro da Silva,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,ana.silva141@estudante.ifto.edu.br
+690,202512800028,Ana Raissa Rocha Rodrigues,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,ana.rodrigues38@estudante.ifto.edu.br
+691,202512800020,Angella Maylla Ferreira Milhomens,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,angella.milhomens@estudante.ifto.edu.br
+692,202512800003,Angelo Gabriel Cardoso de Oliveira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,angelo.oliveira2@estudante.ifto.edu.br
+693,202512800008,Anna Clara da Silva Rocha,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,anna.rocha2@estudante.ifto.edu.br
+694,202612800025,BÁRBARA SILVA NETO COSTA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,barbara.costa3@estudante.ifto.edu.br
+695,202612800013,Bianca Lima Reis,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,bianca.reis@estudante.ifto.edu.br
+696,202612800007,Bruno Aguiar Araujo Vanderlei,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,bruno.vanderlei@estudante.ifto.edu.br
+697,202512800012,Davi Cintra Coelho Silva,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,davi.silva20@estudante.ifto.edu.br
+698,202512800035,Debora Maciel de Morais,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,debora.morais@estudante.ifto.edu.br
+699,202612800016,EDILBERTO SOUZA LIMA JUNIOR,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,edilberto.lima@estudante.ifto.edu.br
+700,202612800002,ELLEN SOUSA LEAL,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,ellen.leal@estudante.ifto.edu.br
+701,202612800035,ÉRIKA RODRIGUES COSTA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,erika.costa2@estudante.ifto.edu.br
+702,202612800023,ESTER TELES DE FARIAS,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,ester.farias2@estudante.ifto.edu.br
+703,202512800026,Francisco de Assis Pereira de Lima,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,francisco.lima7@estudante.ifto.edu.br
+704,202612800003,Gabriela de Sousa Silva,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,gabriela.silva20@estudante.ifto.edu.br
+705,202512800018,GESSICA ALVES CONCEIçãO,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,gessica.conceicao@estudante.ifto.edu.br
+706,202512800039,Glauciene Silva Alexandre,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,glauciene.alexandre@estudante.ifto.edu.br
+707,202612800014,Gustavo Gomes Serbu,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,gustavo.serbu@estudante.ifto.edu.br
+708,202612800006,Hamábille Hadassa Gomes Gonçalves,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,hamabille.goncalves@estudante.ifto.edu.br
+709,202512800013,Ilana Rebeca de Souza Bessa,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,ilana.bessa@estudante.ifto.edu.br
+710,202512800010,Isabella Cristina Moura Oliveira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,isabella.oliveira3@estudante.ifto.edu.br
+711,202512800029,Isabella Oliveira de Sousa,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,isabella.sousa4@estudante.ifto.edu.br
+712,202612800005,Juliana Oliveira Dias,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,juliana.dias3@estudante.ifto.edu.br
+713,202612800034,Kailany de Brito Oliveira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,kailany.oliveira@estudante.ifto.edu.br
+714,202512800002,KAMILLY VITÓRIA ALVES DE ARAÚJO,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,kamilly.araujo@estudante.ifto.edu.br
+715,202612800039,KARINA FERREIRA PAIXÃO,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,karina.paixao@estudante.ifto.edu.br
+716,202612800012,LARAH ESTHÉPHANE SILVA LIMA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,larah.lima@estudante.ifto.edu.br
+717,202512800019,Leticia Braga Costa,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,leticia.costa6@estudante.ifto.edu.br
+718,202512800027,Linda Liz Pereira dos Santos,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,linda.santos@estudante.ifto.edu.br
+719,202612800028,LÍVIA CASTRO SILVA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,livia.silva11@estudante.ifto.edu.br
+720,202612800032,LIVIA MATIAS PEREIRA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,livia.pereira3@estudante.ifto.edu.br
+721,202612800029,MARIA CLARA FERREIRA PIAUILINO,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,maria.piauilino@estudante.ifto.edu.br
+722,202612800018,MARIA EDUARDA SANTOS DE SOUSA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,maria.sousa110@estudante.ifto.edu.br
+723,202512800033,Maria Elizabeth Ferreira Rodrigues,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,maria.rodrigues32@estudante.ifto.edu.br
+724,202512800014,Maria Fernanda Nunes Silva Lima,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,maria.lima42@estudante.ifto.edu.br
+725,202612800022,MARIANNA ROSA ALENCAR,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,marianna.alencar@estudante.ifto.edu.br
+726,202512800023,Maria Vitória Vanderlei de Alencar Soares,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,maria.soares3@estudante.ifto.edu.br
+727,202512800015,Marília Parreira Serato de Castro,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,marilia.castro@estudante.ifto.edu.br
+728,202512800009,Nicole Matos da Silva,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,nicole.silva3@estudante.ifto.edu.br
+729,202512800004,NICOLY KETHLYN LIBANIO DUARTE,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,nicoly.duarte@estudante.ifto.edu.br
+730,202512800007,Nycolyy da Silva Freitas,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,nycolly.freitas@estudante.ifto.edu.br
+731,202612800031,RICARDO DE ALMEIDA TAVARES,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,ricardo.tavares2@estudante.ifto.edu.br
+732,202512800022,Riquelme Galdino Pereira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,riquelme.pereira2@estudante.ifto.edu.br
+733,202612800038,Samira Maria Costa Sousa,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,samira.sousa2@estudante.ifto.edu.br
+734,202512800006,Sarah de Sousa Moreira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,sarah.moreira@estudante.ifto.edu.br
+735,202612800008,Saulo Maxwell Inorom Almeida Gomes,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,saulo.gomes@estudante.ifto.edu.br
+736,202612800027,STERFANY DA SILVA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,sterfany.silva@estudante.ifto.edu.br
+737,202512800030,Sthanlley Schindler da Silva,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,sthanlley.schindler@estudante.ifto.edu.br
+738,202612800033,TAIZ MARIA BARBOSA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,taiz.barbosa2@estudante.ifto.edu.br
+739,202512800037,THAMYRYS MATOS LACERDA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,thamyrys.lacerda@estudante.ifto.edu.br
+740,202612800010,Thauany Luna de Oliveira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,thauany.oliveira@estudante.ifto.edu.br
+741,202512800017,Thavylla Sousa Moreira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,thavylla.moreira@estudante.ifto.edu.br
+742,202612800040,THAYNARA GOMES DA SILVA  AGUIAR,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,thaynara.aguiar@estudante.ifto.edu.br
+743,202612800020,VINÍCIUS PEREIRA DE MOURA LUCAS,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,vinicius.lucas@estudante.ifto.edu.br
+744,202612800021,VITOR DA SILVA COFFANI,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,vitor.coffani@estudante.ifto.edu.br
+745,202512800016,Vitória Carvalho de Sousa,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,vitoria.sousa10@estudante.ifto.edu.br
+746,202512800024,VITORIA EMILLY DE SOUSA LIMA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.3.280.554.1M,vitoria.lima7@estudante.ifto.edu.br
+747,202612800004,Wevelly Delmondes Pereira,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,wevelly.pereira@estudante.ifto.edu.br
+748,202612800037,YARA KAROLINY MARTINS COSTA,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,yara.costa3@estudante.ifto.edu.br
+749,202612800001,Yasmim Martins Lima,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,yasmim.lima@estudante.ifto.edu.br
+750,202612800036,Yasmim Oliveira Antunes,ARAGUAINA,280,Bacharelado em Farmácia,Matriculado,Matriculado,20261.1.280.554.1I,yasmim.antunes@estudante.ifto.edu.br
+751,202613490035,ALICE ARAÚJO SILVA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,alice.silva10@estudante.ifto.edu.br
+752,202613490002,Ana Beatrice da Silva Lustosa,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,ana.lustosa4@estudante.ifto.edu.br
+753,202613490033,ANNA CLARA PEREIRA DE ARAUJO,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,anna.araujo3@estudante.ifto.edu.br
+754,202613490015,Anna Cristina da Silva Oliveira,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,anna.oliveira13@estudante.ifto.edu.br
+755,202613490014,Aryane Alves Dos Santos Almones,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,aryane.almones@estudante.ifto.edu.br
+756,202613490019,CAIO MARINHO LEITE,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,caio.leite@estudante.ifto.edu.br
+757,202613490004,Davi Oliveira Reis,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,davi.reis@estudante.ifto.edu.br
+758,202613490016,Davi Souza Andraschko,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,davi.andraschko@estudante.ifto.edu.br
+759,202613490017,EMANUEL BORGES CÂNDIDO,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,emanuel.candido@estudante.ifto.edu.br
+760,202613490005,EMANUELE DE LIMA MASCARO,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,emanuele.mascaro@estudante.ifto.edu.br
+761,202613490025,Fabrício Rodrigues Espíndola,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,fabricio.espindola@estudante.ifto.edu.br
+762,202613490011,Gustavo Carneiro Lima,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,gustavo.lima10@estudante.ifto.edu.br
+763,202613490022,HANA SOFIA LIMA DA SILVA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,hana.silva2@estudante.ifto.edu.br
+764,202613490029,ISABEL NASCIMENTO DA PAIXÃO,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,isabel.paixao@estudante.ifto.edu.br
+765,202613490027,ISADORA BARBOSA DA SILVA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,isadora.silva11@estudante.ifto.edu.br
+766,202613490010,Iury Caldas Leal,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,iury.leal@estudante.ifto.edu.br
+767,202613490006,João Arthur Costa Silva,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,joao.silva140@estudante.ifto.edu.br
+768,202613490012,João Guilherme Sousa Medeiros,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,joao.medeiros2@estudante.ifto.edu.br
+769,202613490007,João Pedro Alves e Silva,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,joao.silva139@estudante.ifto.edu.br
+770,202613490023,JOÃO PEDRO FERREIRA ROCHA CARVALHO,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,joao.carvalho26@estudante.ifto.edu.br
+771,202613490008,JOÃO PEDRO OLIVEIRA BORBA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,joao.borba@estudante.ifto.edu.br
+772,202613490018,JOÃO VICTOR DE FREITAS ALVES,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,joao.alves13@estudante.ifto.edu.br
+773,202613490028,Juliana da Silva Costa,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,juliana.costa9@estudante.ifto.edu.br
+774,202613490031,Kauane Dias Maciel,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,kauane.maciel@estudante.ifto.edu.br
+775,202613490003,Lara Franciny Ribeiro dos Santos,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,lara.santos9@estudante.ifto.edu.br
+776,202613490026,Maria Angélica Meireles de Carvalho,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,maria.carvalho37@estudante.ifto.edu.br
+777,202613490021,Maria Cecília de Miranda Barros,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,maria.barros16@estudante.ifto.edu.br
+778,202613490013,MARIA PAULA FERREIRA RIOS,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,maria.rios@estudante.ifto.edu.br
+779,202613490024,MIGUEL MIRANDA BATISTA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,miguel.batista@estudante.ifto.edu.br
+780,202613490030,PEDRO CÉSAR SILVA LIMA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,pedro.lima12@estudante.ifto.edu.br
+781,202613490036,PEDRO EMMANUEL SILVA MELO MOREIRA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,pedro.moreira4@estudante.ifto.edu.br
+782,202613490009,Sara Barbosa de Sena,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,sara.sena@estudante.ifto.edu.br
+783,202613490020,Thayla Geovanna Oliveira Araújo,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,thayla.araujo@estudante.ifto.edu.br
+784,202613490034,Vitor Gabriel Paiva de Sousa,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,vitor.silva24@estudante.ifto.edu.br
+785,202613490032,YOHANA DE SOUSA LOPES MEIRA,ARAGUAINA,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,Matriculado,Matriculado,20261.1.349.653.1I,yohana.meira@estudante.ifto.edu.br
+786,202613520001,Adriana Almeida Silva,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,adriana.silva34@estudante.ifto.edu.br
+787,202613520022,Ana Flávia Pereira da Silva Couto,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,ana.couto3@estudante.ifto.edu.br
+788,202613520033,Ana Karine da Silva Amorim,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,ana.amorim7@estudante.ifto.edu.br
+789,202613520035,Ana Karollyne da Silva Amorim,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,ana.amorim6@estudante.ifto.edu.br
+790,202613520023,Andressa Lopes Oliveira,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,andressa.oliveira8@estudante.ifto.edu.br
+791,202613520002,Camili Cavalcante da Conceição,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,camili.conceicao@estudante.ifto.edu.br
+792,202613520025,Carmelita da Silva Coimbra,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,carmelita.coimbra@estudante.ifto.edu.br
+793,202613520027,Daniela de Souza Gonçalves Carvalho,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,daniela.carvalho3@estudante.ifto.edu.br
+794,202613520028,Derivan Dias Batista Costa,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,derivan.costa@estudante.ifto.edu.br
+795,202613520029,Deusiran Martins da Silva,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,deusiran.silva@estudante.ifto.edu.br
+796,202613520030,Edna Alves de Sousa,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,edna.sousa2@estudante.ifto.edu.br
+797,202613520031,Efigênia do Nascimento Gomes,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,efigenia.gomes@estudante.ifto.edu.br
+798,202613520026,Eliane Rodrigues Fragoso,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,eliane.fragoso@estudante.ifto.edu.br
+799,202613520024,Fabíola Alves Fernandes,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,fabiola.fernandes@estudante.ifto.edu.br
+800,202613520021,Francisca Alamna Gomes Sá,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,francisca.sa10@estudante.ifto.edu.br
+801,202613520019,Francisca Lima Santana,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,francisca.santana@estudante.ifto.edu.br
+802,202613520018,Gildelenny Francisca Dos Santos Silva,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,gildelenny.silva@estudante.ifto.edu.br
+803,202613520017,Giovana de Andrade,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,giovana.andrade@estudante.ifto.edu.br
+804,202613520032,Iana Stéfane da Cruz Neres,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,iana.neres@estudante.ifto.edu.br
+805,202613520016,Jakeline Saraiva de Melo Brito,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,jakeline.brito2@estudante.ifto.edu.br
+806,202613520015,Josicleia Ferreira da Silva,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,josicleia.silva@estudante.ifto.edu.br
+807,202613520014,Keiliane Kutati Karajá,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,keiliane.karaja@estudante.ifto.edu.br
+808,202613520013,Lawana Abel Bismarck do Nascimento,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,lawana.nascimento@estudante.ifto.edu.br
+809,202613520012,Lorena Silva Fogaça,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,lorena.fogaca@estudante.ifto.edu.br
+810,202613520011,Marlúcia Abel de Sousa,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,marlucia.sousa@estudante.ifto.edu.br
+811,202613520010,Mirian Pereira Lima,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,mirian.lima3@estudante.ifto.edu.br
+812,202613520009,Nadla Machado dos Santos,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,nadla.santos@estudante.ifto.edu.br
+813,202613520034,Nayara Ferreira Rodrigues Duailibe,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,nayara.duailibe@estudante.ifto.edu.br
+814,202613520008,Noelda dos Santos Lima (Noelda dos Santos Lima),ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,noelda.lima@estudante.ifto.edu.br
+815,202613520007,Paula Pereira Fernandes (Paula Pereira Fernandes),ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,paula.fernandes2@estudante.ifto.edu.br
+816,202613520006,Raiane de Sousa Guarani (Raiane de Sousa Guarani),ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,raiane.guarani@estudante.ifto.edu.br
+817,202613520005,Raillany Alves Miranda (Raillany Alves Miranda),ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,raillany.miranda@estudante.ifto.edu.br
+818,202613520036,Rosana Messias Meneses Oliveira,ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,rosana.oliveira3@estudante.ifto.edu.br
+819,202613520004,Solânia Myrely de Lima Moura (Solânia Myrely de Lima Moura),ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,solania.moura@estudante.ifto.edu.br
+820,202613520003,Tainara Pereira de Araújo (Tainara Pereira de Araújo),ARAGUAINA,352,Curso de Formação Inicial e Continuada em Assistente de Contabilidade,Matriculado,Matriculado,20261.1.352.648.1N,tainara.araujo@estudante.ifto.edu.br
+821,202613560011,Aldayanny Victoria Martins da Silva,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,aldayanny.silva@estudante.ifto.edu.br
+822,202613560001,Arielly Victória Sousa Tolentino,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,arielly.tolentino@estudante.ifto.edu.br
+823,202613560017,Caio César Pereira da Silva,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,caio.silva18@estudante.ifto.edu.br
+824,202613560021,Charles Jefferson Rodrigues Alves,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,charles.alves@estudante.ifto.edu.br
+825,202613560023,Daniela Carneiro Teixeira de Araújo,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,daniela.araujo2@estudante.ifto.edu.br
+826,202613560009,Eduardo Dias e Silva,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,eduardo.silva57@estudante.ifto.edu.br
+827,202613560008,GILMAR SANTOS FARIAS,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,gilmar.farias@estudante.ifto.edu.br
+828,202613560005,Hiasmym Alves dos Santos Rocha,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,hiasmym.rocha@estudante.ifto.edu.br
+829,202613560018,Joálison Martins Ribeiro,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,joalison.ribeiro@estudante.ifto.edu.br
+830,202613560026,João Gabryel Dias Santos,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,joao.santos53@estudante.ifto.edu.br
+831,202613560028,João Guilherme Sousa Silva,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,joao.silva150@estudante.ifto.edu.br
+832,202613560029,Jonathas Eduardo da Silva,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,jonathas.silva2@estudante.ifto.edu.br
+833,202613560002,Judson da Silva Cruz,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,judson.cruz@estudante.ifto.edu.br
+834,202613560022,Kauã Barbosa de Oliveira Leonel,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,kaua.leonel@estudante.ifto.edu.br
+835,202613560025,Marcos Vinicius da Silva Campos,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,marcos.campos2@estudante.ifto.edu.br
+836,202613560003,Pedro Henrique de Andrade Fernandes,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,pedro.fernandes5@estudante.ifto.edu.br
+837,202613560015,RAEL GOMES COSTA,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,rael.costa@estudante.ifto.edu.br
+838,202613560019,Thauny Gabrielle Araújo Jota,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,thauny.jota@estudante.ifto.edu.br
+839,202613560024,Thenardy Vieira Capurro,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,thenardy.capurro@estudante.ifto.edu.br
+840,202613560007,TIAGO FABRICIO DE PAULA ANDRADE,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,tiago.andrade@estudante.ifto.edu.br
+841,202613560027,Vitor da Luz Martins,ARAGUAINA,356,Curso de Qualificação Profissional em Drones e Impressoras 3D: Operação e Manutenção,Matriculado,Matriculado,20261.1.356.658.1I,vitor.martins2@estudante.ifto.edu.br
+842,202613580013,Ana Beatriz Nascimento Resplandes de Araújo,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,ana.ara19@estudante.ifto.edu.br
+843,202613580024,Andrey Amorim Oliveira,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,andrey.oliveira2@estudante.ifto.edu.br
+844,202613580014,Anna Clara da Silva Rocha,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,anna.rocha2@estudante.ifto.edu.br
+845,202613580030,Antonio Júnior Fernandes Madeira,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,antonio.madeira@estudante.ifto.edu.br
+846,202613580007,David Anderson Fernandes  de Aguiar,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,david.aguiar@estudante.ifto.edu.br
+847,202613580001,Edilson de Sousa Araujo,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,edilson.araujo@estudante.ifto.edu.br
+848,202613580028,EDNOLIA NUNES DA SILVA,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,ednolia.silva@estudante.ifto.edu.br
+849,202613580017,Gabriel Rabelo Bandeira,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,gabriel.bandeira3@estudante.ifto.edu.br
+850,202613580012,Ismael Pereira Santos,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,ismael.santos@estudante.ifto.edu.br
+851,202613580003,João Vitor Resplandes da Silva,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,joao.silva147@estudante.ifto.edu.br
+852,202613580022,Kemily Vitória Pereira Soares,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,kemily.soares@estudante.ifto.edu.br
+853,202613580005,Lara Sthefany Coimbra Araujo,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,lara.araujo@estudante.ifto.edu.br
+854,202613580009,Leonardo Vieira Dourado,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,leonardo.dourado@estudante.ifto.edu.br
+855,202613580016,LUANA GOMES LIMA,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,luana.lima4@estudante.ifto.edu.br
+856,202613580010,Luna Dias da Silva,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,luna.silva@estudante.ifto.edu.br
+857,202613580008,Mauricio Junior Gomes De Sousa,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,mauricio.sousa2@estudante.ifto.edu.br
+858,202613580004,Michelle Costa Morais,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,michelle.morais2@estudante.ifto.edu.br
+859,202613580018,Renan Pablo Lima Silva,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,renan.silva8@estudante.ifto.edu.br
+860,202613580006,Samara Rocha Galvão,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,samara.galvao@estudante.ifto.edu.br
+861,202613580029,Thiago Bonfim Gama de Sena,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,thiago.sena2@estudante.ifto.edu.br
+862,202613580011,Thiago Kass Sousa,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,thiago.sousa14@estudante.ifto.edu.br
+863,202613580031,Vitória Carvalho de Sousa,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,vitoria.sousa10@estudante.ifto.edu.br
+864,202613580026,Wanderson Gomes de Sousa,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,wanderson.sousa9@estudante.ifto.edu.br
+865,202613580025,Yasmim Basilio Rodrigues,ARAGUAINA,358,Curso de Qualificação Profissional em Negócios Inovadores Apoiados por IA,Matriculado,Matriculado,20261.1.358.660.1N,yasmim.rodrigues3@estudante.ifto.edu.br
+866,202613600025,Ágatha Silva Neto Costa,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,agatha.costa@estudante.ifto.edu.br
+867,202613600026,Ana Paula Castro Silva,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,ana.silva253@estudante.ifto.edu.br
+868,202613600009,Beatriz Veloso Maciel,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,beatriz.maciel@estudante.ifto.edu.br
+869,202613600002,Carolina Ferreira Teixeira de Araújo,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,carolina.araujo2@estudante.ifto.edu.br
+870,202613600016,DOUGLAS LUZ DE OLIVEIRA CARVALHO,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,douglas.carvalho2@estudante.ifto.edu.br
+871,202613600020,Fábio Rogério Antunes da Silva,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,fabio.silva28@estudante.ifto.edu.br
+872,202613600027,Gabriel da Silva Martins,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,gabriel.martins6@estudante.ifto.edu.br
+873,202613600021,Heitor Queiroz da Silva,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,heitor.silva3@estudante.ifto.edu.br
+874,202613600001,Isaac Lucas Alves Santana,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,isaac.santana@estudante.ifto.edu.br
+875,202613600004,Isadora Aparecida Guedes Cavalcante,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,isadora.cavalcante@estudante.ifto.edu.br
+876,202613600007,Izabella Dias Barros,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,izabella.barros@estudante.ifto.edu.br
+877,202613600019,Jamili Catarino Martins,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,jamili.martins@estudante.ifto.edu.br
+878,202613600015,João Gabriel Alves Macedo,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,joao.macedo6@estudante.ifto.edu.br
+879,202613600017,José Emanoel Sales Sousa,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,jose.sousa31@estudante.ifto.edu.br
+880,202613600014,Kalebe Cardoso da Costa,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,kalebe.costa@estudante.ifto.edu.br
+881,202613600006,Keilla Ellen Vieira pimentel,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,keilla.pimentel@estudante.ifto.edu.br
+882,202613600024,MAGNA ALVES DA COSTA,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,magna.costa@estudante.ifto.edu.br
+883,202613600005,Rafael Vinicius Ferreira Viana,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,rafael.viana3@estudante.ifto.edu.br
+884,202613600023,Rennzo Rodrigues Diedrichs,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,rennzo.diedrichs@estudante.ifto.edu.br
+885,202613600012,Sávio Sousa Nunes,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,savio.nunes@estudante.ifto.edu.br
+886,202613600008,Sofia Moreira Fernandes,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,sofia.fernandes@estudante.ifto.edu.br
+887,202613600011,Sophia Nogueira de Castro Carvalho,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,sophia.carvalho2@estudante.ifto.edu.br
+888,202613600018,Sostheny Lima Rocha,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,sostheny.rocha@estudante.ifto.edu.br
+889,202613600010,Thais Lawanda Gomes Lima,ARAGUAINA,360,Curso de Qualificação Profissional em App clicks - Construção Rápida de apps para mídias digitais,Matriculado,Matriculado,20261.1.360.662.1V,thais.lima7@estudante.ifto.edu.br

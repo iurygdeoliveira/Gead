@@ -275,7 +275,18 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
             return false;
         }
 
-        return $this->teams()->whereKey($tenant->getKey())->exists();
+        $panel = filament()->getCurrentPanel();
+        if ($panel instanceof Panel) {
+            $tenants = $this->getTenants($panel);
+        } else {
+            return $this->teams()->whereKey($tenant->getKey())->exists();
+        }
+
+        if ($tenants instanceof Collection) {
+            return $tenants->contains('id', $tenant->getKey());
+        }
+
+        return in_array($tenant->getKey(), $tenants, true);
     }
 
     public function getTenants(Panel $panel): array|Collection

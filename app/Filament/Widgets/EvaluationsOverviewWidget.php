@@ -37,6 +37,12 @@ class EvaluationsOverviewWidget extends BaseWidget
 
         $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
             ->whereHas('enrollment.student', function ($query) {
+                $query->where(function ($subQuery) {
+                    $subQuery->whereNull('user_id')
+                        ->orWhereHas('user', function ($q) {
+                            $q->where('is_suspended', false);
+                        });
+                });
                 $query->whereDoesntHave('enrollments', function ($q) {
                     $q->whereDoesntHave('classEnrollments');
                 });
@@ -57,6 +63,12 @@ class EvaluationsOverviewWidget extends BaseWidget
 
         $evaluations = Evaluation::where('team_id', $teamId)
             ->whereHas('classEnrollment.enrollment.student', function ($query) {
+                $query->where(function ($subQuery) {
+                    $subQuery->whereNull('user_id')
+                        ->orWhereHas('user', function ($q) {
+                            $q->where('is_suspended', false);
+                        });
+                });
                 $query->whereDoesntHave('enrollments', function ($q) {
                     $q->whereDoesntHave('classEnrollments');
                 });

@@ -29,7 +29,7 @@ class StudentSeeder extends Seeder
             ]);
         }
 
-        $csvPath = database_path('seeders/dados de seed/base de alunos.csv');
+        $csvPath = database_path('seeders/dados de seed/Base_de_alunos_2026.1.csv');
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");
@@ -52,9 +52,8 @@ class StudentSeeder extends Seeder
                 $registrationNumber = trim($row[1] ?? '');
                 $name = trim($row[2] ?? '');
                 $courseName = trim($row[5] ?? '');
-                $classCode = trim($row[6] ?? '');
-                $academicEmail = trim($row[7] ?? '');
-                $personalEmail = trim($row[8] ?? '');
+                $classCode = trim($row[8] ?? '');
+                $academicEmail = trim($row[9] ?? '');
 
                 if (empty($name) || empty($registrationNumber) || empty($courseName)) {
                     continue;
