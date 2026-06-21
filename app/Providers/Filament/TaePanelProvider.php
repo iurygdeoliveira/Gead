@@ -4,10 +4,15 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\LoginAuditPage;
+use App\Filament\Pages\TaeDashboard;
+use App\Filament\Resources\CourseClasses\CourseClassResource;
+use App\Filament\Resources\Courses\CourseResource;
+use App\Filament\Resources\Evaluations\EvaluationResource;
+use App\Filament\Resources\Students\StudentResource;
 use App\Filament\Resources\Teachers\TeacherResource;
 use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
-use Filament\Pages\Dashboard;
 use Filament\Panel;
 
 class TaePanelProvider extends BasePanelProvider
@@ -20,14 +25,16 @@ class TaePanelProvider extends BasePanelProvider
         $panel = $panel
             ->tenant(Team::class, slugAttribute: 'slug', ownershipRelationship: 'teams')
             ->tenantMenu(false)
-            ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
             ->resources([
                 TeacherResource::class,
+                StudentResource::class,
+                CourseResource::class,
+                EvaluationResource::class,
+                CourseClassResource::class,
             ])
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->pages([
-                Dashboard::class,
+                TaeDashboard::class,
+                LoginAuditPage::class,
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,

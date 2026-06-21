@@ -36,7 +36,7 @@ class UsersTable
             if ($currentTeam instanceof Team) {
                 $query->whereHas('teams', function ($q) use ($currentTeam): void {
                     $q->where('teams.id', $currentTeam->getKey());
-                })->withRolesForTeam($currentTeam);
+                })->with('teams')->withRolesForTeam($currentTeam);
             }
         } else {
             $query->with(['teams', 'rolesWithTeams']);

@@ -17,7 +17,7 @@ class EvaluationsOverviewWidget extends BaseWidget
 
     public static function canView(): bool
     {
-        return filament()->getCurrentPanel()?->getId() === 'manager';
+        return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae']);
     }
 
     #[\Override]

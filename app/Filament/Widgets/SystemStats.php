@@ -2,7 +2,6 @@
 
 namespace App\Filament\Widgets;
 
-use App\Filament\Resources\Media\MediaResource;
 use App\Filament\Resources\Teams\TeamResource;
 use App\Filament\Resources\Users\UserResource;
 use App\Support\FilamentStatsCache;
@@ -83,10 +82,6 @@ class SystemStats extends BaseWidget
                 )
                 ->icon(Heroicon::UserGroup)
                 ->url(UserResource::getUrl()),
-
-            Stat::make('Mídias', number_format($s['media']['total']))
-                ->description('Tamanho total: '.$s['media']['size'])
-                ->url(MediaResource::getUrl()),
         ];
     }
 

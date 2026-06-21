@@ -74,4 +74,12 @@ class Templates extends Page implements HasTable
                     ->url(fn (array $record): string => PreviewTemplate::getUrl(['type' => $record['id']])),
             ]);
     }
+
+    public static function canAccess(): bool
+    {
+        /** @var \App\Models\User|null $user */
+        $user = \Filament\Facades\Filament::auth()->user();
+
+        return $user?->hasRole(\App\Enums\RoleType::ADMIN->value) ?? false;
+    }
 }

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
-use App\Filament\Resources\Media\MediaResource;
 use App\Filament\Resources\Users\UserResource;
 use App\Filament\Widgets\CustomStats;
 use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
-use Filament\Pages\Dashboard;
+use App\Filament\Pages\StudentDashboard;
 use Filament\Panel;
+use App\Filament\Widgets\StudentDisciplinesWidget;
 
 class StudentPanelProvider extends BasePanelProvider
 {
@@ -25,15 +25,12 @@ class StudentPanelProvider extends BasePanelProvider
             ->tenant(Team::class, slugAttribute: 'slug', ownershipRelationship: 'teams')
             ->tenantMenu(false)
             ->resources([
-                UserResource::class,
-                MediaResource::class,
             ])
-            ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
             ->pages([
-                Dashboard::class,
+                StudentDashboard::class,
             ])
             ->widgets([
-                CustomStats::class,
+                StudentDisciplinesWidget::class,
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,

@@ -37,23 +37,24 @@
             </x-filament::input.wrapper>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
             @forelse ($this->getUsersWithAudits() as $user)
                 <x-filament::section
                     class="cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 transition duration-200"
+                    style="width: 100%; max-width: 320px; flex: 0 0 auto;"
                     wire:click="selectUser({{ $user->id }})"
                 >
-                    <div class="flex flex-col items-center gap-4 text-center w-full overflow-hidden">
+                    <div style="display: flex; flex-direction: row; align-items: center; gap: 1rem; text-align: left; width: 100%; overflow: hidden;">
                         <x-filament::avatar
                             :src="filament()->getUserAvatarUrl($user)"
                             :alt="$user->name"
-                            size="xl"
+                            size="lg"
                         />
-                        <div class="w-full">
-                            <h3 class="font-semibold text-lg leading-tight wrap-break-word line-clamp-2 px-2">
+                        <div style="flex: 1; overflow: hidden;">
+                            <h3 style="font-weight: 600; font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.25rem;">
                                 {{ $user->name }}
                             </h3>
-                            <p class="text-xs text-gray-500 mt-1 break-all px-2 overflow-hidden text-ellipsis">
+                            <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                 {{ $user->email }}
                             </p>
                         </div>

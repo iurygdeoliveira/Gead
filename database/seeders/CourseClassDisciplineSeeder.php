@@ -23,7 +23,7 @@ class CourseClassDisciplineSeeder extends Seeder
         }
 
         $allClasses = CourseClass::all()->keyBy('code');
-        $allDisciplines = Discipline::all()->keyBy('code');
+        $allDisciplines = Discipline::all()->groupBy('code');
 
         DB::transaction(function () use ($csvPath, $allClasses, $allDisciplines) {
             $file = fopen($csvPath, 'r');
@@ -46,7 +46,11 @@ class CourseClassDisciplineSeeder extends Seeder
                 }
 
                 $courseClass = $allClasses->get($classCode);
-                $discipline = $allDisciplines->get($sigla);
+                
+                $discipline = null;
+                if ($courseClass) {
+                    $discipline = $allDisciplines->get($sigla)?->firstWhere('course_id', $courseClass->course_id);
+                }
 
                 if (!$courseClass || !$discipline) {
                     $failures[] = "Não encontrou Turma ($classCode) ou Disciplina ($sigla)";

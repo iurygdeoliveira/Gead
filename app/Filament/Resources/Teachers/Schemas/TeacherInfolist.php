@@ -45,6 +45,7 @@ class TeacherInfolist
                                                     return [
                                                         'course_name' => $pivot->courseClass?->course?->name ?? '-',
                                                         'academic_term' => $pivot->courseClass?->academicTerm?->name ?? '-',
+                                                        'course_class_name' => $pivot->courseClass?->name ?? $pivot->courseClass?->code ?? '-',
                                                         'discipline_name' => $pivot->discipline?->name ?? '-',
                                                     ];
                                                 });
@@ -55,12 +56,15 @@ class TeacherInfolist
                                     ->table([
                                         TableColumn::make('Curso'),
                                         TableColumn::make('Período Letivo'),
+                                        TableColumn::make('Turma'),
                                         TableColumn::make('Disciplina'),
                                     ])
                                     ->schema([
                                         TextEntry::make('course_name')
                                             ->hiddenLabel(),
                                         TextEntry::make('academic_term')
+                                            ->hiddenLabel(),
+                                        TextEntry::make('course_class_name')
                                             ->hiddenLabel(),
                                         TextEntry::make('discipline_name')
                                             ->hiddenLabel(),

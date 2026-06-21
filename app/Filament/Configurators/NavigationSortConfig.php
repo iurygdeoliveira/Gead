@@ -9,7 +9,6 @@ use App\Filament\Resources\CourseClasses\CourseClassResource;
 use App\Filament\Resources\Courses\CourseResource;
 use App\Filament\Resources\Evaluations\EvaluationResource;
 use App\Filament\Resources\Feedback\FeedbackResource;
-use App\Filament\Resources\Media\MediaResource;
 use App\Filament\Resources\Security\SecurityEventResource;
 use App\Filament\Resources\Students\StudentResource;
 use App\Filament\Resources\Teachers\TeacherResource;
@@ -27,7 +26,6 @@ class NavigationSortConfig
             StudentResource::class => 3,
             CourseResource::class => 4,
             CourseClassResource::class => 5,
-            MediaResource::class => 6,
 
             // Administração / Segurança
             UserResource::class => 10,

@@ -17,7 +17,7 @@ class GenerateEvaluationsWidget extends Widget
 
     public static function canView(): bool
     {
-        return filament()->getCurrentPanel()?->getId() === 'manager';
+        return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae']);
     }
 
     public function generate(): void

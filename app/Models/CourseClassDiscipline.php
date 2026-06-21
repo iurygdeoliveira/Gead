@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CourseClassDiscipline extends Pivot
 {
@@ -24,5 +25,10 @@ class CourseClassDiscipline extends Pivot
     public function teacher(): BelongsTo
     {
         return $this->belongsTo(Teacher::class);
+    }
+
+    public function evaluations(): HasMany
+    {
+        return $this->hasMany(Evaluation::class, 'course_class_discipline_id');
     }
 }

@@ -124,6 +124,10 @@ class UserPolicy
             return false;
         }
 
+        if ($record->relationLoaded('teams')) {
+            return $record->teams->contains($currentTenant);
+        }
+
         return $record->teams()->whereKey($currentTenant->getKey())->exists();
     }
 

@@ -38,10 +38,11 @@ class TeacherForm
                             ->label('Disciplinas Ministradas')
                             ->schema([
                                 self::getCourseField(),
+                                self::getPeriodField(),
                                 self::getCourseClassField(),
                                 self::getDisciplineField(),
                             ])
-                            ->columns(3)
+                            ->columns(4)
                             ->columnSpanFull(),
                     ]),
             ]);
@@ -59,7 +60,7 @@ class TeacherForm
                 ->email()
                 ->required()
                 ->maxLength(255)
-                ->unique(),
+                ->unique(ignoreRecord: true),
             TextInput::make('registration_number')
                 ->label('Matrícula')
                 ->maxLength(255),
@@ -83,19 +84,54 @@ class TeacherForm
             });
     }
 
-    public static function getCourseClassField(): Select
+    public static function getPeriodField(): Select
     {
-        return Select::make('course_class_id')
+        return Select::make('period')
             ->label('Período')
             ->options(function (callable $get) {
                 $courseId = $get('course_id');
-                if (! $courseId) {
-                    return CourseClass::all()->mapWithKeys(fn ($cc) => [$cc->id => $cc->entry_period]);
-                }
+                return once(function () use ($courseId) {
+                    if (! $courseId) {
+                        return CourseClass::all()->pluck('entry_period', 'entry_period')->unique();
+                    }
 
-                return CourseClass::where('course_id', $courseId)
-                    ->get()
-                    ->mapWithKeys(fn ($cc) => [$cc->id => $cc->entry_period]);
+                    return CourseClass::where('course_id', $courseId)
+                        ->pluck('entry_period', 'entry_period')
+                        ->unique();
+                });
+            })
+            ->required()
+            ->live()
+            ->dehydrated(false)
+            ->afterStateHydrated(function ($state, $set, $record) {
+                if ($record) {
+                    $record->loadMissing('courseClass');
+                    if ($record->courseClass) {
+                        $set('period', $record->courseClass->entry_period);
+                    }
+                }
+            });
+    }
+
+    public static function getCourseClassField(): Select
+    {
+        return Select::make('course_class_id')
+            ->label('Turma')
+            ->options(function (callable $get) {
+                $courseId = $get('course_id');
+                $period = $get('period');
+
+                return once(function () use ($courseId, $period) {
+                    $query = CourseClass::query();
+                    if ($courseId) {
+                        $query->where('course_id', $courseId);
+                    }
+                    if ($period) {
+                        $query->where('entry_period', $period);
+                    }
+
+                    return $query->get()->mapWithKeys(fn ($cc) => [$cc->id => $cc->name ?? $cc->code]);
+                });
             })
             ->required()
             ->live();
@@ -107,11 +143,13 @@ class TeacherForm
             ->label('Disciplina')
             ->options(function (callable $get) {
                 $courseId = $get('course_id');
-                if (! $courseId) {
-                    return Discipline::pluck('name', 'id');
-                }
-
-                return Discipline::where('course_id', $courseId)->pluck('name', 'id');
+                return once(function () use ($courseId) {
+                    $query = Discipline::query();
+                    if ($courseId) {
+                        $query->where('course_id', $courseId);
+                    }
+                    return $query->pluck('name', 'id');
+                });
             })
             ->required();
     }

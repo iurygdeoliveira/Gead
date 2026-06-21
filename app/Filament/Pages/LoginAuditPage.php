@@ -35,7 +35,7 @@ class LoginAuditPage extends Page implements HasTable
 
     protected static ?string $title = 'Auditoria de Logins';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Auditoria';
+    protected static string|\UnitEnum|null $navigationGroup = 'Administração';
 
     protected static ?int $navigationSort = 10;
 
@@ -111,6 +111,12 @@ class LoginAuditPage extends Page implements HasTable
         /** @var User|null $user */
         $user = Filament::auth()->user();
 
-        return $user?->hasRole(RoleType::ADMIN->value) ?? false;
+        if (! $user) {
+            return false;
+        }
+
+        return $user->hasRole(RoleType::ADMIN->value) ||
+               $user->hasRole(RoleType::MANAGER->value) ||
+               $user->hasRole(RoleType::TAE->value);
     }
 }

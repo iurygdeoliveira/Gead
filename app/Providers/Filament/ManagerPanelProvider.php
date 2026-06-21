@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\LoginAuditPage;
 use App\Filament\Pages\ManagerDashboard;
 use App\Filament\Resources\CourseClasses\CourseClassResource;
 use App\Filament\Resources\Courses\CourseResource;
 use App\Filament\Resources\Evaluations\EvaluationResource;
 use App\Filament\Resources\Students\StudentResource;
 use App\Filament\Resources\Teachers\TeacherResource;
+use App\Filament\Resources\Users\UserResource;
 use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
 use Filament\Panel;
@@ -32,9 +34,11 @@ class ManagerPanelProvider extends BasePanelProvider
                 CourseResource::class,
                 EvaluationResource::class,
                 CourseClassResource::class,
+                UserResource::class,
             ])
             ->pages([
                 ManagerDashboard::class,
+                LoginAuditPage::class,
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,
