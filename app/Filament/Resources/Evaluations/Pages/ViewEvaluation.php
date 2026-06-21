@@ -22,4 +22,11 @@ class ViewEvaluation extends ViewRecord
             EditAction::make(),
         ];
     }
+
+    public function getTitle(): string
+    {
+        $teacherName = $this->getRecord()->courseClassDiscipline?->teacher?->name ?? 'Professor Desconhecido';
+        
+        return 'Visualizar avaliação de ' . $teacherName;
+    }
 }

@@ -22,4 +22,9 @@ class ViewCourseClass extends ViewRecord
             EditAction::make(),
         ];
     }
+
+    public function getTitle(): string
+    {
+        return 'Visualizar Turma: ' . $this->getRecord()->name;
+    }
 }

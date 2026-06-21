@@ -37,26 +37,30 @@ class TeacherInfolist
                                 RepeatableEntry::make('taught_disciplines')
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
-                                        return $record->taughtDisciplines()
-                                            ->with(['courseClass.course', 'discipline'])
-                                            ->get()
-                                            ->map(function ($pivot) {
-                                                return [
-                                                    'course_name' => $pivot->courseClass?->course?->name ?? '-',
-                                                    'entry_period' => $pivot->courseClass?->entry_period ?? '-',
-                                                    'discipline_name' => $pivot->discipline?->name ?? '-',
-                                                ];
-                                            });
+                                        if (!isset($record->cached_taught_disciplines)) {
+                                            $record->cached_taught_disciplines = $record->taughtDisciplines()
+                                                ->with(['courseClass.course', 'courseClass.academicTerm', 'discipline'])
+                                                ->get()
+                                                ->map(function ($pivot) {
+                                                    return [
+                                                        'course_name' => $pivot->courseClass?->course?->name ?? '-',
+                                                        'academic_term' => $pivot->courseClass?->academicTerm?->name ?? '-',
+                                                        'discipline_name' => $pivot->discipline?->name ?? '-',
+                                                    ];
+                                                });
+                                        }
+
+                                        return $record->cached_taught_disciplines;
                                     })
                                     ->table([
                                         TableColumn::make('Curso'),
-                                        TableColumn::make('Período de Ingresso'),
+                                        TableColumn::make('Período Letivo'),
                                         TableColumn::make('Disciplina'),
                                     ])
                                     ->schema([
                                         TextEntry::make('course_name')
                                             ->hiddenLabel(),
-                                        TextEntry::make('entry_period')
+                                        TextEntry::make('academic_term')
                                             ->hiddenLabel(),
                                         TextEntry::make('discipline_name')
                                             ->hiddenLabel(),

@@ -17,10 +17,10 @@
             color: #f87171 !important;
         }
         .students-without-class-link:hover .students-without-class-label {
-            color: var(--primary-600, #ccff03) !important;
+            color: var(--danger-600, #dc2626) !important;
         }
         .dark .students-without-class-link:hover .students-without-class-label {
-            color: var(--primary-400, #d6ff33) !important;
+            color: var(--danger-400, #f87171) !important;
         }
     </style>
     <x-filament::section style="height: 100%; display: flex; flex-direction: column; justify-content: center;">

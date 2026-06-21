@@ -72,26 +72,22 @@ class CourseClassInfolist
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
                                         // Load relations to avoid lazy-loading exceptions
-                                        $record->loadMissing(['course.disciplines', 'disciplines']);
+                                        $record->loadMissing(['disciplines']);
 
-                                        // Load disciplines of the course linked to this cohort
-                                        $course = $record->course;
-                                        if (! $course) {
-                                            return collect();
-                                        }
-
-                                        // We fetch all disciplines of the course, and associate the pivot/teacher info if it exists
-                                        return $course->disciplines->map(function ($discipline) use ($record) {
-                                            $cohortDiscipline = $record->disciplines()->where('discipline_id', $discipline->id)->first();
-                                            $discipline->pivot = $cohortDiscipline ? $cohortDiscipline->pivot : null;
-
+                                        // We fetch all disciplines of the cohort and group them by ID to handle multiple teachers
+                                        return $record->disciplines->groupBy('id')->map(function ($group) {
+                                            $discipline = $group->first();
+                                            // collect all teacher_ids
+                                            $teacherIds = $group->pluck('pivot.teacher_id')->filter()->unique();
+                                            $teachers = \App\Models\Teacher::whereIn('id', $teacherIds)->get();
+                                            $discipline->class_teachers = $teachers;
                                             return $discipline;
-                                        })->sortBy('period', SORT_NATURAL | SORT_FLAG_CASE);
+                                        })->values()->sortBy('period', SORT_NATURAL | SORT_FLAG_CASE);
                                     })
                                     ->table([
                                         RepeatableEntry\TableColumn::make('Código'),
                                         RepeatableEntry\TableColumn::make('Nome'),
-                                        RepeatableEntry\TableColumn::make('Docente'),
+                                        RepeatableEntry\TableColumn::make('Docente(s)'),
                                     ])
                                     ->schema([
                                         TextEntry::make('code')
@@ -100,15 +96,14 @@ class CourseClassInfolist
                                             ->hiddenLabel(),
                                         TextEntry::make('teacher_name')
                                             ->hiddenLabel()
+                                            ->badge()
+                                            ->color('primary')
                                             ->state(function ($record) {
-                                                $teacherId = $record->pivot?->teacher_id;
-                                                if ($teacherId) {
-                                                    $teacher = Teacher::find($teacherId);
-
-                                                    return $teacher ? $teacher->name : '-';
+                                                if (isset($record->class_teachers) && $record->class_teachers->count() > 0) {
+                                                    return $record->class_teachers->pluck('name')->toArray();
                                                 }
 
-                                                return '-';
+                                                return ['-'];
                                             }),
                                     ]),
                             ]),

@@ -41,6 +41,12 @@ class EvaluationsTable
                     ->color('gray')
                     ->alignLeft(),
 
+                TextColumn::make('courseClassDiscipline.courseClass.name')
+                    ->label('Turma')
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->color('gray')
+                    ->alignLeft(),
+
                 TextColumn::make('teaching_period')
                     ->label('Período Letivo')
                     ->getStateUsing(fn ($record) => '2026.1')

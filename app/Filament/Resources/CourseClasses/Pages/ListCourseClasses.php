@@ -21,6 +21,14 @@ class ListCourseClasses extends ListRecords
     }
 
     #[\Override]
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            \App\Filament\Resources\CourseClasses\Widgets\CourseClassesStats::class,
+        ];
+    }
+
+    #[\Override]
     public function getTabs(): array
     {
         $teamId = Filament::getTenant()?->id;

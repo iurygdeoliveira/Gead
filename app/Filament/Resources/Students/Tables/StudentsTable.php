@@ -56,7 +56,7 @@ class StudentsTable
                     ->label('Curso')
                     ->listWithLineBreaks()
                     ->wrap(),
-                TextColumn::make('enrollments.classEnrollments.courseClass.code')
+                TextColumn::make('enrollments.classEnrollments.courseClass.name')
                     ->label('Turma')
                     ->listWithLineBreaks()
                     ->wrap()

@@ -27,7 +27,11 @@ class CourseResource extends Resource
     #[\Override]
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->with(['enrollments.student']);
+        return parent::getEloquentQuery()->with([
+            'enrollments.student',
+            'enrollments.classEnrollments.courseClass',
+            'disciplines.teachers',
+        ]);
     }
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AcademicTerm;
 use App\Models\Course;
 use App\Models\CourseClass;
 use App\Models\Team;
@@ -24,6 +25,10 @@ class CourseClassSeeder extends Seeder
                 'is_personal' => false,
             ]);
         }
+
+        $academicTerm = AcademicTerm::firstOrCreate([
+            'name' => '2026.1',
+        ]);
 
         $files = [
             [
@@ -82,6 +87,7 @@ class CourseClassSeeder extends Seeder
                     [
                         'name' => $classCode,
                         'entry_period' => $entryPeriod ?? 'Desconhecido',
+                        'academic_term_id' => $academicTerm->id,
                     ]
                 );
             }

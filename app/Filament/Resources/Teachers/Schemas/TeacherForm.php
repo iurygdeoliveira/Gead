@@ -74,8 +74,11 @@ class TeacherForm
             ->live()
             ->dehydrated(false)
             ->afterStateHydrated(function ($state, $set, $record) {
-                if ($record && $record->courseClass) {
-                    $set('course_id', $record->courseClass->course_id);
+                if ($record) {
+                    $record->loadMissing('courseClass');
+                    if ($record->courseClass) {
+                        $set('course_id', $record->courseClass->course_id);
+                    }
                 }
             });
     }

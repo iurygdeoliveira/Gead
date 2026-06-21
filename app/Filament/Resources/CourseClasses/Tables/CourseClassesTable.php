@@ -19,7 +19,11 @@ class CourseClassesTable
         return $table
             ->columns([
                 TextColumn::make('code')
-                    ->label('Código')
+                    ->label('Turma')
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->sortable(),
+                TextColumn::make('name')
+                    ->label('Nome da Turma')
                     ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
                 TextColumn::make('course.name')

@@ -141,6 +141,10 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
 
     private ?Collection $cachedTenants = null;
 
+    protected array $panelAccessCache = [];
+
+    protected $with = ['roles'];
+
     // ==========================================
     // Setup & Configuration
     // ==========================================
@@ -233,6 +237,16 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
     // ==========================================
 
     public function canAccessPanel(Panel $panel): bool
+    {
+        $panelId = $panel->getId();
+        if (array_key_exists($panelId, $this->panelAccessCache)) {
+            return $this->panelAccessCache[$panelId];
+        }
+
+        return $this->panelAccessCache[$panelId] = $this->resolvePanelAccess($panel);
+    }
+
+    protected function resolvePanelAccess(Panel $panel): bool
     {
         if ($panel->getId() === 'auth') {
             return true;

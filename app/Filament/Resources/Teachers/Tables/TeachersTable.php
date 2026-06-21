@@ -22,8 +22,48 @@ class TeachersTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn (Builder $query) => $query->with(['user', 'taughtDisciplines']))
-            ->defaultSort('name')
+            ->modifyQueryUsing(function (Builder $query) {
+                $query->with(['user', 'taughtDisciplines']);
+
+                $currentTeam = \Filament\Facades\Filament::getTenant();
+                $teamId = $currentTeam?->id;
+
+                if (!$teamId) {
+                    return;
+                }
+
+                if (empty($query->getQuery()->orders)) {
+                    $query->select('teachers.*')
+                        ->selectSub(function ($query) {
+                            $query->selectRaw('count(*)')
+                                ->from('course_class_disciplines as ccd')
+                                ->whereColumn('ccd.teacher_id', 'teachers.id')
+                                ->whereRaw('
+                                    (
+                                        SELECT COUNT(*) 
+                                        FROM class_enrollments ce 
+                                        JOIN enrollments e ON ce.enrollment_id = e.id 
+                                        JOIN students s ON e.student_id = s.id 
+                                        LEFT JOIN users u ON s.user_id = u.id 
+                                        WHERE ce.course_class_id = ccd.course_class_id 
+                                          AND (s.user_id IS NULL OR u.is_suspended = false)
+                                          AND NOT EXISTS (
+                                              SELECT 1 
+                                              FROM enrollments e2 
+                                              LEFT JOIN class_enrollments ce2 ON e2.id = ce2.enrollment_id 
+                                              WHERE e2.student_id = s.id AND ce2.id IS NULL
+                                          )
+                                    ) > (
+                                        SELECT COUNT(*) 
+                                        FROM evaluations ev 
+                                        WHERE ev.course_class_discipline_id = ccd.id 
+                                          AND ev.planning_score IS NOT NULL
+                                    )
+                                ');
+                        }, 'incomplete_ccds_count')
+                        ->orderByDesc('incomplete_ccds_count');
+                }
+            })
             ->columns([
                 TextColumn::make('name')
                     ->label('Nome')

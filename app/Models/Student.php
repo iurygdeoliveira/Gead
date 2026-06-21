@@ -49,8 +49,12 @@ class Student extends Model
                 $q->where('student_id', $this->id);
             })->get();
 
+        if ($disciplines->isEmpty()) {
+            return [];
+        }
+
         // Carrega os IDs das disciplinas que já foram avaliadas em uma única query
-        $evaluatedDisciplineIds = Evaluation::where('course_class_discipline_id', $disciplines->pluck('id'))
+        $evaluatedDisciplineIds = Evaluation::whereIn('course_class_discipline_id', $disciplines->pluck('id'))
             ->whereHas('classEnrollment.enrollment', function ($q) {
                 $q->where('student_id', $this->id);
             })

@@ -21,4 +21,10 @@ class Discipline extends Model
     {
         return $this->hasMany(CourseClass::class);
     }
+
+    public function teachers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Teacher::class, 'course_class_disciplines', 'discipline_id', 'teacher_id')
+            ->distinct();
+    }
 }

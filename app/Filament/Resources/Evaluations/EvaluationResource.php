@@ -10,12 +10,24 @@ use App\Traits\Filament\HasConfigurableNavigationSort;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class EvaluationResource extends Resource
 {
     use HasConfigurableNavigationSort;
 
     protected static ?string $model = Evaluation::class;
+
+    #[\Override]
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->with([
+            'classEnrollment.courseClass.course',
+            'courseClassDiscipline.teacher',
+            'courseClassDiscipline.discipline',
+            'courseClassDiscipline.courseClass.academicTerm',
+        ]);
+    }
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';
 

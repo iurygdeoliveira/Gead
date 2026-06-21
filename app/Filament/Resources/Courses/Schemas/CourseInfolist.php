@@ -27,8 +27,11 @@ class CourseInfolist
                                     ->label('Código'),
                                 TextEntry::make('team.name')
                                     ->label('Campus Vinculado'),
+                                TextEntry::make('students_count')
+                                    ->label('Total de Alunos Matriculados')
+                                    ->getStateUsing(fn ($record) => $record->students()->count()),
                             ])
-                            ->columns(3),
+                            ->columns(4),
                         Tab::make('Alunos Matriculados')
                             ->icon('heroicon-o-users')
                             ->schema([
@@ -41,7 +44,7 @@ class CourseInfolist
                                         TableColumn::make('Nome do Aluno'),
                                         TableColumn::make('E-mail'),
                                         TableColumn::make('Matrícula'),
-                                        TableColumn::make('Período de Ingresso'),
+                                        TableColumn::make('Turma'),
                                     ])
                                     ->schema([
                                         TextEntry::make('student.name')
@@ -50,7 +53,8 @@ class CourseInfolist
                                             ->hiddenLabel(),
                                         TextEntry::make('registration_number')
                                             ->hiddenLabel(),
-                                        TextEntry::make('entry_period')
+                                        TextEntry::make('classEnrollments.courseClass.name')
+                                            ->badge()
                                             ->hiddenLabel(),
                                     ]),
                             ]),
@@ -65,14 +69,15 @@ class CourseInfolist
                                     ->table([
                                         TableColumn::make('Código'),
                                         TableColumn::make('Nome'),
-                                        TableColumn::make('Período'),
+                                        TableColumn::make('Professores'),
                                     ])
                                     ->schema([
                                         TextEntry::make('code')
                                             ->hiddenLabel(),
                                         TextEntry::make('name')
                                             ->hiddenLabel(),
-                                        TextEntry::make('period')
+                                        TextEntry::make('teachers.name')
+                                            ->badge()
                                             ->hiddenLabel(),
                                     ]),
                             ]),
