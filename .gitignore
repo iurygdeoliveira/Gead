@@ -25,3 +25,4 @@ Homestead.yaml
 Thumbs.db
 .playwright-mcp
 auth.json
+secret_google.json

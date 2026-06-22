@@ -196,6 +196,11 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
         return $this->hasOne(Student::class);
     }
 
+    public function connectedAccounts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ConnectedAccount::class);
+    }
+
     /**
      * @return MorphToMany<Role, $this, MorphPivot>
      */

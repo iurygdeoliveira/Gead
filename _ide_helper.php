@@ -26103,6 +26103,147 @@ namespace Laravel\Pulse\Facades {
             }
     }
 
+namespace Laravel\Socialite\Facades {
+    /**
+     */
+    class Socialite {
+        /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return mixed
+         * @static
+         */
+        public static function with($driver)
+        {
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->with($driver);
+        }
+
+        /**
+         * Build an OAuth 2 provider instance.
+         *
+         * @param string $provider
+         * @param array $config
+         * @return \Laravel\Socialite\Two\AbstractProvider
+         * @static
+         */
+        public static function buildProvider($provider, $config)
+        {
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->buildProvider($provider, $config);
+        }
+
+        /**
+         * Format the server configuration.
+         *
+         * @param array $config
+         * @return array
+         * @static
+         */
+        public static function formatConfig($config)
+        {
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->formatConfig($config);
+        }
+
+        /**
+         * Forget all of the resolved driver instances.
+         *
+         * @return \Laravel\Socialite\SocialiteManager
+         * @static
+         */
+        public static function forgetDrivers()
+        {
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->forgetDrivers();
+        }
+
+        /**
+         * Set the container instance used by the manager.
+         *
+         * @param \Illuminate\Contracts\Container\Container $container
+         * @return \Laravel\Socialite\SocialiteManager
+         * @static
+         */
+        public static function setContainer($container)
+        {
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->setContainer($container);
+        }
+
+        /**
+         * Get the default driver name.
+         *
+         * @return string
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function getDefaultDriver()
+        {
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->getDefaultDriver();
+        }
+
+        /**
+         * Get a driver instance.
+         *
+         * @param \UnitEnum|string|null $driver
+         * @return mixed
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function driver($driver = null)
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->driver($driver);
+        }
+
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param-closure-this $this  $callback
+         * @return \Laravel\Socialite\SocialiteManager
+         * @static
+         */
+        public static function extend($driver, $callback)
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->extend($driver, $callback);
+        }
+
+        /**
+         * Get all of the created "drivers".
+         *
+         * @return array<string, mixed>
+         * @static
+         */
+        public static function getDrivers()
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->getDrivers();
+        }
+
+        /**
+         * Get the container instance used by the manager.
+         *
+         * @return \Illuminate\Contracts\Container\Container
+         * @static
+         */
+        public static function getContainer()
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Laravel\Socialite\SocialiteManager $instance */
+            return $instance->getContainer();
+        }
+
+            }
+    }
+
 namespace Flux {
     /**
      * @see \Flux\FluxManager
@@ -30076,6 +30217,14 @@ namespace App\Filament\Pages {
      */
     class ManagerDashboard extends \Filament\Pages\Dashboard {
             }
+    /**
+     */
+    class StudentDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class TaeDashboard extends \App\Filament\Pages\ManagerDashboard {
+            }
     }
 
 namespace App\Filament\Pages\Mail {
@@ -30137,6 +30286,28 @@ namespace Filament\Resources\Pages {
             }
     }
 
+namespace App\Filament\Resources\CourseClasses\Widgets {
+    /**
+     */
+    class CourseClassesStats extends \Filament\Widgets\StatsOverviewWidget {
+            }
+    }
+
+namespace Filament\Widgets {
+    /**
+     */
+    class StatsOverviewWidget extends \Filament\Widgets\Widget {
+            }
+    /**
+     */
+    class Widget extends \Livewire\Component {
+            }
+    /**
+     */
+    class TableWidget extends \Filament\Widgets\Widget {
+            }
+    }
+
 namespace App\Filament\Resources\Courses\Pages {
     /**
      */
@@ -30181,17 +30352,6 @@ namespace App\Filament\Resources\Courses\Widgets {
             }
     }
 
-namespace Filament\Widgets {
-    /**
-     */
-    class StatsOverviewWidget extends \Filament\Widgets\Widget {
-            }
-    /**
-     */
-    class Widget extends \Livewire\Component {
-            }
-    }
-
 namespace App\Filament\Resources\Evaluations\Pages {
     /**
      */
@@ -30223,45 +30383,6 @@ namespace App\Filament\Resources\Feedback\Pages {
     /**
      */
     class ViewFeedback extends \Filament\Resources\Pages\ViewRecord {
-            }
-    }
-
-namespace App\Filament\Resources\Media\Pages {
-    /**
-     * @property MediaItem $record
-     */
-    class CreateMedia extends \Filament\Resources\Pages\CreateRecord {
-            }
-    /**
-     * @property MediaItem $record
-     */
-    class DeleteMedia extends \Filament\Resources\Pages\ViewRecord {
-            }
-    /**
-     * @property-read MediaItem|null $record
-     * @property-read bool $canDelete
-     * @property-read string $fileSizeHuman
-     * @property-read array $mediaInfo
-     */
-    class EditMedia extends \Filament\Resources\Pages\EditRecord {
-            }
-    /**
-     */
-    class ListMedia extends \Filament\Resources\Pages\ListRecords {
-            }
-    /**
-     * @property MediaItem $record
-     */
-    class ViewMedia extends \Filament\Resources\Pages\ViewRecord {
-            }
-    }
-
-namespace App\Filament\Resources\Media\Widgets {
-    /**
-     * @property-read array $summary
-     * @property-read array $percentages
-     */
-    class MediaStats extends \Filament\Widgets\StatsOverviewWidget {
             }
     }
 
@@ -30468,6 +30589,10 @@ namespace App\Filament\Widgets {
     /**
      */
     class GenerateEvaluationsWidget extends \Filament\Widgets\Widget {
+            }
+    /**
+     */
+    class StudentDisciplinesWidget extends \Filament\Widgets\TableWidget {
             }
     /**
      */
@@ -36237,6 +36362,7 @@ namespace  {
     class Mcp extends \Laravel\Mcp\Facades\Mcp {}
     class Nightwatch extends \Laravel\Nightwatch\Facades\Nightwatch {}
     class Pulse extends \Laravel\Pulse\Facades\Pulse {}
+    class Socialite extends \Laravel\Socialite\Facades\Socialite {}
     class Flux extends \Flux\Flux {}
     class Livewire extends \Livewire\Livewire {}
     class Signal extends \Spatie\SignalAwareCommand\Facades\Signal {}
