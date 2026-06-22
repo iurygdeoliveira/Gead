@@ -30210,6 +30210,11 @@ namespace Filament\Auth\Pages\PasswordReset {
 
 namespace App\Filament\Pages {
     /**
+     * @property Form $form
+     */
+    class ChangePassword extends \Filament\Pages\Page {
+            }
+    /**
      */
     class LoginAuditPage extends \Filament\Pages\Page {
             }

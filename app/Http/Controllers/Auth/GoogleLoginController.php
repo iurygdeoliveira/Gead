@@ -25,9 +25,10 @@ class GoogleLoginController
         }
 
         // Camada de segurança: Validar domínio
-        if (! str_ends_with($socialUser->getEmail(), '@ifto.edu.br')) {
+        $email = $socialUser->getEmail();
+        if (! str_ends_with($email, '@ifto.edu.br') && ! str_ends_with($email, '@estudante.ifto.edu.br')) {
             return redirect()->route('filament.admin.auth.login')
-                ->with('socialite_error', 'Acesso permitido apenas para e-mails institucionais (@ifto.edu.br).');
+                ->with('socialite_error', 'Acesso permitido apenas para e-mails institucionais (@ifto.edu.br ou @estudante.ifto.edu.br).');
         }
 
         $user = User::where('email', $socialUser->getEmail())->first();
