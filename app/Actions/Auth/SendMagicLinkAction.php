@@ -66,8 +66,8 @@ class SendMagicLinkAction
      */
     private function enforceRateLimits(string $email): void
     {
-        $emailKey = 'magic-link-email:' . Str::lower($email);
-        $ipKey = 'magic-link-ip:' . (request()->ip() ?? 'unknown');
+        $emailKey = 'magic-link-email:'.Str::lower($email);
+        $ipKey = 'magic-link-ip:'.(request()->ip() ?? 'unknown');
 
         if (RateLimiter::tooManyAttempts($emailKey, self::MAX_ATTEMPTS_PER_EMAIL)) {
             $seconds = RateLimiter::availableIn($emailKey);

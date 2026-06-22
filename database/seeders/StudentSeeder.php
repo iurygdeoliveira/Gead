@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\ClassEnrollment;
 use App\Models\Course;
 use App\Models\CourseClass;
 use App\Models\Enrollment;
 use App\Models\Student;
 use App\Models\Team;
-use App\Models\ClassEnrollment;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -33,6 +33,7 @@ class StudentSeeder extends Seeder
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");
+
             return;
         }
 
@@ -46,6 +47,7 @@ class StudentSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 
@@ -60,11 +62,11 @@ class StudentSeeder extends Seeder
                 }
 
                 $course = $coursesCache->get($courseName);
-                if (!$course) {
+                if (! $course) {
                     continue;
                 }
 
-                $emailToSave = !empty($academicEmail) ? $academicEmail : null;
+                $emailToSave = ! empty($academicEmail) ? $academicEmail : null;
 
                 $student = Student::updateOrCreate(
                     [
@@ -88,7 +90,7 @@ class StudentSeeder extends Seeder
                     ]
                 );
 
-                if (!empty($classCode) && $classCode !== '-') {
+                if (! empty($classCode) && $classCode !== '-') {
                     $courseClass = $courseClassesCache->get($classCode);
                     if ($courseClass) {
                         ClassEnrollment::updateOrCreate(

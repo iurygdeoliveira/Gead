@@ -2,21 +2,24 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\ClassEnrollment;
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
+use Filament\Actions\Action;
+use Filament\Facades\Filament;
+use Filament\Forms\Components\TextInput;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget as BaseWidget;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
-use Filament\Actions\Action;
-use Filament\Facades\Filament;
-use Filament\Forms\Components\TextInput;
 
 class StudentDisciplinesWidget extends BaseWidget
 {
     protected static ?int $sort = 1;
-    protected int | string | array $columnSpan = 'full';
+
+    protected int|string|array $columnSpan = 'full';
+
     protected static ?string $heading = 'Disciplinas para Avaliar';
 
     public function table(Table $table): Table
@@ -108,15 +111,19 @@ class StudentDisciplinesWidget extends BaseWidget
                     ->action(function (array $data, CourseClassDiscipline $record) {
                         // Find the student's class_enrollment for this course_class
                         $student = Auth::user()->student;
-                        if (!$student) return;
+                        if (! $student) {
+                            return;
+                        }
 
-                        $classEnrollment = \App\Models\ClassEnrollment::where('course_class_id', $record->course_class_id)
+                        $classEnrollment = ClassEnrollment::where('course_class_id', $record->course_class_id)
                             ->whereHas('enrollment', function ($q) use ($student) {
                                 $q->where('student_id', $student->id);
                             })
                             ->first();
 
-                        if (!$classEnrollment) return;
+                        if (! $classEnrollment) {
+                            return;
+                        }
 
                         Evaluation::create([
                             'class_enrollment_id' => $classEnrollment->id,

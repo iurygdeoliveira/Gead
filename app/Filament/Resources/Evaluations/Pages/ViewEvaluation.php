@@ -3,8 +3,8 @@
 namespace App\Filament\Resources\Evaluations\Pages;
 
 use App\Filament\Resources\Evaluations\EvaluationResource;
-use Filament\Actions\EditAction;
 use Filament\Actions\Action;
+use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewEvaluation extends ViewRecord
@@ -26,7 +26,7 @@ class ViewEvaluation extends ViewRecord
     public function getTitle(): string
     {
         $teacherName = $this->getRecord()->courseClassDiscipline?->teacher?->name ?? 'Professor Desconhecido';
-        
-        return 'Visualizar avaliação de ' . $teacherName;
+
+        return 'Visualizar avaliação de '.$teacherName;
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\Students\Widgets;
 
-use App\Models\Student;
-use App\Models\Evaluation;
 use App\Models\CourseClassDiscipline;
+use App\Models\Evaluation;
+use App\Models\Student;
 use Filament\Facades\Filament;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -23,7 +23,7 @@ class StudentsStats extends BaseWidget
                     ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
                     ->whereColumn('enrollments.student_id', 'students.id')
                     ->whereNotNull('evaluations.planning_score'),
-                
+
                 'evaluations_total' => CourseClassDiscipline::selectRaw('count(*)')
                     ->join('class_enrollments', 'course_class_disciplines.course_class_id', '=', 'class_enrollments.course_class_id')
                     ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')

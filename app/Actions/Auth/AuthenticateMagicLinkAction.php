@@ -2,6 +2,7 @@
 
 namespace App\Actions\Auth;
 
+use App\Enums\AppTeamRole;
 use App\Models\MagicLoginToken;
 use App\Models\Membership;
 use App\Models\Team;
@@ -33,7 +34,7 @@ class AuthenticateMagicLinkAction
             Membership::create([
                 'team_id' => $team->id,
                 'user_id' => $user->id,
-                'role' => \App\Enums\AppTeamRole::STUDENT->value,
+                'role' => AppTeamRole::STUDENT->value,
             ]);
         }
 

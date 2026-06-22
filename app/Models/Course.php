@@ -48,7 +48,7 @@ class Course extends Model
     public function getEvaluationsCompletionStatus(): array
     {
         $teamId = $this->team_id;
-        $courseClasses = \App\Models\CourseClass::where('course_id', $this->id)->where('team_id', $teamId)->get();
+        $courseClasses = CourseClass::where('course_id', $this->id)->where('team_id', $teamId)->get();
         $classIds = $courseClasses->pluck('id')->toArray();
 
         if (empty($classIds)) {
@@ -58,7 +58,7 @@ class Course extends Model
             ];
         }
 
-        $enrollmentCountsByClass = \App\Models\ClassEnrollment::whereIn('course_class_id', $classIds)
+        $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
             ->whereHas('enrollment.student', function ($query) {
                 $query->where(function ($subQuery) {
                     $subQuery->whereNull('user_id')
@@ -74,7 +74,7 @@ class Course extends Model
             ->groupBy('course_class_id')
             ->pluck('total', 'course_class_id');
 
-        $disciplineCountsByClass = \App\Models\CourseClassDiscipline::whereIn('course_class_id', $classIds)
+        $disciplineCountsByClass = CourseClassDiscipline::whereIn('course_class_id', $classIds)
             ->selectRaw('course_class_id, count(*) as total')
             ->groupBy('course_class_id')
             ->pluck('total', 'course_class_id');
@@ -84,7 +84,7 @@ class Course extends Model
             $totalPotential += ($enrollmentCountsByClass[$classId] ?? 0) * ($disciplineCountsByClass[$classId] ?? 0);
         }
 
-        $evaluations = \App\Models\Evaluation::where('team_id', $teamId)
+        $evaluations = Evaluation::where('team_id', $teamId)
             ->whereHas('courseClassDiscipline.courseClass', function ($query) {
                 $query->where('course_id', $this->id);
             })

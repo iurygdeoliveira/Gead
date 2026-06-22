@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Filament\Widgets;
 
+use App\Models\ClassEnrollment;
 use App\Models\CourseClass;
 use App\Models\CourseClassDiscipline;
-use App\Models\ClassEnrollment;
 use App\Models\Evaluation;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;

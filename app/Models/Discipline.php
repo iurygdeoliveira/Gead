@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Discipline extends Model
@@ -22,7 +23,7 @@ class Discipline extends Model
         return $this->hasMany(CourseClass::class);
     }
 
-    public function teachers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function teachers(): BelongsToMany
     {
         return $this->belongsToMany(Teacher::class, 'course_class_disciplines', 'discipline_id', 'teacher_id')
             ->distinct();

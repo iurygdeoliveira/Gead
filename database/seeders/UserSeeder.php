@@ -89,6 +89,7 @@ class UserSeeder extends Seeder
                     'name' => $staffData['name'],
                     'email_verified_at' => now(),
                     'password' => Hash::make('mudar123'), // Senha padrão para primeiro acesso
+                    'must_change_password' => true,
                     'is_approved' => true,
                     'approved_by' => $admin->id,
                 ]

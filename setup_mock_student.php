@@ -2,13 +2,13 @@
 
 require __DIR__.'/vendor/autoload.php';
 $app = require_once __DIR__.'/bootstrap/app.php';
-$app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+$app->make(Kernel::class)->bootstrap();
 
-use App\Models\User;
 use App\Models\Student;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
 use App\Models\Team;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 $team = Team::first() ?? Team::create(['name' => 'Default Team', 'slug' => 'default-team']);
 
@@ -16,7 +16,7 @@ $team = Team::first() ?? Team::create(['name' => 'Default Team', 'slug' => 'defa
 // No nosso caso, o estudante de ID 1 (Aira Pereira Sabóia) possui 15 disciplinas pendentes.
 $student = Student::find(1);
 
-if (!$student) {
+if (! $student) {
     echo "Estudante com ID 1 não encontrado no banco de dados.\n";
     exit(1);
 }
@@ -43,12 +43,14 @@ $user->update([
 $student->update(['user_id' => $user->id]);
 
 // Reseta (deleta) todas as avaliações deste aluno para permitir testes
-App\Models\Evaluation::whereHas('classEnrollment.enrollment.student', function ($q) use ($student) {
+Evaluation::whereHas('classEnrollment.enrollment.student', function ($q) use ($student) {
     $q->where('id', $student->id);
 })->delete();
 
-use App\Models\Role;
 use App\Enums\RoleType;
+use App\Models\Evaluation;
+use App\Models\Role;
+use Illuminate\Contracts\Console\Kernel;
 
 // Adiciona ele ao time com a role de student.
 DB::table('team_members')->updateOrInsert(
@@ -62,6 +64,6 @@ if ($role) {
 }
 
 echo "Usuário de estudante real configurado com sucesso!\n";
-echo "Nome: " . $user->name . "\n";
-echo "Email (Login): " . $user->email . "\n";
+echo 'Nome: '.$user->name."\n";
+echo 'Email (Login): '.$user->email."\n";
 echo "Senha: password\n";

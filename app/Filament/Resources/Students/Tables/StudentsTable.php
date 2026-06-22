@@ -5,17 +5,18 @@ namespace App\Filament\Resources\Students\Tables;
 use App\Filament\Resources\Students\Actions\ChangeStudentAccessStatusBulkAction;
 use App\Filament\Resources\Students\Actions\DeleteStudentAction;
 use App\Filament\Resources\Students\Actions\ToggleStudentSuspensionAction;
+use App\Filament\Resources\Students\StudentResource;
+use App\Models\CourseClassDiscipline;
+use App\Models\Evaluation;
+use App\Models\Student;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use App\Models\CourseClassDiscipline;
-use App\Models\Evaluation;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Tables\Filters\TernaryFilter;
 use Illuminate\Database\Eloquent\Builder;
 
 class StudentsTable
@@ -32,14 +33,14 @@ class StudentsTable
                             ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
                             ->whereColumn('enrollments.student_id', 'students.id')
                             ->whereNotNull('evaluations.planning_score'),
-                        
+
                         'evaluations_total' => CourseClassDiscipline::selectRaw('count(*)')
                             ->join('class_enrollments', 'course_class_disciplines.course_class_id', '=', 'class_enrollments.course_class_id')
                             ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
                             ->whereColumn('enrollments.student_id', 'students.id'),
                     ]);
             })
-            ->recordUrl(fn (\App\Models\Student $record): string => \App\Filament\Resources\Students\StudentResource::getUrl('view', ['record' => $record]))
+            ->recordUrl(fn (Student $record): string => StudentResource::getUrl('view', ['record' => $record]))
             ->defaultSort('name')
             ->columns([
                 TextColumn::make('name')
@@ -52,7 +53,7 @@ class StudentsTable
                     ->listWithLineBreaks()
                     ->wrap(),
                 TextColumn::make('enrollments.course.name')
-                ->searchable(isIndividual: true, isGlobal: false)
+                    ->searchable(isIndividual: true, isGlobal: false)
                     ->label('Curso')
                     ->listWithLineBreaks()
                     ->wrap(),
@@ -63,7 +64,7 @@ class StudentsTable
                     ->placeholder('?'),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
-                    ->getStateUsing(fn ($record) => ($record->evaluations_done ?? 0) . ' / ' . ($record->evaluations_total ?? 0))
+                    ->getStateUsing(fn ($record) => ($record->evaluations_done ?? 0).' / '.($record->evaluations_total ?? 0))
                     ->alignCenter()
                     ->hidden(fn ($record) => $record !== null && $record->enrollments->flatMap->classEnrollments->isEmpty()),
             ])
@@ -83,7 +84,7 @@ class StudentsTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                   // DeleteBulkAction::make(),
+                    // DeleteBulkAction::make(),
                     ChangeStudentAccessStatusBulkAction::make(),
                 ]),
             ]);

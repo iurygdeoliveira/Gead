@@ -39,7 +39,7 @@ class ListStudents extends ListRecords
 
         return [
             'sem_turma' => Tab::make('Sem Turma')
-                ->modifyQueryUsing(fn($query) => $query->whereDoesntHave('enrollments.classEnrollments'))
+                ->modifyQueryUsing(fn ($query) => $query->whereDoesntHave('enrollments.classEnrollments'))
                 ->badge((clone $baseQuery)->whereDoesntHave('enrollments.classEnrollments')->count())
                 ->badgeColor('danger'),
             'farmacia' => Tab::make('Farm.')
@@ -66,7 +66,7 @@ class ListStudents extends ListRecords
             'analises_clinicas' => Tab::make('Análises')
                 ->modifyQueryUsing(fn ($query) => $query->whereHas('enrollments.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%'))))
                 ->badge((clone $baseQuery)->whereHas('enrollments.course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%')))->count()),
-           
+
         ];
     }
 }

@@ -9,8 +9,8 @@ use App\Filament\Widgets\EvaluationsOverviewWidget;
 use App\Filament\Widgets\GenerateEvaluationsWidget;
 use App\Filament\Widgets\StudentsWithoutClassWidget;
 use App\Models\Course;
+use App\Models\CourseClass;
 use Filament\Pages\Dashboard as BaseDashboard;
-use Filament\Widgets\AccountWidget;
 
 class ManagerDashboard extends BaseDashboard
 {
@@ -25,7 +25,7 @@ class ManagerDashboard extends BaseDashboard
         $teamId = filament()->getTenant()?->id;
 
         if ($teamId) {
-            $activeCourseIds = \App\Models\CourseClass::whereHas('classEnrollments')
+            $activeCourseIds = CourseClass::whereHas('classEnrollments')
                 ->pluck('course_id')
                 ->unique();
 

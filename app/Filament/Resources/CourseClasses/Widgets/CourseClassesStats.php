@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\CourseClasses\Widgets;
 
+use App\Models\ClassEnrollment;
 use App\Models\CourseClass;
 use App\Models\CourseClassDiscipline;
-use App\Models\ClassEnrollment;
 use App\Models\Evaluation;
 use Filament\Facades\Filament;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
@@ -21,7 +21,7 @@ class CourseClassesStats extends BaseWidget
         if ($teamId) {
             $classesQuery->where('team_id', $teamId);
         }
-        
+
         $classes = $classesQuery->get();
         $totalTurmas = $classes->count();
 
@@ -75,11 +75,11 @@ class CourseClassesStats extends BaseWidget
         $ccdToClassMap = $ccds->pluck('course_class_id', 'id')->toArray();
 
         $evaluationsCompletedByClass = [];
-        
-        if (!empty($ccdIds)) {
+
+        if (! empty($ccdIds)) {
             $evaluations = Evaluation::whereIn('course_class_discipline_id', $ccdIds)
                 ->whereNotNull('planning_score')
-                ->when($teamId, fn($q) => $q->where('team_id', $teamId))
+                ->when($teamId, fn ($q) => $q->where('team_id', $teamId))
                 ->whereHas('classEnrollment.enrollment.student', function ($query) {
                     $query->where(function ($subQuery) {
                         $subQuery->whereNull('user_id')
@@ -92,7 +92,7 @@ class CourseClassesStats extends BaseWidget
                     });
                 })
                 ->get(['id', 'course_class_discipline_id']);
-                
+
             foreach ($evaluations as $eval) {
                 $classId = $ccdToClassMap[$eval->course_class_discipline_id] ?? null;
                 if ($classId) {
@@ -108,7 +108,7 @@ class CourseClassesStats extends BaseWidget
             $classId = $courseClass->id;
             $studentsCount = $enrollmentCountsByClass[$classId] ?? 0;
             $disciplinesCount = $disciplineCountsByClass[$classId] ?? 0;
-            
+
             $expected = $studentsCount * $disciplinesCount;
 
             if ($expected > 0) {

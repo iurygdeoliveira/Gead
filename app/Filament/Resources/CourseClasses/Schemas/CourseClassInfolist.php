@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\CourseClasses\Schemas;
 
 use App\Models\ClassEnrollment;
-use App\Models\Enrollment;
 use App\Models\Teacher;
 use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Infolists\Components\RepeatableEntry;
@@ -79,8 +78,9 @@ class CourseClassInfolist
                                             $discipline = $group->first();
                                             // collect all teacher_ids
                                             $teacherIds = $group->pluck('pivot.teacher_id')->filter()->unique();
-                                            $teachers = \App\Models\Teacher::whereIn('id', $teacherIds)->get();
+                                            $teachers = Teacher::whereIn('id', $teacherIds)->get();
                                             $discipline->class_teachers = $teachers;
+
                                             return $discipline;
                                         })->values()->sortBy('period', SORT_NATURAL | SORT_FLAG_CASE);
                                     })

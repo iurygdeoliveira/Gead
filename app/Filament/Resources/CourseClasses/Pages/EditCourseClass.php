@@ -25,6 +25,6 @@ class EditCourseClass extends EditRecord
 
     public function getTitle(): string
     {
-        return 'Editar Turma: ' . $this->getRecord()->name;
+        return 'Editar Turma: '.$this->getRecord()->name;
     }
 }

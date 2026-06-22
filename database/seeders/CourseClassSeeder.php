@@ -47,7 +47,7 @@ class CourseClassSeeder extends Seeder
         $courses = Course::where('team_id', $team->id)->get()->keyBy('name');
 
         foreach ($files as $fileConfig) {
-            if (!file_exists($fileConfig['path'])) {
+            if (! file_exists($fileConfig['path'])) {
                 continue;
             }
 
@@ -57,6 +57,7 @@ class CourseClassSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 
@@ -68,14 +69,14 @@ class CourseClassSeeder extends Seeder
                 }
 
                 $course = $courses->get($courseName);
-                if (!$course) {
+                if (! $course) {
                     continue;
                 }
 
                 // Extrair período de ingresso do código da turma se possível. Ex: 20261... -> 2026.1
                 $entryPeriod = null;
                 if (preg_match('/^(\d{4})(\d)/', $classCode, $matches)) {
-                    $entryPeriod = $matches[1] . '.' . $matches[2];
+                    $entryPeriod = $matches[1].'.'.$matches[2];
                 }
 
                 CourseClass::updateOrCreate(

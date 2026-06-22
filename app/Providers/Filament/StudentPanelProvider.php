@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
-use App\Filament\Resources\Users\UserResource;
-use App\Filament\Widgets\CustomStats;
+use App\Filament\Pages\StudentDashboard;
+use App\Filament\Widgets\StudentDisciplinesWidget;
 use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
-use App\Filament\Pages\StudentDashboard;
 use Filament\Panel;
-use App\Filament\Widgets\StudentDisciplinesWidget;
 
 class StudentPanelProvider extends BasePanelProvider
 {

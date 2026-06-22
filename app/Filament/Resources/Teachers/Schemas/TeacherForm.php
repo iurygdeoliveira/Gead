@@ -90,6 +90,7 @@ class TeacherForm
             ->label('Período')
             ->options(function (callable $get) {
                 $courseId = $get('course_id');
+
                 return once(function () use ($courseId) {
                     if (! $courseId) {
                         return CourseClass::all()->pluck('entry_period', 'entry_period')->unique();
@@ -143,11 +144,13 @@ class TeacherForm
             ->label('Disciplina')
             ->options(function (callable $get) {
                 $courseId = $get('course_id');
+
                 return once(function () use ($courseId) {
                     $query = Discipline::query();
                     if ($courseId) {
                         $query->where('course_id', $courseId);
                     }
+
                     return $query->pluck('name', 'id');
                 });
             })

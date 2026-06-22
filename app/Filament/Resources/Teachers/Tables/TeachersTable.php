@@ -2,20 +2,27 @@
 
 namespace App\Filament\Resources\Teachers\Tables;
 
+use App\Enums\RoleType;
 use App\Filament\Resources\Teachers\Actions\ChangeTeacherAccessStatusBulkAction;
 use App\Filament\Resources\Teachers\Actions\DeleteTeacherAction;
 use App\Filament\Resources\Teachers\Actions\ToggleTeacherSuspensionAction;
+use App\Models\Evaluation;
+use App\Models\Teacher;
+use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use Filament\Actions\Action;
+use Filament\Facades\Filament;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class TeachersTable
 {
@@ -25,10 +32,10 @@ class TeachersTable
             ->modifyQueryUsing(function (Builder $query) {
                 $query->with(['user', 'taughtDisciplines']);
 
-                $currentTeam = \Filament\Facades\Filament::getTenant();
+                $currentTeam = Filament::getTenant();
                 $teamId = $currentTeam?->id;
 
-                if (!$teamId) {
+                if (! $teamId) {
                     return;
                 }
 
@@ -76,8 +83,9 @@ class TeachersTable
                     ->alignCenter(),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
-                    ->getStateUsing(function (\App\Models\Teacher $record) {
+                    ->getStateUsing(function (Teacher $record) {
                         $status = $record->getEvaluationsCompletionStatus();
+
                         return "{$status['completed']} / {$status['expected']}";
                     })
                     ->alignCenter(),
@@ -120,7 +128,7 @@ class TeachersTable
         $ccds = $record->taughtDisciplines()->with(['courseClass.course', 'discipline'])->get();
 
         foreach ($ccds as $ccd) {
-            $evaluations = \App\Models\Evaluation::where('course_class_discipline_id', $ccd->id)->get();
+            $evaluations = Evaluation::where('course_class_discipline_id', $ccd->id)->get();
             $totalEvaluations = $evaluations->count();
 
             if ($totalEvaluations === 0) {
@@ -155,21 +163,21 @@ class TeachersTable
         $disciplinesCount = count($disciplinesData);
         $consolidatedScore = $disciplinesCount > 0 ? ($totalScores / $disciplinesCount) : 0;
 
-        $team = \Filament\Facades\Filament::getTenant();
-        
-        $managerUser = \App\Models\User::whereHas('rolesWithTeams', function ($query) use ($team) {
-            $query->where('roles.name', \App\Enums\RoleType::MANAGER->value);
+        $team = Filament::getTenant();
+
+        $managerUser = User::whereHas('rolesWithTeams', function ($query) use ($team) {
+            $query->where('roles.name', RoleType::MANAGER->value);
             if ($team) {
                 $query->where('model_has_roles.team_id', $team->id);
             }
         })->first();
 
-        $managerTeacher = $managerUser ? \App\Models\Teacher::where('email', $managerUser->email)->first() : null;
+        $managerTeacher = $managerUser ? Teacher::where('email', $managerUser->email)->first() : null;
         $managerName = $managerUser ? $managerUser->name : 'Walmir (Gerente)';
         $managerSiape = $managerTeacher ? $managerTeacher->registration_number : 'Não informado';
 
         $logoPath = public_path('images/brasao.png');
-        $logoSrc = 'data:image/png;base64,' . base64_encode(file_get_contents($logoPath));
+        $logoSrc = 'data:image/png;base64,'.base64_encode(file_get_contents($logoPath));
 
         $data = [
             'teacher_name' => $teacherName,
@@ -183,7 +191,7 @@ class TeachersTable
         ];
 
         return response()->streamDownload(function () use ($data) {
-            echo \Barryvdh\DomPDF\Facade\Pdf::loadView('pdf.evaluation-report', ['data' => $data])->stream();
-        }, 'RelatorioAvaliacaoDocente_' . \Illuminate\Support\Str::slug($teacherName) . '.pdf');
+            echo Pdf::loadView('pdf.evaluation-report', ['data' => $data])->stream();
+        }, 'RelatorioAvaliacaoDocente_'.Str::slug($teacherName).'.pdf');
     }
 }

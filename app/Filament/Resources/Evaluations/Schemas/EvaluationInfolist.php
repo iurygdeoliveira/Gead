@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Evaluations\Schemas;
 
+use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
 use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Infolists\Components\RepeatableEntry;
@@ -38,14 +39,14 @@ class EvaluationInfolist
                                 RepeatableEntry::make('taught_disciplines_evaluations')
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
-                                        if (!isset($record->cached_taught_disciplines_evaluations)) {
+                                        if (! isset($record->cached_taught_disciplines_evaluations)) {
                                             $teacherId = $record->courseClassDiscipline?->teacher_id;
                                             $academicTermId = $record->courseClassDiscipline?->courseClass?->academic_term_id;
 
-                                            if (!$teacherId || !$academicTermId) {
+                                            if (! $teacherId || ! $academicTermId) {
                                                 $record->cached_taught_disciplines_evaluations = [];
                                             } else {
-                                                $ccds = \App\Models\CourseClassDiscipline::where('teacher_id', $teacherId)
+                                                $ccds = CourseClassDiscipline::where('teacher_id', $teacherId)
                                                     ->whereHas('courseClass', function ($query) use ($academicTermId) {
                                                         $query->where('academic_term_id', $academicTermId);
                                                     })
@@ -58,33 +59,33 @@ class EvaluationInfolist
                                                         ->first();
 
                                                     return [
-                                                        'discipline_label' => ($ccd->discipline?->name ?? '-') . ' (' . ($ccd->courseClass?->name ?? '-') . ')',
+                                                        'discipline_label' => ($ccd->discipline?->name ?? '-').' ('.($ccd->courseClass?->name ?? '-').')',
                                                         'dimensions' => [
                                                             [
                                                                 'dimension' => 'O docente apresenta seu plano de ensino (PLANEJAMENTO) no início do semestre ou ano letivo, indicando a ementa, competências e habilidades, recursos didáticos que serão utilizados, formas de avaliações, referências bibliográficas?',
-                                                                'media' => $averages->planning_score ? number_format((float)$averages->planning_score, 2) : '-',
+                                                                'media' => $averages->planning_score ? number_format((float) $averages->planning_score, 2) : '-',
                                                             ],
                                                             [
                                                                 'dimension' => 'O docente apresenta uma POSTURA adequada ao cargo e responsabilidade que ocupa?',
-                                                                'media' => $averages->posture_score ? number_format((float)$averages->posture_score, 2) : '-',
+                                                                'media' => $averages->posture_score ? number_format((float) $averages->posture_score, 2) : '-',
                                                             ],
                                                             [
                                                                 'dimension' => 'O docente é ASSÍDUO, ou seja, não falta às aulas e quando falta, apresenta justificativa e promove suas devidas reposições ou anteposições?',
-                                                                'media' => $averages->attendance_score ? number_format((float)$averages->attendance_score, 2) : '-',
+                                                                'media' => $averages->attendance_score ? number_format((float) $averages->attendance_score, 2) : '-',
                                                             ],
                                                             [
                                                                 'dimension' => 'O docente é PONTUAL, ou seja, não chega atrasado ou libera a turma mais cedo?',
-                                                                'media' => $averages->punctuality_score ? number_format((float)$averages->punctuality_score, 2) : '-',
+                                                                'media' => $averages->punctuality_score ? number_format((float) $averages->punctuality_score, 2) : '-',
                                                             ],
                                                             [
                                                                 'dimension' => 'O docente na REALIZAÇÃO de suas aulas procura contextualizar os conteúdos trabalhados; domina o conteúdo; utiliza bem os recursos didáticos; possui fala(dicção) clara, coerente e fluente?',
-                                                                'media' => $averages->execution_score ? number_format((float)$averages->execution_score, 2) : '-',
+                                                                'media' => $averages->execution_score ? number_format((float) $averages->execution_score, 2) : '-',
                                                             ],
                                                             [
                                                                 'dimension' => 'O docente nas AVALIAÇÕES mostra coerência entre o que foi ensinado e o que é exigido do estudante, entrega as avaliações e comenta os resultados, auxilia no processo de recuperação daqueles conteúdos não apreendidos?',
-                                                                'media' => $averages->assessment_score ? number_format((float)$averages->assessment_score, 2) : '-',
+                                                                'media' => $averages->assessment_score ? number_format((float) $averages->assessment_score, 2) : '-',
                                                             ],
-                                                        ]
+                                                        ],
                                                     ];
                                                 })->toArray();
                                             }

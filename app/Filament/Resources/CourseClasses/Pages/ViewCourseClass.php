@@ -3,8 +3,8 @@
 namespace App\Filament\Resources\CourseClasses\Pages;
 
 use App\Filament\Resources\CourseClasses\CourseClassResource;
-use Filament\Actions\EditAction;
 use Filament\Actions\Action;
+use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
 class ViewCourseClass extends ViewRecord
@@ -25,6 +25,6 @@ class ViewCourseClass extends ViewRecord
 
     public function getTitle(): string
     {
-        return 'Visualizar Turma: ' . $this->getRecord()->name;
+        return 'Visualizar Turma: '.$this->getRecord()->name;
     }
 }

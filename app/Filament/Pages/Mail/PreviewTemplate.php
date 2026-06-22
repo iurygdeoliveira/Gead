@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Filament\Pages\Mail;
 
+use App\Enums\RoleType;
+use App\Models\User;
 use App\Traits\Filament\HasBackButtonAction;
 use Filament\Facades\Filament;
 use Filament\Pages\Page;
@@ -63,9 +65,9 @@ class PreviewTemplate extends Page
 
     public static function canAccess(): bool
     {
-        /** @var \App\Models\User|null $user */
-        $user = \Filament\Facades\Filament::auth()->user();
+        /** @var User|null $user */
+        $user = Filament::auth()->user();
 
-        return $user?->hasRole(\App\Enums\RoleType::ADMIN->value) ?? false;
+        return $user?->hasRole(RoleType::ADMIN->value) ?? false;
     }
 }

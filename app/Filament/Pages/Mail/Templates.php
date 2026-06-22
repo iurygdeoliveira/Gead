@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace App\Filament\Pages\Mail;
 
+use App\Enums\RoleType;
+use App\Models\User;
 use Filament\Actions\Action;
+use Filament\Facades\Filament;
 use Filament\Pages\Page;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
@@ -77,9 +80,9 @@ class Templates extends Page implements HasTable
 
     public static function canAccess(): bool
     {
-        /** @var \App\Models\User|null $user */
-        $user = \Filament\Facades\Filament::auth()->user();
+        /** @var User|null $user */
+        $user = Filament::auth()->user();
 
-        return $user?->hasRole(\App\Enums\RoleType::ADMIN->value) ?? false;
+        return $user?->hasRole(RoleType::ADMIN->value) ?? false;
     }
 }

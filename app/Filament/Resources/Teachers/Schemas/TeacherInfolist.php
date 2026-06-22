@@ -37,7 +37,7 @@ class TeacherInfolist
                                 RepeatableEntry::make('taught_disciplines')
                                     ->hiddenLabel()
                                     ->getStateUsing(function ($record) {
-                                        if (!isset($record->cached_taught_disciplines)) {
+                                        if (! isset($record->cached_taught_disciplines)) {
                                             $record->cached_taught_disciplines = $record->taughtDisciplines()
                                                 ->with(['courseClass.course', 'courseClass.academicTerm', 'discipline'])
                                                 ->get()

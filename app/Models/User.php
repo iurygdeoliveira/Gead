@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -48,6 +49,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string $name
  * @property string $email
  * @property string $password
+ * @property bool $must_change_password
  * @property bool $is_suspended
  * @property CarbonImmutable|null $suspended_at
  * @property bool $is_approved
@@ -113,6 +115,7 @@ use Spatie\Permission\Traits\HasRoles;
     'name',
     'email',
     'password',
+    'must_change_password',
     'email_verified_at',
     'is_suspended',
     'suspended_at',
@@ -154,6 +157,7 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
     {
         return [
             'password' => 'hashed',
+            'must_change_password' => 'boolean',
             'is_suspended' => 'boolean',
             'is_approved' => 'boolean',
             'created_at' => 'datetime:d/m/Y H:i',
@@ -196,7 +200,7 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
         return $this->hasOne(Student::class);
     }
 
-    public function connectedAccounts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function connectedAccounts(): HasMany
     {
         return $this->hasMany(ConnectedAccount::class);
     }

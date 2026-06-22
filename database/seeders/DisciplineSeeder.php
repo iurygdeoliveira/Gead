@@ -29,6 +29,7 @@ class DisciplineSeeder extends Seeder
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo não encontrado: {$csvPath}");
+
             return;
         }
 
@@ -40,6 +41,7 @@ class DisciplineSeeder extends Seeder
         while (($row = fgetcsv($file, 1000, ',')) !== false) {
             if ($isHeader) {
                 $isHeader = false;
+
                 continue;
             }
 
@@ -52,7 +54,7 @@ class DisciplineSeeder extends Seeder
             }
 
             $course = $courses->get($courseCode);
-            if (!$course) {
+            if (! $course) {
                 continue;
             }
 

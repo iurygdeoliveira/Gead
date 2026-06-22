@@ -34,6 +34,7 @@ class Teacher extends Model
     }
 
     protected static array $activeClassEnrollmentsCache = [];
+
     protected static array $evaluationsCompletedCache = [];
 
     /**
@@ -56,16 +57,16 @@ class Teacher extends Model
         $ccdIdsToFetch = [];
         foreach ($ccds as $ccd) {
             $classId = $ccd->course_class_id;
-            if (!isset(self::$activeClassEnrollmentsCache[$classId])) {
+            if (! isset(self::$activeClassEnrollmentsCache[$classId])) {
                 $classIdsToFetch[] = $classId;
             }
-            if (!isset(self::$evaluationsCompletedCache[$ccd->id])) {
+            if (! isset(self::$evaluationsCompletedCache[$ccd->id])) {
                 $ccdIdsToFetch[] = $ccd->id;
             }
         }
 
-        if (!empty($classIdsToFetch)) {
-            $activeClassEnrollments = \App\Models\ClassEnrollment::whereIn('course_class_id', array_unique($classIdsToFetch))
+        if (! empty($classIdsToFetch)) {
+            $activeClassEnrollments = ClassEnrollment::whereIn('course_class_id', array_unique($classIdsToFetch))
                 ->whereHas('enrollment.student', function ($query) {
                     $query->where(function ($subQuery) {
                         $subQuery->whereNull('user_id')
@@ -82,17 +83,17 @@ class Teacher extends Model
             foreach (array_unique($classIdsToFetch) as $classId) {
                 self::$activeClassEnrollmentsCache[$classId] = [];
             }
-            
+
             foreach ($activeClassEnrollments as $enrollment) {
                 self::$activeClassEnrollmentsCache[$enrollment->course_class_id][] = $enrollment->id;
             }
         }
 
-        if (!empty($ccdIdsToFetch)) {
-            $evaluations = \App\Models\Evaluation::whereIn('course_class_discipline_id', array_unique($ccdIdsToFetch))
+        if (! empty($ccdIdsToFetch)) {
+            $evaluations = Evaluation::whereIn('course_class_discipline_id', array_unique($ccdIdsToFetch))
                 ->whereNotNull('planning_score')
                 ->get(['id', 'course_class_discipline_id', 'class_enrollment_id']);
-                
+
             foreach (array_unique($ccdIdsToFetch) as $ccdId) {
                 self::$evaluationsCompletedCache[$ccdId] = [];
             }

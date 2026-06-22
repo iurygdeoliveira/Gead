@@ -4,10 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Teacher;
 use App\Models\Team;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class TeacherSeeder extends Seeder
 {
@@ -20,6 +18,7 @@ class TeacherSeeder extends Seeder
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");
+
             return;
         }
 
@@ -43,6 +42,7 @@ class TeacherSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 
@@ -61,7 +61,7 @@ class TeacherSeeder extends Seeder
                     $parts = explode(',', $professoresRaw);
                     foreach ($parts as $part) {
                         $name = trim($part);
-                        if (!empty($name)) {
+                        if (! empty($name)) {
                             $teachersToInsert[$name] = null; // null registration_number
                         }
                     }
@@ -74,8 +74,8 @@ class TeacherSeeder extends Seeder
                             $name = substr($name, 2);
                         }
                         $registrationNumber = trim($match[2]);
-                        
-                        if (!empty($name)) {
+
+                        if (! empty($name)) {
                             $teachersToInsert[$name] = $registrationNumber;
                         }
                     }
@@ -103,27 +103,28 @@ class TeacherSeeder extends Seeder
             if (file_exists($emailsCsvPath)) {
                 $emailFile = fopen($emailsCsvPath, 'r');
                 $isEmailHeader = true;
-                
+
                 while (($row = fgetcsv($emailFile, 1000, ',')) !== false) {
                     if ($isEmailHeader) {
                         $isEmailHeader = false;
+
                         continue;
                     }
 
                     $name = trim($row[1] ?? '');
                     $registrationNumber = trim($row[2] ?? '');
                     $emailRaw = trim($row[4] ?? '');
-                    
-                    $email = (!empty($emailRaw) && $emailRaw !== '-') ? $emailRaw : null;
+
+                    $email = (! empty($emailRaw) && $emailRaw !== '-') ? $emailRaw : null;
 
                     if (empty($name)) {
                         continue;
                     }
 
-                    // Se a matrícula não estiver vazia, pode ser útil tentar buscar por matrícula também, 
+                    // Se a matrícula não estiver vazia, pode ser útil tentar buscar por matrícula também,
                     // mas como a base estava criando por nome, mantemos a consistência
                     $teacher = Teacher::where('name', $name)->where('team_id', $team->id)->first();
-                    
+
                     if ($teacher) {
                         $teacher->update([
                             'email' => $email,
@@ -139,7 +140,7 @@ class TeacherSeeder extends Seeder
                         ]);
                     }
                 }
-                
+
                 fclose($emailFile);
             }
         });

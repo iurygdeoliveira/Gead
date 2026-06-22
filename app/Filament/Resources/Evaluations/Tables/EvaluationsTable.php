@@ -6,8 +6,6 @@ use Filament\Actions\ViewAction;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Actions\Action;
-use Illuminate\Database\Eloquent\Model;
 
 class EvaluationsTable
 {

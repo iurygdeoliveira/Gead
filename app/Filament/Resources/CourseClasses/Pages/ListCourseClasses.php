@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\CourseClasses\Pages;
 
 use App\Filament\Resources\CourseClasses\CourseClassResource;
+use App\Filament\Resources\CourseClasses\Widgets\CourseClassesStats;
 use App\Models\CourseClass;
 use Filament\Actions\CreateAction;
 use Filament\Facades\Filament;
@@ -24,7 +25,7 @@ class ListCourseClasses extends ListRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            \App\Filament\Resources\CourseClasses\Widgets\CourseClassesStats::class,
+            CourseClassesStats::class,
         ];
     }
 

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Filament\Widgets;
 
+use App\Models\ClassEnrollment;
 use App\Models\Course;
 use App\Models\CourseClass;
 use App\Models\CourseClassDiscipline;
-use App\Models\ClassEnrollment;
 use App\Models\Evaluation;
 use Filament\Widgets\Widget;
 

@@ -38,8 +38,9 @@ class CourseSeeder extends Seeder
         ];
 
         foreach ($files as $fileConfig) {
-            if (!file_exists($fileConfig['path'])) {
+            if (! file_exists($fileConfig['path'])) {
                 $this->command->error("Arquivo não encontrado: {$fileConfig['path']}");
+
                 continue;
             }
 
@@ -49,6 +50,7 @@ class CourseSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 
@@ -64,7 +66,7 @@ class CourseSeeder extends Seeder
                 }
 
                 if (
-                    str_contains($name, 'Qualificação Profissional') || 
+                    str_contains($name, 'Qualificação Profissional') ||
                     str_contains($name, 'Assistente de Contabilidade')
                 ) {
                     continue;

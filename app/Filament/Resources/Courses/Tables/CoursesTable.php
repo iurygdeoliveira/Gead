@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Courses\Tables;
 
+use App\Models\Course;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -23,8 +24,9 @@ class CoursesTable
                     ->wrap(),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
-                    ->getStateUsing(function (\App\Models\Course $record) {
+                    ->getStateUsing(function (Course $record) {
                         $status = $record->getEvaluationsCompletionStatus();
+
                         return "{$status['completed']} / {$status['expected']}";
                     })
                     ->alignCenter(),

@@ -19,6 +19,7 @@ class CourseClassDisciplineSeeder extends Seeder
 
         if (! file_exists($csvPath)) {
             $this->command->error("Arquivo CSV não encontrado: {$csvPath}");
+
             return;
         }
 
@@ -34,6 +35,7 @@ class CourseClassDisciplineSeeder extends Seeder
             while (($row = fgetcsv($file, 1000, ',')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
+
                     continue;
                 }
 
@@ -46,14 +48,15 @@ class CourseClassDisciplineSeeder extends Seeder
                 }
 
                 $courseClass = $allClasses->get($classCode);
-                
+
                 $discipline = null;
                 if ($courseClass) {
                     $discipline = $allDisciplines->get($sigla)?->firstWhere('course_id', $courseClass->course_id);
                 }
 
-                if (!$courseClass || !$discipline) {
+                if (! $courseClass || ! $discipline) {
                     $failures[] = "Não encontrou Turma ($classCode) ou Disciplina ($sigla)";
+
                     continue;
                 }
 
@@ -65,7 +68,7 @@ class CourseClassDisciplineSeeder extends Seeder
                     $parts = explode(',', $professoresRaw);
                     foreach ($parts as $part) {
                         $name = trim($part);
-                        if (!empty($name)) {
+                        if (! empty($name)) {
                             $teachersInRow[] = ['name' => $name, 'registration' => null];
                         }
                     }
@@ -102,14 +105,14 @@ class CourseClassDisciplineSeeder extends Seeder
                             ]
                         );
                     } else {
-                        $failures[] = "Professor não encontrado no banco: " . $tData['name'];
+                        $failures[] = 'Professor não encontrado no banco: '.$tData['name'];
                     }
                 }
             }
 
             fclose($file);
 
-            if (!empty($failures)) {
+            if (! empty($failures)) {
                 $this->command->error("\n--- RELATÓRIO DE FALHAS ---");
                 foreach (array_unique($failures) as $fail) {
                     $this->command->warn("- {$fail}");

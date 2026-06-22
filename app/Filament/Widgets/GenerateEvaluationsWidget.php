@@ -44,12 +44,12 @@ class GenerateEvaluationsWidget extends Widget
         $classEnrollments = ClassEnrollment::whereHas('courseClass', function ($query) use ($teamId) {
             $query->where('team_id', $teamId);
         })
-        ->whereHas('enrollment.student', function ($query) {
-            $query->whereDoesntHave('enrollments', function ($q) {
-                $q->whereDoesntHave('classEnrollments');
-            });
-        })
-        ->get();
+            ->whereHas('enrollment.student', function ($query) {
+                $query->whereDoesntHave('enrollments', function ($q) {
+                    $q->whereDoesntHave('classEnrollments');
+                });
+            })
+            ->get();
 
         // Fetch all course class disciplines
         $courseClassDisciplines = CourseClassDiscipline::all()->groupBy('course_class_id');
@@ -64,10 +64,10 @@ class GenerateEvaluationsWidget extends Widget
 
         foreach ($classEnrollments as $classEnrollment) {
             $ccds = $courseClassDisciplines[$classEnrollment->course_class_id] ?? collect();
-            
+
             foreach ($ccds as $ccd) {
                 $key = "{$classEnrollment->id}-{$ccd->id}";
-                
+
                 if (! isset($existingEvaluations[$key])) {
                     $evaluationsToInsert[] = [
                         'class_enrollment_id' => $classEnrollment->id,
