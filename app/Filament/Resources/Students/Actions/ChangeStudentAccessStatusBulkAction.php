@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\Students\Actions;
 
 use App\Enums\RoleType;
+use App\Models\Student;
+use App\Models\Team;
 use App\Models\User;
 use Filament\Actions\BulkAction;
 use Filament\Facades\Filament;
@@ -17,7 +19,7 @@ class ChangeStudentAccessStatusBulkAction
         return BulkAction::make('changeAccessStatus')
             ->label('Alterar Acesso')
             ->icon(Heroicon::ShieldExclamation)
-            ->form([
+            ->schema([
                 Select::make('status')
                     ->label('Novo Status de Acesso')
                     ->options([
@@ -26,16 +28,17 @@ class ChangeStudentAccessStatusBulkAction
                     ])
                     ->required(),
             ])
-            ->action(function (Collection $records, array $data) {
+            ->action(function (Collection $records, array $data): void {
                 $isSuspended = $data['status'] === 'suspend';
                 foreach ($records as $record) {
+                    /** @var Student $record */
                     if ($record->user) {
                         $record->user->update(['is_suspended' => $isSuspended]);
                     }
                 }
             })
             ->deselectRecordsAfterCompletion()
-            ->visible(fn () => self::canManageAccess());
+            ->visible(fn (): bool => self::canManageAccess());
     }
 
     private static function canManageAccess(): bool
@@ -50,6 +53,7 @@ class ChangeStudentAccessStatusBulkAction
             return true;
         }
 
+        /** @var Team|null $team */
         $team = Filament::getTenant();
 
         if (! $team) {

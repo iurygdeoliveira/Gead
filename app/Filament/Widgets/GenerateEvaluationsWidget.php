@@ -10,6 +10,7 @@ use App\Models\Evaluation;
 use App\Models\Team;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Widgets\Widget;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Str;
 
 class GenerateEvaluationsWidget extends Widget
@@ -18,6 +19,7 @@ class GenerateEvaluationsWidget extends Widget
 
     protected string $view = 'filament.widgets.generate-evaluations-widget';
 
+    #[\Override]
     public static function canView(): bool
     {
         return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae']);
@@ -25,9 +27,7 @@ class GenerateEvaluationsWidget extends Widget
 
     public function generate(): void
     {
-        $tenant = filament()->getTenant();
-        $teamId = $tenant ? $tenant->id : null;
-
+        $teamId = filament()->getTenant()?->getKey();
         if (! $teamId) {
             $team = Team::first();
             $teamId = $team ? $team->id : null;
@@ -40,11 +40,11 @@ class GenerateEvaluationsWidget extends Widget
         }
 
         // Fetch all class enrollments for the campus
-        $classEnrollments = ClassEnrollment::whereHas('courseClass', function ($query) use ($teamId) {
+        $classEnrollments = ClassEnrollment::whereHas('courseClass', function (Builder $query) use ($teamId): void {
             $query->where('team_id', $teamId);
         })
-            ->whereHas('enrollment.student', function ($query) {
-                $query->whereDoesntHave('enrollments', function ($q) {
+            ->whereHas('enrollment.student', function ($query): void {
+                $query->whereDoesntHave('enrollments', function ($q): void {
                     $q->whereDoesntHave('classEnrollments');
                 });
             })
@@ -54,9 +54,7 @@ class GenerateEvaluationsWidget extends Widget
         $courseClassDisciplines = CourseClassDiscipline::all()->groupBy('course_class_id');
 
         // Fetch existing evaluations to prevent duplicates
-        $existingEvaluations = Evaluation::where('team_id', $teamId)->get()->mapWithKeys(function ($item) {
-            return ["{$item->class_enrollment_id}-{$item->course_class_discipline_id}" => true];
-        })->toArray();
+        $existingEvaluations = Evaluation::where('team_id', $teamId)->get()->mapWithKeys(fn ($item): array => ["{$item->class_enrollment_id}-{$item->course_class_discipline_id}" => true])->toArray();
 
         $evaluationsToInsert = [];
         $generatedCount = 0;
@@ -82,7 +80,7 @@ class GenerateEvaluationsWidget extends Widget
             }
         }
 
-        if (! empty($evaluationsToInsert)) {
+        if ($evaluationsToInsert !== []) {
             foreach (array_chunk($evaluationsToInsert, 500) as $chunk) {
                 Evaluation::insertOrIgnore($chunk);
             }

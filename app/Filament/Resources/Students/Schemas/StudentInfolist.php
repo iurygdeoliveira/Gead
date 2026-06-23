@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Students\Schemas;
 
 use Filament\Infolists\Components\RepeatableEntry;
@@ -7,6 +9,7 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class StudentInfolist
 {
@@ -17,7 +20,7 @@ class StudentInfolist
                 Tabs::make('Tabs')
                     ->tabs([
                         Tab::make('Detalhes do Aluno')
-                            ->icon('heroicon-o-information-circle')
+                            ->icon(Heroicon::OutlinedInformationCircle)
                             ->schema([
                                 TextEntry::make('name')
                                     ->label('Nome Completo'),
@@ -27,7 +30,7 @@ class StudentInfolist
                                     ->label('Campus Vinculado'),
                             ]),
                         Tab::make('Avaliações Previstas')
-                            ->icon('heroicon-o-clipboard-document-check')
+                            ->icon(Heroicon::OutlinedClipboardDocumentCheck)
                             ->schema([
                                 RepeatableEntry::make('evaluations_status')
                                     ->hiddenLabel()

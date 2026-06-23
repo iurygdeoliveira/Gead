@@ -10,24 +10,27 @@ use Laravel\Socialite\Facades\Socialite;
 
 class GoogleLoginController
 {
-    public function redirect(): RedirectResponse
+    /** @return \Symfony\Component\HttpFoundation\RedirectResponse|RedirectResponse */
+    public function redirect()
     {
         return Socialite::driver('google')->redirect();
     }
 
-    public function callback(): RedirectResponse
+    /** @return \Symfony\Component\HttpFoundation\RedirectResponse|RedirectResponse */
+    public function callback()
     {
         try {
+            /** @var \Laravel\Socialite\Two\User $socialUser */
             $socialUser = Socialite::driver('google')->user();
-        } catch (\Exception $e) {
-            return redirect()->route('filament.admin.auth.login')
+        } catch (\Exception) {
+            return to_route('filament.admin.auth.login')
                 ->with('socialite_error', 'Falha ao autenticar com o Google. Tente novamente.');
         }
 
         // Camada de segurança: Validar domínio
         $email = $socialUser->getEmail();
-        if (! str_ends_with($email, '@ifto.edu.br') && ! str_ends_with($email, '@estudante.ifto.edu.br')) {
-            return redirect()->route('filament.admin.auth.login')
+        if (! str_ends_with((string) $email, '@ifto.edu.br') && ! str_ends_with((string) $email, '@estudante.ifto.edu.br')) {
+            return to_route('filament.admin.auth.login')
                 ->with('socialite_error', 'Acesso permitido apenas para e-mails institucionais (@ifto.edu.br ou @estudante.ifto.edu.br).');
         }
 
@@ -35,11 +38,11 @@ class GoogleLoginController
 
         // Se o usuário não existir, bloqueia e manda para a página de solicitar acesso
         if (! $user) {
-            return redirect()->route('solicitar-acesso');
+            return to_route('solicitar-acesso');
         }
 
         // Se o usuário existir, atualiza ou cria o ConnectedAccount
-        $connectedAccount = ConnectedAccount::updateOrCreate(
+        ConnectedAccount::updateOrCreate(
             [
                 'provider' => 'google',
                 'provider_user_id' => $socialUser->getId(),
@@ -51,13 +54,13 @@ class GoogleLoginController
                 'avatar' => $socialUser->getAvatar(),
                 'token' => $socialUser->token,
                 'refresh_token' => $socialUser->refreshToken,
-                'expires_at' => property_exists($socialUser, 'expiresIn') ? now()->addSeconds($socialUser->expiresIn) : null,
+                'expires_at' => $socialUser->expiresIn ? now()->addSeconds($socialUser->expiresIn) : null,
             ]
         );
 
         // Bloqueio de professores que não são gerentes
         if ($user->teacher()->exists() && $user->email !== 'walmir.sousa@ifto.edu.br') {
-            return redirect()->route('filament.admin.auth.login')
+            return to_route('filament.admin.auth.login')
                 ->with('socialite_error', 'O acesso para professores ainda não está liberado.');
         }
 

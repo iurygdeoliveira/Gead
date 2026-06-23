@@ -3,11 +3,12 @@
 namespace App\Filament\Resources\Teachers\Pages;
 
 use App\Filament\Resources\Teachers\TeacherResource;
+use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
+use Filament\Facades\Filament;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
-use App\Traits\Filament\NotificationsTrait;
+use Filament\Support\Icons\Heroicon;
 
 class EditTeacher extends EditRecord
 {
@@ -15,29 +16,32 @@ class EditTeacher extends EditRecord
 
     protected static string $resource = TeacherResource::class;
 
+    #[\Override]
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
     }
 
+    #[\Override]
     protected function getSavedNotification(): ?Notification
     {
         return $this->buildNotification('primary', 'Registro atualizado com sucesso!');
     }
 
+    #[\Override]
     protected function getHeaderActions(): array
     {
         return [
             Action::make('back')
                 ->label('Voltar')
-                ->icon('heroicon-m-arrow-left')
+                ->icon(Heroicon::ArrowLeft)
                 ->color('gray')
                 ->url(fn () => static::getResource()::getUrl('index')),
-            \Filament\Actions\Action::make('delete')
+            Action::make('delete')
                 ->label('Excluir')
-                ->icon('heroicon-m-trash')
+                ->icon(Heroicon::Trash)
                 ->color('danger')
-                ->visible(fn (): bool => \Filament\Facades\Filament::auth()->user()?->can('delete', $this->getRecord()) ?? false)
+                ->visible(fn (): bool => Filament::auth()->user()?->can('delete', $this->getRecord()) ?? false)
                 ->url(fn (): string => static::getResource()::getUrl('delete', ['record' => $this->getRecord()])),
         ];
     }

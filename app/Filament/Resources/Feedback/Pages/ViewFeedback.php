@@ -8,6 +8,7 @@ use App\Filament\Resources\Feedback\FeedbackResource;
 use App\Traits\Filament\HasBackButtonAction;
 use Filament\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
+use Filament\Support\Icons\Heroicon;
 
 class ViewFeedback extends ViewRecord
 {
@@ -23,7 +24,7 @@ class ViewFeedback extends ViewRecord
             Action::make('delete')
                 ->label(__('Excluir'))
                 ->color('danger')
-                ->icon('heroicon-o-trash')
+                ->icon(Heroicon::OutlinedTrash)
                 ->url(fn (): string => FeedbackResource::getUrl('delete', ['record' => $this->getRecord()])),
         ];
     }

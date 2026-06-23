@@ -33,13 +33,13 @@ class TeacherSeeder extends Seeder
             ]);
         }
 
-        DB::transaction(function () use ($csvPath, $team) {
+        DB::transaction(function () use ($csvPath, $team): void {
             $file = fopen($csvPath, 'r');
             $isHeader = true;
 
             $teachersToInsert = [];
 
-            while (($row = fgetcsv($file, 1000, ',')) !== false) {
+            while (($row = fgetcsv($file, 1000, ',', escape: '\\')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
 
@@ -47,8 +47,13 @@ class TeacherSeeder extends Seeder
                 }
 
                 $professoresRaw = trim($row[4] ?? '');
-
-                if (empty($professoresRaw) || $professoresRaw === '-') {
+                if ($professoresRaw === '') {
+                    continue;
+                }
+                if ($professoresRaw === '0') {
+                    continue;
+                }
+                if ($professoresRaw === '-') {
                     continue;
                 }
 
@@ -56,12 +61,12 @@ class TeacherSeeder extends Seeder
                 // Usaremos regex para extrair os nomes e matrículas
                 preg_match_all('/([^(),]+)\s*\((\d+)\)/', $professoresRaw, $matches, PREG_SET_ORDER);
 
-                if (empty($matches)) {
+                if ($matches === []) {
                     // Tenta ver se é só um nome sem matrícula
                     $parts = explode(',', $professoresRaw);
                     foreach ($parts as $part) {
                         $name = trim($part);
-                        if (! empty($name)) {
+                        if ($name !== '' && $name !== '0') {
                             $teachersToInsert[$name] = null; // null registration_number
                         }
                     }
@@ -75,7 +80,7 @@ class TeacherSeeder extends Seeder
                         }
                         $registrationNumber = trim($match[2]);
 
-                        if (! empty($name)) {
+                        if ($name !== '' && $name !== '0') {
                             $teachersToInsert[$name] = $registrationNumber;
                         }
                     }
@@ -104,7 +109,7 @@ class TeacherSeeder extends Seeder
                 $emailFile = fopen($emailsCsvPath, 'r');
                 $isEmailHeader = true;
 
-                while (($row = fgetcsv($emailFile, 1000, ',')) !== false) {
+                while (($row = fgetcsv($emailFile, 1000, ',', escape: '\\')) !== false) {
                     if ($isEmailHeader) {
                         $isEmailHeader = false;
 
@@ -115,9 +120,11 @@ class TeacherSeeder extends Seeder
                     $registrationNumber = trim($row[2] ?? '');
                     $emailRaw = trim($row[4] ?? '');
 
-                    $email = (! empty($emailRaw) && $emailRaw !== '-') ? $emailRaw : null;
-
-                    if (empty($name)) {
+                    $email = (in_array($emailRaw, ['', '0', '-'], true)) ? null : $emailRaw;
+                    if ($name === '') {
+                        continue;
+                    }
+                    if ($name === '0') {
                         continue;
                     }
 

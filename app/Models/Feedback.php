@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Traits\UuidTrait;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
-use App\Traits\UuidTrait;
 
 /**
  * @property int $id
@@ -23,22 +25,20 @@ use App\Traits\UuidTrait;
  * @property-read User $user
  * @property-read Team|null $team
  */
+#[Fillable([
+    'uuid',
+    'user_id',
+    'page_url',
+    'page_title',
+    'message',
+    'team_id',
+    'panel',
+])]
+#[Table(name: 'feedback')]
 final class Feedback extends Model
 {
     use HasFactory;
     use UuidTrait;
-
-    protected $table = 'feedback';
-
-    protected $fillable = [
-        'uuid',
-        'user_id',
-        'page_url',
-        'page_title',
-        'message',
-        'team_id',
-        'panel',
-    ];
 
     /**
      * @return BelongsTo<User, $this>

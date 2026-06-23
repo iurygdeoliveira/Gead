@@ -19,7 +19,7 @@ class LoginResponse implements FilamentLoginResponse
         $user = Filament::auth()->user();
 
         $adminPanel = Filament::getPanel('admin');
-        if ($adminPanel && $user->canAccessPanel($adminPanel)) {
+        if ($user->canAccessPanel($adminPanel)) {
             return redirect()->to('/admin');
         }
 
@@ -27,7 +27,7 @@ class LoginResponse implements FilamentLoginResponse
 
         foreach ($panels as $panelName) {
             $panel = Filament::getPanel($panelName);
-            if ($panel && $user->canAccessPanel($panel)) {
+            if ($user->canAccessPanel($panel)) {
                 /** @var Team|null $firstTeam */
                 $firstTeam = $user->teams()->first();
                 if ($firstTeam) {

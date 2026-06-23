@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\Students\Tables;
 
 use App\Filament\Resources\Students\Actions\ChangeStudentAccessStatusBulkAction;
-use App\Filament\Resources\Students\Actions\DeleteStudentAction;
 use App\Filament\Resources\Students\Actions\ToggleStudentSuspensionAction;
 use App\Filament\Resources\Students\StudentResource;
 use App\Models\CourseClassDiscipline;
@@ -24,7 +23,7 @@ class StudentsTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(function (Builder $query) {
+            ->modifyQueryUsing(function (Builder $query): void {
                 $query->with(['user', 'enrollments.classEnrollments.courseClass'])
                     ->select('students.*')
                     ->addSelect([
@@ -64,9 +63,9 @@ class StudentsTable
                     ->placeholder('?'),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
-                    ->getStateUsing(fn ($record) => ($record->evaluations_done ?? 0).' / '.($record->evaluations_total ?? 0))
+                    ->getStateUsing(fn ($record): string => ($record->evaluations_done ?? 0).' / '.($record->evaluations_total ?? 0))
                     ->alignCenter()
-                    ->hidden(fn ($record) => $record !== null && $record->enrollments->flatMap->classEnrollments->isEmpty()),
+                    ->hidden(fn ($record): bool => $record !== null && $record->enrollments->flatMap->classEnrollments->isEmpty()),
             ])
             ->filters([
             ])

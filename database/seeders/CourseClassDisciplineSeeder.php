@@ -26,13 +26,13 @@ class CourseClassDisciplineSeeder extends Seeder
         $allClasses = CourseClass::all()->keyBy('code');
         $allDisciplines = Discipline::all()->groupBy('code');
 
-        DB::transaction(function () use ($csvPath, $allClasses, $allDisciplines) {
+        DB::transaction(function () use ($csvPath, $allClasses, $allDisciplines): void {
             $file = fopen($csvPath, 'r');
             $isHeader = true;
 
             $failures = [];
 
-            while (($row = fgetcsv($file, 1000, ',')) !== false) {
+            while (($row = fgetcsv($file, 1000, ',', escape: '\\')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
 
@@ -42,8 +42,25 @@ class CourseClassDisciplineSeeder extends Seeder
                 $sigla = trim($row[2] ?? '');
                 $professoresRaw = trim($row[4] ?? '');
                 $classCode = trim($row[5] ?? '');
-
-                if (empty($sigla) || empty($classCode) || empty($professoresRaw) || $professoresRaw === '-') {
+                if ($sigla === '') {
+                    continue;
+                }
+                if ($sigla === '0') {
+                    continue;
+                }
+                if ($classCode === '') {
+                    continue;
+                }
+                if ($classCode === '0') {
+                    continue;
+                }
+                if ($professoresRaw === '') {
+                    continue;
+                }
+                if ($professoresRaw === '0') {
+                    continue;
+                }
+                if ($professoresRaw === '-') {
                     continue;
                 }
 
@@ -64,11 +81,11 @@ class CourseClassDisciplineSeeder extends Seeder
                 $teachersInRow = [];
                 preg_match_all('/([^(),]+)\s*\((\d+)\)/', $professoresRaw, $matches, PREG_SET_ORDER);
 
-                if (empty($matches)) {
+                if ($matches === []) {
                     $parts = explode(',', $professoresRaw);
                     foreach ($parts as $part) {
                         $name = trim($part);
-                        if (! empty($name)) {
+                        if ($name !== '' && $name !== '0') {
                             $teachersInRow[] = ['name' => $name, 'registration' => null];
                         }
                     }
@@ -112,7 +129,7 @@ class CourseClassDisciplineSeeder extends Seeder
 
             fclose($file);
 
-            if (! empty($failures)) {
+            if ($failures !== []) {
                 $this->command->error("\n--- RELATÓRIO DE FALHAS ---");
                 foreach (array_unique($failures) as $fail) {
                     $this->command->warn("- {$fail}");

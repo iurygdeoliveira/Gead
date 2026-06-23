@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('magic_login_tokens', function (Blueprint $table) {
+        Schema::create('magic_login_tokens', function (Blueprint $table): void {
             $table->id();
             $table->string('email')->index();
             $table->string('token')->unique();

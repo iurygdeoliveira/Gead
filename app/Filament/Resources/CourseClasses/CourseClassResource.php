@@ -9,6 +9,7 @@ use App\Models\CourseClass;
 use App\Traits\Filament\HasConfigurableNavigationSort;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class CourseClassResource extends Resource
@@ -21,7 +22,7 @@ class CourseClassResource extends Resource
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-academic-cap';
+    protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedAcademicCap;
 
     protected static ?string $navigationLabel = 'Turmas';
 
@@ -29,26 +30,31 @@ class CourseClassResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
+    #[\Override]
     public static function getModelLabel(): string
     {
         return __('Turma');
     }
 
+    #[\Override]
     public static function form(Schema $schema): Schema
     {
         return CourseClassForm::configure($schema);
     }
 
+    #[\Override]
     public static function infolist(Schema $schema): Schema
     {
         return CourseClassInfolist::configure($schema);
     }
 
+    #[\Override]
     public static function table(Table $table): Table
     {
         return CourseClassesTable::configure($table);
     }
 
+    #[\Override]
     public static function getRelations(): array
     {
         return [
@@ -56,6 +62,7 @@ class CourseClassResource extends Resource
         ];
     }
 
+    #[\Override]
     public static function getPages(): array
     {
         return [

@@ -187,16 +187,25 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
         return $this->belongsTo(User::class, 'approved_by');
     }
 
+    /**
+     * @return HasOne<Teacher, $this>
+     */
     public function teacher(): HasOne
     {
         return $this->hasOne(Teacher::class);
     }
 
+    /**
+     * @return HasOne<Student, $this>
+     */
     public function student(): HasOne
     {
         return $this->hasOne(Student::class);
     }
 
+    /**
+     * @return HasMany<ConnectedAccount, $this>
+     */
     public function connectedAccounts(): HasMany
     {
         return $this->hasMany(ConnectedAccount::class);

@@ -9,10 +9,12 @@ use App\Models\User;
 use App\Traits\Filament\HasConfigurableNavigationSort;
 use Filament\Facades\Filament;
 use Filament\Pages\Page;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Collection;
 use OwenIt\Auditing\Models\Audit;
 
@@ -25,7 +27,7 @@ class LoginAuditPage extends Page implements HasTable
 
     public ?string $search = '';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-shield-check';
+    protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedShieldCheck;
 
     protected static ?string $slug = 'logins';
 
@@ -43,7 +45,7 @@ class LoginAuditPage extends Page implements HasTable
     {
         return $table
             ->query(
-                fn () => Audit::query()
+                fn () => Audit::query() // @phpstan-ignore-line
                     ->whereIn('event', ['login', 'logout', 'failed_login'])
                     ->when($this->selectedUserId, fn ($query) => $query->where('user_id', $this->selectedUserId))
                     ->with('user')
@@ -96,8 +98,8 @@ class LoginAuditPage extends Page implements HasTable
     {
         return User::query()
             ->whereHas('audits', fn ($query) => $query->whereIn('event', ['login', 'logout', 'failed_login']))
-            ->when($this->search, function ($query) {
-                $query->where(function ($q) {
+            ->when($this->search, function ($query): void {
+                $query->where(function (Builder $q): void {
                     $q->where('name', 'like', "%{$this->search}%")
                         ->orWhere('email', 'like', "%{$this->search}%");
                 });
@@ -106,6 +108,7 @@ class LoginAuditPage extends Page implements HasTable
             ->get();
     }
 
+    #[\Override]
     public static function canAccess(): bool
     {
         /** @var User|null $user */
@@ -114,9 +117,13 @@ class LoginAuditPage extends Page implements HasTable
         if (! $user) {
             return false;
         }
+        if ($user->hasRole(RoleType::ADMIN->value)) {
+            return true;
+        }
+        if ($user->hasRole(RoleType::MANAGER->value)) {
+            return true;
+        }
 
-        return $user->hasRole(RoleType::ADMIN->value) ||
-               $user->hasRole(RoleType::MANAGER->value) ||
-               $user->hasRole(RoleType::TAE->value);
+        return $user->hasRole(RoleType::TAE->value);
     }
 }

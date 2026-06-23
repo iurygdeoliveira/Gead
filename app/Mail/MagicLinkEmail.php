@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
@@ -14,15 +15,10 @@ class MagicLinkEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public string $url;
-
     /**
      * Create a new message instance.
      */
-    public function __construct(string $url)
-    {
-        $this->url = $url;
-    }
+    public function __construct(public string $url) {}
 
     /**
      * Get the message envelope.

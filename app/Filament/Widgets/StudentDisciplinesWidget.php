@@ -22,17 +22,18 @@ class StudentDisciplinesWidget extends BaseWidget
 
     protected static ?string $heading = 'Disciplinas para Avaliar';
 
+    #[\Override]
     public function table(Table $table): Table
     {
         return $table
             ->query(
                 CourseClassDiscipline::query()
-                    ->whereHas('courseClass.classEnrollments.enrollment.student', function (Builder $query) {
+                    ->whereHas('courseClass.classEnrollments.enrollment.student', function (Builder $query): void {
                         $query->where('user_id', Filament::auth()->user()->id);
                     })
                     ->with(['discipline', 'teacher'])
-                    ->withExists(['evaluations as is_evaluated' => function ($query) {
-                        $query->whereHas('classEnrollment.enrollment.student', function ($sub) {
+                    ->withExists(['evaluations as is_evaluated' => function ($query): void {
+                        $query->whereHas('classEnrollment.enrollment.student', function ($sub): void {
                             $sub->where('user_id', Filament::auth()->user()->id);
                         });
                     }])
@@ -49,9 +50,7 @@ class StudentDisciplinesWidget extends BaseWidget
                     ->sortable(),
                 Tables\Columns\TextColumn::make('is_evaluated')
                     ->label('Status')
-                    ->getStateUsing(function (CourseClassDiscipline $record) {
-                        return $record->is_evaluated ? 'Avaliada' : 'Pendente';
-                    })
+                    ->getStateUsing(fn (CourseClassDiscipline $record): string => $record->getAttribute('is_evaluated') ? 'Avaliada' : 'Pendente')
                     ->badge()
                     ->sortable()
                     ->color(fn (string $state): string => match ($state) {
@@ -60,16 +59,43 @@ class StudentDisciplinesWidget extends BaseWidget
                         default => 'gray',
                     }),
             ])
+            ->filters([
+                Tables\Filters\SelectFilter::make('is_evaluated')
+                    ->label('Status')
+                    ->options([
+                        '1' => 'Avaliada',
+                        '0' => 'Pendente',
+                    ])
+                    ->query(function (Builder $query, array $data): Builder {
+                        if (! isset($data['value']) || $data['value'] === '') {
+                            return $query;
+                        }
+
+                        $isEvaluated = (bool) $data['value'];
+
+                        if ($isEvaluated) {
+                            return $query->whereHas('evaluations', function (\Illuminate\Contracts\Database\Query\Builder $sub): void {
+                                $sub->whereHas('classEnrollment.enrollment.student', function (\Illuminate\Contracts\Database\Query\Builder $sub2): void {
+                                    $sub2->where('user_id', Filament::auth()->user()->id);
+                                });
+                            });
+                        }
+
+                        return $query->whereDoesntHave('evaluations', function (\Illuminate\Contracts\Database\Query\Builder $sub): void {
+                            $sub->whereHas('classEnrollment.enrollment.student', function (\Illuminate\Contracts\Database\Query\Builder $sub2): void {
+                                $sub2->where('user_id', Filament::auth()->user()->id);
+                            });
+                        });
+                    }),
+            ])
             ->defaultSort('is_evaluated', 'asc')
             ->recordActions([
                 Action::make('avaliar')
                     ->label('Avaliar')
-                    ->modalHeading(fn (CourseClassDiscipline $record) => "Avaliar: {$record->discipline->name} - {$record->teacher->name}")
+                    ->modalHeading(fn (CourseClassDiscipline $record): string => "Avaliar: {$record->discipline->name} - {$record->teacher->name}")
                     ->button()
                     ->slideOver()
-                    ->hidden(function (CourseClassDiscipline $record) {
-                        return $record->is_evaluated;
-                    })
+                    ->hidden(fn (CourseClassDiscipline $record): bool => (bool) $record->getAttribute('is_evaluated'))
                     ->schema([
                         TextInput::make('planning_score')
                             ->label('O docente apresenta seu plano de ensino (PLANEJAMENTO) no início do semestre ou ano letivo, indicando a ementa, competências e habilidades, recursos didáticos que serão utilizados, formas de avaliações, referências bibliográficas?')
@@ -108,15 +134,15 @@ class StudentDisciplinesWidget extends BaseWidget
                             ->maxValue(10)
                             ->required(),
                     ])
-                    ->action(function (array $data, CourseClassDiscipline $record) {
+                    ->action(function (array $data, CourseClassDiscipline $record): void {
                         // Find the student's class_enrollment for this course_class
                         $student = Auth::user()->student;
                         if (! $student) {
                             return;
                         }
 
-                        $classEnrollment = ClassEnrollment::where('course_class_id', $record->course_class_id)
-                            ->whereHas('enrollment', function ($q) use ($student) {
+                        $classEnrollment = ClassEnrollment::where('course_class_id', $record->getAttribute('course_class_id'))
+                            ->whereHas('enrollment', function ($q) use ($student): void {
                                 $q->where('student_id', $student->id);
                             })
                             ->first();

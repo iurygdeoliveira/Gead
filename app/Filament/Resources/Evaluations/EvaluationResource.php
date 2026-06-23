@@ -9,6 +9,7 @@ use App\Models\Evaluation;
 use App\Traits\Filament\HasConfigurableNavigationSort;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -33,7 +34,7 @@ class EvaluationResource extends Resource
 
     protected static ?string $tenantOwnershipRelationshipName = 'team';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-clipboard-document-check';
+    protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentCheck;
 
     protected static ?string $navigationLabel = 'Avaliações';
 
@@ -41,31 +42,37 @@ class EvaluationResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
+    #[\Override]
     public static function getModelLabel(): string
     {
         return __('Avaliação');
     }
 
+    #[\Override]
     public static function getPluralModelLabel(): string
     {
         return __('Avaliações');
     }
 
+    #[\Override]
     public static function form(Schema $schema): Schema
     {
         return EvaluationForm::configure($schema);
     }
 
+    #[\Override]
     public static function infolist(Schema $schema): Schema
     {
         return EvaluationInfolist::configure($schema);
     }
 
+    #[\Override]
     public static function table(Table $table): Table
     {
         return EvaluationsTable::configure($table);
     }
 
+    #[\Override]
     public static function getRelations(): array
     {
         return [
@@ -73,6 +80,7 @@ class EvaluationResource extends Resource
         ];
     }
 
+    #[\Override]
     public static function getPages(): array
     {
         return [

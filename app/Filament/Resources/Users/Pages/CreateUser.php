@@ -48,7 +48,7 @@ class CreateUser extends CreateRecord
                 Membership::create([
                     'team_id' => $teamId,
                     'user_id' => $record->id,
-                    'role' => AppTeamRole::MEMBER->value,
+                    'role' => AppTeamRole::default()->value,
                 ]);
             }
         } else {
@@ -58,7 +58,7 @@ class CreateUser extends CreateRecord
                 Membership::create([
                     'team_id' => $currentTeam->id,
                     'user_id' => $record->id,
-                    'role' => AppTeamRole::MEMBER->value,
+                    'role' => AppTeamRole::default()->value,
                 ]);
             }
         }

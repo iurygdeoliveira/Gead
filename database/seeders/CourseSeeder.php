@@ -47,7 +47,7 @@ class CourseSeeder extends Seeder
             $file = fopen($fileConfig['path'], 'r');
             $isHeader = true;
 
-            while (($row = fgetcsv($file, 1000, ',')) !== false) {
+            while (($row = fgetcsv($file, 1000, ',', escape: '\\')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
 
@@ -56,19 +56,23 @@ class CourseSeeder extends Seeder
 
                 $code = trim($row[$fileConfig['code_idx']] ?? '');
                 $name = trim($row[$fileConfig['name_idx']] ?? '');
-
-                if (empty($code) || $code === '-') {
+                if ($code === '') {
+                    continue;
+                }
+                if ($code === '0') {
+                    continue;
+                }
+                if ($code === '-') {
                     continue;
                 }
 
-                if (empty($name)) {
+                if ($name === '' || $name === '0') {
                     $name = "Curso $code";
                 }
-
-                if (
-                    str_contains($name, 'Qualificação Profissional') ||
-                    str_contains($name, 'Assistente de Contabilidade')
-                ) {
+                if (str_contains($name, 'Qualificação Profissional')) {
+                    continue;
+                }
+                if (str_contains($name, 'Assistente de Contabilidade')) {
                     continue;
                 }
 

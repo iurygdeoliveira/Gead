@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Configurators\FilamentComponentsConfigurator;
 use App\Filament\Pages\Auth\AccountSuspended;
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Auth\VerificationPending;
@@ -62,7 +63,7 @@ class AuthPanelProvider extends PanelProvider
                     ->recoverable()
             )
             ->bootUsing(function (): void {
-                \App\Filament\Configurators\FilamentComponentsConfigurator::configure();
+                FilamentComponentsConfigurator::configure();
             })
             ->middleware([
                 EncryptCookies::class,

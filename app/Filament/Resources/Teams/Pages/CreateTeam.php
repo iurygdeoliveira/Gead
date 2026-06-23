@@ -44,7 +44,7 @@ class CreateTeam extends CreateRecord
             Membership::create([
                 'team_id' => $team->id,
                 'user_id' => $userId,
-                'role' => AppTeamRole::MEMBER->value,
+                'role' => AppTeamRole::default()->value,
             ]);
         }
 

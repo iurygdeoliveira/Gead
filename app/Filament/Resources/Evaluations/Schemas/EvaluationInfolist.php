@@ -4,12 +4,12 @@ namespace App\Filament\Resources\Evaluations\Schemas;
 
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
-use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class EvaluationInfolist
 {
@@ -21,7 +21,7 @@ class EvaluationInfolist
                     ->columnSpanFull()
                     ->tabs([
                         Tab::make('Detalhes da Avaliação')
-                            ->icon('heroicon-o-information-circle')
+                            ->icon(Heroicon::OutlinedInformationCircle)
                             ->schema([
                                 TextEntry::make('classEnrollment.courseClass.course.name')
                                     ->label('Turma (Curso)'),
@@ -34,7 +34,7 @@ class EvaluationInfolist
                             ])
                             ->columns(2),
                         Tab::make('Avaliação Docente')
-                            ->icon('heroicon-o-clipboard-document-check')
+                            ->icon(Heroicon::OutlinedClipboardDocumentCheck)
                             ->schema([
                                 RepeatableEntry::make('taught_disciplines_evaluations')
                                     ->hiddenLabel()
@@ -47,19 +47,19 @@ class EvaluationInfolist
                                                 $record->cached_taught_disciplines_evaluations = [];
                                             } else {
                                                 $ccds = CourseClassDiscipline::where('teacher_id', $teacherId)
-                                                    ->whereHas('courseClass', function ($query) use ($academicTermId) {
+                                                    ->whereHas('courseClass', function ($query) use ($academicTermId): void {
                                                         $query->where('academic_term_id', $academicTermId);
                                                     })
                                                     ->with(['discipline', 'courseClass'])
                                                     ->get();
 
-                                                $record->cached_taught_disciplines_evaluations = $ccds->map(function ($ccd) {
+                                                $record->cached_taught_disciplines_evaluations = $ccds->map(function ($ccd): array {
                                                     $averages = Evaluation::where('course_class_discipline_id', $ccd->id)
                                                         ->selectRaw('AVG(planning_score) as planning_score, AVG(posture_score) as posture_score, AVG(attendance_score) as attendance_score, AVG(punctuality_score) as punctuality_score, AVG(execution_score) as execution_score, AVG(assessment_score) as assessment_score')
                                                         ->first();
 
                                                     return [
-                                                        'discipline_label' => ($ccd->discipline?->name ?? '-').' ('.($ccd->courseClass?->name ?? '-').')',
+                                                        'discipline_label' => ($ccd->discipline->name ?? '-').' ('.($ccd->courseClass->name ?? '-').')',
                                                         'dimensions' => [
                                                             [
                                                                 'dimension' => 'O docente apresenta seu plano de ensino (PLANEJAMENTO) no início do semestre ou ano letivo, indicando a ementa, competências e habilidades, recursos didáticos que serão utilizados, formas de avaliações, referências bibliográficas?',
@@ -99,8 +99,8 @@ class EvaluationInfolist
                                         RepeatableEntry::make('dimensions')
                                             ->hiddenLabel()
                                             ->table([
-                                                TableColumn::make('Dimensão'),
-                                                TableColumn::make('Média'),
+                                                RepeatableEntry\TableColumn::make('Dimensão'),
+                                                RepeatableEntry\TableColumn::make('Média'),
                                             ])
                                             ->schema([
                                                 TextEntry::make('dimension')

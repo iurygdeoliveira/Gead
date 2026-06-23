@@ -10,6 +10,7 @@ use App\Traits\Filament\HasBackButtonAction;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
+use Filament\Support\Icons\Heroicon;
 use Illuminate\Contracts\Support\Htmlable;
 
 class DeleteFeedback extends ViewRecord
@@ -29,7 +30,7 @@ class DeleteFeedback extends ViewRecord
             Action::make('delete')
                 ->label(__('Confirmar exclusão'))
                 ->color('danger')
-                ->icon('heroicon-o-trash')
+                ->icon(Heroicon::OutlinedTrash)
                 ->requiresConfirmation()
                 ->modalHeading(__('Confirmar exclusão permanente'))
                 ->modalDescription(__('Tem certeza de que deseja excluir este feedback? Esta ação não pode ser desfeita.'))

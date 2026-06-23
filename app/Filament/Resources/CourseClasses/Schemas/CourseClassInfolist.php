@@ -4,12 +4,12 @@ namespace App\Filament\Resources\CourseClasses\Schemas;
 
 use App\Models\ClassEnrollment;
 use App\Models\Teacher;
-use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class CourseClassInfolist
 {
@@ -21,7 +21,7 @@ class CourseClassInfolist
                     ->columnSpanFull()
                     ->tabs([
                         Tab::make('Detalhes da Turma')
-                            ->icon('heroicon-o-information-circle')
+                            ->icon(Heroicon::OutlinedInformationCircle)
                             ->schema([
                                 TextEntry::make('course.name')
                                     ->label('Curso'),
@@ -32,28 +32,24 @@ class CourseClassInfolist
                             ])
                             ->columns(3),
                         Tab::make('Alunos Matriculados')
-                            ->icon('heroicon-o-users')
+                            ->icon(Heroicon::OutlinedUsers)
                             ->schema([
                                 RepeatableEntry::make('enrolled_students')
                                     ->hiddenLabel()
-                                    ->getStateUsing(function ($record) {
-                                        return ClassEnrollment::query()
-                                            ->where('course_class_id', $record->id)
-                                            ->with(['enrollment.student'])
-                                            ->get()
-                                            ->map(function ($classEnrollment) {
-                                                return [
-                                                    'name' => $classEnrollment->enrollment?->student?->name ?? '-',
-                                                    'registration_number' => $classEnrollment->enrollment?->registration_number ?? '-',
-                                                    'email' => $classEnrollment->enrollment?->student?->email ?? '-',
-                                                ];
-                                            })
-                                            ->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE);
-                                    })
+                                    ->getStateUsing(fn ($record) => ClassEnrollment::query()
+                                        ->where('course_class_id', $record->id)
+                                        ->with(['enrollment.student'])
+                                        ->get()
+                                        ->map(fn ($classEnrollment): array => [
+                                            'name' => $classEnrollment->enrollment->student->name ?? '-',
+                                            'registration_number' => $classEnrollment->enrollment->registration_number ?? '-',
+                                            'email' => $classEnrollment->enrollment->student->email ?? '-',
+                                        ])
+                                        ->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE))
                                     ->table([
-                                        TableColumn::make('Nome do Aluno'),
-                                        TableColumn::make('Matrícula'),
-                                        TableColumn::make('E-mail'),
+                                        RepeatableEntry\TableColumn::make('Nome do Aluno'),
+                                        RepeatableEntry\TableColumn::make('Matrícula'),
+                                        RepeatableEntry\TableColumn::make('E-mail'),
                                     ])
                                     ->schema([
                                         TextEntry::make('name')
@@ -65,7 +61,7 @@ class CourseClassInfolist
                                     ]),
                             ]),
                         Tab::make('Disciplinas')
-                            ->icon('heroicon-o-academic-cap')
+                            ->icon(Heroicon::OutlinedAcademicCap)
                             ->schema([
                                 RepeatableEntry::make('disciplines')
                                     ->hiddenLabel()

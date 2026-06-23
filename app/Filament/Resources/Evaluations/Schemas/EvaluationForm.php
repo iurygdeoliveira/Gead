@@ -28,7 +28,7 @@ class EvaluationForm
                                 titleAttribute: 'id',
                                 modifyQueryUsing: fn ($query) => $query->with(['enrollment.student', 'courseClass'])
                             )
-                            ->getOptionLabelFromRecordUsing(fn ($record) => ($record->enrollment && $record->enrollment->student ? $record->enrollment->student->name : 'Matrícula #'.$record->id).' - '.($record->courseClass ? $record->courseClass->name : ''))
+                            ->getOptionLabelFromRecordUsing(fn ($record): string => ($record->enrollment && $record->enrollment->student ? $record->enrollment->student->name : 'Matrícula #'.$record->id).' - '.($record->courseClass ? $record->courseClass->name : ''))
                             ->searchable()
                             ->preload()
                             ->live()
@@ -48,7 +48,7 @@ class EvaluationForm
                                 return CourseClassDiscipline::where('course_class_id', $classEnrollment->course_class_id)
                                     ->with(['teacher', 'discipline'])
                                     ->get()
-                                    ->mapWithKeys(function ($ccd) {
+                                    ->mapWithKeys(function ($ccd): array {
                                         $teacherName = $ccd->teacher ? $ccd->teacher->name : 'Sem Professor';
 
                                         return [$ccd->id => "{$ccd->discipline->name} (Prof. {$teacherName})"];

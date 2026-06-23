@@ -10,10 +10,12 @@ use App\Filament\Widgets\GenerateEvaluationsWidget;
 use App\Filament\Widgets\StudentsWithoutClassWidget;
 use App\Models\Course;
 use App\Models\CourseClass;
+use App\Models\Team;
 use Filament\Pages\Dashboard as BaseDashboard;
 
 class ManagerDashboard extends BaseDashboard
 {
+    #[\Override]
     public function getWidgets(): array
     {
         $widgets = [
@@ -22,7 +24,9 @@ class ManagerDashboard extends BaseDashboard
             EvaluationsOverviewWidget::class,
         ];
 
-        $teamId = filament()->getTenant()?->id;
+        /** @var Team|null $tenant */
+        $tenant = filament()->getTenant();
+        $teamId = $tenant?->id;
 
         if ($teamId) {
             $activeCourseIds = CourseClass::whereHas('classEnrollments')

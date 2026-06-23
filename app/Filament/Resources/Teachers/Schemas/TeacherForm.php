@@ -11,7 +11,9 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 class TeacherForm
 {
@@ -60,7 +62,7 @@ class TeacherForm
                 ->email()
                 ->required()
                 ->maxLength(255)
-                ->unique(ignoreRecord: true),
+                ->unique(modifyRuleUsing: fn (Unique $rule) => $rule->where('team_id', Filament::getTenant()?->getKey())),
             TextInput::make('registration_number')
                 ->label('Matrícula')
                 ->maxLength(255),
@@ -74,7 +76,7 @@ class TeacherForm
             ->options(Course::pluck('name', 'id'))
             ->live()
             ->dehydrated(false)
-            ->afterStateHydrated(function ($state, $set, $record) {
+            ->afterStateHydrated(function ($state, $set, $record): void {
                 if ($record) {
                     $record->loadMissing('courseClass');
                     if ($record->courseClass) {
@@ -88,12 +90,12 @@ class TeacherForm
     {
         return Select::make('period')
             ->label('Período')
-            ->options(function (callable $get) {
+            ->options(function (Get $get) {
                 $courseId = $get('course_id');
 
                 return once(function () use ($courseId) {
                     if (! $courseId) {
-                        return CourseClass::all()->pluck('entry_period', 'entry_period')->unique();
+                        return CourseClass::pluck('entry_period', 'entry_period')->unique();
                     }
 
                     return CourseClass::where('course_id', $courseId)
@@ -104,7 +106,7 @@ class TeacherForm
             ->required()
             ->live()
             ->dehydrated(false)
-            ->afterStateHydrated(function ($state, $set, $record) {
+            ->afterStateHydrated(function ($state, $set, $record): void {
                 if ($record) {
                     $record->loadMissing('courseClass');
                     if ($record->courseClass) {
@@ -118,7 +120,7 @@ class TeacherForm
     {
         return Select::make('course_class_id')
             ->label('Turma')
-            ->options(function (callable $get) {
+            ->options(function (Get $get) {
                 $courseId = $get('course_id');
                 $period = $get('period');
 
@@ -131,7 +133,7 @@ class TeacherForm
                         $query->where('entry_period', $period);
                     }
 
-                    return $query->get()->mapWithKeys(fn ($cc) => [$cc->id => $cc->name ?? $cc->code]);
+                    return $query->get()->mapWithKeys(fn ($cc): array => [$cc->id => $cc->name ?? $cc->code]);
                 });
             })
             ->required()
@@ -142,7 +144,7 @@ class TeacherForm
     {
         return Select::make('discipline_id')
             ->label('Disciplina')
-            ->options(function (callable $get) {
+            ->options(function (Get $get) {
                 $courseId = $get('course_id');
 
                 return once(function () use ($courseId) {

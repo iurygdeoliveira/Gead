@@ -43,6 +43,7 @@ class TeacherResource extends Resource
         return __('Professor');
     }
 
+    #[\Override]
     public static function getPluralModelLabel(): string
     {
         return __('Professores');

@@ -8,6 +8,8 @@ use App\Models\ClassEnrollment;
 use App\Models\CourseClass;
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
+use App\Models\Team;
+use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -15,6 +17,7 @@ class EvaluationsOverviewWidget extends BaseWidget
 {
     protected ?string $pollingInterval = null;
 
+    #[\Override]
     public static function canView(): bool
     {
         return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae']);
@@ -23,7 +26,9 @@ class EvaluationsOverviewWidget extends BaseWidget
     #[\Override]
     protected function getStats(): array
     {
-        $teamId = filament()->getTenant()?->id;
+        /** @var Team|null $tenant */
+        $tenant = filament()->getTenant();
+        $teamId = $tenant?->id;
 
         if (! $teamId) {
             return [
@@ -36,14 +41,14 @@ class EvaluationsOverviewWidget extends BaseWidget
         $classIds = $courseClasses->pluck('id')->toArray();
 
         $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
-            ->whereHas('enrollment.student', function ($query) {
-                $query->where(function ($subQuery) {
+            ->whereHas('enrollment.student', function ($query): void {
+                $query->where(function ($subQuery): void {
                     $subQuery->whereNull('user_id')
-                        ->orWhereHas('user', function ($q) {
+                        ->orWhereHas('user', function ($q): void {
                             $q->where('is_suspended', false);
                         });
                 });
-                $query->whereDoesntHave('enrollments', function ($q) {
+                $query->whereDoesntHave('enrollments', function ($q): void {
                     $q->whereDoesntHave('classEnrollments');
                 });
             })
@@ -62,14 +67,14 @@ class EvaluationsOverviewWidget extends BaseWidget
         }
 
         $evaluations = Evaluation::where('team_id', $teamId)
-            ->whereHas('classEnrollment.enrollment.student', function ($query) {
-                $query->where(function ($subQuery) {
+            ->whereHas('classEnrollment.enrollment.student', function ($query): void {
+                $query->where(function ($subQuery): void {
                     $subQuery->whereNull('user_id')
-                        ->orWhereHas('user', function ($q) {
+                        ->orWhereHas('user', function ($q): void {
                             $q->where('is_suspended', false);
                         });
                 });
-                $query->whereDoesntHave('enrollments', function ($q) {
+                $query->whereDoesntHave('enrollments', function ($q): void {
                     $q->whereDoesntHave('classEnrollments');
                 });
             })
@@ -87,17 +92,17 @@ class EvaluationsOverviewWidget extends BaseWidget
         return [
             Stat::make('Total Esperado', number_format($total, 0, ',', '.'))
                 ->description('Avaliações a serem realizadas')
-                ->descriptionIcon('heroicon-m-document-text')
+                ->descriptionIcon(Heroicon::DocumentText)
                 ->color('gray'),
 
             Stat::make('Avaliações Realizadas', number_format($realizadasPct, 1).'%')
                 ->description($realizadas.' / '.$total.' esperadas')
-                ->descriptionIcon('heroicon-m-check-circle')
+                ->descriptionIcon(Heroicon::CheckCircle)
                 ->color('primary'),
 
             Stat::make('Avaliações Não Realizadas', number_format($naoRealizadasPct, 1).'%')
                 ->description($naoRealizadas.' pendentes')
-                ->descriptionIcon('heroicon-m-x-circle')
+                ->descriptionIcon(Heroicon::XCircle)
                 ->color('danger'),
         ];
     }

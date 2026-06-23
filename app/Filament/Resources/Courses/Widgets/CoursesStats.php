@@ -4,11 +4,15 @@ namespace App\Filament\Resources\Courses\Widgets;
 
 use App\Models\Course;
 use Filament\Facades\Filament;
+use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class CoursesStats extends BaseWidget
 {
+    protected ?string $pollingInterval = null;
+
+    #[\Override]
     protected function getStats(): array
     {
         $query = Course::query();
@@ -38,17 +42,17 @@ class CoursesStats extends BaseWidget
         return [
             Stat::make('Total de Cursos', $totalCourses)
                 ->description('Cursos cadastrados neste campus')
-                ->descriptionIcon('heroicon-m-academic-cap')
+                ->descriptionIcon(Heroicon::AcademicCap)
                 ->color('primary'),
 
             Stat::make('Cursos com Avaliações Completas', $completas)
                 ->description('Avaliações Completas')
-                ->descriptionIcon('heroicon-m-check-circle')
+                ->descriptionIcon(Heroicon::CheckCircle)
                 ->color('success'),
 
             Stat::make('Cursos com Avaliações Incompletas', $incompletas)
                 ->description('Avaliações Pendentes')
-                ->descriptionIcon('heroicon-m-x-circle')
+                ->descriptionIcon(Heroicon::XCircle)
                 ->color('danger'),
         ];
     }

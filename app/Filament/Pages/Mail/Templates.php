@@ -78,6 +78,7 @@ class Templates extends Page implements HasTable
             ]);
     }
 
+    #[\Override]
     public static function canAccess(): bool
     {
         /** @var User|null $user */

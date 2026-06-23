@@ -25,7 +25,6 @@ class DeleteCourse extends ViewRecord
         $this->authorize('delete', $this->getRecord());
     }
 
-
     #[\Override]
     protected function getHeaderActions(): array
     {

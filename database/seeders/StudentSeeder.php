@@ -40,11 +40,11 @@ class StudentSeeder extends Seeder
         $coursesCache = Course::where('team_id', $team->id)->get()->keyBy('name');
         $courseClassesCache = CourseClass::where('team_id', $team->id)->get()->keyBy('code');
 
-        DB::transaction(function () use ($csvPath, $team, $coursesCache, $courseClassesCache) {
+        DB::transaction(function () use ($csvPath, $team, $coursesCache, $courseClassesCache): void {
             $file = fopen($csvPath, 'r');
             $isHeader = true;
 
-            while (($row = fgetcsv($file, 1000, ',')) !== false) {
+            while (($row = fgetcsv($file, 1000, ',', escape: '\\')) !== false) {
                 if ($isHeader) {
                     $isHeader = false;
 
@@ -56,8 +56,22 @@ class StudentSeeder extends Seeder
                 $courseName = trim($row[5] ?? '');
                 $classCode = trim($row[8] ?? '');
                 $academicEmail = trim($row[9] ?? '');
-
-                if (empty($name) || empty($registrationNumber) || empty($courseName)) {
+                if ($name === '') {
+                    continue;
+                }
+                if ($name === '0') {
+                    continue;
+                }
+                if ($registrationNumber === '') {
+                    continue;
+                }
+                if ($registrationNumber === '0') {
+                    continue;
+                }
+                if ($courseName === '') {
+                    continue;
+                }
+                if ($courseName === '0') {
                     continue;
                 }
 
@@ -66,7 +80,7 @@ class StudentSeeder extends Seeder
                     continue;
                 }
 
-                $emailToSave = ! empty($academicEmail) ? $academicEmail : null;
+                $emailToSave = $academicEmail === '' || $academicEmail === '0' ? null : $academicEmail;
 
                 $student = Student::updateOrCreate(
                     [
@@ -90,7 +104,7 @@ class StudentSeeder extends Seeder
                     ]
                 );
 
-                if (! empty($classCode) && $classCode !== '-') {
+                if (! in_array($classCode, ['', '0', '-'], true)) {
                     $courseClass = $courseClassesCache->get($classCode);
                     if ($courseClass) {
                         ClassEnrollment::updateOrCreate(

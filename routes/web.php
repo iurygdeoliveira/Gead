@@ -18,11 +18,11 @@ Route::get('/auth/google/callback', [GoogleLoginController::class, 'callback'])-
 
 // Magic Link Auth Route
 use App\Http\Controllers\Auth\MagicLinkController;
+use Illuminate\Contracts\View\Factory;
+
 Route::get('/magic-login/{user}', [MagicLinkController::class, 'authenticate'])
     ->name('magic.login')
     ->middleware('signed');
 
 // Página de solicitação de acesso
-Route::get('/solicitar-acesso', function () {
-    return view('filament.auth.solicitar-acesso');
-})->name('solicitar-acesso');
+Route::get('/solicitar-acesso', fn (): Factory|\Illuminate\Contracts\View\View => view('filament.auth.solicitar-acesso'))->name('solicitar-acesso');

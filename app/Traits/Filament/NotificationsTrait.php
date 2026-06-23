@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Traits\Filament;
 
 use Filament\Notifications\Notification;
+use Illuminate\Support\Str;
 
 trait NotificationsTrait
 {
@@ -33,7 +34,7 @@ trait NotificationsTrait
 
         match ($type) {
             'primary' => $notification->success()
-                ->id('custom-primary-' . \Illuminate\Support\Str::uuid())
+                ->id('custom-primary-'.Str::uuid())
                 ->icon('heroicon-s-check-circle')
                 ->iconColor('#2b3600') // Ícone na cor escura
                 ->persistent()

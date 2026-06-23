@@ -29,11 +29,11 @@ class TeachersTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(function (Builder $query) {
+            ->modifyQueryUsing(function (Builder $query): void {
                 $query->with(['user', 'taughtDisciplines']);
 
                 $currentTeam = Filament::getTenant();
-                $teamId = $currentTeam?->id;
+                $teamId = $currentTeam?->getKey();
 
                 if (! $teamId) {
                     return;
@@ -41,7 +41,7 @@ class TeachersTable
 
                 if (empty($query->getQuery()->orders)) {
                     $query->select('teachers.*')
-                        ->selectSub(function ($query) {
+                        ->selectSub(function ($query): void {
                             $query->selectRaw('count(*)')
                                 ->from('course_class_disciplines as ccd')
                                 ->whereColumn('ccd.teacher_id', 'teachers.id')
@@ -83,7 +83,7 @@ class TeachersTable
                     ->alignCenter(),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
-                    ->getStateUsing(function (Teacher $record) {
+                    ->getStateUsing(function (Teacher $record): string {
                         $status = $record->getEvaluationsCompletionStatus();
 
                         return "{$status['completed']} / {$status['expected']}";
@@ -107,7 +107,7 @@ class TeachersTable
                     Action::make('pdf')
                         ->label('PDF')
                         ->color('success')
-                        ->icon('heroicon-o-document-arrow-down')
+                        ->icon(Heroicon::OutlinedDocumentArrowDown)
                         ->action(fn (Model $record) => self::downloadPdfReport($record)),
                 ]),
             ])
@@ -121,6 +121,7 @@ class TeachersTable
 
     protected static function downloadPdfReport(Model $record)
     {
+        /** @var Teacher $record */
         $teacherName = $record->name;
         $disciplinesData = [];
         $totalScores = 0;
@@ -165,10 +166,10 @@ class TeachersTable
 
         $team = Filament::getTenant();
 
-        $managerUser = User::whereHas('rolesWithTeams', function ($query) use ($team) {
+        $managerUser = User::whereHas('rolesWithTeams', function (\Illuminate\Contracts\Database\Query\Builder $query) use ($team): void {
             $query->where('roles.name', RoleType::MANAGER->value);
             if ($team) {
-                $query->where('model_has_roles.team_id', $team->id);
+                $query->where('model_has_roles.team_id', $team->getKey());
             }
         })->first();
 
@@ -190,7 +191,7 @@ class TeachersTable
             'manager_siape' => $managerSiape,
         ];
 
-        return response()->streamDownload(function () use ($data) {
+        return response()->streamDownload(function () use ($data): void {
             echo Pdf::loadView('pdf.evaluation-report', ['data' => $data])->stream();
         }, 'RelatorioAvaliacaoDocente_'.Str::slug($teacherName).'.pdf');
     }

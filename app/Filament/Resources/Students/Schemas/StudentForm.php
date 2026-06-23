@@ -2,11 +2,13 @@
 
 namespace App\Filament\Resources\Students\Schemas;
 
+use Filament\Facades\Filament;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 class StudentForm
 {
@@ -27,7 +29,7 @@ class StudentForm
                             ->label('E-mail Institucional')
                             ->email()
                             ->maxLength(255)
-                            ->unique(),
+                            ->unique(modifyRuleUsing: fn (Unique $rule) => $rule->where('team_id', Filament::getTenant()?->getKey())),
                     ]),
                 Section::make('Matrículas no SUAP')
                     ->description('Vínculos do aluno com cursos e turmas.')
@@ -60,7 +62,7 @@ class StudentForm
                                             ->label('Turma')
                                             ->required()
                                             ->searchable()
-                                            ->getOptionLabelFromRecordUsing(fn ($record) => "{$record->name} ({$record->code})"),
+                                            ->getOptionLabelFromRecordUsing(fn ($record): string => "{$record->name} ({$record->code})"),
                                     ]),
                             ]),
                     ]),

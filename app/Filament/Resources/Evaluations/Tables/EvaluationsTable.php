@@ -13,7 +13,7 @@ class EvaluationsTable
     {
         return $table
             ->modifyQueryUsing(fn ($query) => $query
-                ->whereIn('id', function ($q) {
+                ->whereIn('id', function ($q): void {
                     $q->selectRaw('MAX(id)')
                         ->from('evaluations')
                         ->groupBy('course_class_discipline_id');
@@ -47,7 +47,7 @@ class EvaluationsTable
 
                 TextColumn::make('teaching_period')
                     ->label('Período Letivo')
-                    ->getStateUsing(fn ($record) => '2026.1')
+                    ->getStateUsing(fn ($record): string => '2026.1')
                     ->color('gray')
                     ->alignLeft(),
 

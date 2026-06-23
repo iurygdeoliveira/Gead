@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\Courses\Schemas;
 
+use Filament\Facades\Filament;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Illuminate\Validation\Rules\Unique;
 
 class CourseForm
 {
@@ -24,7 +26,7 @@ class CourseForm
                             ->label('Código')
                             ->required()
                             ->maxLength(255)
-                            ->unique(),
+                            ->unique(modifyRuleUsing: fn (Unique $rule) => $rule->where('team_id', Filament::getTenant()?->getKey())),
                     ]),
             ]);
     }

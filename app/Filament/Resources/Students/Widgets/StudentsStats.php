@@ -6,11 +6,16 @@ use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
 use App\Models\Student;
 use Filament\Facades\Filament;
+use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
+use Illuminate\Contracts\Database\Query\Builder;
 
 class StudentsStats extends BaseWidget
 {
+    protected ?string $pollingInterval = null;
+
+    #[\Override]
     protected function getStats(): array
     {
         $currentTeam = Filament::getTenant();
@@ -35,9 +40,9 @@ class StudentsStats extends BaseWidget
         }
 
         // Only active/released students
-        $query->where(function ($sub) {
+        $query->where(function (Builder $sub): void {
             $sub->whereNull('user_id')
-                ->orWhereHas('user', function ($uq) {
+                ->orWhereHas('user', function (Builder $uq): void {
                     $uq->where('is_suspended', false);
                 });
         });
@@ -49,8 +54,8 @@ class StudentsStats extends BaseWidget
         $incompletas = 0;
 
         foreach ($students as $student) {
-            $done = (int) $student->evaluations_done;
-            $total = (int) $student->evaluations_total;
+            $done = (int) $student->getAttribute('evaluations_done');
+            $total = (int) $student->getAttribute('evaluations_total');
 
             if ($total > 0) {
                 if ($done === $total) {
@@ -64,17 +69,17 @@ class StudentsStats extends BaseWidget
         return [
             Stat::make('Total de Alunos', $totalStudents)
                 ->description('Alunos ativos neste campus')
-                ->descriptionIcon('heroicon-m-users')
+                ->descriptionIcon(Heroicon::Users)
                 ->color('primary'),
 
             Stat::make('Alunos com Avaliações Completas', $completas)
                 ->description('Concluíram todas as avaliações')
-                ->descriptionIcon('heroicon-m-check-circle')
+                ->descriptionIcon(Heroicon::CheckCircle)
                 ->color('success'),
 
             Stat::make('Alunos com Avaliações Incompletas', $incompletas)
                 ->description('Possuem avaliações pendentes')
-                ->descriptionIcon('heroicon-m-x-circle')
+                ->descriptionIcon(Heroicon::XCircle)
                 ->color('danger'),
         ];
     }

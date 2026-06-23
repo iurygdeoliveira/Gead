@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Courses\Tables;
 
 use App\Models\Course;
@@ -24,7 +26,7 @@ class CoursesTable
                     ->wrap(),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
-                    ->getStateUsing(function (Course $record) {
+                    ->getStateUsing(function (Course $record): string {
                         $status = $record->getEvaluationsCompletionStatus();
 
                         return "{$status['completed']} / {$status['expected']}";

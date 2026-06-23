@@ -17,6 +17,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -28,7 +29,7 @@ final class FeedbackResource extends Resource
 
     protected static ?string $recordRouteKeyName = 'uuid';
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
+    protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeftRight;
 
     protected static ?string $recordTitleAttribute = 'page_title';
 
@@ -36,8 +37,7 @@ final class FeedbackResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Sistema';
 
-    protected static ?string $title = 'Feedbacks';
-
+    #[\Override]
     public static function canAccess(): bool
     {
         /** @var User|null $user */
@@ -58,6 +58,7 @@ final class FeedbackResource extends Resource
         return __('Feedbacks');
     }
 
+    #[\Override]
     public static function canCreate(): bool
     {
         return false;
@@ -104,10 +105,10 @@ final class FeedbackResource extends Resource
             ->columns([
                 TextColumn::make('user.name')
                     ->label('Usuário')
-                    ->searchable(isGlobal: false, isIndividual: true),
+                    ->searchable(isIndividual: true, isGlobal: false),
                 TextColumn::make('page_title')
                     ->label('Página')
-                    ->searchable(isGlobal: false, isIndividual: true),
+                    ->searchable(isIndividual: true, isGlobal: false),
                 TextColumn::make('created_at')
                     ->dateTime('d/m/Y H:i')
                     ->label('Data'),

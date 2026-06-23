@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\Courses\Schemas;
 
-use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class CourseInfolist
 {
@@ -19,7 +19,7 @@ class CourseInfolist
                     ->columnSpanFull()
                     ->tabs([
                         Tab::make('Detalhes do Curso')
-                            ->icon('heroicon-o-information-circle')
+                            ->icon(Heroicon::OutlinedInformationCircle)
                             ->schema([
                                 TextEntry::make('name')
                                     ->label('Nome'),
@@ -33,18 +33,16 @@ class CourseInfolist
                             ])
                             ->columns(4),
                         Tab::make('Alunos Matriculados')
-                            ->icon('heroicon-o-users')
+                            ->icon(Heroicon::OutlinedUsers)
                             ->schema([
                                 RepeatableEntry::make('enrollments')
                                     ->hiddenLabel()
-                                    ->getStateUsing(function ($record) {
-                                        return $record->enrollments->sortBy('student.name', SORT_NATURAL | SORT_FLAG_CASE);
-                                    })
+                                    ->getStateUsing(fn ($record) => $record->enrollments->sortBy('student.name', SORT_NATURAL | SORT_FLAG_CASE))
                                     ->table([
-                                        TableColumn::make('Nome do Aluno'),
-                                        TableColumn::make('E-mail'),
-                                        TableColumn::make('Matrícula'),
-                                        TableColumn::make('Turma'),
+                                        RepeatableEntry\TableColumn::make('Nome do Aluno'),
+                                        RepeatableEntry\TableColumn::make('E-mail'),
+                                        RepeatableEntry\TableColumn::make('Matrícula'),
+                                        RepeatableEntry\TableColumn::make('Turma'),
                                     ])
                                     ->schema([
                                         TextEntry::make('student.name')
@@ -59,17 +57,15 @@ class CourseInfolist
                                     ]),
                             ]),
                         Tab::make('Disciplinas')
-                            ->icon('heroicon-o-academic-cap')
+                            ->icon(Heroicon::OutlinedAcademicCap)
                             ->schema([
                                 RepeatableEntry::make('disciplines')
                                     ->hiddenLabel()
-                                    ->getStateUsing(function ($record) {
-                                        return $record->disciplines->sortBy('period', SORT_NATURAL | SORT_FLAG_CASE);
-                                    })
+                                    ->getStateUsing(fn ($record) => $record->disciplines->sortBy('period', SORT_NATURAL | SORT_FLAG_CASE))
                                     ->table([
-                                        TableColumn::make('Código'),
-                                        TableColumn::make('Nome'),
-                                        TableColumn::make('Professores'),
+                                        RepeatableEntry\TableColumn::make('Código'),
+                                        RepeatableEntry\TableColumn::make('Nome'),
+                                        RepeatableEntry\TableColumn::make('Professores'),
                                     ])
                                     ->schema([
                                         TextEntry::make('code')

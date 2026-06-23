@@ -45,6 +45,7 @@ class PreviewTemplate extends Page
     {
         $user = Filament::auth()->user();
 
+        /** @phpstan-ignore-next-line */
         $this->previewHtml = view('vendor.mail.html.password-reset', [
             'user' => $user,
             'token' => 'sample-token',
@@ -63,6 +64,7 @@ class PreviewTemplate extends Page
         ];
     }
 
+    #[\Override]
     public static function canAccess(): bool
     {
         /** @var User|null $user */

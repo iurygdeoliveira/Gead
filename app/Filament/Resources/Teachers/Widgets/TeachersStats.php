@@ -4,11 +4,15 @@ namespace App\Filament\Resources\Teachers\Widgets;
 
 use App\Models\Teacher;
 use Filament\Facades\Filament;
+use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class TeachersStats extends BaseWidget
 {
+    protected ?string $pollingInterval = null;
+
+    #[\Override]
     protected function getStats(): array
     {
         $query = Teacher::query();
@@ -38,17 +42,17 @@ class TeachersStats extends BaseWidget
         return [
             Stat::make('Total de Professores', $totalTeachers)
                 ->description('Professores cadastrados neste campus')
-                ->descriptionIcon('heroicon-m-users')
+                ->descriptionIcon(Heroicon::Users)
                 ->color('primary'),
 
             Stat::make('Professores com Avaliações Completas', $completas)
                 ->description('Todas as turmas responderam')
-                ->descriptionIcon('heroicon-m-check-circle')
+                ->descriptionIcon(Heroicon::CheckCircle)
                 ->color('success'),
 
             Stat::make('Professores com Avaliações Incompletas', $incompletas)
                 ->description('Possuem turmas com avaliações pendentes')
-                ->descriptionIcon('heroicon-m-x-circle')
+                ->descriptionIcon(Heroicon::XCircle)
                 ->color('danger'),
         ];
     }

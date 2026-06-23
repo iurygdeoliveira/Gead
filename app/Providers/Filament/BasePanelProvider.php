@@ -17,6 +17,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Enums\Width;
 use Hammadzafar05\MobileBottomNav\MobileBottomNav;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
@@ -41,7 +42,7 @@ abstract class BasePanelProvider extends PanelProvider
                 ->bootUsing(function (): void {
                     FilamentComponentsConfigurator::configure();
                 })
-                ->brandLogo(fn () => view('filament.logo'))
+                ->brandLogo(fn (): Factory|\Illuminate\Contracts\View\View => view('filament.logo'))
                 ->brandLogoHeight('8.5rem')
                 ->multiFactorAuthentication(
                     AppAuthentication::make()

@@ -38,7 +38,7 @@ class DisciplineSeeder extends Seeder
         $file = fopen($csvPath, 'r');
         $isHeader = true;
 
-        while (($row = fgetcsv($file, 1000, ',')) !== false) {
+        while (($row = fgetcsv($file, 1000, ',', escape: '\\')) !== false) {
             if ($isHeader) {
                 $isHeader = false;
 
@@ -48,8 +48,22 @@ class DisciplineSeeder extends Seeder
             $sigla = trim($row[2] ?? '');
             $descricao = trim($row[3] ?? '');
             $courseCode = trim($row[6] ?? '');
-
-            if (empty($sigla) || empty($descricao) || empty($courseCode)) {
+            if ($sigla === '') {
+                continue;
+            }
+            if ($sigla === '0') {
+                continue;
+            }
+            if ($descricao === '') {
+                continue;
+            }
+            if ($descricao === '0') {
+                continue;
+            }
+            if ($courseCode === '') {
+                continue;
+            }
+            if ($courseCode === '0') {
                 continue;
             }
 

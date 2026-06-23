@@ -4,34 +4,43 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Traits\UuidTrait;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Traits\UuidTrait;
 
+#[Fillable([
+    'uuid',
+    'name',
+    'email',
+    'registration_number',
+    'team_id',
+    'user_id',
+])]
 class Teacher extends Model
 {
     use UuidTrait;
 
-    protected $fillable = [
-        'uuid',
-        'name',
-        'email',
-        'registration_number',
-        'team_id',
-        'user_id',
-    ];
-
+    /**
+     * @return BelongsTo<User, $this>
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return BelongsTo<Team, $this>
+     */
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);
     }
 
+    /**
+     * @return HasMany<CourseClassDiscipline, $this>
+     */
     public function taughtDisciplines(): HasMany
     {
         return $this->hasMany(CourseClassDiscipline::class);
@@ -60,25 +69,26 @@ class Teacher extends Model
         $classIdsToFetch = [];
         $ccdIdsToFetch = [];
         foreach ($ccds as $ccd) {
-            $classId = $ccd->course_class_id;
-            if (! isset(self::$activeClassEnrollmentsCache[$classId])) {
-                $classIdsToFetch[] = $classId;
+            /** @var CourseClassDiscipline $ccd */
+            $courseClassId = $ccd->getAttribute('course_class_id');
+            if (! isset(self::$activeClassEnrollmentsCache[$courseClassId])) {
+                $classIdsToFetch[] = $courseClassId;
             }
-            if (! isset(self::$evaluationsCompletedCache[$ccd->id])) {
-                $ccdIdsToFetch[] = $ccd->id;
+            if (! isset(self::$evaluationsCompletedCache[$ccd->getAttribute('id')])) {
+                $ccdIdsToFetch[] = $ccd->getAttribute('id');
             }
         }
 
-        if (! empty($classIdsToFetch)) {
+        if ($classIdsToFetch !== []) {
             $activeClassEnrollments = ClassEnrollment::whereIn('course_class_id', array_unique($classIdsToFetch))
-                ->whereHas('enrollment.student', function ($query) {
-                    $query->where(function ($subQuery) {
+                ->whereHas('enrollment.student', function ($query): void {
+                    $query->where(function ($subQuery): void {
                         $subQuery->whereNull('user_id')
-                            ->orWhereHas('user', function ($q) {
+                            ->orWhereHas('user', function ($q): void {
                                 $q->where('is_suspended', false);
                             });
                     });
-                    $query->whereDoesntHave('enrollments', function ($q) {
+                    $query->whereDoesntHave('enrollments', function ($q): void {
                         $q->whereDoesntHave('classEnrollments');
                     });
                 })
@@ -93,7 +103,7 @@ class Teacher extends Model
             }
         }
 
-        if (! empty($ccdIdsToFetch)) {
+        if ($ccdIdsToFetch !== []) {
             $evaluations = Evaluation::whereIn('course_class_discipline_id', array_unique($ccdIdsToFetch))
                 ->whereNotNull('planning_score')
                 ->get(['id', 'course_class_discipline_id', 'class_enrollment_id']);
@@ -108,11 +118,12 @@ class Teacher extends Model
         }
 
         foreach ($ccds as $ccd) {
-            $activeClassEnrollmentIds = self::$activeClassEnrollmentsCache[$ccd->course_class_id] ?? [];
+            /** @var CourseClassDiscipline $ccd */
+            $activeClassEnrollmentIds = self::$activeClassEnrollmentsCache[$ccd->getAttribute('course_class_id')] ?? [];
             $activeCount = count($activeClassEnrollmentIds);
 
             if ($activeCount > 0) {
-                $completedEvalIds = self::$evaluationsCompletedCache[$ccd->id] ?? [];
+                $completedEvalIds = self::$evaluationsCompletedCache[$ccd->getAttribute('id')] ?? [];
                 $completedCount = count(array_intersect($completedEvalIds, $activeClassEnrollmentIds));
 
                 if ($completedCount === $activeCount) {

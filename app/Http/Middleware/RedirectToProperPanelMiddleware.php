@@ -103,7 +103,7 @@ class RedirectToProperPanelMiddleware
 
     private function handleUnauthorizedPanelAccess(User $user, ?Panel $panel): ?Response
     {
-        if ($panel && ! $user->canAccessPanel($panel)) {
+        if ($panel instanceof Panel && ! $user->canAccessPanel($panel)) {
             return redirect()->to($this->resolveRedirectUrl($user));
         }
 
@@ -113,14 +113,14 @@ class RedirectToProperPanelMiddleware
     private function resolveRedirectUrl(User $user): string
     {
         $adminPanel = Filament::getPanel('admin');
-        if ($adminPanel && $user->canAccessPanel($adminPanel)) {
+        if ($user->canAccessPanel($adminPanel)) {
             return '/admin';
         }
 
         $panels = ['manager', 'teacher', 'tae', 'student'];
         foreach ($panels as $panelId) {
             $panel = Filament::getPanel($panelId);
-            if ($panel && $user->canAccessPanel($panel)) {
+            if ($user->canAccessPanel($panel)) {
                 $firstTeam = $user->getTenants($panel)->first();
                 if ($firstTeam) {
                     return "/{$panelId}/".$firstTeam->slug;

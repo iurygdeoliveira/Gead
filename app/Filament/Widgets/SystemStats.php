@@ -20,6 +20,7 @@ class SystemStats extends BaseWidget
 {
     protected ?string $pollingInterval = null;
 
+    #[\Override]
     public static function canView(): bool
     {
         return filament()->getCurrentPanel()?->getId() === 'admin';

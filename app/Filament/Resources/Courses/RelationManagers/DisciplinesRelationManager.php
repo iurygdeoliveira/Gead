@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources\Courses\RelationManagers;
 
 use Filament\Actions\BulkActionGroup;
@@ -18,21 +20,25 @@ class DisciplinesRelationManager extends RelationManager
 {
     protected static string $relationship = 'disciplines';
 
+    #[\Override]
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return 'Disciplinas';
     }
 
+    #[\Override]
     public static function getModelLabel(): string
     {
         return 'Disciplina';
     }
 
+    #[\Override]
     public static function getPluralModelLabel(): string
     {
         return 'Disciplinas';
     }
 
+    #[\Override]
     public function form(Schema $schema): Schema
     {
         return $schema

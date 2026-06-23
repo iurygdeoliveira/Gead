@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\CourseClass;
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
+use App\Models\Team;
 use Filament\Widgets\Widget;
 
 class CourseEvaluationsWidget extends Widget
@@ -21,6 +22,7 @@ class CourseEvaluationsWidget extends Widget
 
     public ?string $courseName = null;
 
+    #[\Override]
     public static function canView(): bool
     {
         return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae']);
@@ -28,7 +30,9 @@ class CourseEvaluationsWidget extends Widget
 
     public function getData(): array
     {
-        $teamId = filament()->getTenant()?->id;
+        /** @var Team|null $tenant */
+        $tenant = filament()->getTenant();
+        $teamId = $tenant?->id;
 
         if (! $teamId || ! $this->courseId) {
             return [];
@@ -48,14 +52,14 @@ class CourseEvaluationsWidget extends Widget
 
         // Potential calculation based on class enrollments and course class disciplines
         $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
-            ->whereHas('enrollment.student', function ($query) {
-                $query->where(function ($subQuery) {
+            ->whereHas('enrollment.student', function ($query): void {
+                $query->where(function ($subQuery): void {
                     $subQuery->whereNull('user_id')
-                        ->orWhereHas('user', function ($q) {
+                        ->orWhereHas('user', function ($q): void {
                             $q->where('is_suspended', false);
                         });
                 });
-                $query->whereDoesntHave('enrollments', function ($q) {
+                $query->whereDoesntHave('enrollments', function ($q): void {
                     $q->whereDoesntHave('classEnrollments');
                 });
             })
@@ -74,17 +78,17 @@ class CourseEvaluationsWidget extends Widget
         }
 
         $evaluations = Evaluation::where('team_id', $teamId)
-            ->whereHas('courseClassDiscipline.courseClass', function ($query) {
+            ->whereHas('courseClassDiscipline.courseClass', function ($query): void {
                 $query->where('course_id', $this->courseId);
             })
-            ->whereHas('classEnrollment.enrollment.student', function ($query) {
-                $query->where(function ($subQuery) {
+            ->whereHas('classEnrollment.enrollment.student', function ($query): void {
+                $query->where(function ($subQuery): void {
                     $subQuery->whereNull('user_id')
-                        ->orWhereHas('user', function ($q) {
+                        ->orWhereHas('user', function ($q): void {
                             $q->where('is_suspended', false);
                         });
                 });
-                $query->whereDoesntHave('enrollments', function ($q) {
+                $query->whereDoesntHave('enrollments', function ($q): void {
                     $q->whereDoesntHave('classEnrollments');
                 });
             })

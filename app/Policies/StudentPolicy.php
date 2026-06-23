@@ -10,9 +10,14 @@ class StudentPolicy
 {
     private function checkAccess(User $user): bool
     {
-        return $user->hasRole(RoleType::ADMIN->value) ||
-               $user->hasRole(RoleType::MANAGER->value) ||
-               $user->hasRole(RoleType::TAE->value);
+        if ($user->hasRole(RoleType::ADMIN->value)) {
+            return true;
+        }
+        if ($user->hasRole(RoleType::MANAGER->value)) {
+            return true;
+        }
+
+        return $user->hasRole(RoleType::TAE->value);
     }
 
     public function viewAny(User $user): bool

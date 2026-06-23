@@ -96,7 +96,7 @@ class EditTeam extends EditRecord
             Membership::create([
                 'team_id' => $record->id,
                 'user_id' => $userId,
-                'role' => AppTeamRole::MEMBER->value,
+                'role' => AppTeamRole::default()->value,
             ]);
         }
 

@@ -31,13 +31,11 @@ class FeedbackWidget extends Component implements HasActions, HasSchemas
             ->label(__('Feedback'))
             ->slideOver()
             ->modalHeading(__('Enviar feedback'))
-            ->fillForm(function (array $arguments): array {
-                return [
-                    'page_url' => $arguments['page_url'] ?? url()->current(),
-                    'page_title' => $arguments['page_title'] ?? null,
-                    'message' => '',
-                ];
-            })
+            ->fillForm(fn (array $arguments): array => [
+                'page_url' => $arguments['page_url'] ?? url()->current(),
+                'page_title' => $arguments['page_title'] ?? null,
+                'message' => '',
+            ])
             ->schema([
                 TextInput::make('page_title')
                     ->label(__('Página atual'))
@@ -60,7 +58,7 @@ class FeedbackWidget extends Component implements HasActions, HasSchemas
                     'page_url' => $data['page_url'] ?? url()->current(),
                     'page_title' => $data['page_title'] ?? null,
                     'message' => $data['message'],
-                    'team_id' => Filament::getTenant()?->id ?? null,
+                    'team_id' => Filament::getTenant()?->getKey() ?? null,
                     'panel' => filament()->getCurrentPanel()?->getId(),
                 ]);
 

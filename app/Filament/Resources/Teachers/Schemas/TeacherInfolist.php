@@ -2,12 +2,12 @@
 
 namespace App\Filament\Resources\Teachers\Schemas;
 
-use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class TeacherInfolist
 {
@@ -19,7 +19,7 @@ class TeacherInfolist
                     ->columnSpanFull()
                     ->tabs([
                         Tab::make('Detalhes do Professor')
-                            ->icon('heroicon-o-information-circle')
+                            ->icon(Heroicon::OutlinedInformationCircle)
                             ->schema([
                                 TextEntry::make('name')
                                     ->label('Nome Completo'),
@@ -32,7 +32,7 @@ class TeacherInfolist
                             ])
                             ->columns(2),
                         Tab::make('Disciplinas Ministradas')
-                            ->icon('heroicon-o-academic-cap')
+                            ->icon(Heroicon::OutlinedAcademicCap)
                             ->schema([
                                 RepeatableEntry::make('taught_disciplines')
                                     ->hiddenLabel()
@@ -41,23 +41,21 @@ class TeacherInfolist
                                             $record->cached_taught_disciplines = $record->taughtDisciplines()
                                                 ->with(['courseClass.course', 'courseClass.academicTerm', 'discipline'])
                                                 ->get()
-                                                ->map(function ($pivot) {
-                                                    return [
-                                                        'course_name' => $pivot->courseClass?->course?->name ?? '-',
-                                                        'academic_term' => $pivot->courseClass?->academicTerm?->name ?? '-',
-                                                        'course_class_name' => $pivot->courseClass?->name ?? $pivot->courseClass?->code ?? '-',
-                                                        'discipline_name' => $pivot->discipline?->name ?? '-',
-                                                    ];
-                                                });
+                                                ->map(fn ($pivot): array => [
+                                                    'course_name' => $pivot->courseClass->course->name ?? '-',
+                                                    'academic_term' => $pivot->courseClass->academicTerm->name ?? '-',
+                                                    'course_class_name' => $pivot->courseClass->name ?? $pivot->courseClass->code ?? '-',
+                                                    'discipline_name' => $pivot->discipline->name ?? '-',
+                                                ]);
                                         }
 
                                         return $record->cached_taught_disciplines;
                                     })
                                     ->table([
-                                        TableColumn::make('Curso'),
-                                        TableColumn::make('Período Letivo'),
-                                        TableColumn::make('Turma'),
-                                        TableColumn::make('Disciplina'),
+                                        RepeatableEntry\TableColumn::make('Curso'),
+                                        RepeatableEntry\TableColumn::make('Período Letivo'),
+                                        RepeatableEntry\TableColumn::make('Turma'),
+                                        RepeatableEntry\TableColumn::make('Disciplina'),
                                     ])
                                     ->schema([
                                         TextEntry::make('course_name')
