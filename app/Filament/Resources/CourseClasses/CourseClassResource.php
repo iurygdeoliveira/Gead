@@ -17,6 +17,8 @@ class CourseClassResource extends Resource
 
     protected static ?string $model = CourseClass::class;
 
+    protected static ?string $recordRouteKeyName = 'uuid';
+
     protected static ?string $tenantOwnershipRelationshipName = 'team';
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-academic-cap';

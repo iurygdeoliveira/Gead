@@ -6,10 +6,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Traits\UuidTrait;
 
 class Evaluation extends Model
 {
-    protected $fillable = ['class_enrollment_id', 'course_class_discipline_id', 'planning_score', 'posture_score', 'attendance_score', 'punctuality_score', 'execution_score', 'assessment_score', 'comments', 'team_id'];
+    use UuidTrait;
+
+    protected $fillable = ['uuid', 'class_enrollment_id', 'course_class_discipline_id', 'planning_score', 'posture_score', 'attendance_score', 'punctuality_score', 'execution_score', 'assessment_score', 'comments', 'team_id'];
 
     public function classEnrollment(): BelongsTo
     {

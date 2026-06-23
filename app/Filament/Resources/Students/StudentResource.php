@@ -23,6 +23,8 @@ class StudentResource extends Resource
 
     protected static ?string $model = Student::class;
 
+    protected static ?string $recordRouteKeyName = 'uuid';
+
     protected static ?string $tenantOwnershipRelationshipName = 'team';
 
     protected static string|BackedEnum|null $navigationIcon = 'icon-student';

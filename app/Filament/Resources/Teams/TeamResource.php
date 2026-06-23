@@ -26,6 +26,8 @@ class TeamResource extends Resource
 
     protected static ?string $model = Team::class;
 
+    protected static ?string $recordRouteKeyName = 'uuid';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingOffice;
 
     protected static ?string $recordTitleAttribute = 'name';

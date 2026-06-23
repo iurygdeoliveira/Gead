@@ -34,7 +34,7 @@ class AuthPanelProvider extends PanelProvider
             ->default()
             ->darkMode(true, true)
             ->brandLogo(fn (): Factory|\Illuminate\Contracts\View\View => view('filament.auth.logo_auth'))
-            ->brandLogoHeight('8rem')
+            ->brandLogoHeight('12rem')
             ->authGuard('web')
             ->colors([
                 'danger' => [
@@ -61,6 +61,9 @@ class AuthPanelProvider extends PanelProvider
                 AppAuthentication::make()
                     ->recoverable()
             )
+            ->bootUsing(function (): void {
+                \App\Filament\Configurators\FilamentComponentsConfigurator::configure();
+            })
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

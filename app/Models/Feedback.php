@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use App\Traits\UuidTrait;
 
 /**
  * @property int $id
@@ -25,10 +26,12 @@ use Illuminate\Support\Carbon;
 final class Feedback extends Model
 {
     use HasFactory;
+    use UuidTrait;
 
     protected $table = 'feedback';
 
     protected $fillable = [
+        'uuid',
         'user_id',
         'page_url',
         'page_title',

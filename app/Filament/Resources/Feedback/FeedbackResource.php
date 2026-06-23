@@ -26,6 +26,8 @@ final class FeedbackResource extends Resource
 
     protected static ?string $model = Feedback::class;
 
+    protected static ?string $recordRouteKeyName = 'uuid';
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
     protected static ?string $recordTitleAttribute = 'page_title';

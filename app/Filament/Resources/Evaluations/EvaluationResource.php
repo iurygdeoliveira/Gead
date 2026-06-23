@@ -18,6 +18,8 @@ class EvaluationResource extends Resource
 
     protected static ?string $model = Evaluation::class;
 
+    protected static ?string $recordRouteKeyName = 'uuid';
+
     #[\Override]
     public static function getEloquentQuery(): Builder
     {

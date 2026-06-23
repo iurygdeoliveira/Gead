@@ -22,6 +22,9 @@
 <x-slot:footer>
 <x-mail::footer>
 © {{ date('Y') }} {{ $brand ?? config('app.name') }}. {{ __('All rights reserved.') }}
+
+<br><br>
+Um projeto <a href="https://labsis.dev.br" target="_blank" style="display:inline-block; vertical-align:middle; line-height:1;"><img src="{{ asset('images/labsis_logo.png') }}" alt="LabSIS" style="height: 20px; vertical-align: middle; margin: 0 2px; display: inline-block; border: none;"></a>, precisando de software ?
 </x-mail::footer>
 </x-slot:footer>
 </x-mail::layout>

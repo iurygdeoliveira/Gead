@@ -12,6 +12,7 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table): void {
             $table->id();
+            $table->uuid('uuid')->unique();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('page_url');
             $table->string('page_title')->nullable();

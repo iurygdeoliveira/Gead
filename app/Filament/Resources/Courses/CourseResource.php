@@ -24,6 +24,8 @@ class CourseResource extends Resource
 
     protected static ?string $model = Course::class;
 
+    protected static ?string $recordRouteKeyName = 'uuid';
+
     #[\Override]
     public static function getEloquentQuery(): Builder
     {

@@ -116,6 +116,18 @@ class FilamentComponentsConfigurator
                             max-width: 90px !important;
                         }
                     }
+
+                    .fi-no-notification[wire\:key^="custom-primary-"] {
+                        background-color: var(--c-950, #b3e600) !important;
+                        border-color: var(--c-900, #748c00) !important;
+                    }
+                    .fi-no-notification[wire\:key^="custom-primary-"] .fi-no-notification-title,
+                    .fi-no-notification[wire\:key^="custom-primary-"] .fi-no-notification-body,
+                    .fi-no-notification[wire\:key^="custom-primary-"] .fi-no-notification-date,
+                    .fi-no-notification[wire\:key^="custom-primary-"] .fi-icon-btn,
+                    .fi-no-notification[wire\:key^="custom-primary-"] .fi-no-notification-icon {
+                        color: var(--c-500, #2b3600) !important;
+                    }
                 </style>
             ')
         );

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use LaravelDaily\FilaTeams\Models\Team as BaseTeam;
+use App\Traits\UuidTrait;
 
 /**
  * @property int $id
@@ -28,6 +29,7 @@ use LaravelDaily\FilaTeams\Models\Team as BaseTeam;
  * @method static \Database\Factories\TeamFactory factory($count = null, $state = [])
  */
 #[Fillable([
+    'uuid',
     'name',
     'slug',
     'cnpj',
@@ -36,6 +38,8 @@ use LaravelDaily\FilaTeams\Models\Team as BaseTeam;
 ])]
 class Team extends BaseTeam
 {
+    use UuidTrait;
+
     /** @var class-string<TeamFactory> */
     protected static string $factory = TeamFactory::class;
 

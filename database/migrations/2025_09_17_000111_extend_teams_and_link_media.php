@@ -13,6 +13,7 @@ return new class extends Migration
         // Estender a tabela `teams` (criada pelo pacote laraveldaily/filateams)
         // com `is_active` (controle administrativo do labSIS-KIT).
         Schema::table('teams', function (Blueprint $table): void {
+            $table->uuid('uuid')->nullable()->unique()->after('id');
             $table->boolean('is_active')->default(true)->after('is_personal');
             $table->string('cnpj')->nullable()->after('slug');
         });

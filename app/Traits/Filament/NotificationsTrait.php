@@ -33,11 +33,27 @@ trait NotificationsTrait
 
         match ($type) {
             'primary' => $notification->success()
+                ->id('custom-primary-' . \Illuminate\Support\Str::uuid())
                 ->icon('heroicon-s-check-circle')
-                ->iconColor('primary')
+                ->iconColor('#2b3600') // Ícone na cor escura
                 ->persistent()
                 ->duration(500)
-                ->color('primary'),
+                ->color([
+                    // Fundo no Light Mode (50, 100)
+                    50 => '#d3ff42',
+                    100 => '#ccff03',
+                    200 => '#b3e600',
+                    300 => '#84a100',
+                    // Textos e Bordas (400 a 700) - Cores Escuras
+                    400 => '#475900',
+                    500 => '#2b3600',
+                    600 => '#2b3600',
+                    700 => '#1a2100',
+                    800 => '#ccff03',
+                    // Fundo no Dark Mode (900, 950) - Cores Claras
+                    900 => '#ccff03',
+                    950 => '#d3ff42',
+                ]),
 
             'danger' => $notification->danger()
                 ->icon('heroicon-c-no-symbol')

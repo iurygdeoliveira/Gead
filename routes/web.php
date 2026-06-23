@@ -16,6 +16,12 @@ use App\Http\Controllers\Auth\GoogleLoginController;
 Route::get('/auth/google/redirect', [GoogleLoginController::class, 'redirect'])->name('google.redirect');
 Route::get('/auth/google/callback', [GoogleLoginController::class, 'callback'])->name('google.callback');
 
+// Magic Link Auth Route
+use App\Http\Controllers\Auth\MagicLinkController;
+Route::get('/magic-login/{user}', [MagicLinkController::class, 'authenticate'])
+    ->name('magic.login')
+    ->middleware('signed');
+
 // Página de solicitação de acesso
 Route::get('/solicitar-acesso', function () {
     return view('filament.auth.solicitar-acesso');

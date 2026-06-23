@@ -7,10 +7,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Traits\UuidTrait;
 
 class Teacher extends Model
 {
+    use UuidTrait;
+
     protected $fillable = [
+        'uuid',
         'name',
         'email',
         'registration_number',

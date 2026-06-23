@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('must_change_password')->default(false);
             $table->boolean('is_suspended')->default(false);
             $table->timestamp('suspended_at')->nullable();
             $table->boolean('is_approved')->default(false);

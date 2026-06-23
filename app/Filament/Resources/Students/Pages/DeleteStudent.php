@@ -25,11 +25,6 @@ class DeleteStudent extends ViewRecord
         $this->authorize('delete', $this->getRecord());
     }
 
-    #[\Override]
-    public function getView(): string
-    {
-        return 'filament-panels::resources.pages.view-record'; // Use default filament view
-    }
 
     #[\Override]
     protected function getHeaderActions(): array

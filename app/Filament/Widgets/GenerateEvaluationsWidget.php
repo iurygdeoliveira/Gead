@@ -8,11 +8,14 @@ use App\Models\ClassEnrollment;
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
 use App\Models\Team;
-use Filament\Notifications\Notification;
+use App\Traits\Filament\NotificationsTrait;
 use Filament\Widgets\Widget;
+use Illuminate\Support\Str;
 
 class GenerateEvaluationsWidget extends Widget
 {
+    use NotificationsTrait;
+
     protected string $view = 'filament.widgets.generate-evaluations-widget';
 
     public static function canView(): bool
@@ -31,11 +34,7 @@ class GenerateEvaluationsWidget extends Widget
         }
 
         if (! $teamId) {
-            Notification::make()
-                ->title('Erro')
-                ->body('Nenhum campus (team) ativo encontrado.')
-                ->danger()
-                ->send();
+            $this->notifyDanger('Erro', 'Nenhum campus (team) ativo encontrado.');
 
             return;
         }
@@ -70,6 +69,7 @@ class GenerateEvaluationsWidget extends Widget
 
                 if (! isset($existingEvaluations[$key])) {
                     $evaluationsToInsert[] = [
+                        'uuid' => Str::uuid()->toString(),
                         'class_enrollment_id' => $classEnrollment->id,
                         'course_class_discipline_id' => $ccd->id,
                         'team_id' => $teamId,
@@ -88,10 +88,6 @@ class GenerateEvaluationsWidget extends Widget
             }
         }
 
-        Notification::make()
-            ->title('Sucesso!')
-            ->body("Foram geradas {$generatedCount} novas fichas de avaliação baseadas nos diários.")
-            ->success()
-            ->send();
+        $this->notifySuccess('Sucesso!', "Foram geradas {$generatedCount} novas fichas de avaliação baseadas nos diários.");
     }
 }

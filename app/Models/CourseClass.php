@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Traits\UuidTrait;
 
 class CourseClass extends Model
 {
-    protected $fillable = ['course_id', 'entry_period', 'academic_term_id', 'code', 'name', 'team_id'];
+    use UuidTrait;
+
+    protected $fillable = ['uuid', 'course_id', 'entry_period', 'academic_term_id', 'code', 'name', 'team_id'];
 
     public function course(): BelongsTo
     {

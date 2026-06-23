@@ -49,7 +49,6 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string $name
  * @property string $email
  * @property string $password
- * @property bool $must_change_password
  * @property bool $is_suspended
  * @property CarbonImmutable|null $suspended_at
  * @property bool $is_approved
@@ -115,7 +114,6 @@ use Spatie\Permission\Traits\HasRoles;
     'name',
     'email',
     'password',
-    'must_change_password',
     'email_verified_at',
     'is_suspended',
     'suspended_at',
@@ -157,7 +155,6 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
     {
         return [
             'password' => 'hashed',
-            'must_change_password' => 'boolean',
             'is_suspended' => 'boolean',
             'is_approved' => 'boolean',
             'created_at' => 'datetime:d/m/Y H:i',

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('course_classes', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid')->unique();
             $table->foreignId('course_id')->constrained()->cascadeOnDelete();
             $table->string('entry_period');
             $table->foreignId('academic_term_id')->nullable()->constrained()->nullOnDelete();

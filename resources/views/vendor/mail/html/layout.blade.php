@@ -46,7 +46,7 @@ width: 100% !important;
    Honored by Apple Mail, iOS Mail, and Outlook.com web. Gmail and Outlook
    desktop ignore @media queries and apply their own dark transforms. */
 
-@media (prefers-color-scheme: dark) {
+/* Forced Dark Mode */
     body,
     .wrapper,
     .body {
@@ -61,7 +61,8 @@ width: 100% !important;
     .inner-body {
         background-color: #262828 !important;
         border-color: rgba(255, 255, 255, 0.07) !important;
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25) !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+        border-radius: 12px !important;
     }
 
     .inner-body a:not(.button),
@@ -113,7 +114,6 @@ width: 100% !important;
         background-color: #2b3600 !important;
         color: #cdd0d0 !important;
     }
-}
 </style>
 {!! $head ?? '' !!}
 </head>
@@ -123,12 +123,12 @@ width: 100% !important;
 <tr>
 <td align="center">
 <table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-{!! $header ?? '' !!}
 
 <!-- Email Body -->
 <tr>
 <td class="body" width="100%" cellpadding="0" cellspacing="0" style="border: hidden !important;">
 <table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+{!! $header ?? '' !!}
 <!-- Body content -->
 <tr>
 <td class="content-cell">
