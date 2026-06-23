@@ -111,7 +111,7 @@ class StudentDisciplinesWidget extends BaseWidget
                     ])
                     ->action(function (array $data, CourseClassDiscipline $record): void {
                         // Find the student's class_enrollment for this course_class
-                        $student = Auth::user()->student;
+                        $student = Filament::auth()->user()->student;
                         if (! $student) {
                             return;
                         }

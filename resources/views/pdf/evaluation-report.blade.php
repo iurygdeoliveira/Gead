@@ -106,13 +106,13 @@
 
         </tbody>
     </table>
+    <div style="margin-top: 10px; margin-bottom: 30px; border-top: 1px solid #ddd; padding-top: 10px;">
+        <h3 class="font-bold" style="font-size: 13px;">PONTUAÇÃO DA TURMA (SOMATÓRIA DAS MÉDIAS DIVIDIDO POR DOIS) <span style="float: right;">{{ number_format($discipline['class_score'], 2, ',', '.') }}</span></h3>
+    </div>
     @endforeach
 
     @if(count($data['disciplines']) > 0)
-    <div style="margin-top: 20px; border-top: 1px solid #000; padding-top: 10px;">
-        <h3 class="font-bold">PONTUAÇÃO DA TURMA (SOMATÓRIA DAS MÉDIAS DIVIDIDO POR DOIS) <span style="float: right;">{{ number_format($data['consolidated_score'], 2, ',', '.') }}</span></h3>
-    </div>
-    <div style="margin-top: 10px; border-top: 2px solid #000; padding-top: 10px;">
+    <div style="margin-top: 20px; border-top: 2px solid #000; padding-top: 10px;">
         <h3 class="font-bold">MÉDIA DA PONTUAÇÃO DAS TURMAS CONSOLIDADO- RESULTADO FINAL <span style="float: right;">{{ number_format($data['consolidated_score'], 2, ',', '.') }}</span></h3>
     </div>
     @else

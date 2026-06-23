@@ -166,7 +166,7 @@ class TeachersTable
 
         $team = Filament::getTenant();
 
-        $managerUser = User::whereHas('rolesWithTeams', function (\Illuminate\Contracts\Database\Query\Builder $query) use ($team): void {
+        $managerUser = User::whereHas('rolesWithTeams', function (\Illuminate\Database\Eloquent\Builder $query) use ($team): void {
             $query->where('roles.name', RoleType::MANAGER->value);
             if ($team) {
                 $query->where('model_has_roles.team_id', $team->getKey());
