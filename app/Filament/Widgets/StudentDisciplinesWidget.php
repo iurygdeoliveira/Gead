@@ -42,11 +42,11 @@ class StudentDisciplinesWidget extends BaseWidget
             ->columns([
                 Tables\Columns\TextColumn::make('discipline.name')
                     ->label('Nome da Disciplina')
-                    ->searchable()
+                    ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('teacher.name')
                     ->label('Nome do Professor')
-                    ->searchable()
+                    ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('is_evaluated')
                     ->label('Status')
@@ -60,33 +60,7 @@ class StudentDisciplinesWidget extends BaseWidget
                     }),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make('is_evaluated')
-                    ->label('Status')
-                    ->options([
-                        '1' => 'Avaliada',
-                        '0' => 'Pendente',
-                    ])
-                    ->query(function (Builder $query, array $data): Builder {
-                        if (! isset($data['value']) || $data['value'] === '') {
-                            return $query;
-                        }
-
-                        $isEvaluated = (bool) $data['value'];
-
-                        if ($isEvaluated) {
-                            return $query->whereHas('evaluations', function (\Illuminate\Contracts\Database\Query\Builder $sub): void {
-                                $sub->whereHas('classEnrollment.enrollment.student', function (\Illuminate\Contracts\Database\Query\Builder $sub2): void {
-                                    $sub2->where('user_id', Filament::auth()->user()->id);
-                                });
-                            });
-                        }
-
-                        return $query->whereDoesntHave('evaluations', function (\Illuminate\Contracts\Database\Query\Builder $sub): void {
-                            $sub->whereHas('classEnrollment.enrollment.student', function (\Illuminate\Contracts\Database\Query\Builder $sub2): void {
-                                $sub2->where('user_id', Filament::auth()->user()->id);
-                            });
-                        });
-                    }),
+                
             ])
             ->defaultSort('is_evaluated', 'asc')
             ->recordActions([
