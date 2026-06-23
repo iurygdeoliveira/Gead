@@ -63,6 +63,7 @@ class StudentDisciplinesWidget extends BaseWidget
                 
             ])
             ->defaultSort('is_evaluated', 'asc')
+            ->paginated(false)
             ->recordActions([
                 Action::make('avaliar')
                     ->label('Avaliar')
