@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Students\Pages;
 use App\Filament\Resources\Students\StudentResource;
 use App\Models\Student;
 use App\Traits\Filament\HasBackButtonAction;
+use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
 use Filament\Resources\Pages\ViewRecord;
@@ -14,6 +15,7 @@ use Illuminate\Contracts\Support\Htmlable;
 class DeleteStudent extends ViewRecord
 {
     use HasBackButtonAction;
+    use NotificationsTrait;
 
     protected static string $resource = StudentResource::class;
 
@@ -44,6 +46,8 @@ class DeleteStudent extends ViewRecord
                 ->action(function (): void {
                     $this->authorize('delete', $this->getRecord());
                     $this->getRecord()->delete();
+
+                    $this->notifySuccess('Aluno excluído com sucesso!');
 
                     $this->redirect($this->getResource()::getUrl('index'));
                 }),

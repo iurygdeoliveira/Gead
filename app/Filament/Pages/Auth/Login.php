@@ -45,19 +45,59 @@ class Login extends BaseAuthLogin
         }
 
         $user = User::where('email', $email)->first();
+        $student = \App\Models\Student::where('email', $email)->first();
+        $teacher = \App\Models\Teacher::where('email', $email)->first();
 
-        // Se o usuário não existir na base, redireciona para a tela de solicitar acesso
-        if (!$user) {
-            $this->redirect(route('solicitar-acesso'));
+        $isTeacher = ($user && $user->teacher()->exists()) || $teacher;
+
+        // Bloqueio de professores durante as avaliações
+        if ($isTeacher && $email !== 'walmir.sousa@ifto.edu.br') {
+            $this->redirect(route('solicitar-acesso', ['type' => 'teacher']));
             return null;
         }
 
-        // Bloqueio de professores que não são gerentes nem TAEs
-        if ($user->teacher()->exists() && $user->email !== 'walmir.sousa@ifto.edu.br') {
-            throw ValidationException::withMessages([
-                'data.email' => 'O acesso para professores ainda não está liberado.',
-            ]);
+        // Se o usuário não existir na base, mas houver estudante correspondente
+        if (!$user) {
+            if ($student) {
+                // Cria o usuário automaticamente para o estudante
+                $user = User::create([
+                    'name' => $student->name,
+                    'email' => $student->email,
+                    'password' => bcrypt(\Illuminate\Support\Str::random(16)),
+                    'email_verified_at' => now(),
+                    'is_approved' => true,
+                ]);
+            } else {
+                // Se não for nem usuário nem estudante registrado, redireciona
+                $this->redirect(route('solicitar-acesso'));
+                return null;
+            }
         }
+
+        // Auto-reparação/sincronização do estudante com o usuário
+        if ($student) {
+            if (!$student->user_id) {
+                $student->update(['user_id' => $user->id]);
+            }
+
+            if ($student->team_id) {
+                $role = \App\Models\Role::firstOrCreate([
+                    'name' => \App\Enums\RoleType::STUDENT->value,
+                    'team_id' => $student->team_id,
+                    'guard_name' => 'web',
+                ]);
+
+                // Atribui o papel no Spatie Permission
+                $user->assignRoleInTeam($role, $student->team);
+
+                // Adiciona o usuário ao time (necessário para o FilaTeams e para evitar ERR_TOO_MANY_REDIRECTS)
+                if (!$user->belongsToTeam($student->team)) {
+                    $user->teams()->attach($student->team_id, ['role' => \App\Enums\AppTeamRole::STUDENT->value]);
+                }
+            }
+        }
+
+        // O bloqueio de professores foi movido para o início do método
 
         // Gera o Magic Link (válido por 15 minutos)
         $url = URL::temporarySignedRoute('magic.login', now()->addMinutes(15), ['user' => $user->uuid]);

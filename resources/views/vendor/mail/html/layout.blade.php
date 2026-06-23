@@ -137,11 +137,10 @@ width: 100% !important;
 {!! $subcopy ?? '' !!}
 </td>
 </tr>
+{!! $footer ?? '' !!}
 </table>
 </td>
 </tr>
-
-{!! $footer ?? '' !!}
 </table>
 </td>
 </tr>

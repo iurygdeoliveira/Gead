@@ -77,8 +77,6 @@ class StudentsTable
                         ->color('secondary'),
                     EditAction::make()
                         ->icon(Heroicon::Pencil),
-                    DeleteStudentAction::make()
-                        ->icon(Heroicon::Trash),
                     ToggleStudentSuspensionAction::make(),
                 ]),
             ])

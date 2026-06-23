@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Observers;
 
 use App\Enums\RoleType;
-use App\Models\Membership;
+use LaravelDaily\FilaTeams\Models\Membership;
 use App\Models\Team;
 use App\Models\User;
 use App\Support\FilamentStatsCache;

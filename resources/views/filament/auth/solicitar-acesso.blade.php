@@ -34,24 +34,49 @@
                             <div class="fi-grid-col" style="--col-span-default: span 1 / span 1;">
                                 <div class="fi-sc-component" style="padding: 2.5rem; text-align: left;">
                                     
-                                    <!-- Title Row -->
-                                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                                        <div style="background: rgba(220, 38, 38, 0.1); color: #fca5a5; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid rgba(220, 38, 38, 0.2); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);">
-                                            <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    @if(request('type') === 'teacher')
+                                        <!-- Title Row -->
+                                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                                            <div style="background: rgba(234, 179, 8, 0.1); color: #facc15; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid rgba(234, 179, 8, 0.2); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);">
+                                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                            </div>
+                                            <div>
+                                                <h2 style="font-size: 1.125rem; font-weight: 600; color: #f4f4f5; letter-spacing: -0.01em; margin: 0;">Acesso Temporariamente Suspenso</h2>
+                                                <p style="font-size: 0.875rem; color: #a1a1aa; margin-top: 0.25rem;">Avaliação Institucional em Andamento</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h2 style="font-size: 1.125rem; font-weight: 600; color: #f4f4f5; letter-spacing: -0.01em; margin: 0;">Acesso Restrito</h2>
-                                            <p style="font-size: 0.875rem; color: #a1a1aa; margin-top: 0.25rem;">Cadastro não encontrado no sistema</p>
+
+                                        <!-- Divider -->
+                                        <div style="height: 1px; background: rgba(255, 255, 255, 0.08); margin: 1.5rem 0;"></div>
+
+                                        <!-- Description -->
+                                        <p style="font-size: 0.875rem; color: #d4d4d8; line-height: 1.6; margin-bottom: 1.5rem;">
+                                            Prezado(a) Docente, o acesso ao GeaD está temporariamente suspenso para os professores durante o período de <strong>Avaliação Discente</strong>.
+                                            <br><br>
+                                            Esta medida visa garantir que os estudantes possam realizar suas avaliações sem interrupções e com segurança. O acesso será restabelecido automaticamente assim que o período de avaliações for concluído.
+                                            <br><br>
+                                            Em caso de dúvidas urgentes, entre em contato com a <strong>Gerência de Ensino</strong> através de um dos canais abaixo:
+                                        </p>
+                                    @else
+                                        <!-- Title Row -->
+                                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                                            <div style="background: rgba(220, 38, 38, 0.1); color: #fca5a5; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid rgba(220, 38, 38, 0.2); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);">
+                                                <svg style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                            </div>
+                                            <div>
+                                                <h2 style="font-size: 1.125rem; font-weight: 600; color: #f4f4f5; letter-spacing: -0.01em; margin: 0;">Acesso Restrito</h2>
+                                                <p style="font-size: 0.875rem; color: #a1a1aa; margin-top: 0.25rem;">Cadastro não encontrado no sistema</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Divider -->
-                                    <div style="height: 1px; background: rgba(255, 255, 255, 0.08); margin: 1.5rem 0;"></div>
+                                        <!-- Divider -->
+                                        <div style="height: 1px; background: rgba(255, 255, 255, 0.08); margin: 1.5rem 0;"></div>
 
-                                    <!-- Description -->
-                                    <p style="font-size: 0.875rem; color: #d4d4d8; line-height: 1.6; margin-bottom: 1.5rem;">
-                                        O seu e-mail institucional foi autenticado com sucesso pelo Google, mas você ainda não possui um perfil ativo no GeaD. Para solicitar a liberação do seu acesso, entre em contato com a <strong>Gerência de Ensino</strong> através de um dos canais:
-                                    </p>
+                                        <!-- Description -->
+                                        <p style="font-size: 0.875rem; color: #d4d4d8; line-height: 1.6; margin-bottom: 1.5rem;">
+                                            O seu e-mail institucional não possui um perfil ativo ou acesso liberado no GeaD. Para solicitar a liberação do seu acesso, entre em contato com a <strong>Gerência de Ensino</strong> através de um dos canais:
+                                        </p>
+                                    @endif
 
                                     <!-- Contact List -->
                                     <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
