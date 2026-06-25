@@ -31,7 +31,7 @@
             >
                 <x-filament::input
                     type="search"
-                    placeholder="Pesquisar por nome ou e-mail..."
+                    placeholder="Pesquisar por nome, e-mail, curso ou turma..."
                     wire:model.live.debounce.500ms="search"
                 />
             </x-filament::input.wrapper>

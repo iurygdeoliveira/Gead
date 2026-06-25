@@ -55,7 +55,7 @@ class LoginAuditPage extends Page implements HasTable
                                   ->where('new_values', 'like', "%{$this->selectedUserIdentifier}%");
                         }
                     })
-                    ->with('user')
+                    ->with(['user.student.enrollments.course', 'user.student.enrollments.classEnrollments.courseClass'])
                     ->latest()
             )
             ->columns([
@@ -76,6 +76,18 @@ class LoginAuditPage extends Page implements HasTable
                         }
                     )
                     ->getStateUsing(fn ($record) => $record->user?->email ?? ($record->new_values['email'] ?? '-')),
+
+                TextColumn::make('course')
+                    ->label('Curso')
+                    ->getStateUsing(function ($record) {
+                        return $record->user?->student?->enrollments?->map(fn ($e) => $e->course?->name)->filter()->unique()->implode(', ') ?: '-';
+                    }),
+
+                TextColumn::make('courseClass')
+                    ->label('Turma')
+                    ->getStateUsing(function ($record) {
+                        return $record->user?->student?->enrollments?->flatMap(fn ($e) => $e->classEnrollments)->map(fn ($ce) => $ce->courseClass?->name)->filter()->unique()->implode(', ') ?: '-';
+                    }),
 
                 TextColumn::make('event')
                     ->label('Evento')
@@ -133,8 +145,16 @@ class LoginAuditPage extends Page implements HasTable
             ->whereHas('audits', fn ($query) => $query->whereIn('event', ['login', 'logout', 'failed_login']))
             ->when($this->search, function ($query): void {
                 $query->where(function (Builder $q): void {
-                    $q->where('name', 'like', "%{$this->search}%")
-                        ->orWhere('email', 'like', "%{$this->search}%");
+                    $search = "%{$this->search}%";
+                    $q->whereRaw("unaccent(name) ILIKE unaccent(?)", [$search])
+                        ->orWhereRaw("unaccent(email) ILIKE unaccent(?)", [$search])
+                        ->orWhereHas('student.enrollments.course', function (Builder $q2) use ($search): void {
+                            $q2->whereRaw("unaccent(name) ILIKE unaccent(?)", [$search]);
+                        })
+                        ->orWhereHas('student.enrollments.classEnrollments.courseClass', function (Builder $q2) use ($search): void {
+                            $q2->whereRaw("unaccent(name) ILIKE unaccent(?)", [$search])
+                               ->orWhereRaw("unaccent(code) ILIKE unaccent(?)", [$search]);
+                        });
                 });
             })
             ->orderBy('name')
