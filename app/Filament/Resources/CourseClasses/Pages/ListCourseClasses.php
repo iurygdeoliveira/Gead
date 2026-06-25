@@ -43,30 +43,33 @@ class ListCourseClasses extends ListRecords
             ->when($teamId, fn ($q) => $q->where('team_id', $teamId));
 
         return [
-            'farmacia' => Tab::make('Farm.')
-                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where('name', 'like', '%Farmácia%')))
-                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where('name', 'like', '%Farmácia%'))->count()),
-            'enfermagem' => Tab::make('Enfer.')
-                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where('name', 'like', '%Enfermagem%')))
-                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where('name', 'like', '%Enfermagem%'))->count()),
-            'informatica' => Tab::make('Infor.')
-                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%'))))
-                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%')))->count()),
-            'gpi' => Tab::make('GPI')
-                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%'))))
-                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%')))->count()),
-            'tads' => Tab::make('TADS')
-                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%'))))
-                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%')))->count()),
-            'pcp' => Tab::make('PCP')
-                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')->orWhere('name', 'like', '%Planejamento e Controle da Produção%'))))
-                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')->orWhere('name', 'like', '%Planejamento e Controle da Produção%')))->count()),
-            'eja' => Tab::make('EJA')
-                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where('name', 'like', '%Operador de Computador%')))
-                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where('name', 'like', '%Operador de Computador%'))->count()),
             'analises_clinicas' => Tab::make('Análises')
                 ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%'))))
                 ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%Análises Clínicas%')->orWhere('name', 'like', '%Analises Clinicas%')))->count()),
+            'biotecnologia' => Tab::make('Biotec.')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where('name', 'like', '%Biotecnologia%')))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where('name', 'like', '%Biotecnologia%'))->count()),
+            'eja' => Tab::make('EJA')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where('name', 'like', '%Operador de Computador%')))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where('name', 'like', '%Operador de Computador%'))->count()),
+            'enfermagem' => Tab::make('Enfer.')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where('name', 'like', '%Enfermagem%')))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where('name', 'like', '%Enfermagem%'))->count()),
+            'farmacia' => Tab::make('Farm.')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where('name', 'like', '%Farmácia%')))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where('name', 'like', '%Farmácia%'))->count()),
+            'gpi' => Tab::make('GPI')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%'))))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%GPI%')->orWhere('name', 'like', '%Gestão da Produção Industrial%')))->count()),
+            'informatica' => Tab::make('Infor.')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%'))))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%Informática%')->orWhere('name', 'like', '%Informatica%')))->count()),
+            'pcp' => Tab::make('PCP')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')->orWhere('name', 'like', '%Planejamento e Controle da Produção%'))))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%PCP%')->orWhere('name', 'like', '%Planejamento e controle da produção%')->orWhere('name', 'like', '%Planejamento e Controle da Produção%')))->count()),
+            'tads' => Tab::make('TADS')
+                ->modifyQueryUsing(fn ($query) => $query->whereHas('course', fn ($q) => $q->where(fn ($sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%'))))
+                ->badge((clone $baseQuery)->whereHas('course', fn (Builder $q) => $q->where(fn (Builder $sub) => $sub->where('name', 'like', '%TADS%')->orWhere('name', 'like', '%Análise e Desenvolvimento de Sistema%')))->count()),
         ];
     }
 }
