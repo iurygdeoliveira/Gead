@@ -88,6 +88,7 @@ class Teacher extends Model
                                 $q->where('is_suspended', false);
                             });
                     });
+                    $query->where('is_dispensed_from_evaluations', false);
                     $query->whereDoesntHave('enrollments', function ($q): void {
                         $q->whereDoesntHave('classEnrollments');
                     });
@@ -136,5 +137,49 @@ class Teacher extends Model
             'completed' => $completed,
             'expected' => $expected,
         ];
+    }
+
+    public function getPendingEvaluationsData(): array
+    {
+        $ccds = $this->taughtDisciplines()->with(['courseClass.course', 'discipline'])->get();
+        $pending = [];
+
+        foreach ($ccds as $ccd) {
+            $courseClassId = $ccd->getAttribute('course_class_id');
+            
+            $activeClassEnrollments = ClassEnrollment::where('course_class_id', $courseClassId)
+                ->with(['enrollment.student'])
+                ->whereHas('enrollment.student', function ($query): void {
+                    $query->where(function ($subQuery): void {
+                        $subQuery->whereNull('user_id')
+                            ->orWhereHas('user', function ($q): void {
+                                $q->where('is_suspended', false);
+                            });
+                    });
+                    $query->where('is_dispensed_from_evaluations', false);
+                    $query->whereDoesntHave('enrollments', function ($q): void {
+                        $q->whereDoesntHave('classEnrollments');
+                    });
+                })
+                ->get();
+
+            $evaluations = Evaluation::where('course_class_discipline_id', $ccd->id)
+                ->whereNotNull('planning_score')
+                ->pluck('class_enrollment_id')
+                ->toArray();
+
+            foreach ($activeClassEnrollments as $enrollment) {
+                if (! in_array($enrollment->id, $evaluations)) {
+                    $pending[] = [
+                        'student_name' => $enrollment->enrollment->student->name,
+                        'course_class_name' => $ccd->courseClass->name ?? 'Turma N/A',
+                        'discipline_name' => $ccd->discipline->name ?? 'Disciplina N/A',
+                        'status' => 'Pendente',
+                    ];
+                }
+            }
+        }
+
+        return $pending;
     }
 }

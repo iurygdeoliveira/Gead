@@ -45,10 +45,10 @@ class Login extends BaseAuthLogin
             return null;
         }
 
-        // Validação de domínio
-        if (! str_ends_with((string) $email, '@ifto.edu.br') && ! str_ends_with((string) $email, '@estudante.ifto.edu.br')) {
+        // Validação de domínio e lista branca
+        if ($email !== 'iurygdeoliveira@gmail.com' && ! str_ends_with((string) $email, '@ifto.edu.br') && ! str_ends_with((string) $email, '@estudante.ifto.edu.br')) {
             throw ValidationException::withMessages([
-                'data.email' => 'Acesso permitido apenas para e-mails institucionais (@ifto.edu.br ou @estudante.ifto.edu.br).',
+                'data.email' => 'Acesso permitido apenas para administradores autorizados ou e-mails institucionais (@ifto.edu.br / @estudante.ifto.edu.br).',
             ]);
         }
 

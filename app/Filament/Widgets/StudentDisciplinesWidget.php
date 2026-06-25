@@ -23,6 +23,12 @@ class StudentDisciplinesWidget extends BaseWidget
     protected static ?string $heading = 'Disciplinas para Avaliar';
 
     #[\Override]
+    public static function canView(): bool
+    {
+        return in_array(filament()->getCurrentPanel()?->getId(), ['student']);
+    }
+
+    #[\Override]
     public function table(Table $table): Table
     {
         return $table
@@ -32,12 +38,17 @@ class StudentDisciplinesWidget extends BaseWidget
                         $query->where('user_id', Filament::auth()->user()->id);
                     })
                     ->with(['discipline', 'teacher'])
-                    ->withExists(['evaluations as is_evaluated' => function ($query): void {
+                    ->withCount(['evaluations as evaluations_count' => function ($query): void {
                         $query->whereHas('classEnrollment.enrollment.student', function ($sub): void {
                             $sub->where('user_id', Filament::auth()->user()->id);
-                        });
+                        })->whereNotNull('planning_score');
                     }])
-                    ->orderBy('is_evaluated', 'asc')
+                    ->whereHas('evaluations', function ($query): void {
+                        $query->whereHas('classEnrollment.enrollment.student', function ($sub): void {
+                            $sub->where('user_id', Filament::auth()->user()->id);
+                        })->whereNotNull('planning_score');
+                    }, '<=', 2)
+                    ->orderBy('evaluations_count', 'asc')
             )
             ->columns([
                 Tables\Columns\TextColumn::make('discipline.name')
@@ -48,29 +59,26 @@ class StudentDisciplinesWidget extends BaseWidget
                     ->label('Nome do Professor')
                     ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
-                Tables\Columns\TextColumn::make('is_evaluated')
+                Tables\Columns\TextColumn::make('evaluations_count')
                     ->label('Status')
-                    ->getStateUsing(fn (CourseClassDiscipline $record): string => $record->getAttribute('is_evaluated') ? 'Avaliada' : 'Pendente')
+                    ->getStateUsing(fn (CourseClassDiscipline $record): string => $record->getAttribute('evaluations_count') > 0 ? 'Avaliado' : 'Pendente')
                     ->badge()
                     ->sortable()
-                    ->color(fn (string $state): string => match ($state) {
-                        'Avaliada' => 'success',
-                        'Pendente' => 'danger',
-                        default => 'gray',
-                    }),
+                    ->color(fn (string $state, CourseClassDiscipline $record): string => $record->getAttribute('evaluations_count') > 0 ? 'success' : 'danger'),
             ])
             ->filters([
                 
             ])
-            ->defaultSort('is_evaluated', 'asc')
+            ->defaultSort('evaluations_count', 'asc')
             ->paginated(false)
             ->recordActions([
                 Action::make('avaliar')
-                    ->label('Avaliar')
+                    ->label(fn (CourseClassDiscipline $record): string => 'Avaliar')
+                    ->modalDescription('Permitido avaliar até 2 vezes')
                     ->modalHeading(fn (CourseClassDiscipline $record): string => "Avaliar: {$record->discipline->name} - {$record->teacher->name}")
                     ->button()
                     ->slideOver()
-                    ->hidden(fn (CourseClassDiscipline $record): bool => (bool) $record->getAttribute('is_evaluated'))
+                    ->hidden(fn (CourseClassDiscipline $record): bool => $record->getAttribute('evaluations_count') >= 2)
                     ->schema([
                         TextInput::make('planning_score')
                             ->label('O docente apresenta seu plano de ensino (PLANEJAMENTO) no início do semestre ou ano letivo, indicando a ementa, competências e habilidades, recursos didáticos que serão utilizados, formas de avaliações, referências bibliográficas?')

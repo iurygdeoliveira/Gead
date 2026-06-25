@@ -14,7 +14,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
-use Illuminate\Contracts\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use OwenIt\Auditing\Models\Audit;
 
@@ -23,7 +23,7 @@ class LoginAuditPage extends Page implements HasTable
     use HasConfigurableNavigationSort;
     use InteractsWithTable;
 
-    public ?int $selectedUserId = null;
+    public string|int|null $selectedUserIdentifier = null;
 
     public ?string $search = '';
 
@@ -47,18 +47,35 @@ class LoginAuditPage extends Page implements HasTable
             ->query(
                 fn () => Audit::query() // @phpstan-ignore-line
                     ->whereIn('event', ['login', 'logout', 'failed_login'])
-                    ->when($this->selectedUserId, fn ($query) => $query->where('user_id', $this->selectedUserId))
+                    ->when($this->selectedUserIdentifier, function ($query) {
+                        if (is_numeric($this->selectedUserIdentifier)) {
+                            $query->where('user_id', $this->selectedUserIdentifier);
+                        } else {
+                            $query->whereNull('user_id')
+                                  ->where('new_values', 'like', "%{$this->selectedUserIdentifier}%");
+                        }
+                    })
                     ->with('user')
                     ->latest()
             )
             ->columns([
                 TextColumn::make('user.name')
                     ->label('Usuário')
-                    ->searchable(isIndividual: true, isGlobal: false),
+                    ->searchable(isIndividual: true, isGlobal: false)
+                    ->getStateUsing(fn ($record) => $record->user?->name ?? 'Usuário não encontrado'),
 
                 TextColumn::make('user.email')
                     ->label('E-mail')
-                    ->searchable(isIndividual: true, isGlobal: false),
+                    ->searchable(
+                        isIndividual: true, 
+                        isGlobal: false,
+                        query: function (Builder $query, string $search): Builder {
+                            return $query->whereHas('user', function ($q) use ($search) {
+                                $q->where('email', 'like', "%{$search}%");
+                            })->orWhere('new_values', 'like', "%{$search}%");
+                        }
+                    )
+                    ->getStateUsing(fn ($record) => $record->user?->email ?? ($record->new_values['email'] ?? '-')),
 
                 TextColumn::make('event')
                     ->label('Evento')
@@ -85,10 +102,26 @@ class LoginAuditPage extends Page implements HasTable
             ->defaultSort('created_at', 'desc');
     }
 
-    public function selectUser(?int $userId): void
+    public function selectUser(string|int|null $identifier): void
     {
-        $this->selectedUserId = $userId;
+        $this->selectedUserIdentifier = $identifier;
         $this->resetTable();
+    }
+
+    public function getSelectedUser(): ?User
+    {
+        if (! $this->selectedUserIdentifier) {
+            return null;
+        }
+
+        if (is_numeric($this->selectedUserIdentifier)) {
+            return User::find($this->selectedUserIdentifier);
+        }
+
+        $fakeUser = new User();
+        $fakeUser->name = 'Usuário Não Encontrado';
+        $fakeUser->email = $this->selectedUserIdentifier;
+        return $fakeUser;
     }
 
     /**
@@ -96,7 +129,7 @@ class LoginAuditPage extends Page implements HasTable
      */
     public function getUsersWithAudits(): Collection
     {
-        return User::query()
+        $users = User::query()
             ->whereHas('audits', fn ($query) => $query->whereIn('event', ['login', 'logout', 'failed_login']))
             ->when($this->search, function ($query): void {
                 $query->where(function (Builder $q): void {
@@ -106,6 +139,32 @@ class LoginAuditPage extends Page implements HasTable
             })
             ->orderBy('name')
             ->get();
+
+        $users->each(function ($user) {
+            $user->setAttribute('identifier', $user->id);
+        });
+
+        $unknownEmails = Audit::query()
+            ->whereIn('event', ['failed_login'])
+            ->whereNull('user_id')
+            ->when($this->search, function ($query): void {
+                $query->where('new_values', 'like', "%{$this->search}%");
+            })
+            ->select('new_values')
+            ->get()
+            ->pluck('new_values.email')
+            ->filter()
+            ->unique();
+
+        foreach ($unknownEmails as $email) {
+            $fakeUser = new User();
+            $fakeUser->name = 'Usuário Não Encontrado';
+            $fakeUser->email = $email;
+            $fakeUser->setAttribute('identifier', $email);
+            $users->push($fakeUser);
+        }
+
+        return $users;
     }
 
     #[\Override]

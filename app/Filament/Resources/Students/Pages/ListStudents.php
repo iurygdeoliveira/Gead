@@ -44,6 +44,10 @@ class ListStudents extends ListRecords
                 ->modifyQueryUsing(fn ($query) => $query->whereDoesntHave('enrollments.classEnrollments'))
                 ->badge((clone $baseQuery)->whereDoesntHave('enrollments.classEnrollments')->count())
                 ->badgeColor('danger'),
+            'dispensados' => Tab::make('Dispensados')
+                ->modifyQueryUsing(fn ($query) => $query->where('is_dispensed_from_evaluations', true))
+                ->badge((clone $baseQuery)->where('is_dispensed_from_evaluations', true)->count())
+                ->badgeColor('warning'),
             'farmacia' => Tab::make('Farm.')
                 ->modifyQueryUsing(fn ($query) => $query->whereHas('enrollments.course', fn ($q) => $q->where('name', 'like', '%Farmácia%')))
                 ->badge((clone $baseQuery)->whereHas('enrollments.course', fn (Builder $q) => $q->where('name', 'like', '%Farmácia%'))->count()),

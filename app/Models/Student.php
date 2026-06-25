@@ -19,10 +19,18 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
     'email',
     'team_id',
     'user_id',
+    'is_dispensed_from_evaluations',
 ])]
 class Student extends Model
 {
     use UuidTrait;
+
+    protected function casts(): array
+    {
+        return [
+            'is_dispensed_from_evaluations' => 'boolean',
+        ];
+    }
 
     /**
      * @return BelongsTo<User, $this>

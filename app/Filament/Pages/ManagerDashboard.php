@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Filament\Pages;
 
 use App\Filament\Widgets\CourseEvaluationsWidget;
+use App\Filament\Widgets\DispensedStudentsWidget;
 use App\Filament\Widgets\EvaluationsOverviewWidget;
 use App\Filament\Widgets\GenerateEvaluationsWidget;
 use App\Filament\Widgets\StudentsWithoutClassWidget;
@@ -20,7 +21,6 @@ class ManagerDashboard extends BaseDashboard
     {
         $widgets = [
             GenerateEvaluationsWidget::class,
-            StudentsWithoutClassWidget::class,
             EvaluationsOverviewWidget::class,
         ];
 

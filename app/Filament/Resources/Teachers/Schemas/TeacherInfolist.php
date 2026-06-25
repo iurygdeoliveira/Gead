@@ -68,6 +68,31 @@ class TeacherInfolist
                                             ->hiddenLabel(),
                                     ]),
                             ]),
+                        Tab::make('Pendências')
+                            ->icon(Heroicon::OutlinedExclamationCircle)
+                            ->schema([
+                                RepeatableEntry::make('pending_evaluations')
+                                    ->hiddenLabel()
+                                    ->getStateUsing(fn (\App\Models\Teacher $record) => $record->getPendingEvaluationsData())
+                                    ->table([
+                                        RepeatableEntry\TableColumn::make('Aluno'),
+                                        RepeatableEntry\TableColumn::make('Turma'),
+                                        RepeatableEntry\TableColumn::make('Disciplina'),
+                                        RepeatableEntry\TableColumn::make('Status'),
+                                    ])
+                                    ->schema([
+                                        TextEntry::make('student_name')
+                                            ->hiddenLabel(),
+                                        TextEntry::make('course_class_name')
+                                            ->hiddenLabel(),
+                                        TextEntry::make('discipline_name')
+                                            ->hiddenLabel(),
+                                        TextEntry::make('status')
+                                            ->hiddenLabel()
+                                            ->badge()
+                                            ->color('danger'),
+                                    ]),
+                            ]),
                     ])
                     ->persistTabInQueryString(),
             ]);

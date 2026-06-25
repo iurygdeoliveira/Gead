@@ -15,6 +15,7 @@ use App\Models\User;
 use App\Tenancy\SpatieTeamResolver;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission as PermissionModel;
 use Spatie\Permission\PermissionRegistrar;
 
@@ -37,11 +38,11 @@ class UserSeeder extends Seeder
         RoleType::ensureGlobalRoles($guard);
 
         $admin = User::query()->firstOrCreate(
-            ['email' => 'admin@labsis.dev.br'],
+            ['email' => 'iurygdeoliveira@gmail.com'],
             [
-                'name' => 'Administrador',
+                'name' => 'Iury de Oliveira',
                 'email_verified_at' => now(),
-                'password' => Hash::make('mudar123'),
+                'password' => Hash::make(Str::random(32)),
                 'is_approved' => true,
                 'approved_by' => null,
             ],

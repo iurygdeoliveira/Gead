@@ -52,7 +52,7 @@ class AuthPanelProvider extends PanelProvider
                     950 => '#450a0a',
                 ],
             ])
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverPages(in: app_path('Filament/Pages/Auth'), for: 'App\\Filament\\Pages\\Auth')
             ->pages([
                 VerificationPending::class,
                 AccountSuspended::class,

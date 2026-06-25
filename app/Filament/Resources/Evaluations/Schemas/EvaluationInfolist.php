@@ -54,7 +54,13 @@ class EvaluationInfolist
                                                     ->get();
 
                                                 $record->cached_taught_disciplines_evaluations = $ccds->map(function ($ccd): array {
-                                                    $averages = Evaluation::where('course_class_discipline_id', $ccd->id)
+                                                    $latestEvalIds = Evaluation::where('course_class_discipline_id', $ccd->id)
+                                                        ->whereNotNull('planning_score')
+                                                        ->groupBy('class_enrollment_id')
+                                                        ->selectRaw('MAX(id) as id')
+                                                        ->pluck('id');
+
+                                                    $averages = Evaluation::whereIn('id', $latestEvalIds)
                                                         ->selectRaw('AVG(planning_score) as planning_score, AVG(posture_score) as posture_score, AVG(attendance_score) as attendance_score, AVG(punctuality_score) as punctuality_score, AVG(execution_score) as execution_score, AVG(assessment_score) as assessment_score')
                                                         ->first();
 

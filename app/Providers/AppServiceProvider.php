@@ -12,7 +12,6 @@ use App\Http\Responses\RegistrationResponse;
 use App\Listeners\LogFailedLogin;
 use App\Listeners\LogSuccessfulLogin;
 use App\Listeners\LogSuccessfulLogout;
-use App\Listeners\NotifyAdminNewUser;
 use App\Listeners\SendUserApprovedEmail;
 use App\Models\MediaItem;
 use App\Models\Membership;
@@ -86,9 +85,9 @@ class AppServiceProvider extends ServiceProvider
 
     private function configCommands(): void
     {
-        // DB::prohibitDestructiveCommands(
-        //     app()->isProduction()
-        // );
+        DB::prohibitDestructiveCommands(
+            app()->isProduction()
+        );
     }
 
     private function configUrls(): void
@@ -107,7 +106,6 @@ class AppServiceProvider extends ServiceProvider
     private function configEvents(): void
     {
         // Registrar listeners manualmente para evitar duplicação
-        Event::listen(UserRegistered::class, NotifyAdminNewUser::class);
         Event::listen(UserApproved::class, SendUserApprovedEmail::class);
 
         // Logs de Autenticação

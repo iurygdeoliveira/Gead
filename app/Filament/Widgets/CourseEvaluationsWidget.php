@@ -25,7 +25,7 @@ class CourseEvaluationsWidget extends Widget
     #[\Override]
     public static function canView(): bool
     {
-        return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae']);
+        return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae', 'admin']);
     }
 
     public function getData(): array
@@ -33,6 +33,11 @@ class CourseEvaluationsWidget extends Widget
         /** @var Team|null $tenant */
         $tenant = filament()->getTenant();
         $teamId = $tenant?->id;
+
+        if (! $teamId) {
+            $course = Course::find($this->courseId);
+            $teamId = $course?->team_id;
+        }
 
         if (! $teamId || ! $this->courseId) {
             return [];

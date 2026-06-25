@@ -52,8 +52,14 @@ class StudentsStats extends BaseWidget
 
         $completas = 0;
         $incompletas = 0;
+        $dispensados = 0;
 
         foreach ($students as $student) {
+            if ($student->is_dispensed_from_evaluations) {
+                $dispensados++;
+                continue;
+            }
+
             $done = (int) $student->getAttribute('evaluations_done');
             $total = (int) $student->getAttribute('evaluations_total');
 
@@ -71,6 +77,11 @@ class StudentsStats extends BaseWidget
                 ->description('Alunos ativos neste campus')
                 ->descriptionIcon(Heroicon::Users)
                 ->color('primary'),
+
+            Stat::make('Alunos Dispensados', $dispensados)
+                ->description('Dispensados da avaliação')
+                ->descriptionIcon(Heroicon::NoSymbol)
+                ->color('warning'),
 
             Stat::make('Alunos com Avaliações Completas', $completas)
                 ->description('Concluíram todas as avaliações')

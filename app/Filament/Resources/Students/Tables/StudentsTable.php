@@ -63,7 +63,9 @@ class StudentsTable
                     ->placeholder('?'),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
-                    ->getStateUsing(fn ($record): string => ($record->evaluations_done ?? 0).' / '.($record->evaluations_total ?? 0))
+                    ->badge()
+                    ->getStateUsing(fn ($record): string => $record->is_dispensed_from_evaluations ? 'Dispensado' : (($record->evaluations_done ?? 0).' / '.($record->evaluations_total ?? 0)))
+                    ->color(fn ($record): string => $record->is_dispensed_from_evaluations ? 'warning' : 'gray')
                     ->alignCenter()
                     ->hidden(fn ($record): bool => $record !== null && $record->enrollments->flatMap->classEnrollments->isEmpty()),
             ])
@@ -77,6 +79,18 @@ class StudentsTable
                     EditAction::make()
                         ->icon(Heroicon::Pencil),
                     ToggleStudentSuspensionAction::make(),
+                    \Filament\Actions\Action::make('dispense_evaluations')
+                        ->label(fn (Student $record): string => $record->is_dispensed_from_evaluations ? 'Remover Dispensa' : 'Dispensar Avaliação')
+                        ->icon('heroicon-o-archive-box-x-mark')
+                        ->color(fn (Student $record): string => $record->is_dispensed_from_evaluations ? 'danger' : 'warning')
+                        ->action(function (Student $record): void {
+                            $record->update([
+                                'is_dispensed_from_evaluations' => ! $record->is_dispensed_from_evaluations,
+                            ]);
+                        })
+                        ->requiresConfirmation()
+                        ->modalHeading(fn (Student $record): string => $record->is_dispensed_from_evaluations ? 'Remover dispensa de avaliação?' : 'Dispensar aluno de avaliações?')
+                        ->modalDescription('Isso afetará se as avaliações deste aluno são exigidas para a liberação do relatório do professor.'),
                 ]),
             ])
             ->toolbarActions([

@@ -443,9 +443,9 @@ class User extends Authenticatable implements AuditableContract, FilamentUser, H
             ->where('mhr.team_id', $team->id);
     }
 
-    public function auditEvent(string $event): void
+    public function auditEvent(string $event): Audit
     {
-        Audit::create([
+        return Audit::create([
             'user_type' => self::class,
             'user_id' => $this->id,
             'auditable_type' => self::class,

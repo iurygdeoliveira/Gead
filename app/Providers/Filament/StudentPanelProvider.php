@@ -32,6 +32,7 @@ class StudentPanelProvider extends BasePanelProvider
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,
+                \App\Http\Middleware\CheckStudentEvaluationLimit::class,
             ], isPersistent: true);
 
         return $panel;

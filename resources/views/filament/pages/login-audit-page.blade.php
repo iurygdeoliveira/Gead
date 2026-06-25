@@ -1,5 +1,5 @@
 <x-filament-panels::page>
-    @if ($selectedUserId)
+    @if ($selectedUserIdentifier)
         <div class="flex items-center justify-between mb-4">
             <x-filament::button
                 color="gray"
@@ -10,7 +10,7 @@
             </x-filament::button>
 
             @php
-                $user = \App\Models\User::find($selectedUserId);
+                $user = $this->getSelectedUser();
             @endphp
             
             <div class="flex items-center gap-2">
@@ -42,7 +42,7 @@
                 <x-filament::section
                     class="cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 transition duration-200"
                     style="width: 100%; max-width: 320px; flex: 0 0 auto;"
-                    wire:click="selectUser({{ $user->id }})"
+                    wire:click="selectUser('{{ $user->identifier }}')"
                 >
                     <div style="display: flex; flex-direction: row; align-items: center; gap: 1rem; text-align: left; width: 100%; overflow: hidden;">
                         <x-filament::avatar

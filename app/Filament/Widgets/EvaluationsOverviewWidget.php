@@ -20,7 +20,7 @@ class EvaluationsOverviewWidget extends BaseWidget
     #[\Override]
     public static function canView(): bool
     {
-        return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae']);
+        return in_array(filament()->getCurrentPanel()?->getId(), ['manager', 'tae', 'admin']);
     }
 
     #[\Override]
@@ -30,14 +30,11 @@ class EvaluationsOverviewWidget extends BaseWidget
         $tenant = filament()->getTenant();
         $teamId = $tenant?->id;
 
-        if (! $teamId) {
-            return [
-                Stat::make('Avaliações Realizadas', '0%')->description('0 / 0 esperadas')->color('primary'),
-                Stat::make('Avaliações Não Realizadas', '0%')->description('0 pendentes')->color('danger'),
-            ];
+        $courseClassesQuery = CourseClass::query();
+        if ($teamId) {
+            $courseClassesQuery->where('team_id', $teamId);
         }
-
-        $courseClasses = CourseClass::where('team_id', $teamId)->get();
+        $courseClasses = $courseClassesQuery->get();
         $classIds = $courseClasses->pluck('id')->toArray();
 
         $enrollmentCountsByClass = ClassEnrollment::whereIn('course_class_id', $classIds)
@@ -66,7 +63,11 @@ class EvaluationsOverviewWidget extends BaseWidget
             $totalPotential += ($enrollmentCountsByClass[$classId] ?? 0) * ($disciplineCountsByClass[$classId] ?? 0);
         }
 
-        $evaluations = Evaluation::where('team_id', $teamId)
+        $evaluationsQuery = Evaluation::query();
+        if ($teamId) {
+            $evaluationsQuery->where('team_id', $teamId);
+        }
+        $evaluations = $evaluationsQuery
             ->whereHas('classEnrollment.enrollment.student', function ($query): void {
                 $query->where(function ($subQuery): void {
                     $subQuery->whereNull('user_id')
