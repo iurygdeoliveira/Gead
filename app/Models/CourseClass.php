@@ -66,4 +66,55 @@ class CourseClass extends Model
     {
         return $this->hasMany(Enrollment::class, 'course_id', 'course_id');
     }
+
+    /**
+     * @return array{completed: int, expected: int}
+     */
+    public function getEvaluationsCompletionStatus(): array
+    {
+        $teamId = $this->team_id;
+
+        $enrollmentCount = ClassEnrollment::where('course_class_id', $this->id)
+            ->whereHas('enrollment.student', function ($query): void {
+                $query->where(function ($subQuery): void {
+                    $subQuery->whereNull('user_id')
+                        ->orWhereHas('user', function ($q): void {
+                            $q->where('is_suspended', false);
+                        });
+                });
+                $query->whereDoesntHave('enrollments', function ($q): void {
+                    $q->whereDoesntHave('classEnrollments');
+                });
+            })
+            ->count();
+
+        $disciplineCount = CourseClassDiscipline::where('course_class_id', $this->id)->count();
+
+        $totalPotential = $enrollmentCount * $disciplineCount;
+
+        $evaluations = Evaluation::where('team_id', $teamId)
+            ->whereHas('courseClassDiscipline', function ($query): void {
+                $query->where('course_class_id', $this->id);
+            })
+            ->whereHas('classEnrollment.enrollment.student', function ($query): void {
+                $query->where(function ($subQuery): void {
+                    $subQuery->whereNull('user_id')
+                        ->orWhereHas('user', function ($q): void {
+                            $q->where('is_suspended', false);
+                        });
+                });
+                $query->whereDoesntHave('enrollments', function ($q): void {
+                    $q->whereDoesntHave('classEnrollments');
+                });
+            })
+            ->get();
+
+        $realizadas = $evaluations->whereNotNull('planning_score')->count();
+        $total = max($totalPotential, $realizadas, $evaluations->count());
+
+        return [
+            'completed' => $realizadas,
+            'expected' => $total,
+        ];
+    }
 }

@@ -32,10 +32,15 @@ class CourseClassesTable
                     ->label('Curso')
                     ->searchable(isIndividual: true, isGlobal: false)
                     ->sortable(),
-                TextColumn::make('entry_period')
-                    ->label('Período de Ingresso')
-                    ->searchable(isIndividual: true, isGlobal: false)
-                    ->sortable()
+                TextColumn::make('evaluations_status')
+                    ->label('Avaliações')
+                    ->badge()
+                    ->color('primary')
+                    ->getStateUsing(function (\App\Models\CourseClass $record): string {
+                        $status = $record->getEvaluationsCompletionStatus();
+
+                        return "{$status['completed']} / {$status['expected']}";
+                    })
                     ->alignCenter(),
             ])
             ->filters([

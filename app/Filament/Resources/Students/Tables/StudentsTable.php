@@ -65,7 +65,7 @@ class StudentsTable
                     ->label('Avaliações')
                     ->badge()
                     ->getStateUsing(fn ($record): string => $record->is_dispensed_from_evaluations ? 'Dispensado' : (($record->evaluations_done ?? 0).' / '.($record->evaluations_total ?? 0)))
-                    ->color(fn ($record): string => $record->is_dispensed_from_evaluations ? 'warning' : 'gray')
+                    ->color(fn ($record): string => $record->is_dispensed_from_evaluations ? 'warning' : 'primary')
                     ->alignCenter()
                     ->hidden(fn ($record): bool => $record !== null && $record->enrollments->flatMap->classEnrollments->isEmpty()),
             ])

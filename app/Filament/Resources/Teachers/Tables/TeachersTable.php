@@ -81,6 +81,8 @@ class TeachersTable
                     ->alignCenter(),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
+                    ->badge()
+                    ->color('primary')
                     ->getStateUsing(function (Teacher $record): string {
                         $status = $record->getEvaluationsCompletionStatus();
 

@@ -26,6 +26,8 @@ class CoursesTable
                     ->wrap(),
                 TextColumn::make('evaluations_status')
                     ->label('Avaliações')
+                    ->badge()
+                    ->color('primary')
                     ->getStateUsing(function (Course $record): string {
                         $status = $record->getEvaluationsCompletionStatus();
 
