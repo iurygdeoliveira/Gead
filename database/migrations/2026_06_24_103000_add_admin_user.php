@@ -38,6 +38,9 @@ return new class extends Migration
         // 3. Garantir a Role de Admin no escopo global (team_id = 0)
         $globalResolver = resolve(SpatieTeamResolver::class);
         $globalResolver->setPermissionsTeamId(0);
+        
+        RoleType::ensureGlobalRoles('web');
+
         $user->assignRole(RoleType::ADMIN->value);
         $globalResolver->setPermissionsTeamId(null);
     }

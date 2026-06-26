@@ -25,10 +25,7 @@ class TeamsTable
                     ->formatStateUsing(fn (bool $state): string => $state ? 'Sim' : 'Não')
                     ->badge()
                     ->color(fn ($record): string => (bool) $record->is_active ? 'primary' : 'danger'),
-                TextColumn::make('members.name')
-                    ->label('Usuários')
-                    ->listWithLineBreaks()
-                    ->bulleted(),
+               
             ])
             ->filters([
                 //

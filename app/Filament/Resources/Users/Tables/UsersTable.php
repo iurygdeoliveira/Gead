@@ -29,7 +29,8 @@ class UsersTable
             $isAdmin = $currentUser->hasRole(RoleType::ADMIN->value);
         }
 
-        $query = User::query()->withoutRole(RoleType::ADMIN->value);
+        $query = User::query()->withoutRole(RoleType::ADMIN->value)
+            ->with(['student.enrollments.course', 'student.enrollments.classEnrollments.courseClass']);
         $currentTeam = Filament::getTenant();
 
         if (! $isAdmin) {
@@ -47,8 +48,8 @@ class UsersTable
             ->columns([
                 self::getNameColumn(),
                 self::getEmailColumn(),
-                ...self::getTenantsColumn($isAdmin),
-                self::getRolesColumn($isAdmin),
+                self::getCourseColumn(),
+                self::getClassColumn(),
                 self::getStatusColumn(),
                 self::getApprovalColumn(),
             ])
@@ -94,32 +95,57 @@ class UsersTable
     }
 
     /**
-     * Coluna de teams (apenas para Admin)
+     * Coluna de curso (para alunos)
      */
-    private static function getTenantsColumn(bool $isAdmin): array
+    private static function getCourseColumn(): Column
     {
-        if (! $isAdmin) {
-            return [];
-        }
+        return TextColumn::make('cursos')
+            ->label('Curso')
+            ->getStateUsing(function (User $record): array|string {
+                if (! $record->student) {
+                    return '—';
+                }
 
-        return [
-            TextColumn::make('teams.name')
-                ->label('Teams')
-                ->listWithLineBreaks(fn (?User $record): bool => $record instanceof User && $record->isApproved())
-                ->bulleted(fn (?User $record): bool => $record instanceof User && $record->isApproved()),
-        ];
+                $courses = $record->student->enrollments
+                    ->map(fn ($enrollment) => $enrollment->course?->name)
+                    ->filter()
+                    ->unique()
+                    ->values()
+                    ->toArray();
+
+                return empty($courses) ? '—' : $courses;
+            })
+            ->listWithLineBreaks()
+            ->bulleted(fn($state) => is_array($state) && count($state) > 1);
     }
 
     /**
-     * Coluna de funções/roles do usuário
+     * Coluna de turma (para alunos)
      */
-    private static function getRolesColumn(bool $isAdmin)
+    private static function getClassColumn(): Column
     {
-        return TextColumn::make('tenant_roles')
-            ->label($isAdmin ? 'Funções' : 'Função')
-            ->state(fn (User $record): array|string => self::getTenantRolesForUser($record, $isAdmin))
-            ->listWithLineBreaks(fn (?User $record): bool => $record instanceof User && $record->isApproved())
-            ->when($isAdmin, fn ($column): TextColumn => $column->bulleted(fn (?User $record): bool => $record instanceof User && $record->isApproved()));
+        return TextColumn::make('turmas')
+            ->label('Turma')
+            ->getStateUsing(function (User $record): array|string {
+                if (! $record->student) {
+                    return '—';
+                }
+
+                $classes = collect();
+                foreach ($record->student->enrollments as $enrollment) {
+                    foreach ($enrollment->classEnrollments as $classEnrollment) {
+                        if ($classEnrollment->courseClass) {
+                            $classes->push($classEnrollment->courseClass->name);
+                        }
+                    }
+                }
+
+                $classes = $classes->filter()->unique()->values()->toArray();
+
+                return empty($classes) ? '—' : $classes;
+            })
+            ->listWithLineBreaks()
+            ->bulleted(fn($state) => is_array($state) && count($state) > 1);
     }
 
     /**
@@ -167,70 +193,5 @@ class UsersTable
             });
     }
 
-    private static function getTenantRolesForUser(User $record, bool $isAdmin): array|string
-    {
-        if ($record->hasRole(RoleType::ADMIN->value)) {
-            return '—';
-        }
-
-        if ($isAdmin) {
-            return self::getAdminViewRoles($record);
-        }
-
-        return self::getTenantViewRoles($record);
-    }
-
-    private static function getAdminViewRoles(User $record): array|string
-    {
-        $teams = $record->teams;
-
-        if ($teams->isEmpty()) {
-            return '—';
-        }
-
-        $lines = [];
-
-        foreach ($teams as $team) {
-            if (! $team instanceof Team) {
-                continue;
-            }
-
-            $roles = $record->rolesWithTeams
-                ->where('team_id', $team->id);
-
-            if ($roles->isEmpty()) {
-                $lines[] = '—';
-
-                continue;
-            }
-
-            $labels = $roles->map(fn ($role): string => self::getRoleLabel($role->name))->all();
-
-            $lines[] = implode(', ', $labels);
-        }
-
-        return $lines;
-    }
-
-    private static function getTenantViewRoles(User $record): string
-    {
-        $roles = $record->rolesWithTeams ?? collect();
-
-        if ($roles->isEmpty()) {
-            return '—';
-        }
-
-        $firstRole = $roles->first();
-
-        return $firstRole ? self::getRoleLabel($firstRole->name) : '—';
-    }
-
-    private static function getRoleLabel(string $name): string
-    {
-        try {
-            return RoleType::from($name)->getLabel();
-        } catch (\ValueError) {
-            return $name;
-        }
-    }
+    // Removidos os helpers getTenantRolesForUser, etc.
 }
