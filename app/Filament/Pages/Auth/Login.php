@@ -113,16 +113,25 @@ class Login extends BaseAuthLogin
         $url = URL::temporarySignedRoute('magic.login', now()->addMinutes(15), ['user' => $user->uuid]);
 
         // Envia o e-mail
-        Mail::to($email)->send(new MagicLinkEmail($url));
+        try {
+            Mail::to($email)->send(new MagicLinkEmail($url));
 
-        // Atualiza a flag para alterar o botão
-        $this->emailSent = true;
+            // Atualiza a flag para alterar o botão
+            $this->emailSent = true;
 
-        // Notifica na tela
-        $this->notifySuccess(
-            'Link Enviado!',
-            'Um link de acesso seguro foi enviado para o seu e-mail. Ele é válido por 15 minutos.'
-        );
+            // Notifica na tela
+            $this->notifySuccess(
+                'Link Enviado!',
+                'Um link de acesso seguro foi enviado para o seu e-mail. Ele é válido por 15 minutos.'
+            );
+        } catch (\Throwable $exception) {
+            report($exception);
+
+            $this->notifyDanger(
+                'Falha no envio!',
+                'Não foi possível enviar o e-mail de acesso. Por favor, tente novamente em alguns instantes.'
+            );
+        }
 
         // Limpa o formulário (opcional)
         $this->form->fill();
