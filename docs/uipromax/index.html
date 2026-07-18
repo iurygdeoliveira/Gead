@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GeAD — Sistema de Gestão de Avaliação Docente. Transforme semanas de trabalho manual em um clique. Avaliação segura, anônima e 100% automatizada.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>GeAD — Gestão de Avaliação Docente</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- NAVIGATION                                              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" aria-label="Navegação principal">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="GeAD — Início">
+        <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        <span>GeAD</span>
+      </a>
+      <div class="nav__links">
+        <a href="#problema" class="nav__link">O Problema</a>
+        <a href="#solucao" class="nav__link">A Solução</a>
+        <a href="#beneficios" class="nav__link">Benefícios</a>
+        <a href="#como-funciona" class="nav__link">Como Funciona</a>
+      </div>
+      <a href="#acesso" class="nav__cta">Acessar o GeAD</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- HERO — The Gravitational Pull                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <!-- Radial glow behind the logo -->
+    <div class="hero__glow" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <div class="hero__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Plataforma Institucional de Avaliação Docente
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__title-line">Semanas de trabalho</span>
+        <span class="hero__title-line hero__title-line--accent">em um único clique.</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        O GeAD digitaliza o ciclo inteiro de avaliação docente — da coleta das respostas até a assinatura digital e o envio dos resultados — devolvendo
+        <strong>capacidade estratégica</strong> à Gerência de Ensino.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#solucao" class="hero__btn hero__btn--primary">
+          Descubra como funciona
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#acesso" class="hero__btn hero__btn--ghost">
+          Acessar o sistema
+        </a>
+      </div>
+
+      <!-- Metrics ticker -->
+      <div class="hero__metrics">
+        <div class="hero__metric">
+          <span class="hero__metric-value" data-count="90">90%</span>
+          <span class="hero__metric-label">Redução do tempo operacional</span>
+        </div>
+        <div class="hero__metric-divider"></div>
+        <div class="hero__metric">
+          <span class="hero__metric-value">1 clique</span>
+          <span class="hero__metric-label">Envio de resultados em lote</span>
+        </div>
+        <div class="hero__metric-divider"></div>
+        <div class="hero__metric">
+          <span class="hero__metric-value">100%</span>
+          <span class="hero__metric-label">Sigilo das respostas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- O PROBLEMA — Before GeAD                                -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="section section--problem" id="problema">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__eyebrow section__eyebrow--danger">O Problema</span>
+        <h2 class="section__title">Um processo que <em>paralisa</em> a Gerência de Ensino</h2>
+        <p class="section__desc">
+          No semestre passado, a avaliação docente <strong>simplesmente não aconteceu</strong>.
+          O volume de trabalho manual tornou impossível concluir o ciclo com 54 professores.
+        </p>
+      </div>
+
+      <!-- Pain timeline -->
+      <div class="pain-timeline">
+        <div class="pain-step reveal-item" data-step="1">
+          <div class="pain-step__number">01</div>
+          <div class="pain-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <div class="pain-step__content">
+            <h3>Criar formulários manualmente</h3>
+            <p>Um Google Forms diferente para cada professor, para cada turma. Dezenas de formulários criados à mão, todo semestre.</p>
+          </div>
+        </div>
+
+        <div class="pain-step reveal-item" data-step="2">
+          <div class="pain-step__number">02</div>
+          <div class="pain-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="pain-step__content">
+            <h3>Consolidar em planilhas Excel</h3>
+            <p>Baixar respostas, calcular médias por critério, gerar pontuação por turma e resultado final — tudo na mão, professor por professor.</p>
+          </div>
+        </div>
+
+        <div class="pain-step reveal-item" data-step="3">
+          <div class="pain-step__number">03</div>
+          <div class="pain-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+          </div>
+          <div class="pain-step__content">
+            <h3>Assinar PDFs um a um</h3>
+            <p>Cada relatório gerado precisa de assinatura digital individual. Com 54 professores, são dezenas de assinaturas manuais.</p>
+          </div>
+        </div>
+
+        <div class="pain-step reveal-item" data-step="4">
+          <div class="pain-step__number">04</div>
+          <div class="pain-step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="pain-step__content">
+            <h3>Enviar e-mails um por um</h3>
+            <p>Anexar o PDF correto, endereçar ao professor certo, enviar. Repetir 54 vezes. Qualquer erro significa retrabalho.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact callout -->
+      <div class="callout callout--danger reveal-item">
+        <svg class="callout__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>
+          <strong>Resultado:</strong> a avaliação docente do semestre anterior não foi realizada. O acúmulo de trabalho braçal paralisou completamente o processo.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- A SOLUÇÃO — GeAD Transforms                             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="section section--solution" id="solucao">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__eyebrow section__eyebrow--success">A Solução</span>
+        <h2 class="section__title">O GeAD automatiza <em>cada etapa</em></h2>
+        <p class="section__desc">
+          Um sistema centralizado que importa dados, coleta avaliações, consolida resultados,
+          assina digitalmente e envia — tudo sem trabalho manual repetitivo.
+        </p>
+      </div>
+
+      <!-- Before / After comparison -->
+      <div class="comparison reveal-item">
+        <div class="comparison__side comparison__side--before">
+          <div class="comparison__header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            <span>Antes do GeAD</span>
+          </div>
+          <ul class="comparison__list">
+            <li>Google Forms manual por professor/turma</li>
+            <li>Planilhas Excel para consolidar médias</li>
+            <li>Geração de PDF um a um</li>
+            <li>Assinatura individual de cada relatório</li>
+            <li>Envio de e-mail individual</li>
+            <li>Semanas de trabalho repetitivo</li>
+            <li>Risco de erros e retrabalho</li>
+          </ul>
+          <div class="comparison__verdict comparison__verdict--bad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            Semanas → Avaliação cancelada
+          </div>
+        </div>
+
+        <div class="comparison__divider">
+          <div class="comparison__vs">VS</div>
+        </div>
+
+        <div class="comparison__side comparison__side--after">
+          <div class="comparison__header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Com o GeAD</span>
+          </div>
+          <ul class="comparison__list">
+            <li>Importação automática via CSV do SUAP</li>
+            <li>Formulário web padronizado para alunos</li>
+            <li>Motor de consolidação automática</li>
+            <li>Assinatura digital em lote</li>
+            <li>Disparo de e-mails com 1 clique</li>
+            <li>Processo completo em menos de 1 dia</li>
+            <li>Auditoria e rastreabilidade total</li>
+          </ul>
+          <div class="comparison__verdict comparison__verdict--good">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            &lt; 1 dia → Sempre executado
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- BENEFÍCIOS — Bento Grid                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="section section--benefits" id="beneficios">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__eyebrow">Benefícios</span>
+        <h2 class="section__title">Tudo que a Gerência precisa, <em>em um só lugar</em></h2>
+      </div>
+
+      <div class="bento">
+        <!-- Large card -->
+        <div class="bento__card bento__card--lg reveal-item">
+          <div class="bento__card-icon bento__card-icon--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3 class="bento__card-title">Sigilo Total das Respostas</h3>
+          <p class="bento__card-desc">
+            A identidade do avaliador é criptograficamente separada da avaliação. Nenhum docente tem acesso a quem o avaliou.
+            Proteção contra IDOR e isolamento rigoroso de painéis.
+          </p>
+        </div>
+
+        <!-- Regular cards -->
+        <div class="bento__card reveal-item">
+          <div class="bento__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="bento__card-title">Rápido e Prático</h3>
+          <p class="bento__card-desc">Formulário web otimizado. Avaliação em poucos minutos, direto do celular ou computador.</p>
+        </div>
+
+        <div class="bento__card reveal-item">
+          <div class="bento__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3 class="bento__card-title">Importação do SUAP</h3>
+          <p class="bento__card-desc">Upload de CSV com professores, alunos e turmas. Reimport inteligente com resolução de conflitos.</p>
+        </div>
+
+        <div class="bento__card reveal-item">
+          <div class="bento__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="bento__card-title">Consolidação Automática</h3>
+          <p class="bento__card-desc">Médias dos 6 critérios calculadas automaticamente. Relatório PDF por professor no padrão institucional.</p>
+        </div>
+
+        <div class="bento__card reveal-item">
+          <div class="bento__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+          </div>
+          <h3 class="bento__card-title">Assinatura Digital em Lote</h3>
+          <p class="bento__card-desc">Todos os relatórios assinados de uma vez com validade institucional. Sem abrir PDF por PDF.</p>
+        </div>
+
+        <!-- Wide card -->
+        <div class="bento__card bento__card--wide reveal-item">
+          <div class="bento__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3 class="bento__card-title">Envio de Resultados em Lote</h3>
+          <p class="bento__card-desc">
+            O Gerente de Ensino dispara o envio com um botão: cada professor recebe seu relatório assinado por e-mail.
+            TAEs acompanham o status e reenviam falhas. Notificação digest diária para a equipe.
+          </p>
+        </div>
+
+        <div class="bento__card reveal-item">
+          <div class="bento__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          </div>
+          <h3 class="bento__card-title">Controle de Acesso</h3>
+          <p class="bento__card-desc">Permissões distintas para Gerente e TAEs. Cada papel com responsabilidades definidas e auditáveis.</p>
+        </div>
+
+        <div class="bento__card reveal-item">
+          <div class="bento__card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3 class="bento__card-title">Acesso por Link Mágico</h3>
+          <p class="bento__card-desc">Sem senha. Alunos e docentes acessam pelo e-mail institucional com link seguro e temporário.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- COMO FUNCIONA — Steps                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="section section--steps" id="como-funciona">
+    <div class="section__inner">
+      <div class="section__header">
+        <span class="section__eyebrow">Como Funciona</span>
+        <h2 class="section__title">Do setup ao resultado final em <em>4 etapas</em></h2>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal-item">
+          <div class="step__number">1</div>
+          <div class="step__body">
+            <h3 class="step__title">Importar dados do SUAP</h3>
+            <p class="step__desc">Upload do CSV com professores, alunos e turmas. O sistema cria tudo automaticamente e trata conflitos de reimportação.</p>
+          </div>
+        </div>
+        <div class="step reveal-item">
+          <div class="step__number">2</div>
+          <div class="step__body">
+            <h3 class="step__title">Abrir período de avaliação</h3>
+            <p class="step__desc">O Gerente define data de início e término. Alunos recebem acesso e avaliam seus professores pelo formulário web.</p>
+          </div>
+        </div>
+        <div class="step reveal-item">
+          <div class="step__number">3</div>
+          <div class="step__body">
+            <h3 class="step__title">Consolidar e assinar</h3>
+            <p class="step__desc">Fechamento automático, geração de PDFs institucionais e assinatura digital em lote — com um clique.</p>
+          </div>
+        </div>
+        <div class="step reveal-item">
+          <div class="step__number">4</div>
+          <div class="step__body">
+            <h3 class="step__title">Enviar resultados</h3>
+            <p class="step__desc">Disparo em lote: cada professor recebe seu relatório assinado por e-mail. A equipe monitora status e reenvia falhas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ACESSO / CTA FINAL                                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="section section--cta" id="acesso">
+    <div class="section__inner">
+      <div class="cta-final reveal-item">
+        <div class="cta-final__glow" aria-hidden="true"></div>
+        <div class="cta-final__content">
+          <h2 class="cta-final__title">Pronto para transformar a avaliação docente?</h2>
+          <p class="cta-final__desc">
+            Discentes, docentes e gestores — acesse o GeAD com seu e-mail institucional.
+            Sem senha. Rápido. Seguro. Anônimo.
+          </p>
+
+          <div class="cta-final__seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div>
+              <strong>Garantia de anonimato</strong>
+              <span>Sua autenticação valida a matrícula. As respostas são totalmente sigilosas.</span>
+            </div>
+          </div>
+
+          <a href="#" class="cta-final__btn" id="cta-login" role="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Entrar com E-mail Institucional
+          </a>
+          <p class="cta-final__hint">Acesso via link mágico — sem necessidade de senha.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FOOTER                                                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <svg class="footer__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        <span>GeAD</span>
+      </div>
+      <p class="footer__text">&copy; 2026 GeAD — Campus Araguaína &middot; Gerência de Ensino</p>
+      <div class="footer__labsis">
+        <span>Um projeto</span>
+        <a href="https://labsis.dev.br/" target="_blank" rel="noopener noreferrer" aria-label="LabSIS">LabSIS</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
