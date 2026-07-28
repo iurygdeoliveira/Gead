@@ -35,7 +35,7 @@ class AuthPanelProvider extends PanelProvider
             ->default()
             ->darkMode(true, true)
             ->brandLogo(fn (): Factory|\Illuminate\Contracts\View\View => view('filament.auth.logo_auth'))
-            ->brandLogoHeight('12rem')
+            ->brandLogoHeight('7rem')
             ->authGuard('web')
             ->colors([
                 'danger' => [
