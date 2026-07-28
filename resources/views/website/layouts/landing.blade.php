@@ -12,7 +12,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
@@ -22,21 +22,23 @@
 </head>
 
 <body>
-  <!-- Ambient orbs -->
-  <div class="bg-orbs" aria-hidden="true">
-    <div class="orb orb--1"></div>
-    <div class="orb orb--2"></div>
-    <div class="orb orb--3"></div>
-  </div>
-
+  <!-- Header Sticky -->
   @yield('content')
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer__content">
       <p class="footer__text">
-        &copy; 2026 GeAD — Campus Araguaína &middot; Gerência de Ensino
+        &copy; 2026 GeAD &middot; Campus Araguaína &middot; Gerência de Ensino
       </p>
+      <div class="footer__labsis">
+        <span class="footer__labsis-text">Um projeto</span>
+        <a href="https://labsis.dev.br/" target="_blank" rel="noopener noreferrer"
+          aria-label="Laboratório de Sistemas Inovadores (LabSIS)">
+          <img src="{{ asset('images/labsis_logo.png') }}" alt="LabSIS" class="footer__labsis-logo" width="109"
+            height="30" loading="lazy">
+        </a>
+      </div>
     </div>
   </footer>
 

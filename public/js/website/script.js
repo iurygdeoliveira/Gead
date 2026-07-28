@@ -1,59 +1,67 @@
 /* ===================================================================
-   GeAD Landing Page — Micro-interactions & Enhancements
+   GeAD Landing Page — Interactions & Scroll Behavior
    =================================================================== */
 
 (function () {
   'use strict';
 
-  // ── Subtle parallax on the orbs (desktop only, respects reduced motion) ──
+  // ── Header scroll behavior ──
+  const header = document.getElementById('site-header');
+  const hero = document.getElementById('hero');
+
+  if (header && hero) {
+    const headerObserver = new IntersectionObserver(
+      ([entry]) => {
+        header.classList.toggle('header--scrolled', !entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+    headerObserver.observe(hero);
+  }
+
+  // ── Scroll-triggered reveal animations ──
   const prefersReducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)'
   ).matches;
 
-  if (!prefersReducedMotion && window.innerWidth >= 1024) {
-    const orbs = document.querySelectorAll('.orb');
-    const speeds = [0.02, 0.015, 0.025];
+  if (!prefersReducedMotion) {
+    const revealElements = document.querySelectorAll('.reveal');
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let rafId = null;
+    if (revealElements.length > 0) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal--visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
 
-    document.addEventListener(
-      'mousemove',
-      (e) => {
-        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-
-        if (!rafId) {
-          rafId = requestAnimationFrame(updateOrbs);
-        }
-      },
-      { passive: true }
-    );
-
-    function updateOrbs() {
-      orbs.forEach((orb, i) => {
-        const speed = speeds[i] || 0.02;
-        const offsetX = mouseX * 30 * speed * (i + 1);
-        const offsetY = mouseY * 20 * speed * (i + 1);
-        orb.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-      });
-      rafId = null;
+      revealElements.forEach((el) => revealObserver.observe(el));
     }
+  } else {
+    // If reduced motion, make all reveal elements immediately visible
+    document.querySelectorAll('.reveal').forEach((el) => {
+      el.classList.add('reveal--visible');
+    });
   }
 
   // ── CTA button ripple effect ──
-  const ctaButton = document.getElementById('cta-login');
-  if (ctaButton) {
-    ctaButton.addEventListener('click', (e) => {
+  function addRipple(button) {
+    if (!button || prefersReducedMotion) return;
+
+    button.addEventListener('click', (e) => {
       const ripple = document.createElement('span');
       ripple.className = 'ripple';
-      const rect = ctaButton.getBoundingClientRect();
+      const rect = button.getBoundingClientRect();
       const size = Math.max(rect.width, rect.height);
       ripple.style.width = ripple.style.height = size + 'px';
       ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
       ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
-      ctaButton.appendChild(ripple);
+      button.appendChild(ripple);
 
       ripple.addEventListener('animationend', () => {
         ripple.remove();
@@ -61,9 +69,16 @@
     });
   }
 
-  // Inject ripple CSS dynamically (keeps it self-contained)
+  addRipple(document.getElementById('cta-login'));
+  addRipple(document.getElementById('cta-login-final'));
+
+  // Inject ripple CSS dynamically
   const rippleStyle = document.createElement('style');
   rippleStyle.textContent = `
+    .cta-button {
+      position: relative;
+      overflow: hidden;
+    }
     .ripple {
       position: absolute;
       border-radius: 50%;
