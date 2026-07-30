@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\Teams\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Teams\TeamResource;
 use App\Filament\Resources\Teams\Widgets\TeamStats;
+use App\Traits\Filament\HasFeedbackAction;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 

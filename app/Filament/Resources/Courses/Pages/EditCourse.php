@@ -2,11 +2,9 @@
 
 namespace App\Filament\Resources\Courses\Pages;
 
-use App\Traits\Filament\HasBackButtonAction;
-
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Courses\CourseResource;
+use App\Traits\Filament\HasBackButtonAction;
+use App\Traits\Filament\HasFeedbackAction;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
@@ -17,9 +15,7 @@ use Filament\Support\Icons\Heroicon;
 class EditCourse extends EditRecord
 {
     use HasBackButtonAction;
-
     use HasFeedbackAction;
-
     use NotificationsTrait;
 
     protected static string $resource = CourseResource::class;

@@ -47,7 +47,7 @@ class LoginAuditPage extends Page implements HasTable
             ->query(
                 fn () => Audit::query() // @phpstan-ignore-line
                     ->whereIn('event', ['login', 'logout', 'failed_login'])
-                    ->when($this->selectedUserIdentifier, function ($query) {
+                    ->when($this->selectedUserIdentifier, function ($query): void {
                         if (is_numeric($this->selectedUserIdentifier)) {
                             $query->where('user_id', $this->selectedUserIdentifier);
                         } else {
@@ -62,32 +62,26 @@ class LoginAuditPage extends Page implements HasTable
                 TextColumn::make('user.name')
                     ->label('Usuário')
                     ->searchable(isIndividual: true, isGlobal: false)
-                    ->getStateUsing(fn ($record) => $record->user?->name ?? 'Usuário não encontrado'),
+                    ->getStateUsing(fn ($record) => $record->user?->name ?? 'Usuário não encontrado'), // @phpstan-ignore-line
 
                 TextColumn::make('user.email')
                     ->label('E-mail')
                     ->searchable(
+                        query: fn (Builder $query, string $search): Builder => $query->whereHas('user', function (\Illuminate\Contracts\Database\Query\Builder $q) use ($search): void {
+                            $q->where('email', 'like', "%{$search}%");
+                        })->orWhere('new_values', 'like', "%{$search}%"),
                         isIndividual: true,
-                        isGlobal: false,
-                        query: function (Builder $query, string $search): Builder {
-                            return $query->whereHas('user', function ($q) use ($search) {
-                                $q->where('email', 'like', "%{$search}%");
-                            })->orWhere('new_values', 'like', "%{$search}%");
-                        }
+                        isGlobal: false
                     )
-                    ->getStateUsing(fn ($record) => $record->user?->email ?? ($record->new_values['email'] ?? '-')),
+                    ->getStateUsing(fn ($record) => $record->user?->email ?? ($record->new_values['email'] ?? '-')), // @phpstan-ignore-line
 
                 TextColumn::make('course')
                     ->label('Curso')
-                    ->getStateUsing(function ($record) {
-                        return $record->user?->student?->enrollments?->map(fn ($e) => $e->course?->name)->filter()->unique()->implode(', ') ?: '-';
-                    }),
+                    ->getStateUsing(fn ($record) => $record->user?->student?->enrollments?->map(fn ($e) => $e->course?->name)->filter()->unique()->implode(', ') ?: '-'),
 
                 TextColumn::make('courseClass')
                     ->label('Turma')
-                    ->getStateUsing(function ($record) {
-                        return $record->user?->student?->enrollments?->flatMap(fn ($e) => $e->classEnrollments)->map(fn ($ce) => $ce->courseClass?->name)->filter()->unique()->implode(', ') ?: '-';
-                    }),
+                    ->getStateUsing(fn ($record) => $record->user?->student?->enrollments?->flatMap(fn ($e) => $e->classEnrollments)->map(fn ($ce) => $ce->courseClass?->name)->filter()->unique()->implode(', ') ?: '-'),
 
                 TextColumn::make('event')
                     ->label('Evento')
@@ -161,7 +155,7 @@ class LoginAuditPage extends Page implements HasTable
             ->orderBy('name')
             ->get();
 
-        $users->each(function ($user) {
+        $users->each(function ($user): void {
             $user->setAttribute('identifier', $user->id);
         });
 

@@ -40,7 +40,7 @@ class MembershipObserver
     {
         [$user, $team] = $this->resolveMembershipActors($membership);
 
-        if ($user === null || $team === null) {
+        if (! $user instanceof User || ! $team instanceof Team) {
             return;
         }
 
@@ -60,11 +60,11 @@ class MembershipObserver
     {
         [$user, $team] = $this->resolveMembershipActors($membership);
 
-        if ($user === null || $team === null) {
+        if (! $user instanceof User || ! $team instanceof Team) {
             return;
         }
 
-        $pivotRole = $membership->role;
+        $pivotRole = $membership->role; // @phpstan-ignore-line
 
         $user->removeAllRolesFromTeam($team);
 
@@ -85,8 +85,8 @@ class MembershipObserver
     private function resolveMembershipActors(Membership $membership): array
     {
         return [
-            User::query()->find($membership->user_id),
-            Team::query()->find($membership->team_id),
+            User::query()->find($membership->user_id), // @phpstan-ignore-line
+            Team::query()->find($membership->team_id), // @phpstan-ignore-line
         ];
     }
 

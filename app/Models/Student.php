@@ -25,6 +25,7 @@ class Student extends Model
 {
     use UuidTrait;
 
+    #[\Override]
     protected function casts(): array
     {
         return [

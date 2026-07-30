@@ -21,7 +21,7 @@ class LogFailedLogin
         if ($event->user instanceof User) {
             if (! $event->user->hasRole(RoleType::ADMIN->value)) {
                 $audit = $event->user->auditEvent('failed_login');
-                if ($audit && $email) {
+                if ($email) {
                     $audit->new_values = array_merge($audit->new_values ?? [], ['email' => $email]);
                     $audit->save();
                 }

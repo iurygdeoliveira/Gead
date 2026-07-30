@@ -6,6 +6,7 @@ use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
 use Closure;
 use Filament\Facades\Filament;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -26,14 +27,14 @@ class CheckStudentEvaluationLimit
         $student = $user->student;
 
         // Get all discipline IDs for the student
-        $disciplineIds = CourseClassDiscipline::whereHas('courseClass.classEnrollments.enrollment', function ($q) use ($student) {
+        $disciplineIds = CourseClassDiscipline::whereHas('courseClass.classEnrollments.enrollment', function (Builder $q) use ($student): void {
             $q->where('student_id', $student->id);
         })->pluck('id');
 
         if ($disciplineIds->isNotEmpty()) {
             $evaluationsCount = Evaluation::selectRaw('course_class_discipline_id, count(*) as count')
                 ->whereIn('course_class_discipline_id', $disciplineIds)
-                ->whereHas('classEnrollment.enrollment', function ($q) use ($student) {
+                ->whereHas('classEnrollment.enrollment', function ($q) use ($student): void {
                     $q->where('student_id', $student->id);
                 })
                 ->whereNotNull('planning_score')

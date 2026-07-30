@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\Security\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Security\SecurityEventResource;
+use App\Traits\Filament\HasFeedbackAction;
 use WallaceMartinss\FilamentSecurity\Filament\Resources\SecurityEventResource\Pages\ListSecurityEvents as BaseListSecurityEvents;
 
 class ListSecurityEvents extends BaseListSecurityEvents

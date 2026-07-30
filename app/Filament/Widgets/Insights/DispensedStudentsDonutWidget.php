@@ -15,9 +15,10 @@ class DispensedStudentsDonutWidget extends ApexChartWidget
 
     public ?int $teamId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $stats = $service->getDispensedStudentsStats($this->teamId);
 
         return [

@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Students\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Students\StudentResource;
 use App\Models\Student;
 use App\Traits\Filament\HasBackButtonAction;
+use App\Traits\Filament\HasFeedbackAction;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
@@ -16,9 +15,8 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class DeleteStudent extends ViewRecord
 {
-    use HasFeedbackAction;
-
     use HasBackButtonAction;
+    use HasFeedbackAction;
     use NotificationsTrait;
 
     protected static string $resource = StudentResource::class;

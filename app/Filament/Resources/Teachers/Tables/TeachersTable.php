@@ -228,19 +228,19 @@ class TeachersTable
                 ->join('class_enrollments as ce', 'e.id', '=', 'ce.enrollment_id')
                 ->leftJoin('users as u', 'students.user_id', '=', 'u.id')
                 ->where('ce.course_class_id', $courseClass->id)
-                ->where(function ($query) {
+                ->where(function ($query): void {
                     $query->whereNull('students.user_id')
                         ->orWhere('u.is_suspended', false);
                 })
                 ->where('students.is_dispensed_from_evaluations', false)
-                ->whereNotExists(function ($query) {
+                ->whereNotExists(function ($query): void {
                     $query->select(DB::raw(1))
                         ->from('enrollments as e2')
                         ->leftJoin('class_enrollments as ce2', 'e2.id', '=', 'ce2.enrollment_id')
                         ->whereColumn('e2.student_id', 'students.id')
                         ->whereNull('ce2.id');
                 })
-                ->whereNotExists(function ($query) use ($ccd) {
+                ->whereNotExists(function ($query) use ($ccd): void {
                     $query->select(DB::raw(1))
                         ->from('evaluations as ev')
                         ->whereColumn('ev.class_enrollment_id', 'ce.id')

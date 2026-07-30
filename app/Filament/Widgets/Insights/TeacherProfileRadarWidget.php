@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Filament\Widgets\Insights;
 
+use App\Models\Teacher;
 use App\Services\EvaluationAnalyticsService;
 use Leandrocfe\FilamentApexCharts\Widgets\ApexChartWidget;
 
@@ -17,9 +18,10 @@ class TeacherProfileRadarWidget extends ApexChartWidget
 
     public ?int $teacherId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $teacherId = $this->teacherId ?: \App\Models\Teacher::first()?->id;
+        $teacherId = $this->teacherId ?: Teacher::first()?->id;
 
         if (! $teacherId) {
             return [
@@ -29,12 +31,11 @@ class TeacherProfileRadarWidget extends ApexChartWidget
             ];
         }
 
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $profile = $service->getTeacherProfile($teacherId, $this->teamId);
 
         $dimensions = array_keys($profile['teacher_scores']);
         $teacherData = array_values($profile['teacher_scores']);
-        $courseAvgData = array_values($profile['course_avg_scores']);
 
         return [
             'chart' => [

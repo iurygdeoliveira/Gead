@@ -12,6 +12,7 @@ use App\Models\Team;
 use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
+use Illuminate\Contracts\Database\Query\Builder;
 
 class EvaluationsOverviewWidget extends BaseWidget
 {
@@ -68,14 +69,14 @@ class EvaluationsOverviewWidget extends BaseWidget
             $evaluationsQuery->where('team_id', $teamId);
         }
         $evaluations = $evaluationsQuery
-            ->whereHas('classEnrollment.enrollment.student', function ($query): void {
-                $query->where(function ($subQuery): void {
+            ->whereHas('classEnrollment.enrollment.student', function (Builder $query): void {
+                $query->where(function (Builder $subQuery): void {
                     $subQuery->whereNull('user_id')
-                        ->orWhereHas('user', function ($q): void {
+                        ->orWhereHas('user', function (Builder $q): void {
                             $q->where('is_suspended', false);
                         });
                 });
-                $query->whereDoesntHave('enrollments', function ($q): void {
+                $query->whereDoesntHave('enrollments', function (Builder $q): void {
                     $q->whereDoesntHave('classEnrollments');
                 });
             })

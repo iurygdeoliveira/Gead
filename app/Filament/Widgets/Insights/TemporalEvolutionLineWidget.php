@@ -17,9 +17,10 @@ class TemporalEvolutionLineWidget extends ApexChartWidget
 
     public ?int $courseId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $data = $service->getTemporalEvolution($this->teamId, $this->courseId);
 
         $series = [];

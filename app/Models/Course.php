@@ -130,7 +130,7 @@ class Course extends Model
         ];
     }
 
-    public function getShortNameAttribute(): string
+    protected function getShortNameAttribute(): string
     {
         $name = $this->name;
 

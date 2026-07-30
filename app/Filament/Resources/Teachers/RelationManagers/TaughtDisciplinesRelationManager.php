@@ -15,6 +15,7 @@ use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Support\Icons\Heroicon;
 
 class TaughtDisciplinesRelationManager extends RelationManager
 {
@@ -28,6 +29,7 @@ class TaughtDisciplinesRelationManager extends RelationManager
 
     protected static ?string $pluralModelLabel = 'Disciplinas Ministradas';
 
+    #[\Override]
     public function form(Schema $schema): Schema
     {
         return $schema
@@ -60,8 +62,8 @@ class TaughtDisciplinesRelationManager extends RelationManager
             ->headerActions([
                 Action::make('vincular')
                     ->label('Vincular Turma/Disciplina')
-                    ->icon('heroicon-o-plus')
-                    ->form([
+                    ->icon(Heroicon::OutlinedPlus)
+                    ->schema([
                         Forms\Components\Select::make('course_id')
                             ->label('Curso')
                             ->options(Course::pluck('name', 'id'))
@@ -113,7 +115,7 @@ class TaughtDisciplinesRelationManager extends RelationManager
                             })
                             ->required(),
                     ])
-                    ->action(function (array $data, RelationManager $livewire): void {
+                    ->action(function (array $data, self $livewire): void {
                         /** @var Teacher $teacher */
                         $teacher = $livewire->getOwnerRecord();
 
@@ -136,13 +138,13 @@ class TaughtDisciplinesRelationManager extends RelationManager
             ->recordActions([
                 Action::make('desvincular')
                     ->label('Desvincular')
-                    ->icon('heroicon-o-x-mark')
+                    ->icon(Heroicon::OutlinedXMark)
                     ->color('danger')
                     ->requiresConfirmation()
                     ->modalHeading('Desvincular Professor')
                     ->modalDescription('Tem certeza que deseja desvincular o professor desta turma e disciplina? ATENÇÃO: Todas as avaliações já realizadas para este professor nesta disciplina serão apagadas definitivamente.')
                     ->modalSubmitActionLabel('Sim, desvincular')
-                    ->action(function (CourseClassDiscipline $record, RelationManager $livewire): void {
+                    ->action(function (CourseClassDiscipline $record, self $livewire): void {
                         $record->delete();
                         $livewire->notifySuccess('Professor desvinculado e avaliações removidas com sucesso.');
                         $livewire->dispatch('refreshTeacherInfolist');

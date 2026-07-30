@@ -19,9 +19,10 @@ class ProblematicDisciplinesBarWidget extends ApexChartWidget
 
     public ?int $courseClassId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $disciplines = $service->getProblematicDisciplines($this->teamId, $this->courseId, $this->courseClassId, 10);
 
         $names = array_column($disciplines, 'discipline_name');
@@ -66,7 +67,7 @@ class ProblematicDisciplinesBarWidget extends ApexChartWidget
                     'left' => 20,
                 ],
             ],
-            'colors' => array_map(function ($score) {
+            'colors' => array_map(function (float $score): string {
                 if ($score < 5.0) {
                     return '#e7010a';
                 }

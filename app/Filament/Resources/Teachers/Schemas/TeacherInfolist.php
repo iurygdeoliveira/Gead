@@ -74,7 +74,7 @@ class TeacherInfolist
                             ->schema([
                                 RepeatableEntry::make('pending_evaluations')
                                     ->hiddenLabel()
-                                    ->getStateUsing(fn (Teacher $record) => $record->getPendingEvaluationsData())
+                                    ->getStateUsing(fn (Teacher $record): array => $record->getPendingEvaluationsData())
                                     ->table([
                                         RepeatableEntry\TableColumn::make('Aluno'),
                                         RepeatableEntry\TableColumn::make('Turma'),

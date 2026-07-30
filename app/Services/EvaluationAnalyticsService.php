@@ -11,18 +11,19 @@ use App\Models\Discipline;
 use App\Models\Evaluation;
 use App\Models\Student;
 use App\Models\Teacher;
+use Illuminate\Database\Eloquent\Builder;
 
 class EvaluationAnalyticsService
 {
     /**
      * Retorna a query base de avaliações, ignorando alunos dispensados
      *
-     * @return \Illuminate\Database\Eloquent\Builder<\App\Models\Evaluation>
+     * @return Builder<Evaluation>
      */
-    private function getBaseEvaluationQuery(): \Illuminate\Database\Eloquent\Builder
+    private function getBaseEvaluationQuery(): Builder
     {
         return Evaluation::query()
-            ->whereHas('classEnrollment.enrollment.student', function ($q) {
+            ->whereHas('classEnrollment.enrollment.student', function (\Illuminate\Contracts\Database\Query\Builder $q): void {
                 $q->where('is_dispensed_from_evaluations', false);
             });
     }
@@ -130,7 +131,7 @@ class EvaluationAnalyticsService
             $termNames[] = $term->name;
 
             $query = $this->getBaseEvaluationQuery()
-                ->whereHas('courseClassDiscipline.courseClass', function ($q) use ($term, $courseId) {
+                ->whereHas('courseClassDiscipline.courseClass', function (\Illuminate\Contracts\Database\Query\Builder $q) use ($term, $courseId): void {
                     $q->where('academic_term_id', $term->id);
                     if ($courseId) {
                         $q->where('course_id', $courseId);
@@ -180,7 +181,7 @@ class EvaluationAnalyticsService
         }
 
         if ($courseId) {
-            $query->whereHas('courseClassDiscipline.courseClass', function ($q) use ($courseId) {
+            $query->whereHas('courseClassDiscipline.courseClass', function (\Illuminate\Contracts\Database\Query\Builder $q) use ($courseId): void {
                 $q->where('course_id', $courseId);
             });
         }
@@ -220,7 +221,7 @@ class EvaluationAnalyticsService
         }
 
         $teacherEvalQuery = $this->getBaseEvaluationQuery()
-            ->whereHas('courseClassDiscipline', function ($q) use ($teacherId) {
+            ->whereHas('courseClassDiscipline', function (\Illuminate\Contracts\Database\Query\Builder $q) use ($teacherId): void {
                 $q->where('teacher_id', $teacherId);
             });
 
@@ -261,12 +262,12 @@ class EvaluationAnalyticsService
     public function getCourseProfileRadar(int $courseId, ?int $teamId = null): array
     {
         $dimensions = ['Planejamento', 'Postura', 'Assiduidade', 'Pontualidade', 'Execução', 'Avaliação'];
-        
+
         $query = $this->getBaseEvaluationQuery()
-            ->whereHas('courseClassDiscipline.courseClass', function ($q) use ($courseId) {
+            ->whereHas('courseClassDiscipline.courseClass', function (\Illuminate\Contracts\Database\Query\Builder $q) use ($courseId): void {
                 $q->where('course_id', $courseId);
             });
-            
+
         if ($teamId) {
             $query->where('team_id', $teamId);
         }
@@ -313,7 +314,7 @@ class EvaluationAnalyticsService
 
         foreach ($classes as $class) {
             $avg = $this->getBaseEvaluationQuery()
-                ->whereHas('courseClassDiscipline', function ($q) use ($class) {
+                ->whereHas('courseClassDiscipline', function (\Illuminate\Contracts\Database\Query\Builder $q) use ($class): void {
                     $q->where('course_class_id', $class->id);
                 })
                 ->selectRaw('
@@ -383,13 +384,13 @@ class EvaluationAnalyticsService
             ->limit($limit)
             ->get();
 
-        return $results->map(function ($row) {
+        return $results->map(function ($row): array {
             /** @var object{discipline_name: string, avg_score: float|string} $row */
             return [
                 'discipline_name' => (string) $row->discipline_name,
                 'avg_score' => (float) $row->avg_score,
             ];
-        })->toArray();
+        })->all();
     }
 
     /**
@@ -425,8 +426,8 @@ class EvaluationAnalyticsService
 
         $courseStats = [];
         foreach ($courses as $course) {
-            $cTotal = Student::whereHas('enrollments', fn ($q) => $q->where('course_id', $course->id))->count();
-            $cDispensed = Student::whereHas('enrollments', fn ($q) => $q->where('course_id', $course->id))
+            $cTotal = Student::whereHas('enrollments', fn (\Illuminate\Contracts\Database\Query\Builder $q) => $q->where('course_id', $course->id))->count();
+            $cDispensed = Student::whereHas('enrollments', fn (\Illuminate\Contracts\Database\Query\Builder $q) => $q->where('course_id', $course->id))
                 ->where('is_dispensed_from_evaluations', true)
                 ->count();
             $cPercent = $cTotal > 0 ? round(($cDispensed / $cTotal) * 100, 1) : 0.0;
@@ -476,8 +477,8 @@ class EvaluationAnalyticsService
         }
 
         if ($courseId) {
-            $query->whereHas('courseClassDiscipline', function ($q) use ($courseId) {
-                $q->whereHas('courseClass', function ($q2) use ($courseId) {
+            $query->whereHas('courseClassDiscipline', function (\Illuminate\Contracts\Database\Query\Builder $q) use ($courseId): void {
+                $q->whereHas('courseClass', function (\Illuminate\Contracts\Database\Query\Builder $q2) use ($courseId): void {
                     $q2->where('course_id', $courseId);
                 });
             });
@@ -506,11 +507,11 @@ class EvaluationAnalyticsService
         }
 
         foreach ($dimKeys as $key) {
-            $vals = $data->pluck($key)->map(fn ($v) => (float) $v)->toArray();
+            $vals = $data->pluck($key)->map(fn ($v): float => (float) $v)->all();
             $mean = array_sum($vals) / $n;
             $means[$key] = $mean;
 
-            $variance = array_reduce($vals, fn ($carry, $v) => $carry + pow($v - $mean, 2), 0.0) / ($n - 1);
+            $variance = array_reduce($vals, fn ($carry, $v) => $carry + ($v - $mean) ** 2, 0.0) / ($n - 1);
             $stdevs[$key] = sqrt($variance);
         }
 

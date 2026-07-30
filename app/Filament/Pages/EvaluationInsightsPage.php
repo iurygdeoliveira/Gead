@@ -62,7 +62,7 @@ class EvaluationInsightsPage extends Page implements HasForms
             $this->teacherId = $firstTeacher->id;
         }
 
-        $this->form->fill([
+        $this->form->fill([ // @phpstan-ignore-line
             'question' => $this->question,
             'courseId' => $this->courseId,
             'courseClassId' => $this->courseClassId,
@@ -77,6 +77,7 @@ class EvaluationInsightsPage extends Page implements HasForms
             ->schema([
                 Select::make('question')
                     ->label('Pergunta analítica:')
+                    ->searchable()
                     ->options([
                         'kpi_2_adesao' => '1. Qual é a taxa de participação/adesão dos alunos na avaliação?',
                         'kpi_8_dispensados' => '2. Qual é o percentual e distribuição dos alunos dispensados da avaliação?',
@@ -94,11 +95,11 @@ class EvaluationInsightsPage extends Page implements HasForms
 
                 Select::make('correlationScope')
                     ->label('Escopo da Análise:')
-                    ->options(fn () => [0 => 'Campus Inteiro (Todos os Cursos)'] + Course::orderBy('name')->pluck('name', 'id')->toArray())
+                    ->options(fn (): array => [0 => 'Campus Inteiro (Todos os Cursos)'] + Course::orderBy('name')->pluck('name', 'id')->toArray())
                     ->default(0)
                     ->live()
                     ->searchable()
-                    ->visible(fn ($get) => $get('question') === 'kpi_9_correlacoes'),
+                    ->visible(fn ($get): bool => $get('question') === 'kpi_9_correlacoes'),
 
                 Select::make('teacherId')
                     ->label('Filtrar por Professor:')
@@ -106,7 +107,7 @@ class EvaluationInsightsPage extends Page implements HasForms
                     ->default(fn () => $this->teacherId ?? Teacher::orderBy('name')->first()?->id)
                     ->live()
                     ->searchable()
-                    ->visible(fn ($get) => in_array($get('question'), ['kpi_5a_docente_indiv'])),
+                    ->visible(fn ($get): bool => $get('question') == 'kpi_5a_docente_indiv'),
 
                 Select::make('courseId')
                     ->label('Filtrar por Curso:')
@@ -114,7 +115,7 @@ class EvaluationInsightsPage extends Page implements HasForms
                     ->default(fn () => $this->courseId ?? Course::orderBy('name')->first()?->id)
                     ->live()
                     ->afterStateUpdated(fn ($set) => $set('courseClassId', null))
-                    ->visible(fn ($get) => in_array($get('question'), ['kpi_3_evolucao', 'kpi_4_distribuicao', 'kpi_5b_docente_curso', 'kpi_6_disciplinas', 'kpi_7_turmas'])),
+                    ->visible(fn ($get): bool => in_array($get('question'), ['kpi_3_evolucao', 'kpi_4_distribuicao', 'kpi_5b_docente_curso', 'kpi_6_disciplinas', 'kpi_7_turmas'])),
 
                 Select::make('courseClassId')
                     ->label('Filtrar por Turma:')
@@ -135,7 +136,7 @@ class EvaluationInsightsPage extends Page implements HasForms
                         return $query->orderBy('name')->first()?->id;
                     })
                     ->live()
-                    ->visible(fn ($get) => $get('question') === 'kpi_6_disciplinas'),
+                    ->visible(fn ($get): bool => $get('question') === 'kpi_6_disciplinas'),
             ]);
     }
 

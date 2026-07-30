@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('evaluations', function (Blueprint $table) {
+        Schema::table('evaluations', function (Blueprint $table): void {
             $table->dropUnique('eval_class_enroll_course_class_disc_unique');
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('evaluations', function (Blueprint $table) {
+        Schema::table('evaluations', function (Blueprint $table): void {
             $table->unique(['class_enrollment_id', 'course_class_discipline_id'], 'eval_class_enroll_course_class_disc_unique');
         });
     }

@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources\Teachers\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Teachers\TeacherResource;
 use App\Filament\Resources\Teachers\Widgets\TeachersStats;
+use App\Traits\Filament\HasFeedbackAction;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 

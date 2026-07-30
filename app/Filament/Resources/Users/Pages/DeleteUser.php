@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Users\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Users\UserResource;
 use App\Models\User;
 use App\Traits\Filament\HasBackButtonAction;
+use App\Traits\Filament\HasFeedbackAction;
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
 use Filament\Resources\Pages\ViewRecord;
@@ -15,9 +14,8 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class DeleteUser extends ViewRecord
 {
-    use HasFeedbackAction;
-
     use HasBackButtonAction;
+    use HasFeedbackAction;
 
     protected static string $resource = UserResource::class;
 

@@ -24,7 +24,7 @@ class StudentDisciplinesWidget extends BaseWidget
     #[\Override]
     public static function canView(): bool
     {
-        return in_array(filament()->getCurrentPanel()?->getId(), ['student']);
+        return filament()->getCurrentPanel()?->getId() == 'student';
     }
 
     #[\Override]
@@ -42,8 +42,8 @@ class StudentDisciplinesWidget extends BaseWidget
                             $sub->where('user_id', Filament::auth()->user()->id);
                         })->whereNotNull('planning_score');
                     }])
-                    ->whereHas('evaluations', function ($query): void {
-                        $query->whereHas('classEnrollment.enrollment.student', function ($sub): void {
+                    ->whereHas('evaluations', function (\Illuminate\Contracts\Database\Query\Builder $query): void {
+                        $query->whereHas('classEnrollment.enrollment.student', function (\Illuminate\Contracts\Database\Query\Builder $sub): void {
                             $sub->where('user_id', Filament::auth()->user()->id);
                         })->whereNotNull('planning_score');
                     }, '<=', 2)

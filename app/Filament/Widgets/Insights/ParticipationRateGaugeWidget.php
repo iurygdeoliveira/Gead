@@ -15,9 +15,10 @@ class ParticipationRateGaugeWidget extends ApexChartWidget
 
     public ?int $teamId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $stats = $service->getParticipationRates($this->teamId);
 
         $courseNames = array_column($stats['courses'], 'course_name');
@@ -44,7 +45,7 @@ class ParticipationRateGaugeWidget extends ApexChartWidget
                 ],
                 [
                     'name' => 'Pendentes',
-                    'data' => array_map(fn ($total, $done) => max(0, $total - $done), $expectedSeries, $completedSeries),
+                    'data' => array_map(fn ($total, $done): int => max(0, $total - $done), $expectedSeries, $completedSeries),
                 ],
             ],
             'xaxis' => [

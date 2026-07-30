@@ -11,9 +11,6 @@ use Filament\Facades\Filament;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Support\Str;
-use Filament\Notifications\Notification;
-use App\Traits\Filament\NotificationsTrait;
 
 trait HasFeedbackAction
 {

@@ -17,6 +17,7 @@ class CourseClassTeachersRadarWidget extends ApexChartWidget
 
     public ?int $courseId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
         if (! $this->courseId) {
@@ -27,7 +28,7 @@ class CourseClassTeachersRadarWidget extends ApexChartWidget
             ];
         }
 
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $data = $service->getCourseProfileRadar($this->courseId, $this->teamId);
 
         $dimensions = $data['dimensions'];

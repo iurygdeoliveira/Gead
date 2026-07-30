@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Teams\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Teams\TeamResource;
 use App\Models\Team;
 use App\Traits\Filament\HasBackButtonAction;
+use App\Traits\Filament\HasFeedbackAction;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
@@ -15,9 +14,8 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class DeleteTeam extends ViewRecord
 {
-    use HasFeedbackAction;
-
     use HasBackButtonAction;
+    use HasFeedbackAction;
     use NotificationsTrait;
 
     protected static string $resource = TeamResource::class;

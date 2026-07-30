@@ -2,12 +2,11 @@
 
 namespace App\Filament\Resources\Teams\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Teams\TeamResource;
 use App\Models\Team;
 use App\Models\User;
 use App\Traits\Filament\HasBackButtonAction;
+use App\Traits\Filament\HasFeedbackAction;
 use Filament\Resources\Pages\ViewRecord;
 use Livewire\Attributes\Computed;
 
@@ -20,9 +19,8 @@ use Livewire\Attributes\Computed;
  */
 class ViewTeam extends ViewRecord
 {
-    use HasFeedbackAction;
-
     use HasBackButtonAction;
+    use HasFeedbackAction;
 
     protected static string $resource = TeamResource::class;
 

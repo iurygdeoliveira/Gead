@@ -17,6 +17,7 @@ use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Database\Query\Builder;
 
 class UsersTable
 {
@@ -35,7 +36,7 @@ class UsersTable
 
         if (! $isAdmin) {
             if ($currentTeam instanceof Team) {
-                $query->whereHas('teams', function ($q) use ($currentTeam): void {
+                $query->whereHas('teams', function (Builder $q) use ($currentTeam): void {
                     $q->where('teams.id', $currentTeam->getKey());
                 })->with('teams')->withRolesForTeam($currentTeam);
             }
@@ -116,7 +117,7 @@ class UsersTable
                 return empty($courses) ? '—' : $courses;
             })
             ->listWithLineBreaks()
-            ->bulleted(fn ($state) => is_array($state) && count($state) > 1);
+            ->bulleted(fn ($state): bool => is_array($state) && count($state) > 1);
     }
 
     /**
@@ -145,7 +146,7 @@ class UsersTable
                 return empty($classes) ? '—' : $classes;
             })
             ->listWithLineBreaks()
-            ->bulleted(fn ($state) => is_array($state) && count($state) > 1);
+            ->bulleted(fn ($state): bool => is_array($state) && count($state) > 1);
     }
 
     /**

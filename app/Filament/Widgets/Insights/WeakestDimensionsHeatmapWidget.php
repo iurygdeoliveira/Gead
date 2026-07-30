@@ -15,9 +15,10 @@ class WeakestDimensionsHeatmapWidget extends ApexChartWidget
 
     public ?int $teamId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $data = $service->getWeakestDimensions($this->teamId);
 
         $seriesData = [];

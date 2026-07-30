@@ -48,7 +48,7 @@ class StudentForm
                                 TextInput::make('registration_number')
                                     ->label('Número de Matrícula')
                                     ->required()
-                                    ->unique(ignoreRecord: true),
+                                    ->unique(),
                                 TextInput::make('entry_period')
                                     ->label('Período de Ingresso')
                                     ->placeholder('Ex: 2026.1')

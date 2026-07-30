@@ -17,9 +17,10 @@ class DimensionCorrelationHeatmapWidget extends ApexChartWidget
 
     public ?int $courseId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $result = $service->getDimensionCorrelationMatrix($this->teamId, $this->courseId);
 
         $dimensions = $result['dimensions'];

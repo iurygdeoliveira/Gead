@@ -17,12 +17,13 @@ class GradeDistributionHistogramWidget extends ApexChartWidget
 
     public ?int $courseId = null;
 
+    #[\Override]
     protected function getOptions(): array
     {
-        $service = app(EvaluationAnalyticsService::class);
+        $service = resolve(EvaluationAnalyticsService::class);
         $distribution = $service->getGradeDistribution($this->teamId, $this->courseId);
 
-        $categories = array_map(fn ($i) => "Nota {$i}", range(0, 10));
+        $categories = array_map(fn (int $i): string => "Nota {$i}", range(0, 10));
         $data = array_values($distribution);
 
         return [

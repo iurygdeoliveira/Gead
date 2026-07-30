@@ -2,13 +2,12 @@
 
 namespace App\Filament\Resources\Teams\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Enums\AppTeamRole;
 use App\Filament\Resources\Teams\TeamResource;
 use App\Models\Membership;
 use App\Models\Team;
 use App\Traits\Filament\HasBackButtonAction;
+use App\Traits\Filament\HasFeedbackAction;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
@@ -24,9 +23,8 @@ use Livewire\Attributes\Computed;
  */
 class EditTeam extends EditRecord
 {
-    use HasFeedbackAction;
-
     use HasBackButtonAction;
+    use HasFeedbackAction;
     use NotificationsTrait;
 
     protected static string $resource = TeamResource::class;

@@ -46,6 +46,7 @@ class PostgresCsvSeeder extends Seeder
 
         if (! File::isDirectory($dirPath)) {
             $this->command->error("Diretório {$dirPath} não encontrado.");
+
             return;
         }
 
@@ -66,6 +67,7 @@ class PostgresCsvSeeder extends Seeder
 
             if (! Schema::hasTable($table)) {
                 $this->command->warn("Tabela '{$table}' não existe no banco, ignorando.");
+
                 continue;
             }
 
@@ -83,7 +85,7 @@ class PostgresCsvSeeder extends Seeder
             try {
                 $this->importCsvToTable($table, $filePath);
             } catch (\Throwable $e) {
-                $this->command->error("Erro ao semear a tabela [{$table}]: " . $e->getMessage());
+                $this->command->error("Erro ao semear a tabela [{$table}]: ".$e->getMessage());
                 throw $e;
             }
 
@@ -93,7 +95,7 @@ class PostgresCsvSeeder extends Seeder
                     if ($maxId !== null) {
                         DB::statement("SELECT setval(pg_get_serial_sequence('{$table}', 'id'), {$maxId})");
                     }
-                } catch (\Throwable $e) {
+                } catch (\Throwable) {
                     // Ignora falhas de atualização de sequence em tabelas sem sequence id padrão
                 }
             }
@@ -115,9 +117,10 @@ class PostgresCsvSeeder extends Seeder
             return;
         }
 
-        $header = fgetcsv($handle);
+        $header = fgetcsv($handle, escape: '\\');
         if (! $header) {
             fclose($handle);
+
             return;
         }
 
@@ -129,7 +132,7 @@ class PostgresCsvSeeder extends Seeder
         $batch = [];
         $chunkSize = 500;
 
-        while (($row = fgetcsv($handle)) !== false) {
+        while (($row = fgetcsv($handle, escape: '\\')) !== false) {
             if (count($row) !== count($header)) {
                 continue;
             }
@@ -160,17 +163,17 @@ class PostgresCsvSeeder extends Seeder
                 try {
                     DB::table($table)->insertOrIgnore($batch);
                 } catch (\Throwable $e) {
-                    $this->command->warn("Aviso ao inserir lote na tabela {$table}: " . $e->getMessage());
+                    $this->command->warn("Aviso ao inserir lote na tabela {$table}: ".$e->getMessage());
                 }
                 $batch = [];
             }
         }
 
-        if (! empty($batch)) {
+        if ($batch !== []) {
             try {
                 DB::table($table)->insertOrIgnore($batch);
             } catch (\Throwable $e) {
-                $this->command->warn("Aviso ao inserir último lote na tabela {$table}: " . $e->getMessage());
+                $this->command->warn("Aviso ao inserir último lote na tabela {$table}: ".$e->getMessage());
             }
         }
 

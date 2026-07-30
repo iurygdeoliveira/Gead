@@ -2,16 +2,20 @@
 
 namespace App\Filament\Resources\Students\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Students\StudentResource;
 use App\Filament\Resources\Students\Widgets\StudentsStats;
+use App\Models\Evaluation;
 use App\Models\Student;
+use App\Traits\Filament\HasFeedbackAction;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Facades\Filament;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;
 use Illuminate\Contracts\Database\Query\Builder;
+use Illuminate\Support\HtmlString;
+use Filament\Support\Icons\Heroicon;
 
 class ListStudents extends ListRecords
 {
@@ -24,20 +28,20 @@ class ListStudents extends ListRecords
     {
         return [
             CreateAction::make(),
-            \Filament\Actions\Action::make('bulk_dispense_evaluations')
+            Action::make('bulk_dispense_evaluations')
                 ->label('Dispensar Inativos')
-                ->icon('heroicon-o-archive-box-x-mark')
+                ->icon(Heroicon::OutlinedArchiveBoxXMark)
                 ->color('warning')
                 ->requiresConfirmation()
                 ->modalHeading('Dispensar alunos que não iniciaram avaliações')
-                ->modalDescription(function () {
-                    $teamId = \Filament\Facades\Filament::getTenant()?->getKey();
-                    
-                    $evalQuery = \App\Models\Evaluation::whereNotNull('planning_score');
+                ->modalDescription(function (): HtmlString {
+                    $teamId = Filament::getTenant()?->getKey();
+
+                    $evalQuery = Evaluation::whereNotNull('planning_score');
                     if ($teamId) {
                         $evalQuery->where('evaluations.team_id', $teamId);
                     }
-                    
+
                     $studentsWithEvaluationsIds = $evalQuery
                         ->join('class_enrollments', 'evaluations.class_enrollment_id', '=', 'class_enrollments.id')
                         ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
@@ -46,10 +50,10 @@ class ListStudents extends ListRecords
                         ->unique()
                         ->toArray();
 
-                    $studentsQuery = \App\Models\Student::where('is_dispensed_from_evaluations', false)
+                    $studentsQuery = Student::where('is_dispensed_from_evaluations', false)
                         ->whereNotIn('id', $studentsWithEvaluationsIds)
                         ->with('enrollments.course');
-                        
+
                     if ($teamId) {
                         $studentsQuery->where('team_id', $teamId);
                     }
@@ -64,8 +68,8 @@ class ListStudents extends ListRecords
                         }
                     }
 
-                    if (empty($breakdown)) {
-                        return new \Illuminate\Support\HtmlString('<p>Não há alunos elegíveis para dispensa no momento.</p>');
+                    if ($breakdown === []) {
+                        return new HtmlString('<p>Não há alunos elegíveis para dispensa no momento.</p>');
                     }
 
                     $html = '<p>Os seguintes alunos serão dispensados, divididos por curso:</p><ul>';
@@ -74,16 +78,16 @@ class ListStudents extends ListRecords
                     }
                     $html .= '</ul><br><p><strong>Atenção:</strong> Estes alunos não iniciaram nenhuma avaliação. Deseja continuar?</p>';
 
-                    return new \Illuminate\Support\HtmlString($html);
+                    return new HtmlString($html);
                 })
-                ->action(function () {
-                    $teamId = \Filament\Facades\Filament::getTenant()?->getKey();
-                    
-                    $evalQuery = \App\Models\Evaluation::whereNotNull('planning_score');
+                ->action(function (): void {
+                    $teamId = Filament::getTenant()?->getKey();
+
+                    $evalQuery = Evaluation::whereNotNull('planning_score');
                     if ($teamId) {
                         $evalQuery->where('evaluations.team_id', $teamId);
                     }
-                    
+
                     $studentsWithEvaluationsIds = $evalQuery
                         ->join('class_enrollments', 'evaluations.class_enrollment_id', '=', 'class_enrollments.id')
                         ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
@@ -92,16 +96,16 @@ class ListStudents extends ListRecords
                         ->unique()
                         ->toArray();
 
-                    $studentsQuery = \App\Models\Student::where('is_dispensed_from_evaluations', false)
+                    $studentsQuery = Student::where('is_dispensed_from_evaluations', false)
                         ->whereNotIn('id', $studentsWithEvaluationsIds);
-                        
+
                     if ($teamId) {
                         $studentsQuery->where('team_id', $teamId);
                     }
 
                     $count = $studentsQuery->update(['is_dispensed_from_evaluations' => true]);
 
-                    \Filament\Notifications\Notification::make()
+                    Notification::make()
                         ->title("{$count} alunos dispensados com sucesso!")
                         ->success()
                         ->send();

@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Users\Pages;
 
-use App\Traits\Filament\HasFeedbackAction;
-
 use App\Filament\Resources\Users\UserResource;
 use App\Filament\Resources\Users\Widgets\UsersStats;
 use App\Support\FilamentStatsCache;
+use App\Traits\Filament\HasFeedbackAction;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;

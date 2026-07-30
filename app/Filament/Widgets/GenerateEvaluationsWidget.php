@@ -149,13 +149,13 @@ class GenerateEvaluationsWidget extends BaseWidget
                 ->description('Ver lista de dispensados')
                 ->descriptionIcon(Heroicon::ExclamationCircle)
                 ->color('warning')
-                ->url(StudentResource::getUrl('index', ['activeTab' => 'dispensados'])),
+                ->url(StudentResource::getUrl('index', ['tab' => 'dispensados'])),
 
             Stat::make('Alunos sem Turma Vinculada', number_format($semTurmaCount, 0, ',', '.'))
                 ->description('Ver lista sem enturmação')
                 ->descriptionIcon(Heroicon::ExclamationTriangle)
                 ->color('danger')
-                ->url(StudentResource::getUrl('index', ['activeTab' => 'sem_turma'])),
+                ->url(StudentResource::getUrl('index', ['tab' => 'sem_turma'])),
         ];
     }
 }
