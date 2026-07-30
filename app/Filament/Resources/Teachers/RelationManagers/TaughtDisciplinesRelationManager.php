@@ -2,20 +2,19 @@
 
 namespace App\Filament\Resources\Teachers\RelationManagers;
 
+use App\Models\Course;
 use App\Models\CourseClass;
 use App\Models\CourseClassDiscipline;
 use App\Models\Discipline;
 use App\Models\Teacher;
+use App\Traits\Filament\NotificationsTrait;
+use Filament\Actions\Action;
 use Filament\Forms;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Filament\Notifications\Notification;
-use Filament\Actions\Action;
-use Filament\Schemas\Components\Utilities\Get;
-use App\Traits\Filament\NotificationsTrait;
 
 class TaughtDisciplinesRelationManager extends RelationManager
 {
@@ -26,7 +25,7 @@ class TaughtDisciplinesRelationManager extends RelationManager
     protected static ?string $title = 'Turmas e Disciplinas Ministradas';
 
     protected static ?string $modelLabel = 'Disciplina Ministrada';
-    
+
     protected static ?string $pluralModelLabel = 'Disciplinas Ministradas';
 
     public function form(Schema $schema): Schema
@@ -65,7 +64,7 @@ class TaughtDisciplinesRelationManager extends RelationManager
                     ->form([
                         Forms\Components\Select::make('course_id')
                             ->label('Curso')
-                            ->options(\App\Models\Course::pluck('name', 'id'))
+                            ->options(Course::pluck('name', 'id'))
                             ->live()
                             ->dehydrated(false),
                         Forms\Components\Select::make('period')
@@ -75,6 +74,7 @@ class TaughtDisciplinesRelationManager extends RelationManager
                                 if (! $courseId) {
                                     return CourseClass::pluck('entry_period', 'entry_period')->unique();
                                 }
+
                                 return CourseClass::where('course_id', $courseId)
                                     ->pluck('entry_period', 'entry_period')
                                     ->unique();

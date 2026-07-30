@@ -1,0 +1,787 @@
+id,uuid,name,email,team_id,user_id,created_at,updated_at,is_dispensed_from_evaluations
+3,4a1f5df0-f015-495d-b67c-7ca860eb3f0f,ALVARO BRANDAO OLIVEIRA,alvaro.oliveira2@estudante.ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29,FALSE
+4,3a66d417-9a97-427f-a60b-add6e45ecb87,Alvaro Lucas Araujo Delmond,alvaro.delmond@estudante.ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29,FALSE
+7,8b267419-7869-4f72-83c2-556d8e1fbc7f,Ana Beatriz Nascimento Resplandes de Araújo,ana.ara19@estudante.ifto.edu.br,1,,2026-06-23 23:34:30,2026-06-23 23:34:30,FALSE
+8,09c26857-c244-45a1-b495-1a709832aa5f,ANA CLARA LEITE DA SILVA,ana.silva191@estudante.ifto.edu.br,1,,2026-06-23 23:34:30,2026-06-23 23:34:30,FALSE
+10,6d2adf44-ef88-4a60-85c9-ffa590c56e44,Ana Káren Grangeiro Marques dos Santos,ana.santos103@estudante.ifto.edu.br,1,,2026-06-23 23:34:30,2026-06-23 23:34:30,FALSE
+16,f929bcee-05c2-4b40-a6d3-d58729d592dd,Antonio Henrique Sousa Alves,antonio.alves@estudante.ifto.edu.br,1,,2026-06-23 23:34:30,2026-06-23 23:34:30,FALSE
+17,8593e0b0-bab2-4ec1-8aae-af926f7b3093,ARTHUR CARREIRO DE AZEVEDO,arthur.azevedo@estudante.ifto.edu.br,1,,2026-06-23 23:34:30,2026-06-23 23:34:30,FALSE
+34,539d8155-a2a0-48fa-b142-cf95cca5107f,Emanuel Araújo Alves,emanuel.alves@estudante.ifto.edu.br,1,,2026-06-23 23:34:31,2026-06-23 23:34:31,FALSE
+38,5c0d4c3f-c083-4957-8a06-7661f142ce4d,Francisco Wemeson de Sá Oliveira,francisco.oliveira8@estudante.ifto.edu.br,1,,2026-06-23 23:34:31,2026-06-23 23:34:31,FALSE
+39,c5a4cb30-8899-45d0-898f-9bdd926d0581,Franciwelley Gonçalves Alves,franciwelley.alves@estudante.ifto.edu.br,1,,2026-06-23 23:34:31,2026-06-23 23:34:31,FALSE
+41,dca6a9f0-50c1-4d9c-bb2e-30818508ecbe,GABRIEL DA COSTA SOUSA,gabriel.sousa19@estudante.ifto.edu.br,1,,2026-06-23 23:34:32,2026-06-23 23:34:32,FALSE
+49,09bb9533-700b-4cfb-b9f3-c68cb1cd2424,Glória Lira de Oliveira,gloria.oliveira@estudante.ifto.edu.br,1,,2026-06-23 23:34:32,2026-06-23 23:34:32,FALSE
+51,c70e599c-63d8-4112-9612-c1852a46b1b1,Guilherme Silva,guilherme.silva33@estudante.ifto.edu.br,1,,2026-06-23 23:34:32,2026-06-23 23:34:32,FALSE
+54,d56abb58-d4ca-4f1c-9e1a-177531e255bc,HAILLA VITORIA SOARES CABRAL,hailla.cabral@estudante.ifto.edu.br,1,,2026-06-23 23:34:32,2026-06-23 23:34:32,FALSE
+26,d57c50e5-ed0e-457a-9e9a-d0f9def8dc9b,Danilo Gonçalves Araujo,danilo.araujo3@estudante.ifto.edu.br,1,18,2026-06-23 23:34:31,2026-06-24 03:12:04,FALSE
+1,60886721-d67f-46b6-94a6-376302124d69,Aira Pereira Sabóia,aira.saboia@estudante.ifto.edu.br,1,28,2026-06-23 23:34:29,2026-06-24 10:25:44,FALSE
+33,fadbf751-8019-4b3f-a5fe-88216cc0043c,EDUARDA SOUSA RIBEIRO,eduarda.ribeiro3@estudante.ifto.edu.br,1,33,2026-06-23 23:34:31,2026-06-24 11:13:17,FALSE
+30,3d2ee32c-d6ed-478b-a12b-fd77acff6253,Davi Soares Andrade Couto,davi.couto@estudante.ifto.edu.br,1,34,2026-06-23 23:34:31,2026-06-24 11:28:12,FALSE
+15,f03e8182-fae4-40f5-ba07-323fbc9e64b4,Anna Clara Sousa Santana,anna.santana2@estudante.ifto.edu.br,1,40,2026-06-23 23:34:30,2026-06-24 11:52:13,FALSE
+53,73b70065-31dd-4f78-8f4c-d655c4e4fbba,Gustavo Vinicius Oliveira Brandão,gustavo.brandao2@estudante.ifto.edu.br,1,44,2026-06-23 23:34:32,2026-06-24 12:17:03,FALSE
+37,d45a0683-ec84-4db1-a6f2-c003f890f63e,FELLIPE GOMES DA SILVA,fellipe.silva@estudante.ifto.edu.br,1,45,2026-06-23 23:34:31,2026-06-24 12:20:36,FALSE
+29,8a838ef3-94a4-45f2-98d8-ca2914e64486,Davi Pinheiro Dantas,davi.dantas@estudante.ifto.edu.br,1,65,2026-06-23 23:34:31,2026-06-24 12:51:08,FALSE
+40,ed19d038-c300-4f5c-bb55-3d891f5c4a01,Gabriela Lima Teixeira da Silva,gabriela.silva23@estudante.ifto.edu.br,1,67,2026-06-23 23:34:32,2026-06-24 12:51:40,FALSE
+47,0f56eed5-294d-4b23-9c47-916d625e5950,Gabryella Araujo Silva,gabryella.silva2@estudante.ifto.edu.br,1,70,2026-06-23 23:34:32,2026-06-24 12:55:52,FALSE
+31,422c7ea5-8ff5-4129-bc4c-2e8baa8caac9,DIOGO ARAUJO NUNES,diogo.nunes@estudante.ifto.edu.br,1,72,2026-06-23 23:34:31,2026-06-24 12:57:07,FALSE
+56,13a90dfb-c960-499c-875f-979124ea0250,HUGO PEREIRA DA SILVA,hugo.silva16@estudante.ifto.edu.br,1,78,2026-06-23 23:34:33,2026-06-24 13:08:58,FALSE
+23,6b876b51-c2f4-4559-b229-e5ebfdf338d3,Carlos Eduardo Santos de Sousa,carlos.sousa20@estudante.ifto.edu.br,1,93,2026-06-23 23:34:31,2026-06-24 13:52:23,FALSE
+27,a5d77027-dfd3-4112-b3f2-ef139b64dd8a,Davi Dias Marinho,davi.marinho@estudante.ifto.edu.br,1,103,2026-06-23 23:34:31,2026-06-24 15:01:20,FALSE
+42,6bf9797e-abee-449d-89b8-8527b00cb1dd,GABRIEL SAMPAIO DE SOUSA TEIXEIRA,gabriel.teixeira7@estudante.ifto.edu.br,1,106,2026-06-23 23:34:32,2026-06-24 16:42:10,FALSE
+50,ef87dd36-9f8b-4dda-94e8-7fa60a164b04,Guilherme Honorato Resplandes,guilherme.resplandes@estudante.ifto.edu.br,1,118,2026-06-23 23:34:32,2026-06-25 00:33:06,FALSE
+22,0d966cc5-4a26-452b-a86f-d29025a81e31,CALEBE SANTANA CHAVES,calebe.chaves@estudante.ifto.edu.br,1,121,2026-06-23 23:34:30,2026-06-25 13:40:39,FALSE
+18,b9023fb1-dd95-4274-9424-1958414871e1,Arthur Miranda Carvalho,arthur.carvalho3@estudante.ifto.edu.br,1,127,2026-06-23 23:34:30,2026-06-26 13:15:41,FALSE
+32,ba3cd8c5-7842-4787-97a8-12c583221f0d,Edilana Silva Oliveira,edilana.oliveira@estudante.ifto.edu.br,1,129,2026-06-23 23:34:31,2026-06-26 13:18:49,FALSE
+6,ba097f12-78f9-4c2e-8b6b-7b61e0cb573e,AMANDA RIBEIRO ANDRADE,amanda.andrade2@estudante.ifto.edu.br,1,145,2026-06-23 23:34:30,2026-06-26 14:30:49,FALSE
+11,2628a1ff-5a30-49f2-9c31-5da2734aa5d8,Ana Laura Oliveira Alves,ana.alves22@estudante.ifto.edu.br,1,153,2026-06-23 23:34:30,2026-06-26 16:38:54,FALSE
+36,5f85b499-2d1e-4f86-9bdf-b9de95e0f028,EVELYN AIRES GONÇALVES MAFRA,evelyn.mafra@estudante.ifto.edu.br,1,156,2026-06-23 23:34:31,2026-06-26 16:59:59,FALSE
+14,4aac06f7-dc1f-4e10-8e6c-cb8555e52f08,André Felipe Sales de Castro,andre.castro3@estudante.ifto.edu.br,1,159,2026-06-23 23:34:30,2026-06-26 19:44:25,FALSE
+45,4e55824f-584c-4275-84a9-a9517fabd266,Gabriel Sousa da Silva,gabriel.silva69@estudante.ifto.edu.br,1,166,2026-06-23 23:34:32,2026-06-26 22:12:52,FALSE
+20,bc61ab06-4bf9-4521-996a-5f171fc32190,Bernardo Coelho Ribeiro,bernardo.ribeiro@estudante.ifto.edu.br,1,170,2026-06-23 23:34:30,2026-06-27 00:48:14,FALSE
+25,5dcdfe73-de57-4d0b-9edd-e2387285c883,Christian Rios Santos,christian.santos3@estudante.ifto.edu.br,1,186,2026-06-23 23:34:31,2026-06-30 19:24:05,FALSE
+35,2c160136-9078-4f30-b01f-7e2f18f7fc04,Emanuel Oliveira Mendes,emanuel.mendes@estudante.ifto.edu.br,1,217,2026-06-23 23:34:31,2026-07-01 12:21:07,FALSE
+48,8a965b80-39d9-4acc-a58a-3aa33477459a,GEOVANA ESTER CAMPOS QUEIROZ,geovana.queiroz@estudante.ifto.edu.br,1,223,2026-06-23 23:34:32,2026-07-01 12:25:00,FALSE
+28,afd800f5-2029-439e-9aae-22ab59d67b28,DAVI MONTEIRO DA SILVA,davi.silva19@estudante.ifto.edu.br,1,225,2026-06-23 23:34:31,2026-07-01 12:28:57,FALSE
+12,d9950c50-cb68-477b-87f5-96fe4edab563,Ana Laura Sara Guedes de Carvalho,ana.carvalho26@estudante.ifto.edu.br,1,268,2026-06-23 23:34:30,2026-07-01 16:11:20,FALSE
+21,71a0f115-4427-46ba-97c2-4dbc8e385517,Bianca Maria Rodrigues Hashimoto,bianca.hashimoto@estudante.ifto.edu.br,1,276,2026-06-23 23:34:30,2026-07-02 13:14:19,FALSE
+5,e6b3794d-35d0-4c62-b612-0259b5364d25,AMANDA CRISTYNA ALVES MOURÃO,amanda.mourao2@estudante.ifto.edu.br,1,294,2026-06-23 23:34:29,2026-07-06 18:29:27,FALSE
+13,f53a57f6-97d5-412e-9927-734b42fda62b,Ana Luisa Rodrigues Miranda,ana.miranda5@estudante.ifto.edu.br,1,298,2026-06-23 23:34:30,2026-07-06 19:21:36,FALSE
+19,fc9bb003-256f-4039-a699-99ad21e728a0,Aurielly Carneiro Mendes,aurielly.mendes@estudante.ifto.edu.br,1,299,2026-06-23 23:34:30,2026-07-06 19:24:06,FALSE
+52,414de0d6-bede-4973-a50b-308f68ee8efd,Gustavo Ferreira Dias,gustavo.dias@estudante.ifto.edu.br,1,300,2026-06-23 23:34:32,2026-07-06 19:29:26,FALSE
+43,66bd083f-13ca-4bad-9488-e5a17b20103a,Gabriel Santos Rocha,gabriel.rocha9@estudante.ifto.edu.br,1,305,2026-06-23 23:34:32,2026-07-07 03:56:11,FALSE
+44,90696743-5c98-42c8-98f2-c6c7153ace9b,GABRIEL SIMÕES FERREIRA,gabriel.ferreira10@estudante.ifto.edu.br,1,306,2026-06-23 23:34:32,2026-07-07 10:28:33,FALSE
+57,e12a9c3c-9e0a-4a83-b0a6-5e9ada721451,Ian Gutieres Tupinambá Ferreira,ian.ferreira@estudante.ifto.edu.br,1,,2026-06-23 23:34:33,2026-06-23 23:34:33,FALSE
+60,e187413f-0ccb-4643-bc88-a9b990343abb,Isabela Cristine Silva da Costa,isabela.costa2@estudante.ifto.edu.br,1,,2026-06-23 23:34:33,2026-06-23 23:34:33,FALSE
+65,0b91589f-0a41-41ea-888d-624e92f9ef97,Jheymes Luis Ferreira Brito,jheymes.brito@estudante.ifto.edu.br,1,,2026-06-23 23:34:33,2026-06-23 23:34:33,FALSE
+66,f68e47cd-3053-4921-82bd-34853f069421,João Antonio Costa Resende,joao.resende2@estudante.ifto.edu.br,1,,2026-06-23 23:34:33,2026-06-23 23:34:33,FALSE
+70,a6000d24-ab68-45b2-9b94-44c2a48644c4,João Gabriel Ferreira Castro,joao.castro11@estudante.ifto.edu.br,1,,2026-06-23 23:34:33,2026-06-23 23:34:33,FALSE
+72,09613371-6744-4ae3-bc1c-8bd5d34c5a9b,João Gabryel Dias Santos,joao.santos53@estudante.ifto.edu.br,1,,2026-06-23 23:34:33,2026-06-23 23:34:33,FALSE
+75,d1def1d1-d5e0-4e6a-94d7-3348f35ca5d4,João Paulo Sousa Silva,joao.silva109@estudante.ifto.edu.br,1,,2026-06-23 23:34:34,2026-06-23 23:34:34,FALSE
+76,6a2b7379-a60c-4274-a2f7-5339ff568074,JOÃO PEDRO ALVES DE OLIVEIRA,joao.oliveira40@estudante.ifto.edu.br,1,,2026-06-23 23:34:34,2026-06-23 23:34:34,FALSE
+80,70a1415c-790f-4600-861d-9b5f3bd2caf6,Jorge Davi Guedes Cavalcante,jorge.cavalcante@estudante.ifto.edu.br,1,,2026-06-23 23:34:34,2026-06-23 23:34:34,FALSE
+81,3d64ba11-e56d-429e-bf01-3b7581135ded,José Artur Sousa Gaspar,jose.gaspar2@estudante.ifto.edu.br,1,,2026-06-23 23:34:34,2026-06-23 23:34:34,FALSE
+83,3414e7ed-0ff5-4ee1-a5cb-890d03bb26f9,Juliana Fernandes Lustosa,juliana.lustosa@estudante.ifto.edu.br,1,,2026-06-23 23:34:34,2026-06-23 23:34:34,FALSE
+84,79bea17c-0df4-4678-b171-4606e042e04f,Juliana Gonçalves Matos,juliana.matos2@estudante.ifto.edu.br,1,,2026-06-23 23:34:34,2026-06-23 23:34:34,FALSE
+85,3d78915d-be6a-4642-b0c1-5a05ea04af14,Juliana Lima Rodrigues,juliana.rodrigues5@estudante.ifto.edu.br,1,,2026-06-23 23:34:34,2026-06-23 23:34:34,FALSE
+91,3dfe7b9f-52a0-48c7-b492-57b19e453d05,Kauã Almeida Araújo,kaua.araujo3@estudante.ifto.edu.br,1,,2026-06-23 23:34:35,2026-06-23 23:34:35,FALSE
+95,8a574519-3333-41ae-831e-2075c4ccf133,KEYLLA HONORATO DIAS VIEIRA,keylla.vieira@estudante.ifto.edu.br,1,,2026-06-23 23:34:35,2026-06-23 23:34:35,FALSE
+98,efeb528c-34b3-4acf-a28e-8813067afc77,Lara Sousa Matos,lara.matos@estudante.ifto.edu.br,1,,2026-06-23 23:34:35,2026-06-23 23:34:35,FALSE
+99,9579c7db-6db4-487a-9d31-7f950fb23e15,Lara Sthefany Coimbra Araujo,lara.araujo@estudante.ifto.edu.br,1,,2026-06-23 23:34:35,2026-06-23 23:34:35,FALSE
+100,d890e048-ba0c-4c67-87f3-af05e35cd767,Laura Stphanny Fernandes Melo,laura.melo2@estudante.ifto.edu.br,1,,2026-06-23 23:34:35,2026-06-23 23:34:35,FALSE
+101,57cfb75b-0ad3-441e-86c3-d5be8305ee05,Lavínia Fernandes Prata,lavinia.prata@estudante.ifto.edu.br,1,,2026-06-23 23:34:35,2026-06-23 23:34:35,FALSE
+102,277d016c-c29b-4a51-8689-62b201848d0f,Leandro Gabriel de Souza Felipe,leandro.felipe@estudante.ifto.edu.br,1,,2026-06-23 23:34:35,2026-06-23 23:34:35,FALSE
+90,5d32d6b0-7033-4dbb-b911-88a83763bb42,Kamily Rodrigues da Silva,kamily.silva@estudante.ifto.edu.br,1,16,2026-06-23 23:34:35,2026-06-24 02:42:52,FALSE
+78,a9951695-e22e-4f49-a57e-a9ccc70b05d6,João Pedro Medeiros Leonez,joao.leonez@estudante.ifto.edu.br,1,21,2026-06-23 23:34:34,2026-06-24 09:04:31,FALSE
+105,5bad9941-02ab-4bf8-a950-f53f3692e150,Lorena Barros Moreira,lorena.moreira@estudante.ifto.edu.br,1,30,2026-06-23 23:34:36,2026-06-24 10:43:16,FALSE
+113,b197a4aa-0cae-4dac-86ea-b9b59cf5395b,Luiz Carlos Sousa Ribeiro,luiz.ribeiro3@estudante.ifto.edu.br,1,31,2026-06-23 23:34:36,2026-06-24 10:52:34,FALSE
+111,aa3e60dc-fbc9-463b-b911-c555714bf0a6,Ludmilla Melo Araujo,ludmilla.araujo3@estudante.ifto.edu.br,1,43,2026-06-23 23:34:36,2026-06-24 12:05:07,FALSE
+59,bcfce654-e1ab-4894-bc0a-93ab8c63b39e,ISAAC FREITAS PAJEÚ,isaac.pajeu@estudante.ifto.edu.br,1,66,2026-06-23 23:34:33,2026-06-24 12:51:17,FALSE
+97,51f186dc-18e9-425a-adff-7d6eaecfd06c,Lara Isabely Padilha Machado,lara.machado@estudante.ifto.edu.br,1,74,2026-06-23 23:34:35,2026-06-24 12:59:19,FALSE
+73,45ed1294-6339-4b22-8fc6-9d792947d01b,João Guilherme Ferraz de Sousa,joao.sousa43@estudante.ifto.edu.br,1,85,2026-06-23 23:34:34,2026-06-24 13:26:24,FALSE
+106,e640dc63-24c7-402b-965e-bf8beea4dafa,Lourenço Lucas Frazão da Silva,lourenco.silva@estudante.ifto.edu.br,1,86,2026-06-23 23:34:36,2026-06-24 13:28:17,FALSE
+103,53f786b5-8f91-4103-bc73-e6da1d6bd831,LENYSON RODRIGUES DE OLIVEIRA MACÊDO,lenyson.macedo@estudante.ifto.edu.br,1,88,2026-06-23 23:34:35,2026-06-24 13:33:35,FALSE
+79,e7c63931-97b0-4fcf-aa42-2f0fdf944bc0,Jônatas Rodrigues Zaniboni,jonatas.zaniboni@estudante.ifto.edu.br,1,104,2026-06-23 23:34:34,2026-06-24 16:00:03,FALSE
+63,21f499a8-efb4-4987-9ef2-24e92a730872,ISADORA RIBEIRO,isadora.ribeiro3@estudante.ifto.edu.br,1,109,2026-06-23 23:34:33,2026-06-24 17:52:43,FALSE
+94,dbd04a18-910c-4796-b4e5-6c225fe0e28e,Kayky Nunes de Amorim,kayky.amorim@estudante.ifto.edu.br,1,113,2026-06-23 23:34:35,2026-06-24 19:43:42,FALSE
+69,33a3a7e7-dfb1-49d0-b419-e96aeeecbf8a,João Gabriel Costa de Almeida,joao.almeida14@estudante.ifto.edu.br,1,116,2026-06-23 23:34:33,2026-06-24 22:54:54,FALSE
+82,6fbf6602-37a6-4140-af11-209639db9537,Júlia Martins Lima,julia.lima7@estudante.ifto.edu.br,1,119,2026-06-23 23:34:34,2026-06-25 00:44:19,FALSE
+110,6ab3b99c-83bf-4e74-b1f7-ce9395850acc,Lucas Pinheiro de Souza Figueira,lucas.figueira@estudante.ifto.edu.br,1,154,2026-06-23 23:34:36,2026-06-26 16:54:00,FALSE
+108,f5844e49-09b8-41ab-a8b6-8c2aeb76b30a,Lucas Cantuares Leite da Silva,lucas.silva85@estudante.ifto.edu.br,1,157,2026-06-23 23:34:36,2026-06-26 17:36:58,FALSE
+68,aef1aede-939d-4764-ab93-a0b22e4b355f,JOÃO ARTHUR LOPES PEDROSA,joao.pedrosa@estudante.ifto.edu.br,1,163,2026-06-23 23:34:33,2026-06-26 21:37:32,FALSE
+64,bc8cfef6-84e0-4a79-a7a7-393c83070055,Isaias Soares Costa,isaias.costa@estudante.ifto.edu.br,1,164,2026-06-23 23:34:33,2026-06-26 22:08:56,FALSE
+77,1bb07a81-e2fb-4436-8c22-3b279006ccbc,João Pedro Costa Araújo,joao.araujo28@estudante.ifto.edu.br,1,169,2026-06-23 23:34:34,2026-06-26 23:46:49,FALSE
+58,43fcef53-843e-4bcf-a7cf-2decfe5c4560,Ily Vitória da Luz Soares,ily.soares@estudante.ifto.edu.br,1,177,2026-06-23 23:34:33,2026-06-29 14:12:09,FALSE
+107,146d4b65-c161-4499-9828-5da518c1d3ae,LUANA GOMES LIMA,luana.lima4@estudante.ifto.edu.br,1,180,2026-06-23 23:34:36,2026-06-29 22:37:14,FALSE
+86,d17d90fa-9f97-48df-bb4c-8440d39eedf3,Julia Oliveira Alencar,julia.alencar@estudante.ifto.edu.br,1,182,2026-06-23 23:34:34,2026-06-30 19:19:26,FALSE
+109,2a961aa4-0985-4b02-8a19-8b4470a7dce6,Lucas de Sousa Coelho,lucas.coelho4@estudante.ifto.edu.br,1,189,2026-06-23 23:34:36,2026-06-30 19:32:46,FALSE
+92,ebfd35e7-7a6e-4be6-82c2-d1c60f019a2e,Kauan Bruno da Silva,kauan.silva7@estudante.ifto.edu.br,1,190,2026-06-23 23:34:35,2026-06-30 19:54:33,FALSE
+89,72e76543-1de7-4010-89f0-b68cd3519c34,Kamila Beatriz Aires do Amaral,kamila.amaral@estudante.ifto.edu.br,1,195,2026-06-23 23:34:35,2026-06-30 21:47:38,FALSE
+104,5d6c1ce7-8608-49c2-8552-b86c1f138121,Letícia Graziele Oliveira Silva,leticia.silva24@estudante.ifto.edu.br,1,267,2026-06-23 23:34:35,2026-07-01 16:07:13,FALSE
+96,9758407c-b16e-4695-9d7d-0448f54ae338,Kinberly Lopes dos Santos,kinberly.santos@estudante.ifto.edu.br,1,279,2026-06-23 23:34:35,2026-07-02 19:34:39,FALSE
+74,1815d4c5-41e1-46df-a376-95bbb75b92f8,João Guilherme Martins Cardoso,joao.cardoso5@estudante.ifto.edu.br,1,282,2026-06-23 23:34:34,2026-07-03 18:01:13,FALSE
+62,c507aacf-adce-4350-af24-4f40345e9b75,ISADORA RESPLANDES SILVA,isadora.silva8@estudante.ifto.edu.br,1,292,2026-06-23 23:34:33,2026-07-06 18:25:02,FALSE
+71,22d6855e-76c6-4502-9ec3-9d2d3b8519c2,João Gabriel Nunes de Carvalho,joao.carvalho22@estudante.ifto.edu.br,1,301,2026-06-23 23:34:33,2026-07-06 19:32:31,FALSE
+88,bee11b66-259e-497d-aef2-b13bd8a22947,Kalebe Castro Torres,kalebe.torres@estudante.ifto.edu.br,1,308,2026-06-23 23:34:34,2026-07-07 13:33:26,FALSE
+114,80147051-961f-4f65-bb3d-d9abea912ce4,Luiz Felipe da Costa Castilho,luiz.castilho@estudante.ifto.edu.br,1,,2026-06-23 23:34:36,2026-06-23 23:34:36,FALSE
+116,64a32b7f-2481-42b3-8eba-52f83abfdbff,Luiz Gustavo de Sousa Coelho Martins,luiz.martins3@estudante.ifto.edu.br,1,,2026-06-23 23:34:36,2026-06-23 23:34:36,FALSE
+118,c1739c55-9318-48df-97de-533908da1a77,MARCOS OTAVIO AMORIM DA SILVA,marcos.silva81@estudante.ifto.edu.br,1,,2026-06-23 23:34:36,2026-06-23 23:34:36,FALSE
+124,0aaf4090-cf96-46ec-b533-ee4a54f9a954,Maria Eduarda Monteiro da Silva Santos,maria.santos128@estudante.ifto.edu.br,1,,2026-06-23 23:34:37,2026-06-23 23:34:37,FALSE
+125,63a7d0ed-a102-4af9-a31c-69848ea4f223,Maria Eduarda Silva dos Anjos,maria.anjos@estudante.ifto.edu.br,1,,2026-06-23 23:34:37,2026-06-23 23:34:37,FALSE
+127,65fce42f-5461-46ae-8483-5be87d55cf13,MARIAH EDUARDA RODRIGUES DOS SANTOS,mariah.santos@estudante.ifto.edu.br,1,,2026-06-23 23:34:37,2026-06-23 23:34:37,FALSE
+128,c0975efb-d0d5-4efe-a3fd-4b7753b93cf2,Maria Isabela Aparecida Nunes Cunha,maria.cunha9@estudante.ifto.edu.br,1,,2026-06-23 23:34:37,2026-06-23 23:34:37,FALSE
+136,d83d9e1e-88d6-44e3-b4bf-3f6c796030db,Miguel Costa Pereira Brito,miguel.brito@estudante.ifto.edu.br,1,,2026-06-23 23:34:37,2026-06-23 23:34:37,FALSE
+142,ed9a483c-c6df-437f-8405-6ac4f4ef9782,NICOLLY RIBEIRO SOUZA,nicolly.souza@estudante.ifto.edu.br,1,,2026-06-23 23:34:38,2026-06-23 23:34:38,FALSE
+146,ced99693-0fe1-4ee5-af73-8ce06099b0f4,Renan Pablo Lima Silva,renan.silva8@estudante.ifto.edu.br,1,,2026-06-23 23:34:38,2026-06-23 23:34:38,FALSE
+148,d9525ab5-d5b0-431a-b803-782a7255b050,Rhuan Pablo Mendes de Sousa,rhuan.sousa2@estudante.ifto.edu.br,1,,2026-06-23 23:34:38,2026-06-23 23:34:38,FALSE
+149,5f8a4726-0379-4f4d-a0fb-c7fb004fc19f,Riquelmy Kauã costa Soares,riquelmy.soares@estudante.ifto.edu.br,1,,2026-06-23 23:34:38,2026-06-23 23:34:38,FALSE
+154,7c8cf2d4-e2b4-45ca-b051-7465b4667a93,Samuel do Nascimento Gomes,samuel.gomes6@estudante.ifto.edu.br,1,,2026-06-23 23:34:38,2026-06-23 23:34:38,FALSE
+165,86408dad-6590-44e2-952c-3ccc9cdbaa70,SOFIA OLIVEIRA LIMA,sofia.lima2@estudante.ifto.edu.br,1,,2026-06-23 23:34:39,2026-06-23 23:34:39,FALSE
+168,49e2038d-d8a9-4a91-a35b-7bd98e1b4540,SOPHYA VIDAL PEREIRA DOS SANTOS,sophya.santos2@estudante.ifto.edu.br,1,,2026-06-23 23:34:39,2026-06-23 23:34:39,FALSE
+163,e9f9860f-566f-4110-b8ac-ec6480dd1493,Sofia Catarina Rodrigues Ferreira,sofia.ferreira@estudante.ifto.edu.br,1,14,2026-06-23 23:34:39,2026-06-24 02:30:38,FALSE
+143,06c419df-fbed-4ec1-8eb9-260e225643ff,Paulo Eduardo Biliu Ferraz,paulo.ferraz2@estudante.ifto.edu.br,1,19,2026-06-23 23:34:38,2026-06-24 08:48:34,FALSE
+155,a6331ff7-9d1b-47c8-81dd-06027c2c737c,Samuel Leal Mendes,samuel.mendes3@estudante.ifto.edu.br,1,20,2026-06-23 23:34:39,2026-06-24 08:59:23,FALSE
+117,164624a2-3253-43b9-811c-2d3901ae6221,Marco Antônio Moreira Versiani,marco.versiani@estudante.ifto.edu.br,1,22,2026-06-23 23:34:36,2026-06-24 09:38:11,FALSE
+150,70bd27d0-94e6-42d8-87b7-dfdb38063099,Sabrina Oliveira Silva,sabrina.silva11@estudante.ifto.edu.br,1,25,2026-06-23 23:34:38,2026-06-24 10:23:30,FALSE
+121,d24e7959-7486-455b-a526-35bd104c0f7e,Maria Cecilia de Vasconcelos Cunha Agostinho,maria.agostinho@estudante.ifto.edu.br,1,26,2026-06-23 23:34:36,2026-06-24 10:24:41,FALSE
+167,18b2d023-e1f7-4d16-a884-fe4701cc22c8,Sophia Silva de Abreu,sophia.abreu@estudante.ifto.edu.br,1,27,2026-06-23 23:34:39,2026-06-24 10:25:14,FALSE
+137,2fdb00e0-1000-4a0a-b529-f2bda4985b18,Miguel Lima Miranda,miguel.miranda3@estudante.ifto.edu.br,1,32,2026-06-23 23:34:37,2026-06-24 11:06:12,FALSE
+162,9e2c7316-3928-417d-bbc4-93eb41af9f50,Sofia Alencar Sousa,sofia.sousa4@estudante.ifto.edu.br,1,35,2026-06-23 23:34:39,2026-06-24 11:31:39,FALSE
+152,50b9373e-c155-492e-b272-b43e2774f45d,Salma Lima Santos,salma.santos@estudante.ifto.edu.br,1,83,2026-06-23 23:34:38,2026-06-24 13:21:32,FALSE
+129,ee73087e-8572-4fbb-a998-92920c6ecdd6,MARIA VITTÓRIA MUNIZ SILVA,maria.silva325@estudante.ifto.edu.br,1,87,2026-06-23 23:34:37,2026-06-24 13:29:01,FALSE
+145,e68f98cb-57b9-466e-827e-795897ec168a,Rafaella Borges Simão Santana,rafaella.santana2@estudante.ifto.edu.br,1,90,2026-06-23 23:34:38,2026-06-24 13:44:40,FALSE
+138,8f1fb0c6-be60-40d4-8653-895b060c2a91,Nathan Sousa Lima,nathan.lima@estudante.ifto.edu.br,1,95,2026-06-23 23:34:37,2026-06-24 13:59:51,FALSE
+134,25bb3735-413a-4522-bbd1-a28cd7634b22,Miguel Antônio Gonçalves,miguel.goncalves@estudante.ifto.edu.br,1,99,2026-06-23 23:34:37,2026-06-24 14:07:04,FALSE
+131,a70cf321-3a56-420a-bc35-367546b86575,Maryana Rodrigues Leal,maryana.leal@estudante.ifto.edu.br,1,108,2026-06-23 23:34:37,2026-06-24 17:22:18,FALSE
+140,cd44c80a-5835-4510-8f51-72d9729f79d6,Nicolas do Nascimento Carvalho,nicolas.carvalho@estudante.ifto.edu.br,1,115,2026-06-23 23:34:38,2026-06-24 22:18:18,FALSE
+164,cf3ebde3-bcf2-45c4-aa77-baa6126a300c,Sofia Neves Lucena Rocha,sofia.rocha2@estudante.ifto.edu.br,1,117,2026-06-23 23:34:39,2026-06-25 00:32:54,FALSE
+123,a3a8296c-f45b-4da5-a190-1c14b6809f5f,MARIA EDUARDA ALVES DA SILVA,maria.silva321@estudante.ifto.edu.br,1,130,2026-06-23 23:34:37,2026-06-26 13:18:52,FALSE
+130,fd248e51-74aa-4367-bad0-6b834100949f,MARINA BORGES RODRIGUES,marina.rodrigues4@estudante.ifto.edu.br,1,137,2026-06-23 23:34:37,2026-06-26 13:47:44,FALSE
+144,b4e475d6-d85d-4490-ac67-4933ba0808ac,Pedro Filho Cardoso de Sousa,pedro.sousa20@estudante.ifto.edu.br,1,141,2026-06-23 23:34:38,2026-06-26 14:02:01,FALSE
+158,1bd5ae26-fbd9-4021-ad02-372d6056e5af,Samuel Orione Santos Lima,samuel.lima10@estudante.ifto.edu.br,1,151,2026-06-23 23:34:39,2026-06-26 16:35:49,FALSE
+161,99465074-0b52-4ad6-8496-618cb79e1331,Satori de Araújo Ogai,satori.ogai@estudante.ifto.edu.br,1,152,2026-06-23 23:34:39,2026-06-26 16:37:02,FALSE
+119,81a41f07-2b1f-4bf6-9d61-291243576576,Marcos Welb Veloso de Andrade,marcos.andrade@estudante.ifto.edu.br,1,160,2026-06-23 23:34:36,2026-06-26 20:19:48,FALSE
+147,d9d0e8fe-1374-48ee-822a-3d7ef54720da,Renilson Soares dos Santos,renilson.santos@estudante.ifto.edu.br,1,167,2026-06-23 23:34:38,2026-06-26 22:42:37,FALSE
+169,99786c5b-5ed8-40d3-a0fb-f85d74d5e93c,Talita Araujo de Carvalho,talita.carvalho2@estudante.ifto.edu.br,1,168,2026-06-23 23:34:39,2026-06-26 22:48:09,FALSE
+115,2df7fdc8-21eb-43d9-88eb-68836cca79d7,Luiz Filipe Silva De Paula,luiz.paula@estudante.ifto.edu.br,1,183,2026-06-23 23:34:36,2026-06-30 19:20:39,FALSE
+126,2849b545-0511-4d07-b879-7f314754d513,Maria Eduarda Stelare Caitano,maria.caitano@estudante.ifto.edu.br,1,191,2026-06-23 23:34:37,2026-06-30 19:55:04,FALSE
+135,9958a19d-4dde-46ba-a282-4103712d4eff,Miguel Arcanjo Alves de Sousa Martins,miguel.martins@estudante.ifto.edu.br,1,193,2026-06-23 23:34:37,2026-06-30 20:12:13,FALSE
+157,d61a2a08-a1b5-47f5-8dad-0cfc05ce6aa5,Samuel Magalhães Vasconcelos,samuel.vasconcelos@estudante.ifto.edu.br,1,194,2026-06-23 23:34:39,2026-06-30 21:00:30,FALSE
+132,8695ae8c-de60-4f79-885c-0bb7c9d21efb,Mayla Eduarda de Araújo Vieira,mayla.vieira@estudante.ifto.edu.br,1,214,2026-06-23 23:34:37,2026-07-01 12:20:27,FALSE
+159,052e12da-3503-4838-80f4-d65ec8958c29,Sarah Badaró Fonseca,sarah.fonseca2@estudante.ifto.edu.br,1,243,2026-06-23 23:34:39,2026-07-01 13:54:40,FALSE
+120,0c960701-7126-48c8-bf2b-04bd63da0353,MARCUS RODRIGO GONÇALVES ALMEIDA,marcus.almeida2@estudante.ifto.edu.br,1,245,2026-06-23 23:34:36,2026-07-01 14:15:50,FALSE
+160,d33026c3-5e5d-47a0-a2ec-6af16481d5d0,Sara Ribeiro Da Silva,sara.silva22@estudante.ifto.edu.br,1,289,2026-06-23 23:34:39,2026-07-05 01:57:01,FALSE
+151,addfacb9-ee2d-40ae-99f4-b857695a1c4e,Saimon Paiva Alves,saimon.alves@estudante.ifto.edu.br,1,297,2026-06-23 23:34:38,2026-07-06 19:19:15,FALSE
+122,2759e6a1-87ca-43e0-9ab5-f57f893ad595,Maria Clara Ribeiro Martins,maria.martins15@estudante.ifto.edu.br,1,307,2026-06-23 23:34:37,2026-07-07 12:52:47,FALSE
+139,e8886763-e872-444c-8911-bbd02197c4de,Nicolas Américo dos Reis,nicolas.reis@estudante.ifto.edu.br,1,316,2026-06-23 23:34:38,2026-07-12 21:17:16,FALSE
+171,ce1abd22-30f7-4cb8-8a8e-5aa711fdcded,Thayla Gabriella da Costa Castelo Branco,thayla.branco@estudante.ifto.edu.br,1,,2026-06-23 23:34:39,2026-06-23 23:34:39,FALSE
+173,e1b21819-d57b-4a71-a119-bd55bb2aa57a,Theo de Sousa Barros,theo.barros@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+174,8895934f-b875-4ac8-99ad-93fb09692585,Thiago Bonfim Gama de Sena,thiago.sena2@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+175,e5a3fc6d-503a-42b2-b2b5-38d261a3f6f7,Thiago Kass Sousa,thiago.sousa14@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+177,11b5297f-9b86-4843-b5ff-b3cca74b59e4,Valentina Melo Paixão,valentina.paixao@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+182,7c9d935c-fad3-4335-aabc-d470e9a04317,Thayla Ayla Barbosa Pereira De Sousa (Victor Ycaro Barbosa Pereira de Sousa),thayla.sousa2@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+183,313e22a2-b2b3-4860-a13b-22b69c10480a,VINICIUS AZEVEDO DA SILVA BELEM,vinicius.belem@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+184,74fc24b7-f575-45b0-a10a-71c296f45783,Vinícius Batista Magalhães,vinicius.magalhaes@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+188,56c1ff8d-c1c4-42a4-b7ad-5ac86eddbb28,Wemerson Rodrigues Santana,wemerson.santana@estudante.ifto.edu.br,1,,2026-06-23 23:34:40,2026-06-23 23:34:40,FALSE
+189,cf7083c5-98bf-43f9-879c-f7fe6410e64b,WICTOR ALEXANDRE CASTRO ALMEIDA,wictor.almeida@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+193,7bda8e8c-4f6e-4645-86b8-0d132e2b40c3,Abraim Araújo Coimbra,abraim.coimbra@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+194,32447663-7c1c-46b6-948b-e7d01af5e118,Adriel Sandes Américo,adriel.americo@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+195,ff4c377f-5856-4bba-b3fc-999bb3ab293e,Albert Leite Resplandes,albert.resplandes@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+196,865348a7-deb3-444b-918f-fe53d0343df3,Albert Soares Martins,,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+197,5d2a704c-76fa-49a5-8908-99e238fc4121,ALEXANDRE WILLIAN OLIVEIRA SANTOS,alexandre.santos8@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+198,9be31d41-328a-4111-86f2-ce3356a0f099,Allan Batista do Nascimento,allan.nascimento2@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+199,170936e1-401b-4173-8989-c921116ea321,ALLAN PERICLES DA SILVA PADILHA,allan.padilha@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+200,06ea38a9-2f68-4758-bbfc-b0c295201df8,ANA CAROLINE DA SILVA SOARES,ana.soares13@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+201,12848c82-dd71-42b9-87f0-97cec3a19b34,Ana Claúdia Carvalho Sousa de Oliveira,ana.sousa15@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+202,3dac54b6-6eee-4799-90a9-ab088a9de476,André Couto Machado,andre.machado2@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+203,4f3ecd55-a15a-4d4c-bc7e-f4a84596c836,Andre Victor Matos de Carvalho,,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+204,6cab9c57-987a-4d6e-aa77-2ab0dbc6dbe0,Anny Carolinny Lopes Nascimento,anny.nascimento@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+205,ba38643d-b524-40da-998b-8a0e12decadf,Antônio Júnior Silva Barros,antonio.barros3@estudante.ifto.edu.br,1,,2026-06-23 23:34:41,2026-06-23 23:34:41,FALSE
+206,6b0008b7-e537-4dbc-9829-839ff9b9b412,Arthur Bernardo Silva de Cordova,arthur.cordova@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+208,d72f19ef-d53d-4f98-bf0c-9cd3ca9bc6b6,Arthur Coelho Saraiva,arthur.saraiva@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+209,4c7b4e6f-7f19-4fef-8074-9c3db9be58c4,Arthur de Pinho Costa,arthur.costa8@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+210,a5591436-f762-4dc1-8ef9-7df1b55396b2,Arthur Ribeiro Aguiar,arthur.aguiar3@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+211,a2a7294f-1a69-43b0-9ac0-583af778e967,Asaffe de Souza Gonçalves,asaffe.goncalves@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+212,eac77ad5-78b4-4727-9edc-f16e829f9ea5,Augusto Miguel da Silva Souza,augusto.souza@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+213,256871c9-d436-4136-b4dc-d09b82f53619,Aurilene Soares,,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+214,c930aaf6-0530-4c57-8cb3-dac6080cf5c2,BEATRIZ COELHO DOS SANTOS,beatriz.santos10@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+215,9209bda2-27ef-42a1-be55-df88922eda97,Beatriz Costa Vidal,,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+216,519acf5f-d3f8-44c1-90e3-5963825a1baa,Bruno di Luca da Silva Pereira,bruno.pereira8@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+217,30f708b9-25a0-4587-896e-66ccd265a250,Caio Almeida dos Santos,caio.santos4@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+218,282101ac-4242-4924-8a24-e7ad873c91c2,Carlos Henrique da Silva Sousa,carlos.sousa22@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+219,72d1e7b3-a5ec-4b0c-b2ad-a7f9786eb3a6,CARLOS ZÉTTI SILVA SOUSA,carlos.sousa28@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+220,242d1b92-8022-47d9-b91a-56910c82a569,Carolina Ferreira Teixeira de Araújo,carolina.araujo2@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+221,ea8f72cb-aa0b-4e62-95f5-005482aaae08,Danilo Borges Leão,danilo.leao2@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+222,1996373f-ea69-4741-b9cb-50e81f55f7eb,Davylla Lorrany Borges Silva,davylla.silva@estudante.ifto.edu.br,1,,2026-06-23 23:34:42,2026-06-23 23:34:42,FALSE
+224,3d9afd94-48fb-415b-a397-95edbf1340aa,DOUGLAS LUZ DE OLIVEIRA CARVALHO,douglas.carvalho2@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+225,94e743e6-6bec-4b87-b626-f1ccb05df77d,Edson Siqueira Silva Junior,edson.junior8@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+226,af4547fb-ba5b-48f8-8ff8-1c431e236313,Elias Victor Marques Lima,elias.lima@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+178,d4941484-15b7-46ac-a49b-e9c345c11ab9,Valentina Vasconcelos Rosado,valentina.rosado@estudante.ifto.edu.br,1,59,2026-06-23 23:34:40,2026-06-24 12:44:08,FALSE
+180,3b351ffc-898c-4c77-84d3-1406b35f83a7,Victor Gabriel Sousa Silva,victor.silva31@estudante.ifto.edu.br,1,92,2026-06-23 23:34:40,2026-06-24 13:51:00,FALSE
+191,02dac4e2-a9d8-4f8b-b249-9996701c171b,Yasmin Morais Cardoso,yasmin.cardoso@estudante.ifto.edu.br,1,94,2026-06-23 23:34:41,2026-06-24 13:59:24,FALSE
+192,4abea6df-ef31-4993-b69d-0476e810a58f,Yzadora Soares Dos Santos,yzadora.santos@estudante.ifto.edu.br,1,98,2026-06-23 23:34:41,2026-06-24 14:04:21,FALSE
+187,b5e6a580-8c31-4eef-8bb7-694f9c694597,WEMERSON JÚNIOR COSTA MOREIRA,wemerson.moreira2@estudante.ifto.edu.br,1,128,2026-06-23 23:34:40,2026-06-26 13:16:37,FALSE
+181,0a4ae62a-5e98-48f7-9a20-a4c16d995ab7,VICTOR SAMUEL DA SILVA MARQUES,victor.marques3@estudante.ifto.edu.br,1,158,2026-06-23 23:34:40,2026-06-26 18:54:19,FALSE
+185,f3135828-7f20-451b-8729-88227772372c,Vitória Santiago da Silva,vitoria.silva20@estudante.ifto.edu.br,1,184,2026-06-23 23:34:40,2026-06-30 19:22:36,FALSE
+223,ef5b0add-4915-4e3d-bafc-7421ddd84075,Diego Jardim Mota,diego.mota@estudante.ifto.edu.br,1,233,2026-06-23 23:34:43,2026-07-01 12:58:49,FALSE
+172,26787610-52e7-4c2d-be1f-249da34276ed,Thayna Ibiapino Rodrigues,thayna.rodrigues@estudante.ifto.edu.br,1,263,2026-06-23 23:34:40,2026-07-01 15:21:18,FALSE
+179,3aa3a16c-0166-4133-97b4-83ddc5dc9735,Victor Alexandre Inacio da silva,victor.silva30@estudante.ifto.edu.br,1,295,2026-06-23 23:34:40,2026-07-06 18:36:37,FALSE
+170,eaed7317-fcb7-4b11-80da-414c218dcc1d,Thalisson Soares Barbosa,thalisson.barbosa@estudante.ifto.edu.br,1,296,2026-06-23 23:34:39,2026-07-06 18:53:39,FALSE
+186,dfd367f1-a695-41e9-95ce-1087877c4b2a,Vitória Teles Pimentel,vitoria.pimentel2@estudante.ifto.edu.br,1,304,2026-06-23 23:34:40,2026-07-07 01:25:31,FALSE
+227,56b61946-c871-4018-82a0-188ae1f30326,ELLEN CRISTINY GOMES MACIEL,ellen.maciel2@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+228,fec2be41-7bd6-4928-a3b0-1175a011ce98,Enzo Iudy Pereira de Miranda,enzo.miranda@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+229,720291fd-1566-4d13-b5a6-3e2b5109e317,Filipe Carvalho Correia,filipe.correia@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+230,e0646531-4fe6-4f70-9637-251f4f3bee64,Flávio Manuel Sousa Barbosa,,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+231,2ad569f3-1a82-4ea8-abec-94c8f6e5bed4,Francielen Pereira Alves,francielen.alves@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+232,7d133842-678b-4801-b25b-f9a7864867cc,Gabriel Henry Souza Monteiro,gabriel.monteiro2@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+233,bfdd6473-1f71-424b-b886-e32e50446c78,Gabriel Jander Espindula Vasque,gabriel.vasque@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+235,05597609-1c1d-44ad-a41e-97597ee6c364,GABRIEL OLIVEIRA VIDAL,gabriel.vidal@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+236,9b6ba896-4d63-482f-94bc-8ec8cb009713,GERSON PEREIRA CARNEIRO,gerson.carneiro2@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+237,f4ae6bfb-daa0-41f6-8112-61182abf75fb,Gustavo Brunno Lucena e Silva,gustavo.silva12@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+238,23ed89bc-ef3b-41a9-aa0c-106663ba9bc6,GUSTAVO CORDEIRO DE SOUZA,gustavo.souza10@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+239,6f0ba153-9d8d-4f10-b26d-bab5cb4d956f,Gustavo Henrique Rodrigues Melo,gustavo.melo4@estudante.ifto.edu.br,1,,2026-06-23 23:34:43,2026-06-23 23:34:43,FALSE
+240,55b4c4ea-7f47-44a8-b3f0-ac868d5befaf,Gustavo Huan Torres Morais,gustavo.morais2@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+241,07e2a0e3-09ca-4500-a153-c89133d60ec8,Hanry Sousa de Carvalho,hanry.carvalho@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+242,c46ba9f8-3493-4d5e-86cc-e49775c9f9e0,Heitor de Sousa Rodrigues,heitor.rodrigues3@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+243,a5b79352-c936-4dc7-9044-9b138dd15216,Heitor Miranda Batista,heitor.batista@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+244,2df013ce-c8df-4a80-956e-01597bd71c0e,Henrique Leandro Morais da Silva,henrique.silva5@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+245,46a740f0-2b4d-4c51-b89f-dc26c1ab8e4e,HUGO PIMENTA CARVALHO,hugo.carvalho5@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+246,0f0b1bbd-41d1-4832-a28f-b482c42f9df3,Iago Moreira Gonçalves,iago.goncalves@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+247,b0a9b321-f7af-458e-bc92-c280f63fc09b,Ian Cesar Silva,ian.silva2@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+248,73fa3888-52aa-4edf-ae03-21996d659446,Ian Vitor do Vale Moreira,ian.moreira@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+249,22501f7b-c711-450d-85d3-60090a001530,Igor Amorim Martins,igor.martins@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+250,afca024b-abb7-4397-905c-1b295559086b,Isaac Barbosa Dutra,isaac.dutra@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+251,32e14dde-65df-4d59-a9a8-5947cfea7b49,Isaak Padilha Machado,isaak.machado@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+253,65be4147-b206-414c-a2a2-e8b9dd802b91,Italo Sousa Nishikawa,italo.nishikawa@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+254,54a6c6c2-d64c-447e-9fa3-3c78a7667167,IZADORA GUEDES AMORIM MILHOMEM,izadora.milhomem@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+255,a19b7d21-dd0a-44a4-8f85-54aa08b19891,Jackson Alves dos Santos,jackson.santos2@estudante.ifto.edu.br,1,,2026-06-23 23:34:44,2026-06-23 23:34:44,FALSE
+256,c332a9c0-39a1-4573-9f0d-69d59f741f68,JAINARA NUNES DA SILVA,jainara.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+257,3f679581-d2a9-4d43-b8d8-f98effed873f,Jefte Dodth Telles Monteiro,,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+258,4dbd4942-5d34-49bf-97a9-7a385f8634f2,João Antonio Borges de Souza,joao.souza35@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+259,d6b83aa3-117f-4259-ac5e-4c4bdc7d5d74,João Daniel do Nascimento Menezes Limeira,joao.limeira3@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+260,759428d8-875c-444e-a9dc-157a2212c907,João Enrico Sousa Silva Aquino,joao.aquino2@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+261,aa0fdbb6-8df0-4934-bbba-3a44579f405e,JOÃO GABRIEL ALVES MACEDO,joao.macedo6@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+262,6d265d55-eee1-4d30-a976-f9aa4d0884b9,João Manoel Borges de Souza,joao.souza40@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+263,2c8f2c69-b8e4-49fb-8880-3ccb4c287522,João Marcos Lima de Oliveira,joao.oliveira22@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+264,180999be-2336-47d5-8800-df568bbc1ee9,Joao Marcos Silva de Lima,joao.lima29@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+265,6d4fd741-ed3b-4753-911e-4e6227f6fde7,João Pedro Sabino Silveira,joao.silveira3@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+266,f1334bd0-f51e-484e-be8e-dd9ea160e448,João Pedro Sanches Vieira,joao.vieira3@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+267,af0b26ee-6cc4-4283-bcf2-12350ed06dc4,João Victor Vieira Castro,joao.castro8@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+268,c16982b1-32bf-4429-bb13-0782a195e7e5,Jonas Saraiva dos Santos,jonas.santos10@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+269,3bcd1db3-189a-4481-86a1-b82df0038ddb,Jose Humberto Maciel Mesquita,jose.mesquita2@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+270,608e6a1b-1738-4b05-bdb6-11b61388dde9,José Rocha Souza Neto,jose.neto24@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+271,863e78c7-519c-40c2-b416-781f34349392,Juan Douglas Pereira de Brito,juan.brito@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+272,46ecdc3a-5d7e-48d1-a94b-43cc9d61a769,KAMILLY PEREIRA DA SILVA,kamilly.silva2@estudante.ifto.edu.br,1,,2026-06-23 23:34:45,2026-06-23 23:34:45,FALSE
+273,05dda783-0e06-48b8-9dfa-d2c713710371,KAUAN GUILHERME ALVES LIMA,kauan.lima@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+274,bdc8b41c-b84c-4935-8b1e-5565056adb64,KELSON ISAAC RIBEIRO MOURA,kelson.moura@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+275,2619a226-98de-4492-b1eb-1c451ed72077,KETELLY LHAIS LIMA ALVES,ketelly.alves@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+276,73c74d40-be28-480e-b9cd-ff02b3f61c62,Keyton Bessa de Oliveira Junior,keyton.oliveira2@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+277,2d32d4ca-11cf-447a-b2e9-1231b54d7e38,Kézio Pereira Barros,,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+278,4c49a666-978a-4b26-8a38-c7321cbfaf5b,LEANDRO RODRIGUES MILHOMEM,leandro.milhomem@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+279,e0e6cacc-9e94-4e05-bfde-74bfa310165c,Leilâne Campos da Costa,leilane.costa@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+280,a69dd981-1f28-4a30-a8eb-142f167b17e1,Leonardo Martins Moreira,leonardo.moreira@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+281,c8a228d9-a13d-4e18-9e54-c433388a97db,Leonilton Franco de Oliveira,leonilton.oliveira@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+282,3ef0ec3b-48dc-447a-83be-6d39f0f24271,Lidia Cruz de Araújo,lidia.araujo3@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+283,31eba6a7-eec4-4f35-a851-ae80b6bb0725,Lídia Souza Vidal,lidia.vidal@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+284,9deb69fb-ea1d-4893-9392-2dd614cd10ce,Luan da Silva Carvalho,luan.carvalho2@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+285,9af5d181-5782-4673-930f-dd44e592a8d8,Lucas Ferreira Santos,lucas.santos16@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+286,73959992-94a8-435a-aa2e-0ecd1c9346a4,LUIS FERNANDO DE HOLANDA BRITO,luis.brito3@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+287,36632b41-0147-4d3e-b6fe-faf369ec0ac2,Luiz Alexandre de Medeiros Vieira Filho,luiz.filho4@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+288,f5ca76ef-5403-4649-acc5-a1b9aa2d1b84,Luiz Henrique Amorim Santos,luiz.santos8@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+289,1d6c5db9-8cb0-4c79-8af7-3269c333fb4e,Maikon Doglas Costa Silva,maikon.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:34:46,2026-06-23 23:34:46,FALSE
+290,1c089b59-056a-4b0a-ba7d-b4f627ce7bcb,MARCELO AUGUSTO ALVES DOS SANTOS,marcelo.santos12@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+291,4bc860fa-9b56-4e6e-b5eb-f1ee2e1ced24,Marcos Luiz Borges Galvão,marcos.galvao@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+292,99a18060-3cf1-4166-bd3e-025035e2897e,maria eduarda fernandes de sousa,maria.sousa74@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+293,9d5e8a59-7e28-4573-8724-20ad2254c5a0,Mariana Ferreira de Sousa Almeida,mariana.almeida3@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+294,3a2c46a1-fc86-4962-9d12-58e27487dc65,MáRIO RAFAEL COSTA FERREIRA,mario.ferreira2@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+295,d6813e22-0fc7-4db2-abb8-3cb6e9a49a0c,MARKUS AQUILES SATURNINO ALVES,markus.alves@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+296,dec88a92-f67b-4844-9354-16d7f41a0671,Mateus Vinicius Francischini Cambiaghi,mateus.cambiaghi@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+297,37bcb3eb-cddd-4080-a5b2-5615e86020a4,Matheus Moreira de Menezes,matheus.menezes3@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+298,be854387-fd73-4d10-a5d0-d7c599104144,Matheus Teles Araujo,matheus.araujo7@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+299,63932723-8d15-4440-aa91-0037b9a8e08d,Milena Carvalho Sinesio,milena.sinesio2@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+300,1b010c32-8569-45f1-a9c0-dd4b7eff8627,Monalisa Cabral Gama Costa,,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+301,8198276d-de49-4e67-a5da-e71abb4cd122,MURYLLO FERREIRA MILHOMENS,muryllo.milhomens@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+302,a983a94a-4f90-4b3f-8959-58dc9b163a8c,Naely Carvalho Taveira,naely.taveira@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+303,63baf6c5-a9cd-416b-961f-49015ed46ffb,Nathan Gabriel Mendes da Silva,nathan.silva4@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+304,c4fa5b8d-5ff8-4044-9b4b-425a84f55800,Nycollas Oliveira Braga,nycollas.braga@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+305,8b34fbe2-c1bb-4495-b853-9752d28df8c6,Patrick Alves da Silva,patrick.silva4@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+306,c1faaad3-8ebf-4068-8ebb-2fe136712971,PAULO CESAR SANTOS SILVA,paulo.silva67@estudante.ifto.edu.br,1,,2026-06-23 23:34:47,2026-06-23 23:34:47,FALSE
+307,eaee70c1-e94f-4878-97da-2c2246eb9754,Paulo Enzo Assunção Silva,paulo.silva52@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+308,5303429b-bfb7-4afe-9137-475b38fffcff,Paulo Henrique Pinheiro Barbosa,paulo.barbosa@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+310,a1185dcb-0643-4e94-a0b1-3312d614ad84,Pedro Henrique Batista Souza,pedro.souza5@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+311,93b2c6d9-de38-4e33-b284-6ee5e56d2e01,Rafael Cleson Souza de Oliveira,rafael.oliveira7@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+312,05f56d18-7053-480d-b681-e946e12bd5d8,RAFAEL LOPES DA SILVA,rafael.silva36@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+313,dfe6336e-6485-484e-b79b-5452820b8dc2,Rafael Nascimento Melo,rafael.melo@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+314,10c0b9d6-8798-4360-8984-deed2e302ed8,Rafael Quirino da Silva,rafael.silva37@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+315,1ceb5703-c757-43ed-8712-bbb4ce764114,Rafael Vinicius Ferreira Viana,rafael.viana3@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+316,087384d3-eb32-4df9-94a7-61136a90174f,Ramon Bezerra Lima,ramon.lima4@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+317,fa6dd75e-8e1c-44b9-b211-e7f7531853dd,Raniel José de Souza,raniel.souza@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+318,cba4a154-29f4-4c11-a3ab-9025005ffce1,Rennzo Rodrigues Diedrichs,rennzo.diedrichs@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+319,31b017c3-1029-460f-96a1-adefb845348d,Ricardo Leite Bringel,ricardo.bringel@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+320,6367f89a-0af1-4765-ba43-3250ca0344e0,RICARDO LOPES MENDES DA SILVA,ricardo.silva19@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+321,ba83024c-4165-4e86-966a-ecb287fa9a3e,Ronan Almeida Lima,ronan.lima@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+322,2a24a60c-ac55-4469-8daa-a4a4334bff91,Samuel Mota Ribeiro Milani,samuel.milani@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+323,8e176063-d81e-44b6-85de-a1f9c98bba2b,SAMYLLA MARINHO DA SILVA AGUIAR,samylla.aguiar@estudante.ifto.edu.br,1,,2026-06-23 23:34:48,2026-06-23 23:34:48,FALSE
+324,6499f61d-a52f-4811-998b-020b333347fe,Savio Vitor Alves dos Santos,savio.santos4@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+325,1c859781-2d2c-4c1b-b051-465340f28bdb,Sofia Moreira Fernandes,sofia.fernandes@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+326,b75cdd40-9670-4acc-a57e-5c226cda32d8,Thiago Berson de Sousa,thiago.sousa9@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+327,c6b4056c-f654-4d37-9148-3f7e8171351d,Victor Alexandre Soares Maranhão,victor.maranhao@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+328,83a34937-1e94-496b-8133-3f31fb05bda2,Victor Manoel de Sousa Ferraz,victor.ferraz@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+329,691611dd-bb83-41c9-946d-409dbc4c334c,VÍTOR EMANUEL SOUSA SILVA,vitor.silva26@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+330,83956451-caf8-468e-8a2d-92bd2c318c30,Wanderson Gomes de Sousa,,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+331,db93c607-c216-434b-8956-eb5105864a59,WELLYSON ARAUJO BARROS,wellyson.barros@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+332,9e4f3125-e08f-4816-b684-48650db24f54,Wesley Rodrigues de Almeida,wesley.almeida@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+334,4e7c6c8f-b00b-4953-b7e8-0324b0ac6a7f,ANA JULIA COSTA BRAGA,ana.braga2@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+335,6450bd01-d704-4965-9cee-f5f74e03d13b,CÉLIANE MIRANDA SILVA,celiane.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+336,cfe17364-4f9e-48cf-bd6d-a46c265ecc51,DANILO RODRIGUES FERREIRA,danilo.ferreira@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+337,cd2bb55b-aeda-45a0-92e0-48828d21fb4c,Darlene Oliveira da Cruz,darlene.cruz@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+338,5a1b2b4b-a69e-4a9a-b2f8-2f39f173c567,EDSON RICARDO DE SOUSA SILVA,edson.silva12@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+339,2a7d9ee7-3447-4e44-a090-cfc075e132c8,Elcimar Sousa de Oliveira,elcimar.oliveira@estudante.ifto.edu.br,1,,2026-06-23 23:34:49,2026-06-23 23:34:49,FALSE
+341,bbf8122d-5741-4cb1-bbf0-a4b92ccea9df,GABRIELA DE OLIVEIRA SANTOS,gabriela.santos15@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+309,0b3d2d8c-1fda-404e-b961-38e53ed9cd60,Paulo Ricardo Rodrigues Silva,paulo.silva56@estudante.ifto.edu.br,1,236,2026-06-23 23:34:48,2026-07-01 13:04:29,FALSE
+340,8bf96db4-7450-453a-9363-af983702a310,FABIANE BARROS DE SOUSA,fabiane.sousa4@estudante.ifto.edu.br,1,273,2026-06-23 23:34:49,2026-07-02 00:15:07,FALSE
+342,b88b068e-b5fa-4d46-9da6-6f52f3a37fef,Gustavo Feitosa de Sousa,gustavo.sousa16@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+343,cf0466de-c5df-4877-82c0-77dc3b32b682,IRENILDE DE SOUSA MILHOMES,irenilde.milhomes@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+344,c7cf3676-6fe9-41a3-88b7-0a0b7d3f1f26,JANETE SEBASTIANA CASTRO,janete.castro@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+345,07ac4718-4252-4ce1-8f9a-f84f9c86dd26,JULIA RODRIGUES DE SOUSA,julia.sousa4@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+346,e71d6e1c-4db9-4ea9-9a37-c38a581ddbbd,LETICIA LIMA DE SOUSA,leticia.sousa6@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+347,56c2eaef-f8be-4d16-87c1-6ab16d9c3baa,Lucas Pereira Rodrigues de Sousa,lucas.sousa18@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+348,f9477bb9-9ac8-482f-8efe-7cc048d87df4,LUCAS SILVA DE SOUZA,lucas.souza22@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+350,8239c50a-5231-4a3c-9817-55ca679f0710,SANDRA ARAUJO DA SILVA,sandra.silva7@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+352,4c693708-7d5f-4291-8c86-b2dc4c728ffe,Thalia Araujo da Paixão,thalia.paixao@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+355,b4ebc25b-44b0-4410-a89c-69640d1ea145,Alice Arrais Resende,alice.resende@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+356,fe4f8f8b-51f1-4626-aec2-ed045d9b60d6,Alvaro Magno Resende de Azevedo Apinagé,alvaro.apinage@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+357,602cf6f0-6110-4e35-aac9-7336a336edb8,AMANDA KHIARA BORGES CARVALHO,amanda.carvalho8@estudante.ifto.edu.br,1,,2026-06-23 23:34:50,2026-06-23 23:34:50,FALSE
+360,7b882e15-482c-46e5-b440-644ef798b2ff,Ana Clara Brito Santana,ana.santana10@estudante.ifto.edu.br,1,,2026-06-23 23:34:51,2026-06-23 23:34:51,FALSE
+365,b546e4de-6b1a-4c52-a6a1-72e803946954,Aparecida Mariana Soares Nascimento,aparecida.nascimento@estudante.ifto.edu.br,1,,2026-06-23 23:34:51,2026-06-23 23:34:51,FALSE
+367,789b107b-5689-4b43-8fd4-1720f59e3a80,Arthur Rocha Rodrigues de Melo,arthur.melo2@estudante.ifto.edu.br,1,,2026-06-23 23:34:51,2026-06-23 23:34:51,FALSE
+370,ef23db0f-fc7f-45ff-a509-fad745e84c45,Aylla Vitória Vargas Moreira de Oliveira,aylla.oliveira@estudante.ifto.edu.br,1,,2026-06-23 23:34:51,2026-06-23 23:34:51,FALSE
+371,e6912c2b-7f50-49b5-8c13-a0bc92030997,Bennício Bernard Santana Macêdo,bennicio.macedo@estudante.ifto.edu.br,1,,2026-06-23 23:34:51,2026-06-23 23:34:51,FALSE
+374,3c56ccf9-e1e4-45dd-a08a-1b93099b052b,Davi Soares Silva,davi.silva18@estudante.ifto.edu.br,1,,2026-06-23 23:34:51,2026-06-23 23:34:51,FALSE
+377,b11635f4-a6dd-4dc7-b0d6-5a2130a45d10,Dheyzianny Caldas Wanderley,dheyzianny.wanderley@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+378,1abe724d-3226-4d90-8bad-f5f58ba96a13,Elisa Gabriella Neponuceno Correia,elisa.correia@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+379,8511b8b2-1648-4652-a627-ac1cb6adb380,ELLOÁ VICTÓRIA SANTANA SANTOS,elloa.santos@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+380,09b17a40-1f62-4fd1-91fc-3c89889e813f,ELOÁ ROCHA MENDES,eloa.mendes@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+383,6d35b85f-0d71-432b-80f0-0b318d3199cd,Emilly Cirqueira Soares,emilly.soares@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+385,e738a8fe-4d71-4bc2-972f-2036c4a2da9f,EMILLY VITORIA NASCIMENTO DA SILVA,emilly.silva11@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+389,f71128bb-aa7c-4fc0-8e9e-c72dc6221e1f,Gabriella Costa Sousa,gabriella.sousa4@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+390,2c8e3d5a-b87c-4b42-bac7-d86bbf240ff3,Gabrielly Lopes da Silva,gabrielly.silva6@estudante.ifto.edu.br,1,,2026-06-23 23:34:52,2026-06-23 23:34:52,FALSE
+393,4efc1a08-1484-40f2-9db5-8d2dbc48578f,GUILHERME COELHO RODRIGUES,guilherme.rodrigues4@estudante.ifto.edu.br,1,,2026-06-23 23:34:53,2026-06-23 23:34:53,FALSE
+396,5881b946-75ec-4d14-8190-05f78e546e62,GUSTAVO CIRQUEIRA RODRIGUES,gustavo.rodrigues6@estudante.ifto.edu.br,1,,2026-06-23 23:34:53,2026-06-23 23:34:53,FALSE
+398,e5e870b6-14a5-4109-928e-d66e4d06c966,Helem lopes de almeida,helem.almeida@estudante.ifto.edu.br,1,46,2026-06-23 23:34:53,2026-06-24 12:28:13,FALSE
+376,b87cc98b-1a7a-4adb-a760-62ffeb68ae02,Dharfly Rosado Soares,dharfly.soares@estudante.ifto.edu.br,1,47,2026-06-23 23:34:52,2026-06-24 12:28:59,FALSE
+387,6448edc0-f274-4ae3-9942-21dfc6e36123,Erika Silva Ferreira,erika.ferreira@estudante.ifto.edu.br,1,48,2026-06-23 23:34:52,2026-06-24 12:29:32,FALSE
+388,8f04a534-1034-4d90-91cc-9a7bd184a273,Ezequiel Andrade Gomes,ezequiel.gomes@estudante.ifto.edu.br,1,53,2026-06-23 23:34:52,2026-06-24 12:37:28,FALSE
+395,aac95249-b35f-41e9-8db4-62afbd38fd73,Guilherme Lopes de Castro,guilherme.castro2@estudante.ifto.edu.br,1,55,2026-06-23 23:34:53,2026-06-24 12:39:25,FALSE
+392,5cbdf48b-c7e6-485d-8302-d6ed8c9ebbe9,Guilherme Almeida Lima,guilherme.lima10@estudante.ifto.edu.br,1,60,2026-06-23 23:34:53,2026-06-24 12:45:07,FALSE
+368,ac37bbd2-5290-4129-9e35-c8b3555a821f,Artur Lopes dos Santos,artur.santos5@estudante.ifto.edu.br,1,63,2026-06-23 23:34:51,2026-06-24 12:49:57,FALSE
+384,1dcb923b-126f-411c-b5d9-4acc7f42e0c2,EMILLY DE SOUZA NASCIMENTO,emilly.nascimento2@estudante.ifto.edu.br,1,68,2026-06-23 23:34:52,2026-06-24 12:51:54,FALSE
+373,a205a1b0-f6f1-4d05-9ec1-c9cebfe65388,Damares Esther Amorim da Costa Silva,damares.silva3@estudante.ifto.edu.br,1,69,2026-06-23 23:34:51,2026-06-24 12:54:52,FALSE
+372,bdca238f-9c14-4824-bb63-9629254c565e,Catarine Diniz Melo,catarine.melo@estudante.ifto.edu.br,1,71,2026-06-23 23:34:51,2026-06-24 12:56:13,FALSE
+369,03341086-fe38-4f8c-95a4-0a1b2c465a2a,Aylla Alves de Moura,aylla.moura@estudante.ifto.edu.br,1,82,2026-06-23 23:34:51,2026-06-24 13:20:05,FALSE
+381,17f78e7a-a747-4c04-b720-0feac7d66f09,EMANUELA MOREIRA DE SOUSA,emanuela.sousa@estudante.ifto.edu.br,1,84,2026-06-23 23:34:52,2026-06-24 13:24:45,FALSE
+353,9171a8c9-f379-4b10-87b4-b4c09b5b5f96,Abda Gonçalves Fernandes,abda.fernandes@estudante.ifto.edu.br,1,110,2026-06-23 23:34:50,2026-06-24 17:57:12,FALSE
+358,afda734c-f2f4-48e7-afc5-b78fbdcc13f6,Amélie de Castro Figueiredo,amelie.figueiredo@estudante.ifto.edu.br,1,126,2026-06-23 23:34:51,2026-06-26 13:15:25,FALSE
+363,4a749ff4-a82d-4889-b4c1-835623290ec3,Ana Luiza Gomes Milagre,ana.milagre@estudante.ifto.edu.br,1,132,2026-06-23 23:34:51,2026-06-26 13:19:56,FALSE
+386,05f619eb-6739-4122-8c2e-0f75ca648e9b,Enzo Estevam Meneses Diniz,enzo.diniz@estudante.ifto.edu.br,1,144,2026-06-23 23:34:52,2026-06-26 14:25:27,FALSE
+397,eb303ea6-a9f2-4fe1-b8e9-b887004a6d79,Heitor Viana Dutra,heitor.dutra@estudante.ifto.edu.br,1,202,2026-06-23 23:34:53,2026-07-01 01:59:55,FALSE
+366,05bb7f95-98c8-4aea-b289-fba568b618a0,Ariane Alves da Rocha,ariane.rocha@estudante.ifto.edu.br,1,206,2026-06-23 23:34:51,2026-07-01 02:09:06,FALSE
+349,6945e9f5-a2be-4009-be9e-f763613fb909,Natália Nunes Silva,natalia.silva17@estudante.ifto.edu.br,1,209,2026-06-23 23:34:50,2026-07-01 10:15:31,FALSE
+364,aa31f2b4-9dbe-4b0e-a259-9e0164423ba5,Anna Cecília Ferreira Andrade,anna.andrade@estudante.ifto.edu.br,1,246,2026-06-23 23:34:51,2026-07-01 14:18:05,FALSE
+359,af2abc2d-01f4-4a9c-a9c8-337d9a4c7b61,Ana Clara Alves Nascimento,ana.nascimento19@estudante.ifto.edu.br,1,248,2026-06-23 23:34:51,2026-07-01 14:30:26,FALSE
+391,7c12a7c0-7dde-482e-ae49-2504708e4774,GABRIEL MARQUES BRITO,gabriel.brito5@estudante.ifto.edu.br,1,249,2026-06-23 23:34:52,2026-07-01 14:38:32,FALSE
+362,2fc08ef9-1770-4cea-a57a-3718f0b743c9,ANA LIVIA GUIMARÃES CUNHA,ana.cunha8@estudante.ifto.edu.br,1,251,2026-06-23 23:34:51,2026-07-01 14:40:39,FALSE
+394,7eeed7b4-0327-412f-9e9b-a689b7f9d718,GUILHERME ELMER MARLOW MULLER,guilherme.muller@estudante.ifto.edu.br,1,254,2026-06-23 23:34:53,2026-07-01 14:50:49,FALSE
+351,d2917f58-a88b-4fb2-b3a5-b37311529a94,TEREZINHA ANDRADE DE ALMEIDA,terezinha.almeida@estudante.ifto.edu.br,1,272,2026-06-23 23:34:50,2026-07-01 23:43:27,FALSE
+400,265a8379-e272-4c7b-b262-0b3fc8eea364,Heloísa de Sousa Campos,heloisa.campos@estudante.ifto.edu.br,1,,2026-06-23 23:34:53,2026-06-23 23:34:53,FALSE
+402,99484ea0-ae7a-4345-94d2-327e8a136afb,Henrique Sousa Medeiros,henrique.medeiros@estudante.ifto.edu.br,1,,2026-06-23 23:34:53,2026-06-23 23:34:53,FALSE
+404,43664e82-2feb-4e56-89d3-b6d87aec2132,Ilana Oliveira Sousa,ilana.sousa2@estudante.ifto.edu.br,1,,2026-06-23 23:34:53,2026-06-23 23:34:53,FALSE
+406,22a72ae9-9771-4858-aa88-d5b3bccd9eba,Isaac Sampaio de Sousa Teixeira,isaac.teixeira@estudante.ifto.edu.br,1,,2026-06-23 23:34:53,2026-06-23 23:34:53,FALSE
+407,9c64ccee-82f9-46bf-b725-49f161061c7f,JACKELINE ALVES BRITO BISI,jackeline.bisi@estudante.ifto.edu.br,1,,2026-06-23 23:34:53,2026-06-23 23:34:53,FALSE
+409,2f62a594-f8cf-4c27-9083-6580121228a5,Jamille De Oliveira Borges Rebouças,jamille.reboucas@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+411,20ce2dc9-3026-4c5a-bd58-1ea9535cdd9e,Juliany Sousa Silva,juliany.silva@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+412,587cefdf-7b90-447d-8354-4bfbaf95a993,JULIA RODRIGUES LEAL,julia.leal@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+415,c10ae5c4-74f5-4ea9-ba8d-7388403bc2de,Kaylany Vilar dos Santos Castro,kaylany.castro@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+416,c40e9af5-2a7a-40ee-a93c-8f32fe48c9bd,Ketlyn Silva Alves Gama,ketlyn.gama@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+418,0caad309-0003-42f7-ba56-0003c1d871ab,Lhanna Victoria Oliveira Santana,lhanna.santana@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+423,94a4cb66-df5d-476d-8c4f-111b8eeb983b,Maria Eduarda Nascimento Dias,maria.dias22@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+424,8434aedd-7b9b-4fd3-91a4-4a323c283ecd,MARIA EMANUELA VIANA SILVA,maria.silva363@estudante.ifto.edu.br,1,,2026-06-23 23:34:54,2026-06-23 23:34:54,FALSE
+426,84ea16ba-ee5a-458d-ad79-6a3c3fcdb3ff,MARIA JÚLIA GOMES GUIMARÃES,maria.guimaraes6@estudante.ifto.edu.br,1,,2026-06-23 23:34:55,2026-06-23 23:34:55,FALSE
+435,4c864c4e-ef4c-407b-9fe6-2c364c2bb954,Rodrigo Augusto de Oliveira Nunes,rodrigo.nunes3@estudante.ifto.edu.br,1,,2026-06-23 23:34:55,2026-06-23 23:34:55,FALSE
+440,029213ce-aa8c-43fc-9269-20b2af14bfe4,SAMUEL OLIVEIRA FRANCO,samuel.franco2@estudante.ifto.edu.br,1,,2026-06-23 23:34:55,2026-06-23 23:34:55,FALSE
+443,14faa6c4-b2d3-404f-ad95-8d8638e8d2a9,Sofia  Guimarães Sousa,sofia.sousa2@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+444,a87b16d3-563b-4819-8cd4-40829fe30d02,Stephane Dias Dos Santos,stephane.santos@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+445,45a94ea1-a021-4604-809d-4397d974f3ef,Thauanny de Sousa Silva,thauanny.silva@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+450,4bf6a432-1e06-4e1e-8d62-f180482f8d31,Vitória Gabrielly Miranda Souza,vitoria.souza9@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+453,63aa0892-2044-4de3-88d5-023b6ae576c5,Adara Silva Santos,adara.santos@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+454,f9756ab3-51d2-45b5-b493-ac535a3379ab,AILTON PEREIRA DA SILVA MAGALHÃES,ailton.magalhaes@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+455,ddd73c78-383a-4364-8e7b-1eaac6fbd548,Alanna Milhomem Pinto,alanna.pinto@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+441,e7a33a6a-d336-48d9-b861-db399ba311ac,Samylla Yasmyn Moreira de Sá,samylla.sa@estudante.ifto.edu.br,1,8,2026-06-23 23:34:55,2026-06-24 02:08:13,FALSE
+408,28ad6992-f083-4b7d-83e3-d3edc2eddef8,JAMILE LORRAYNA SILVA DE SOUZA,jamile.souza2@estudante.ifto.edu.br,1,15,2026-06-23 23:34:53,2026-06-24 02:39:59,FALSE
+429,dbfeaa2f-99c7-4dac-b657-b88b10e7c95b,Milena Coelho Martins Braga,milena.braga@estudante.ifto.edu.br,1,23,2026-06-23 23:34:55,2026-06-24 09:58:54,FALSE
+422,11e93c48-8d4f-4746-8719-078570a0ffbe,MARIA EDUARDA ANDRADE DOS SANTOS,maria.santos129@estudante.ifto.edu.br,1,24,2026-06-23 23:34:54,2026-06-24 10:09:08,FALSE
+434,d3d4bdce-ef2a-49f9-8d0f-5d85a5622121,Rafaela Oliveira Rocha,rafaela.rocha2@estudante.ifto.edu.br,1,29,2026-06-23 23:34:55,2026-06-24 10:32:06,FALSE
+449,63a993c5-b036-401b-a0cb-f7f4b6ff09ec,Vitória Duques De Sousa,vitoria.sousa17@estudante.ifto.edu.br,1,49,2026-06-23 23:34:56,2026-06-24 12:29:39,FALSE
+421,a1be5726-e187-4ffa-aad4-8e57eed3490c,Maria Clara Pereira Da Conceição Portilho,maria.portilho@estudante.ifto.edu.br,1,50,2026-06-23 23:34:54,2026-06-24 12:29:54,FALSE
+442,3a34adfc-5b59-46f0-8f9c-3140227dfdb9,Sarah Sabiny Esteves de Lima,sarah.lima5@estudante.ifto.edu.br,1,51,2026-06-23 23:34:55,2026-06-24 12:30:14,FALSE
+399,68b7990c-d2f2-4dbe-9e2b-d625a101053a,Hellen Vitória Marinho Rocha De Sousa,hellen.sousa3@estudante.ifto.edu.br,1,54,2026-06-23 23:34:53,2026-06-24 12:37:42,FALSE
+438,d65f2f13-2a87-4fb2-b5a6-e75498d4b236,RUHAN NEGREIROS BELFORT,ruhan.belfort@estudante.ifto.edu.br,1,56,2026-06-23 23:34:55,2026-06-24 12:39:41,FALSE
+413,b3f44439-490c-4c06-a7ae-a763d7da65bc,Júlia Silva Barbosa,julia.barbosa2@estudante.ifto.edu.br,1,57,2026-06-23 23:34:54,2026-06-24 12:40:30,FALSE
+405,849ccf3f-f4a6-47b3-9bf1-4103cfc0cf03,Isaac Barbosa Guimarães lima,isaac.lima2@estudante.ifto.edu.br,1,61,2026-06-23 23:34:53,2026-06-24 12:46:41,FALSE
+417,60554944-26b3-4741-b69c-92822b1ef978,LAURA BORGES AGUIAR LEAL,laura.leal@estudante.ifto.edu.br,1,64,2026-06-23 23:34:54,2026-06-24 12:51:07,FALSE
+414,dd91f554-61f3-4f50-beae-569f0be5367c,Kathleen Victória Batista Marques,kathleen.marques@estudante.ifto.edu.br,1,79,2026-06-23 23:34:54,2026-06-24 13:12:22,FALSE
+420,026281bf-f469-4911-9358-c707f46f4a46,Maria Clara Araujo Da Silva,maria.silva346@estudante.ifto.edu.br,1,100,2026-06-23 23:34:54,2026-06-24 14:10:40,FALSE
+451,2856f7fa-e3f1-45fd-9ba8-1da747901c80,Walter Arthur Rocha Lima,walter.lima@estudante.ifto.edu.br,1,125,2026-06-23 23:34:56,2026-06-26 13:14:34,FALSE
+437,104a800a-4006-4850-88bc-419052f1234e,Romulo dos Santos Pereira,romulo.pereira@estudante.ifto.edu.br,1,134,2026-06-23 23:34:55,2026-06-26 13:33:16,FALSE
+410,0156d4b0-6e1c-4478-bac2-e35fd870fe66,Janaína Lima Miranda,janaina.miranda@estudante.ifto.edu.br,1,149,2026-06-23 23:34:54,2026-06-26 15:42:12,FALSE
+425,8586886f-f2de-4daa-878e-741f3d6a36b5,Maria Fernanda dos Santos Lima,maria.lima35@estudante.ifto.edu.br,1,155,2026-06-23 23:34:54,2026-06-26 16:58:47,FALSE
+447,8613b65e-9a6c-484f-af3a-80afb45a0075,Thiago Andrade Souza,thiago.souza17@estudante.ifto.edu.br,1,201,2026-06-23 23:34:56,2026-07-01 01:54:41,FALSE
+436,b52efe1f-b65f-4050-9c5a-f430f20d1156,RODRIGO SILVA AYRES,rodrigo.ayres@estudante.ifto.edu.br,1,203,2026-06-23 23:34:55,2026-07-01 02:01:24,FALSE
+452,c7cbc3bf-32b1-48a5-90e0-7d6762157ac4,Yasmin Andrade dos Santos,yasmin.santos4@estudante.ifto.edu.br,1,205,2026-06-23 23:34:56,2026-07-01 02:04:18,FALSE
+432,0df60e65-26f5-4c4e-90ae-9e310a915467,Nathielly Andrade Oliveira,nathielly.oliveira@estudante.ifto.edu.br,1,207,2026-06-23 23:34:55,2026-07-01 02:12:47,FALSE
+433,e78d42a2-53f1-4371-b311-689126e70fde,Pedro Gabriel Mendes Ricarto,pedro.ricarto@estudante.ifto.edu.br,1,208,2026-06-23 23:34:55,2026-07-01 08:01:23,FALSE
+428,70c079d8-cdc0-4b65-ba26-7dd37ffbb5f5,Matheus de Sousa Oliveira,matheus.oliveira20@estudante.ifto.edu.br,1,224,2026-06-23 23:34:55,2026-07-01 12:25:01,FALSE
+448,15840905-576a-469a-b452-42c0e8bf007d,Valéria Sousa Silva,valeria.silva12@estudante.ifto.edu.br,1,226,2026-06-23 23:34:56,2026-07-01 12:32:46,FALSE
+430,80a957f1-d4f4-4f1d-9609-7b941c5b836e,Mírian Andrade Farias,mirian.farias@estudante.ifto.edu.br,1,235,2026-06-23 23:34:55,2026-07-01 13:01:59,FALSE
+439,3240c50d-0d42-4228-bc6b-7247058368d8,Samuel Barros de Souza,samuel.souza6@estudante.ifto.edu.br,1,252,2026-06-23 23:34:55,2026-07-01 14:42:03,FALSE
+446,d2adab61-2aa4-4dcf-8285-581cabe6e905,Thays Eulynna Ferreira Brandão,thays.brandao@estudante.ifto.edu.br,1,314,2026-06-23 23:34:56,2026-07-09 17:26:38,FALSE
+456,3fba9637-5930-49a9-a9ce-ce41591629c5,ALEX SANDRO MOURA VITORINO,alex.vitorino@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+457,c967bdde-d479-46bf-94d6-af82ed8ab48c,Allana Sousa Freitas,allana.freitas2@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+458,b580c13d-ade0-4780-82cb-b0da129a4bc1,ALMIR GABRIEL DE SOUSA CARDOSO,almir.cardoso@estudante.ifto.edu.br,1,,2026-06-23 23:34:56,2026-06-23 23:34:56,FALSE
+459,d6c54644-9db5-4f53-a5d5-fe7089058689,Alvino Sanches Nunes,,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+461,544e9153-9a0f-4464-b595-a6217fa5f928,André Moreira Amario,andre.amario@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+462,ee8253d7-3bb5-49cd-9888-2a31d42a2f9d,ANTONIO FERRO NETO,antonio.neto23@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+463,dce775b5-3d24-47a9-9b5d-27324be3d817,Arthur Gonçalves Silva,arthur.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+464,df6dd2f9-c8f9-4036-95af-2c6e872b9c2f,Augusto Santos Araujo,augusto.araujo2@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+465,f037b426-d0a9-4350-9c88-9b92a33b42a0,BRUNA SENA VASCONCELOS,bruna.vasconcelos2@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+466,10ca03bf-788f-4e34-a410-a042670adb78,CAMILA RODRIGUES DIAS,camila.dias2@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+467,68185fa9-d8ae-4822-91e9-f4074f6baaab,Chrisanitieimy da hora carvalho,chrisanitieimy.carvalho@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+468,3e318c89-5917-4e57-804b-8a5009b272c9,Daniel Rodrigues de Queiroz,daniel.queiroz2@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+469,a6e8a7a6-0058-478d-9fe1-090d42d263cd,Douglas Barros de Carvalho,douglas.carvalho3@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+470,de67bb22-e43e-4173-a314-814a37581253,EDINANDES RAMOS DE SOUZA,edinandes.souza@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+471,8bfba218-ecdc-4691-af56-c94fb527c579,ELIANE ALVES LIMA COSTA,eliane.costa4@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+472,de25388a-52be-439d-ab26-c9ff013f5010,ELLEN CAROLINE HONORATO AMADO,ellen.amado@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+473,45d93e3b-047c-4484-be4f-743391caa29a,Eloisa Carvalho Silva,eloisa.silva2@estudante.ifto.edu.br,1,,2026-06-23 23:34:57,2026-06-23 23:34:57,FALSE
+476,65cb173a-dbef-4ec1-9748-af4d1b8cb2f3,Felipe Ricardo Silva Rocha,felipe.rocha2@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+477,c466a4a6-1d43-4dc1-838f-e518dab7b928,Franklei Alves da Silva,franklei.silva@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+478,85dba301-1aa6-46de-bafd-4a3479c77fdc,GABRIEL SOUSA SILVA,gabriel.silva73@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+479,1d2b8b67-d103-46aa-8711-b7f63ad0d826,GEOVANY PIRES DA CRUZ FILHO,geovany.cruz@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+480,4cb17a35-2574-4cae-b72f-3fe788bcfa9f,Gúbio Luz Bonifácio,,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+481,a26c1a6f-7afb-49e2-a6a6-e64a88be61bf,GUSTAVO RODRIGUES GUIMARAES,gustavo.guimaraes2@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+482,5feece8a-f94d-4162-a7a4-30b453389a75,Gustavo Santana Moreira,gustavo.moreira@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+483,d0fbee9c-b79d-4287-b39b-ac45cd93d09c,Gustavo Silva Rodrigues,gustavo.rodrigues2@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+484,a99cccb4-baab-49b6-b661-78e7c8e964cf,Hor de Oliveira Chagas,hor.chagas@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+485,c4485ee2-1049-48eb-84a3-1e0005034a78,Iara Taine de Sousa Milhomes,iara.milhomes@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+486,04ad4c47-57fe-40d8-8d65-77050eae7c59,ISABELLA PEREIRA VASCONCELOS,isabella.vasconcelos@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+487,b2cf805e-7908-4378-b5d8-a585c350d089,ISABELLA SILVA TRINDADE,isabella.trindade@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+488,5c117834-13cb-4eeb-ac16-882578c2ea8c,IUDHY ALVES RODRIGUES,iudhy.rodrigues@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+489,0c2f0478-103c-4331-b44b-7f4f13dba643,João Paulo Sousa Araújo,joao.araujo24@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+490,fe6c7eeb-57ec-4ee4-ba49-ccee555b9832,João Pedro Alves Leite,joao.leite4@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+491,319700b2-8473-4f02-90c2-2fc7b6e89079,JOÃO PEDRO CARVALHO CAVALCANTE,joao.cavalcante6@estudante.ifto.edu.br,1,,2026-06-23 23:34:58,2026-06-23 23:34:58,FALSE
+492,fe74407a-76ba-4e6a-95d8-a66651c29193,JONATO PEDRO NONATO BARROS,jonato.barros@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+493,658b9a49-c855-4dad-924f-b989bc64125f,JOSÉ HENRIQUE BENÍCIO DA CRUZ,jose.cruz6@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+494,d5be2a4b-b2ee-4789-9dbe-4bbb66dee9d7,JOSÉ LAUDIMAR SOARES JUNIOR,jose.soares8@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+495,d92e6d7e-a1d5-4be3-aa2c-b284437449a6,JOSE VITORINO CARVALHO SILVA,jose.silva96@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+496,d83e08da-5d63-4651-8b16-a4f716dd4df5,JOSUE OLIVEIRA DA COSTA JUNIOR,josue.costa@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+497,0cf74140-7531-4101-81ba-2f6d2d01a2ac,JUAN VAN DORT SOARES BARBOSA,juan.barbosa@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+498,2e024334-f087-42f6-9258-f40306b25699,Jucielen Silva Bernardo,jucielen.bernardo@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+500,f5882456-7932-4132-b8d6-a7a5abefcb00,Kauanny Maria Araujo Costa e Silva,kauanny.silva2@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+502,33be6da8-a9a7-48f6-9b4b-b2dbda1622e2,Lucas Melo da Silva,lucas.silva73@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+503,8a050c66-9024-4f2d-937d-0f68a92a351e,LUCILENE PEREIRA DA COSTA,lucilene.costa@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+504,45459ea0-9511-4171-abcf-6930c7fe538d,Luis Fernando Rodrigues Pereira,luis.pereira7@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+505,f9530029-1879-491f-a4bd-4d7be41bfe05,Maísa Coelho Nascimento,maisa.nascimento2@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+506,12f87e0e-1492-4a44-9fdc-a1319a884722,Marcelo Cardoso dos Santos,marcelo.santos14@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+508,32b55bdb-b45d-4833-ba5e-446a1e5806f0,Maria Eduarda Caetano da Silva,maria.silva260@estudante.ifto.edu.br,1,,2026-06-23 23:34:59,2026-06-23 23:34:59,FALSE
+509,349cd573-9412-470a-9bf2-b6c92724af29,Maria Eduarda Sousa Alencar,maria.alencar3@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+510,781355ce-996d-480c-bce5-e3f3c05379ff,Maria Geni Ferreira da Costa,maria.costa7@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+511,8cd7bc07-2b1c-4134-bc9e-af61f95d67e2,Mariana dos Reis Pereira,mariana.pereira7@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+474,3c5ec9a9-955f-401e-9507-5020f34c0f7b,Ester da Silva Gomes,ester.gomes@estudante.ifto.edu.br,1,80,2026-06-23 23:34:57,2026-06-24 13:13:33,FALSE
+507,3dab8b50-018e-4687-852b-5a1e8f25ace7,Marcos Pereira da Silva,marcos.silva82@estudante.ifto.edu.br,1,102,2026-06-23 23:34:59,2026-06-24 14:47:05,FALSE
+512,87586433-166e-46d7-b85c-b16d43b75d5c,MARLENE PINTO DE MOURA,marlene.moura@estudante.ifto.edu.br,1,105,2026-06-23 23:35:00,2026-06-24 16:24:25,FALSE
+501,71b31333-ee77-435c-b4a9-9c4ac4a3a4b6,Leticia Nunes Ribeiro,leticia.ribeiro5@estudante.ifto.edu.br,1,107,2026-06-23 23:34:59,2026-06-24 16:59:40,FALSE
+475,63fd1384-3a5a-4643-b70e-c18890dce9e5,Fabiana Alves do Carmo Araujo,fabiana.araujo@estudante.ifto.edu.br,1,124,2026-06-23 23:34:57,2026-06-25 23:50:54,FALSE
+460,a207c03c-0197-478b-8fec-c68933f0c92a,Amária Campos de Sousa,amaria.sousa@estudante.ifto.edu.br,1,131,2026-06-23 23:34:57,2026-06-26 13:19:21,FALSE
+513,a035f6d4-37f2-4b0d-af96-063344572577,Matheus Carvalho Guimarães,matheus.guimaraes4@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+514,ac96b4a4-b060-4bca-9ce9-2d1c842a44c9,GEOVANA DE BRITO MENEZES (Matheus de Brito Menezes),geovana.menezes@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+515,080743ce-238a-4502-9d4f-f8a0a8fbd671,Mecilde Pereira Paz de Oliveira,mecilde.oliveira@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+516,e289cc2b-e302-4d9d-8d6b-9cbf0d80424a,Moisés Morais da Silva,moises.silva8@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+517,385f40d3-def6-476f-b570-87ce75be2685,NICOLI SOUSA LEITE,nicoli.leite@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+518,e055bca7-55b2-4ba0-a79c-792bd8ef34e7,Pâmela Vieira da Silva,pamela.silva5@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+519,81fa6e68-5b1c-44fd-8259-4f436cb31638,Paulo Ferreira da Costa,,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+520,d314e637-4246-4e2e-8cef-bb981c2b7117,PEDRO AUGUSTO LIMA MENDES,pedro.mendes9@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+521,48fbe7d3-bd1c-4eec-b749-0592bfae9d27,RAFAEL OLIVEIRA DA SILVA,rafael.silva39@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+523,179f3868-f86c-4bfe-b090-74ccf13ca2ef,RHENDLLYS RODRIGUES DA CONCEIÇÃO,rhendllys.conceicao@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+524,eff368d0-ebd0-4c35-a692-fbce81cc6032,Rikaely dos santos pereira,rikaely.pereira@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+525,be57d76e-17d6-4ab1-afd5-b435d93b760a,Samuel dos Reis Pereira,samuel.pereira3@estudante.ifto.edu.br,1,,2026-06-23 23:35:00,2026-06-23 23:35:00,FALSE
+526,fb36abce-c2e5-4b73-abbe-c2109f7bbf91,Silvio Said da Hora Costa,silvio.costa@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+527,1c1d1489-3eb8-4364-b1e0-e03b1567344f,Thais Muniz Almeida,thais.almeida5@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+528,74de6ecd-b8e0-4cbc-a6cd-9d2bf21259cb,Thais Nunes da Costa,thais.costa3@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+529,3245fd91-a739-44a0-a1dc-89c4c10845f1,VICTOR GABRIEL AIRES DA SILVA,victor.silva21@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+530,02748790-1b3a-4634-bdd2-7941321ef422,VICTÓRIA MATEUS DA SILVA,victoria.silva6@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+531,bd304471-b19d-44e8-a278-0328209f8642,Vitor Araujo Santos,vitor.santos4@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+532,8d71b182-c231-425f-9b6d-a0a393293b53,Vitoria nascimento gomes,vitoria.gomes3@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+id,uuid,name,email,team_id,user_id,created_at,updated_at,is_dispensed_from_evaluations
+533,2f9c2dc2-2685-45aa-8a79-ed44500f5de5,Yasmine Costa Alves,yasmine.alves@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+534,32cb74bf-4f2c-4aac-b379-d3f7c11275ed,ADELI DOS REIS MACIEL,adeli.maciel@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+535,729ac9b2-38a2-44aa-ab41-25a733e97252,Álefe de Aquino Gomes,alefe.gomes@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+536,5d2f9bfb-b35e-45b0-80c1-e8a6a8f32f8d,ALICE MORAIS CRUZ,alice.cruz2@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+538,ed29b81e-623c-4517-86ff-c05e5bea9413,Ana Clara de Oliveira Garcia,ana.garcia3@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+539,549b14f9-7d37-469d-88f8-e4b0a04d8e10,Ana karollyne da Silva Amorim,ana.amorim6@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+540,40899d9e-cc00-421e-a250-aca344be907a,ANA LUIZA SILVA DE SOUSA,ana.sousa62@estudante.ifto.edu.br,1,,2026-06-23 23:35:01,2026-06-23 23:35:01,FALSE
+545,c44ffbc1-e6d0-441d-a196-25d80f156c07,DANIELLY PEREIRA DA COSTA,danielly.costa@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+546,01472ced-e46b-48c7-a63a-934a6a540514,Deuzirene luz Valadares,deuzirene.valadares@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+547,557537c6-f214-4ebe-9b34-0c2201a54807,Deuzivania Lopes da Silva,deuzivania.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+550,d844e938-6901-4f80-b79f-6a253c009d49,EDILEIDE TEIXEIRA DOS SANTOS,edileide.santos@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+551,29e0c05a-f57a-4e26-9fd2-8db83a7fe227,Electra Branquinho Silva,electra.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+553,3f4e9451-1ff7-480b-873a-e928d2f5b260,Gabryella Vieira Silva,gabryella.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+554,f0136b00-a490-421c-85f1-921e07626a65,Gracione Silva e Sousa,gracione.sousa@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+555,985f3c40-d43f-40c6-b51c-5f5582198ffc,Heder Jose da Silva Sousa,heder.sousa@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+556,4ffbef52-ed4b-43ca-9331-57c3793bce2b,Heldia Rocha da Paixão,heldia.paixao@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+557,ce4eff48-b7c1-4bb7-ab74-0fe3bfd3d429,Helindaiane Rodrigues Moura,helindaiane.moura@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+558,d317633b-834e-4e3e-907d-367cd773362f,Ivanete de França Silva,ivanete.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:35:02,2026-06-23 23:35:02,FALSE
+559,bd0984b6-3608-484f-85d7-977c1531bead,Ivania Ferreira dos Santos,ivania.santos2@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+560,2b180b12-b94e-4fcb-84e8-a5288657181b,IZIS SANTOS OLIVEIRA SILVA,izis.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+561,778f8a48-a479-44dd-914c-0db65f3917b2,Jaciara Muniz Nunes,jaciara.nunes@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+564,e80ef078-3807-42b6-8125-a4b05aed66e3,Joanice Martins Silva,joanice.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+565,8fd5d566-e5bd-49d7-a11c-579b1e5b1bce,Joicy Silva Leite,joicy.leite@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+568,075b68a3-6f8b-454c-8506-0028c267e652,JULIANA MARTINS DA SILVA,juliana.silva24@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+569,dd6d86c9-320c-4394-8059-01ee73aedf31,Juliana Sousa Bezerra,juliana.bezerra@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+549,f32a1058-8a91-4d1d-9d01-262faa264ae7,Dyna Maira Alves de Miranda,dyna.miranda@estudante.ifto.edu.br,1,36,2026-06-23 23:35:02,2026-06-24 11:34:02,FALSE
+548,1fefd240-7358-43bf-af3f-627ae6c67a8f,Diana de Sousa de Oliveira de Sá,diana.sa4@estudante.ifto.edu.br,1,39,2026-06-23 23:35:02,2026-06-24 11:38:47,FALSE
+566,319e7890-062f-4f74-ac25-a9cb5b8980fc,JOSÉ UILSON DE SOUSA COSTA,jose.costa12@estudante.ifto.edu.br,1,139,2026-06-23 23:35:03,2026-06-26 13:56:09,FALSE
+542,457bb75f-9848-452f-a957-65a818987ae6,Cirlene de Sousa Ribeiro Camargo,cirlene.camargo@estudante.ifto.edu.br,1,143,2026-06-23 23:35:01,2026-06-26 14:24:44,FALSE
+543,e8053a08-aaa6-4e28-a14f-748446092113,Claucileia dias da Silva,claucileia.silva@estudante.ifto.edu.br,1,148,2026-06-23 23:35:02,2026-06-26 14:53:13,FALSE
+544,06399886-5103-41dc-9015-c41da2bbab06,Daniela Rodrigues da Silva,daniela.silva23@estudante.ifto.edu.br,1,150,2026-06-23 23:35:02,2026-06-26 16:22:27,FALSE
+570,46ca4248-6ea4-4601-8768-df576d8f0a67,KAILANE MELO RESENDE,kailane.resende@estudante.ifto.edu.br,1,161,2026-06-23 23:35:03,2026-06-26 21:31:33,FALSE
+562,505f2f14-591f-4ff3-aac5-3eb22a530a56,JAQUELINE PEREIRA DE ANDRADE,jaqueline.andrade2@estudante.ifto.edu.br,1,172,2026-06-23 23:35:03,2026-06-27 13:07:31,FALSE
+563,c3465301-e87e-458e-9b11-e238e79ade48,JÉSSICA RIBEIRO DE SOUZA,jessica.souza9@estudante.ifto.edu.br,1,221,2026-06-23 23:35:03,2026-07-01 12:22:34,FALSE
+541,a00704ae-a204-4de5-a0a9-65403e516cc4,Bianca Vithoria Fernandes Beleza,bianca.beleza@estudante.ifto.edu.br,1,234,2026-06-23 23:35:01,2026-07-01 13:00:01,FALSE
+567,83e11cc1-e04f-4958-baa3-ea77ed76a452,Jozylayne da Silva lopes,jozylayne.lopes@estudante.ifto.edu.br,1,266,2026-06-23 23:35:03,2026-07-01 15:54:24,FALSE
+571,6ca5dc9e-5541-4267-9204-ae4379f419d8,KARINNA KALLITA DE OLIVEIRA ALENCAR,karinna.alencar@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+572,2dbfd0c5-b848-4dd0-97cd-a58843a290e3,KAROLLAINY MOREIRA FEITOSA COSTA,karollainy.costa@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+573,e033f51e-7ae4-47e2-9840-8f286c272b93,KATIA FERNANDES DE SOUSA,katia.sousa5@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+574,742ea7ec-858a-4fe8-840c-a1118a8ad812,Larissa Fernandes Carvalho,larissa.carvalho3@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+575,022a7bd8-2490-476b-a628-c6c05f94079f,Laurisse de Sousa Santos,laurisse.santos@estudante.ifto.edu.br,1,,2026-06-23 23:35:03,2026-06-23 23:35:03,FALSE
+578,6156e1ca-4518-49ef-9362-92b2fcc6f4c7,Leniaria Sousa Matos,leniaria.matos@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+581,22887b47-1dcb-4a39-87aa-5a8f81f6b286,Luan Lopes Conceição Lima,luan.lima4@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+582,d173e7af-0987-4a9b-9df9-2d18af547c0b,LUCAS PEREIRA BORGES,lucas.borges5@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+583,13853f60-1e78-439c-a32f-30108802070c,Luzia Cristina De Sousa Santos,luzia.santos5@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+584,1a139343-3fa6-4271-9c21-d974e452998e,Maria Aglair Pinto de Oliveira Silva,maria.silva362@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+585,b07c6e4e-6cda-442b-97c3-93056fabb8af,Maria da Conceição Sales Ribeiro,maria.ribeiro18@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+586,e204cbf5-94c2-41ee-ab94-aa78b62cc5e2,MARIA DA CONCEICAO SOUSA DIAS,maria.dias26@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+590,17892368-b1f0-442c-a1d1-cfabc7d6e4ab,MARIA OZILENE ALVES DA SILVA,maria.silva369@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+592,fbb868a6-be26-4149-8cf2-f640d4101bd6,Marta Barbosa Silva,marta.silva6@estudante.ifto.edu.br,1,,2026-06-23 23:35:04,2026-06-23 23:35:04,FALSE
+595,200059f8-7fd8-497b-9b2e-ae8c3092dc6c,Maycon Douglas Ferreira da Silva,maycon.silva8@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+598,38cd923f-7093-4bb7-bb25-42ad6512fbfa,Nayara Braga de Oliveira,nayara.oliveira5@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+600,0cc9bf1b-f87b-4b68-ab87-304a159e3f82,NEURIVAL DOS SANTOS MIRANDA,neurival.miranda@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+601,a82c8b13-445b-4bc0-867d-4d83ed916103,NILCIVANE VILHENA BRUNO NUNES,nilcivane.nunes@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+602,5850ca51-9d88-4c99-b2ee-50c92f8edfe7,Patricia Ribeiro de Sousa,patricia.sousa2@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+604,8b90f92c-cadd-47bf-b396-53ff729e23bf,PEDRO SOARES NUNES BENICIO,pedro.benicio@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+607,74ee8bdd-1255-4d1d-8726-05d18ccff064,Rafaella Fábia Alves,rafaella.alves@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+608,2b42214f-bd8c-4003-8e60-44b334b432ce,Rana Priscila Gama Simiema,rana.simiema@estudante.ifto.edu.br,1,,2026-06-23 23:35:05,2026-06-23 23:35:05,FALSE
+609,c0e841b7-8ca5-4280-a7c8-2a30fe0f50b1,Raylany Macedo dos Santos,raylany.santos@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+610,1497da3c-8312-448e-9e51-e63069c436e3,ROBERTA RANGEL REZENDE,roberta.rezende@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+613,765b3c06-9d84-4973-958a-02d67a2521ba,Rosimira da Conceição Santos,rosimira.santps@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+615,48822728-de48-41c2-a200-5ab9d348e97e,Rúbia Vitória De Sousa,rubia.sousa2@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+617,282a3b88-2bc8-442e-9ea6-3105ae7846c9,Saiury Martins do Nascimento Ferreira,saiury.nascimento@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+619,d8aac1af-fef5-43ea-927c-d04c6c658de3,Solange da Silva Abreu,solange.abreu@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+620,7655b823-6215-477a-aceb-2fddff66b866,Talyta Ferreira de Souza,talyta.souza@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+621,a557a308-cd34-456e-bec4-dbb56a27e633,Tamires da Silva Ribeiro,tamires.ribeiro2@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+623,c4b9d8e2-e860-4ff5-8a30-df769c704dc9,Vania Pereira dos Santos,vania.santos6@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+624,7c620cfd-37da-4a02-932f-d6774a4d2d21,Vitória Alcantara Costa Rodrigues,vitoria.rodrigues9@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+625,6b70e4d3-e8e0-417c-8d65-f64c22fb529a,Vitorya Jessyca Pereira da Silva,vitorya.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:06,2026-06-23 23:35:06,FALSE
+626,cc5f9867-f35e-43e0-a565-dc02440d2f64,Yana Aparecida Gomes Lima,yana.lima@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+603,67ffc3a2-9cfc-42cf-a34b-15bbec9c380d,Pedrina da Silva Gomes,pedrina.gomes@estudante.ifto.edu.br,1,38,2026-06-23 23:35:05,2026-06-24 11:38:33,FALSE
+616,bf8d55a1-d9c7-4e3f-a091-bb00de882539,Ruttyely da Silva Lopes,ruttyely.lopes@estudante.ifto.edu.br,1,41,2026-06-23 23:35:06,2026-06-24 11:52:23,FALSE
+611,32b4f6f1-4b00-4885-8bea-e15e82c2e3f5,Rosane da Paz Maranhão de Sousa,rosane.sousa@estudante.ifto.edu.br,1,111,2026-06-23 23:35:06,2026-06-24 17:59:28,FALSE
+580,e356f4bf-0c55-4bc5-99f3-7f2f602e5318,LILIANE SOUSA LUSTOSA,liliane.lustosa@estudante.ifto.edu.br,1,162,2026-06-23 23:35:04,2026-06-26 21:33:19,FALSE
+587,46133c76-8758-4538-b12f-6e3f9dca1eef,Maria de Jesus Alves Ferreira,maria.ferreira42@estudante.ifto.edu.br,1,171,2026-06-23 23:35:04,2026-06-27 00:52:33,FALSE
+596,681a9375-6df3-40ce-873e-b2143bfed855,MILCA DOS SANTOS SOUSA,milca.sousa@estudante.ifto.edu.br,1,173,2026-06-23 23:35:05,2026-06-27 13:17:53,FALSE
+597,6ad403bd-0b33-4055-95e9-a6cd027c332a,NATÁLIA MENDES GONÇALVES DO NASCIMENTO REZENDE,natalia.rezende@estudante.ifto.edu.br,1,174,2026-06-23 23:35:05,2026-06-27 13:42:44,FALSE
+576,e83bfdfd-e064-4cae-b454-bb0a024e870a,LEIDIANE ROCHA LIMA FEITOSA,leidiane.feitosa@estudante.ifto.edu.br,1,175,2026-06-23 23:35:04,2026-06-27 14:31:31,FALSE
+612,468a0177-c512-4c60-a905-25660e1bc255,Rosania Maria Lima da Silva,rosania.silva2@estudante.ifto.edu.br,1,210,2026-06-23 23:35:06,2026-07-01 10:19:58,FALSE
+588,494beb94-bee0-4fca-a2e7-230e808b3701,Maria Luisa Conceição Ramos,maria.ramos5@estudante.ifto.edu.br,1,227,2026-06-23 23:35:04,2026-07-01 12:35:19,FALSE
+594,4f6a6fe5-604e-40c0-b17a-692f6a1af138,MAURIZA RODRIGUES DA SILVA,mauriza.silva@estudante.ifto.edu.br,1,230,2026-06-23 23:35:05,2026-07-01 12:44:04,FALSE
+579,60c88999-195f-4053-8531-c2c466c9e2c9,Lídia Rios Carvalho,lidia.carvalho@estudante.ifto.edu.br,1,238,2026-06-23 23:35:04,2026-07-01 13:27:34,FALSE
+593,9f730560-05fe-4bcb-81ec-aafdebcb3c41,MARTA DA COSTA SÁ,marta.sa2@estudante.ifto.edu.br,1,255,2026-06-23 23:35:05,2026-07-01 14:55:50,FALSE
+606,3ae1c617-3fd0-49ba-abb4-6c0c4efd1a65,RAFAELA PEREIRA DOS SANTOS,rafaela.santos10@estudante.ifto.edu.br,1,269,2026-06-23 23:35:05,2026-07-01 16:23:21,FALSE
+591,f536dec9-3fc7-48c4-8926-2a15e9155851,Maria Vitória Duarte Nascimento Sousa,maria.sousa105@estudante.ifto.edu.br,1,309,2026-06-23 23:35:04,2026-07-08 11:43:34,FALSE
+599,cf02e10b-624f-4bfb-8856-e929b5376313,Nayara Caldas da Silva,nayara.silva9@estudante.ifto.edu.br,1,310,2026-06-23 23:35:05,2026-07-08 11:49:52,FALSE
+622,f3463a19-8d89-4784-a900-0e391833845d,Valdeane da Conceição Silva de Araújo,valdeane.silva@estudante.ifto.edu.br,1,311,2026-06-23 23:35:06,2026-07-08 11:50:57,FALSE
+614,24f4620f-3429-471b-b9cd-312b3b424aab,Rouveny de Sousa Barbosa,rouveny.barbosa@estudante.ifto.edu.br,1,312,2026-06-23 23:35:06,2026-07-08 12:02:46,FALSE
+628,d9e0a7f7-0d54-498a-b326-8bb52259c32f,Ana Cleia Cirqueira Silva,ana.silva215@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+629,41e18c6f-55f1-4ea4-8944-f7f8321ce206,Ana Lívia Sousa Miranda,ana.miranda6@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+632,17571743-6e44-4ebb-8fed-3b704e6fa842,Camila Vitória Bezerra,camila.bezerra@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+633,ce9db55a-1f0a-42ad-8825-9ca8a943677b,Cherlis Rodrigues da Silva Dias,cherlis.dias@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+635,84379674-7fe7-43e7-9c53-2ddb36ec5bd3,Cláudio Santana Soares Filho,claudio.soares@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+637,df3ab831-22d3-4194-b16f-188ae87ddace,CLEONICE DA ROCHA RIBEIRO,cleonice.ribeiro@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+640,bcaefd8a-1106-46d9-807a-cb13fa5d25da,Edivânia da Silva Sousa,edivania.sousa@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+641,934c394e-b442-44a8-8073-5f493dc5af4b,Elainny dos Santos Cunha,elainny.cunha@estudante.ifto.edu.br,1,,2026-06-23 23:35:07,2026-06-23 23:35:07,FALSE
+642,b4ea498a-55f8-459b-8b50-cc78abc0925a,Elielson Correia da Silva,elielson.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+643,efd560b8-4e2f-47c0-99cd-63f7bbb639a8,ERYKALLOWRRANY DOS SANTOS CELESTE,erykallowrrany.celeste@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+644,87c28e3d-11fe-4809-aa1d-10dbe7337c17,Evando Vieira da Silva,evando.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+645,aa70668b-c8fe-49e2-8580-812ef8ca9f1c,Evellyn Cristine Chaves de Sousa,evellyn.sousa@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+649,4a8ca339-650b-485d-bbd3-7d1dfd1a97a9,Iasmin Dias Rezende,iasmin.rezende@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+650,c0465323-e08c-4601-9011-f41e20bebf2c,Ideane Araújo Silva,ideane.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+652,73f39b0a-28b6-4e00-b505-8522924d404c,Izaias Araújo Barreiro,izaias.barreiro@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+653,10cf1205-469f-44a5-b461-13c09c9d41e0,Joelma Alexandre de Melo,joelma.melo@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+654,637ee42a-1268-4fa1-a02b-78229a9a86d7,karoliny silva da costa,karoliny.costa@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+655,3bbbc482-7529-49b8-8cca-5bec01f1425f,Lays Silva Pereira,lays.pereira@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+656,10b69d58-de26-4298-a03d-01b2cba7ed57,Leticia Lopes Tassi,leticia.tassi@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+657,889588eb-3885-4dc5-b99d-36fdc0dcf8f0,Lucas Correia de Sousa,lucas.sousa31@estudante.ifto.edu.br,1,,2026-06-23 23:35:08,2026-06-23 23:35:08,FALSE
+659,05865375-0641-4fe8-b411-b09d121339a7,Luciane Moura Filho,luciane.filho@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+660,b48beef3-b67d-4897-943d-561175c633e8,Marcia Pereira Lima,marcia.lima4@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+661,eeb4c666-4121-4784-b5dc-83e94c7a994d,Marcileide Silva da Luz,marcileide.luz@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+662,ea19eca4-4117-42b9-b208-1d8f41f7d30e,MARCOS ALMEIDA DE SOUSA,marcos.sousa17@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+663,ff539163-2ce7-4870-89b6-efbaf65f3d75,Maria Adriele Rodrigues de Oliveira,maria.oliveira94@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+664,de9b637e-2fe1-4f45-852e-e549d13562fe,Maria Clara de Oliveira Lima,maria.lima41@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+665,24e7bbcf-7855-46ee-a5cb-9e4a1939ac41,Maria de Nazaré Pereira dos Reis,maria.reis11@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+666,ece8ca78-ca75-4282-97a1-30af38e8e55c,Maria Eduarda Soares da Silva,maria.silva334@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+667,6d7e5f30-ad3a-4d81-86fc-7a57c274d748,Maria Ingrid de Sousa Silva,maria.silva331@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+668,d55403fa-07e8-4d2b-acca-e67a96de5b69,Mayara Marques Severo,mayara.severo@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+669,48c049e9-18d6-46d4-8cb2-ebad4e0b2d57,Mylla Mayelly Nepomuceno Machado,mylla.machado@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+670,8c40b871-72b3-4ab9-af76-7e79f4155080,Nágila Maciel da Silva,nagila.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+671,199c3005-07bc-4e36-8c50-14b94e49b1d6,NAIRA ALVES DA SILVA,naira.silva4@estudante.ifto.edu.br,1,,2026-06-23 23:35:09,2026-06-23 23:35:09,FALSE
+675,0a6a6316-ff84-4b27-ad1b-b77fb8a2305f,Sarah Paes Valadares Magalhães,sarah.magalhaes@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+676,fb54c253-e4a6-4d60-834e-a03695c906fd,SERGIO OTAVIO SOUSA SILVA,sergio.silva6@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+679,ae5e1166-0fe8-4f75-ae4d-5da67ee95d2f,Valcilha Oliveira dos Santos Silva,valcilha.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+682,85f67523-097c-4e19-a27e-07242cce4985,Venilson Soares dos Santos,venilson.santos@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+683,4ba7c4c5-c637-40c1-84c6-6a3756bc27d4,VICTOR MARCIANO GONÇALVES SILVA DOS SANTOS,victor.santos17@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+677,cafddb38-e57b-49c9-b0b2-bbec0d3d3fd4,Tatiana do Nascimento Xavier,tatiana.xavier@estudante.ifto.edu.br,1,231,2026-06-23 23:35:10,2026-07-01 12:44:11,FALSE
+638,8e5cf2d6-2ba1-46d7-aae2-e53d87c39757,Cleonice Gomes Vieira Sobrinho,cleonice.sobrinho@estudante.ifto.edu.br,1,247,2026-06-23 23:35:07,2026-07-01 14:20:04,FALSE
+634,321f74f5-1609-4bf2-a173-3bfce9446149,Cicera Marcileide Dias dos Santos,cicera.santos2@estudante.ifto.edu.br,1,250,2026-06-23 23:35:07,2026-07-01 14:38:39,FALSE
+673,69b8b117-eea7-4efe-80d5-a2d953a3a15e,RAIANI SANTOS SILVA,raiani.silva@estudante.ifto.edu.br,1,253,2026-06-23 23:35:09,2026-07-01 14:47:43,FALSE
+674,62a1a3a6-d124-4ea0-b677-6efc72cbeb38,ROZIANE ALVES DA ROCHA,roziane.rocha@estudante.ifto.edu.br,1,270,2026-06-23 23:35:10,2026-07-01 17:07:37,FALSE
+648,d43ced75-0be4-4aad-a684-b626d19c575f,Huerlene Conceição da Silva,huerlene.silva@estudante.ifto.edu.br,1,271,2026-06-23 23:35:08,2026-07-01 17:24:37,FALSE
+672,e9d14b84-c9d0-425d-9ab2-5202f00d2d93,Natiely nogueira Sinha da silva,natiely.silva2@estudante.ifto.edu.br,1,274,2026-06-23 23:35:09,2026-07-02 00:43:59,FALSE
+647,a8ac7348-ec92-4e68-9d54-9e05ea1a8a11,FRANCISCA IVELTA DA SILVA,francisca.silva28@estudante.ifto.edu.br,1,275,2026-06-23 23:35:08,2026-07-02 12:24:42,FALSE
+646,1f95fede-5fca-4227-a618-242f8c994187,Fernanda Moura de Matos,fernanda.matos3@estudante.ifto.edu.br,1,283,2026-06-23 23:35:08,2026-07-04 00:12:55,FALSE
+681,7fa77caa-3276-4604-914e-7a4a9a7c9e93,VALDINEIRE PEREIRA BATISTA,valdineire.batista@estudante.ifto.edu.br,1,284,2026-06-23 23:35:10,2026-07-04 18:02:23,FALSE
+630,6938d990-faaa-48dc-9f28-c773e4792493,BEATRYZ RIBEIRO DE SOUSA,beatryz.sousa@estudante.ifto.edu.br,1,285,2026-06-23 23:35:07,2026-07-04 18:16:07,FALSE
+651,07fb8e6b-0ecb-4073-afed-863fdf57fe14,Isabela de Sá Costa Sousa,isabela.sousa2@estudante.ifto.edu.br,1,286,2026-06-23 23:35:08,2026-07-04 18:18:31,FALSE
+678,262a3116-307e-4a1c-a74d-777561b049f2,TAYLANE DA SILVA BASTOS,taylane.bastos@estudante.ifto.edu.br,1,287,2026-06-23 23:35:10,2026-07-04 18:46:06,FALSE
+680,d6ff6ce9-6a2f-456d-a949-21466881c67a,Valdilene Pinto da Silva,valdilene.silva@estudante.ifto.edu.br,1,288,2026-06-23 23:35:10,2026-07-04 20:17:17,FALSE
+636,57592443-20bd-4227-a211-6dff29a91bc2,Cleomildes Rodrigues da Luz,cleomildes.luz@estudante.ifto.edu.br,1,290,2026-06-23 23:35:07,2026-07-05 11:37:11,FALSE
+684,acc239ba-9b43-44b0-952a-b0c5f73b0ffd,Wanessa Alves Moreira,wanessa.moreira@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+686,b18bbba7-bb7b-415b-a9f8-1fa726d528dd,Ytauana Silva Chagas,ytauana.chagas@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+688,062143b7-b4eb-419d-a927-33064a7e8ed0,ANA CLARA FERNANDES MELO,ana.melo10@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+690,4763f72d-fede-4af1-93ca-48a2c33c36b4,Ana Raissa Rocha Rodrigues,ana.rodrigues38@estudante.ifto.edu.br,1,,2026-06-23 23:35:10,2026-06-23 23:35:10,FALSE
+692,99ef8a05-1bd4-45c1-bc5e-6c04a76b9d06,Angelo Gabriel Cardoso de Oliveira,angelo.oliveira2@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+693,95840d2a-ac60-4e48-afec-2d61107e7311,Anna Clara da Silva Rocha,anna.rocha2@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+698,f06cc9e9-1cf9-4111-9881-2e4271374d7d,Debora Maciel de Morais,debora.morais@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+699,ce66aab4-b3b4-48af-a619-c1b1071e856f,EDILBERTO SOUZA LIMA JUNIOR,edilberto.lima@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+701,fc19e3f4-8165-4285-9c51-b408fd068efd,ÉRIKA RODRIGUES COSTA,erika.costa2@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+702,784a1c9f-91cc-46d0-a5ec-8db15b0d79fd,ESTER TELES DE FARIAS,ester.farias2@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+704,e23814e8-9667-44b8-ac60-248e89deabd4,Gabriela de Sousa Silva,gabriela.silva20@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+706,1982577d-67d7-470c-8113-f6bf43e0262f,Glauciene Silva Alexandre,glauciene.alexandre@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+707,3785f810-d130-40a9-8c88-86e31ef51adf,Gustavo Gomes Serbu,gustavo.serbu@estudante.ifto.edu.br,1,,2026-06-23 23:35:11,2026-06-23 23:35:11,FALSE
+709,31a9964f-bc1c-47ee-8272-21509bc9e0b5,Ilana Rebeca de Souza Bessa,ilana.bessa@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+710,cb0a8b7a-306e-4b22-92dd-f11dedbf11ee,Isabella Cristina Moura Oliveira,isabella.oliveira3@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+711,8a94c56a-84e6-404c-9424-7a2917d93a2d,Isabella Oliveira de Sousa,isabella.sousa4@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+712,d8ef4646-dd84-4198-b322-16fb4ff90644,Juliana Oliveira Dias,juliana.dias3@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+714,62bcbec9-2743-45ba-9eb7-83feec59ce7f,KAMILLY VITÓRIA ALVES DE ARAÚJO,kamilly.araujo@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+717,989584e7-0864-42eb-8fa5-8b4280764898,Leticia Braga Costa,leticia.costa6@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+718,02ed3df6-b3d6-4c71-852d-94e58c4426a3,Linda Liz Pereira dos Santos,linda.santos@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+719,6013482c-7aa6-48d3-954d-4293e365d9cf,LÍVIA CASTRO SILVA,livia.silva11@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+721,08070142-ef4d-4536-b7fb-fd074c075976,MARIA CLARA FERREIRA PIAUILINO,maria.piauilino@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+722,a5d3c71d-7050-4d2d-beef-8d0d0fa0791e,MARIA EDUARDA SANTOS DE SOUSA,maria.sousa110@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+723,00eef547-9df4-425c-ae9b-e66de015615b,Maria Elizabeth Ferreira Rodrigues,maria.rodrigues32@estudante.ifto.edu.br,1,,2026-06-23 23:35:12,2026-06-23 23:35:12,FALSE
+724,b913fd38-0276-43c2-adf2-e2833e9b1968,Maria Fernanda Nunes Silva Lima,maria.lima42@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+725,a77dfddb-32ed-4235-8441-71ceccdcccac,MARIANNA ROSA ALENCAR,marianna.alencar@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+726,53bf6963-7b79-4f65-b1c2-f8883159124e,Maria Vitória Vanderlei de Alencar Soares,maria.soares3@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+728,aff8eb07-926c-4099-9d3e-09206f491945,Nicole Matos da Silva,nicole.silva3@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+729,13b69a03-70c9-4ae4-864c-90af98cd8890,NICOLY KETHLYN LIBANIO DUARTE,nicoly.duarte@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+732,85e797e1-8126-45b3-ae60-5a0e3f4ca7f2,Riquelme Galdino Pereira,riquelme.pereira2@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+733,9f3675e8-e524-4a58-84f7-fcc60d9b490f,Samira Maria Costa Sousa,samira.sousa2@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+734,07e98489-9efb-4ec1-b77d-f456257691ec,Sarah de Sousa Moreira,sarah.moreira@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+736,9cfc17ae-7eb9-4564-99c4-470e3ebbbf2d,STERFANY DA SILVA,sterfany.silva@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+737,c0f38d04-bd2a-40b0-9e5d-42a860123ec0,Sthanlley Schindler da Silva,sthanlley.schindler@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+739,5ca4ee53-2b61-4ba7-b44a-41c40ad0582a,THAMYRYS MATOS LACERDA,thamyrys.lacerda@estudante.ifto.edu.br,1,,2026-06-23 23:35:13,2026-06-23 23:35:13,FALSE
+731,8bd928d4-4486-4a8c-8655-baff0e87eece,RICARDO DE ALMEIDA TAVARES,ricardo.tavares2@estudante.ifto.edu.br,1,76,2026-06-23 23:35:13,2026-06-24 13:08:40,FALSE
+695,20aaa532-e011-42dd-bb51-4450b6f4779b,Bianca Lima Reis,bianca.reis@estudante.ifto.edu.br,1,77,2026-06-23 23:35:11,2026-06-24 13:08:48,FALSE
+689,c7018e0f-bce0-4e87-8d2d-487b32f501b2,Ana Livia Monteiro da Silva,ana.silva141@estudante.ifto.edu.br,1,81,2026-06-23 23:35:10,2026-06-24 13:18:57,FALSE
+720,9f3ac31e-f241-499c-ac91-84d2cf03fd9f,LIVIA MATIAS PEREIRA,livia.pereira3@estudante.ifto.edu.br,1,101,2026-06-23 23:35:12,2026-06-24 14:30:58,FALSE
+691,76e7d5ee-b3ba-4117-975a-e26c33195515,Angella Maylla Ferreira Milhomens,angella.milhomens@estudante.ifto.edu.br,1,147,2026-06-23 23:35:11,2026-06-26 14:48:08,FALSE
+697,583a6a09-60e0-489f-8d1d-2650770d1a35,Davi Cintra Coelho Silva,davi.silva20@estudante.ifto.edu.br,1,179,2026-06-23 23:35:11,2026-06-29 16:09:28,FALSE
+735,872ec3ec-8279-4299-9277-e44114abdcd8,Saulo Maxwell Inorom Almeida Gomes,saulo.gomes@estudante.ifto.edu.br,1,213,2026-06-23 23:35:13,2026-07-01 10:57:21,FALSE
+708,d1738b26-fa94-4030-953b-d3f4c5685336,Hamábille Hadassa Gomes Gonçalves,hamabille.goncalves@estudante.ifto.edu.br,1,218,2026-06-23 23:35:12,2026-07-01 12:21:54,FALSE
+687,e6156f43-3c9e-48ca-9b2d-24a1fe0972bd,AMANDA BEATRIZ AGUIAR GOMES DA SILVA,amanda.silva39@estudante.ifto.edu.br,1,228,2026-06-23 23:35:10,2026-07-01 12:43:18,FALSE
+730,2febe3d9-5e91-4eae-a1c6-13257bb916a7,Nycolyy da Silva Freitas,nycolly.freitas@estudante.ifto.edu.br,1,239,2026-06-23 23:35:13,2026-07-01 13:40:12,FALSE
+685,7193d8b9-6efd-43e2-82ac-86ff9e9881c1,Weryke Jones da Silva Dantas,weryke.dantas@estudante.ifto.edu.br,1,244,2026-06-23 23:35:10,2026-07-01 14:06:14,FALSE
+703,ebf04615-6a30-4fcf-a71b-41f75d4db638,Francisco de Assis Pereira de Lima,francisco.lima7@estudante.ifto.edu.br,1,260,2026-06-23 23:35:11,2026-07-01 15:05:08,FALSE
+715,53330cc4-703d-42fc-87c3-5d3431ce667c,KARINA FERREIRA PAIXÃO,karina.paixao@estudante.ifto.edu.br,1,261,2026-06-23 23:35:12,2026-07-01 15:09:48,FALSE
+700,d6f6bd48-c7cf-460f-8654-6df3122a20ac,ELLEN SOUSA LEAL,ellen.leal@estudante.ifto.edu.br,1,264,2026-06-23 23:35:11,2026-07-01 15:38:40,FALSE
+694,727d2690-caa0-4b88-94a4-cd4bfb5a6e0c,BÁRBARA SILVA NETO COSTA,barbara.costa3@estudante.ifto.edu.br,1,277,2026-06-23 23:35:11,2026-07-02 14:20:11,FALSE
+705,55a8eb02-4b68-4a94-815a-277b1034b807,GESSICA ALVES CONCEIçãO,gessica.conceicao@estudante.ifto.edu.br,1,278,2026-06-23 23:35:11,2026-07-02 16:17:29,FALSE
+738,f6db59c3-7dc9-4241-9929-b7c72c7227f0,TAIZ MARIA BARBOSA,taiz.barbosa2@estudante.ifto.edu.br,1,303,2026-06-23 23:35:13,2026-07-06 22:09:44,FALSE
+716,89398311-f877-42e4-92c0-f3d4bc67e658,LARAH ESTHÉPHANE SILVA LIMA,larah.lima@estudante.ifto.edu.br,1,318,2026-06-23 23:35:12,2026-07-27 14:00:16,FALSE
+742,11c915fc-28bc-4562-b226-5c6db805ab43,THAYNARA GOMES DA SILVA  AGUIAR,thaynara.aguiar@estudante.ifto.edu.br,1,,2026-06-23 23:35:14,2026-06-23 23:35:14,FALSE
+743,412edc3c-1d50-4222-877f-960860e2451c,VINÍCIUS PEREIRA DE MOURA LUCAS,vinicius.lucas@estudante.ifto.edu.br,1,,2026-06-23 23:35:14,2026-06-23 23:35:14,FALSE
+744,d0fad19b-406b-4dd2-8a2f-c59304b13cd3,VITOR DA SILVA COFFANI,vitor.coffani@estudante.ifto.edu.br,1,,2026-06-23 23:35:14,2026-06-23 23:35:14,FALSE
+745,1ac1da3e-0b57-4aa0-87b6-438edacdf10c,Vitória Carvalho de Sousa,vitoria.sousa10@estudante.ifto.edu.br,1,,2026-06-23 23:35:14,2026-06-23 23:35:14,FALSE
+748,3b505805-5130-49e3-897e-fe4c24d22397,YARA KAROLINY MARTINS COSTA,yara.costa3@estudante.ifto.edu.br,1,,2026-06-23 23:35:14,2026-06-23 23:35:14,FALSE
+751,ae8d0fd5-d558-4863-9227-75d09d1597ac,ALICE ARAÚJO SILVA,alice.silva10@estudante.ifto.edu.br,1,,2026-06-23 23:35:14,2026-06-23 23:35:14,FALSE
+755,7cf18d46-a06a-4f7d-af9a-9daf5b4cd8f7,Aryane Alves Dos Santos Almones,aryane.almones@estudante.ifto.edu.br,1,,2026-06-23 23:35:14,2026-06-23 23:35:14,FALSE
+757,895075d4-4adc-4f73-b007-d0b72ea463b6,Davi Oliveira Reis,davi.reis@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+761,96d0c1f8-f2c5-4ab5-815b-c53f46c93c61,Fabrício Rodrigues Espíndola,fabricio.espindola@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+763,9abb1320-e63c-4ddd-8957-def29769e2c0,HANA SOFIA LIMA DA SILVA,hana.silva2@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+765,6c8e2c6a-eb91-4972-b225-4c442908d3e0,ISADORA BARBOSA DA SILVA,isadora.silva11@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+767,6584e594-bc6a-4b7e-b512-0dc3b848a1f3,João Arthur Costa Silva,joao.silva140@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+769,80f984a5-3400-45a4-9ff2-5689cc86805f,João Pedro Alves e Silva,joao.silva139@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+771,22f65b4c-2229-4508-88df-42b3e262ee8a,JOÃO PEDRO OLIVEIRA BORBA,joao.borba@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+772,ae12991a-1cef-4b42-88f0-e8203726f675,JOÃO VICTOR DE FREITAS ALVES,joao.alves13@estudante.ifto.edu.br,1,,2026-06-23 23:35:15,2026-06-23 23:35:15,FALSE
+773,785938c2-37f4-4b03-849a-9d6e08b9bbce,Juliana da Silva Costa,juliana.costa9@estudante.ifto.edu.br,1,,2026-06-23 23:35:16,2026-06-23 23:35:16,FALSE
+780,96d5631f-bdd9-456a-8648-689e9c956ef8,PEDRO CÉSAR SILVA LIMA,pedro.lima12@estudante.ifto.edu.br,1,,2026-06-23 23:35:16,2026-06-23 23:35:16,FALSE
+782,74a9edc8-dac6-413e-aee2-e19b5ef4d9a1,Sara Barbosa de Sena,sara.sena@estudante.ifto.edu.br,1,,2026-06-23 23:35:16,2026-06-23 23:35:16,FALSE
+784,7c9c4d2c-8e44-4506-b6c5-76aab0863fdd,Vitor Gabriel Paiva de Sousa,vitor.silva24@estudante.ifto.edu.br,1,,2026-06-23 23:35:16,2026-06-23 23:35:16,FALSE
+61,84d5ab53-5d53-430d-92e9-ddcc33fe8057,ISAC RIBEIRO DA SILVA,isac.silva3@estudante.ifto.edu.br,1,5,2026-06-23 23:34:33,2026-06-24 01:56:22,FALSE
+419,d76fae61-89b7-4e24-920a-ff694197a332,Luna Dias da Silva,luna.silva@estudante.ifto.edu.br,1,6,2026-06-23 23:34:54,2026-06-24 02:01:24,FALSE
+427,4d684b10-29fe-4468-b2b4-35bbb05022c9,MATHEUS BARROS DE SOUZA,matheus.souza10@estudante.ifto.edu.br,1,7,2026-06-23 23:34:55,2026-06-24 02:07:41,FALSE
+552,f0ed9a0f-0d2a-4dca-b3e2-337c6d07e38e,Fernanda Sousa Mendes,fernanda.mendes2@estudante.ifto.edu.br,1,9,2026-06-23 23:35:02,2026-06-24 02:08:42,FALSE
+141,459a514c-336d-4df7-859e-ac281f2e24b8,Nicole Valentina da Silva Souza,nicole.souza2@estudante.ifto.edu.br,1,10,2026-06-23 23:34:38,2026-06-24 02:11:51,FALSE
+9,72650cec-0752-4287-bc39-9d94e7b4c5ce,ANA CRISTINA SOUSA PEREIRA,ana.pereira24@estudante.ifto.edu.br,1,11,2026-06-23 23:34:30,2026-06-24 02:11:55,FALSE
+618,83e66e3c-ecab-4725-a342-1d940e20dcbf,Serice Rocha Chaves,serice.chaves@estudante.ifto.edu.br,1,12,2026-06-23 23:35:06,2026-06-24 02:15:06,FALSE
+354,fa04e64a-8803-4b96-a619-7af9840a18c8,Alex Halel Gonçalves,alex.goncalves@estudante.ifto.edu.br,1,13,2026-06-23 23:34:50,2026-06-24 02:18:45,FALSE
+382,7d35093f-a5e0-45be-bf5a-a760993e4357,Emanuel Hipolito Nogueira Simiema,emanuel.simiema@estudante.ifto.edu.br,1,17,2026-06-23 23:34:52,2026-06-24 02:43:59,FALSE
+156,7ee08ab8-aef9-442b-aa71-0fd95bd894c4,Samuel Lopes Araújo,samuel.araujo10@estudante.ifto.edu.br,1,37,2026-06-23 23:34:39,2026-06-24 11:35:16,FALSE
+190,eb7f3ca6-6d13-4005-b605-7e3b3aee60cb,Yasmim Alves dos santos,yasmim.santos7@estudante.ifto.edu.br,1,42,2026-06-23 23:34:41,2026-06-24 12:04:52,FALSE
+779,bc899bb7-89a4-4386-a93f-7c653dd2608c,MIGUEL MIRANDA BATISTA,miguel.batista@estudante.ifto.edu.br,1,96,2026-06-23 23:35:16,2026-06-24 13:59:54,FALSE
+778,845fcd6f-3ec0-4cc7-815f-8614823c706e,MARIA PAULA FERREIRA RIOS,maria.rios@estudante.ifto.edu.br,1,112,2026-06-23 23:35:16,2026-06-24 19:34:56,FALSE
+758,4190f01e-1bd1-4385-9577-271a30a47b0f,Davi Souza Andraschko,davi.andraschko@estudante.ifto.edu.br,1,114,2026-06-23 23:35:15,2026-06-24 21:55:50,FALSE
+764,6674e76e-b7a1-494a-989e-40c51b79804e,ISABEL NASCIMENTO DA PAIXÃO,isabel.paixao@estudante.ifto.edu.br,1,122,2026-06-23 23:35:15,2026-06-25 17:21:40,FALSE
+740,2ad5f339-2ec9-4fff-9909-4cd42c7f38df,Thauany Luna de Oliveira,thauany.oliveira@estudante.ifto.edu.br,1,133,2026-06-23 23:35:14,2026-06-26 13:33:06,FALSE
+746,bbb80598-5341-483f-85e8-d8db0f20baa4,VITORIA EMILLY DE SOUSA LIMA,vitoria.lima7@estudante.ifto.edu.br,1,178,2026-06-23 23:35:14,2026-06-29 16:09:24,FALSE
+768,b13426b7-f052-452d-886d-ca8cc04372f8,João Guilherme Sousa Medeiros,joao.medeiros2@estudante.ifto.edu.br,1,196,2026-06-23 23:35:15,2026-07-01 01:17:11,FALSE
+776,3f1a1ca1-c7bb-4cf8-8261-b88c03de688e,Maria Angélica Meireles de Carvalho,maria.carvalho37@estudante.ifto.edu.br,1,197,2026-06-23 23:35:16,2026-07-01 01:23:01,FALSE
+775,7dd8ef8f-9c60-4a5a-a40d-96fe65fd49f6,Lara Franciny Ribeiro dos Santos,lara.santos9@estudante.ifto.edu.br,1,199,2026-06-23 23:35:16,2026-07-01 01:45:00,FALSE
+762,e80b4278-a6c5-4d81-846d-8ad96836157e,Gustavo Carneiro Lima,gustavo.lima10@estudante.ifto.edu.br,1,200,2026-06-23 23:35:15,2026-07-01 01:50:08,FALSE
+759,d4825f6e-89ab-46b4-97eb-f21fe114ba03,EMANUEL BORGES CÂNDIDO,emanuel.candido@estudante.ifto.edu.br,1,204,2026-06-23 23:35:15,2026-07-01 02:02:55,FALSE
+749,187aaff9-091d-4bbc-b877-25abc79d6c38,Yasmim Martins Lima,yasmim.lima@estudante.ifto.edu.br,1,211,2026-06-23 23:35:14,2026-07-01 10:36:00,FALSE
+750,3e367fdc-50d4-4143-a9a1-650a5e21ca1b,Yasmim Oliveira Antunes,yasmim.antunes@estudante.ifto.edu.br,1,212,2026-06-23 23:35:14,2026-07-01 10:39:56,FALSE
+747,948f8f4b-4231-4b96-b318-1ab59c6a4b2f,Wevelly Delmondes Pereira,wevelly.pereira@estudante.ifto.edu.br,1,216,2026-06-23 23:35:14,2026-07-01 12:21:02,FALSE
+766,88fe1618-cb1f-448f-9762-5aec067e6959,Iury Caldas Leal,iury.leal@estudante.ifto.edu.br,1,219,2026-06-23 23:35:15,2026-07-01 12:22:21,FALSE
+741,f14fce23-958a-49c0-b5de-071cf6298125,Thavylla Sousa Moreira,thavylla.moreira@estudante.ifto.edu.br,1,222,2026-06-23 23:35:14,2026-07-01 12:23:20,FALSE
+753,ffc62746-a1e4-484a-8e71-5a7d70c15ff0,ANNA CLARA PEREIRA DE ARAUJO,anna.araujo3@estudante.ifto.edu.br,1,240,2026-06-23 23:35:14,2026-07-01 13:49:51,FALSE
+770,0fd67a0f-becc-45ed-84ef-255c8d712543,JOÃO PEDRO FERREIRA ROCHA CARVALHO,joao.carvalho26@estudante.ifto.edu.br,1,256,2026-06-23 23:35:15,2026-07-01 14:57:29,FALSE
+754,209420ae-632a-46c0-b0b8-f1d5489a4f21,Anna Cristina da Silva Oliveira,anna.oliveira13@estudante.ifto.edu.br,1,257,2026-06-23 23:35:14,2026-07-01 14:59:42,FALSE
+774,fd45b5b4-8533-484f-884b-aef1160c9d6e,Kauane Dias Maciel,kauane.maciel@estudante.ifto.edu.br,1,258,2026-06-23 23:35:16,2026-07-01 15:03:17,FALSE
+756,6341160d-55bc-4928-a3e4-8f60f1678824,CAIO MARINHO LEITE,caio.leite@estudante.ifto.edu.br,1,259,2026-06-23 23:35:14,2026-07-01 15:04:30,FALSE
+760,322929b2-4f23-451c-aad8-86b342a65db3,EMANUELE DE LIMA MASCARO,emanuele.mascaro@estudante.ifto.edu.br,1,262,2026-06-23 23:35:15,2026-07-01 15:14:10,FALSE
+785,1be7540b-61f5-455e-aa6d-b0d85f65efda,YOHANA DE SOUSA LOPES MEIRA,yohana.meira@estudante.ifto.edu.br,1,280,2026-06-23 23:35:16,2026-07-03 09:39:43,FALSE
+87,f1ee7bdd-b3fe-462e-b229-98dba30a2e3d,JULYANA LIMA DUARTE,julyana.duarte@estudante.ifto.edu.br,1,52,2026-06-23 23:34:34,2026-06-24 12:34:59,FALSE
+403,82ca255d-263b-44c5-a3b9-5b823209a586,Ícaro Levi Silva Pereira,icaro.pereira2@estudante.ifto.edu.br,1,58,2026-06-23 23:34:53,2026-06-24 12:42:15,FALSE
+777,5c45a3ab-2c1f-42f2-a69e-b4e621da7c21,Maria Cecília de Miranda Barros,maria.barros16@estudante.ifto.edu.br,1,62,2026-06-23 23:35:16,2026-06-24 12:47:20,FALSE
+2,f25065ee-2e3c-4288-a3b3-cda787666e0a,Alleck Moura Feitosa,alleck.feitosa@estudante.ifto.edu.br,1,73,2026-06-23 23:34:29,2026-06-24 12:58:02,FALSE
+696,7db92ad6-c3d3-4ed9-9eba-21d1b1ff5b14,Bruno Aguiar Araujo Vanderlei,bruno.vanderlei@estudante.ifto.edu.br,1,75,2026-06-23 23:35:11,2026-06-24 13:05:53,FALSE
+361,4e2785ee-4099-436a-a08c-09600773b5d7,Ana Clara Santana Silva,ana.silva230@estudante.ifto.edu.br,1,89,2026-06-23 23:34:51,2026-06-24 13:34:59,FALSE
+499,fb303277-0131-45db-96a7-fd2da913aa50,JUNIEL SOUSA DO NASCIMENTO,juniel.nascimento@estudante.ifto.edu.br,1,91,2026-06-23 23:34:59,2026-06-24 13:50:12,FALSE
+783,8447b457-4745-4bae-8bec-88269f47353d,Thayla Geovanna Oliveira Araújo,thayla.araujo@estudante.ifto.edu.br,1,97,2026-06-23 23:35:16,2026-06-24 14:01:29,FALSE
+522,419fa9d0-2cb9-4b84-975e-285011b2e9dc,Regivan Lopes da Silva,regivan.silva2@estudante.ifto.edu.br,1,123,2026-06-23 23:35:00,2026-06-25 23:13:50,FALSE
+333,bfe55c87-f217-45ba-b799-3977ab26ff7a,Willyamar Alves Santos,willyamar.santos@estudante.ifto.edu.br,1,135,2026-06-23 23:34:49,2026-06-26 13:35:56,FALSE
+176,59053245-ce78-498c-aaa7-37491999980d,THOMAZ FIGUEIRA DA SILVA NETO,thomaz.neto@estudante.ifto.edu.br,1,136,2026-06-23 23:34:40,2026-06-26 13:47:18,FALSE
+166,33d519c0-a3ee-44ec-aa06-1e84c42f7627,Sophia Emanuella Gama de Souza,sophia.souza@estudante.ifto.edu.br,1,138,2026-06-23 23:34:39,2026-06-26 13:49:42,FALSE
+577,d287d7e9-4497-4f20-93a3-a9eb11810a48,Leidiane Rosa da Conceição Silva,leidiane.silva5@estudante.ifto.edu.br,1,140,2026-06-23 23:35:04,2026-06-26 14:01:57,FALSE
+24,340d7c80-2df7-4b4e-80e2-e20f6b735d7b,Cecília Alcântara Mendes Lima de Araujo,cecilia.araujo2@estudante.ifto.edu.br,1,142,2026-06-23 23:34:31,2026-06-26 14:08:05,FALSE
+93,1dca05ce-4e29-4977-a1f2-096736e05885,KAUANNY VICTORIA LEONIDAS PORTILHA,kauanny.portilha@estudante.ifto.edu.br,1,146,2026-06-23 23:34:35,2026-06-26 14:44:14,FALSE
+537,e3910e64-b651-4765-9906-bb75cb1f251c,Amanda Ribeiro de Sousa,amanda.sousa16@estudante.ifto.edu.br,1,165,2026-06-23 23:35:01,2026-06-26 22:12:25,FALSE
+431,61e7e9d5-2b64-469b-922a-28ffa840e1d2,Myrelly Câmara Da Silva,myrelly.silva@estudante.ifto.edu.br,1,176,2026-06-23 23:34:55,2026-06-29 11:37:58,FALSE
+727,b1cd22a3-bd49-4519-b2eb-aeb740592d8c,Marília Parreira Serato de Castro,marilia.castro@estudante.ifto.edu.br,1,181,2026-06-23 23:35:13,2026-06-30 00:26:00,FALSE
+112,03a2a020-6d57-434e-bcc8-141b03653a48,Ludmilla Ribeiro de Vasconcelos Cunha,ludmilla.cunha@estudante.ifto.edu.br,1,185,2026-06-23 23:34:36,2026-06-30 19:23:46,FALSE
+153,1474a303-85c2-4a0f-9c59-38f92ba1d42a,Samuel Darksom Amorim dos Santos,samuel.santos13@estudante.ifto.edu.br,1,187,2026-06-23 23:34:38,2026-06-30 19:27:34,FALSE
+627,0f75509c-ef00-4585-8a1d-a49cd45608fc,Yasmim Nascimento Parlandim,yasmim.parlandim@estudante.ifto.edu.br,1,188,2026-06-23 23:35:07,2026-06-30 19:29:25,FALSE
+46,45fb3f4e-49cc-4eb9-a478-874ad9021cd4,GABRIEL VITOR ANDRADE BITTENCOURT,gabriel.bittencourt@estudante.ifto.edu.br,1,192,2026-06-23 23:34:32,2026-06-30 19:56:35,FALSE
+781,4ff92768-ede9-4d60-9185-cde9039e2261,PEDRO EMMANUEL SILVA MELO MOREIRA,pedro.moreira4@estudante.ifto.edu.br,1,198,2026-06-23 23:35:16,2026-07-01 01:37:22,FALSE
+234,7e533f80-b5d7-40e0-889b-6621e7950fc4,Gabriel Maia Sousa,gabriel.sousa14@estudante.ifto.edu.br,1,215,2026-06-23 23:34:43,2026-07-01 12:20:32,FALSE
+375,049014ff-75da-4028-aca0-96bf5209037b,Dellane Rafaela Sousa Coelho,dellane.coelho@estudante.ifto.edu.br,1,220,2026-06-23 23:34:52,2026-07-01 12:22:23,FALSE
+252,7e86e98a-c4b9-49ce-b824-cae10b941f2b,Isadora Aparecida Guedes Cavalcante,isadora.cavalcante@estudante.ifto.edu.br,1,229,2026-06-23 23:34:44,2026-07-01 12:43:28,FALSE
+401,a286b199-4875-40b5-9a38-7a1ee4bae9af,Heloíse Fernandes Marin Magalhães,heloise.magalhaes@estudante.ifto.edu.br,1,232,2026-06-23 23:34:53,2026-07-01 12:55:47,FALSE
+752,04a80c1f-671c-4bae-8717-3f9a68108248,Ana Beatrice da Silva Lustosa,ana.lustosa4@estudante.ifto.edu.br,1,237,2026-06-23 23:35:14,2026-07-01 13:18:46,FALSE
+639,88d19945-3ad8-410b-97fc-994c0a7b4f4d,Daiane Alves dos Santos,daiane.santos6@estudante.ifto.edu.br,1,241,2026-06-23 23:35:07,2026-07-01 13:51:00,FALSE
+589,04d1b080-05c0-4e50-a98d-65ab559451ff,MARIA LUIZA FERNANDES LIMA,maria.lima45@estudante.ifto.edu.br,1,242,2026-06-23 23:35:04,2026-07-01 13:54:10,FALSE
+713,8ee51996-958c-419c-9e9a-ccc01bec528e,Kailany de Brito Oliveira,kailany.oliveira@estudante.ifto.edu.br,1,265,2026-06-23 23:35:12,2026-07-01 15:47:05,FALSE
+631,7ecbc5f9-b7a6-4dcc-9a6e-5536d8e65617,Bruna Pereira Batista,bruna.batista@estudante.ifto.edu.br,1,281,2026-06-23 23:35:07,2026-07-03 11:37:39,FALSE
+133,48642b9a-6644-4630-8a71-5c7dfef78305,Michelle Costa Morais,michelle.morais2@estudante.ifto.edu.br,1,291,2026-06-23 23:34:37,2026-07-06 18:13:49,FALSE
+67,efa21ec8-fe16-423d-8e52-a99fca0babc7,João Antonio Cruz da Silva Resende,joao.resende4@estudante.ifto.edu.br,1,293,2026-06-23 23:34:33,2026-07-06 18:28:35,FALSE
+55,d85ae130-d1ac-4c2b-a108-0d0288fc9670,Heric José Silva Ornelas,heric.ornelas@estudante.ifto.edu.br,1,302,2026-06-23 23:34:32,2026-07-06 19:50:10,FALSE
+605,b848d8f2-9645-4af4-a1f7-480f3c9363bb,Quezia Gonçalves da Silva,quezia.silva@estudante.ifto.edu.br,1,313,2026-06-23 23:35:05,2026-07-08 18:49:06,FALSE
+658,f8e92347-9fe4-4181-a28f-ef9c516731ec,Luciana Ferreira de Sousa,luciana.sousa8@estudante.ifto.edu.br,1,315,2026-06-23 23:35:09,2026-07-10 15:24:35,FALSE
+207,6643ea77-1aed-453a-86cf-54d4876a2f86,Arthur Borges Sousa,arthur.sousa7@estudante.ifto.edu.br,1,317,2026-06-23 23:34:42,2026-07-13 18:04:33,FALSE

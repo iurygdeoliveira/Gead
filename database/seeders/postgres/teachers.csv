@@ -1,0 +1,68 @@
+id,uuid,name,registration_number,email,team_id,user_id,created_at,updated_at
+1,a2774953-24e0-4e7c-980b-eb6982f8d8ff,Walmir Jacinto de Sousa,2261068,walmir.sousa@ifto.edu.br,1,2,2026-06-23 23:34:04,2026-06-25 10:45:32
+29,5c9a8b80-4fb2-4a73-876e-0f980a5e7eef,David Anderson Fernandes de Aguiar,1177804,,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+33,710e981e-f2b2-4d8f-8dcf-992e66b0c474,Filipe Gouveia Cavalcante,3506848,,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+37,2964c94f-5932-4fde-a873-0f04817c89b6,Joao Batista Silva de Souza,3531431,,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+40,adf28730-45d3-4231-833c-cb28ef3c7ca5,Jacqueline Soares Carvalho Correia,3538858,,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+49,8ec5f17e-a572-4df2-ad08-97a43ad54027,Joao Carlos Santiago Nery,1367252,,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+51,e4fea9ca-549f-4079-9c7f-af484e7868c8,Gabriel Almeida da Silva,3532566,,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+52,2ba71b92-23f5-4225-b7ac-7d0e0af5826d,Genivon Pereira Barbosa,3409184,,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+59,a2d005e4-07c5-40f7-b272-3e60a726a29f,Alessandro Trevisan Monteiro,1743506,alessandro_atm@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+56,856d499c-96dd-47e2-ab57-cf25acdd6c32,Alexandre Cotrim Vilas Boas,1616745,alexandre.vilasboas@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+48,5bb85c04-f2c6-4548-a806-25b9677af64c,Ana Flavia de Morais Oliveira,1755992,anaflaviamo@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+44,91f733c4-aa0e-4cd7-90eb-3b7451f959af,Angelo Cassio Bezerra Nascimento,1743484,kassioangelo@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+36,30e95415-a264-40bd-8b02-93ea3be8d882,Anivaldo Pereira Duarte Junior,3521514,anivaldo.junior@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+9,3336e4e7-cf8a-48d7-8a83-c95105b7f283,Bruno Anderson Girao de Sousa,3503964,bruno.sousa@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:28
+39,eaa8a66f-0224-41cb-83a0-774fde7640e9,Carla Cristina da Silva,2384420,cristina.silva@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+26,4e52caa6-ee6d-4c1d-b475-9a234a8e4968,Charles Jefferson Rodrigues Alves,1981305,charles.alves@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+4,7cd52d09-6e3e-4a9e-936d-4f55b8df2695,Cristina Sousa da Silva,2671944,cristiangeoifto@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:28
+18,848edb8e-c980-451b-9761-978876ce0ecf,Dacio Alves Pereira de Oliveira,1043559,dacio.oliveira@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:28
+13,258ac16d-8210-4a37-a199-73ea562febdf,David Samuel Silva Rosa,3521719,david.rosa@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:28
+54,d8d9dc91-f19a-41fd-8e4a-73110c19d9ad,Deusine Cristianne Borges Aguiar Mendes,1786039,deusine.mendes@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+45,5a435b3b-42fe-4130-a6fc-dba386372e88,Diego Alves de Medeiros,3520978,diego.medeiros@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+60,98089986-726f-4226-bd7d-53a73adf78b5,Erika de Paula Ferreira,1981296,erika.ferreira@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+16,1e697a79-5130-49c1-8030-c51f784f9480,Evaldo da Silva Andrade,1120772,evaldo.andrade@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:28
+35,85fea187-75c6-441f-96b2-b84e98045882,Eva Pereira da Costa,2644073,evinhacosta@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+7,04b980c4-7a7f-4f91-8d17-14cf8cc1acc6,Felipe Goncalves Carneiro,2243876,felipe.carneiro@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:28
+61,2061ab9b-2890-4ff3-96dd-e9c9ebeb4887,Gelson Andre Schneider,2169953,gelson.schneider@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:28
+24,c7ee40cd-b996-4067-adf1-ec3a5b7835bd,Gerson Alves de Oliveira,1821887,gerson.oliveira@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:28
+34,ff682767-9a1f-4d94-8bd2-7656995a8f63,Gildemberg da Cunha Silva,2056583,gildemberg.silva@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+41,30793cc0-f65d-44d6-9a18-7ed1ae9fecfa,Gilson Tavares de Lima,1952520,gilsontavares@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+2,cf88c1c5-f9ca-4f5f-a125-99c059a829b4,Gilvan Vieira Moura,2159760,gilvan.moura@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+31,67df98a3-b176-4295-bfb4-f56be70fef10,Gislane Goncalves Silva,2187146,gislane.silva@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+15,86c1c721-7411-48f8-a6a2-4b3f90413944,Halisson Alves de Lima,2267410,halisson.lima@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+42,e3d96e60-121c-46ee-ad56-08bdfadabcf0,Hebert Lima Batista,1883979,batistahebert@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+32,3aa90fd0-378d-4418-b55a-eea68e347c09,Heidi Luz Bonifacio,1943441,heidi.bonifacio@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+25,ffbe03bb-47f9-47d8-85dc-f3975fa8e99f,Helio Marcio Nunes Lacerda,2125802,helio.lacerda@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+14,bde393b2-0f47-43fe-a08f-16bc0df9147c,Iara Luzia Ferreira Soares,3426642,iara.soares@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+28,86371a94-cc38-4f43-b007-6ffd0dfa0859,Iury Gomes de Oliveira,1123216,iury.oliveira@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+19,a62c6f2e-1f46-47aa-b1dc-38ad90fa023d,Joana D Arc Dias Cunha,3528840,joana.cunha@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+22,183b0468-b7ca-42e0-b159-3e46c7c672be,Jonathon Viana Silva,2158087,jonathon.silva@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+30,79dfdd0e-347c-4f0b-ba5b-bcda0be51095,Jonierson de Araujo da Cruz,1618409,joniersonac@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+53,d4b5c0ae-b30d-4046-a54f-671cb178e5dc,Jose Ribamar Santos Moraes Filho,1358554,joseribamar.filho@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+3,767e1a63-2ea8-463a-bdf5-9c36631e0f38,Julio Aires Azevedo Leite,3673010,julioaires@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+46,df3af608-c1cd-4dbb-92aa-2b4f5a4d8ad8,Katiane Pereira Braga,1785361,katianepb@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+38,f371a5fa-35f7-4a63-8c02-7eb2ca369448,Katiane Ribeiro Lopes,1234809,katiane.lopes@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+10,2d7b4d4c-f082-4f4b-839e-641e4f03a38a,Leonardo de Sousa Silva,2260152,leonardo.silva@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+62,bbf9f36f-b485-44c3-8a41-1ad5081f8c50,Luana Priscilla Rodrigues Macedo,1267164,luana.macedo@ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29
+23,c6118648-acad-49fb-88ba-ad5aa807377d,Luciania dos Santos Cardoso Sousa,1426443,luciania.sousa@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+5,14499f4f-6622-4f0f-94ac-4a9a80f5d9cc,Luis Rodomilson Pedrosa da Silva,2260978,luis.silva@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+50,a3cccc74-d078-40c7-9aff-ffa9e6e18433,Macilene Maria Monteiro Maia,1251027,macilene.maia@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+12,ff6535e0-5eac-4eba-be13-1e4881a5acc6,Make Bruno Silva Benigno,2277335,make.benigno@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+47,4da6710c-e907-4db3-9017-9836260625a0,Marcia Rogeria Pereira Leite Silva,1783409,marciaro@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+11,3b37a8bd-3f04-4413-a9f7-5c52fbadedb0,Marinalva Dias de Lima Ferreira,2187528,marinalva.lima@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+8,064819b2-5556-4a88-a529-8c17f32fb505,Mario de Souza Lima e Silva,1525518,marioifto@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+63,c6cd8763-7ba5-4924-b9be-5b7a2f27edeb,Mateus Dall Agnol,1984751,mateus.agnol@ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29
+55,b52aecd2-6654-4cb2-b917-21e1d1999764,Myllenna Rodrigues de Abreu,3469852,myllenna.abreu@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+21,16465920-e9bd-4351-a8d8-b1ffdaa283d4,Paulo Ricardo da Silva Pontes,1158242,paulo.pontes@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+64,2186ec59-390d-4125-83d1-60d4147e626c,Rejane Xavier Lima Costa,1783379,rejane.lima@ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29
+57,8a5b2e5f-5116-48ca-898b-b31cee408e9f,Ricardo Barbosa de Sousa,1860703,ricardo.sousa@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+65,677ede83-98f2-47b8-bab3-f781e1878db8,Rosa Maria Machado de Sena,1192998,rosa.sena@ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29
+43,0da7acbe-f601-4435-b784-baea6016f9cb,Sabrina Guimaraes Paiva,1883058,sabrinapaiva@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+20,68996508-2e9a-4103-bf11-035ad32c3f34,Silvia Fernandes Nunes Ramalho,2385200,silvia.ramalho@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+66,be38d18a-c6ef-4fd7-bba8-5cc3a2e010f0,Suellen Nobrega de Andrade Pinho,1981304,suellen.andrade@ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29
+67,97b054a0-dc48-435a-9604-cf37ddb48849,Suzanne Mychelly Rosa Silva Magalhaes,1981301,suzanne.magalhaes@ifto.edu.br,1,,2026-06-23 23:34:29,2026-06-23 23:34:29
+58,48a25a62-7b97-42bb-9692-32959c229bec,Tassio Romulo Silva Araujo Luz,1356384,tassio.luz@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+17,7662634f-d098-49be-b966-ccbfbe6c8c62,Vagner Alves dos Santos,1740260,vagner.santos@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29
+27,297c98cb-2b40-451d-9f6a-9dedc3138fb6,Walisson Pereira de Sousa,2200593,walisson.sousa@ifto.edu.br,1,,2026-06-23 23:34:28,2026-06-23 23:34:29
+6,c5beea93-d401-499f-9e36-6dba9f17600b,Wellington Sampaio da Silva,1629076,sampaio@ifto.edu.br,1,,2026-06-23 23:34:27,2026-06-23 23:34:29

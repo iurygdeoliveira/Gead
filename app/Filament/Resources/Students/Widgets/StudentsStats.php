@@ -57,6 +57,7 @@ class StudentsStats extends BaseWidget
         foreach ($students as $student) {
             if ($student->is_dispensed_from_evaluations) {
                 $dispensados++;
+
                 continue;
             }
 

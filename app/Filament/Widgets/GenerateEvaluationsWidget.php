@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Filament\Widgets;
 
+use App\Filament\Resources\Students\StudentResource;
 use App\Models\ClassEnrollment;
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
 use App\Models\Student;
 use App\Models\Team;
-use App\Filament\Resources\Students\StudentResource;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;

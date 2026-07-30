@@ -6,11 +6,9 @@ namespace App\Filament\Pages;
 
 use App\Filament\Widgets\CourseEvaluationsWidget;
 use App\Filament\Widgets\CustomStats;
-use App\Filament\Widgets\DispensedStudentsWidget;
 use App\Filament\Widgets\EvaluationsOverviewWidget;
 use App\Filament\Widgets\GenerateEvaluationsWidget;
 use App\Filament\Widgets\StudentDisciplinesWidget;
-use App\Filament\Widgets\StudentsWithoutClassWidget;
 use App\Filament\Widgets\SystemStats;
 use App\Models\Course;
 use App\Models\CourseClass;
@@ -18,6 +16,7 @@ use App\Models\CourseClass;
 class AdminDashboard extends ManagerDashboard
 {
     protected static ?string $slug = 'dashboard';
+
     protected static string $routePath = '/';
 
     #[\Override]

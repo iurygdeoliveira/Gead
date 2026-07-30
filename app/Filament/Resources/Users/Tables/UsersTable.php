@@ -116,7 +116,7 @@ class UsersTable
                 return empty($courses) ? '—' : $courses;
             })
             ->listWithLineBreaks()
-            ->bulleted(fn($state) => is_array($state) && count($state) > 1);
+            ->bulleted(fn ($state) => is_array($state) && count($state) > 1);
     }
 
     /**
@@ -145,7 +145,7 @@ class UsersTable
                 return empty($classes) ? '—' : $classes;
             })
             ->listWithLineBreaks()
-            ->bulleted(fn($state) => is_array($state) && count($state) > 1);
+            ->bulleted(fn ($state) => is_array($state) && count($state) > 1);
     }
 
     /**

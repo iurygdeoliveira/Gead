@@ -25,6 +25,7 @@
         "laravel/socialite": "^5.28",
         "laraveldaily/filateams": "^0.2",
         "league/flysystem-aws-s3-v3": "^3.0",
+        "leandrocfe/filament-apex-charts": "^5.1",
         "livewire/flux": "^2.2",
         "nesbot/carbon": "^3.10",
         "owen-it/laravel-auditing": "^14.0",

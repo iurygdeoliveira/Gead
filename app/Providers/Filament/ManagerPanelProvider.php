@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\EvaluationInsightsPage;
 use App\Filament\Pages\LoginAuditPage;
 use App\Filament\Pages\ManagerDashboard;
 use App\Filament\Resources\CourseClasses\CourseClassResource;
@@ -38,6 +39,7 @@ class ManagerPanelProvider extends BasePanelProvider
             ->pages([
                 ManagerDashboard::class,
                 LoginAuditPage::class,
+                EvaluationInsightsPage::class,
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,

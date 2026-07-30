@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Observers;
 
 use App\Enums\RoleType;
-use LaravelDaily\FilaTeams\Models\Membership;
 use App\Models\Team;
 use App\Models\User;
 use App\Support\FilamentStatsCache;
+use LaravelDaily\FilaTeams\Models\Membership;
 use Spatie\Permission\PermissionRegistrar;
 
 /**

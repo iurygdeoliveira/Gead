@@ -12,7 +12,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget as BaseWidget;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Auth;
 
 class StudentDisciplinesWidget extends BaseWidget
 {
@@ -67,7 +66,7 @@ class StudentDisciplinesWidget extends BaseWidget
                     ->color(fn (string $state, CourseClassDiscipline $record): string => $record->getAttribute('evaluations_count') > 0 ? 'success' : 'danger'),
             ])
             ->filters([
-                
+
             ])
             ->defaultSort('evaluations_count', 'asc')
             ->paginated(false)

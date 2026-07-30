@@ -26712,6 +26712,14 @@ namespace Laravel\Socialite\Facades {
             }
     }
 
+namespace Leandrocfe\FilamentApexCharts\Facades {
+    /**
+     * @see \Leandrocfe\FilamentApexCharts\FilamentApexCharts
+     */
+    class FilamentApexCharts {
+            }
+    }
+
 namespace Flux {
     /**
      * @see \Flux\FluxManager
@@ -36862,6 +36870,7 @@ namespace  {
     class Nightwatch extends \Laravel\Nightwatch\Facades\Nightwatch {}
     class Pulse extends \Laravel\Pulse\Facades\Pulse {}
     class Socialite extends \Laravel\Socialite\Facades\Socialite {}
+    class FilamentApexCharts extends \Leandrocfe\FilamentApexCharts\Facades\FilamentApexCharts {}
     class Flux extends \Flux\Flux {}
     class Livewire extends \Livewire\Livewire {}
     class Signal extends \Spatie\SignalAwareCommand\Facades\Signal {}

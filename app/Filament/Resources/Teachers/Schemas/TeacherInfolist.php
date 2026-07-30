@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Teachers\Schemas;
 
+use App\Models\Teacher;
 use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Tabs;
@@ -73,7 +74,7 @@ class TeacherInfolist
                             ->schema([
                                 RepeatableEntry::make('pending_evaluations')
                                     ->hiddenLabel()
-                                    ->getStateUsing(fn (\App\Models\Teacher $record) => $record->getPendingEvaluationsData())
+                                    ->getStateUsing(fn (Teacher $record) => $record->getPendingEvaluationsData())
                                     ->table([
                                         RepeatableEntry\TableColumn::make('Aluno'),
                                         RepeatableEntry\TableColumn::make('Turma'),

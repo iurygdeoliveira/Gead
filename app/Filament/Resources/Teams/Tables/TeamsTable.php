@@ -25,7 +25,7 @@ class TeamsTable
                     ->formatStateUsing(fn (bool $state): string => $state ? 'Sim' : 'Não')
                     ->badge()
                     ->color(fn ($record): string => (bool) $record->is_active ? 'primary' : 'danger'),
-               
+
             ])
             ->filters([
                 //

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Filament\Resources\CourseClasses\Tables;
 
 use App\Filament\Resources\CourseClasses\Actions\DeleteCourseClassAction;
+use App\Models\CourseClass;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -36,7 +37,7 @@ class CourseClassesTable
                     ->label('Avaliações')
                     ->badge()
                     ->color('primary')
-                    ->getStateUsing(function (\App\Models\CourseClass $record): string {
+                    ->getStateUsing(function (CourseClass $record): string {
                         $status = $record->getEvaluationsCompletionStatus();
 
                         return "{$status['completed']} / {$status['expected']}";

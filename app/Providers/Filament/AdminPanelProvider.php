@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
-use Filament\Pages\Dashboard;
+use App\Filament\Pages\AdminDashboard;
+use App\Filament\Pages\EvaluationInsightsPage;
+use App\Filament\Pages\LoginAuditPage;
+use App\Filament\Pages\Mail\PreviewTemplate;
+use App\Filament\Pages\Mail\Templates;
 use Filament\Panel;
 use WallaceMartinss\FilamentSecurity\FilamentSecurityPlugin;
 
@@ -29,10 +33,11 @@ class AdminPanelProvider extends BasePanelProvider
             ->discoverClusters(in: app_path('Filament/Clusters'), for: 'App\\Filament\\Clusters')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->pages([
-                \App\Filament\Pages\AdminDashboard::class,
-                \App\Filament\Pages\LoginAuditPage::class,
-                \App\Filament\Pages\Mail\Templates::class,
-                \App\Filament\Pages\Mail\PreviewTemplate::class,
+                AdminDashboard::class,
+                LoginAuditPage::class,
+                Templates::class,
+                PreviewTemplate::class,
+                EvaluationInsightsPage::class,
             ])
             ->tenant(null);
 

@@ -2,19 +2,19 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Filament\Facades\Filament;
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
+use Closure;
+use Filament\Facades\Filament;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CheckStudentEvaluationLimit
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  Closure(Request): (Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
@@ -42,13 +42,13 @@ class CheckStudentEvaluationLimit
 
             $hasPending = false;
             foreach ($disciplineIds as $id) {
-                if (!isset($evaluationsCount[$id]) || $evaluationsCount[$id] < 2) {
+                if (! isset($evaluationsCount[$id]) || $evaluationsCount[$id] < 2) {
                     $hasPending = true;
                     break;
                 }
             }
 
-            if (!$hasPending) {
+            if (! $hasPending) {
                 return response()->view('filament.pages.evaluations-completed');
             }
         }

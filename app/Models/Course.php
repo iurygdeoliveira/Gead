@@ -129,4 +129,39 @@ class Course extends Model
             'expected' => $total,
         ];
     }
+
+    public function getShortNameAttribute(): string
+    {
+        $name = $this->name;
+
+        if (preg_match('/Farmácia|Farmacia/i', $name)) {
+            return 'Farmácia';
+        }
+        if (preg_match('/Enfermagem/i', $name)) {
+            return 'Enfermagem';
+        }
+        if (preg_match('/Informática|Informatica/i', $name)) {
+            return 'Informática';
+        }
+        if (preg_match('/Biotecnologia/i', $name)) {
+            return 'Biotecnologia';
+        }
+        if (preg_match('/GPI|Gestão da Produção Industrial|Gestao da Producao Industrial/i', $name)) {
+            return 'GPI';
+        }
+        if (preg_match('/TADS|Análise e Desenvolvimento|Analise e Desenvolvimento/i', $name)) {
+            return 'TADS';
+        }
+        if (preg_match('/PCP|Planejamento e [cC]ontrole da [pP]rodução|Planejamento e [cC]ontrole da [pP]roducao/i', $name)) {
+            return 'PCP';
+        }
+        if (preg_match('/Operador de Computador/i', $name)) {
+            return 'EJA';
+        }
+        if (preg_match('/Análises Clínicas|Analises Clinicas/i', $name)) {
+            return 'Análises';
+        }
+
+        return $name;
+    }
 }

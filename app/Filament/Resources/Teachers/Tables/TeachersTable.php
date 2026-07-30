@@ -4,9 +4,9 @@ namespace App\Filament\Resources\Teachers\Tables;
 
 use App\Enums\RoleType;
 use App\Filament\Resources\Teachers\Actions\ChangeTeacherAccessStatusBulkAction;
-use App\Filament\Resources\Teachers\Actions\DeleteTeacherAction;
 use App\Filament\Resources\Teachers\Actions\ToggleTeacherSuspensionAction;
 use App\Models\Evaluation;
+use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -22,6 +22,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class TeachersTable
@@ -177,7 +178,7 @@ class TeachersTable
 
         $team = Filament::getTenant();
 
-        $managerUser = User::whereHas('rolesWithTeams', function (\Illuminate\Database\Eloquent\Builder $query) use ($team): void {
+        $managerUser = User::whereHas('rolesWithTeams', function (Builder $query) use ($team): void {
             $query->where('roles.name', RoleType::MANAGER->value);
             if ($team) {
                 $query->where('model_has_roles.team_id', $team->getKey());
@@ -222,7 +223,7 @@ class TeachersTable
                 continue;
             }
 
-            $pendingStudents = \App\Models\Student::select('students.id', 'students.name', 'e.registration_number')
+            $pendingStudents = Student::select('students.id', 'students.name', 'e.registration_number')
                 ->join('enrollments as e', 'students.id', '=', 'e.student_id')
                 ->join('class_enrollments as ce', 'e.id', '=', 'ce.enrollment_id')
                 ->leftJoin('users as u', 'students.user_id', '=', 'u.id')
@@ -233,14 +234,14 @@ class TeachersTable
                 })
                 ->where('students.is_dispensed_from_evaluations', false)
                 ->whereNotExists(function ($query) {
-                    $query->select(\Illuminate\Support\Facades\DB::raw(1))
+                    $query->select(DB::raw(1))
                         ->from('enrollments as e2')
                         ->leftJoin('class_enrollments as ce2', 'e2.id', '=', 'ce2.enrollment_id')
                         ->whereColumn('e2.student_id', 'students.id')
                         ->whereNull('ce2.id');
                 })
                 ->whereNotExists(function ($query) use ($ccd) {
-                    $query->select(\Illuminate\Support\Facades\DB::raw(1))
+                    $query->select(DB::raw(1))
                         ->from('evaluations as ev')
                         ->whereColumn('ev.class_enrollment_id', 'ce.id')
                         ->where('ev.course_class_discipline_id', $ccd->id)

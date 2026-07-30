@@ -6,6 +6,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Pages\StudentDashboard;
 use App\Filament\Widgets\StudentDisciplinesWidget;
+use App\Http\Middleware\CheckStudentEvaluationLimit;
 use App\Http\Middleware\TeamSyncMiddleware;
 use App\Models\Team;
 use Filament\Panel;
@@ -32,7 +33,7 @@ class StudentPanelProvider extends BasePanelProvider
             ])
             ->tenantMiddleware([
                 TeamSyncMiddleware::class,
-                \App\Http\Middleware\CheckStudentEvaluationLimit::class,
+                CheckStudentEvaluationLimit::class,
             ], isPersistent: true);
 
         return $panel;

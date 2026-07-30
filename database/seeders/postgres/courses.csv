@@ -1,0 +1,10 @@
+id,uuid,code,name,team_id,created_at,updated_at
+1,e7a837a7-6e0b-4dbd-8c83-e158e15a0bc8,213,Técnico em Informática Integrado ao Ensino Médio,1,2026-06-23 23:34:05,2026-06-23 23:34:05
+2,44190f27-2bc4-4f34-8c8c-dc521f1f86bd,216,Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas,1,2026-06-23 23:34:07,2026-06-23 23:34:07
+3,441a9796-329e-4bad-a208-8736e8d609b2,215,Curso de Formação Inicial e Continuada em Operador de Computador Integrado ao Ensino Médio,1,2026-06-23 23:34:08,2026-06-23 23:34:08
+4,7cde28d1-2686-4391-9846-fdaabbb354f9,211,Técnico em Biotecnologia Integrado ao Ensino Médio,1,2026-06-23 23:34:08,2026-06-23 23:34:08
+5,ac6c04b6-5ed1-4917-934a-fb5cfcdc8462,097,Curso Superior de Tecnologia em Gestão da Produção Industrial,1,2026-06-23 23:34:09,2026-06-23 23:34:09
+6,d451a314-dcd9-48d3-a146-06b7992fb0cb,194,Técnico em Enfermagem Subsequente ao Ensino Médio,1,2026-06-23 23:34:10,2026-06-23 23:34:10
+7,720a0651-2669-4bcf-a626-95cf9144fac5,195,Técnico em Análises Clínicas Subsequente ao Ensino Médio,1,2026-06-23 23:34:11,2026-06-23 23:34:11
+8,4fa42753-fdea-43dc-b302-deb7936d7b0d,280,Bacharelado em Farmácia,1,2026-06-23 23:34:11,2026-06-23 23:34:11
+9,6ba0e03c-e45b-48c1-8344-a5ad96674100,349,Técnico em Planejamento e Controle da Produção Integrado ao Ensino Médio,1,2026-06-23 23:34:12,2026-06-23 23:34:12

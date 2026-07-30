@@ -52,7 +52,7 @@ class LoginAuditPage extends Page implements HasTable
                             $query->where('user_id', $this->selectedUserIdentifier);
                         } else {
                             $query->whereNull('user_id')
-                                  ->where('new_values', 'like', "%{$this->selectedUserIdentifier}%");
+                                ->where('new_values', 'like', "%{$this->selectedUserIdentifier}%");
                         }
                     })
                     ->with(['user.student.enrollments.course', 'user.student.enrollments.classEnrollments.courseClass'])
@@ -67,7 +67,7 @@ class LoginAuditPage extends Page implements HasTable
                 TextColumn::make('user.email')
                     ->label('E-mail')
                     ->searchable(
-                        isIndividual: true, 
+                        isIndividual: true,
                         isGlobal: false,
                         query: function (Builder $query, string $search): Builder {
                             return $query->whereHas('user', function ($q) use ($search) {
@@ -130,9 +130,10 @@ class LoginAuditPage extends Page implements HasTable
             return User::find($this->selectedUserIdentifier);
         }
 
-        $fakeUser = new User();
+        $fakeUser = new User;
         $fakeUser->name = 'Usuário Não Encontrado';
         $fakeUser->email = $this->selectedUserIdentifier;
+
         return $fakeUser;
     }
 
@@ -146,14 +147,14 @@ class LoginAuditPage extends Page implements HasTable
             ->when($this->search, function ($query): void {
                 $query->where(function (Builder $q): void {
                     $search = "%{$this->search}%";
-                    $q->whereRaw("unaccent(name) ILIKE unaccent(?)", [$search])
-                        ->orWhereRaw("unaccent(email) ILIKE unaccent(?)", [$search])
+                    $q->whereRaw('unaccent(name) ILIKE unaccent(?)', [$search])
+                        ->orWhereRaw('unaccent(email) ILIKE unaccent(?)', [$search])
                         ->orWhereHas('student.enrollments.course', function (Builder $q2) use ($search): void {
-                            $q2->whereRaw("unaccent(name) ILIKE unaccent(?)", [$search]);
+                            $q2->whereRaw('unaccent(name) ILIKE unaccent(?)', [$search]);
                         })
                         ->orWhereHas('student.enrollments.classEnrollments.courseClass', function (Builder $q2) use ($search): void {
-                            $q2->whereRaw("unaccent(name) ILIKE unaccent(?)", [$search])
-                               ->orWhereRaw("unaccent(code) ILIKE unaccent(?)", [$search]);
+                            $q2->whereRaw('unaccent(name) ILIKE unaccent(?)', [$search])
+                                ->orWhereRaw('unaccent(code) ILIKE unaccent(?)', [$search]);
                         });
                 });
             })
@@ -177,7 +178,7 @@ class LoginAuditPage extends Page implements HasTable
             ->unique();
 
         foreach ($unknownEmails as $email) {
-            $fakeUser = new User();
+            $fakeUser = new User;
             $fakeUser->name = 'Usuário Não Encontrado';
             $fakeUser->email = $email;
             $fakeUser->setAttribute('identifier', $email);

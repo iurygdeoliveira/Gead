@@ -17,6 +17,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Enums\Width;
 use Hammadzafar05\MobileBottomNav\MobileBottomNav;
+use Leandrocfe\FilamentApexCharts\FilamentApexChartsPlugin;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -91,7 +92,8 @@ abstract class BasePanelProvider extends PanelProvider
                     ->dateWeatherWidget()
             )
             ->plugin(MobileBottomNav::make()
-                ->fromNavigation(4));
+                ->fromNavigation(4))
+            ->plugin(FilamentApexChartsPlugin::make());
     }
 
     abstract protected function getPanelId(): string;

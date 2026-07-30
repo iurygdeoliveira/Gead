@@ -146,7 +146,7 @@ class Teacher extends Model
 
         foreach ($ccds as $ccd) {
             $courseClassId = $ccd->getAttribute('course_class_id');
-            
+
             $activeClassEnrollments = ClassEnrollment::where('course_class_id', $courseClassId)
                 ->with(['enrollment.student'])
                 ->whereHas('enrollment.student', function ($query): void {

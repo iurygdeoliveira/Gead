@@ -8,6 +8,7 @@ use App\Filament\Resources\Students\StudentResource;
 use App\Models\CourseClassDiscipline;
 use App\Models\Evaluation;
 use App\Models\Student;
+use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -79,18 +80,7 @@ class StudentsTable
                     EditAction::make()
                         ->icon(Heroicon::Pencil),
                     ToggleStudentSuspensionAction::make(),
-                    \Filament\Actions\Action::make('dispense_evaluations')
-                        ->label(fn (Student $record): string => $record->is_dispensed_from_evaluations ? 'Remover Dispensa' : 'Dispensar Avaliação')
-                        ->icon('heroicon-o-archive-box-x-mark')
-                        ->color(fn (Student $record): string => $record->is_dispensed_from_evaluations ? 'danger' : 'warning')
-                        ->action(function (Student $record): void {
-                            $record->update([
-                                'is_dispensed_from_evaluations' => ! $record->is_dispensed_from_evaluations,
-                            ]);
-                        })
-                        ->requiresConfirmation()
-                        ->modalHeading(fn (Student $record): string => $record->is_dispensed_from_evaluations ? 'Remover dispensa de avaliação?' : 'Dispensar aluno de avaliações?')
-                        ->modalDescription('Isso afetará se as avaliações deste aluno são exigidas para a liberação do relatório do professor.'),
+
                 ]),
             ])
             ->toolbarActions([

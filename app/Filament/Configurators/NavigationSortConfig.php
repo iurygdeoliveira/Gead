@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Filament\Configurators;
 
+use App\Filament\Pages\EvaluationInsightsPage;
 use App\Filament\Pages\LoginAuditPage;
 use App\Filament\Resources\CourseClasses\CourseClassResource;
 use App\Filament\Resources\Courses\CourseResource;
@@ -21,11 +22,12 @@ class NavigationSortConfig
     {
         $order = [
             // Cadastros / Recursos Principais
-            TeacherResource::class => 1,
-            EvaluationResource::class => 2,
-            StudentResource::class => 3,
-            CourseResource::class => 4,
-            CourseClassResource::class => 5,
+            EvaluationInsightsPage::class => 1,
+            TeacherResource::class => 2,
+            EvaluationResource::class => 3,
+            StudentResource::class => 4,
+            CourseResource::class => 5,
+            CourseClassResource::class => 6,
 
             // Administração / Segurança
             UserResource::class => 10,

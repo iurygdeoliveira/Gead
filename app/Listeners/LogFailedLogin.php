@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace App\Listeners;
 
 use App\Enums\RoleType;
+use App\Models\User;
 use Illuminate\Auth\Events\Failed;
+use OwenIt\Auditing\Models\Audit;
 
 class LogFailedLogin
 {
@@ -16,7 +18,7 @@ class LogFailedLogin
     {
         $email = $event->credentials['email'] ?? null;
 
-        if ($event->user instanceof \App\Models\User) {
+        if ($event->user instanceof User) {
             if (! $event->user->hasRole(RoleType::ADMIN->value)) {
                 $audit = $event->user->auditEvent('failed_login');
                 if ($audit && $email) {
@@ -26,9 +28,9 @@ class LogFailedLogin
             }
         } elseif ($email) {
             // Log manually if user doesn't exist
-            \OwenIt\Auditing\Models\Audit::create([
+            Audit::create([
                 'event' => 'failed_login',
-                'auditable_type' => \App\Models\User::class,
+                'auditable_type' => User::class,
                 'auditable_id' => 0, // Ou null se o seu banco permitir
                 'old_values' => [],
                 'new_values' => ['email' => $email],

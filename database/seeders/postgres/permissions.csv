@@ -1,0 +1,13 @@
+id,name,guard_name,created_at,updated_at
+1,media.delete,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+2,media.create,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+3,media.update,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+4,media.view,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+5,users.delete,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+6,users.create,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+7,users.update,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+8,users.view,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+9,authentication-log.delete,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+10,authentication-log.create,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+11,authentication-log.update,web,2026-06-23 23:34:03,2026-06-23 23:34:03
+12,authentication-log.view,web,2026-06-23 23:34:03,2026-06-23 23:34:03

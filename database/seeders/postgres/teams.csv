@@ -1,0 +1,2 @@
+id,name,slug,is_personal,created_at,updated_at,deleted_at,uuid,is_active,cnpj
+1,Campus Araguaína,campus-araguaina,FALSE,2026-06-23 23:34:03,2026-06-23 23:34:03,,a3f47eb6-f66d-426c-8f04-3f06b1a4ac53,TRUE,03.131.702/0001-33
