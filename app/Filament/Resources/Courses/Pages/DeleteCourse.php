@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Courses\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Courses\CourseResource;
 use App\Models\Course;
 use App\Traits\Filament\HasBackButtonAction;
@@ -13,6 +15,8 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class DeleteCourse extends ViewRecord
 {
+    use HasFeedbackAction;
+
     use HasBackButtonAction;
 
     protected static string $resource = CourseResource::class;

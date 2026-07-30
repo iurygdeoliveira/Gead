@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\Courses\Pages;
 
+use App\Traits\Filament\HasBackButtonAction;
+
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Courses\CourseResource;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
@@ -12,6 +16,10 @@ use Filament\Support\Icons\Heroicon;
 
 class EditCourse extends EditRecord
 {
+    use HasBackButtonAction;
+
+    use HasFeedbackAction;
+
     use NotificationsTrait;
 
     protected static string $resource = CourseResource::class;
@@ -32,11 +40,6 @@ class EditCourse extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('back')
-                ->label('Voltar')
-                ->icon(Heroicon::ArrowLeft)
-                ->color('gray')
-                ->url(fn () => static::getResource()::getUrl('index')),
             Action::make('delete')
                 ->label('Excluir')
                 ->icon(Heroicon::Trash)

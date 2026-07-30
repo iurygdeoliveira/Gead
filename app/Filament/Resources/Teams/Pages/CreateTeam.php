@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\Teams\Pages;
 
+use App\Traits\Filament\HasBackButtonAction;
+
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Enums\AppTeamRole;
 use App\Filament\Resources\Teams\TeamResource;
 use App\Models\Membership;
@@ -14,6 +18,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class CreateTeam extends CreateRecord
 {
+    use HasBackButtonAction;
+
+    use HasFeedbackAction;
+
     use HasSaveAndCreateAnotherAction;
     use NotificationsTrait;
 

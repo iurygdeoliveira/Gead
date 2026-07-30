@@ -2,33 +2,37 @@
 
 declare(strict_types=1);
 
-namespace App\Livewire;
+namespace App\Traits\Filament;
 
 use App\Models\Feedback;
 use App\Models\User;
-use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
-use Filament\Actions\Concerns\InteractsWithActions;
-use Filament\Actions\Contracts\HasActions;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Concerns\InteractsWithSchemas;
-use Filament\Schemas\Contracts\HasSchemas;
-use Illuminate\Contracts\View\View;
-use Livewire\Component;
+use Illuminate\Support\Str;
+use Filament\Notifications\Notification;
+use App\Traits\Filament\NotificationsTrait;
 
-class FeedbackWidget extends Component implements HasActions, HasSchemas
+trait HasFeedbackAction
 {
-    use InteractsWithActions;
-    use InteractsWithSchemas;
     use NotificationsTrait;
 
-    public function feedbackAction(): Action
+    public function cacheInteractsWithHeaderActions(): void
+    {
+        parent::cacheInteractsWithHeaderActions();
+
+        $action = $this->getFeedbackAction();
+        $this->cacheAction($action);
+        $this->cachedHeaderActions[] = $action;
+    }
+
+    protected function getFeedbackAction(): Action
     {
         return Action::make('feedback')
             ->label(__('Feedback'))
+            ->color('gray')
             ->slideOver()
             ->modalHeading(__('Enviar feedback'))
             ->fillForm(fn (array $arguments): array => [
@@ -64,10 +68,5 @@ class FeedbackWidget extends Component implements HasActions, HasSchemas
 
                 $this->notifySuccess(__('Feedback enviado com sucesso'));
             });
-    }
-
-    public function render(): View
-    {
-        return view('livewire.feedback-widget');
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Users\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Users\UserResource;
 use App\Filament\Resources\Users\Widgets\UsersStats;
 use App\Support\FilamentStatsCache;
@@ -12,6 +14,8 @@ use Filament\Support\Icons\Heroicon;
 
 class ListUsers extends ListRecords
 {
+    use HasFeedbackAction;
+
     protected static string $resource = UserResource::class;
 
     #[\Override]

@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Users\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Users\UserResource;
 use App\Models\User;
 use App\Traits\Filament\HasBackButtonAction;
@@ -19,6 +21,8 @@ use Livewire\Attributes\Computed;
  */
 class EditUser extends EditRecord
 {
+    use HasFeedbackAction;
+
     use HasBackButtonAction;
     use NotificationsTrait;
 

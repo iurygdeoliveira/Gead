@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\CourseClasses\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\CourseClasses\CourseClassResource;
 use App\Filament\Resources\CourseClasses\Widgets\CourseClassesStats;
 use App\Models\CourseClass;
@@ -14,6 +16,8 @@ use Illuminate\Contracts\Database\Query\Builder;
 
 class ListCourseClasses extends ListRecords
 {
+    use HasFeedbackAction;
+
     protected static string $resource = CourseClassResource::class;
 
     #[\Override]

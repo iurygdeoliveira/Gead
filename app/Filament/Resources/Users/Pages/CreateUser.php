@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\Users\Pages;
 
+use App\Traits\Filament\HasBackButtonAction;
+
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Enums\AppTeamRole;
 use App\Enums\RoleType;
 use App\Filament\Resources\Users\UserResource;
@@ -17,6 +21,10 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateUser extends CreateRecord
 {
+    use HasBackButtonAction;
+
+    use HasFeedbackAction;
+
     use HasStandardCreateFooterActions;
     use HasStandardCreateHeaderActions;
     use NotificationsTrait;

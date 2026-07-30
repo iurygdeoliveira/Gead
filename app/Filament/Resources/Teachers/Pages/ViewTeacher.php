@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\Teachers\Pages;
 
+use App\Traits\Filament\HasBackButtonAction;
+
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Teachers\TeacherResource;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
@@ -11,6 +15,10 @@ use Livewire\Attributes\On;
 
 class ViewTeacher extends ViewRecord
 {
+    use HasBackButtonAction;
+
+    use HasFeedbackAction;
+
     protected static string $resource = TeacherResource::class;
 
     #[On('refreshTeacherInfolist')]
@@ -23,11 +31,6 @@ class ViewTeacher extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('back')
-                ->label('Voltar')
-                ->icon(Heroicon::ArrowLeft)
-                ->color('gray')
-                ->url(fn () => static::getResource()::getUrl('index')),
             EditAction::make(),
         ];
     }

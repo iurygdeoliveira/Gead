@@ -55,8 +55,7 @@
 </style>
 
 <div class="partner-info-container">
-    @livewire('feedback-widget')
-
+    
     <div class="partner-info-link" onclick="window.open('http://labsis.dev.br', '_blank'); event.preventDefault(); event.stopPropagation();">
         <span style="font-weight: 700; letter-spacing: 0.02em; transition: color 0.2s;">Precisando de software?</span>
         <div style="display: inline-flex; align-items: center;">

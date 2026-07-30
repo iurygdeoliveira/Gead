@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Teams\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Enums\AppTeamRole;
 use App\Filament\Resources\Teams\TeamResource;
 use App\Models\Membership;
@@ -22,6 +24,8 @@ use Livewire\Attributes\Computed;
  */
 class EditTeam extends EditRecord
 {
+    use HasFeedbackAction;
+
     use HasBackButtonAction;
     use NotificationsTrait;
 

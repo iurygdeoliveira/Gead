@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\Evaluations\Pages;
 
+use App\Traits\Filament\HasBackButtonAction;
+
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Evaluations\EvaluationResource;
 use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
@@ -12,6 +16,10 @@ use Filament\Support\Icons\Heroicon;
 
 class EditEvaluation extends EditRecord
 {
+    use HasBackButtonAction;
+
+    use HasFeedbackAction;
+
     use NotificationsTrait;
 
     protected static string $resource = EvaluationResource::class;
@@ -32,11 +40,6 @@ class EditEvaluation extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('back')
-                ->label('Voltar')
-                ->icon(Heroicon::ArrowLeft)
-                ->color('gray')
-                ->url(fn () => static::getResource()::getUrl('index')),
             DeleteAction::make(),
         ];
     }

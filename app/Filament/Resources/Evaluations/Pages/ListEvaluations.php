@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Evaluations\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Evaluations\EvaluationResource;
 use App\Models\Evaluation;
 use Filament\Actions\CreateAction;
@@ -12,6 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class ListEvaluations extends ListRecords
 {
+    use HasFeedbackAction;
+
     protected static string $resource = EvaluationResource::class;
 
     #[\Override]

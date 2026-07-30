@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Teachers\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Teachers\TeacherResource;
 use App\Models\Teacher;
 use App\Traits\Filament\HasBackButtonAction;
@@ -13,6 +15,8 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class DeleteTeacher extends ViewRecord
 {
+    use HasFeedbackAction;
+
     use HasBackButtonAction;
 
     protected static string $resource = TeacherResource::class;

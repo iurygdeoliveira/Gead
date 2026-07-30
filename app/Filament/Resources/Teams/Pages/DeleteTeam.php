@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Teams\Pages;
 
+use App\Traits\Filament\HasFeedbackAction;
+
 use App\Filament\Resources\Teams\TeamResource;
 use App\Models\Team;
 use App\Traits\Filament\HasBackButtonAction;
@@ -13,6 +15,8 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class DeleteTeam extends ViewRecord
 {
+    use HasFeedbackAction;
+
     use HasBackButtonAction;
     use NotificationsTrait;
 
