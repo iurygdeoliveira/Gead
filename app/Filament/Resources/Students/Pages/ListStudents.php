@@ -13,8 +13,12 @@ use Filament\Facades\Filament;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Tabs\Tab;
+use Filament\Infolists\Components\KeyValueEntry;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Schema;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\HtmlString;
+use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 
 class ListStudents extends ListRecords
@@ -34,7 +38,8 @@ class ListStudents extends ListRecords
                 ->color('warning')
                 ->requiresConfirmation()
                 ->modalHeading('Dispensar alunos que não iniciaram avaliações')
-                ->modalDescription(function (): HtmlString {
+                ->modalWidth(Width::SixExtraLarge)
+                ->schema(function (Schema $schema): Schema {
                     $teamId = Filament::getTenant()?->getKey();
 
                     $evalQuery = Evaluation::whereNotNull('planning_score');
@@ -69,16 +74,30 @@ class ListStudents extends ListRecords
                     }
 
                     if ($breakdown === []) {
-                        return new HtmlString('<p>Não há alunos elegíveis para dispensa no momento.</p>');
+                        return $schema->schema([
+                            TextEntry::make('info')
+                                ->hiddenLabel()
+                                ->html()
+                                ->state('<p>Não há alunos elegíveis para dispensa no momento.</p>'),
+                        ]);
                     }
 
-                    $html = '<p>Os seguintes alunos serão dispensados, divididos por curso:</p><ul>';
-                    foreach ($breakdown as $course => $count) {
-                        $html .= "<li><strong>{$course}</strong>: {$count} aluno(s)</li>";
-                    }
-                    $html .= '</ul><br><p><strong>Atenção:</strong> Estes alunos não iniciaram nenhuma avaliação. Deseja continuar?</p>';
-
-                    return new HtmlString($html);
+                    return $schema->schema([
+                        TextEntry::make('info')
+                            ->hiddenLabel()
+                            ->html()
+                            ->state('<p>Os seguintes alunos serão dispensados, divididos por curso:</p>'),
+                        KeyValueEntry::make('breakdown')
+                            ->hiddenLabel()
+                            ->keyLabel('Curso')
+                            ->valueLabel('Quantidade')
+                            ->state($breakdown),
+                        TextEntry::make('warning')
+                            ->hiddenLabel()
+                            ->color('warning')
+                            ->html()
+                            ->state('<p><strong>Atenção:</strong> Estes alunos não iniciaram nenhuma avaliação. Deseja continuar?</p>'),
+                    ]);
                 })
                 ->action(function (): void {
                     $teamId = Filament::getTenant()?->getKey();
