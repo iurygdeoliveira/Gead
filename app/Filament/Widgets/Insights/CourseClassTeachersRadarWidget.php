@@ -11,7 +11,7 @@ class CourseClassTeachersRadarWidget extends ApexChartWidget
 {
     protected static ?string $chartId = 'courseClassTeachersRadarWidget';
 
-    protected static ?string $heading = 'Perfil Consolidado por Turma do Curso (Média dos Professores de cada Turma)';
+    protected static ?string $heading = 'Perfil Consolidado do Curso (Média Geral dos Professores)';
 
     public ?int $teamId = null;
 
@@ -28,7 +28,7 @@ class CourseClassTeachersRadarWidget extends ApexChartWidget
         }
 
         $service = app(EvaluationAnalyticsService::class);
-        $data = $service->getCourseClassTeachersRadar($this->courseId, $this->teamId);
+        $data = $service->getCourseProfileRadar($this->courseId, $this->teamId);
 
         $dimensions = $data['dimensions'];
         $series = [];

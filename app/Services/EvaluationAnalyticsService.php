@@ -254,7 +254,49 @@ class EvaluationAnalyticsService
     }
 
     /**
-     * KPI 5B: Perfil Consolidado por Turma do Curso (cada série é a média/somatória dos professores de uma turma)
+     * KPI 5B: Perfil Consolidado do Curso (média de todos os professores do curso)
+     *
+     * @return array{classes: array<string, array<string, float>>, dimensions: array<string>}
+     */
+    public function getCourseProfileRadar(int $courseId, ?int $teamId = null): array
+    {
+        $dimensions = ['Planejamento', 'Postura', 'Assiduidade', 'Pontualidade', 'Execução', 'Avaliação'];
+        
+        $query = $this->getBaseEvaluationQuery()
+            ->whereHas('courseClassDiscipline.courseClass', function ($q) use ($courseId) {
+                $q->where('course_id', $courseId);
+            });
+            
+        if ($teamId) {
+            $query->where('team_id', $teamId);
+        }
+
+        $avg = $query->selectRaw('
+            ROUND(AVG(planning_score), 2) as planning,
+            ROUND(AVG(posture_score), 2) as posture,
+            ROUND(AVG(attendance_score), 2) as attendance,
+            ROUND(AVG(punctuality_score), 2) as punctuality,
+            ROUND(AVG(execution_score), 2) as execution,
+            ROUND(AVG(assessment_score), 2) as assessment
+        ')->first();
+
+        $courseData['Média Geral do Curso'] = [
+            'Planejamento' => (float) ($avg->planning ?? 0),
+            'Postura' => (float) ($avg->posture ?? 0),
+            'Assiduidade' => (float) ($avg->attendance ?? 0),
+            'Pontualidade' => (float) ($avg->punctuality ?? 0),
+            'Execução' => (float) ($avg->execution ?? 0),
+            'Avaliação' => (float) ($avg->assessment ?? 0),
+        ];
+
+        return [
+            'classes' => $courseData,
+            'dimensions' => $dimensions,
+        ];
+    }
+
+    /**
+     * KPI 7 (Antigo 5B): Perfil Consolidado por Turma do Curso (cada série é a média/somatória dos professores de uma turma)
      *
      * @return array{classes: array<string, array<string, float>>, dimensions: array<string>}
      */

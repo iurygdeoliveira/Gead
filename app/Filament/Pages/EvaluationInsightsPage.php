@@ -84,7 +84,7 @@ class EvaluationInsightsPage extends Page implements HasForms
                         'kpi_3_evolucao' => '4. Como o desempenho docente evoluiu ao longo dos semestres?',
                         'kpi_4_distribuicao' => '5. Existe viés de avaliação ou polarização nas notas dos alunos?',
                         'kpi_5a_docente_indiv' => '6. Qual é o perfil de desempenho individual de um professor?',
-                        'kpi_5b_docente_curso' => '7. Quais são as deficiências coletivas dos professores no curso?',
+                        'kpi_5b_docente_curso' => '7. Qual é o perfil geral e as deficiências coletivas do curso?',
                         'kpi_6_disciplinas' => '8. Quais disciplinas possuem os piores índices de avaliação docente?',
                         'kpi_7_turmas' => '9. Como as diferentes turmas de um curso realizaram a avaliação docente?',
                         'kpi_9_correlacoes' => '10. Existe correlação estatística entre o planejamento, postura e execução?',

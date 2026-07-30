@@ -117,7 +117,7 @@
                 @case('kpi_5b_docente_curso')
                     <x-filament::section heading="Como analisar este gráfico" compact>
                         <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
-                            Cada linha representa a média consolidada dos professores de uma turma do curso. Quando <strong>todas as linhas se estreitam em direção ao centro</strong> na mesma dimensão, trata-se de uma deficiência coletiva do curso. Quando apenas uma turma recua, o problema é isolado daquela turma específica.
+                            Este gráfico apresenta a média consolidada de todos os professores do curso em uma única visão. Um traçado mais amplo indica que o corpo docente do curso possui um bom desempenho geral na dimensão. Áreas onde o gráfico se estreita em direção ao centro apontam para <strong>deficiências coletivas</strong> de todo o corpo docente, exigindo ações de capacitação pedagógica ou revisão de processos em nível de coordenação de curso.
                         </p>
                     </x-filament::section>
                     @livewire(\App\Filament\Widgets\Insights\CourseClassTeachersRadarWidget::class, ['teamId' => $teamId, 'courseId' => $selectedCourseId], key('kpi_5b_' . $selectedCourseId))
