@@ -7,6 +7,7 @@ use App\Filament\Resources\Students\Widgets\StudentsStats;
 use App\Models\Evaluation;
 use App\Models\Student;
 use App\Traits\Filament\HasFeedbackAction;
+use App\Traits\Filament\NotificationsTrait;
 use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Facades\Filament;
@@ -24,6 +25,7 @@ use Filament\Support\Icons\Heroicon;
 class ListStudents extends ListRecords
 {
     use HasFeedbackAction;
+    use NotificationsTrait;
 
     protected static string $resource = StudentResource::class;
 
@@ -99,7 +101,7 @@ class ListStudents extends ListRecords
                             ->state('<p><strong>Atenção:</strong> Estes alunos não iniciaram nenhuma avaliação. Deseja continuar?</p>'),
                     ]);
                 })
-                ->action(function (): void {
+                ->action(function (ListStudents $livewire): void {
                     $teamId = Filament::getTenant()?->getKey();
 
                     $evalQuery = Evaluation::whereNotNull('planning_score');
@@ -124,10 +126,9 @@ class ListStudents extends ListRecords
 
                     $count = $studentsQuery->update(['is_dispensed_from_evaluations' => true]);
 
-                    Notification::make()
-                        ->title("{$count} alunos dispensados com sucesso!")
-                        ->success()
-                        ->send();
+                    $livewire->notifySuccess("{$count} alunos dispensados com sucesso!");
+                    
+                    $livewire->js('window.location.reload()');
                 }),
             Action::make('bulk_dispense_partial_evaluations')
                 ->label('Dispensar Pendentes')
@@ -197,7 +198,7 @@ class ListStudents extends ListRecords
                             ->state('<p><strong>Atenção:</strong> Estes alunos <strong>já iniciaram</strong> ao menos uma avaliação, mas não terminaram todas. Ao dispensá-los, as avaliações já feitas <strong>serão mantidas</strong>, e eles não bloquearão mais os relatórios dos professores que não avaliaram. Deseja continuar?</p>'),
                     ]);
                 })
-                ->action(function (): void {
+                ->action(function (ListStudents $livewire): void {
                     $teamId = Filament::getTenant()?->getKey();
 
                     $evalQuery = Evaluation::whereNotNull('planning_score');
@@ -222,10 +223,9 @@ class ListStudents extends ListRecords
 
                     $count = $studentsQuery->update(['is_dispensed_from_evaluations' => true]);
 
-                    Notification::make()
-                        ->title("{$count} alunos pendentes (parciais) foram dispensados com sucesso!")
-                        ->success()
-                        ->send();
+                    $livewire->notifySuccess("{$count} alunos pendentes (parciais) foram dispensados com sucesso!");
+                    
+                    $livewire->js('window.location.reload()');
                 }),
         ];
     }
