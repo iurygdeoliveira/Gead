@@ -129,6 +129,104 @@ class ListStudents extends ListRecords
                         ->success()
                         ->send();
                 }),
+            Action::make('bulk_dispense_partial_evaluations')
+                ->label('Dispensar Pendentes')
+                ->icon(Heroicon::OutlinedArchiveBoxXMark)
+                ->color('danger')
+                ->requiresConfirmation()
+                ->modalHeading('Dispensar alunos com avaliações incompletas')
+                ->modalWidth(Width::SixExtraLarge)
+                ->schema(function (Schema $schema): Schema {
+                    $teamId = Filament::getTenant()?->getKey();
+
+                    $evalQuery = Evaluation::whereNotNull('planning_score');
+                    if ($teamId) {
+                        $evalQuery->where('evaluations.team_id', $teamId);
+                    }
+
+                    $studentsWithEvaluationsIds = $evalQuery
+                        ->join('class_enrollments', 'evaluations.class_enrollment_id', '=', 'class_enrollments.id')
+                        ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
+                        ->select('enrollments.student_id')
+                        ->pluck('student_id')
+                        ->unique()
+                        ->toArray();
+
+                    // Seleciona APENAS os alunos que INICIARAM alguma avaliação
+                    $studentsQuery = Student::where('is_dispensed_from_evaluations', false)
+                        ->whereIn('id', $studentsWithEvaluationsIds)
+                        ->with('enrollments.course');
+
+                    if ($teamId) {
+                        $studentsQuery->where('team_id', $teamId);
+                    }
+
+                    $studentsToDispense = $studentsQuery->get();
+
+                    $breakdown = [];
+                    foreach ($studentsToDispense as $student) {
+                        foreach ($student->enrollments as $enrollment) {
+                            $courseName = $enrollment->course->name ?? 'Sem Curso';
+                            $breakdown[$courseName] = ($breakdown[$courseName] ?? 0) + 1;
+                        }
+                    }
+
+                    if ($breakdown === []) {
+                        return $schema->schema([
+                            TextEntry::make('info')
+                                ->hiddenLabel()
+                                ->html()
+                                ->state('<p>Não há alunos com avaliações parciais elegíveis para dispensa no momento.</p>'),
+                        ]);
+                    }
+
+                    return $schema->schema([
+                        TextEntry::make('info')
+                            ->hiddenLabel()
+                            ->html()
+                            ->state('<p>Os seguintes alunos com avaliações parciais serão dispensados, divididos por curso:</p>'),
+                        KeyValueEntry::make('breakdown')
+                            ->hiddenLabel()
+                            ->keyLabel('Curso')
+                            ->valueLabel('Quantidade')
+                            ->state($breakdown),
+                        TextEntry::make('warning')
+                            ->hiddenLabel()
+                            ->color('danger')
+                            ->html()
+                            ->state('<p><strong>Atenção:</strong> Estes alunos <strong>já iniciaram</strong> ao menos uma avaliação, mas não terminaram todas. Ao dispensá-los, as avaliações já feitas <strong>serão mantidas</strong>, e eles não bloquearão mais os relatórios dos professores que não avaliaram. Deseja continuar?</p>'),
+                    ]);
+                })
+                ->action(function (): void {
+                    $teamId = Filament::getTenant()?->getKey();
+
+                    $evalQuery = Evaluation::whereNotNull('planning_score');
+                    if ($teamId) {
+                        $evalQuery->where('evaluations.team_id', $teamId);
+                    }
+
+                    $studentsWithEvaluationsIds = $evalQuery
+                        ->join('class_enrollments', 'evaluations.class_enrollment_id', '=', 'class_enrollments.id')
+                        ->join('enrollments', 'class_enrollments.enrollment_id', '=', 'enrollments.id')
+                        ->select('enrollments.student_id')
+                        ->pluck('student_id')
+                        ->unique()
+                        ->toArray();
+
+                    $studentsQuery = Student::where('is_dispensed_from_evaluations', false)
+                        ->whereIn('id', $studentsWithEvaluationsIds);
+
+                    if ($teamId) {
+                        $studentsQuery->where('team_id', $teamId);
+                    }
+
+                    $count = $studentsQuery->update(['is_dispensed_from_evaluations' => true]);
+
+                    Notification::make()
+                        ->title("{$count} alunos pendentes (parciais) foram dispensados com sucesso!")
+                        ->success()
+                        ->send();
+                }),
         ];
     }
 
